@@ -4,7 +4,7 @@ title: "IDEG Research Charter — Information Dynamics and Emergent Geometry"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-11
-version: 0.2
+version: 0.3
 research_layer: R0
 epistemic_status: NOT_APPLICABLE
 sources:
@@ -15,6 +15,7 @@ referenced_by: [KB-002, KB-003, KB-004, KB-005]
 changelog:
   - "0.1: initial substrate (drafted with Sol/ChatGPT, 2026-08-11)"
   - "0.2: review revision (drafted with Claude, 2026-08-11) — see §15"
+  - "0.3: mechanical fix at G0 owner review (2026-08-11): SC-002 pointer §§N–O → §§C, M, O; applied under KB-005 §12 mechanical-fix rule, no intent change — see §16"
 ---
 
 # IDEG Research Charter
@@ -241,7 +242,7 @@ The programme does **not** need to establish a "theory of everything" to succeed
 A stable distinction among state, entropy, correlation, complexity, transfer, flow, reconstructability, geometry, emergence, persistence, and recurrence.
 
 ### SC-002 — Landscape success
-A verified map of the strongest existing information↔gravity relations, including assumptions and non-implications — now explicitly including the thermodynamic-gravity lineage, algebraic/modular formulations, and the cross-level persistence exemplars (KB-003 §§N–O).
+A verified map of the strongest existing information↔gravity relations, including assumptions and non-implications — now explicitly including the thermodynamic-gravity lineage, algebraic/modular formulations, and the cross-level persistence exemplars (KB-003 §§C, M, O).
 
 ### SC-003 — Synthesis success
 Identification of a recurring mathematical structure across multiple frameworks that is not merely shared terminology.
@@ -381,3 +382,9 @@ No other file should restate the full charter; cite `KB-001` by stable ID. The n
 10. Added §13 Decisions of record: ADR-001 (reading of INT-001), ADR-002 (first deliverable = toy-model family).
 11. Scope: added thermodynamic-gravity lineage, algebraic/modular structure, internal clocks, and non-gravitational exemplars; clarified that the ontological reading is deferred by decision.
 12. Fixed dangling `OQ-*` reference (namespace reserved, unused).
+
+---
+
+## 16. Changelog v0.2 → v0.3
+
+1. SC-002: corrected the section pointer "KB-003 §§N–O" → "KB-003 §§C, M, O" (§N is bibliography governance; the cited content lives in §C thermodynamic-gravity, §M algebraic/modular, §O persistence exemplars). Mechanical fix authorized at G0 owner review 2026-08-11 under the KB-005 §12 mechanical-fix rule; INT-001 and §§3–4 untouched.

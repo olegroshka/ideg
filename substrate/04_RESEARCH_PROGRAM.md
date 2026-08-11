@@ -4,7 +4,7 @@ title: "IDEG Research Program — Agentic Protocol, Phases, Gates, and Backlog"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-11
-version: 0.3
+version: 0.5
 research_layer: R4
 epistemic_status: NOT_APPLICABLE
 sources:
@@ -16,6 +16,7 @@ changelog:
   - "0.2: review revision (Claude, 2026-08-11) — see §18"
   - "0.3: Track E3 G1 cleared; AR-009 spec drafted (DONE, owner review pending); AR-015 partial packet recorded (Claude, 2026-08-11) — see §19"
   - "0.4: AR-009 thresholds owner-reviewed (spec §8 Amendment 1: criterion (b) instrument → log-ratio + calibration pilot); AR-019 added, advisory/non-blocking (owner + Claude, 2026-08-11) — see §20"
+  - "0.5: G0 PASSED at owner review; §12 mechanical-fix rule for KB-001 recorded; AR-010 licensed (owner + Claude, 2026-08-11) — see §21"
 ---
 
 # Research Program and Agentic Protocol
@@ -84,7 +85,7 @@ Phase G  Iteration           G6: next-cycle decision recorded (ADR)
 
 ### Gate definitions (v0.2 revisions marked)
 
-- **G0 — Foundation gate.** KB-001..005 internally consistent; ID references resolve; ADR-001/ADR-002 recorded. *(Met by the v0.2 revision itself, pending owner review.)*
+- **G0 — Foundation gate.** KB-001..005 internally consistent; ID references resolve; ADR-001/ADR-002 recorded. **PASSED 2026-08-11 (owner review, session 2026-08-11_AR-009):** full ID-reference sweep clean except one mispointer (KB-001 SC-002 "§§N–O" → fixed to "§§C, M, O" under the mechanical-fix rule below); known-quirks logged, not fixed: KB-003 non-sequential section lettering (A–J, M, O, P, K, L, N, M2) and §M/§M2 near-collision; TL-* historical IDs in KB-003 §Q (linked to ADR candidate D); TH-036 SRC slot reserved (AR-015).
 - **G1 — Verification gate (rescoped).** v0.1 required verifying the full TH catalogue before proceeding — a multi-month serial bottleneck. **v0.2:** G1 is satisfied per-workstream: a workstream may pass its own G1 when the TH-*/SRC-* entries **it actually cites** are primary-source verified. Track E3 cites TH-033, TH-037 (+ optionally TH-034/035 for framing): that is its G1 scope. Full-landscape verification proceeds in parallel (AR-002 series) without blocking model work. **(v0.3) Track E3's G1 scope cleared 2026-08-11:** SRC-042..044 + SRC-049 verified (AR-015 partial, `ar/AR-015_partial-2026-08-11_trackE3-G1.md`); TH-034/035 remain framing-only pending their own verification.
 - **G2 — Synthesis gate (rescoped).** Seam-skeleton search (AR-012) scoped to TH-* clusters cited by P0/P1 items, not the entire matrix.
 - **G3 — Formalization gate.** At least one BH-* completed in the KB-004 §6 template, survived one ADVERSARIAL run.
@@ -255,7 +256,7 @@ Tier 1: peer-reviewed primary literature and rigorous preprints by established g
 
 ## 12. Reconciliation protocol
 
-Deltas are applied in dependency order (KB-002 definitions → KB-003 theory → KB-004 hypotheses → KB-005 program → KB-001 only via ADR). A delta that would invalidate a downstream item marks it `STALE` rather than silently editing it. Version numbers bump on any non-typographic change; changelogs are mandatory. Conflicts between two runs' deltas are resolved in a named reconciliation session, recorded in the log.
+Deltas are applied in dependency order (KB-002 definitions → KB-003 theory → KB-004 hypotheses → KB-005 program → KB-001 only via ADR). **(v0.5, decided at G0 owner review 2026-08-11):** the "KB-001 only via ADR" rule is scoped per §9 rule 4a — it governs changes that touch intent (KB-001 §3–4) or reinterpret scope/claims; **mechanical fixes** to KB-001 (typos, wrong cross-references, formatting) outside §3–4 are ordinary deltas applied with version bump and changelog, no ADR required. A delta that would invalidate a downstream item marks it `STALE` rather than silently editing it. Version numbers bump on any non-typographic change; changelogs are mandatory. Conflicts between two runs' deltas are resolved in a named reconciliation session, recorded in the log.
 
 ---
 
@@ -335,3 +336,12 @@ Deltas are applied in dependency order (KB-002 definitions → KB-003 theory →
 1. AR-009 threshold review completed by owner 2026-08-11. Layers 1–2 (stationarity; class separation) accepted unchanged. Criterion (b) amended pre-run per spec §8 Amendment 1: primary effect measure → scale-free log drift ratio (|Δ mean log ρ| > ln 1.5, disjoint CIs); calibration pilot with preregistered grids added (§5.2.1); λ*/γ* failure thresholds collected as exploratory candidate instrument; original R measure demoted to descriptive.
 2. §6: AR-019 added (robustness-instrument survey by analogy) — advisory, non-blocking; may upgrade the criterion-(b) instrument via spec §8 amendment only before confirmatory runs.
 3. AR-010 licensing now gated on G0 owner review of the substrate only (threshold-review gate cleared).
+
+---
+
+## 21. Changelog v0.4 → v0.5
+
+1. §4 G0: **PASSED** at owner review 2026-08-11 (evidence-based ID-reference sweep; findings and known-quirks recorded in the gate entry and session log). Milestone M0 met.
+2. §12: mechanical-fix rule for KB-001 recorded (decided at G0): non-intent mechanical fixes are ordinary deltas; ADRs reserved for intent-touching changes per §9 rule 4a.
+3. Effect: with the threshold review (v0.4) and G0 both cleared, **AR-010 is licensed** against `ar/AR-009_spec.md` (subject to the §5.2.1 pilot-before-confirmatory ordering and the AR-019 instrument-upgrade window).
+4. sessions/TEMPLATE.md extended (versions-at-close, infrastructure-notes fields) — template is not a KB file; recorded here for traceability.
