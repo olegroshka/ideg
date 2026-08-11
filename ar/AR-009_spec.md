@@ -17,8 +17,9 @@ deliverable: this document, reviewable standalone before any AR-010 code
 promotion_effect: AR-010 implementation licensed against this spec
 kill_effect: if no well-posed witness/comparator scheme exists, BH-004 returns
   to FORMALIZE with the obstruction recorded
-status: DONE (spec drafted 2026-08-11; owner review required before AR-010
-  licensing — G0 owner review still pending)
+status: DONE (spec drafted 2026-08-11; threshold review completed by owner
+  2026-08-11 — see §8 Amendment 1; AR-010 licensing now gated on G0 owner
+  review of the substrate only)
 ```
 
 > **Preregistration rule:** every metric, threshold, and comparison below is
@@ -145,6 +146,13 @@ fitted linear drift slope of δΦ(t) with bootstrap CI. The transient
 t < t_eq = 20 is excluded by design (equilibration is not the claim under
 test; the claim is about the persistent regime).
 
+**Cap diagnostic (reported, never thresholded; added 2026-08-11):** δΦ is
+additionally computed restricted to the pair set whose x̄_ij in D̄ exceeds
+x_min (the above-cap subgraph). This exposes any cap-dominance of the
+stationarity verdict — in late-time scrambled states many distant-pair
+weights sit at w_max, which biases the capped δΦ toward stationarity; the
+subgraph version is the honesty check on that bias.
+
 ## 3. Witnesses (CON-034)
 
 Each witness is stated with the redundancies it provably survives. A witness
@@ -246,26 +254,57 @@ the two-sample AUC over the ensemble (20 runs/class).
 **Threshold:** (a) holds iff for every class pair there exist ≥ 2 witness
 statistics with AUC ≥ 0.95 (complete or near-complete separation), at both
 N = 10 and N = 12 (T-C; N = 8 and 10 for T-A if 12 is infeasible in
-budget). Ordinal sanity predictions (preregistered, non-binding on (a)):
+budget). Class (i) is a single deterministic state with exact witness
+values (PR_A = 1, Ξ = 0, d_phys ≡ 0); pairs involving class (i) use
+exact-value separation (the other class's ensemble range excludes the
+exact value) instead of rank AUC, which is degenerate for a singleton. Ordinal sanity predictions (preregistered, non-binding on (a)):
 PR_A ≈ 1 (i) < PR_A ∈ [2, 12] (ii) ≪ PR_A (iii); class (iv) shows a
 single dominant low-frequency line; C_sat larger and t* shorter for
 scrambling than integrable; localized shows frozen C(r, t) for r ≳ ξ.
 
 ### 5.2 (b) Robustness differential of Φ-stationarity
+*(amended 2026-08-11 after owner review — see §8; original fixed-strength
+R-measure retained as descriptive only)*
+
 Perturbation protocols (each applied within 𝒲, all classes/regimes):
-1. **Hamiltonian quench:** add λ σᶻ_{i₁} at random site i₁, λ = 0.05, from
-   t_p = 100 onward;
-2. **Dephasing noise:** local σᶻ dephasing channel, rate γ = 0.01, from
-   t_p = 100 (density-matrix evolution; N ≤ 10 for this protocol);
+1. **Hamiltonian quench:** add λ σᶻ_{i₁} at random site i₁, from t_p = 100
+   onward; confirmatory λ chosen by the §5.2.1 pilot from the grid there;
+2. **Dephasing noise:** local σᶻ dephasing channel, rate γ, from t_p = 100
+   (density-matrix evolution; N ≤ 10 for this protocol); confirmatory γ
+   chosen by the §5.2.1 pilot;
 3. **Subsystem loss:** trace out k = 2 random non-adjacent sites at
    t_p = 100; recompute Φ on the reduced (N−2)-site graph, compared to the
-   unperturbed run's Φ restricted to the same sites.
-Effect measure per run: retention R = 1 − [max_{t > t_p} δΦ(t) −
-max_{t > t_p} δΦ_unpert(t)]₊ clipped to [0, 1] (1 = perturbation caused no
-extra drift; 0 = drift grew by ≥ 1 in normalized units).
+   unperturbed run's Φ restricted to the same sites (discrete protocol —
+   no calibration dial; k = 2 fixed).
+
+**Primary effect measure (scale-free):** the log drift ratio
+  log ρ = log [ max_{t > t_p} δΦ_pert(t) / max(max_{t > t_p} δΦ_unpert(t), δ_floor) ],
+with δ_floor = 10⁻³ (preregistered floor at the numerical/sampling noise
+scale; guards the exactly-stationary class (i), whose unperturbed drift is
+zero to machine precision).
 **Threshold:** (b) holds iff for ≥ 1 protocol, at least one pair of classes
-has |R̄_class1 − R̄_class2| > 0.2 with disjoint bootstrap 95% CIs
+has |mean log ρ difference| > ln 1.5 (≈ 0.405; a ≥ 50% relative difference
+in perturbation-induced drift) with disjoint bootstrap 95% CIs
 (1000 resamples over the ensemble), replicated at both system sizes.
+**Secondary (descriptive only, no threshold):** the original retention
+R = 1 − [max_{t > t_p} δΦ(t) − max_{t > t_p} δΦ_unpert(t)]₊ clipped to
+[0, 1], reported for continuity with the pre-amendment draft.
+
+### 5.2.1 Calibration pilot (exploratory; runs before confirmatory analysis)
+- Grids: λ ∈ {0.02, 0.05, 0.1, 0.2}; γ ∈ {0.003, 0.01, 0.03}.
+- Reduced ensemble: 5 runs per class/regime, N = 10 only.
+- Outputs: (i) the confirmatory λ and γ (chosen to place typical log ρ in a
+  responsive, non-saturated range), logged as a dated §8 entry **before**
+  any confirmatory run; (ii) exploratory failure-threshold curves — the
+  smallest strength λ*_class (resp. γ*_class) at which the ε_Φ criterion
+  first fails — recorded as a candidate alternative robustness instrument
+  in the style of the verified SRC-044 rigidity/critical-strength protocol.
+- Pilot data are excluded from all confirmatory statistics.
+- **Instrument-upgrade clause:** AR-019 (KB-005 §6) may recommend replacing
+  or augmenting the log-ratio instrument (e.g., by λ*-style thresholds or a
+  fidelity-decay-class analysis). Adoption is a dated §8 amendment, valid
+  only before confirmatory runs begin; absent that, this section stands
+  as written.
 
 ### 5.3 Sustained-by adjudication (CON-036, per class)
 *Sustained-by* is affirmed for a class iff **both**:
@@ -335,11 +374,27 @@ scaling is reported descriptively (no extrapolation claims — scope wall §7).
 - TH-034/TH-035 are framing, not load; they remain verification-pending.
 
 ## 8. Open items / amendments log
-- 2026-08-11: spec drafted (this document). Amendments: none yet.
-- Open: owner review of all preregistered thresholds (ε_Φ = 0.05, AUC ≥
-  0.95, R-differential > 0.2, protocol parameters λ, γ, k, windows) before
-  AR-010 is licensed. These were set by judgment, not derived; changing
-  them before any run is free; changing them after runs begin requires an
-  amendment entry here.
+- 2026-08-11: spec drafted (this document).
+- **2026-08-11 — Amendment 1 (pre-run; owner review session).** Owner
+  reviewed all preregistered thresholds. Rulings: Layer 1 (stationarity:
+  ε_Φ = 0.05, window, cap) and Layer 2 (criterion (a): AUC ≥ 0.95, ≥ 2
+  statistics per pair, two sizes) accepted unchanged. Layer 3
+  (criterion (b)) amended before any run: primary effect measure changed
+  from fixed-strength retention R (differential > 0.2) to the scale-free
+  log drift ratio (|Δ mean log ρ| > ln 1.5, disjoint CIs); calibration
+  pilot §5.2.1 added with preregistered grids; λ*/γ* failure thresholds
+  collected as exploratory candidate instrument; R demoted to descriptive.
+  Also: cap diagnostic added to §2 (reported only); class-(i)
+  exact-value treatment added to §5.1 (statistical wording fix, no
+  substance change). Reason: the fixed-strength R measure risked
+  criterion (b) returning null by instrument coarseness rather than
+  physics (both under- and over-driving failure modes).
+- **Instrument-upgrade window:** AR-019 (queued in KB-005 §6, advisory,
+  non-blocking) may propose a better criterion-(b) instrument by analogy
+  (fidelity/Loschmidt-echo decay classes; SRC-044-style critical-strength
+  curves). Adoption requires a dated amendment here, valid only before
+  confirmatory runs begin.
+- Open: G0 owner review of the v0.2 substrate (separate gate; still
+  pending) — AR-010 licensing requires it.
 - Open: decide whether T-C at N = 14 (Krylov) is worth the budget after
   first N = 12 results (amendment if yes).

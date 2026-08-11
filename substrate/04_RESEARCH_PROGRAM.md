@@ -15,6 +15,7 @@ changelog:
   - "0.1: initial program, AR-001..014, gates G0–G6 (Sol/ChatGPT, 2026-08-11)"
   - "0.2: review revision (Claude, 2026-08-11) — see §18"
   - "0.3: Track E3 G1 cleared; AR-009 spec drafted (DONE, owner review pending); AR-015 partial packet recorded (Claude, 2026-08-11) — see §19"
+  - "0.4: AR-009 thresholds owner-reviewed (spec §8 Amendment 1: criterion (b) instrument → log-ratio + calibration pilot); AR-019 added, advisory/non-blocking (owner + Claude, 2026-08-11) — see §20"
 ---
 
 # Research Program and Agentic Protocol
@@ -181,6 +182,13 @@ Phase G  Iteration           G6: next-cycle decision recorded (ADR)
 `mode: ADVERSARIAL` · `parent: NC-010, INV-R-009, all BH-*` · `priority: P1` ·
 **Question:** for every current BH-* and the Track E3 spec: what clock is assumed, is it available without the target geometry, and does any claimed dynamics smuggle temporal structure? Standing run to be repeated at each gate.
 
+### AR-019 — Robustness-instrument survey by analogy *(new v0.4; advisory, non-blocking)*
+`mode: EXPLORE` · `parent: BH-004, AR-009 §5.2` · `priority: P1` ·
+**Question:** what do analogous perturbation-response literatures — fidelity/Loschmidt-echo decay classes in quantum chaos, DTC rigidity/critical-strength curves (cf. the verified SRC-044 protocol), MBL stability analyses, dose–response calibration methodology — suggest as the best-instrumented effect measure for AR-009's criterion (b): fixed-strength response vs failure-threshold (λ*-style), ratio vs difference measures?
+**Deliverable:** short comparative note with an adopt/keep recommendation; any new sources entered as SRC-* flagged `verify`.
+**Promotion_effect:** AR-009 §8 amendment replacing/augmenting the confirmatory instrument — valid only before AR-010 confirmatory runs begin.
+**Kill_effect:** none (advisory; the preregistered log-ratio instrument stands if AR-019 has not run in time). Explicitly non-blocking: AR-010 does not wait on it.
+
 ---
 
 ## 7. Track E3 — first deliverable specification (v0.2)
@@ -319,3 +327,11 @@ Deltas are applied in dependency order (KB-002 definitions → KB-003 theory →
 2. §6 AR-009: status DONE — full spec drafted at `ar/AR-009_spec.md` (models T-A/T-B/T-C concretized; Φ per verified TH-037 eqs. 13–14; witness battery W1–W5 with invariance arguments; stationary-state comparator, switch-off, representation, and null controls; preregistered thresholds; analysis plan). Owner review of thresholds gates AR-010.
 3. §6 AR-015: status RUNNING; first partial packet recorded (warm-up remediation for AR-009 per §17).
 4. Process note: the §17 warm-up check fired as designed on this session's first target (unverified load-bearing sources) and was resolved by an in-session VERIFY partial before FORMALIZE work.
+
+---
+
+## 20. Changelog v0.3 → v0.4
+
+1. AR-009 threshold review completed by owner 2026-08-11. Layers 1–2 (stationarity; class separation) accepted unchanged. Criterion (b) amended pre-run per spec §8 Amendment 1: primary effect measure → scale-free log drift ratio (|Δ mean log ρ| > ln 1.5, disjoint CIs); calibration pilot with preregistered grids added (§5.2.1); λ*/γ* failure thresholds collected as exploratory candidate instrument; original R measure demoted to descriptive.
+2. §6: AR-019 added (robustness-instrument survey by analogy) — advisory, non-blocking; may upgrade the criterion-(b) instrument via spec §8 amendment only before confirmatory runs.
+3. AR-010 licensing now gated on G0 owner review of the substrate only (threshold-review gate cleared).
