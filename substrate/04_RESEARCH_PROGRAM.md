@@ -3,8 +3,8 @@ id: KB-005
 title: "IDEG Research Program — Agentic Protocol, Phases, Gates, and Backlog"
 status: DRAFT
 owner: shared
-last_reviewed: 2026-08-11
-version: 0.5
+last_reviewed: 2026-08-12
+version: 0.6
 research_layer: R4
 epistemic_status: NOT_APPLICABLE
 sources:
@@ -17,6 +17,7 @@ changelog:
   - "0.3: Track E3 G1 cleared; AR-009 spec drafted (DONE, owner review pending); AR-015 partial packet recorded (Claude, 2026-08-11) — see §19"
   - "0.4: AR-009 thresholds owner-reviewed (spec §8 Amendment 1: criterion (b) instrument → log-ratio + calibration pilot); AR-019 added, advisory/non-blocking (owner + Claude, 2026-08-11) — see §20"
   - "0.5: G0 PASSED at owner review; §12 mechanical-fix rule for KB-001 recorded; AR-010 licensed (owner + Claude, 2026-08-11) — see §21"
+  - "0.6: AR-019 executed and reconciled (Claude, 2026-08-12) — recommendation KEEP the §5.2 log-ratio instrument, no spec threshold changed; KB-003 → v0.4 (SRC-052..058, verify) — see §22"
 ---
 
 # Research Program and Agentic Protocol
@@ -189,6 +190,7 @@ Phase G  Iteration           G6: next-cycle decision recorded (ADR)
 **Deliverable:** short comparative note with an adopt/keep recommendation; any new sources entered as SRC-* flagged `verify`.
 **Promotion_effect:** AR-009 §8 amendment replacing/augmenting the confirmatory instrument — valid only before AR-010 confirmatory runs begin.
 **Kill_effect:** none (advisory; the preregistered log-ratio instrument stands if AR-019 has not run in time). Explicitly non-blocking: AR-010 does not wait on it.
+**(v0.6) Outcome:** DONE 2026-08-12, reconciled in-session — `ar/AR-019_note-2026-08-12_robustness-instruments.md`. Recommendation **KEEP**: the §5.2 log-ratio primary stands unchanged (promotion effect not exercised; dated no-change entry in spec §8). λ*-style thresholds rejected as primary — grid-censored in the pilot, criterion-derived (meaning shifted under Amendment 3.1), and threshold-location estimators are finite-size-fragile by analogy (SRC-055/056; NOEC critique SRC-057). Curve-style instruments remain where the spec already places them (T-B h_sub(ε); §5.2.1 exploratory curves). Advisory riders: calibrated-strength framing discipline for the confirmatory write-up; decay-rate-law analysis queued as a follow-up AR candidate only if criterion (b) is positive. Status: RECONCILED.
 
 ---
 
@@ -345,3 +347,11 @@ Deltas are applied in dependency order (KB-002 definitions → KB-003 theory →
 2. §12: mechanical-fix rule for KB-001 recorded (decided at G0): non-intent mechanical fixes are ordinary deltas; ADRs reserved for intent-touching changes per §9 rule 4a.
 3. Effect: with the threshold review (v0.4) and G0 both cleared, **AR-010 is licensed** against `ar/AR-009_spec.md` (subject to the §5.2.1 pilot-before-confirmatory ordering and the AR-019 instrument-upgrade window).
 4. sessions/TEMPLATE.md extended (versions-at-close, infrastructure-notes fields) — template is not a KB file; recorded here for traceability.
+
+---
+
+## 22. Changelog v0.5 → v0.6
+
+1. §6 AR-019: executed 2026-08-12 (EXPLORE), status RECONCILED. Deliverable: `ar/AR-019_note-2026-08-12_robustness-instruments.md`. Recommendation **KEEP** the preregistered §5.2 log-ratio criterion-(b) instrument; the instrument-upgrade promotion effect was **not** exercised — no AR-009 threshold changed; a dated no-change entry records the outcome in spec §8.
+2. Sources: KB-003 → v0.4 (SRC-052..058 added, all flagged `verify`; methodology-analogy only, not load-bearing).
+3. Effect: the AR-019 advisory window is spent as an open decision item; it formally closes when AR-010 confirmatory runs begin (unchanged rule). Next scheduled work: AR-010 confirmatory phase.

@@ -3,18 +3,19 @@ id: KB-003
 title: "IDEG Theory Landscape and Canonical Bibliography"
 status: DRAFT
 owner: shared
-last_reviewed: 2026-08-11
-version: 0.3
+last_reviewed: 2026-08-12
+version: 0.4
 research_layer: R2
 epistemic_status: MIXED
 sources:
-  - "Primary literature registry SRC-001..SRC-051 below; SRC-001..035 metadata checked 2026-08-11; SRC-042..044 + SRC-049 verified 2026-08-11 (AR-015 partial, Track E3 G1); SRC-036..041, 045..048, 050..051 metadata VERIFICATION PENDING (AR-017/AR-016/AR-015/AR-002d)"
+  - "Primary literature registry SRC-001..SRC-058 below; SRC-001..035 metadata checked 2026-08-11; SRC-042..044 + SRC-049 verified 2026-08-11 (AR-015 partial, Track E3 G1); SRC-036..041, 045..048, 050..051 metadata VERIFICATION PENDING (AR-017/AR-016/AR-015/AR-002d); SRC-052..058 added 2026-08-12 (AR-019 survey) — metadata VERIFICATION PENDING"
 depends_on: [KB-001, KB-002]
 referenced_by: [KB-004, KB-005]
 changelog:
   - "0.1: initial landscape, sections A–N, TH-001..028, SRC-001..035 (Sol/ChatGPT, 2026-08-11)"
   - "0.2: review revision (Claude, 2026-08-11) — see §Q"
   - "0.3: Track E3 G1 verification reconciled (Claude, 2026-08-11) — SRC-042..044, SRC-049 verified; TH-033 no-go scope condition added; TH-037 equation locations added; see ar/AR-015_partial-2026-08-11_trackE3-G1.md"
+  - "0.4: AR-019 robustness-instrument survey sources added (Claude, 2026-08-12) — SRC-052..058, all flagged verify; see §S and ar/AR-019_note-2026-08-12_robustness-instruments.md"
 ---
 
 # Theory Landscape and Canonical Bibliography
@@ -477,6 +478,27 @@ Bombelli, L.; Lee, J.; Meyer, D.; Sorkin, R. D. **Space-Time as a Causal Set.** 
 ### SRC-051 — Entanglement renormalization and holography (v0.2; verify)
 Swingle, B. **Entanglement Renormalization and Holography.** *Phys. Rev. D* 86, 065007 (2012). https://arxiv.org/abs/0905.1317
 
+### SRC-052 — Fidelity/Loschmidt-echo decay review (v0.4, AR-019; verify)
+Gorin, T.; Prosen, T.; Seligman, T. H.; Žnidarič, M. **Dynamics of Loschmidt Echoes and Fidelity Decay.** *Phys. Rep.* 435, 33–156 (2006). https://arxiv.org/abs/quant-ph/0607050 . DOI: 10.1016/j.physrep.2006.09.003 . (Methodology-analogy source for AR-009 criterion (b): decay-regime taxonomy — perturbative/Gaussian, Fermi-golden-rule, perturbation-independent. Not load-bearing for any physics claim.)
+
+### SRC-053 — Perturbation-independent decoherence-rate regime (v0.4, AR-019; verify)
+Jalabert, R. A.; Pastawski, H. M. **Environment-Independent Decoherence Rate in Classically Chaotic Systems.** *Phys. Rev. Lett.* 86, 2490 (2001). (Origin of the Lyapunov/saturated fidelity-decay regime; methodology analogy only.)
+
+### SRC-054 — DTC rigidity and criticality theory (v0.4, AR-019; verify)
+Yao, N. Y.; Potter, A. C.; Potirniche, I.-D.; Vishwanath, A. **Discrete Time Crystals: Rigidity, Criticality, and Realizations.** *Phys. Rev. Lett.* 118, 030401 (2017). https://arxiv.org/abs/1608.02589 . (Phase-diagram/melting companion to the verified SRC-044 protocol. Caution of record: a 2021 Comment, arXiv:2109.00551, disputed aspects of the phase diagram; Reply arXiv:2109.07485 — verify pass must record what was conceded.)
+
+### SRC-055 — Finite-size drift of the MBL critical disorder (v0.4, AR-019; verify)
+Šuntajs, J.; Bonča, J.; Prosen, T.; Vidmar, L. **Quantum Chaos Challenges Many-Body Localization.** *Phys. Rev. E* 102, 062144 (2020). (arXiv ID unconfirmed recollection: 1905.06345 — check. Methodology analogy: threshold-location estimators drift with system size.)
+
+### SRC-056 — Avalanche instability of localization thresholds (v0.4, AR-019; verify)
+De Roeck, W.; Huveneers, F. **Stability and Instability Towards Delocalization in Many-Body Localization Systems.** *Phys. Rev. B* 95, 155129 (2017). (arXiv ID unconfirmed recollection: 1608.01815 — check.)
+
+### SRC-057 — Regression-based dose–response guidance (v0.4, AR-019; verify)
+OECD. **Current Approaches in the Statistical Analysis of Ecotoxicity Data: A Guidance to Application.** OECD Series on Testing and Assessment No. 54 (2006). DOI: 10.1787/9789264085275-en . (NOEC-vs-ECx methodology; NOEC is the structural analog of λ*-style grid thresholds.)
+
+### SRC-058 — Dissent in the NOEC/ECx debate (v0.4, AR-019; verify)
+Green, J. W. (author initials unconfirmed — check). **The Drive to Ban the NOEC/LOEC in Favor of ECx Is Misguided and Misinformed.** *Integr. Environ. Assess. Manag.* 9, 12–16 (2013). DOI: 10.1002/ieam.1367 . (Recorded so the AR-019 methodology analogy carries its own adversarial counterpart.)
+
 ---
 
 # Q. Changelog v0.1 → v0.2
@@ -499,3 +521,10 @@ Swingle, B. **Entanglement Renormalization and Holography.** *Phys. Rev. D* 86, 
 2. TH-033: added the no-go's scope condition (not-too-long-range interactions) and the verified TTSB-definition/witness content; companion sources (Choi, Mi) remain unverified leads.
 3. TH-037: added verified equation locations (SRC-049 eqs. 9, 13, 14, 23–25) and author-stated caveats.
 4. Effect: Track E3's G1 scope (KB-005 §4) is cleared; TH-033/TH-037 may be cited as load-bearing by AR-009/AR-010.
+
+---
+
+# S. Changelog v0.3 → v0.4
+
+1. Added SRC-052..058 (AR-019 robustness-instrument survey, 2026-08-12), all flagged `verify`: fidelity/Loschmidt-echo decay (SRC-052, SRC-053), DTC rigidity theory with Comment/Reply caution (SRC-054), MBL threshold finite-size fragility (SRC-055, SRC-056), dose–response NOEC/ECx methodology with recorded dissent (SRC-057, SRC-058). All are methodology-analogy sources for AR-009 criterion (b); none is load-bearing for a physics claim. Evidence: `ar/AR-019_note-2026-08-12_robustness-instruments.md`.
+2. No TH-* changes.

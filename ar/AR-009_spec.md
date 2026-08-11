@@ -449,6 +449,30 @@ scaling is reported descriptively (no extrapolation claims — scope wall §7).
   curves). Adoption requires a dated amendment here, valid only before
   confirmatory runs begin.
 - Open: G0 owner review of the v0.2 substrate (separate gate; still
-  pending) — AR-010 licensing requires it.
+  pending) — AR-010 licensing requires it. *(Resolved 2026-08-11: G0
+  PASSED at owner review; AR-010 licensed — KB-005 §21. Annotated
+  2026-08-12; no content change.)*
 - Open: decide whether T-C at N = 14 (Krylov) is worth the budget after
   first N = 12 results (amendment if yes).
+- **2026-08-12 — AR-019 outcome (instrument-upgrade window exercised;
+  no change).** AR-019 ran (EXPLORE; evidence:
+  `ar/AR-019_note-2026-08-12_robustness-instruments.md`), surveying
+  fidelity/Loschmidt-echo decay classes, DTC rigidity/critical-strength
+  protocols, MBL stability analyses, and dose–response calibration
+  methodology (SRC-052..058, flagged verify). Recommendation of record:
+  **keep** — the §5.2 log-ratio primary and every preregistered threshold
+  stand unchanged; this entry alters no preregistered content.
+  Grounds: (i) the pilot's exploratory λ*/γ* were grid-censored (λ* at
+  grid min for 6/7 groups, γ* for 7/7, under the superseded ε_Φ = 0.05)
+  and λ* is criterion-derived — its meaning shifted under Amendment 3.1
+  while log ρ did not; (ii) threshold-location estimators are
+  finite-size-fragile in the analogous literatures (MBL W_c drift;
+  NOEC/ECx critique — NOEC is λ*'s structural analog); (iii) curve-style
+  instruments already live where this spec can afford them (T-B h_sub(ε),
+  confirmatory; §5.2.1 λ*/γ* curves, descriptive). Framing rider for the
+  confirmatory write-up: criterion-(b) conclusions are statements at the
+  calibrated strengths (λ = 0.1, γ = 0.01), not strength-independent
+  class properties (fidelity-decay regime structure, SRC-052/053).
+  Follow-up candidate (separate AR, only if (b) is positive): strength-grid
+  decay-rate-law analysis. The upgrade window formally closes when
+  confirmatory runs begin.
