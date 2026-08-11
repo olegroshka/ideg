@@ -19,7 +19,7 @@ OUT = Path(__file__).resolve().parent.parent / "results" / "AR-010"
 MAN = json.loads((OUT / "manifest.json").read_text())
 
 groups = {}
-for f in sorted(OUT.glob("pilot_*.json")):
+for f in sorted(OUT.glob("pilot_T*.json")):
     data = json.loads(f.read_text())
     groups.update(data["groups"])
 

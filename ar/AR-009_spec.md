@@ -141,7 +141,12 @@ window mean D̄ and the drift
 
   δΦ(t) = ‖D(t) − D̄‖_F / ‖D̄‖_F .
 
-Φ is **stationary** on 𝒲 iff max_{t∈𝒲} δΦ(t) < ε_Φ = 0.05. Report also the
+Φ is **stationary** on 𝒲 iff max_{t∈𝒲} δΦ(t) < ε_Φ = 0.25 *(amended from
+0.05, 2026-08-11, §8 Amendment 3: the pilot measured the construction's
+finite-size fluctuation floor at N = 10 — chaotic-class baselines
+0.11–0.22 — placing the original value below the noise floor of every
+dynamical class; 0.25 sits above that floor and below genuine
+Φ-motion, quasiperiodic/integrable 0.32–1.2)*. Report also the
 fitted linear drift slope of δΦ(t) with bootstrap CI. The transient
 t < t_eq = 20 is excluded by design (equilibration is not the claim under
 test; the claim is about the persistent regime).
@@ -405,6 +410,39 @@ scaling is reported descriptively (no extrapolation claims — scope wall §7).
   Chaotic (⟨r⟩ = 0.5295, reflection-even sector), localized (⟨r⟩ = 0.382),
   and DTC (20/20 subharmonic) checks passed as preregistered, unchanged.
   No confirmatory run had been executed at amendment time.
+- **2026-08-11 — Amendment 3 (pre-confirmatory; §5.2.1 pilot outcomes,
+  owner-reviewed).** Calibration pilot complete (7 groups × 5 runs,
+  N = 10, manifest-committed seeds; results/AR-010/). Rulings and records:
+  1. **ε_Φ: 0.05 → 0.25** (§2). Pilot evidence: baseline max δΦ — fixed
+     point 0.000; chaotic 0.114–0.127; scrambling 0.115–0.218; localized
+     0.204–0.338; metastable 0.540–0.623; quasiperiodic 0.741–1.211;
+     integrable 0.319–1.001. The original 0.05 lay below the −log-weight
+     construction's finite-size fluctuation floor (cap diagnostic confirmed
+     the chaotic floor is genuine graph-wide fluctuation, not cap noise),
+     making stationarity unattainable for every dynamical class at N = 10 —
+     an instrument artifact the pilot existed to catch. Under 0.25:
+     chaotic/scrambling = stationary-with-witness (the BH-004 candidate
+     regime); quasiperiodic/integrable = genuinely moving; localized
+     straddles (size-scaling adjudicates); metastable is artifact-dominated
+     (near-product state: above x > 10⁻² its MI graph is empty — recorded,
+     cap-diagnostic reporting mandatory for this class).
+  2. **Confirmatory strengths (the §5.2.1 output): λ = 0.1, γ = 0.01.**
+     Owner override of the analysis script's mechanical grid-edge pick
+     (λ = 0.2, γ = 0.03): discrimination saturates by γ = 0.01 (chaotic
+     +2.2 vs quasiperiodic −0.26 on log ρ) with smaller Trotter error and
+     non-degenerate retention; λ = 0.1 resolves the fixed-point comparator.
+  3. Pilot findings of record: dephasing response is monotone and
+     class-ordered (chaotic/scrambling ≫ localized > integrable >
+     metastable > quasiperiodic, the last two *negative* — dephasing
+     stabilizes genuinely-oscillating Φ, an early sustained-by signature);
+     quench protocol is null for all dynamical classes at every grid λ
+     (expectation recorded — its confirmatory role is comparator only);
+     W1 (PR_A, 10⁻³ bins) cannot resolve the metastable doublet splitting
+     (reads ≈ 1) — W4 (Ξ = 0.50) carries that class's separation, witness
+     redundancy intact; exploratory failure thresholds λ*/γ* recorded in
+     results/AR-010/pilot_summary.json.
+  4. Pilot data remain exploratory and are excluded from confirmatory
+     statistics; no confirmatory run had been executed at amendment time.
 - **Instrument-upgrade window:** AR-019 (queued in KB-005 §6, advisory,
   non-blocking) may propose a better criterion-(b) instrument by analogy
   (fidelity/Loschmidt-echo decay classes; SRC-044-style critical-strength
