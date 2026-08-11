@@ -6,7 +6,8 @@ title: Toy-model family specification (Track E3, first deliverable)
 mode: FORMALIZE
 parent: BH-004, HYP-009
 priority: P0
-inputs: [KB-004 §4 BH-004, KB-005 §7, TH-033, TH-037, CON-034, CON-035, CON-036]
+inputs: [KB-004 §4 BH-004, KB-005 §7, TH-033, TH-037, CON-034, CON-035, CON-036,
+         ar/AR-015_partial-2026-08-11_trackE3-G1.md]
 question: >
   What exact models, observables, witnesses, comparators, and pass/fail
   thresholds adjudicate BH-004: stationary emergent geometry from witnessed,
@@ -16,70 +17,329 @@ deliverable: this document, reviewable standalone before any AR-010 code
 promotion_effect: AR-010 implementation licensed against this spec
 kill_effect: if no well-posed witness/comparator scheme exists, BH-004 returns
   to FORMALIZE with the obstruction recorded
-status: PLANNED
+status: DONE (spec drafted 2026-08-11; owner review required before AR-010
+  licensing — G0 owner review still pending)
 ```
 
 > **Preregistration rule:** every metric, threshold, and comparison below is
-> fixed before AR-010 runs. Post-hoc additions are recorded as amendments with
-> dates and reasons, and analysed separately (exploratory, not confirmatory).
+> fixed before AR-010 runs. Post-hoc additions are recorded as amendments in
+> §8 with dates and reasons, and analysed separately (exploratory, not
+> confirmatory).
+>
+> **G1 note:** TH-033 and TH-037, the two load-bearing external inputs, were
+> primary-source verified 2026-08-11 (AR-015 partial packet). TH-034/TH-035
+> are *framing only* in this spec and carry no load.
+
+## 0. Conventions
+
+- All models are chains of qubits (spin-1/2), open boundary conditions,
+  ħ = 1, J = 1 sets the unit of energy and time (t in units of 1/J).
+- **Clock declaration (CON-035, INV-R-009):** all dynamics below uses an
+  **external lab clock** (type 1), admissible for toy models and scope-noted:
+  no OL-4 conclusion may inherit this clock; the OL-4 caveat of NC-010
+  stands. T-B's drive period T defines a second, stroboscopic clock derived
+  from the same external clock.
+- "Microstate" X(t) = the pure state |ψ(t)⟩ (or ρ(t) where a channel is
+  specified). "Emergent-geometry functional" Φ[X] is defined in §2 only.
+- Energy eigenbasis {|n⟩, E_n} always refers to the model's Hamiltonian H
+  (for T-B: the Floquet operator U_F and its quasienergies).
 
 ## 1. Models
 
 ### T-A — Closed finite quantum system
-- Hilbert space / system size N: __ (target: __ qubits; justify tractability)
-- Hamiltonian classes:
-  - (i) fixed point: __
-  - (ii) quasiperiodic (few incommensurate gaps): __
-  - (iii) chaotic (random-matrix class): __
-  - (iv) metastable / code subspace: __
-- Initial-state ensembles per class: __
-- Clock: external lab clock (scope-noted; OL-4 caveat recorded per CON-035)
+- **Sizes:** N = 10 primary; N = 8, 12 for size-scaling checks. Exact
+  diagonalization is tractable to N = 12 dense (dim 4096); N = 14 via
+  Krylov only if a specific check demands it (amendment required).
+- **Hamiltonian classes** (all standard models; no literature metadata is
+  load-bearing — each class carries a preregistered spectral sanity check
+  in §6.3 instead of a citation):
+  - **(i) fixed point:** transverse-field Ising chain,
+    H = −Σᵢ σᶻᵢσᶻᵢ₊₁ − g Σᵢ σˣᵢ with g = 1.5 (gapped, nondegenerate ground
+    state). Initial state: the ground state. Dynamics: global phase only.
+    This class doubles as the **null comparator** of §4.4.
+  - **(ii) quasiperiodic:** XX chain, H = Σᵢ (σˣᵢσˣᵢ₊₁ + σʸᵢσʸᵢ₊₁)/2.
+    Initial states: normalized superpositions of m = 3 single-magnon
+    eigenstates whose two independent Bohr frequencies have ratio
+    verified irrational to tolerance (no rational p/q with q ≤ 50 within
+    10⁻³). Motion: quasiperiodic on a 2-torus.
+  - **(iii) chaotic:** mixed-field Ising chain,
+    H = Σᵢ σᶻᵢσᶻᵢ₊₁ + h_x Σᵢ σˣᵢ + h_z Σᵢ σᶻᵢ, (h_x, h_z) = (0.9045, 0.8090).
+    Initial states: Haar-random product states. Sanity check §6.3 (GOE
+    level statistics) guards the class label; parameters may be amended
+    only via §8 if the check fails.
+  - **(iv) metastable / code subspace:** ferromagnetic Ising with weak
+    transverse field, H = −Σᵢ σᶻᵢσᶻᵢ₊₁ − g Σᵢ σˣᵢ, g = 0.05: quasi-degenerate
+    ground doublet (GHZ-like sector, splitting exp. small in N). Initial
+    state: |↑…↑⟩ (superposition of the doublet). Motion: slow coherent
+    rotation inside the doublet + small transverse dressing.
+- **Ensembles:** 20 initial states per class (class (i): the single ground
+  state, 20 trivially identical runs collapse to 1; class (ii): 20 random
+  triples of magnon modes meeting the incommensurability test; class (iii):
+  20 Haar product states; class (iv): the fixed initial state with 20
+  weak-disorder dressings of H, δg_i uniform in [−0.01, 0.01]).
 
 ### T-B — Driven / Floquet system
-- Drive protocol and period: __
-- DTC regime parameters (TH-033 template): __
-- Subharmonic witness definition: __
+- **Size:** N = 10; disordered, 20 disorder realizations.
+- **Drive (period T = t₁ + t₂):** stroboscopic two-part Floquet unitary
+  U_F = exp(−i H₂ t₂) · exp(−i H₁ t₁), modeled on the verified TH-033
+  template (SRC-043 definition; SRC-044 realization):
+  - H₁ = (π/2)(1 − ε) Σᵢ σʸᵢ with t₁ = 1 (imperfect global π-flip;
+    ε is the drive perturbation),
+  - H₂ = Σᵢ Jᵢ σᶻᵢσᶻᵢ₊₁ + Σᵢ hᵢ σᶻᵢ with t₂ = 1, Jᵢ uniform in [0.05, 0.15]π,
+    hᵢ uniform in [0, π] (strong disorder → MBL regime).
+- **Regimes:** DTC regime ε ∈ {0.03, 0.06, 0.10}; comparator regimes:
+  (r1) no interactions (Jᵢ = 0; fine-tuned, peak splits ∝ ε — not a DTC),
+  (r2) no disorder (hᵢ = 0, thermalizing).
+- **Subharmonic witness (verified TH-033 form):** height of the Fourier
+  peak of the stroboscopic magnetization time series ⟨σᶻᵢ(nT)⟩ at
+  ω = ω_drive/2 (period-2T response), site-averaged; plus its **rigidity
+  curve** h_sub(ε) — the DTC phase shows a locked peak for ε below a
+  critical value (ε_c ≈ 0.11 at the SRC-044 parameters; ours will differ,
+  measured not assumed).
+- Initial states: random z-product states, 5 per disorder realization.
 
-### T-C — Interacting spin chain with MI-graph geometry
-- Chain length / boundary conditions: __
-- Dynamics regimes (scrambling / integrable / localized): __
-- Φ[X]: MI-graph metric per TH-037 (SRC-049) — exact construction: __
+### T-C — Interacting spin chain with MI-graph geometry (primary arena)
+- **Sizes:** N = 12 primary, N = 8, 10 scaling; open BC.
+- **Dynamics regimes:**
+  - **scrambling:** mixed-field Ising as in T-A(iii);
+  - **integrable:** XX chain as in T-A(ii);
+  - **localized:** XXZ + random fields,
+    H = Σᵢ (σˣᵢσˣᵢ₊₁ + σʸᵢσʸᵢ₊₁ + Δ σᶻᵢσᶻᵢ₊₁) + Σᵢ hᵢ σᶻᵢ, Δ = 1,
+    hᵢ uniform in [−W, W], W = 8 (deep localized regime); 20 disorder
+    realizations.
+- Initial states: Néel state |↑↓↑↓…⟩ (primary) + 5 random product states
+  per regime/realization.
+- Φ[X] per §2 computed on the natural site factorization (the TH-037
+  caveat that the factorization is *posited* is inherited and recorded as
+  a scope wall in §7).
 
 ## 2. Emergent-geometry functional Φ
-- Definition(s), including graph→distance map and any regularization: __
-- Stationarity criterion for Φ (tolerance ε, time window): __
+
+Exactly the verified TH-037 (SRC-049 §III.2) construction, adapted to a
+chain of single-site factors:
+
+1. From |ψ(t)⟩ (or ρ(t)), compute all single- and two-site reduced density
+   matrices; mutual information I_ij(t) = S_i + S_j − S_ij (von Neumann,
+   natural log).
+2. Normalize x_ij = I_ij / I₀ with I₀ = 2 ln 2 (maximum for a qubit pair).
+3. Graph weights (SRC-049 eq. 13 with the suggested choice Φ(x) = −log x):
+   w_ij(t) = −ln x_ij(t), **regularized**: x_ij values below x_min = 10⁻⁶
+   are set to x_min (weight cap w_max = ln 10⁶ ≈ 13.8); this cap is part of
+   the preregistered definition.
+4. **Distance matrix** D_ij(t) = weighted shortest path over the complete
+   graph on the N sites (SRC-049 eq. 14; Floyd–Warshall).
+5. Φ[X(t)] := D(t) (the full distance matrix — no scalar reduction).
+   Classical MDS embedding (SRC-049 eqs. 23–25) is computed as a
+   **diagnostic only** (dimensionality estimate); no §5 metric depends
+   on it.
+
+**Stationarity criterion (preregistered):** on the analysis window
+𝒲 = [t_eq, t_end] = [20, 200] (units 1/J; T-B: stroboscopic periods
+n ∈ [20, 200]), with samples every Δt = 0.5 (T-B: every period), define the
+window mean D̄ and the drift
+
+  δΦ(t) = ‖D(t) − D̄‖_F / ‖D̄‖_F .
+
+Φ is **stationary** on 𝒲 iff max_{t∈𝒲} δΦ(t) < ε_Φ = 0.05. Report also the
+fitted linear drift slope of δΦ(t) with bootstrap CI. The transient
+t < t_eq = 20 is excluded by design (equilibration is not the claim under
+test; the claim is about the persistent regime).
 
 ## 3. Witnesses (CON-034)
-For each model class, the invariant observable(s) certifying microdynamics:
-- candidates: relative phases, OTOCs, recurrence distance d_phys, spectral
-  gap structure, subharmonic response (T-B)
-- invariance argument for each (what redundancies it survives): __
+
+Each witness is stated with the redundancies it provably survives. A witness
+"fires" when its class-conditional statistic exceeds the null-comparator
+value (class (i)/global-phase evolution) by the §5 margins.
+
+- **W1 — Bohr spectral measure / motion spectrum.**
+  A(ω) = Σ_{m≠n} |c_m|²|c_n|² δ(ω − (E_m − E_n)) for |ψ₀⟩ = Σ c_n |n⟩
+  (T-B: quasienergies of U_F). Statistic: participation ratio
+  PR_A = (Σ_k a_k)² / Σ_k a_k² over binned lines (bin 10⁻³ J).
+  *Invariance:* built from H's spectrum and |c_n|²; invariant under global
+  phase, under any fixed unitary change of computational basis, and under
+  relabeling of subsystems. Silent (PR_A = 1, all weight at ω = 0) iff the
+  state is an eigenstate — exactly the null.
+- **W2 — Recurrence distance.** d_phys(t) = 1 − |⟨ψ(t_eq)|ψ(t)⟩|²
+  on 𝒲; statistics: min over 𝒲 (recurrence depth) and mean.
+  *Invariance:* |·|² kills global phase; unitary basis changes preserve
+  inner products. This is the CON-022 d(X(t+T), X(t)) object.
+- **W3 — OTOC front.** C(r, t) = ½ ⟨|[σᶻ_{i₀+r}(t), σᶻ_{i₀}]|²⟩ with i₀ the
+  chain center, r ∈ {1, …, N−i₀−1}, evaluated in the evolving state.
+  Statistics: saturation value C_sat(r) = mean over the last quarter of 𝒲,
+  and arrival time t*(r) (first crossing of 0.1).
+  *Invariance:* global phase, and covariant under the local-operator class —
+  the §4.3 battery quantifies robustness to the choice of local operator
+  (σᶻ → σˣ, σʸ) and site i₀.
+- **W4 — Off-diagonal energy coherence.** Ξ(ρ) = Σ_{m≠n} |ρ_mn|²
+  (energy eigenbasis; T-B: Floquet eigenbasis). Ξ > 0 iff the state moves
+  nontrivially under H. *Invariance:* spectral decomposition of H is
+  representation-independent; Ξ is invariant under global phase and any
+  fixed basis change. **W4 is the designated discriminator against the
+  stationary-state comparator (§4.1), which has Ξ = 0 identically.**
+- **W5 — Subharmonic response (T-B only).** As defined in §1 T-B; the
+  verified TH-033/SRC-044 witness. *Invariance:* peak location ω_drive/2 is
+  fixed by the drive clock; peak height is invariant under global phase and
+  site relabeling (site-averaged).
+
+**Witness-level ledger (collision rule 15):** all witnesses live at the
+model's OL-0/OL-1 (state and correlation structure) certifying microdynamics
+below the emergent OL-"geometric" functional Φ; the clock is the external
+lab clock throughout (§0); no OL-4 assertion is made or implied.
 
 ## 4. Mandatory comparators and controls
-- **Stationary-state comparator:** construction of an exactly stationary state
-  matched on Φ; the discriminating observable(s): __ (KB-004 §7 item 12)
-- **Switch-off test:** quench protocol; predicted degradation signature of
-  Φ-stationarity if sustained-by holds (CON-036): __
-- **Representation-invariance battery:** basis/gauge/subsystem changes applied
-  to every witness: __
-- **Null comparator:** pure global-phase evolution (NC-009 guard): __
+
+### 4.1 Stationary-state comparator (KB-004 §7 item 12)
+For each dynamical run, construct the **diagonal ensemble**
+ρ̄ = Σ_n |c_n|² |n⟩⟨n| — exactly stationary under H, and matched to the run's
+long-time-averaged Φ by construction (its MI pattern is the time average's).
+Preregistered checks:
+1. **Distinguishability:** W4 separates ρ̄ (Ξ = 0) from ρ(t) (Ξ > 0). If for
+   some class no witness distinguishes the dynamical state from ρ̄ within
+   the §5 margins, the sustained-by claim **fails for that class** (item-12
+   failure), recorded as such.
+2. **Fair-perturbation comparison:** apply the §5(b) robustness protocols
+   identically to ρ(t) and ρ̄. The sustained-by verdict (§5.3) turns on
+   whether robustness differs.
+
+### 4.2 Switch-off test (CON-036 operationalization)
+"Quench the dynamics and record whether Φ-stationarity degrades":
+- **T-A/T-C:** at t_off = 100 (mid-window), dephase the state in the energy
+  eigenbasis (ρ → diag part) — this kills all motion (state exactly
+  stationary thereafter) while preserving the instantaneous time-averaged
+  MI structure. Predicted signature if *sustained-by* holds: the
+  subsequent Φ trajectory departs from the dynamical run's under the §5(b)
+  perturbations (robustness loss). If Φ-stationarity and robustness are
+  unchanged: *compatible-with* verdict for that class.
+- **T-B:** at period n_off = 100, remove the drive (evolve under H₂ alone).
+  Record both W5 collapse and Φ response. (Honest open question,
+  preregistered as such: MBL may hold the MI pattern with the drive off —
+  witness collapse with Φ persistence would be a *compatible-with* result
+  for T-B, and that is a reportable finding, not a failure of the spec.)
+
+### 4.3 Representation-invariance battery
+Applied to every witness statistic and to Φ:
+- global phase e^{iα}|ψ⟩ (α random): all outputs must be bit-identical
+  within numerical tolerance 10⁻¹⁰;
+- fixed random local basis change U = ⊗ᵢ uᵢ applied to state and operators
+  consistently: W1/W2/W4 identical; W3/Φ recomputed with transformed
+  operator/factorization definitions must agree within 10⁻¹⁰;
+- fixed random local basis change applied to the state only (operators
+  kept in the computational basis) — *expected* to change W3 and Φ; the
+  battery records the magnitude as the measure of factorization-dependence
+  (TH-037 caveat made quantitative, reported not thresholded);
+- site relabeling (reflection i → N+1−i): Φ distance matrices must map
+  accordingly; site-averaged statistics identical.
+
+### 4.4 Null comparator (NC-009 guard)
+Class (i): eigenstate under global-phase evolution. Preregistered
+requirement: **every** witness is silent (W1: PR_A = 1; W2: d_phys ≡ 0;
+W3: C(r, t) time-independent; W4: Ξ = 0) while Φ is exactly stationary.
+Any witness that fires on the null is discarded as a CON-034 candidate
+(this is the "witness must vanish if the oscillation stops" clause).
 
 ## 5. Success / failure metrics (preregistered)
-- (a) witness separates dynamical classes: statistic __, threshold __
-- (b) robustness differential: perturbation/noise/subsystem-loss protocols __,
-  effect measure __, threshold __
-- Outcomes and their KB effects:
-  - (a) and (b) hold → BH-004 supported in-model; BH-005 licensed
-  - (a) holds, (b) null → paper reports clean null on the novel question
-  - (a) fails → witness scheme returns to FORMALIZE; recorded negative
+
+### 5.1 (a) Witness separates dynamical classes
+Statistic: for each witness statistic s ∈ {PR_A, min d_phys, C_sat(r_max),
+t*(r_max), Ξ} and each pair of T-A classes (and each pair of T-C regimes),
+the two-sample AUC over the ensemble (20 runs/class).
+**Threshold:** (a) holds iff for every class pair there exist ≥ 2 witness
+statistics with AUC ≥ 0.95 (complete or near-complete separation), at both
+N = 10 and N = 12 (T-C; N = 8 and 10 for T-A if 12 is infeasible in
+budget). Ordinal sanity predictions (preregistered, non-binding on (a)):
+PR_A ≈ 1 (i) < PR_A ∈ [2, 12] (ii) ≪ PR_A (iii); class (iv) shows a
+single dominant low-frequency line; C_sat larger and t* shorter for
+scrambling than integrable; localized shows frozen C(r, t) for r ≳ ξ.
+
+### 5.2 (b) Robustness differential of Φ-stationarity
+Perturbation protocols (each applied within 𝒲, all classes/regimes):
+1. **Hamiltonian quench:** add λ σᶻ_{i₁} at random site i₁, λ = 0.05, from
+   t_p = 100 onward;
+2. **Dephasing noise:** local σᶻ dephasing channel, rate γ = 0.01, from
+   t_p = 100 (density-matrix evolution; N ≤ 10 for this protocol);
+3. **Subsystem loss:** trace out k = 2 random non-adjacent sites at
+   t_p = 100; recompute Φ on the reduced (N−2)-site graph, compared to the
+   unperturbed run's Φ restricted to the same sites.
+Effect measure per run: retention R = 1 − [max_{t > t_p} δΦ(t) −
+max_{t > t_p} δΦ_unpert(t)]₊ clipped to [0, 1] (1 = perturbation caused no
+extra drift; 0 = drift grew by ≥ 1 in normalized units).
+**Threshold:** (b) holds iff for ≥ 1 protocol, at least one pair of classes
+has |R̄_class1 − R̄_class2| > 0.2 with disjoint bootstrap 95% CIs
+(1000 resamples over the ensemble), replicated at both system sizes.
+
+### 5.3 Sustained-by adjudication (CON-036, per class)
+*Sustained-by* is affirmed for a class iff **both**:
+1. witnesses distinguish the dynamical state from the stationary comparator
+   (§4.1 check 1 passes), **and**
+2. the dynamical run's robustness R̄ differs from its diagonal-ensemble
+   comparator's under ≥ 1 protocol (disjoint 95% CIs), or the switch-off
+   test (§4.2) shows Φ-drift increase with disjoint CIs after t_off.
+Otherwise the class verdict is *compatible-with* (Φ-stationarity does not
+depend on the motion) — recorded as a first-class result.
+
+### 5.4 Outcomes and their KB effects
+- (a) and (b) hold → BH-004 supported in-model; BH-005 licensed
+  (KB-004 §4); HYP-009 geometric part gains its first model realization.
+- (a) holds, (b) null → paper reports a clean null on the novel question
+  (robustness differential); BH-004 partially supported (witnessed
+  stationarity exists; class-independence of robustness is the finding).
+- (a) fails → witness scheme returns to FORMALIZE; recorded negative
+  (SC-005).
+- All classes *compatible-with* under §5.3 → BH-004's sustained-by clause
+  fails in this family; KC-007 pressure on HYP-009 recorded; census
+  (AR-015) becomes the lead deliverable per KB-005 §13.
 
 ## 6. Analysis plan
-- Estimators, error bars, seeds, number of disorder/ensemble realizations: __
-- Compute budget and size-scaling checks: __
+
+### 6.1 Estimators and statistics
+Ensembles as in §1 (20 runs per class/regime; disordered models: 20
+realizations × 5 initial states, analysed with realization as the
+resampling unit). All CIs: nonparametric bootstrap, 1000 resamples, 95%,
+BCa where the estimator is a mean. AUCs computed exactly (Mann–Whitney).
+No p-values; separation criteria are AUC/CI-based as preregistered above.
+
+### 6.2 Numerics
+Exact diagonalization (dense) to N = 12; time evolution via
+eigendecomposition (T-A/T-C) and repeated U_F application (T-B);
+density-matrix evolution only for protocol 2 (N ≤ 10). Tolerances:
+unitarity/trace drift < 10⁻¹⁰ per run (checked). Seeds: all RNG seeded;
+seed list fixed in the AR-010 run manifest before execution.
+Language: Python 3.12 + NumPy/SciPy (src/ideg); no GPU required.
+Compute budget: ≤ 200 CPU-hours total; any overrun → §8 amendment.
+
+### 6.3 Class-label sanity checks (run before confirmatory analysis)
+- (iii)/scrambling: mean level-spacing ratio ⟨r⟩ ∈ [0.51, 0.55]
+  (GOE ≈ 0.531) in the zero-magnetization sector where applicable;
+- (ii)/integrable: ⟨r⟩ ∈ [0.36, 0.42] (Poisson ≈ 0.386);
+- localized: ⟨r⟩ ∈ [0.36, 0.42] at W = 8;
+- T-B DTC regime: subharmonic peak present at ε = 0.03 in ≥ 18/20
+  realizations.
+A failed check stops confirmatory runs for that class; parameters are
+amended via §8, never silently.
+
+### 6.4 Size scaling
+Every §5 threshold is evaluated at two sizes (§5.1/5.2). Direction-of-effect
+must agree across sizes for a criterion to count as "replicated"; magnitude
+scaling is reported descriptively (no extrapolation claims — scope wall §7).
 
 ## 7. Non-goals and scope walls
-- No claim T-A/B/C are gravity; no OL-4 conclusions beyond model realization
-  (collision rule 10; KB-005 §7 non-goals).
+- No claim that T-A/B/C are gravity; no OL-4 conclusions beyond "the
+  pattern does/does not have a nontrivial model realization" (collision
+  rule 10; KB-005 §7 non-goals).
+- The site factorization defining Φ is *posited*, inheriting SRC-049's
+  stated caveat; the §4.3 battery measures, and the paper reports,
+  factorization-dependence rather than claiming it away.
+- The external lab clock is scope-noted (§0); nothing here bears on
+  NC-010's OL-4 clock problem.
+- MDS embeddings are illustrative diagnostics only.
+- TH-034/TH-035 are framing, not load; they remain verification-pending.
 
 ## 8. Open items / amendments log
-- __
+- 2026-08-11: spec drafted (this document). Amendments: none yet.
+- Open: owner review of all preregistered thresholds (ε_Φ = 0.05, AUC ≥
+  0.95, R-differential > 0.2, protocol parameters λ, γ, k, windows) before
+  AR-010 is licensed. These were set by judgment, not derived; changing
+  them before any run is free; changing them after runs begin requires an
+  amendment entry here.
+- Open: decide whether T-C at N = 14 (Krylov) is worth the budget after
+  first N = 12 results (amendment if yes).

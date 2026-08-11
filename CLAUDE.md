@@ -75,7 +75,13 @@ results/     run outputs, figures, serialized data (gitignored where large)
 
 ## Current state (update this block when it changes)
 
-- Substrate version: v0.2 (2026-08-11), G0 pending owner review.
-- First deliverable (ADR-002): Track E3 toy-model family — AR-009 spec next.
-- Second deliverable: AR-015 cross-level census (runs in chat sessions).
-- Next session target: **AR-009** (FORMALIZE) → `ar/AR-009_spec.md`.
+- Repo: https://github.com/olegroshka/ideg (private), created 2026-08-11.
+- Substrate versions: KB-001/002/004 v0.2, KB-003/005 v0.3 (2026-08-11).
+  G0 owner review still pending.
+- Track E3 G1 scope **cleared** (SRC-042..044, SRC-049 verified —
+  `ar/AR-015_partial-2026-08-11_trackE3-G1.md`).
+- **AR-009 spec drafted** (`ar/AR-009_spec.md`, status DONE) — owner review
+  of preregistered thresholds gates AR-010.
+- AR-015 census: RUNNING (first partial done).
+- Next session target: owner review of AR-009 spec, then **AR-010**
+  (EXPERIMENT) — or AR-015 continuation if review is offline.

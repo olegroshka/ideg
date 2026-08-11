@@ -4,7 +4,7 @@ title: "IDEG Research Program — Agentic Protocol, Phases, Gates, and Backlog"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-11
-version: 0.2
+version: 0.3
 research_layer: R4
 epistemic_status: NOT_APPLICABLE
 sources:
@@ -14,6 +14,7 @@ referenced_by: []
 changelog:
   - "0.1: initial program, AR-001..014, gates G0–G6 (Sol/ChatGPT, 2026-08-11)"
   - "0.2: review revision (Claude, 2026-08-11) — see §18"
+  - "0.3: Track E3 G1 cleared; AR-009 spec drafted (DONE, owner review pending); AR-015 partial packet recorded (Claude, 2026-08-11) — see §19"
 ---
 
 # Research Program and Agentic Protocol
@@ -83,7 +84,7 @@ Phase G  Iteration           G6: next-cycle decision recorded (ADR)
 ### Gate definitions (v0.2 revisions marked)
 
 - **G0 — Foundation gate.** KB-001..005 internally consistent; ID references resolve; ADR-001/ADR-002 recorded. *(Met by the v0.2 revision itself, pending owner review.)*
-- **G1 — Verification gate (rescoped).** v0.1 required verifying the full TH catalogue before proceeding — a multi-month serial bottleneck. **v0.2:** G1 is satisfied per-workstream: a workstream may pass its own G1 when the TH-*/SRC-* entries **it actually cites** are primary-source verified. Track E3 cites TH-033, TH-037 (+ optionally TH-034/035 for framing): that is its G1 scope. Full-landscape verification proceeds in parallel (AR-002 series) without blocking model work.
+- **G1 — Verification gate (rescoped).** v0.1 required verifying the full TH catalogue before proceeding — a multi-month serial bottleneck. **v0.2:** G1 is satisfied per-workstream: a workstream may pass its own G1 when the TH-*/SRC-* entries **it actually cites** are primary-source verified. Track E3 cites TH-033, TH-037 (+ optionally TH-034/035 for framing): that is its G1 scope. Full-landscape verification proceeds in parallel (AR-002 series) without blocking model work. **(v0.3) Track E3's G1 scope cleared 2026-08-11:** SRC-042..044 + SRC-049 verified (AR-015 partial, `ar/AR-015_partial-2026-08-11_trackE3-G1.md`); TH-034/035 remain framing-only pending their own verification.
 - **G2 — Synthesis gate (rescoped).** Seam-skeleton search (AR-012) scoped to TH-* clusters cited by P0/P1 items, not the entire matrix.
 - **G3 — Formalization gate.** At least one BH-* completed in the KB-004 §6 template, survived one ADVERSARIAL run.
 - **G4 — Model gate (promoted).** The Track E3 toy-model family has produced recorded results — positive, negative, or mixed — sufficient to adjudicate BH-004's question. **v0.2: G4 work begins immediately after Track E3's G1 scope clears; it does not wait for G2/G3.** (Phases are now partially concurrent by design; the gate letters index deliverables, not a serial calendar.)
@@ -141,7 +142,7 @@ Phase G  Iteration           G6: next-cycle decision recorded (ADR)
 `mode: EXPLORE` · `parent: HYP-006` · `priority: P1` · Where does the redistribution picture have evidence beyond AdS (moving mirrors, ensemble models, flat-space toy models)?
 
 ### AR-009 — Toy-model family specification *(rewritten v0.2)*
-`mode: FORMALIZE` · `parent: BH-004, HYP-009` · `priority: P0` · Produce the full specification of the Track E3 family (§7 below): state spaces, dynamics classes, coarse-graining maps, \(\Phi\) functionals, witnesses, clocks, null comparators, success/failure metrics, and preregistered analysis plan. Deliverable: a spec document reviewable before any code runs (lookahead discipline: metrics fixed before results).
+`mode: FORMALIZE` · `parent: BH-004, HYP-009` · `priority: P0` · Produce the full specification of the Track E3 family (§7 below): state spaces, dynamics classes, coarse-graining maps, \(\Phi\) functionals, witnesses, clocks, null comparators, success/failure metrics, and preregistered analysis plan. Deliverable: a spec document reviewable before any code runs (lookahead discipline: metrics fixed before results). **(v0.3) Status: DONE 2026-08-11 — spec drafted at `ar/AR-009_spec.md`; owner review of preregistered thresholds required before AR-010 is licensed.**
 
 ### AR-010 — Toy-model implementation and runs
 `mode: EXPERIMENT` · `parent: BH-004` · `priority: P0` · Implement and run the family; negative results recorded with equal care.
@@ -164,6 +165,7 @@ Phase G  Iteration           G6: next-cycle decision recorded (ADR)
 **Deliverable:** the census table + verified metadata for SRC-042..051 + a canonical QNM review selected for the reserved SRC slot + a sharply posed statement of the open OL-4 rung.
 **Promotion_effect:** HYP-009 sub-geometric part confirmed `GROUNDED` with complete evidence chain; census paper drafted (M2).
 **Kill_effect:** if instances collapse to compatible-with everywhere, HYP-009 downgraded per KC-007 — recorded as a substantive negative result.
+**(v0.3) Progress:** partial packet 2026-08-11 (`ar/AR-015_partial-2026-08-11_trackE3-G1.md`): SRC-042..044 + SRC-049 verified as warm-up remediation for AR-009 (KB-005 §17). Status: RUNNING.
 
 ### AR-016 — Phase–gravity coupling audit *(new v0.2)*
 `mode: VERIFY` · `parent: BH-007, TH-035, RQ-008` · `priority: P1` ·
@@ -308,3 +310,12 @@ Deltas are applied in dependency order (KB-002 definitions → KB-003 theory →
 8. Added §13 portfolio rule and BH-004-failure branch; added §14 sociology-aware publication strategy (venue class, endorsement constraints, HYP-000 referee test).
 9. Recorded ADR-001/002 as decided; renumbered open candidates ADR-003..008, adding E (HYP-008 priority) and F (second model generation).
 10. Revised milestones: M1 = toy-model paper (was: landscape verification), M2 = census; updated warm-up prompt to v0.2 with intent-chain check.
+
+---
+
+## 19. Changelog v0.2 → v0.3
+
+1. §4 G1: Track E3's G1 scope recorded as cleared 2026-08-11 (SRC-042..044, SRC-049 verified; AR-015 partial packet).
+2. §6 AR-009: status DONE — full spec drafted at `ar/AR-009_spec.md` (models T-A/T-B/T-C concretized; Φ per verified TH-037 eqs. 13–14; witness battery W1–W5 with invariance arguments; stationary-state comparator, switch-off, representation, and null controls; preregistered thresholds; analysis plan). Owner review of thresholds gates AR-010.
+3. §6 AR-015: status RUNNING; first partial packet recorded (warm-up remediation for AR-009 per §17).
+4. Process note: the §17 warm-up check fired as designed on this session's first target (unverified load-bearing sources) and was resolved by an in-session VERIFY partial before FORMALIZE work.

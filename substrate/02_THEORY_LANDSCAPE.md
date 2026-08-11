@@ -4,16 +4,17 @@ title: "IDEG Theory Landscape and Canonical Bibliography"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-11
-version: 0.2
+version: 0.3
 research_layer: R2
 epistemic_status: MIXED
 sources:
-  - "Primary literature registry SRC-001..SRC-051 below; SRC-001..035 metadata checked 2026-08-11; SRC-036..051 added v0.2, metadata VERIFICATION PENDING (AR-017/AR-015)"
+  - "Primary literature registry SRC-001..SRC-051 below; SRC-001..035 metadata checked 2026-08-11; SRC-042..044 + SRC-049 verified 2026-08-11 (AR-015 partial, Track E3 G1); SRC-036..041, 045..048, 050..051 metadata VERIFICATION PENDING (AR-017/AR-016/AR-015/AR-002d)"
 depends_on: [KB-001, KB-002]
 referenced_by: [KB-004, KB-005]
 changelog:
   - "0.1: initial landscape, sections A–N, TH-001..028, SRC-001..035 (Sol/ChatGPT, 2026-08-11)"
   - "0.2: review revision (Claude, 2026-08-11) — see §Q"
+  - "0.3: Track E3 G1 verification reconciled (Claude, 2026-08-11) — SRC-042..044, SRC-049 verified; TH-033 no-go scope condition added; TH-037 equation locations added; see ar/AR-015_partial-2026-08-11_trackE3-G1.md"
 ---
 
 # Theory Landscape and Canonical Bibliography
@@ -224,8 +225,8 @@ Connes–Rovelli: in generally covariant theories, a state's modular automorphis
 > These entries ground OBS-004 / HYP-009. They are **not** gravity results; scope walls apply (collision rule 10). Their role is to establish that (a) the persistence-through-dynamics pattern has E2–E4 instances at several OL levels and (b) the invariant-witness bar (CON-034) is passable.
 
 ## TH-033 — Time crystals: equilibrium no-go, driven realization
-Watanabe–Oshikawa proved the absence of time-crystalline order in ground/equilibrium states (no-go). Else–Bauer–Nayak defined Floquet (discrete) time crystals; experiments (trapped ions, NV centers; later a quantum processor) observed the phase.
-**Evidence class:** E3 (no-go theorem) + E4 (driven realization). **Sources:** SRC-042, SRC-043, SRC-044 (verification pending).
+Watanabe–Oshikawa proved the absence of time-crystalline order in ground/equilibrium states (no-go), for Hamiltonians with not-too-long-range interactions (scope condition per the source's own statement). Else–Bauer–Nayak defined Floquet (discrete) time crystals (TTSB-1/2 definitions; subharmonic response at half the drive frequency; MBL load-bearing for stability); experiments (trapped ions, NV centers; later a quantum processor) observed the phase — the trapped-ion observation (10 ¹⁷¹Yb⁺ spins, period-2T response, rigidity up to a critical drive perturbation) is verified.
+**Evidence class:** E3 (no-go theorem) + E4 (driven realization). **Sources:** SRC-042, SRC-043, SRC-044 (verified 2026-08-11, AR-015 partial; NV-center and processor companions remain unverified leads).
 **Does not imply:** anything about gravity; driven systems import an external drive/clock.
 **IDEG relevance:** the **witness template**. The subharmonic response is an invariant, measured order parameter — a persistent structure whose defining feature is an oscillation *not removable by representation choice*. This falsifies "oscillation is always a gauge artifact" as a universal claim and calibrates KC-005: the kill test is per-level witness existence. The no-go/realization *pair* also shows exactly what an invariant oscillation costs (here: driving + many-body stabilization).
 
@@ -250,8 +251,8 @@ Perturbed black holes relax through damped characteristic oscillations (quasinor
 # P. Emergent-space constructions from entanglement data (added v0.2)
 
 ## TH-037 — Emergent spatial geometry from mutual-information structure
-Cao–Carroll–Michalakis construct an emergent spatial metric from the entanglement structure of a Hilbert-space state (mutual-information graph → distances), with redundancy/robustness analysis.
-**Evidence class:** E2 explicit construction in a controlled setting. **Source:** SRC-049 (verification pending).
+Cao–Carroll–Michalakis construct an emergent spatial metric from the entanglement structure of a Hilbert-space state (mutual-information graph → distances), with redundancy/robustness analysis. Verified construction (SRC-049 §III): redundancy-constrained states with entropy from a pairwise-MI cut function (eq. 9); graph weights w(p,q) = ℓ·Φ(I(A_p:A_q)/I₀) with suggested Φ(x) = −log x (eq. 13); distance = weighted shortest path (eq. 14); classical MDS embedding (eqs. 23–25). Author-stated caveats: the factorization is posited, not derived; embeddings unique only up to isometry; area-law/short-range-entangled regime; framework has no dynamics/time (§VI).
+**Evidence class:** E2 explicit construction in a controlled setting. **Source:** SRC-049 (verified 2026-08-11, AR-015 partial).
 **IDEG relevance:** a concrete, implementable \(\Phi: X \mapsto \mathcal G\) for CAND-003 and for the Track E3 toy models — lets BH-004 use an off-the-shelf emergent-geometry functional instead of inventing one.
 
 ## TH-038 — Causal sets: discrete order as the primitive of geometry
@@ -446,14 +447,14 @@ Chandrasekaran, V.; Longo, R.; Penington, G.; Witten, E. **An Algebra of Observa
 ### SRC-041 — Thermal time hypothesis (v0.2; verify)
 Connes, A.; Rovelli, C. **Von Neumann Algebra Automorphisms and Time-Thermodynamics Relation in Generally Covariant Quantum Theories.** *Class. Quantum Grav.* 11, 2899 (1994). https://arxiv.org/abs/gr-qc/9406019
 
-### SRC-042 — Time-crystal no-go (v0.2; verify)
-Watanabe, H.; Oshikawa, M. **Absence of Quantum Time Crystals.** *Phys. Rev. Lett.* 114, 251603 (2015). https://arxiv.org/abs/1410.2143
+### SRC-042 — Time-crystal no-go (verified 2026-08-11, AR-015 partial)
+Watanabe, H.; Oshikawa, M. **Absence of Quantum Time Crystals.** *Phys. Rev. Lett.* 114, 251603 (2015). https://arxiv.org/abs/1410.2143 . DOI: 10.1103/PhysRevLett.114.251603
 
-### SRC-043 — Floquet time crystals (v0.2; verify)
-Else, D. V.; Bauer, B.; Nayak, C. **Floquet Time Crystals.** *Phys. Rev. Lett.* 117, 090402 (2016). https://arxiv.org/abs/1603.08001
+### SRC-043 — Floquet time crystals (verified 2026-08-11, AR-015 partial)
+Else, D. V.; Bauer, B.; Nayak, C. **Floquet Time Crystals.** *Phys. Rev. Lett.* 117, 090402 (2016). https://arxiv.org/abs/1603.08001 . DOI: 10.1103/PhysRevLett.117.090402
 
-### SRC-044 — Discrete time crystal observation (v0.2; verify)
-Zhang, J. et al. **Observation of a Discrete Time Crystal.** *Nature* 543, 217 (2017). https://arxiv.org/abs/1609.08684 . (Companion: Choi, S. et al., *Nature* 543, 221 (2017); later processor realization: Mi, X. et al., *Nature* 601, 531 (2022) — add SRC entries if load-bearing.)
+### SRC-044 — Discrete time crystal observation (verified 2026-08-11, AR-015 partial)
+Zhang, J.; Hess, P. W.; Kyprianidis, A.; et al. **Observation of a Discrete Time Crystal.** *Nature* 543, 217–220 (2017). https://arxiv.org/abs/1609.08684 . DOI: 10.1038/nature21413 . (Companions still unverified leads: Choi, S. et al., *Nature* 543, 221 (2017); later processor realization: Mi, X. et al., *Nature* 601, 531 (2022) — add SRC entries if load-bearing.)
 
 ### SRC-045 — Ab initio hadron masses (v0.2; verify)
 Dürr, S. et al. (BMW Collaboration). **Ab Initio Determination of Light Hadron Masses.** *Science* 322, 1224–1227 (2008). DOI: 10.1126/science.1163233
@@ -467,8 +468,8 @@ Wolf, P. et al. **Atom Gravimeters and Gravitational Redshift.** *Nature* 467, E
 ### SRC-048 — Zitterbewegung quantum simulation (v0.2; verify)
 Gerritsma, R. et al. **Quantum Simulation of the Dirac Equation.** *Nature* 463, 68 (2010). https://arxiv.org/abs/0909.0674
 
-### SRC-049 — Space from Hilbert space (v0.2; verify)
-Cao, C.; Carroll, S. M.; Michalakis, S. **Space from Hilbert Space: Recovering Geometry from Bulk Entanglement.** *Phys. Rev. D* 95, 024031 (2017). https://arxiv.org/abs/1606.08444
+### SRC-049 — Space from Hilbert space (verified 2026-08-11, AR-015 partial)
+Cao, C.; Carroll, S. M.; Michalakis, S. **Space from Hilbert Space: Recovering Geometry from Bulk Entanglement.** *Phys. Rev. D* 95, 024031 (2017). https://arxiv.org/abs/1606.08444 . DOI: 10.1103/PhysRevD.95.024031
 
 ### SRC-050 — Causal sets (v0.2; verify)
 Bombelli, L.; Lee, J.; Meyer, D.; Sorkin, R. D. **Space-Time as a Causal Set.** *Phys. Rev. Lett.* 59, 521 (1987).
@@ -489,3 +490,12 @@ Swingle, B. **Entanglement Renormalization and Holography.** *Phys. Rev. D* 86, 
 7. Extended seam matrix with Jacobson-1995, entropic gravity, crossed product, thermal time, MI-graph geometry, internal clocks, time crystals; revised first-pass inference (modular structure × clock junction).
 8. Added SRC-036..051 (all flagged verification-pending); governance rule 6 barring incomplete SRC-034 from formal use.
 9. Reserved an SRC slot for a canonical quasinormal-mode review (AR-015 to select).
+
+---
+
+# R. Changelog v0.2 → v0.3
+
+1. SRC-042, SRC-043, SRC-044, SRC-049 verified against primary records (arXiv/ar5iv/nature.com, 2026-08-11); `verify` flags dropped; DOIs added; SRC-044 page range completed (217–220). Evidence: `ar/AR-015_partial-2026-08-11_trackE3-G1.md`.
+2. TH-033: added the no-go's scope condition (not-too-long-range interactions) and the verified TTSB-definition/witness content; companion sources (Choi, Mi) remain unverified leads.
+3. TH-037: added verified equation locations (SRC-049 eqs. 9, 13, 14, 23–25) and author-stated caveats.
+4. Effect: Track E3's G1 scope (KB-005 §4) is cleared; TH-033/TH-037 may be cited as load-bearing by AR-009/AR-010.
