@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.idea/
+.ipynb_checkpoints/
+results/**/*.npz
+results/**/*.h5
+results/**/*.pkl
+*.egg-info/
+dist/
+build/
