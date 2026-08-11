@@ -1,0 +1,53 @@
+{
+  "chaotic_mixed_field_ising": {
+    "r": 0.5295025747646778,
+    "window": [
+      0.51,
+      0.55
+    ],
+    "pass": true,
+    "sector": "reflection-even",
+    "sector_dim": 528
+  },
+  "integrable_xx": {
+    "free_spectrum_max_dev": 1.2656542480726785e-14,
+    "threshold": 1e-08,
+    "pass": true,
+    "sector": "Sz=0",
+    "sector_dim": 252,
+    "certificate": "many-body = subset sums of single-particle (Amendment 2)"
+  },
+  "localized_xxz_W8": {
+    "r_mean": 0.3818421906961159,
+    "r_each": [
+      0.397354825491693,
+      0.36094704882521184,
+      0.3470398596941234,
+      0.38519344392728433,
+      0.4186757755422672
+    ],
+    "window": [
+      0.36,
+      0.42
+    ],
+    "pass": true,
+    "sector": "Sz=0",
+    "realizations": 5
+  },
+  "dtc_regime_eps0.03": {
+    "present": 20,
+    "of": 20,
+    "required": 18,
+    "pass": true,
+    "peak_mean": 0.9363938779360088,
+    "peak_min": 0.811271967594198,
+    "present_definition": "subharmonic power fraction > 0.5"
+  },
+  "_meta": {
+    "N": 10,
+    "seed": 20260811,
+    "runtime_s": 1.0,
+    "date": "2026-08-11",
+    "spec": "ar/AR-009_spec.md \u00a76.3"
+  }
+}

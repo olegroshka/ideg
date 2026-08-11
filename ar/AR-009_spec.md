@@ -349,7 +349,12 @@ Compute budget: ≤ 200 CPU-hours total; any overrun → §8 amendment.
 ### 6.3 Class-label sanity checks (run before confirmatory analysis)
 - (iii)/scrambling: mean level-spacing ratio ⟨r⟩ ∈ [0.51, 0.55]
   (GOE ≈ 0.531) in the zero-magnetization sector where applicable;
-- (ii)/integrable: ⟨r⟩ ∈ [0.36, 0.42] (Poisson ≈ 0.386);
+- (ii)/integrable (XX): free-spectrum reconstruction — many-body energies
+  in the Sz = 0 sector equal subset-sums of the single-particle hopping
+  spectrum, max abs deviation < 10⁻⁸ *(amended 2026-08-11, §8 Amendment 2:
+  the original Poisson window is a generic-integrability heuristic
+  inapplicable to a free model's additive spectrum; this certificate is
+  strictly stronger)*;
 - localized: ⟨r⟩ ∈ [0.36, 0.42] at W = 8;
 - T-B DTC regime: subharmonic peak present at ε = 0.03 in ≥ 18/20
   realizations.
@@ -389,6 +394,17 @@ scaling is reported descriptively (no extrapolation claims — scope wall §7).
   substance change). Reason: the fixed-strength R measure risked
   criterion (b) returning null by instrument coarseness rather than
   physics (both under- and over-driving failure modes).
+- **2026-08-11 — Amendment 2 (pre-run; AR-010 sanity phase).** §6.3
+  integrable-class certificate replaced. The preregistered Poisson window
+  FAILED as specified for the XX chain (measured ⟨r⟩ = 0.477 in the Sz = 0
+  sector at N = 10) — diagnosis: XX is free; its many-body spectrum equals
+  subset-sums of single-particle energies (verified to 1.3×10⁻¹⁴), so the
+  Poisson heuristic for generic integrable models does not apply. New
+  certificate: free-spectrum reconstruction to < 10⁻⁸ (strictly stronger:
+  proves integrability rather than inferring its absence of chaos).
+  Chaotic (⟨r⟩ = 0.5295, reflection-even sector), localized (⟨r⟩ = 0.382),
+  and DTC (20/20 subharmonic) checks passed as preregistered, unchanged.
+  No confirmatory run had been executed at amendment time.
 - **Instrument-upgrade window:** AR-019 (queued in KB-005 §6, advisory,
   non-blocking) may propose a better criterion-(b) instrument by analogy
   (fidelity/Loschmidt-echo decay classes; SRC-044-style critical-strength
