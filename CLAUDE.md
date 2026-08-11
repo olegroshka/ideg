@@ -89,6 +89,10 @@ results/     run outputs, figures, serialized data (gitignored where large)
   analogy; may upgrade criterion (b) via spec §8 amendment before
   confirmatory runs.
 - AR-015 census: RUNNING (first partial done).
-- Next session target: **AR-010** (EXPERIMENT) — implementation in
-  `src/ideg/` + calibration pilot; AR-019 or AR-015 continuation are the
-  parallel low-intensity options.
+- **AR-010 status:** implementation + tests done; §6.3 sanity ALL PASS
+  (spec Amendment 2); calibration pilot COMPLETE with owner rulings
+  ε_Φ = 0.25, λ = 0.1, γ = 0.01 (spec Amendment 3). See
+  `sessions/2026-08-11_AR-010.md`. **Confirmatory runs NOT started** —
+  they close the AR-019 window when they begin.
+- Next session target (owner-decided 2026-08-12): **AR-019** (EXPLORE,
+  robustness-instrument survey by analogy) — then AR-010 confirmatory.
