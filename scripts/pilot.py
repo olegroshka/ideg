@@ -71,10 +71,15 @@ def build_run(group: str, seed: int, run_idx: int):
 
 
 RUNS = MAN["runs_per_group"]
+# optional CLI arg: run a single group (per-group background execution);
+# each group writes its own pilot_<group>.json, merged at analysis time
+only = sys.argv[1] if len(sys.argv) > 1 else None
+groups_to_run = ({only: MAN["group_seeds"][only]} if only
+                 else MAN["group_seeds"])
 results = {"_manifest": "manifest.json", "groups": {}}
 t_start = time.time()
 
-for group, seeds in MAN["group_seeds"].items():
+for group, seeds in groups_to_run.items():
     runs_out = []
     for run_idx, seed in enumerate(seeds):
         rng = np.random.default_rng(seed + 7)  # protocol randomness stream
@@ -138,6 +143,7 @@ for group, seeds in MAN["group_seeds"].items():
     results["groups"][group] = runs_out
 
 results["_runtime_s"] = round(time.time() - t_start, 1)
-with open(OUT / "pilot_results.json", "w") as f:
+outname = f"pilot_{only}.json" if only else "pilot_results.json"
+with open(OUT / outname, "w") as f:
     json.dump(results, f, indent=2)
-print(f"\npilot complete in {results['_runtime_s']}s -> pilot_results.json")
+print(f"\npilot complete in {results['_runtime_s']}s -> {outname}")

@@ -1,0 +1,293 @@
+{
+  "_manifest": "manifest.json",
+  "groups": {
+    "TA_iii_chaotic": [
+      {
+        "seed": 255881466,
+        "baseline": {
+          "max_delta_phi": 0.12655743233497072,
+          "max_delta_phi_post": 0.12655743233497072,
+          "stationary": false,
+          "pr_A": 5957.383046479338,
+          "xi": 0.9951883678825575
+        },
+        "quench": {
+          "0.02": {
+            "max_delta_phi_pert": 0.1120377657764635,
+            "log_rho": -0.12186020679855758,
+            "retention_R": 1.0,
+            "fails_stationarity": true
+          },
+          "0.05": {
+            "max_delta_phi_pert": 0.11968359382475093,
+            "log_rho": -0.0558446732978783,
+            "retention_R": 1.0,
+            "fails_stationarity": true
+          },
+          "0.1": {
+            "max_delta_phi_pert": 0.13840076310082947,
+            "log_rho": 0.08945734121358988,
+            "retention_R": 0.9881566692341412,
+            "fails_stationarity": true
+          },
+          "0.2": {
+            "max_delta_phi_pert": 0.12512338065757012,
+            "log_rho": -0.01139591993509831,
+            "retention_R": 1.0,
+            "fails_stationarity": true
+          }
+        },
+        "dephasing": {
+          "0.003": {
+            "max_delta_phi_pert": 0.5764418579800525,
+            "log_rho": 1.5161782654735192,
+            "retention_R": 0.5501155743549182,
+            "fails_stationarity": true
+          },
+          "0.01": {
+            "max_delta_phi_pert": 0.9366023085383639,
+            "log_rho": 2.0015625458644446,
+            "retention_R": 0.18995512379660684,
+            "fails_stationarity": true
+          },
+          "0.03": {
+            "max_delta_phi_pert": 1.4829064540717984,
+            "log_rho": 2.4610630456135634,
+            "retention_R": 0.0,
+            "fails_stationarity": true
+          }
+        },
+        "quench_site": 5
+      },
+      {
+        "seed": 1416983642,
+        "baseline": {
+          "max_delta_phi": 0.12029120178475813,
+          "max_delta_phi_post": 0.12029120178475813,
+          "stationary": false,
+          "pr_A": 8166.567538854148,
+          "xi": 0.9974322484673076
+        },
+        "quench": {
+          "0.02": {
+            "max_delta_phi_pert": 0.1301072763794771,
+            "log_rho": 0.07844382839710487,
+            "retention_R": 0.990183925405281,
+            "fails_stationarity": true
+          },
+          "0.05": {
+            "max_delta_phi_pert": 0.12344430133270233,
+            "log_rho": 0.025874568296897705,
+            "retention_R": 0.9968469004520558,
+            "fails_stationarity": true
+          },
+          "0.1": {
+            "max_delta_phi_pert": 0.11941126014539756,
+            "log_rho": -0.00734198209747779,
+            "retention_R": 1.0,
+            "fails_stationarity": true
+          },
+          "0.2": {
+            "max_delta_phi_pert": 0.12152408245298674,
+            "log_rho": 0.010196967944502835,
+            "retention_R": 0.9987671193317714,
+            "fails_stationarity": true
+          }
+        },
+        "dephasing": {
+          "0.003": {
+            "max_delta_phi_pert": 0.5695521653770035,
+            "log_rho": 1.5549348925624267,
+            "retention_R": 0.5507390364077547,
+            "fails_stationarity": true
+          },
+          "0.01": {
+            "max_delta_phi_pert": 0.9012839396153529,
+            "log_rho": 2.0139048615857216,
+            "retention_R": 0.21900726216940525,
+            "fails_stationarity": true
+          },
+          "0.03": {
+            "max_delta_phi_pert": 1.42960583556916,
+            "log_rho": 2.4752385611114907,
+            "retention_R": 0.0,
+            "fails_stationarity": true
+          }
+        },
+        "quench_site": 5
+      },
+      {
+        "seed": 3675305467,
+        "baseline": {
+          "max_delta_phi": 0.11898844909817351,
+          "max_delta_phi_post": 0.11898844909817351,
+          "stationary": false,
+          "pr_A": 7901.900271215139,
+          "xi": 0.9976333638479293
+        },
+        "quench": {
+          "0.02": {
+            "max_delta_phi_pert": 0.11909247295790676,
+            "log_rho": 0.0008738530198425141,
+            "retention_R": 0.9998959761402667,
+            "fails_stationarity": true
+          },
+          "0.05": {
+            "max_delta_phi_pert": 0.11903989837825882,
+            "log_rho": 0.00043229540877802783,
+            "retention_R": 0.9999485507199147,
+            "fails_stationarity": true
+          },
+          "0.1": {
+            "max_delta_phi_pert": 0.1185258555202001,
+            "log_rho": -0.0038952951792951564,
+            "retention_R": 1.0,
+            "fails_stationarity": true
+          },
+          "0.2": {
+            "max_delta_phi_pert": 0.11671739665317715,
+            "log_rho": -0.019270822237720937,
+            "retention_R": 1.0,
+            "fails_stationarity": true
+          }
+        },
+        "dephasing": {
+          "0.003": {
+            "max_delta_phi_pert": 0.5750455805702406,
+            "log_rho": 1.575422886214168,
+            "retention_R": 0.5439428685279329,
+            "fails_stationarity": true
+          },
+          "0.01": {
+            "max_delta_phi_pert": 0.8663074058838267,
+            "log_rho": 1.9852133957285731,
+            "retention_R": 0.2526810432143468,
+            "fails_stationarity": true
+          },
+          "0.03": {
+            "max_delta_phi_pert": 1.3247777999377786,
+            "log_rho": 2.4099736041988686,
+            "retention_R": 0.0,
+            "fails_stationarity": true
+          }
+        },
+        "quench_site": 3
+      },
+      {
+        "seed": 3614164098,
+        "baseline": {
+          "max_delta_phi": 0.1254541089963842,
+          "max_delta_phi_post": 0.1254541089963842,
+          "stationary": false,
+          "pr_A": 7069.234779196079,
+          "xi": 0.9962588479975076
+        },
+        "quench": {
+          "0.02": {
+            "max_delta_phi_pert": 0.11427313920415605,
+            "log_rho": -0.09334848573748047,
+            "retention_R": 1.0,
+            "fails_stationarity": true
+          },
+          "0.05": {
+            "max_delta_phi_pert": 0.1166695626611225,
+            "log_rho": -0.07259433801560906,
+            "retention_R": 1.0,
+            "fails_stationarity": true
+          },
+          "0.1": {
+            "max_delta_phi_pert": 0.12443264939848755,
+            "log_rho": -0.008175425490936382,
+            "retention_R": 1.0,
+            "fails_stationarity": true
+          },
+          "0.2": {
+            "max_delta_phi_pert": 0.12293492060731578,
+            "log_rho": -0.020284911736808728,
+            "retention_R": 1.0,
+            "fails_stationarity": true
+          }
+        },
+        "dephasing": {
+          "0.003": {
+            "max_delta_phi_pert": 0.8242797432875262,
+            "log_rho": 1.882569940242807,
+            "retention_R": 0.301174365708858,
+            "fails_stationarity": true
+          },
+          "0.01": {
+            "max_delta_phi_pert": 1.1180003002352692,
+            "log_rho": 2.1873568959292617,
+            "retention_R": 0.0074538087611150106,
+            "fails_stationarity": true
+          },
+          "0.03": {
+            "max_delta_phi_pert": 1.387818925410413,
+            "log_rho": 2.4035486490268614,
+            "retention_R": 0.0,
+            "fails_stationarity": true
+          }
+        },
+        "quench_site": 7
+      },
+      {
+        "seed": 1615387791,
+        "baseline": {
+          "max_delta_phi": 0.11419794153693943,
+          "max_delta_phi_post": 0.11419794153693943,
+          "stationary": false,
+          "pr_A": 8099.923283931918,
+          "xi": 0.997656866553518
+        },
+        "quench": {
+          "0.02": {
+            "max_delta_phi_pert": 0.12425416407786222,
+            "log_rho": 0.08439590613142162,
+            "retention_R": 0.9899437774590772,
+            "fails_stationarity": true
+          },
+          "0.05": {
+            "max_delta_phi_pert": 0.11381531299451304,
+            "log_rho": -0.0033561987646330764,
+            "retention_R": 1.0,
+            "fails_stationarity": true
+          },
+          "0.1": {
+            "max_delta_phi_pert": 0.11328393911546321,
+            "log_rho": -0.008035869383004358,
+            "retention_R": 1.0,
+            "fails_stationarity": true
+          },
+          "0.2": {
+            "max_delta_phi_pert": 0.10848829443196734,
+            "log_rho": -0.05129099024806557,
+            "retention_R": 1.0,
+            "fails_stationarity": true
+          }
+        },
+        "dephasing": {
+          "0.003": {
+            "max_delta_phi_pert": 0.5029148286984337,
+            "log_rho": 1.4824875571302183,
+            "retention_R": 0.6112831128385057,
+            "fails_stationarity": true
+          },
+          "0.01": {
+            "max_delta_phi_pert": 0.8176106891425516,
+            "log_rho": 1.9684530211795959,
+            "retention_R": 0.29658725239438777,
+            "fails_stationarity": true
+          },
+          "0.03": {
+            "max_delta_phi_pert": 1.399443444429793,
+            "log_rho": 2.5058966248816192,
+            "retention_R": 0.0,
+            "fails_stationarity": true
+          }
+        },
+        "quench_site": 1
+      }
+    ]
+  },
+  "_runtime_s": 118.3
+}
