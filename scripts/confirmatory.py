@@ -47,6 +47,10 @@ CONF = Path(os.environ.get("IDEG_CONF_OUT", OUT / "confirmatory"))
 CONF.mkdir(parents=True, exist_ok=True)
 MAN = json.loads(Path(os.environ.get(
     "IDEG_MANIFEST", OUT / "confirmatory_manifest.json")).read_text())
+_add = OUT / "confirmatory_manifest_addendum1.json"
+if "IDEG_MANIFEST" not in os.environ and _add.exists():
+    for g, per_size in json.loads(_add.read_text())["seeds"].items():
+        MAN["seeds"].setdefault(g, {}).update(per_size)
 
 GROUP = sys.argv[1]
 N = int(sys.argv[2])
@@ -312,9 +316,12 @@ for run_idx, seed in enumerate(SEEDS):
               f"(all_must_pass={run_rec['battery']['all_must_pass']})",
               flush=True)
     results["runs"].append(run_rec)
+    with open(CONF / f"{GROUP}_N{N}.partial.json", "w") as f:
+        json.dump(results, f)  # checkpoint after every run unit
 
 results["_runtime_s"] = round(time.time() - t0, 1)
 outpath = CONF / f"{GROUP}_N{N}.json"
 with open(outpath, "w") as f:
     json.dump(results, f, indent=2)
+(CONF / f"{GROUP}_N{N}.partial.json").unlink(missing_ok=True)
 print(f"done: {outpath} ({results['_runtime_s']}s)")

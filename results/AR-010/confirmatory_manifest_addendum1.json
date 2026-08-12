@@ -1,0 +1,113 @@
+{
+  "date_fixed": "2026-08-12",
+  "addendum_to": "confirmatory_manifest.json",
+  "reason": "T-A(ii) incommensurability certificate exhaustively unsatisfiable at N = 8 (0/56 triples); spec \u00a75.1 primary T-A sizing (10, 12) restored (the (8, 10) budget election is obstructed).",
+  "criterion_a_size_pairs_override": {
+    "TA": [
+      10,
+      12
+    ]
+  },
+  "criterion_b_size_pairs_override": {
+    "quench": {
+      "TA": [
+        10,
+        12
+      ]
+    },
+    "loss": {
+      "TA": [
+        10,
+        12
+      ]
+    },
+    "dephasing": {
+      "TA": [
+        8,
+        10
+      ]
+    }
+  },
+  "dephasing_ta_ii_note": "dephasing is spec \u00a76.2-bound to N <= 10; T-A pairs involving class (ii) have a single evaluable size (10) for the dephasing protocol and are INELIGIBLE for criterion-(b) two-size replication (recorded, not a null)",
+  "n8_runs_status": "recorded N = 8 runs for classes (i)/(iii)/(iv) remain valid, reported descriptively",
+  "addendum_master_seed": 20260813,
+  "seeds": {
+    "TA_i_fixed_point": {
+      "12": [
+        3961121647
+      ]
+    },
+    "TA_ii_quasiperiodic": {
+      "12": [
+        1764978283,
+        585744274,
+        2054222515,
+        3506522236,
+        1879174751,
+        1493580579,
+        5300969,
+        325330976,
+        1463264476,
+        1440527531,
+        2984478985,
+        2361903278,
+        1122841523,
+        2509741781,
+        10853627,
+        3698784866,
+        1522521666,
+        2875806686,
+        2377463166,
+        2397262066
+      ]
+    },
+    "TA_iii_chaotic": {
+      "12": [
+        2969032628,
+        841855112,
+        2942878210,
+        300139858,
+        764277967,
+        1914556486,
+        3892273787,
+        1677782168,
+        432935632,
+        625368677,
+        1108712926,
+        887533333,
+        2977102933,
+        2136914990,
+        513957600,
+        3499075097,
+        3466456411,
+        2655475303,
+        3046233601,
+        265694104
+      ]
+    },
+    "TA_iv_metastable": {
+      "12": [
+        1032867126,
+        2314582637,
+        2002703607,
+        3793153926,
+        1578107313,
+        2701573439,
+        1371462007,
+        64393963,
+        2408138124,
+        1650670835,
+        310092111,
+        2559637982,
+        3904079885,
+        2227106626,
+        4132029760,
+        307672331,
+        3872925288,
+        1664068372,
+        1387852227,
+        1728699501
+      ]
+    }
+  }
+}
