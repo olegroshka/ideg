@@ -65,3 +65,29 @@ def bootstrap_ci_mean(data: np.ndarray, n_resamples: int = 1000,
 def cis_disjoint(ci_a, ci_b) -> bool:
     """Disjoint 95% CIs criterion (spec §5.2/§5.3)."""
     return ci_a[2] < ci_b[1] or ci_b[2] < ci_a[1]
+
+
+def slope_block_bootstrap(times: np.ndarray, series: np.ndarray,
+                          block_len: int = 40, n_resamples: int = 1000,
+                          alpha: float = 0.05,
+                          rng: np.random.Generator | None = None):
+    """OLS slope of series(t) with a moving-block bootstrap CI (spec §2:
+    'fitted linear drift slope of dPhi(t) with bootstrap CI'; block length
+    is a manifest-recorded implementation parameter — serial correlation of
+    dPhi makes the iid bootstrap invalid)."""
+    rng = rng or np.random.default_rng(0)
+    t = np.asarray(times, dtype=float)
+    y = np.asarray(series, dtype=float)
+    m = len(y)
+    slope = float(np.polyfit(t, y, 1)[0])
+    if m <= block_len:
+        return slope, slope, slope
+    n_blocks = int(np.ceil(m / block_len))
+    starts_max = m - block_len
+    slopes = np.empty(n_resamples)
+    for k in range(n_resamples):
+        starts = rng.integers(0, starts_max + 1, size=n_blocks)
+        idx = (starts[:, None] + np.arange(block_len)[None, :]).ravel()[:m]
+        slopes[k] = np.polyfit(t[idx], y[idx], 1)[0]
+    return (slope, float(np.quantile(slopes, alpha / 2)),
+            float(np.quantile(slopes, 1 - alpha / 2)))

@@ -1,0 +1,580 @@
+{
+  "date_fixed": "2026-08-12",
+  "spec": "ar/AR-009_spec.md (\u00a78 Amendments 1-3 + AR-019 no-change entry); KB-005 v0.6",
+  "phase": "CONFIRMATORY (spec \u00a75.1 criterion (a), \u00a75.2 criterion (b), \u00a75.3 adjudication). Executing this manifest closes the AR-019 instrument-upgrade window.",
+  "window": {
+    "t_eq": 20.0,
+    "t_end": 200.0,
+    "dt_sample": 0.5
+  },
+  "t_p": 100.0,
+  "epsilon_phi": 0.25,
+  "delta_floor": 0.001,
+  "lambda": 0.1,
+  "gamma": 0.01,
+  "loss_k": 2,
+  "sizes": {
+    "TA_i_fixed_point": [
+      8,
+      10
+    ],
+    "TA_ii_quasiperiodic": [
+      8,
+      10
+    ],
+    "TA_iii_chaotic": [
+      8,
+      10
+    ],
+    "TA_iv_metastable": [
+      8,
+      10
+    ],
+    "TC_scrambling": [
+      8,
+      10,
+      12
+    ],
+    "TC_integrable": [
+      8,
+      10,
+      12
+    ],
+    "TC_localized": [
+      8,
+      10,
+      12
+    ],
+    "TB": [
+      10
+    ]
+  },
+  "runs_per_size": {
+    "TA_i_fixed_point": 1,
+    "TA_ii_quasiperiodic": 20,
+    "TA_iii_chaotic": 20,
+    "TA_iv_metastable": 20,
+    "TC_scrambling": 20,
+    "TC_integrable": 20,
+    "TC_localized": 20
+  },
+  "size_plan": {
+    "TA": "N = 8 and 10 (spec \u00a75.1 budget clause: T-A at N = 12 adds ~20 dense 4096-dim diagonalizations per class for no criterion gain; the clause licenses (8, 10))",
+    "TC": "witnesses + quench + loss at N = 10 and 12 (spec \u00a75.1 primary); dephasing at N = 8 and 10 (spec \u00a76.2 bounds the density-matrix protocol at N <= 10, so its two-size replication uses (8, 10)); N = 8 runs also record witnesses (reported, not thresholded)",
+    "TB": "N = 10 (spec \u00a71)"
+  },
+  "ensembles": {
+    "TA_i_fixed_point": "single deterministic ground-state run; exact-value witness treatment (spec \u00a75.1)",
+    "TA_ii_quasiperiodic": "20 incommensurate magnon triples",
+    "TA_iii_chaotic": "20 Haar product states",
+    "TA_iv_metastable": "|all-up>, 20 weak-disorder dressings of H",
+    "TC_scrambling": "run 0 = Neel (primary), runs 1-19 Haar product",
+    "TC_integrable": "run 0 = Neel (primary), runs 1-19 Haar product",
+    "TC_localized": "20 disorder realizations x 5 initial states (state 0 = Neel, states 1-4 random product); realization = resampling unit (spec \u00a76.1)",
+    "TB": "20 disorder realizations x 5 random z-product states; realization = resampling unit; realizations and states PAIRED across eps and comparator regimes (same seed -> same J, h fields and states)"
+  },
+  "protocol_randomness": "per-run rng seeded seed+7 draws quench site then the k=2 non-adjacent loss pair; for disordered groups (TC_localized, TB) drawn per REALIZATION (shared across its states; H' eigendecomposition economy, site is a nuisance draw and realization is the resampling unit)",
+  "dephasing_impl": {
+    "dt_step": 0.5,
+    "phi_sample_stride_steps": 5,
+    "note": "Trotter split at dt=0.5, Phi sampled every 2.5 time units (as pilot)"
+  },
+  "comparator_quench_stride_steps": 5,
+  "otoc": {
+    "i0": "N//2",
+    "r_stat": "r_max = N-1-i0 (spec \u00a75.1 statistics)",
+    "times": "0..t_end step 0.5 (t* resolvable pre-window; C_sat over last quarter of the window per spec \u00a73)",
+    "full_r_profile": "run 0 only (diagnostic figure)"
+  },
+  "w1_bin_width": 0.001,
+  "xi_degeneracy_tol": 1e-10,
+  "implementation_clarifications": [
+    "Xi (W4) sums over ENERGY-DISTINCT eigenpairs (degeneracy grouping tol 1e-10): required by the spec's own defining property 'Xi > 0 iff the state moves under H', which fails for label-based m != n on the degenerate XX spectrum. Session-log delta; exploratory pilot Xi values for XX-based groups shift slightly.",
+    "log rho numerator floored at delta_floor as well as the denominator: binds only where perturbed drift is exactly zero (stationary objects under subsystem loss), where the spec formula is log 0; reads as log rho = 0 ('no effect').",
+    "Subsystem-loss drift: perturbed series = reduced-graph Phi of the post-t_p states vs the reduced reference (shortest paths recomputed on the surviving subgraph of the unperturbed mean MI); denominator = the run's full-graph unperturbed post-t_p max drift (same treatment as protocols 1-2).",
+    "Switch-off (\u00a74.2) for T-A/T-C coincides with the \u00a74.1 diagonal ensemble: dephasing psi(t_off) in the H eigenbasis yields exactly rho_bar (populations are conserved), so one computation serves both; reported under both headings.",
+    "Comparator (\u00a74.1) fair-perturbation at N = 10 only: the dephasing protocol is spec-bound to N <= 10 and the comparison is kept within one size; quench/loss comparator runs included at N = 10. Comparator drift is measured against the comparator's own reference geometry Phi[rho_bar].",
+    "T-B robustness protocols (quench lambda into H2 from period 100; dephasing channel per period at gamma in lab-time units, T_period = 2; loss k = 2) are DESCRIPTIVE: criterion (b) is preregistered over T-A classes / T-C regimes; T-B's preregistered instrument is the rigidity curve h_sub(eps). Scope: eps = 0.03 and r2 only.",
+    "Battery (\u00a74.3) identity items: the 1e-10 tolerance binds on the witness statistics and the MI matrices (the objects the transforms provably preserve); the Phi-space deviation is REPORTED alongside, because the preregistered -log weight cap (x_min = 1e-6) amplifies machine-epsilon MI jitter by up to 1/x_min, giving near-cap classes (metastable) an irreducible ~1e-9 numerical floor in Phi that is not representation-dependence (measured in the N = 6 smoke test)."
+  ],
+  "slope_bootstrap": {
+    "block_len_samples": 40,
+    "n_resamples": 1000
+  },
+  "battery": {
+    "scope": "run 0 per group x size",
+    "n_times": 8,
+    "tol": 1e-10,
+    "seed_offset": 13
+  },
+  "criterion_a": {
+    "auc_threshold": 0.95,
+    "min_statistics": 2,
+    "statistics": [
+      "pr_A",
+      "w2_min",
+      "otoc_c_sat",
+      "otoc_t_star",
+      "xi"
+    ],
+    "size_pairs": {
+      "TA": [
+        8,
+        10
+      ],
+      "TC": [
+        10,
+        12
+      ]
+    },
+    "class_i_rule": "exact-value separation (spec \u00a75.1)"
+  },
+  "criterion_b": {
+    "effect_threshold_ln": 0.4054651081081644,
+    "bootstrap": "BCa 1000, 95%",
+    "size_pairs": {
+      "quench": {
+        "TA": [
+          8,
+          10
+        ],
+        "TC": [
+          10,
+          12
+        ]
+      },
+      "loss": {
+        "TA": [
+          8,
+          10
+        ],
+        "TC": [
+          10,
+          12
+        ]
+      },
+      "dephasing": {
+        "TA": [
+          8,
+          10
+        ],
+        "TC": [
+          8,
+          10
+        ]
+      }
+    }
+  },
+  "TB": {
+    "n_sites": 10,
+    "realizations": 20,
+    "states_per_realization": 5,
+    "eps_dtc": [
+      0.03,
+      0.06,
+      0.1
+    ],
+    "eps_curve": [
+      0.01,
+      0.02,
+      0.03,
+      0.04,
+      0.06,
+      0.08,
+      0.1,
+      0.12,
+      0.14,
+      0.16,
+      0.2
+    ],
+    "comparator_regimes": {
+      "r1_no_interactions": 0.03,
+      "r2_no_disorder": 0.03
+    },
+    "window_periods": [
+      20,
+      200
+    ],
+    "n_off": 100,
+    "rigidity_note": "h_sub(eps) = mean subharmonic power fraction on the window vs eps; eps_c located descriptively (measured, not assumed; spec \u00a71 T-B)"
+  },
+  "master_seed": 20260812,
+  "seeds": {
+    "TA_i_fixed_point": {
+      "8": [
+        2512176700
+      ],
+      "10": [
+        758801068
+      ]
+    },
+    "TA_ii_quasiperiodic": {
+      "8": [
+        4005173303,
+        2565769763,
+        3190102158,
+        1473717539,
+        330700069,
+        1076918167,
+        1822075396,
+        315747372,
+        2301490752,
+        1008259157,
+        2273800257,
+        641866914,
+        2319145843,
+        3661976562,
+        3524966043,
+        3111372244,
+        664640256,
+        337232961,
+        881732117,
+        1376916551
+      ],
+      "10": [
+        2100294288,
+        1804536907,
+        2635096079,
+        1512734169,
+        3116122193,
+        4161503237,
+        2789739837,
+        3000803875,
+        1662767698,
+        2732442396,
+        1678491897,
+        2601564513,
+        1642726352,
+        2284663161,
+        1370658394,
+        1392271084,
+        4006279071,
+        693783068,
+        3416735763,
+        910456901
+      ]
+    },
+    "TA_iii_chaotic": {
+      "8": [
+        3583543914,
+        2467922502,
+        1855746150,
+        3417542652,
+        3223523632,
+        2790018099,
+        2623238037,
+        3330609546,
+        3129741174,
+        2190827947,
+        4174155400,
+        1720816622,
+        2923013695,
+        783913802,
+        2043499078,
+        1221167171,
+        838752820,
+        3106574475,
+        1642244016,
+        3708060555
+      ],
+      "10": [
+        3883946243,
+        1398906813,
+        1920911861,
+        104917060,
+        4262460484,
+        3863059907,
+        1516645965,
+        923148808,
+        2001021798,
+        181764269,
+        2017367435,
+        1770274530,
+        1346837321,
+        1127240435,
+        2632774599,
+        682321548,
+        349115671,
+        1844029174,
+        1988637847,
+        1063329212
+      ]
+    },
+    "TA_iv_metastable": {
+      "8": [
+        2335862066,
+        3606090985,
+        816514052,
+        3618446781,
+        3273835037,
+        3847582356,
+        1861314495,
+        1664953638,
+        2343748464,
+        3323215760,
+        1927606283,
+        1656824026,
+        1923357049,
+        4139680806,
+        2370415078,
+        2203167944,
+        770916013,
+        2966795120,
+        169258972,
+        497568927
+      ],
+      "10": [
+        3154064218,
+        1054480815,
+        1041027141,
+        3054227479,
+        104618152,
+        4029169846,
+        2316601343,
+        1672181557,
+        2867267549,
+        1543791959,
+        3555228719,
+        1677335251,
+        3611685141,
+        1666585278,
+        2249195970,
+        2782251253,
+        3139628692,
+        3582975586,
+        3322099974,
+        92027628
+      ]
+    },
+    "TC_scrambling": {
+      "8": [
+        531363821,
+        4250769559,
+        4238697239,
+        3938201077,
+        1059874113,
+        2390173754,
+        1087673455,
+        379666007,
+        15886717,
+        1399151863,
+        3582615751,
+        2595588307,
+        1124290393,
+        3248258200,
+        442003608,
+        3330925223,
+        3360771550,
+        362053035,
+        1933085807,
+        1297107210
+      ],
+      "10": [
+        959098859,
+        2131545515,
+        2720790115,
+        3477452600,
+        1319520419,
+        904690401,
+        3934250300,
+        2126831464,
+        1002449480,
+        1716790692,
+        3269134018,
+        2056766554,
+        2419310488,
+        1257392516,
+        2819719922,
+        1987812239,
+        2344815071,
+        395686916,
+        2125148219,
+        1933501345
+      ],
+      "12": [
+        160808797,
+        2204715741,
+        858638976,
+        3954607679,
+        2856720927,
+        1322345667,
+        2274653091,
+        1730386351,
+        3044957795,
+        2634697907,
+        3107152278,
+        2684929643,
+        3103680847,
+        3655883210,
+        3119587658,
+        1796608718,
+        364570647,
+        28869117,
+        1981040583,
+        4134831411
+      ]
+    },
+    "TC_integrable": {
+      "8": [
+        2167578202,
+        1056344723,
+        3009812652,
+        3795377572,
+        3578254676,
+        1196586806,
+        644603031,
+        2857562879,
+        2932106706,
+        3070621707,
+        911804186,
+        620346743,
+        3380613236,
+        3824206233,
+        2595745037,
+        1524935322,
+        2740409887,
+        95347122,
+        886404114,
+        3077652105
+      ],
+      "10": [
+        3119703678,
+        3317294089,
+        3149172600,
+        1158697923,
+        3207792315,
+        2293295550,
+        4289111726,
+        2046179461,
+        3758373263,
+        3205259417,
+        3421449268,
+        3828266754,
+        4187419132,
+        2446927394,
+        464453508,
+        2362176183,
+        434213604,
+        1717974294,
+        3515182862,
+        4175875387
+      ],
+      "12": [
+        3922432796,
+        3074538687,
+        4084323929,
+        3025131240,
+        2641215351,
+        3222292191,
+        2512634886,
+        3832986187,
+        3549340580,
+        4108882380,
+        2199250118,
+        2718550346,
+        1618362327,
+        950276755,
+        2239982554,
+        3597577632,
+        1194541380,
+        2204798588,
+        2391925017,
+        329388997
+      ]
+    },
+    "TC_localized": {
+      "8": [
+        1658094814,
+        3175791094,
+        2898371802,
+        2933043161,
+        534063743,
+        842245471,
+        2266405518,
+        4167656424,
+        2106286748,
+        2090900344,
+        254103179,
+        1565235599,
+        777907145,
+        3141794596,
+        2995151860,
+        3140087825,
+        1516875490,
+        4163057804,
+        2303913620,
+        25486869
+      ],
+      "10": [
+        3118864663,
+        1442640563,
+        4073302141,
+        3646338649,
+        1525102215,
+        3089498114,
+        7857521,
+        3658182162,
+        723652920,
+        2413322992,
+        4006012392,
+        1464581579,
+        2497325197,
+        898621853,
+        2877474686,
+        3730154055,
+        2859362633,
+        3802628510,
+        2310619061,
+        3792402289
+      ],
+      "12": [
+        4092020927,
+        2652243527,
+        1659243382,
+        1903859029,
+        3775966283,
+        2598465430,
+        379974418,
+        1496739435,
+        1983646835,
+        571596716,
+        1252062127,
+        2513049143,
+        2481145549,
+        3122024448,
+        703874160,
+        3581413653,
+        1964210085,
+        3433562781,
+        927636898,
+        1095892030
+      ]
+    },
+    "TB": {
+      "10": [
+        12482092,
+        1469210788,
+        1628256922,
+        3717553722,
+        884682984,
+        303902765,
+        1371044384,
+        638013611,
+        1239000107,
+        3099259336,
+        3615959838,
+        3077316853,
+        3006336392,
+        2421234604,
+        1985580756,
+        1499295825,
+        520045960,
+        3054833706,
+        3602438274,
+        1910486178
+      ]
+    }
+  },
+  "pilot_exclusion": "pilot data (manifest.json seeds, 2026-08-11) are excluded from all confirmatory statistics (spec \u00a75.2.1)",
+  "sanity_checks": "per-size \u00a76.3 checks in sanity_checks.json (N=10, 2026-08-11) and sanity_checks_N8.json / sanity_checks_N12.json (2026-08-12, pre-execution)"
+}

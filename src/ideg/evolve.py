@@ -44,6 +44,15 @@ class EigenEvolver:
         c *= np.exp(+1.0j * self.evals * t)
         return self.evecs @ c         # U(t)^dag W U(t) phi
 
+    def rho_stream(self, rho0: np.ndarray, times: np.ndarray):
+        """Yield (t, rho(t)) for density-matrix evolution under H
+        (one eigenbasis transform up front, per-sample phase mask + back)."""
+        r_e = self.evecs.conj().T @ rho0 @ self.evecs
+        for t in times:
+            ph = np.exp(-1.0j * self.evals * t)
+            r_t = (ph[:, None] * r_e) * ph.conj()[None, :]
+            yield t, self.evecs @ r_t @ self.evecs.conj().T
+
 
 def floquet_states(u_f: np.ndarray, psi0: np.ndarray,
                    n_periods: int) -> np.ndarray:
@@ -55,6 +64,26 @@ def floquet_states(u_f: np.ndarray, psi0: np.ndarray,
         psi = u_f @ psi
         out[k] = psi
     return out
+
+
+class FloquetDephasingEvolver:
+    """T-B density-matrix stroboscopics: one Floquet period U_F then the exact
+    per-period dephasing damping mask exp(-2 gamma T_period d_H). gamma is in
+    lab-time units (matching T-A/T-C); T_period = t1 + t2 = 2 (spec §1 T-B).
+    Descriptive-protocol use only (manifest-recorded implementation choice)."""
+
+    def __init__(self, u_f: np.ndarray, n_sites: int, gamma: float,
+                 t_period: float = 2.0):
+        self.u_f = u_f
+        self.mask = np.exp(-2.0 * gamma * t_period
+                           * hamming_matrix(n_sites).astype(float))
+
+    def run(self, rho0: np.ndarray, n_periods: int, sample_every: int = 1):
+        rho = rho0.copy()
+        for k in range(1, n_periods + 1):
+            rho = (self.u_f @ rho @ self.u_f.conj().T) * self.mask
+            if k % sample_every == 0:
+                yield k, rho
 
 
 class DephasingEvolver:

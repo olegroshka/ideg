@@ -88,9 +88,16 @@ def floquet_dtc(n: int, eps: float, rng: np.random.Generator,
     for _ in range(n):
         rot = np.kron(rot, r)
 
-    j = rng.uniform(0.05 * np.pi, 0.15 * np.pi, size=n - 1) if interactions \
-        else np.zeros(n - 1)
-    hz = rng.uniform(0.0, np.pi, size=n) if disorder else np.zeros(n)
+    # draws are unconditional so comparator regimes (r1/r2) share the same
+    # realization stream as the DTC regime at equal seed (paired design);
+    # draw order matches the original (J then h), so eps-regime realizations
+    # are unchanged
+    j = rng.uniform(0.05 * np.pi, 0.15 * np.pi, size=n - 1)
+    hz = rng.uniform(0.0, np.pi, size=n)
+    if not interactions:
+        j = np.zeros(n - 1)
+    if not disorder:
+        hz = np.zeros(n)
     h2 = np.zeros(dim)
     for i in range(n - 1):
         h2 += j[i] * sz_diag(n, i) * sz_diag(n, i + 1)

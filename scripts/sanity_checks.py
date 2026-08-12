@@ -25,7 +25,7 @@ from ideg.states import z_product_state                     # noqa: E402
 from ideg.stats import r_statistic                          # noqa: E402
 from ideg.witnesses import subharmonic_peak                 # noqa: E402
 
-N = 10
+N = int(sys.argv[1]) if len(sys.argv) > 1 else 10
 OUT = Path(__file__).resolve().parent.parent / "results" / "AR-010"
 OUT.mkdir(parents=True, exist_ok=True)
 
@@ -36,6 +36,12 @@ DTC_REALIZATIONS = 20
 DTC_PERIODS = 100
 DTC_PEAK_PRESENT = 0.5  # "peak present" = majority of spectral power at w/2
 SEED = 20260811
+# confirmatory-phase size scan (2026-08-12): more disorder realizations at
+# the non-primary sizes tighten the <r> estimate (realization count is not
+# spec-fixed; recorded); the committed N = 10 record keeps its original 5
+MBL_REALIZATIONS = 5 if N == 10 else 20
+OUTNAME = "sanity_checks.json" if N == 10 else f"sanity_checks_N{N}.json"
+DATE = "2026-08-11" if N == 10 else "2026-08-12"
 
 results = {}
 t0 = time.time()
@@ -74,10 +80,10 @@ results["integrable_xx"] = {
     "certificate": "many-body = subset sums of single-particle (Amendment 2)",
 }
 
-# --- localized: XXZ W=8, Sz sector, Poisson (5 realizations) ---
+# --- localized: XXZ W=8, Sz sector, Poisson ---
 rng = np.random.default_rng(SEED)
 rs = []
-for _ in range(5):
+for _ in range(MBL_REALIZATIONS):
     h = xxz_disordered(N, rng)
     evals = np.linalg.eigvalsh(h[np.ix_(idx, idx)])
     bulk = evals[len(evals) // 10: -len(evals) // 10]
@@ -86,36 +92,38 @@ r_mbl = float(np.mean(rs))
 results["localized_xxz_W8"] = {
     "r_mean": r_mbl, "r_each": rs, "window": POISSON_WINDOW,
     "pass": POISSON_WINDOW[0] <= r_mbl <= POISSON_WINDOW[1],
-    "sector": "Sz=0", "realizations": 5,
+    "sector": "Sz=0", "realizations": MBL_REALIZATIONS,
 }
 
-# --- T-B DTC regime: subharmonic peak at eps = 0.03, >= 18/20 ---
-rng = np.random.default_rng(SEED + 1)
-zdiags = np.array([sz_diag(N, i) for i in range(N)])
-present = 0
-peaks = []
-for _ in range(DTC_REALIZATIONS):
-    u_f, _ = floquet_dtc(N, eps=DTC_EPS, rng=rng)
-    psi0 = z_product_state(N, rng)
-    traj = floquet_states(u_f, psi0, DTC_PERIODS)[1:]
-    mags = np.array([[float(np.sum(z * np.abs(s) ** 2)) for z in zdiags]
-                     for s in traj])
-    pk = subharmonic_peak(mags)
-    peaks.append(pk)
-    present += int(pk > DTC_PEAK_PRESENT)
-results["dtc_regime_eps0.03"] = {
-    "present": present, "of": DTC_REALIZATIONS, "required": 18,
-    "pass": present >= 18,
-    "peak_mean": float(np.mean(peaks)), "peak_min": float(np.min(peaks)),
-    "present_definition": f"subharmonic power fraction > {DTC_PEAK_PRESENT}",
-}
+# --- T-B DTC regime (N = 10 only; T-B has a single size, spec §1) ---
+if N == 10:
+    rng = np.random.default_rng(SEED + 1)
+    zdiags = np.array([sz_diag(N, i) for i in range(N)])
+    present = 0
+    peaks = []
+    for _ in range(DTC_REALIZATIONS):
+        u_f, _ = floquet_dtc(N, eps=DTC_EPS, rng=rng)
+        psi0 = z_product_state(N, rng)
+        traj = floquet_states(u_f, psi0, DTC_PERIODS)[1:]
+        mags = np.array([[float(np.sum(z * np.abs(s) ** 2)) for z in zdiags]
+                         for s in traj])
+        pk = subharmonic_peak(mags)
+        peaks.append(pk)
+        present += int(pk > DTC_PEAK_PRESENT)
+    results["dtc_regime_eps0.03"] = {
+        "present": present, "of": DTC_REALIZATIONS, "required": 18,
+        "pass": present >= 18,
+        "peak_mean": float(np.mean(peaks)), "peak_min": float(np.min(peaks)),
+        "present_definition":
+            f"subharmonic power fraction > {DTC_PEAK_PRESENT}",
+    }
 
 results["_meta"] = {
     "N": N, "seed": SEED, "runtime_s": round(time.time() - t0, 1),
-    "date": "2026-08-11", "spec": "ar/AR-009_spec.md §6.3",
+    "date": DATE, "spec": "ar/AR-009_spec.md §6.3",
 }
 
-with open(OUT / "sanity_checks.json", "w") as f:
+with open(OUT / OUTNAME, "w") as f:
     json.dump(results, f, indent=2)
 
 all_pass = all(v["pass"] for k, v in results.items() if k != "_meta")

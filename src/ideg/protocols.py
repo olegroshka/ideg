@@ -47,7 +47,8 @@ def dephasing_run(h: np.ndarray, evolver: EigenEvolver, psi0: np.ndarray,
         yield t_p + k * dt, r
 
 
-def subsystem_loss_series(states, n_sites: int, lost: tuple[int, int]):
+def subsystem_loss_series(states, n_sites: int, lost: tuple[int, int],
+                          mixed: bool = False):
     """§5.2 protocol 3: Phi on the reduced (N-2)-site graph after tracing out
     `lost` (non-adjacent) sites. MI of surviving pairs is unchanged by the
     partial trace (it is computed from 2-site RDMs), so the effect is purely
@@ -55,7 +56,7 @@ def subsystem_loss_series(states, n_sites: int, lost: tuple[int, int]):
     keep = [i for i in range(n_sites) if i not in lost]
     out = []
     for s in states:
-        mi = mutual_information_matrix(s, n_sites)
+        mi = mutual_information_matrix(s, n_sites, mixed=mixed)
         mi_red = mi[np.ix_(keep, keep)]
         out.append(phi_distance_matrix(mi_red))
     return np.array(out), keep
@@ -72,8 +73,26 @@ def restrict_reference(dbar_full_inputs, keep):
 
 def log_rho_effect(delta_pert_max: float, delta_unpert_max: float,
                    floor: float = 1e-3) -> float:
-    """§5.2 primary effect measure: log drift ratio with floored denominator."""
-    return float(np.log(delta_pert_max / max(delta_unpert_max, floor)))
+    """§5.2 primary effect measure: log drift ratio, both sides floored.
+
+    The spec formula floors only the denominator; the numerator floor binds
+    only when the perturbed drift is exactly zero (a stationary object under
+    subsystem loss), where the spec formula is undefined (log 0). Recorded
+    as an implementation clarification: such cases read log rho = 0, i.e.
+    'no effect', which is the intended semantics."""
+    return float(np.log(max(delta_pert_max, floor)
+                        / max(delta_unpert_max, floor)))
+
+
+def comparator_quench_stream(h: np.ndarray, rho_bar: np.ndarray, lam: float,
+                             site: int, n_sites: int,
+                             sample_times_post: np.ndarray):
+    """§4.1 fair-perturbation, protocol 1 on the diagonal ensemble: rho_bar
+    is stationary under H, so the quench H' = H + lam Z_site simply starts
+    at t_p; yields (t_offset, rho) at the requested post-quench offsets."""
+    h_pert = h + np.diag(lam * sz_diag(n_sites, site))
+    ev = EigenEvolver(h_pert)
+    yield from ev.rho_stream(rho_bar, sample_times_post)
 
 
 def retention_r(delta_pert_max: float, delta_unpert_max: float) -> float:
