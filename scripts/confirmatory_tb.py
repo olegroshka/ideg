@@ -266,4 +266,5 @@ results["_runtime_s"] = round(time.time() - t0, 1)
 outpath = CONF / f"TB_{STAGE}.json"
 with open(outpath, "w") as f:
     json.dump(results, f, indent=2)
+(CONF / f"TB_{STAGE}.partial.json").unlink(missing_ok=True)
 print(f"done: {outpath} ({results['_runtime_s']}s)")
