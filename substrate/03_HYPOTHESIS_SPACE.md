@@ -4,7 +4,7 @@ title: "IDEG Hypothesis Space — Nulls, Bridges, Strong Forms, and Falsifiers"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-13
-version: 0.4
+version: 0.5
 research_layer: R3
 epistemic_status: SPECULATIVE_TO_PLAUSIBLE
 sources:
@@ -16,6 +16,7 @@ changelog:
   - "0.2: review revision (Claude, 2026-08-11) — see §10"
   - "0.3: BH-004 dated evidence note from AR-010 confirmatory (Claude, 2026-08-13) — sustained-by clause supported in-model, criterion (a) witness-scheme negative recorded; no epistemic-status change (AR-011-gated); see ar/AR-010_confirmatory-2026-08-12.md"
   - "0.4: BH-004 evidence note corrected per AR-011 (Claude, 2026-08-13) — fragility direction withdrawn (floored-denominator artifact); switch-off geometry change promoted to load-bearing sustained-by evidence; §4.1 Φ-matching assumption refuted; partition-dependence quantified 9–20%; see ar/AR-011_adversarial-2026-08-13.md"
+  - "0.5: BH-004 epistemic status SPECULATIVE → PLAUSIBLE (owner ruling 2026-08-13, post-AR-011/AR-021); explicit Status line added; HYP-009 geometric part unchanged (SPECULATIVE)"
 ---
 
 # Hypothesis Space
@@ -151,6 +152,7 @@ A conservation/consistency law on channels, algebras, or correlations rather tha
 
 ### BH-004 — Stationary geometry from nonstationary relational microdynamics
 Toy model with \(X(t)\neq X(0)\), \(\Phi[X(t)]=g_*+O(\epsilon)\), where the microdynamics is witnessed (CON-034) and the stationarity is *sustained-by* rather than merely compatible (CON-036).
+**Status:** `STABLE` / `PLAUSIBLE` **(v0.5, owner ruling 2026-08-13:** SPECULATIVE → PLAUSIBLE on the adversarially-corrected AR-010/AR-011 record — replicated in-model support for the sustained-by clause (switch-off geometry change; criterion (b)); the witnessed-stationarity leg remains open pending AR-020. This ruling covers BH-004 only; HYP-009's geometric part stays `SPECULATIVE`.**)**
 **Purpose:** convert HYP-009's geometric question into an explicit model. **(v0.2)** \(\Phi\) should preferentially be the mutual-information-graph metric of TH-037 to avoid hand-coding geometry; the model family and success metric are specified in KB-005 Track E3. **This is the programme's first deliverable (ADR-002).**
 **Null comparator:** ordinary phase evolution producing no physically meaningful microdynamic change; and stationarity that persists when the dynamics is switched off (compatible-with, not sustained-by).
 **(v0.3, corrected v0.4) Evidence note — AR-010 confirmatory + AR-011

@@ -4,7 +4,7 @@ title: "IDEG Research Program — Agentic Protocol, Phases, Gates, and Backlog"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-13
-version: 0.9
+version: 0.10
 research_layer: R4
 epistemic_status: NOT_APPLICABLE
 sources:
@@ -21,6 +21,7 @@ changelog:
   - "0.7: AR-010 confirmatory EXECUTED/RECONCILED (Claude, 2026-08-12/13) — (a) fails via preregistered W3 null-discard, (b) holds, §5.3 sustained-by across dynamical classes; AR-020 (witness reformalization) queued PROPOSED; AR-019 window closed; KB-004 → v0.3 — see §23"
   - "0.8: AR-011 EXECUTED/RECONCILED (Claude, 2026-08-13) — verdicts survive, fragility-direction and §4.1 Φ-matching refuted with dated corrections (KB-004 → v0.4); partition-dependence scope wall; AR-020 requirements sharpened; §10 adversarial gate met — see §24"
   - "0.9: AR-021 added + executed (Claude, 2026-08-13) — dephasing-stabilization literature check: mechanism known, object not found in scope, conditional framing novelty only; KB-003 → v0.5 (SRC-059..063, verify) — see §25"
+  - "0.10: owner rulings 2026-08-13 — BH-004 → PLAUSIBLE (KB-004 v0.5); AR-020 APPROVED as scoped (next work item); amendment candidates folded into AR-020; decay-rate-law deferred until paper draft — see §26"
 ---
 
 # Research Program and Agentic Protocol
@@ -198,7 +199,7 @@ Phase G  Iteration           G6: next-cycle decision recorded (ADR)
 **(v0.6) Outcome:** DONE 2026-08-12, reconciled in-session — `ar/AR-019_note-2026-08-12_robustness-instruments.md`. Recommendation **KEEP**: the §5.2 log-ratio primary stands unchanged (promotion effect not exercised; dated no-change entry in spec §8). λ*-style thresholds rejected as primary — grid-censored in the pilot, criterion-derived (meaning shifted under Amendment 3.1), and threshold-location estimators are finite-size-fragile by analogy (SRC-055/056; NOEC critique SRC-057). Curve-style instruments remain where the spec already places them (T-B h_sub(ε); §5.2.1 exploratory curves). Advisory riders: calibrated-strength framing discipline for the confirmatory write-up; decay-rate-law analysis queued as a follow-up AR candidate only if criterion (b) is positive. Status: RECONCILED.
 **(v0.7) Window closed:** AR-010 confirmatory runs began 2026-08-12 (manifest b91ad54); the instrument-upgrade window is closed for good.
 
-### AR-020 — Witness-battery reformalization *(new v0.7; PROPOSED — owner review pending)*
+### AR-020 — Witness-battery reformalization *(new v0.7; APPROVED as scoped — owner ruling 2026-08-13; next work item)*
 `mode: FORMALIZE` · `parent: BH-004, CON-034, AR-010 outcome` · `priority: P0 candidate` ·
 **Question:** reformalize the CON-034 witness battery so that (1) every witness is null-silent by construction and (2) the scrambling|localized distinction is doubly witnessed. Candidates from the AR-010 record: a null-subtracted/null-compatible OTOC variant (W3 fired on the frozen null — c_sat ≈ 1.11, t* = 1.5 — because the OTOC probes operator spreading, not state motion); w2_mean alongside/in place of min d_phys (min is structurally uninformative for slow classes — recurrence depth returns ~0). Both were identified in-session and NOT applied post-hoc (preregistration discipline).
 **Deliverable:** amended witness section as an AR-009 §8 amendment (owner-reviewed) + rerun of the criterion-(a) analysis on the existing confirmatory data where valid, new runs where the witness definition demands them.
@@ -398,3 +399,17 @@ Deltas are applied in dependency order (KB-002 definitions → KB-003 theory →
 
 1. §6 AR-021 added and executed in-session 2026-08-13 (owner approved the sequencing "literature check first"): dephasing-stabilization literature check. Verdict: mechanism KNOWN (Zeno/damping family), object NOT FOUND in survey scope; paper novelty language restricted to conditional diagnostic/framing level. Deliverable: `ar/AR-021_note-2026-08-13_dephasing-stabilization-lit.md`; KB-003 → v0.5 (SRC-059..063, verify).
 2. Owner decision block unchanged and now fully informed: BH-004 status (recommendation on the table: SPECULATIVE → PLAUSIBLE), AR-020 scope, spec amendment candidates, decay-rate-law follow-up. Next scheduled work: those rulings, then AR-020.
+
+---
+
+## 26. Changelog v0.9 → v0.10 — owner rulings 2026-08-13
+
+Owner ruled on the full decision block (recorded in
+`sessions/2026-08-13_owner-rulings.md`):
+
+1. **BH-004: SPECULATIVE → PLAUSIBLE** (KB-004 → v0.5; explicit Status line added; HYP-009 geometric part unchanged).
+2. **AR-020 APPROVED as scoped** — next work item: null-silent W3 replacement + Φ-matched motionless comparator (or impossibility proof), then criterion-(a) re-adjudication on existing data where valid.
+3. **Spec §8 amendment candidates FOLDED INTO AR-020** (no piecemeal spec edits; dated disposition line in spec §8).
+4. **AR-019 decay-rate-law follow-up DEFERRED until paper draft** (funded only if the mechanism section needs it).
+
+Next scheduled work: **AR-020**, then first-paper drafting.

@@ -531,3 +531,8 @@ scaling is reported descriptively (no extrapolation claims — scope wall §7).
   Φ by 9–20% (chaotic/localized, N = 10) — same order as ε_Φ; standing
   scope wall (TH-037 caveat now quantitative). (iv) Remaining KB-004 §7
   items audited PASS or scope-noted in the packet.
+- **2026-08-13 — Amendment-candidate disposition (owner ruling).** The
+  two §8 candidates (null-subtracted W3; w2_mean alongside min d_phys)
+  are FOLDED INTO AR-020 (KB-005 §6): any adoption arrives as a single
+  coherent AR-020 output via a future dated amendment here, not as
+  piecemeal edits. No preregistered content changed by this entry.

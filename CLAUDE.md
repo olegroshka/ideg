@@ -76,8 +76,12 @@ results/     run outputs, figures, serialized data (gitignored where large)
 ## Current state (update this block when it changes)
 
 - Repo: https://github.com/olegroshka/ideg (private), created 2026-08-11.
-- Substrate versions: KB-001 v0.3, KB-002 v0.2, KB-003 v0.5, KB-004 v0.4,
-  KB-005 v0.9 (2026-08-13).
+- Substrate versions: KB-001 v0.3, KB-002 v0.2, KB-003 v0.5, KB-004 v0.5,
+  KB-005 v0.10 (2026-08-13).
+- **Owner rulings 2026-08-13:** BH-004 → PLAUSIBLE (BH-004 only; HYP-009
+  geometric part stays SPECULATIVE); AR-020 APPROVED as scoped;
+  amendment candidates folded into AR-020; decay-rate-law deferred until
+  paper draft. See `sessions/2026-08-13_owner-rulings.md`.
 - **G0 PASSED / M0 met** (owner review 2026-08-11; see session log and
   KB-005 §4). Mechanical-fix rule for KB-001 recorded in KB-005 §12.
 - Track E3 G1 scope **cleared** (SRC-042..044, SRC-049 verified —
@@ -115,10 +119,8 @@ results/     run outputs, figures, serialized data (gitignored where large)
   object NOT FOUND in survey scope (SRC-060..063 checked); paper novelty
   language restricted to conditional diagnostic/framing level. See
   `ar/AR-021_note-2026-08-13_dephasing-stabilization-lit.md`.
-- Next session: **owner ruling block** (all informed now, per the
-  approved sequence): (a) BH-004 epistemic status (recommendation:
-  SPECULATIVE → PLAUSIBLE); (b) AR-020 scope (null-silent
-  scrambling|localized witness; Φ-matched motionless comparator or
-  impossibility proof); (c) spec §8 amendment candidates
-  (null-subtracted W3; w2_mean); (d) AR-019 decay-rate-law follow-up.
-  Then AR-020 execution, then first-paper drafting.
+- Next session target: **AR-020** (FORMALIZE — witness-battery
+  reformalization: null-silent W3 replacement; Φ-matched motionless
+  comparator or impossibility proof; then criterion-(a) re-adjudication
+  on existing data where valid; absorbs the two amendment candidates).
+  Then first-paper drafting under the AR-021 framing constraints.
