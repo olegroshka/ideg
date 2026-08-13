@@ -75,3 +75,35 @@ the paper's corrected headline. Third internal self-correction of the
 cycle. Dated corrections applied to the AR-020 packet, spec §8,
 KB-004 (v0.7), outline §0/§6; KB-005 → v0.14. §6 drafting gate CLEARED.
 Substrate versions at close: KB-003 v0.5, KB-004 v0.7, KB-005 v0.14.
+
+## Quality-sprint outcome (same session; owner-directed "expand runs")
+
+Six descriptive extensions executed (in-script fixed seeds; committed
+JSONs in results/AR-010/quality_sprint_*.json + ar020b files; no
+preregistered verdict touched). All six landed and are folded into the
+outline:
+
+1. **Rigidity curve completed: ε_c ≈ 0.23 measured** (0.652 at ε=0.20 →
+   0.420 at 0.25 → collapse by 0.45); Fig 6 complete.
+2. **r2 comparator: subharmonic persists undiminished (0.89–0.90) to
+   2000 periods** — the 200-period prethermal caveat becomes a measured
+   statement; r1 carries the comparator role at small ε.
+3. **Quasiperiodic headline reinforced: 0/80 matchable** (doubled
+   ensembles, K = 24 + random starts; median 0.31, closest run 0.264 >
+   ε_Φ); m-scan flat across m = 3/4/5 — generic to incommensurate
+   coherent motion.
+4. **γ-grid: the sign structure spans two decades** (quasiperiodic flat
+   ≈ −0.25 for γ ∈ [0.001, 0.1]; metastable strengthens to −0.22;
+   chaotic/scrambling saturate +2.5; ordering never reorders); Fig 4
+   becomes curves.
+5. **Partition-dependence class-resolved** (n = 24–72/class): chaotic
+   0.11 … metastable 0.53 (max 0.82); largest for coherence-carried
+   classes incl. the survivor — §8 scope wall now stated per class
+   (supersedes the 2-run "9–20%" figure).
+6. **Three-size trend for the marginal pair** (N = 14 point via
+   coefficients-only witnesses): monotone, all statistics ≥ 0.976 at
+   N = 14.
+
+KB reconciliation of sprint results rides with the final paper
+reconciliation (descriptive-extension record lives here + in the
+committed JSONs + outline). NEXT: draft §2.

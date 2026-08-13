@@ -105,6 +105,11 @@ universality, gravity, or firstness claims.
   fresh-seed confirmation is not optional. NO FIRSTNESS CLAIMS anywhere
   (no "first preregistered many-body study" language — we show the
   artifact and let it speak; we have not surveyed for precedents).
+- **Three-size trend (sprint):** the marginal scrambling|integrable
+  AUCs rise monotonically N = 10 → 12 → 14 (w2_mean 0.952 → 0.975 →
+  0.976; PR_A 0.979 → 0.979 → 1.000; Ξ 0.956 → 0.975 → 0.976) —
+  descriptive third-size support for the final verdict (appendix
+  figure).
 - Fig. 3: witness values per class (null row highlighted; discarded-W3
   panel shown struck through — the dual record as a figure).
 
@@ -113,6 +118,14 @@ universality, gravity, or firstness claims.
   sizes in both tracks; the SIGN STRUCTURE: negative for
   coherence-carried classes (weak dephasing pins oscillating geometry
   to its mean) vs +2.1 for chaotic.
+- **γ-grid curves (sprint; Fig 4 upgrade):** the sign structure spans
+  TWO DECADES (γ = 0.001–0.1): quasiperiodic flat at ≈ −0.25;
+  metastable negative, strengthening monotonically (−0.02 → −0.22);
+  chaotic/scrambling positive, saturating (+0.9 → +2.5);
+  integrable/localized mild plateau (+0.6). Class ordering never
+  reorders — the confirmatory single-γ statement generalizes to a
+  regime statement (descriptive; the preregistered verdict remains the
+  single-γ one).
 - Mechanism attribution: standard decoherence damping of
   coherence-carried beats [SRC-059 family]; the class-resolved
   geometric reading is, to our survey's knowledge, unreported
@@ -140,7 +153,10 @@ universality, gravity, or firstness claims.
   scrambling 20/20 (0.037–0.046), metastable 20/20 (0.091–0.132),
   integrable 20/20 (0.161–0.170); boundary — localized 3–6/20
   (≈ 0.27); **UNMATCHED — quasiperiodic 0/40 across both sizes
-  (0.32–0.34)**. The family-only claims for metastable/integrable were
+  (0.32–0.34)**. **Sprint reinforcement: 0/80 total** (doubled
+  ensembles, K = 24 + extra random starts; median 0.31, closest single
+  run 0.264 > ε_Φ); m-mode scan flat across m = 3/4/5 (0.31–0.33) —
+  unmatchability is generic to incommensurate coherent motion. The family-only claims for metastable/integrable were
   corrected by this probe (third internal self-correction — reported in
   §4's discipline narrative). Claim wording bound to probe scope
   ("no stationary state that is a smooth function of H, within the
@@ -155,9 +171,14 @@ universality, gravity, or firstness claims.
 
 ### §7 Results V — Driven geometry: the DTC regime (~1.5 pp)
 - Stationary-with-witness 100/100 at ε = 0.03; rigidity h_sub(ε)
-  locked across the full grid (ε_c > 0.20 at our parameters, measured
-  bound); r1 comparator behaves (peak destroyed), r2 comparator
-  prethermal at 200 periods (reported as comparator scope, not hidden).
+  measured over the FULL curve (sprint): locked to ε = 0.20 (0.65),
+  crossing h_sub = 0.5 at **ε_c ≈ 0.23**, collapsed by ε ≈ 0.45 —
+  a complete critical-strength measurement, not a bound.
+- r1 comparator behaves (peak destroyed); **r2's subharmonic persists
+  UNDIMINISHED (0.89–0.90) to 2000 periods** (sprint) — at ε = 0.03
+  the clean interacting drive does not thermalize on any feasible
+  horizon; r1, not r2, is the discriminating comparator at small ε
+  (measured statement, replaces the 200-period caveat).
 - Switch-off: W5 collapses (0.95 → 0.00) while Φ persists and
   improves — the preregistered open question resolves to
   compatible-with: MBL, not the drive, holds this geometry.
@@ -165,9 +186,13 @@ universality, gravity, or firstness claims.
   persistence).
 
 ### §8 Scope walls and limitations (~1 p)
-- Partition-dependence: 9–20% under nonlocal two-site frames — same
-  order as ε_Φ; Φ is a geometry OF the posited factorization
-  (TH-037 caveat made quantitative).
+- Partition-dependence: CLASS-RESOLVED distribution (sprint, n = 24–72
+  samples/class): chaotic 0.11, scrambling 0.15, integrable 0.22,
+  localized 0.20, quasiperiodic 0.42, metastable 0.53 (max 0.82).
+  Largest for the coherence-carried classes — including the survivor
+  class. All claims are per-the-posited-partition (matchability
+  compares both sides in the same frame); Φ is a geometry OF the
+  factorization (TH-037 caveat made quantitative, per class).
 - Finite size: N ≤ 12; the quasiperiodic construction is EXHAUSTIVELY
   unsatisfiable at N = 8 (0/56 triples) — a certificate-hygiene
   finding; scrambling|integrable AUC threshold-marginal at N = 10.
