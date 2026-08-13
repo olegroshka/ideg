@@ -76,8 +76,8 @@ results/     run outputs, figures, serialized data (gitignored where large)
 ## Current state (update this block when it changes)
 
 - Repo: https://github.com/olegroshka/ideg (private), created 2026-08-11.
-- Substrate versions: KB-001 v0.3, KB-002 v0.2, KB-003 v0.4, KB-004 v0.4,
-  KB-005 v0.8 (2026-08-13).
+- Substrate versions: KB-001 v0.3, KB-002 v0.2, KB-003 v0.5, KB-004 v0.4,
+  KB-005 v0.9 (2026-08-13).
 - **G0 PASSED / M0 met** (owner review 2026-08-11; see session log and
   KB-005 §4). Mechanical-fix rule for KB-001 recorded in KB-005 §12.
 - Track E3 G1 scope **cleared** (SRC-042..044, SRC-049 verified —
@@ -110,11 +110,15 @@ results/     run outputs, figures, serialized data (gitignored where large)
   metastable Ξ tolerance-robust; Φ partition-dependence 9–20% (standing
   scope wall). Item-13 kill condition NOT met. See
   `ar/AR-011_adversarial-2026-08-13.md`.
-- Next session: **owner decision block** (all unblocked — the §10
-  adversarial gate is met): (a) BH-004 epistemic status on the corrected
-  record; (b) AR-020 scope (two design requirements: null-silent
+- **AR-021 DONE/RECONCILED (2026-08-13):** dephasing-stabilization
+  literature check — mechanism KNOWN (Zeno/damping family, SRC-059),
+  object NOT FOUND in survey scope (SRC-060..063 checked); paper novelty
+  language restricted to conditional diagnostic/framing level. See
+  `ar/AR-021_note-2026-08-13_dephasing-stabilization-lit.md`.
+- Next session: **owner ruling block** (all informed now, per the
+  approved sequence): (a) BH-004 epistemic status (recommendation:
+  SPECULATIVE → PLAUSIBLE); (b) AR-020 scope (null-silent
   scrambling|localized witness; Φ-matched motionless comparator or
-  impossibility proof); (c) spec §8 amendment candidates (null-subtracted
-  W3; w2_mean); (d) live AR-019 decay-rate-law follow-up; (e) literature
-  check on the quasiperiodic negative-log ρ effect before any novelty
-  claim.
+  impossibility proof); (c) spec §8 amendment candidates
+  (null-subtracted W3; w2_mean); (d) AR-019 decay-rate-law follow-up.
+  Then AR-020 execution, then first-paper drafting.

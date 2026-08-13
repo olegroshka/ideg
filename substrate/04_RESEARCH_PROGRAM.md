@@ -4,7 +4,7 @@ title: "IDEG Research Program — Agentic Protocol, Phases, Gates, and Backlog"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-13
-version: 0.8
+version: 0.9
 research_layer: R4
 epistemic_status: NOT_APPLICABLE
 sources:
@@ -20,6 +20,7 @@ changelog:
   - "0.6: AR-019 executed and reconciled (Claude, 2026-08-12) — recommendation KEEP the §5.2 log-ratio instrument, no spec threshold changed; KB-003 → v0.4 (SRC-052..058, verify) — see §22"
   - "0.7: AR-010 confirmatory EXECUTED/RECONCILED (Claude, 2026-08-12/13) — (a) fails via preregistered W3 null-discard, (b) holds, §5.3 sustained-by across dynamical classes; AR-020 (witness reformalization) queued PROPOSED; AR-019 window closed; KB-004 → v0.3 — see §23"
   - "0.8: AR-011 EXECUTED/RECONCILED (Claude, 2026-08-13) — verdicts survive, fragility-direction and §4.1 Φ-matching refuted with dated corrections (KB-004 → v0.4); partition-dependence scope wall; AR-020 requirements sharpened; §10 adversarial gate met — see §24"
+  - "0.9: AR-021 added + executed (Claude, 2026-08-13) — dephasing-stabilization literature check: mechanism known, object not found in scope, conditional framing novelty only; KB-003 → v0.5 (SRC-059..063, verify) — see §25"
 ---
 
 # Research Program and Agentic Protocol
@@ -204,6 +205,11 @@ Phase G  Iteration           G6: next-cycle decision recorded (ADR)
 **Promotion_effect:** criterion (a) becomes re-adjudicable; BH-004's witnessed-stationarity leg unblocks.
 **Kill_effect:** if no null-silent witness pair can separate scrambling|localized, that inseparability is recorded as a substantive negative about witnessing scrambling-class motion beneath stationary geometry.
 
+### AR-021 — Dephasing-stabilization literature check *(new v0.9; executed in-session)*
+`mode: VERIFY + EXPLORE` · `parent: AR-010/AR-011 outcome; first-paper framing` · `priority: P1` ·
+**Question:** is the AR-010 negative-log ρ effect (weak dephasing pins oscillating MI-graph geometry to its mean, class-resolved sign structure) known physics — at mechanism, object, or framing level?
+**(v0.9) Outcome:** DONE 2026-08-13, reconciled in-session — `ar/AR-021_note-2026-08-13_dephasing-stabilization-lit.md`. Verdict: **mechanism KNOWN** (decoherence damping of coherence-carried oscillations; continuous-Zeno family in the strong-coupling limit, SRC-059) — no mechanism-novelty claim licensed; **object NOT FOUND in survey scope** (closest works: static MI-network attack robustness SRC-060, stationary MI-metricity diagnostics SRC-061; adjacent noise-stabilizes-MOTION literature SRC-062/063 is a different object and direction). Permitted paper language: conditional diagnostic/framing novelty only. SRC-059..063 entered in KB-003 v0.5, all `verify`. Status: RECONCILED.
+
 ---
 
 ## 7. Track E3 — first deliverable specification (v0.2)
@@ -385,3 +391,10 @@ Deltas are applied in dependency order (KB-002 definitions → KB-003 theory →
 1. §6 AR-011: EXECUTED/RECONCILED 2026-08-13 (`ar/AR-011_adversarial-2026-08-13.md`). Verdict-preserving, interpretation-correcting: §5.3 formal verdicts and criterion (b) survive; the AR-010 fragility-direction reading and the spec §4.1 Φ-matching assumption are refuted (corrections issued, dated, in the AR-010 packet, KB-004 → v0.4, spec §8); switch-off geometry change is the load-bearing sustained-by evidence; Φ partition-dependence quantified 9–20% (standing scope wall); item-13 kill condition not met.
 2. §6 AR-020: inherits two design requirements from AR-011 (null-silent scrambling|localized witness; Φ-matched motionless comparator or impossibility proof). Owner review still pending.
 3. Next scheduled work: owner decisions — AR-020 scope, the two spec §8 amendment candidates, the live AR-019 decay-rate-law follow-up, and whether BH-004's epistemic status moves on the corrected record (promotion decision now unblocked: the §10 adversarial-companion requirement is met).
+
+---
+
+## 25. Changelog v0.8 → v0.9
+
+1. §6 AR-021 added and executed in-session 2026-08-13 (owner approved the sequencing "literature check first"): dephasing-stabilization literature check. Verdict: mechanism KNOWN (Zeno/damping family), object NOT FOUND in survey scope; paper novelty language restricted to conditional diagnostic/framing level. Deliverable: `ar/AR-021_note-2026-08-13_dephasing-stabilization-lit.md`; KB-003 → v0.5 (SRC-059..063, verify).
+2. Owner decision block unchanged and now fully informed: BH-004 status (recommendation on the table: SPECULATIVE → PLAUSIBLE), AR-020 scope, spec amendment candidates, decay-rate-law follow-up. Next scheduled work: those rulings, then AR-020.
