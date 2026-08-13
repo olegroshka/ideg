@@ -1,0 +1,108 @@
+{
+  "group": "TA_i_fixed_point",
+  "n_sites": 12,
+  "manifest": "confirmatory_manifest.json",
+  "runs": [
+    {
+      "seed": 3961121647,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 3.923135673736782e-12,
+            "max_delta_phi_post": 3.923135673736782e-12,
+            "stationary": true,
+            "drift_slope": -3.629817519501122e-17,
+            "drift_slope_ci": [
+              -2.443504634685041e-15,
+              2.4779978985779347e-15
+            ],
+            "cap_max_delta_phi_subgraph": 3.923135673736782e-12,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 1.3322676295501878e-15
+          },
+          "witnesses": {
+            "pr_A": 1.0,
+            "w2_min": -6.217248937900877e-15,
+            "w2_mean": -4.616805552817964e-15,
+            "otoc_c_sat": 1.066025356119406,
+            "otoc_t_star": 2.5,
+            "xi": -3.552713678800501e-15
+          },
+          "protocols": {
+            "quench": {
+              "site": 2,
+              "max_delta_phi_pert": 0.0796886432564919,
+              "log_rho": 4.378127081997965,
+              "retention_R": 0.9203113567474313,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                2,
+                4
+              ],
+              "max_delta_phi_pert": 4.614324501506526e-12,
+              "log_rho": 0.0,
+              "retention_R": 0.9999999999993088,
+              "fails_stationarity": false
+            }
+          },
+          "otoc_profile": {
+            "r": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "c_sat": [
+              1.0311103008197602,
+              1.0542270135093708,
+              1.0717909230852305,
+              1.0585404341852696,
+              1.066025356119406
+            ]
+          }
+        }
+      ],
+      "battery": {
+        "tol": 1e-10,
+        "global_phase": {
+          "w1_dev": 0.0,
+          "w2_dev": 8.881784197001252e-16,
+          "w3_dev": 4.440892098500626e-16,
+          "w4_dev": 8.881784197001252e-16,
+          "mi_dev": 4.135580766728708e-15,
+          "phi_dev": 1.6274626091217215e-10,
+          "pass": true
+        },
+        "consistent_local_basis": {
+          "w1_dev": 0.0,
+          "w2_dev": 4.440892098500626e-15,
+          "w3_dev": 1.177502539917441e-12,
+          "w4_dev": 1.7763568394002505e-15,
+          "mi_dev": 3.552713678800501e-15,
+          "phi_dev": 3.978239959678831e-10,
+          "pass": true
+        },
+        "state_only_local_basis": {
+          "w3_max_dev": 1.341225974458724,
+          "mi_max_dev": 3.552713678800501e-15,
+          "phi_max_dev": 3.978239959678831e-10,
+          "note": "expected-change item: magnitudes recorded, not thresholded"
+        },
+        "reflection": {
+          "w1_dev": 0.0,
+          "w2_dev": 1.3322676295501878e-15,
+          "w3_dev": 0.0,
+          "w4_dev": 8.881784197001252e-16,
+          "mi_dev": 3.497202527569243e-15,
+          "phi_dev": 4.1590730859297764e-10,
+          "pass": true
+        },
+        "all_must_pass": true
+      }
+    }
+  ],
+  "_runtime_s": 182.9
+}

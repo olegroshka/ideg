@@ -1,0 +1,1001 @@
+{
+  "group": "TC_scrambling",
+  "n_sites": 12,
+  "manifest": "confirmatory_manifest.json",
+  "runs": [
+    {
+      "seed": 160808797,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.2125505688595419,
+            "max_delta_phi_post": 0.2125505688595419,
+            "stationary": true,
+            "drift_slope": -3.2432388880006875e-05,
+            "drift_slope_ci": [
+              -8.507365809397283e-05,
+              2.4703052969840818e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.2125505688595419,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 6.661338147750939e-16
+          },
+          "witnesses": {
+            "pr_A": 670.5562679885803,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.9704503588586023,
+            "otoc_c_sat": 1.0370568959902173,
+            "otoc_t_star": 3.0,
+            "xi": 0.9775930507197836
+          },
+          "protocols": {
+            "quench": {
+              "site": 8,
+              "max_delta_phi_pert": 0.21653438165671923,
+              "log_rho": 0.018569410405019825,
+              "retention_R": 0.9960161872028227,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.19840645040260999,
+              "log_rho": -0.06886222472537176,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            }
+          },
+          "otoc_profile": {
+            "r": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "c_sat": [
+              1.0893909699500597,
+              1.1147271034840671,
+              1.0999121402277239,
+              1.1118067356203214,
+              1.0370568959902173
+            ]
+          }
+        }
+      ],
+      "battery": {
+        "tol": 1e-10,
+        "global_phase": {
+          "w1_dev": 2.2737367544323206e-13,
+          "w2_dev": 1.1102230246251565e-16,
+          "w3_dev": 6.661338147750939e-16,
+          "w4_dev": 0.0,
+          "mi_dev": 9.992007221626409e-16,
+          "phi_dev": 1.9451107391432743e-13,
+          "pass": true
+        },
+        "consistent_local_basis": {
+          "w1_dev": 5.91285242990125e-10,
+          "w2_dev": 6.317169010117141e-14,
+          "w3_dev": 1.5787371410169726e-13,
+          "w4_dev": 1.2434497875801753e-14,
+          "mi_dev": 8.359979375427429e-14,
+          "phi_dev": 5.000444502911705e-12,
+          "pass": false
+        },
+        "state_only_local_basis": {
+          "w3_max_dev": 0.32121443263756433,
+          "mi_max_dev": 8.359979375427429e-14,
+          "phi_max_dev": 5.000444502911705e-12,
+          "note": "expected-change item: magnitudes recorded, not thresholded"
+        },
+        "reflection": {
+          "w1_dev": 7.503331289626658e-11,
+          "w2_dev": 4.496403249731884e-14,
+          "w3_dev": 0.0,
+          "w4_dev": 1.5543122344752192e-15,
+          "mi_dev": 1.0758061108617767e-13,
+          "phi_dev": 3.1645797093915462e-12,
+          "pass": true
+        },
+        "all_must_pass": false
+      }
+    },
+    {
+      "seed": 2204715741,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.12770390878534818,
+            "max_delta_phi_post": 0.12128807725710809,
+            "stationary": true,
+            "drift_slope": -5.39940812387197e-05,
+            "drift_slope_ci": [
+              -8.328319486482712e-05,
+              2.595481225247945e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.12770390878534818,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 12040.00304863212,
+            "w2_min": 4.440892098500626e-16,
+            "w2_mean": 0.9957368773590792,
+            "otoc_c_sat": 0.9168014327243067,
+            "otoc_t_star": 3.0,
+            "xi": 0.9989278530103477
+          },
+          "protocols": {
+            "quench": {
+              "site": 9,
+              "max_delta_phi_pert": 0.10883072797836539,
+              "log_rho": -0.10837479893268362,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                3,
+                9
+              ],
+              "max_delta_phi_pert": 0.12520260264817398,
+              "log_rho": 0.03176472662316981,
+              "retention_R": 0.9960854746089342,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 858638976,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.09173673552935872,
+            "max_delta_phi_post": 0.09173673552935872,
+            "stationary": true,
+            "drift_slope": -1.6716287187972646e-05,
+            "drift_slope_ci": [
+              -2.8233709721398718e-05,
+              -7.52635413440658e-07
+            ],
+            "cap_max_delta_phi_subgraph": 0.09173673552935871,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 11657.015396419105,
+            "w2_min": 8.881784197001252e-16,
+            "w2_mean": 0.9968331932178393,
+            "otoc_c_sat": 0.9486336441033058,
+            "otoc_t_star": 3.0,
+            "xi": 0.9994641946416342
+          },
+          "protocols": {
+            "quench": {
+              "site": 6,
+              "max_delta_phi_pert": 0.1027573238698195,
+              "log_rho": 0.11344722477848036,
+              "retention_R": 0.9889794116595392,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                3,
+                7
+              ],
+              "max_delta_phi_pert": 0.10642735045957843,
+              "log_rho": 0.14853969247050097,
+              "retention_R": 0.9853093850697803,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 3954607679,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.09726689812701268,
+            "max_delta_phi_post": 0.08960823833390226,
+            "stationary": true,
+            "drift_slope": -2.544566996885361e-05,
+            "drift_slope_ci": [
+              -4.764470980832765e-05,
+              4.382695855275906e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.09726689812701268,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 10479.059438409602,
+            "w2_min": -1.3322676295501878e-15,
+            "w2_mean": 0.9968158782602111,
+            "otoc_c_sat": 0.9679924971291965,
+            "otoc_t_star": 3.0,
+            "xi": 0.9994563137516934
+          },
+          "protocols": {
+            "quench": {
+              "site": 9,
+              "max_delta_phi_pert": 0.09177227994685927,
+              "log_rho": 0.023863029218731627,
+              "retention_R": 0.997835958387043,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                2,
+                11
+              ],
+              "max_delta_phi_pert": 0.09822468286631808,
+              "log_rho": 0.09181027534902636,
+              "retention_R": 0.9913835554675842,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 2856720927,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.09174072401741311,
+            "max_delta_phi_post": 0.09116754634425686,
+            "stationary": true,
+            "drift_slope": -2.496530973497743e-06,
+            "drift_slope_ci": [
+              -1.3447120233095632e-05,
+              1.4645121982971646e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.09174072401741312,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 14139.452167463543,
+            "w2_min": -4.440892098500626e-16,
+            "w2_mean": 0.9966826688646047,
+            "otoc_c_sat": 0.8870265682393936,
+            "otoc_t_star": 3.5,
+            "xi": 0.9993313934258432
+          },
+          "protocols": {
+            "quench": {
+              "site": 1,
+              "max_delta_phi_pert": 0.09000312262461846,
+              "log_rho": -0.012854616704235924,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                5,
+                10
+              ],
+              "max_delta_phi_pert": 0.10217249164372051,
+              "log_rho": 0.11396349727848236,
+              "retention_R": 0.9889950547005364,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 1322345667,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.09375452892581046,
+            "max_delta_phi_post": 0.09375452892581046,
+            "stationary": true,
+            "drift_slope": -1.0978860280570387e-05,
+            "drift_slope_ci": [
+              -2.407908098261793e-05,
+              1.0011983204822672e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.09375452892581046,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 11298.787065552404,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.9965496496929179,
+            "otoc_c_sat": 0.9501838499892413,
+            "otoc_t_star": 3.0,
+            "xi": 0.9990602236619031
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.09146743692294167,
+              "log_rho": -0.02469694390832844,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                0,
+                8
+              ],
+              "max_delta_phi_pert": 0.11307003586153608,
+              "log_rho": 0.18732744088367928,
+              "retention_R": 0.9806844930642744,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 2274653091,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.09360539115596861,
+            "max_delta_phi_post": 0.09360539115596861,
+            "stationary": true,
+            "drift_slope": -1.4603145899612745e-05,
+            "drift_slope_ci": [
+              -2.9199356773198034e-05,
+              9.467285049787247e-06
+            ],
+            "cap_max_delta_phi_subgraph": 0.09360539115596862,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 11288.8112089838,
+            "w2_min": -4.440892098500626e-16,
+            "w2_mean": 0.9967645764503764,
+            "otoc_c_sat": 0.957130606991843,
+            "otoc_t_star": 3.5,
+            "xi": 0.9993636031207356
+          },
+          "protocols": {
+            "quench": {
+              "site": 8,
+              "max_delta_phi_pert": 0.0998945144600612,
+              "log_rho": 0.06502679419215088,
+              "retention_R": 0.9937108766959074,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                2,
+                9
+              ],
+              "max_delta_phi_pert": 0.09948004933286565,
+              "log_rho": 0.06086913519742273,
+              "retention_R": 0.994125341823103,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 1730386351,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.09554022734908309,
+            "max_delta_phi_post": 0.09047286151583214,
+            "stationary": true,
+            "drift_slope": -2.1876713347402722e-05,
+            "drift_slope_ci": [
+              -3.113236203878936e-05,
+              1.7535452288338852e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.09554022734908309,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 5.551115123125783e-16
+          },
+          "witnesses": {
+            "pr_A": 13280.06069713019,
+            "w2_min": 1.3322676295501878e-15,
+            "w2_mean": 0.9967729062774352,
+            "otoc_c_sat": 0.9164497735852614,
+            "otoc_t_star": 3.5,
+            "xi": 0.9994517642354116
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.09066188446228722,
+              "log_rho": 0.002087098353762791,
+              "retention_R": 0.9998109770535449,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                2,
+                9
+              ],
+              "max_delta_phi_pert": 0.10906330060308922,
+              "log_rho": 0.186878520161294,
+              "retention_R": 0.9814095609127429,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 3044957795,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.09618070170418673,
+            "max_delta_phi_post": 0.09175927837347787,
+            "stationary": true,
+            "drift_slope": -2.0406041844906728e-05,
+            "drift_slope_ci": [
+              -4.264406849722357e-05,
+              3.322454075666806e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.09618070170418673,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 12193.636956628125,
+            "w2_min": 4.440892098500626e-16,
+            "w2_mean": 0.9967835123618458,
+            "otoc_c_sat": 0.945306068545603,
+            "otoc_t_star": 3.0,
+            "xi": 0.9994614712614137
+          },
+          "protocols": {
+            "quench": {
+              "site": 8,
+              "max_delta_phi_pert": 0.09227562207325202,
+              "log_rho": 0.005611381899726573,
+              "retention_R": 0.9994836563002258,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                1,
+                7
+              ],
+              "max_delta_phi_pert": 0.10326791121314201,
+              "log_rho": 0.11815808250739446,
+              "retention_R": 0.9884913671603359,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 2634697907,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.10210285914889505,
+            "max_delta_phi_post": 0.09369121937321977,
+            "stationary": true,
+            "drift_slope": -4.155116383277599e-06,
+            "drift_slope_ci": [
+              -2.0314026048616656e-05,
+              7.44285755767047e-06
+            ],
+            "cap_max_delta_phi_subgraph": 0.10210285914889505,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 12947.753995368968,
+            "w2_min": 6.661338147750939e-16,
+            "w2_mean": 0.9967462625739021,
+            "otoc_c_sat": 0.9413625070447569,
+            "otoc_t_star": 3.0,
+            "xi": 0.9993392201871116
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.08671963225772188,
+              "log_rho": -0.07732417774387121,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                1,
+                7
+              ],
+              "max_delta_phi_pert": 0.10554980516935082,
+              "log_rho": 0.11917845357576475,
+              "retention_R": 0.9881414142038689,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 3107152278,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.09591245949339934,
+            "max_delta_phi_post": 0.09591245949339934,
+            "stationary": true,
+            "drift_slope": -2.3877120473686032e-05,
+            "drift_slope_ci": [
+              -4.6337178273496585e-05,
+              1.737979069872062e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.09591245949339934,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 12143.548519298814,
+            "w2_min": 2.220446049250313e-16,
+            "w2_mean": 0.9967871902280195,
+            "otoc_c_sat": 0.9699654061549317,
+            "otoc_t_star": 3.5,
+            "xi": 0.999421094679633
+          },
+          "protocols": {
+            "quench": {
+              "site": 10,
+              "max_delta_phi_pert": 0.08715567832136906,
+              "log_rho": -0.09573996960725696,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                8,
+                11
+              ],
+              "max_delta_phi_pert": 0.10665072381603928,
+              "log_rho": 0.10612333655513792,
+              "retention_R": 0.9892617356773601,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 2684929643,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.08979351533217336,
+            "max_delta_phi_post": 0.08625392514523893,
+            "stationary": true,
+            "drift_slope": -2.5381814991830597e-05,
+            "drift_slope_ci": [
+              -3.2395392930766894e-05,
+              -1.2599971134386928e-06
+            ],
+            "cap_max_delta_phi_subgraph": 0.08979351533217336,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 11544.182916375532,
+            "w2_min": -1.3322676295501878e-15,
+            "w2_mean": 0.9968511918889664,
+            "otoc_c_sat": 1.0051359264728659,
+            "otoc_t_star": 3.5,
+            "xi": 0.9994764374957328
+          },
+          "protocols": {
+            "quench": {
+              "site": 6,
+              "max_delta_phi_pert": 0.09324245727796746,
+              "log_rho": 0.07790760434656674,
+              "retention_R": 0.9930114678672715,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                5,
+                11
+              ],
+              "max_delta_phi_pert": 0.10022379081222255,
+              "log_rho": 0.1501100299173884,
+              "retention_R": 0.9860301343330163,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 3103680847,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.09826508273481256,
+            "max_delta_phi_post": 0.09341936303538008,
+            "stationary": true,
+            "drift_slope": -3.1365214461412335e-05,
+            "drift_slope_ci": [
+              -5.5453293227327747e-05,
+              1.4763934836941458e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.09826508273481258,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 12272.167830147355,
+            "w2_min": 0.0,
+            "w2_mean": 0.9964996603347096,
+            "otoc_c_sat": 0.9025335885876791,
+            "otoc_t_star": 3.0,
+            "xi": 0.9992856084626716
+          },
+          "protocols": {
+            "quench": {
+              "site": 3,
+              "max_delta_phi_pert": 0.09247389027185571,
+              "log_rho": -0.010172299418889934,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                3,
+                8
+              ],
+              "max_delta_phi_pert": 0.10226042560555265,
+              "log_rho": 0.09042411487658553,
+              "retention_R": 0.9911589374298274,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 3655883210,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.12373680970929701,
+            "max_delta_phi_post": 0.11009866554861919,
+            "stationary": true,
+            "drift_slope": -4.758495933048028e-05,
+            "drift_slope_ci": [
+              -7.490283775247032e-05,
+              -2.536329837574765e-06
+            ],
+            "cap_max_delta_phi_subgraph": 0.12373680970929701,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 11981.882481861645,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.995713567724677,
+            "otoc_c_sat": 0.8106598396293571,
+            "otoc_t_star": 3.5,
+            "xi": 0.9988568799425677
+          },
+          "protocols": {
+            "quench": {
+              "site": 9,
+              "max_delta_phi_pert": 0.09862459985338741,
+              "log_rho": -0.11005620139305188,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.11667266340863497,
+              "log_rho": 0.0579953418423243,
+              "retention_R": 0.9934260021399842,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 3119587658,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.09501568894961547,
+            "max_delta_phi_post": 0.09274619728901838,
+            "stationary": true,
+            "drift_slope": -2.072316156007506e-05,
+            "drift_slope_ci": [
+              -4.260935113458404e-05,
+              2.6049570110444203e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.09501568894961547,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 8.881784197001252e-16
+          },
+          "witnesses": {
+            "pr_A": 11971.735345228424,
+            "w2_min": -3.9968028886505635e-15,
+            "w2_mean": 0.9967838669735898,
+            "otoc_c_sat": 0.9518342864157968,
+            "otoc_t_star": 3.5,
+            "xi": 0.9994599164017491
+          },
+          "protocols": {
+            "quench": {
+              "site": 2,
+              "max_delta_phi_pert": 0.09445301538449688,
+              "log_rho": 0.018235818092752962,
+              "retention_R": 0.9982931819045215,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                1,
+                6
+              ],
+              "max_delta_phi_pert": 0.10837145480381441,
+              "log_rho": 0.1556980211917139,
+              "retention_R": 0.984374742485204,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 1796608718,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.09582374197314665,
+            "max_delta_phi_post": 0.08865144814272158,
+            "stationary": true,
+            "drift_slope": -2.793967267764253e-05,
+            "drift_slope_ci": [
+              -5.788750489480442e-05,
+              1.1703250003509449e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.09582374197314668,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 12357.65841271209,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.9967675112207396,
+            "otoc_c_sat": 0.9801324631761463,
+            "otoc_t_star": 3.5,
+            "xi": 0.9994526372478995
+          },
+          "protocols": {
+            "quench": {
+              "site": 4,
+              "max_delta_phi_pert": 0.08755411120128365,
+              "log_rho": -0.012455351940535011,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                4,
+                8
+              ],
+              "max_delta_phi_pert": 0.09247133018938947,
+              "log_rho": 0.04218628468326229,
+              "retention_R": 0.9961801179533321,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 364570647,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.0954451684378642,
+            "max_delta_phi_post": 0.0954451684378642,
+            "stationary": true,
+            "drift_slope": -1.0664384463749033e-05,
+            "drift_slope_ci": [
+              -3.763898003649999e-05,
+              4.1094142095115415e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.0954451684378642,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 12857.121595576653,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.996854176681462,
+            "otoc_c_sat": 0.9377722822475605,
+            "otoc_t_star": 3.0,
+            "xi": 0.9994939538391339
+          },
+          "protocols": {
+            "quench": {
+              "site": 8,
+              "max_delta_phi_pert": 0.10140394203489808,
+              "log_rho": 0.06056003637030194,
+              "retention_R": 0.9940412264029661,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                4,
+                10
+              ],
+              "max_delta_phi_pert": 0.11290968863726078,
+              "log_rho": 0.16803635345489085,
+              "retention_R": 0.9825354798006034,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 28869117,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.09544323237998789,
+            "max_delta_phi_post": 0.08829205162102699,
+            "stationary": true,
+            "drift_slope": -3.172821221577923e-05,
+            "drift_slope_ci": [
+              -4.002627489971831e-05,
+              2.637484444069106e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.09544323237998789,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 8853.97477431413,
+            "w2_min": 4.440892098500626e-16,
+            "w2_mean": 0.9966467995525209,
+            "otoc_c_sat": 0.9919318074569533,
+            "otoc_t_star": 3.0,
+            "xi": 0.99934082839933
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.09629648694275046,
+              "log_rho": 0.08678174985202838,
+              "retention_R": 0.9919955646782765,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                6,
+                11
+              ],
+              "max_delta_phi_pert": 0.0971930774907443,
+              "log_rho": 0.09604940175780051,
+              "retention_R": 0.9910989741302827,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 1981040583,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.10373136563814755,
+            "max_delta_phi_post": 0.09667094818385423,
+            "stationary": true,
+            "drift_slope": -3.327723224213082e-05,
+            "drift_slope_ci": [
+              -5.033511514911878e-05,
+              1.8180237891401804e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.10373136563814758,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 13521.16992665319,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.9961574000044376,
+            "otoc_c_sat": 0.8055671165319208,
+            "otoc_t_star": 3.5,
+            "xi": 0.9990501721339805
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.09529888926276507,
+              "log_rho": -0.014294769461555652,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                5,
+                10
+              ],
+              "max_delta_phi_pert": 0.10569179376288336,
+              "log_rho": 0.08921432791478487,
+              "retention_R": 0.9909791544209708,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 4134831411,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.0903770306632754,
+            "max_delta_phi_post": 0.09011981923197097,
+            "stationary": true,
+            "drift_slope": -1.680847146388253e-05,
+            "drift_slope_ci": [
+              -2.62944047603533e-05,
+              1.1656550500451308e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.09037703066327539,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 3.3306690738754696e-16
+          },
+          "witnesses": {
+            "pr_A": 9665.909709681959,
+            "w2_min": 6.661338147750939e-16,
+            "w2_mean": 0.9966941929021073,
+            "otoc_c_sat": 0.9182615290716539,
+            "otoc_t_star": 3.0,
+            "xi": 0.999399824203164
+          },
+          "protocols": {
+            "quench": {
+              "site": 2,
+              "max_delta_phi_pert": 0.086829269904916,
+              "log_rho": -0.03719633399323401,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "loss": {
+              "lost": [
+                6,
+                11
+              ],
+              "max_delta_phi_pert": 0.09672018176587499,
+              "log_rho": 0.07068197590169913,
+              "retention_R": 0.9933996374660959,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "_runtime_s": 475.5
+}

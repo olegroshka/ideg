@@ -254,6 +254,8 @@ elif STAGE == "protocols":
             real_out.append({"seed": seed, "states": states_rec})
             print(f"[{time.time() - t0:7.1f}s] protocols {key} seed {seed} "
                   f"done", flush=True)
+            with open(CONF / "TB_protocols.partial.json", "w") as f:
+                json.dump({**prot_out, key: real_out}, f)  # checkpoint
         prot_out[key] = real_out
     results["protocols"] = prot_out
 

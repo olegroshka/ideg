@@ -1,0 +1,131 @@
+{
+  "group": "TA_i_fixed_point",
+  "n_sites": 10,
+  "manifest": "confirmatory_manifest.json",
+  "runs": [
+    {
+      "seed": 758801068,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 8.457126258871681e-13,
+            "max_delta_phi_post": 8.457126258871681e-13,
+            "stationary": true,
+            "drift_slope": -5.087724285183414e-17,
+            "drift_slope_ci": [
+              -4.3443174823510223e-16,
+              3.590102908675776e-16
+            ],
+            "cap_max_delta_phi_subgraph": 8.457126258871681e-13,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 1.887379141862766e-15
+          },
+          "witnesses": {
+            "pr_A": 1.0,
+            "w2_min": 5.551115123125783e-15,
+            "w2_mean": 7.299793272161418e-15,
+            "otoc_c_sat": 1.0936077245591909,
+            "otoc_t_star": 2.0,
+            "xi": 6.217248937900877e-15
+          },
+          "protocols": {
+            "quench": {
+              "site": 2,
+              "max_delta_phi_pert": 0.07775824851587991,
+              "log_rho": 4.35360463566857,
+              "retention_R": 0.9222417514849658,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.0848231888591338,
+              "log_rho": 6.98917229311837,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 1.2878587085651816e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                5
+              ],
+              "max_delta_phi_pert": 4.623582445814634e-13,
+              "log_rho": 0.0,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            }
+          },
+          "otoc_profile": {
+            "r": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "c_sat": [
+              1.0641827265609254,
+              1.0890678593470953,
+              1.081263700415413,
+              1.0936077245591909
+            ]
+          },
+          "comparator": {
+            "xi_rho_bar": 0.0,
+            "switchoff_delta_vs_run": 4.680363370846423e-13,
+            "protocols": {
+              "quench": {
+                "max_delta_phi_pert": 0.07255876637779013,
+                "log_rho": 4.2843968042537295
+              },
+              "dephasing": {
+                "max_delta_phi_pert": 1.0848231888582305,
+                "log_rho": 6.989172293117537
+              },
+              "loss": {
+                "max_delta_phi_pert": 0.0,
+                "log_rho": 0.0
+              }
+            }
+          }
+        }
+      ],
+      "battery": {
+        "tol": 1e-10,
+        "global_phase": {
+          "w1_dev": 0.0,
+          "w2_dev": 8.881784197001252e-15,
+          "w3_dev": 2.4424906541753444e-15,
+          "w4_dev": 7.105427357601002e-15,
+          "mi_dev": 5.578870698741412e-15,
+          "phi_dev": 1.3633183471029042e-10,
+          "pass": true
+        },
+        "consistent_local_basis": {
+          "w1_dev": 0.0,
+          "w2_dev": 3.3306690738754696e-15,
+          "w3_dev": 8.142375662600898e-13,
+          "w4_dev": 3.9968028886505635e-15,
+          "mi_dev": 3.608224830031759e-15,
+          "phi_dev": 4.786215868080035e-11,
+          "pass": true
+        },
+        "state_only_local_basis": {
+          "w3_max_dev": 0.5986255518082854,
+          "mi_max_dev": 3.608224830031759e-15,
+          "phi_max_dev": 4.786215868080035e-11,
+          "note": "expected-change item: magnitudes recorded, not thresholded"
+        },
+        "reflection": {
+          "w1_dev": 0.0,
+          "w2_dev": 1.3322676295501878e-15,
+          "w3_dev": 0.0,
+          "w4_dev": 8.881784197001252e-16,
+          "mi_dev": 3.858025010572419e-15,
+          "phi_dev": 2.0303758674344863e-11,
+          "pass": true
+        },
+        "all_must_pass": true
+      }
+    }
+  ],
+  "_runtime_s": 58.7
+}

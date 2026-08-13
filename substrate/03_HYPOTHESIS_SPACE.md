@@ -3,8 +3,8 @@ id: KB-004
 title: "IDEG Hypothesis Space — Nulls, Bridges, Strong Forms, and Falsifiers"
 status: DRAFT
 owner: shared
-last_reviewed: 2026-08-11
-version: 0.2
+last_reviewed: 2026-08-13
+version: 0.3
 research_layer: R3
 epistemic_status: SPECULATIVE_TO_PLAUSIBLE
 sources:
@@ -14,6 +14,7 @@ referenced_by: [KB-005]
 changelog:
   - "0.1: initial hypothesis space, HYP-000..008, BH-001..006 (Sol/ChatGPT, 2026-08-11)"
   - "0.2: review revision (Claude, 2026-08-11) — see §10"
+  - "0.3: BH-004 dated evidence note from AR-010 confirmatory (Claude, 2026-08-13) — sustained-by clause supported in-model, criterion (a) witness-scheme negative recorded; no epistemic-status change (AR-011-gated); see ar/AR-010_confirmatory-2026-08-12.md"
 ---
 
 # Hypothesis Space
@@ -151,6 +152,22 @@ A conservation/consistency law on channels, algebras, or correlations rather tha
 Toy model with \(X(t)\neq X(0)\), \(\Phi[X(t)]=g_*+O(\epsilon)\), where the microdynamics is witnessed (CON-034) and the stationarity is *sustained-by* rather than merely compatible (CON-036).
 **Purpose:** convert HYP-009's geometric question into an explicit model. **(v0.2)** \(\Phi\) should preferentially be the mutual-information-graph metric of TH-037 to avoid hand-coding geometry; the model family and success metric are specified in KB-005 Track E3. **This is the programme's first deliverable (ADR-002).**
 **Null comparator:** ordinary phase evolution producing no physically meaningful microdynamic change; and stationarity that persists when the dynamics is switched off (compatible-with, not sustained-by).
+**(v0.3) Evidence note — AR-010 confirmatory (2026-08-12/13,
+`ar/AR-010_confirmatory-2026-08-12.md`; epistemic status unchanged,
+promotion gated on AR-011 per KB-005 §10).** Mixed outcome of record:
+(1) the *sustained-by* clause has its first in-model support — §5.3
+affirms sustained-by for all six dynamical classes (the matched
+stationary comparator's Φ is far more fragile under the preregistered
+perturbations, disjoint CIs everywhere), and criterion (b) — the
+robustness differential — HOLDS with two-size replication in both
+tracks; stationary-with-witness regimes exist (chaotic/scrambling
+20/20; T-B DTC ε = 0.03 100/100). (2) Criterion (a) FAILS on one pair
+(T-C scrambling|localized) after W3 was discarded by the preregistered
+§4.4 null test (the OTOC fires on the frozen null — it is not a valid
+CON-034 witness as instantiated) — the witness scheme returns to
+FORMALIZE per spec §5.4 (SC-005 negative, recorded). (3) T-B
+switch-off resolves compatible-with for the DTC regime (W5 collapses,
+Φ persists — MBL holds the pattern without the drive).
 
 ### BH-005 — Recurrence as an emergent-stability mechanism
 Within a successful BH-004 model, test whether recurrence/limit-cycle/quasiperiodicity — including a driven/Floquet regime modeled on TH-033 — provides robustness unavailable to fixed-point/invariant-subspace alternatives. **Only proceed if BH-004 survives.** This is HYP-005's proving ground.

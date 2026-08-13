@@ -476,3 +476,40 @@ scaling is reported descriptively (no extrapolation claims — scope wall §7).
   Follow-up candidate (separate AR, only if (b) is positive): strength-grid
   decay-rate-law analysis. The upgrade window formally closes when
   confirmatory runs begin.
+- **2026-08-12/13 — Confirmatory phase executed (results of record; no
+  preregistered content changed).** Manifest committed pre-execution
+  (results/AR-010/confirmatory_manifest.json, b91ad54); first execution
+  closed the AR-019 window. Addendum 1 (a76db0e, pre-execution for the
+  affected runs): the §1 T-A(ii) incommensurability certificate is
+  exhaustively unsatisfiable at N = 8 (0/56 triples) — T-A criterion
+  sizing reverted to the §5.1 primary (10, 12). Outcomes per the
+  preregistered analysis (results/AR-010/confirmatory_summary.json;
+  packet ar/AR-010_confirmatory-2026-08-12.md):
+  1. **§4.4 null: W3 FIRES** (class-(i) c_sat ≈ 1.11, t* = 1.5 — the
+     silence prediction "C(r, t) time-independent" is refuted; the OTOC
+     probes operator spreading, present in frozen states). W3 discarded
+     from the criterion-(a) statistic set per the preregistered clause.
+  2. **Criterion (a): FAILS** — T-A holds at (10, 12) (all pairs; the
+     (i, iv) pair separates on PR_A exact-value [1.007–1.012 vs 1] and
+     Ξ); T-C fails at both sizes on scrambling|localized (Ξ only:
+     AUC 0.985/0.990; PR_A 0.8875/0.5575; min d_phys 0.705/0.945).
+     Single-cause: retained-W3 t* would separate this pair with AUC 1.0
+     (descriptive counterfactual). §5.4 row 3 applies: witness scheme
+     returns to FORMALIZE; recorded negative (SC-005).
+  3. **Criterion (b): HOLDS** — dephasing replicates at two sizes in
+     BOTH tracks with §6.4 direction agreement (T-C: all three pairs;
+     class ordering scrambling ≈ chaotic > localized > integrable >
+     metastable ≈ quasiperiodic(−), as piloted). Quench replicates only
+     for class-(i) pairs (floor-referenced; instrument note in packet);
+     loss is a clean null.
+  4. **§5.3: sustained-by affirmed for all six dynamical classes**
+     (stationary comparator far more fragile: quench log ρ ≈ 4.2 vs ≈ 0,
+     dephasing ≈ 3.9–5.95 vs ≤ 2.2, disjoint CIs); class (i)
+     compatible-with (definitional). T-B: switch-off resolves to
+     compatible-with (W5 0.95 → 0.00 with Φ persisting); rigidity
+     ε_c > 0.20 at our parameters; r2 comparator non-thermalizing on the
+     200-period window (prethermal plateau) — comparator-scope finding.
+  5. Amendment candidates queued for owner/AR-011 (NOT applied):
+     null-compatible W3 reformulation (e.g. null-subtracted OTOC);
+     w2_mean in place of / alongside min d_phys (min is structurally
+     uninformative for slow classes).

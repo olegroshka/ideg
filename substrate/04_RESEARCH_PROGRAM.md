@@ -3,8 +3,8 @@ id: KB-005
 title: "IDEG Research Program — Agentic Protocol, Phases, Gates, and Backlog"
 status: DRAFT
 owner: shared
-last_reviewed: 2026-08-12
-version: 0.6
+last_reviewed: 2026-08-13
+version: 0.7
 research_layer: R4
 epistemic_status: NOT_APPLICABLE
 sources:
@@ -18,6 +18,7 @@ changelog:
   - "0.4: AR-009 thresholds owner-reviewed (spec §8 Amendment 1: criterion (b) instrument → log-ratio + calibration pilot); AR-019 added, advisory/non-blocking (owner + Claude, 2026-08-11) — see §20"
   - "0.5: G0 PASSED at owner review; §12 mechanical-fix rule for KB-001 recorded; AR-010 licensed (owner + Claude, 2026-08-11) — see §21"
   - "0.6: AR-019 executed and reconciled (Claude, 2026-08-12) — recommendation KEEP the §5.2 log-ratio instrument, no spec threshold changed; KB-003 → v0.4 (SRC-052..058, verify) — see §22"
+  - "0.7: AR-010 confirmatory EXECUTED/RECONCILED (Claude, 2026-08-12/13) — (a) fails via preregistered W3 null-discard, (b) holds, §5.3 sustained-by across dynamical classes; AR-020 (witness reformalization) queued PROPOSED; AR-019 window closed; KB-004 → v0.3 — see §23"
 ---
 
 # Research Program and Agentic Protocol
@@ -149,6 +150,7 @@ Phase G  Iteration           G6: next-cycle decision recorded (ADR)
 
 ### AR-010 — Toy-model implementation and runs
 `mode: EXPERIMENT` · `parent: BH-004` · `priority: P0` · Implement and run the family; negative results recorded with equal care.
+**(v0.7) Status: EXECUTED/RECONCILED 2026-08-12/13** — implementation + §6.3 sanity (2026-08-11); calibration pilot with owner rulings (spec Amendment 3); confirmatory campaign executed against the pre-committed manifest (+ Addendum 1: T-A(ii) certificate exhaustively unsatisfiable at N = 8, T-A sizing reverted to spec-primary (10, 12)). Results of record (`ar/AR-010_confirmatory-2026-08-12.md`, `results/AR-010/confirmatory_summary.json`): **criterion (a) FAILS** (single cause: W3 fires on the §4.4 null and is discarded, leaving scrambling|localized with one statistic) → witness scheme returns to FORMALIZE (SC-005 negative, → AR-020); **criterion (b) HOLDS** (dephasing, both tracks, two sizes, direction-consistent); **§5.3 sustained-by affirmed for all six dynamical classes**, class (i) compatible-with; T-B: DTC ε = 0.03 stationary-with-witness 100/100, switch-off → compatible-with, rigidity ε_c > 0.20 (measured), r2 comparator non-thermalizing at 200 periods (prethermal plateau). AR-011 adversarial companion is the required next step before any promotion (§10).
 
 ### AR-011 — Toy-model adversarial analysis
 `mode: ADVERSARIAL` · `parent: BH-004, BH-005` · `priority: P0` · Attack the results with KB-004 §7: representation-dependence checks, stationary-state indistinguishability (item 12), sustained-by vs compatible-with tests, hidden-clock audit.
@@ -191,6 +193,14 @@ Phase G  Iteration           G6: next-cycle decision recorded (ADR)
 **Promotion_effect:** AR-009 §8 amendment replacing/augmenting the confirmatory instrument — valid only before AR-010 confirmatory runs begin.
 **Kill_effect:** none (advisory; the preregistered log-ratio instrument stands if AR-019 has not run in time). Explicitly non-blocking: AR-010 does not wait on it.
 **(v0.6) Outcome:** DONE 2026-08-12, reconciled in-session — `ar/AR-019_note-2026-08-12_robustness-instruments.md`. Recommendation **KEEP**: the §5.2 log-ratio primary stands unchanged (promotion effect not exercised; dated no-change entry in spec §8). λ*-style thresholds rejected as primary — grid-censored in the pilot, criterion-derived (meaning shifted under Amendment 3.1), and threshold-location estimators are finite-size-fragile by analogy (SRC-055/056; NOEC critique SRC-057). Curve-style instruments remain where the spec already places them (T-B h_sub(ε); §5.2.1 exploratory curves). Advisory riders: calibrated-strength framing discipline for the confirmatory write-up; decay-rate-law analysis queued as a follow-up AR candidate only if criterion (b) is positive. Status: RECONCILED.
+**(v0.7) Window closed:** AR-010 confirmatory runs began 2026-08-12 (manifest b91ad54); the instrument-upgrade window is closed for good.
+
+### AR-020 — Witness-battery reformalization *(new v0.7; PROPOSED — owner review pending)*
+`mode: FORMALIZE` · `parent: BH-004, CON-034, AR-010 outcome` · `priority: P0 candidate` ·
+**Question:** reformalize the CON-034 witness battery so that (1) every witness is null-silent by construction and (2) the scrambling|localized distinction is doubly witnessed. Candidates from the AR-010 record: a null-subtracted/null-compatible OTOC variant (W3 fired on the frozen null — c_sat ≈ 1.11, t* = 1.5 — because the OTOC probes operator spreading, not state motion); w2_mean alongside/in place of min d_phys (min is structurally uninformative for slow classes — recurrence depth returns ~0). Both were identified in-session and NOT applied post-hoc (preregistration discipline).
+**Deliverable:** amended witness section as an AR-009 §8 amendment (owner-reviewed) + rerun of the criterion-(a) analysis on the existing confirmatory data where valid, new runs where the witness definition demands them.
+**Promotion_effect:** criterion (a) becomes re-adjudicable; BH-004's witnessed-stationarity leg unblocks.
+**Kill_effect:** if no null-silent witness pair can separate scrambling|localized, that inseparability is recorded as a substantive negative about witnessing scrambling-class motion beneath stationary geometry.
 
 ---
 
@@ -355,3 +365,13 @@ Deltas are applied in dependency order (KB-002 definitions → KB-003 theory →
 1. §6 AR-019: executed 2026-08-12 (EXPLORE), status RECONCILED. Deliverable: `ar/AR-019_note-2026-08-12_robustness-instruments.md`. Recommendation **KEEP** the preregistered §5.2 log-ratio criterion-(b) instrument; the instrument-upgrade promotion effect was **not** exercised — no AR-009 threshold changed; a dated no-change entry records the outcome in spec §8.
 2. Sources: KB-003 → v0.4 (SRC-052..058 added, all flagged `verify`; methodology-analogy only, not load-bearing).
 3. Effect: the AR-019 advisory window is spent as an open decision item; it formally closes when AR-010 confirmatory runs begin (unchanged rule). Next scheduled work: AR-010 confirmatory phase.
+
+---
+
+## 23. Changelog v0.6 → v0.7
+
+1. §6 AR-010: confirmatory campaign EXECUTED/RECONCILED 2026-08-12/13 against the pre-committed manifest (b91ad54; Addendum 1 a76db0e). Full record: `ar/AR-010_confirmatory-2026-08-12.md`, `sessions/2026-08-12_AR-010-confirmatory.md`, spec §8 dated outcome entry. Headline verdicts: (a) FAILS (W3 null-discard → scrambling|localized singly witnessed; §5.4 row 3 — witness scheme to FORMALIZE, SC-005), (b) HOLDS (dephasing, both tracks, two-size replication), §5.3 sustained-by for all six dynamical classes, T-B compatible-with under switch-off with rigidity ε_c > 0.20.
+2. §6 AR-020 added (PROPOSED, owner review pending): witness-battery reformalization — null-compatible W3 variant, w2_mean candidate; P0 candidate priority.
+3. AR-019 window closed for good (first confirmatory execution, 2026-08-12).
+4. KB-004 → v0.3 (BH-004 dated evidence note; no epistemic-status change — AR-011-gated).
+5. Next scheduled work: **AR-011 adversarial companion** (required before any promotion, §10) and owner review of AR-020 + the two amendment candidates.

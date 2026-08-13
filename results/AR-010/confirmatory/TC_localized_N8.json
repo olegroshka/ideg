@@ -1,0 +1,5057 @@
+{
+  "group": "TC_localized",
+  "n_sites": 8,
+  "manifest": "confirmatory_manifest.json",
+  "runs": [
+    {
+      "seed": 1658094814,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.2997241752861838,
+            "max_delta_phi_post": 0.2853063130178267,
+            "stationary": false,
+            "drift_slope": 1.7790033724666462e-05,
+            "drift_slope_ci": [
+              -5.003110507568744e-05,
+              0.00015969037318251398
+            ],
+            "cap_max_delta_phi_subgraph": 0.2997241752861837,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 6.661338147750939e-16
+          },
+          "witnesses": {
+            "pr_A": 1.8440723262633216,
+            "w2_min": -3.1086244689504383e-15,
+            "w2_mean": 0.2775666438665645,
+            "otoc_c_sat": 0.016859025781049464,
+            "otoc_t_star": Infinity,
+            "xi": 0.27646954672683965
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.3090354669257981,
+              "log_rho": 0.07989266438407584,
+              "retention_R": 0.9762708460920286,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.30129721619409267,
+              "log_rho": 0.05453382115546032,
+              "retention_R": 0.984009096823734,
+              "fails_stationarity": true,
+              "trace_drift": 3.270717030545711e-13
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.39434617678094186,
+              "log_rho": 0.3236657591855091,
+              "retention_R": 0.8909601362368849,
+              "fails_stationarity": true
+            }
+          },
+          "otoc_profile": {
+            "r": [
+              1,
+              2,
+              3
+            ],
+            "c_sat": [
+              0.13149832531230554,
+              0.0295214082927287,
+              0.016859025781049464
+            ]
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.23099216404135375,
+            "max_delta_phi_post": 0.19874172317855657,
+            "stationary": true,
+            "drift_slope": -0.0001421686926804397,
+            "drift_slope_ci": [
+              -0.00025588095118232474,
+              -5.1604749658070554e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.23099216404135375,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 223.73207158033375,
+            "w2_min": 8.881784197001252e-16,
+            "w2_mean": 0.9569750187606817,
+            "otoc_c_sat": 0.0656685565799494,
+            "otoc_t_star": 7.5,
+            "xi": 0.9587740137766481
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.20639909606669052,
+              "log_rho": 0.03780554579330044,
+              "retention_R": 0.992342627111866,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.0905769652515076,
+              "log_rho": 1.7024560528157877,
+              "retention_R": 0.10816475792704894,
+              "fails_stationarity": true,
+              "trace_drift": 5.218048215738236e-15
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.29580616515588437,
+              "log_rho": 0.3976982840888151,
+              "retention_R": 0.9029355580226722,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.28651513629489445,
+            "max_delta_phi_post": 0.23691569618016822,
+            "stationary": false,
+            "drift_slope": -0.00021889074443867714,
+            "drift_slope_ci": [
+              -0.0003791017190449904,
+              -1.8981767976603226e-06
+            ],
+            "cap_max_delta_phi_subgraph": 0.2865151362948945,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 3.3306690738754696e-16
+          },
+          "witnesses": {
+            "pr_A": 874.5437812294205,
+            "w2_min": 6.661338147750939e-16,
+            "w2_mean": 0.9775680399584156,
+            "otoc_c_sat": 0.0347260128699965,
+            "otoc_t_star": Infinity,
+            "xi": 0.9809426003324847
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.2339322382692324,
+              "log_rho": -0.012672872159243299,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.2144696924560126,
+              "log_rho": 1.634358427846228,
+              "retention_R": 0.022446003724155617,
+              "fails_stationarity": true,
+              "trace_drift": 9.170442183403793e-14
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.2647160731006431,
+              "log_rho": 0.11095346380682701,
+              "retention_R": 0.9721996230795251,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.286247579003393,
+            "max_delta_phi_post": 0.21216627339021085,
+            "stationary": false,
+            "drift_slope": -0.00023326441353161404,
+            "drift_slope_ci": [
+              -0.0004421509377266978,
+              4.745108956374506e-06
+            ],
+            "cap_max_delta_phi_subgraph": 0.2862475790033931,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 3046.2344036050454,
+            "w2_min": -2.6645352591003757e-15,
+            "w2_mean": 0.9866529967280646,
+            "otoc_c_sat": 0.03084168553735433,
+            "otoc_t_star": Infinity,
+            "xi": 0.9902586345772131
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.2099843956896315,
+              "log_rho": -0.01033705399048724,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.1842042851484795,
+              "log_rho": 1.7194560629858606,
+              "retention_R": 0.02796198824173135,
+              "fails_stationarity": true,
+              "trace_drift": 6.750155989720952e-14
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.22802401873593156,
+              "log_rho": 0.07208069303178341,
+              "retention_R": 0.9841422546542793,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.34156528314832735,
+            "max_delta_phi_post": 0.2124160288114919,
+            "stationary": false,
+            "drift_slope": -0.00027360176411234913,
+            "drift_slope_ci": [
+              -0.0005368761957148495,
+              -0.00011675916124498739
+            ],
+            "cap_max_delta_phi_subgraph": 0.34156528314832735,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 532.6869892028348,
+            "w2_min": 8.881784197001252e-16,
+            "w2_mean": 0.9660158799971749,
+            "otoc_c_sat": 0.016727208614005187,
+            "otoc_t_star": Infinity,
+            "xi": 0.9746506084748038
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.20863087859009127,
+              "log_rho": -0.017980192366054037,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.1601591192831218,
+              "log_rho": 1.6977656947544064,
+              "retention_R": 0.052256909528370143,
+              "fails_stationarity": true,
+              "trace_drift": 1.3766765505351941e-14
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.22717643423853678,
+              "log_rho": 0.06718020719118196,
+              "retention_R": 0.9852395945729551,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ],
+      "battery": {
+        "tol": 1e-10,
+        "global_phase": {
+          "w1_dev": 0.0,
+          "w2_dev": 1.1102230246251565e-15,
+          "w3_dev": 1.734723475976807e-17,
+          "w4_dev": 0.0,
+          "mi_dev": 2.4702462297909733e-15,
+          "phi_dev": 1.339905963959609e-11,
+          "pass": true
+        },
+        "consistent_local_basis": {
+          "w1_dev": 2.220446049250313e-16,
+          "w2_dev": 6.52811138479592e-14,
+          "w3_dev": 3.693920169745013e-14,
+          "w4_dev": 1.5543122344752192e-15,
+          "mi_dev": 6.339928582121956e-13,
+          "phi_dev": 2.411173483096718e-10,
+          "pass": true
+        },
+        "state_only_local_basis": {
+          "w3_max_dev": 0.9730616970288953,
+          "mi_max_dev": 6.339928582121956e-13,
+          "phi_max_dev": 2.411173483096718e-10,
+          "note": "expected-change item: magnitudes recorded, not thresholded"
+        },
+        "reflection": {
+          "w1_dev": 8.881784197001252e-16,
+          "w2_dev": 1.0080825063596421e-13,
+          "w3_dev": 0.0,
+          "w4_dev": 1.1102230246251565e-15,
+          "mi_dev": 9.211520435314924e-13,
+          "phi_dev": 1.092566037641518e-10,
+          "pass": true
+        },
+        "all_must_pass": true
+      }
+    },
+    {
+      "seed": 3175791094,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.27702187182012095,
+            "max_delta_phi_post": 0.27177551545244316,
+            "stationary": false,
+            "drift_slope": 2.5060734379130407e-05,
+            "drift_slope_ci": [
+              -0.00011003817951292482,
+              0.00014832256628672784
+            ],
+            "cap_max_delta_phi_subgraph": 0.27702187182012106,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 6.661338147750939e-16
+          },
+          "witnesses": {
+            "pr_A": 2.4312320940940473,
+            "w2_min": -3.552713678800501e-15,
+            "w2_mean": 0.37644638733498137,
+            "otoc_c_sat": 0.10016403375679384,
+            "otoc_t_star": 0.5,
+            "xi": 0.3773133967434924
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.29808898916893173,
+              "log_rho": 0.09241564859626793,
+              "retention_R": 0.9736865262835115,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.34515787627936806,
+              "log_rho": 0.23902551005979752,
+              "retention_R": 0.9266176391730752,
+              "fails_stationarity": true,
+              "trace_drift": 1.8984813721090177e-13
+            },
+            "loss": {
+              "lost": [
+                1,
+                7
+              ],
+              "max_delta_phi_pert": 0.36728840634908083,
+              "log_rho": 0.30117097309713425,
+              "retention_R": 0.9044871091033624,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.2011862969971957,
+            "max_delta_phi_post": 0.2011862969971957,
+            "stationary": true,
+            "drift_slope": -0.0001126999405734537,
+            "drift_slope_ci": [
+              -0.00023488157350578005,
+              -5.823993687406299e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.2011862969971957,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 568.6188766641841,
+            "w2_min": 4.440892098500626e-16,
+            "w2_mean": 0.9733811672093176,
+            "otoc_c_sat": 0.1924149203678947,
+            "otoc_t_star": 1.0,
+            "xi": 0.9752224184112492
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.2021569317411886,
+              "log_rho": 0.004812956055917784,
+              "retention_R": 0.9990293652560072,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.3626141441164215,
+              "log_rho": 1.9129289689962463,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 1.8207657603852567e-14
+            },
+            "loss": {
+              "lost": [
+                1,
+                7
+              ],
+              "max_delta_phi_pert": 0.2240769385994044,
+              "log_rho": 0.10775813924042545,
+              "retention_R": 0.9771093583977913,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.22045983016838724,
+            "max_delta_phi_post": 0.20210935443228586,
+            "stationary": true,
+            "drift_slope": -5.9729906499659025e-05,
+            "drift_slope_ci": [
+              -0.00016017918106903668,
+              8.455445699163925e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.22045983016838724,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 573.902027109822,
+            "w2_min": 0.0,
+            "w2_mean": 0.9698631851823938,
+            "otoc_c_sat": 0.19778520763042565,
+            "otoc_t_star": 2.0,
+            "xi": 0.9753513793335156
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.19268777850406524,
+              "log_rho": -0.0477377584833224,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.277216293419219,
+              "log_rho": 1.8436293084040767,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 1.709743457922741e-14
+            },
+            "loss": {
+              "lost": [
+                1,
+                7
+              ],
+              "max_delta_phi_pert": 0.23247774064325386,
+              "log_rho": 0.13998557178013638,
+              "retention_R": 0.969631613789032,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.2031202789095015,
+            "max_delta_phi_post": 0.2031202789095015,
+            "stationary": true,
+            "drift_slope": -7.717323117250088e-05,
+            "drift_slope_ci": [
+              -0.0001477928353329918,
+              -9.010887521012183e-06
+            ],
+            "cap_max_delta_phi_subgraph": 0.2031202789095015,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 661.0417269705039,
+            "w2_min": 1.9984014443252818e-15,
+            "w2_mean": 0.9728908313111638,
+            "otoc_c_sat": 0.1774755379680057,
+            "otoc_t_star": 3.0,
+            "xi": 0.9771560976496787
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.19081539448296778,
+              "log_rho": -0.06249187088979645,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.1889973838134913,
+              "log_rho": 1.7670673858410801,
+              "retention_R": 0.014122895096010168,
+              "fails_stationarity": true,
+              "trace_drift": 2.6423307986078726e-14
+            },
+            "loss": {
+              "lost": [
+                1,
+                7
+              ],
+              "max_delta_phi_pert": 0.23911177979747694,
+              "log_rho": 0.1631328299701211,
+              "retention_R": 0.9640084991120246,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.17861052866908705,
+            "max_delta_phi_post": 0.17798332813201684,
+            "stationary": true,
+            "drift_slope": -4.6434948796388796e-05,
+            "drift_slope_ci": [
+              -6.269924856317077e-05,
+              4.8757422844499284e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.1786105286690871,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 1588.2485707051524,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.9830723298598747,
+            "otoc_c_sat": 0.2662650176161243,
+            "otoc_t_star": 1.0,
+            "xi": 0.9855975828405192
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.17859330100795698,
+              "log_rho": 0.0034212756590098615,
+              "retention_R": 0.9993900271240599,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.3425826141029547,
+              "log_rho": 2.0206604782706927,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 2.55351295663786e-14
+            },
+            "loss": {
+              "lost": [
+                1,
+                7
+              ],
+              "max_delta_phi_pert": 0.2421457934146982,
+              "log_rho": 0.3078501131562807,
+              "retention_R": 0.9358375347173187,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 2898371802,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.2858848857092259,
+            "max_delta_phi_post": 0.2605655343658241,
+            "stationary": false,
+            "drift_slope": -9.894271738539311e-06,
+            "drift_slope_ci": [
+              -0.00021326214505241597,
+              6.326576513391445e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.28588488570922593,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 6.46886077049665,
+            "w2_min": -1.3322676295501878e-15,
+            "w2_mean": 0.6987315342680638,
+            "otoc_c_sat": 0.02837909173679985,
+            "otoc_t_star": Infinity,
+            "xi": 0.6991009470205574
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.29281369341349917,
+              "log_rho": 0.11668214709969088,
+              "retention_R": 0.9677518409523249,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.387168836783978,
+              "log_rho": 0.3960064676344725,
+              "retention_R": 0.8733966975818461,
+              "fails_stationarity": true,
+              "trace_drift": 1.1723955140041653e-13
+            },
+            "loss": {
+              "lost": [
+                0,
+                2
+              ],
+              "max_delta_phi_pert": 0.27386099411834847,
+              "log_rho": 0.049766255904886585,
+              "retention_R": 0.9867045402474757,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.21441921148264398,
+            "max_delta_phi_post": 0.21441921148264398,
+            "stationary": true,
+            "drift_slope": -6.467515065736645e-05,
+            "drift_slope_ci": [
+              -0.0001046861402186747,
+              5.007329466298981e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.21441921148264398,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 216.66796261865275,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.9569946868183667,
+            "otoc_c_sat": 0.014999842390105851,
+            "otoc_t_star": Infinity,
+            "xi": 0.9591407131747288
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.18555865842102834,
+              "log_rho": -0.1445619810139376,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.9760707351161553,
+              "log_rho": 1.5156020273129984,
+              "retention_R": 0.2383484763664887,
+              "fails_stationarity": true,
+              "trace_drift": 1.199040866595169e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                2
+              ],
+              "max_delta_phi_pert": 0.2794034842397186,
+              "log_rho": 0.2647238862025476,
+              "retention_R": 0.9350157272429254,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.20481228319204536,
+            "max_delta_phi_post": 0.20256775606564348,
+            "stationary": true,
+            "drift_slope": -0.00013766427855188554,
+            "drift_slope_ci": [
+              -0.0002672827018769712,
+              0.00012394961949540418
+            ],
+            "cap_max_delta_phi_subgraph": 0.2048122831920454,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 3.3306690738754696e-16
+          },
+          "witnesses": {
+            "pr_A": 1152.210664230306,
+            "w2_min": 4.440892098500626e-16,
+            "w2_mean": 0.9809612538135297,
+            "otoc_c_sat": 0.018028723623815197,
+            "otoc_t_star": Infinity,
+            "xi": 0.9829114650925416
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.22211942517999053,
+              "log_rho": 0.09214076005334555,
+              "retention_R": 0.980448330885653,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.17432207479946,
+              "log_rho": 1.7573718740204407,
+              "retention_R": 0.02824568126618343,
+              "fails_stationarity": true,
+              "trace_drift": 1.6209256159527285e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                2
+              ],
+              "max_delta_phi_pert": 0.24962327819137034,
+              "log_rho": 0.20887846569505628,
+              "retention_R": 0.9529444778742732,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.21848282574834413,
+            "max_delta_phi_post": 0.19182465837629695,
+            "stationary": true,
+            "drift_slope": -0.00014236284513966,
+            "drift_slope_ci": [
+              -0.00019896343627952759,
+              -1.9856092674897657e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.2184828257483441,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 442.36246760733843,
+            "w2_min": -4.440892098500626e-16,
+            "w2_mean": 0.96760095817586,
+            "otoc_c_sat": 0.02411171812059594,
+            "otoc_t_star": Infinity,
+            "xi": 0.9716948297565925
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.19714378442825542,
+              "log_rho": 0.02735161555766573,
+              "retention_R": 0.9946808739480415,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.2965880848883782,
+              "log_rho": 1.9109098260453097,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 4.6629367034256575e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                2
+              ],
+              "max_delta_phi_pert": 0.24511321301138458,
+              "log_rho": 0.24513848058743268,
+              "retention_R": 0.9467114453649124,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.23970765869817146,
+            "max_delta_phi_post": 0.18001417443192425,
+            "stationary": true,
+            "drift_slope": -0.00017628736802197513,
+            "drift_slope_ci": [
+              -0.0003762136131080845,
+              0.0001003924165093265
+            ],
+            "cap_max_delta_phi_subgraph": 0.23970765869817146,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 517.0871075128549,
+            "w2_min": -1.7763568394002505e-15,
+            "w2_mean": 0.9720383808967734,
+            "otoc_c_sat": 0.009391020197260498,
+            "otoc_t_star": Infinity,
+            "xi": 0.974040130790143
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.21266838125139853,
+              "log_rho": 0.16669846232096736,
+              "retention_R": 0.9673457931805257,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.0891265295270027,
+              "log_rho": 1.8000957102797388,
+              "retention_R": 0.09088764490492152,
+              "fails_stationarity": true,
+              "trace_drift": 6.439293542825908e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                2
+              ],
+              "max_delta_phi_pert": 0.21355068975075978,
+              "log_rho": 0.17083863257468784,
+              "retention_R": 0.9664634846811645,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 2933043161,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.3011217100869767,
+            "max_delta_phi_post": 0.3011217100869767,
+            "stationary": false,
+            "drift_slope": 9.474876476617149e-07,
+            "drift_slope_ci": [
+              -7.367536742326693e-05,
+              9.289192019959e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.3011217100869767,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 1.1102230246251565e-16
+          },
+          "witnesses": {
+            "pr_A": 3.3679754262362245,
+            "w2_min": 4.440892098500626e-16,
+            "w2_mean": 0.5101318039980731,
+            "otoc_c_sat": 0.005390638665445398,
+            "otoc_t_star": Infinity,
+            "xi": 0.5107243814436759
+          },
+          "protocols": {
+            "quench": {
+              "site": 6,
+              "max_delta_phi_pert": 0.2646873730803504,
+              "log_rho": -0.1289651301301551,
+              "retention_R": 1.0,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.44338455875024346,
+              "log_rho": 0.3869229364570569,
+              "retention_R": 0.8577371513367332,
+              "fails_stationarity": true,
+              "trace_drift": 1.2356782264077992e-13
+            },
+            "loss": {
+              "lost": [
+                5,
+                7
+              ],
+              "max_delta_phi_pert": 0.3988461679446367,
+              "log_rho": 0.28106126308138074,
+              "retention_R": 0.9022755421423401,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.2906217345605556,
+            "max_delta_phi_post": 0.22642315514580771,
+            "stationary": false,
+            "drift_slope": -0.0003060329670287737,
+            "drift_slope_ci": [
+              -0.0003840340213576335,
+              -0.0001478759843333406
+            ],
+            "cap_max_delta_phi_subgraph": 0.2906217345605556,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 1.1102230246251565e-16
+          },
+          "witnesses": {
+            "pr_A": 694.5684266342232,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.9760459409299089,
+            "otoc_c_sat": 0.03344450443261675,
+            "otoc_t_star": Infinity,
+            "xi": 0.9793732639699356
+          },
+          "protocols": {
+            "quench": {
+              "site": 6,
+              "max_delta_phi_pert": 0.23394008582401574,
+              "log_rho": 0.03265942260759209,
+              "retention_R": 0.992483069321792,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.2917050409979969,
+              "log_rho": 1.7413127453595016,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 6.938893903907228e-14
+            },
+            "loss": {
+              "lost": [
+                5,
+                7
+              ],
+              "max_delta_phi_pert": 0.2838667912698776,
+              "log_rho": 0.2260994668226315,
+              "retention_R": 0.9425563638759301,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.21976173622421744,
+            "max_delta_phi_post": 0.19617932500339547,
+            "stationary": true,
+            "drift_slope": -0.00016043853320808692,
+            "drift_slope_ci": [
+              -0.00025968741792974537,
+              5.449771960388641e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.21976173622421744,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 1497.55047672864,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.9831708061817954,
+            "otoc_c_sat": 0.010935172106641992,
+            "otoc_t_star": Infinity,
+            "xi": 0.9851949771468713
+          },
+          "protocols": {
+            "quench": {
+              "site": 6,
+              "max_delta_phi_pert": 0.1949613577067474,
+              "log_rho": -0.006227791109924864,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.3820747406232703,
+              "log_rho": 1.9523119199283736,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 7.038813976123492e-14
+            },
+            "loss": {
+              "lost": [
+                5,
+                7
+              ],
+              "max_delta_phi_pert": 0.23048740543449142,
+              "log_rho": 0.16116705631658898,
+              "retention_R": 0.965691919568904,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.2219333722181042,
+            "max_delta_phi_post": 0.2108526396801829,
+            "stationary": true,
+            "drift_slope": -0.00010581223261693438,
+            "drift_slope_ci": [
+              -0.0001882470521965606,
+              0.00010238446628810967
+            ],
+            "cap_max_delta_phi_subgraph": 0.22193337221810422,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 5.551115123125783e-16
+          },
+          "witnesses": {
+            "pr_A": 305.7732568028582,
+            "w2_min": 1.7763568394002505e-15,
+            "w2_mean": 0.9633484634891184,
+            "otoc_c_sat": 0.020065352587925307,
+            "otoc_t_star": Infinity,
+            "xi": 0.9659032121472594
+          },
+          "protocols": {
+            "quench": {
+              "site": 6,
+              "max_delta_phi_pert": 0.1835296519355277,
+              "log_rho": -0.13878325397722932,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.0792481558996767,
+              "log_rho": 1.6328604264004871,
+              "retention_R": 0.13160448378050615,
+              "fails_stationarity": true,
+              "trace_drift": 2.2426505097428162e-14
+            },
+            "loss": {
+              "lost": [
+                5,
+                7
+              ],
+              "max_delta_phi_pert": 0.2588171262593869,
+              "log_rho": 0.2049622367449898,
+              "retention_R": 0.952035513420796,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.253660902123112,
+            "max_delta_phi_post": 0.1564446446498671,
+            "stationary": false,
+            "drift_slope": -0.00024512718728874846,
+            "drift_slope_ci": [
+              -0.0004893077095161849,
+              6.980074199888873e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.253660902123112,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 181.38578259574766,
+            "w2_min": 8.881784197001252e-16,
+            "w2_mean": 0.9521621754159585,
+            "otoc_c_sat": 0.1057637738069078,
+            "otoc_t_star": 124.0,
+            "xi": 0.9547701831475321
+          },
+          "protocols": {
+            "quench": {
+              "site": 6,
+              "max_delta_phi_pert": 0.15691433061891313,
+              "log_rho": 0.0029977524682672915,
+              "retention_R": 0.9995303140309539,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.8994068819769023,
+              "log_rho": 1.7490332869463854,
+              "retention_R": 0.25703776267296474,
+              "fails_stationarity": true,
+              "trace_drift": 9.914291609902648e-14
+            },
+            "loss": {
+              "lost": [
+                5,
+                7
+              ],
+              "max_delta_phi_pert": 0.2832773863653194,
+              "log_rho": 0.5937243423282629,
+              "retention_R": 0.8731672582845477,
+              "fails_stationarity": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 534063743,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.33411011470141794,
+            "max_delta_phi_post": 0.33411011470141794,
+            "stationary": false,
+            "drift_slope": 4.775444035278837e-05,
+            "drift_slope_ci": [
+              -4.0261169710800446e-05,
+              0.00021931109465575432
+            ],
+            "cap_max_delta_phi_subgraph": 0.33411011470141794,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 42.71726061043384,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.9040234470326562,
+            "otoc_c_sat": 0.623045414641501,
+            "otoc_t_star": 1.0,
+            "xi": 0.9050274784124624
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.31433136766429576,
+              "log_rho": -0.061022882885609496,
+              "retention_R": 1.0,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.6811621168404289,
+              "log_rho": 0.7123297114754221,
+              "retention_R": 0.652947997860989,
+              "fails_stationarity": true,
+              "trace_drift": 7.904787935331115e-14
+            },
+            "loss": {
+              "lost": [
+                5,
+                7
+              ],
+              "max_delta_phi_pert": 0.5603293802257943,
+              "log_rho": 0.517054166416958,
+              "retention_R": 0.7737807344756237,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.1740354355463722,
+            "max_delta_phi_post": 0.1740354355463722,
+            "stationary": true,
+            "drift_slope": -3.092311592756752e-06,
+            "drift_slope_ci": [
+              -9.149075092819321e-05,
+              8.188280568508511e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.17403543554637219,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 1.1102230246251565e-16
+          },
+          "witnesses": {
+            "pr_A": 1527.7536337193242,
+            "w2_min": 6.661338147750939e-16,
+            "w2_mean": 0.9835395833330233,
+            "otoc_c_sat": 0.4037878498672663,
+            "otoc_t_star": 1.0,
+            "xi": 0.9854567555913974
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.17017447889374543,
+              "log_rho": -0.022434673894857787,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.391223864180203,
+              "log_rho": 2.0786801855134787,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 9.992007221626409e-14
+            },
+            "loss": {
+              "lost": [
+                5,
+                7
+              ],
+              "max_delta_phi_pert": 0.20043232050275242,
+              "log_rho": 0.14121770511483256,
+              "retention_R": 0.9736031150436197,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.18540444866577868,
+            "max_delta_phi_post": 0.16929803281784842,
+            "stationary": true,
+            "drift_slope": -1.5223780640565424e-05,
+            "drift_slope_ci": [
+              -4.608895187294865e-05,
+              3.204623291797532e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.18540444866577868,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 2100.060957685013,
+            "w2_min": 0.0,
+            "w2_mean": 0.9856930523486861,
+            "otoc_c_sat": 0.3769119234296093,
+            "otoc_t_star": 1.0,
+            "xi": 0.9878778492890522
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.17052690443144963,
+              "log_rho": 0.007232411959950772,
+              "retention_R": 0.9987711283863988,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.3800587287101207,
+              "log_rho": 2.0982206647151966,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 1.234568003383174e-13
+            },
+            "loss": {
+              "lost": [
+                5,
+                7
+              ],
+              "max_delta_phi_pert": 0.21233680744357658,
+              "log_rho": 0.2265130587900593,
+              "retention_R": 0.9569612253742719,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.1739243461978923,
+            "max_delta_phi_post": 0.17130736102717448,
+            "stationary": true,
+            "drift_slope": -3.3268310140142755e-05,
+            "drift_slope_ci": [
+              -7.006958263643036e-05,
+              -3.735390522966052e-07
+            ],
+            "cap_max_delta_phi_subgraph": 0.1739243461978923,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 1958.9539962087747,
+            "w2_min": 8.881784197001252e-16,
+            "w2_mean": 0.9852677025847764,
+            "otoc_c_sat": 0.26520778690439306,
+            "otoc_t_star": 1.0,
+            "xi": 0.987489442861746
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.17900676952930822,
+              "log_rho": 0.0439642477644638,
+              "retention_R": 0.9923005914978662,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.3854694075499276,
+              "log_rho": 2.090334907658257,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 7.416289804496046e-14
+            },
+            "loss": {
+              "lost": [
+                5,
+                7
+              ],
+              "max_delta_phi_pert": 0.21255241324362595,
+              "log_rho": 0.21572923254878992,
+              "retention_R": 0.9587549477835485,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.18902269928245782,
+            "max_delta_phi_post": 0.18902269928245782,
+            "stationary": true,
+            "drift_slope": -3.5564613542387116e-05,
+            "drift_slope_ci": [
+              -0.00014522376813640915,
+              2.7326039094843854e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.1890226992824578,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 912.1771466827105,
+            "w2_min": -2.220446049250313e-15,
+            "w2_mean": 0.9767633880974945,
+            "otoc_c_sat": 0.1866629344066763,
+            "otoc_t_star": 2.5,
+            "xi": 0.9807836340177115
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.1859766107474162,
+              "log_rho": -0.016246192735189076,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.1603651644986153,
+              "log_rho": 1.8146229216722434,
+              "retention_R": 0.028657534783842586,
+              "fails_stationarity": true,
+              "trace_drift": 1.0325074129013956e-13
+            },
+            "loss": {
+              "lost": [
+                5,
+                7
+              ],
+              "max_delta_phi_pert": 0.22403532815347546,
+              "log_rho": 0.1699366445186558,
+              "retention_R": 0.9649873711289824,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 842245471,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.2913013078502045,
+            "max_delta_phi_post": 0.28728395441829657,
+            "stationary": false,
+            "drift_slope": -9.38645038982909e-05,
+            "drift_slope_ci": [
+              -0.0002685654697836519,
+              -8.173834348697666e-06
+            ],
+            "cap_max_delta_phi_subgraph": 0.2913013078502045,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 2.964648028748355,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.4419877074770128,
+            "otoc_c_sat": 0.05549540820464665,
+            "otoc_t_star": 20.0,
+            "xi": 0.44397208556927625
+          },
+          "protocols": {
+            "quench": {
+              "site": 3,
+              "max_delta_phi_pert": 0.3098319012648344,
+              "log_rho": 0.07555878156717055,
+              "retention_R": 0.9774520531534622,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.4444183855560558,
+              "log_rho": 0.436295313693227,
+              "retention_R": 0.8428655688622408,
+              "fails_stationarity": true,
+              "trace_drift": 7.904787935331115e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                6
+              ],
+              "max_delta_phi_pert": 0.39555972330149286,
+              "log_rho": 0.3198306680359526,
+              "retention_R": 0.8917242311168037,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.2164762467577935,
+            "max_delta_phi_post": 0.207642928740756,
+            "stationary": true,
+            "drift_slope": -0.0001109786233458252,
+            "drift_slope_ci": [
+              -0.00020048771519535108,
+              1.1005511126260388e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.2164762467577935,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 933.0354440565104,
+            "w2_min": -1.7763568394002505e-15,
+            "w2_mean": 0.9777541085860726,
+            "otoc_c_sat": 0.033330469376151146,
+            "otoc_t_star": Infinity,
+            "xi": 0.9811437518452341
+          },
+          "protocols": {
+            "quench": {
+              "site": 3,
+              "max_delta_phi_pert": 0.19134969031148288,
+              "log_rho": -0.08171732232599936,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.398207594596549,
+              "log_rho": 1.9071264900022822,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 4.884981308350689e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                6
+              ],
+              "max_delta_phi_pert": 0.23285017882237324,
+              "log_rho": 0.11457532164421066,
+              "retention_R": 0.9747927499183827,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.30934772008227096,
+            "max_delta_phi_post": 0.23167552679090228,
+            "stationary": false,
+            "drift_slope": -0.00018701550383070777,
+            "drift_slope_ci": [
+              -0.0005009364400322852,
+              0.00016691577864003495
+            ],
+            "cap_max_delta_phi_subgraph": 0.30934772008227096,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 66.64860400368072,
+            "w2_min": -4.440892098500626e-16,
+            "w2_mean": 0.9197460976264102,
+            "otoc_c_sat": 0.029900807557003507,
+            "otoc_t_star": Infinity,
+            "xi": 0.9206187176349298
+          },
+          "protocols": {
+            "quench": {
+              "site": 3,
+              "max_delta_phi_pert": 0.1912042796406325,
+              "log_rho": -0.1919954178814357,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.081770751763988,
+              "log_rho": 1.541016761126943,
+              "retention_R": 0.14990477502691424,
+              "fails_stationarity": true,
+              "trace_drift": 4.884981308350689e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                6
+              ],
+              "max_delta_phi_pert": 0.324544988645608,
+              "log_rho": 0.33708636512259704,
+              "retention_R": 0.9071305381452943,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.27076920358002937,
+            "max_delta_phi_post": 0.20464008798534838,
+            "stationary": false,
+            "drift_slope": -0.00012986617283279153,
+            "drift_slope_ci": [
+              -0.00018685631744576745,
+              1.0052841823575092e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.27076920358002937,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 3761.289351920808,
+            "w2_min": 1.3322676295501878e-15,
+            "w2_mean": 0.9895541494836508,
+            "otoc_c_sat": 0.024267402564056528,
+            "otoc_t_star": Infinity,
+            "xi": 0.9916505447351884
+          },
+          "protocols": {
+            "quench": {
+              "site": 3,
+              "max_delta_phi_pert": 0.22419013553683906,
+              "log_rho": 0.0912417433902026,
+              "retention_R": 0.9804499524485093,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.4258103884782813,
+              "log_rho": 1.9412428569444582,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 3.2862601528904634e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                6
+              ],
+              "max_delta_phi_pert": 0.2533958819354202,
+              "log_rho": 0.21370024873125112,
+              "retention_R": 0.9512442060499282,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.2794271728323311,
+            "max_delta_phi_post": 0.23538454070188475,
+            "stationary": false,
+            "drift_slope": -0.00010204564389469138,
+            "drift_slope_ci": [
+              -0.00018367377534947508,
+              0.00012033223636682664
+            ],
+            "cap_max_delta_phi_subgraph": 0.2794271728323311,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 224.51350116687493,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.9577551734427046,
+            "otoc_c_sat": 0.03181250109833491,
+            "otoc_t_star": Infinity,
+            "xi": 0.9595622634949741
+          },
+          "protocols": {
+            "quench": {
+              "site": 3,
+              "max_delta_phi_pert": 0.21539553823725022,
+              "log_rho": -0.08874446954500338,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.3504709929125958,
+              "log_rho": 1.746988174020425,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 4.707345624410664e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                6
+              ],
+              "max_delta_phi_pert": 0.35842707198606866,
+              "log_rho": 0.42050469371824994,
+              "retention_R": 0.8769574687158161,
+              "fails_stationarity": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 2266405518,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.3010290821997736,
+            "max_delta_phi_post": 0.3010290821997736,
+            "stationary": false,
+            "drift_slope": -8.925161831097267e-05,
+            "drift_slope_ci": [
+              -0.0001475556640628004,
+              3.0893167069580843e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.30102908219977353,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 3.3568828292728194,
+            "w2_min": 2.220446049250313e-15,
+            "w2_mean": 0.6043738548293994,
+            "otoc_c_sat": 0.013499270281099152,
+            "otoc_t_star": Infinity,
+            "xi": 0.6060168852296857
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.29642466700304343,
+              "log_rho": -0.015413766718756456,
+              "retention_R": 1.0,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.34196212081244987,
+              "log_rho": 0.12749309438466883,
+              "retention_R": 0.9590669613873237,
+              "fails_stationarity": true,
+              "trace_drift": 8.337774914934926e-14
+            },
+            "loss": {
+              "lost": [
+                3,
+                5
+              ],
+              "max_delta_phi_pert": 0.29438413949601583,
+              "log_rho": -0.022321367276544102,
+              "retention_R": 1.0,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.23304506484364668,
+            "max_delta_phi_post": 0.18587526963440618,
+            "stationary": true,
+            "drift_slope": -0.0002143311968057758,
+            "drift_slope_ci": [
+              -0.00039758722598405826,
+              -3.0290245150395446e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.23304506484364668,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 918.22063545224,
+            "w2_min": -1.7763568394002505e-15,
+            "w2_mean": 0.9769965915989388,
+            "otoc_c_sat": 0.012747005138270932,
+            "otoc_t_star": Infinity,
+            "xi": 0.9809278007712846
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.195054394194191,
+              "log_rho": 0.04820260885004163,
+              "retention_R": 0.9908208754402152,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.2040006224613327,
+              "log_rho": 1.8683292874616024,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 8.903988657493755e-14
+            },
+            "loss": {
+              "lost": [
+                3,
+                5
+              ],
+              "max_delta_phi_pert": 0.23224441954502387,
+              "log_rho": 0.2227144942105599,
+              "retention_R": 0.9536308500893823,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.26326893622757797,
+            "max_delta_phi_post": 0.1822345943341734,
+            "stationary": false,
+            "drift_slope": -0.00023865380171743232,
+            "drift_slope_ci": [
+              -0.00042582176720175937,
+              -1.1528735926509596e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.26326893622757797,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 1.1102230246251565e-16
+          },
+          "witnesses": {
+            "pr_A": 1491.8042970434888,
+            "w2_min": -4.440892098500626e-16,
+            "w2_mean": 0.9827359610284436,
+            "otoc_c_sat": 0.007848572426549088,
+            "otoc_t_star": Infinity,
+            "xi": 0.9850101271776417
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.1920607912885162,
+              "log_rho": 0.05251710629466149,
+              "retention_R": 0.9901738030456573,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.3424012678076704,
+              "log_rho": 1.996920443232569,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 4.107825191113079e-14
+            },
+            "loss": {
+              "lost": [
+                3,
+                5
+              ],
+              "max_delta_phi_pert": 0.21498597153196494,
+              "log_rho": 0.16527794039680835,
+              "retention_R": 0.9672486228022085,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.19865308022593473,
+            "max_delta_phi_post": 0.18138474917409267,
+            "stationary": true,
+            "drift_slope": -0.00012295359047236615,
+            "drift_slope_ci": [
+              -0.00022715486518948863,
+              -2.785867925998075e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.19865308022593473,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 210.41880867822408,
+            "w2_min": -1.3322676295501878e-15,
+            "w2_mean": 0.9540413477106321,
+            "otoc_c_sat": 0.005518548014563478,
+            "otoc_t_star": Infinity,
+            "xi": 0.9578035218709667
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.1947649742875341,
+              "log_rho": 0.07117311035324517,
+              "retention_R": 0.9866197748865586,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.0972443815406507,
+              "log_rho": 1.79993674682716,
+              "retention_R": 0.0841403676334419,
+              "fails_stationarity": true,
+              "trace_drift": 1.5898393712632242e-13
+            },
+            "loss": {
+              "lost": [
+                3,
+                5
+              ],
+              "max_delta_phi_pert": 0.19496667420124814,
+              "log_rho": 0.07220818118982775,
+              "retention_R": 0.9864180749728445,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.19365375881494631,
+            "max_delta_phi_post": 0.18978839049232546,
+            "stationary": true,
+            "drift_slope": -6.181456330937872e-05,
+            "drift_slope_ci": [
+              -9.873900590708659e-05,
+              3.298815827669056e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.19365375881494634,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 187.2723531418951,
+            "w2_min": 0.0,
+            "w2_mean": 0.9543177528022352,
+            "otoc_c_sat": 0.008203437461070254,
+            "otoc_t_star": Infinity,
+            "xi": 0.9559831408990184
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.19046939797725285,
+              "log_rho": 0.003581823876628977,
+              "retention_R": 0.9993189925150726,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.3195921252935812,
+              "log_rho": 1.9391682545949098,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 8.149037000748649e-14
+            },
+            "loss": {
+              "lost": [
+                3,
+                5
+              ],
+              "max_delta_phi_pert": 0.2200172183061235,
+              "log_rho": 0.14779609107094993,
+              "retention_R": 0.9697711721862019,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 4167656424,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.310322840789271,
+            "max_delta_phi_post": 0.2980973999852508,
+            "stationary": false,
+            "drift_slope": -4.852734602401618e-05,
+            "drift_slope_ci": [
+              -0.0002691651858866088,
+              0.0001756900434636846
+            ],
+            "cap_max_delta_phi_subgraph": 0.31032284078927097,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 1.1102230246251565e-16
+          },
+          "witnesses": {
+            "pr_A": 7.187976300496655,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.7277649581519899,
+            "otoc_c_sat": 0.11708779866614705,
+            "otoc_t_star": 0.5,
+            "xi": 0.7302265648480532
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.2935392747704969,
+              "log_rho": -0.015408833143743438,
+              "retention_R": 1.0,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.4991276127290844,
+              "log_rho": 0.5154415212973253,
+              "retention_R": 0.7989697872561664,
+              "fails_stationarity": true,
+              "trace_drift": 1.2079226507921703e-13
+            },
+            "loss": {
+              "lost": [
+                2,
+                6
+              ],
+              "max_delta_phi_pert": 0.4209465601247355,
+              "log_rho": 0.3450856113635695,
+              "retention_R": 0.8771508398605152,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.24680001894484457,
+            "max_delta_phi_post": 0.21279980409667704,
+            "stationary": true,
+            "drift_slope": -0.00015437296871796357,
+            "drift_slope_ci": [
+              -0.00031357507743192493,
+              2.2591522746323975e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.24680001894484457,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 112.16782327266745,
+            "w2_min": -1.7763568394002505e-15,
+            "w2_mean": 0.9373001077407294,
+            "otoc_c_sat": 0.0767951619177894,
+            "otoc_t_star": 3.0,
+            "xi": 0.940023988924036
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.23097547771228072,
+              "log_rho": 0.08195971092829368,
+              "retention_R": 0.9818243263843963,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.2833194909236796,
+              "log_rho": 1.7968535153935676,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 2.886579864025407e-15
+            },
+            "loss": {
+              "lost": [
+                2,
+                6
+              ],
+              "max_delta_phi_pert": 0.24775932592587574,
+              "log_rho": 0.1521059781187693,
+              "retention_R": 0.9650404781708013,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.24407974205518412,
+            "max_delta_phi_post": 0.19194175913459924,
+            "stationary": true,
+            "drift_slope": -0.00015868095064228637,
+            "drift_slope_ci": [
+              -0.00025450018160855367,
+              -7.724688819705558e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.24407974205518412,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 431.0648886981834,
+            "w2_min": -1.3322676295501878e-15,
+            "w2_mean": 0.9695240671642179,
+            "otoc_c_sat": 0.11382367459988217,
+            "otoc_t_star": 1.5,
+            "xi": 0.9726416738295607
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.19751523026797485,
+              "log_rho": 0.02862370847790751,
+              "retention_R": 0.9944265288666244,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.3048834490349588,
+              "log_rho": 1.9166770165130746,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 6.328271240363392e-14
+            },
+            "loss": {
+              "lost": [
+                2,
+                6
+              ],
+              "max_delta_phi_pert": 0.2885110509100217,
+              "log_rho": 0.40754140175773695,
+              "retention_R": 0.9034307082245775,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.21739864287418537,
+            "max_delta_phi_post": 0.19794786814938223,
+            "stationary": true,
+            "drift_slope": -5.618987646672785e-05,
+            "drift_slope_ci": [
+              -0.00015052421984275153,
+              0.00011306307243774036
+            ],
+            "cap_max_delta_phi_subgraph": 0.2173986428741853,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 1.1102230246251565e-16
+          },
+          "witnesses": {
+            "pr_A": 406.56993601706256,
+            "w2_min": 4.440892098500626e-16,
+            "w2_mean": 0.969151271499594,
+            "otoc_c_sat": 0.07957366645163154,
+            "otoc_t_star": 3.0,
+            "xi": 0.9720514281973768
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.21089131926887672,
+              "log_rho": 0.06333922237228543,
+              "retention_R": 0.9870565488805055,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.233874506687662,
+              "log_rho": 1.8299107990783583,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 5.140332604014475e-14
+            },
+            "loss": {
+              "lost": [
+                2,
+                6
+              ],
+              "max_delta_phi_pert": 0.22063003225496505,
+              "log_rho": 0.1084835326628702,
+              "retention_R": 0.9773178358944172,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.3188728102284679,
+            "max_delta_phi_post": 0.21843213150546745,
+            "stationary": false,
+            "drift_slope": -0.0002566424162959533,
+            "drift_slope_ci": [
+              -0.0005993004261525016,
+              0.00020997324641796526
+            ],
+            "cap_max_delta_phi_subgraph": 0.31887281022846786,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 177.36014110631965,
+            "w2_min": 4.440892098500626e-16,
+            "w2_mean": 0.9530399180573437,
+            "otoc_c_sat": 0.09817588383475044,
+            "otoc_t_star": 2.0,
+            "xi": 0.954806325435156
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.22853189930144788,
+              "log_rho": 0.04520044833334094,
+              "retention_R": 0.9899002322040196,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.1250389165942465,
+              "log_rho": 1.6390975512413215,
+              "retention_R": 0.09339321491122099,
+              "fails_stationarity": true,
+              "trace_drift": 1.6209256159527285e-14
+            },
+            "loss": {
+              "lost": [
+                2,
+                6
+              ],
+              "max_delta_phi_pert": 0.21703968463504353,
+              "log_rho": -0.006395140004380972,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 2106286748,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.3225098977491248,
+            "max_delta_phi_post": 0.2873548103585733,
+            "stationary": false,
+            "drift_slope": -9.593917266387742e-05,
+            "drift_slope_ci": [
+              -0.00018583676736838912,
+              5.590870549545053e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.32250989774912486,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 4.440742172948256,
+            "w2_min": -3.1086244689504383e-15,
+            "w2_mean": 0.5854291989405934,
+            "otoc_c_sat": 0.07105989955440686,
+            "otoc_t_star": Infinity,
+            "xi": 0.5868729656923837
+          },
+          "protocols": {
+            "quench": {
+              "site": 1,
+              "max_delta_phi_pert": 0.33630760315358743,
+              "log_rho": 0.15730850150826653,
+              "retention_R": 0.9510472072049858,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.3774538225544992,
+              "log_rho": 0.2727305116181467,
+              "retention_R": 0.909900987804074,
+              "fails_stationarity": true,
+              "trace_drift": 1.5720758028692217e-13
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.42318175670448704,
+              "log_rho": 0.38708404640899374,
+              "retention_R": 0.8641730536540863,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.21265320818117991,
+            "max_delta_phi_post": 0.18267539420438103,
+            "stationary": true,
+            "drift_slope": -0.00011938138794353738,
+            "drift_slope_ci": [
+              -0.0001798540886637075,
+              -3.12371672397242e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.2126532081811799,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 1929.87935775514,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.9851658013893916,
+            "otoc_c_sat": 0.10254063026032756,
+            "otoc_t_star": 22.5,
+            "xi": 0.98717627907622
+          },
+          "protocols": {
+            "quench": {
+              "site": 1,
+              "max_delta_phi_pert": 0.17894842489703972,
+              "log_rho": -0.02061314037290395,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.1586355832056325,
+              "log_rho": 1.8472875948049958,
+              "retention_R": 0.024039810998748523,
+              "fails_stationarity": true,
+              "trace_drift": 3.8191672047105385e-14
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.21620076750763567,
+              "log_rho": 0.16849667955818373,
+              "retention_R": 0.9664746266967453,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.22260151792969168,
+            "max_delta_phi_post": 0.19649662752985694,
+            "stationary": true,
+            "drift_slope": -9.793112428566396e-05,
+            "drift_slope_ci": [
+              -0.00021850173494842234,
+              4.131996877835629e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.22260151792969163,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 421.7756966375285,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.9713155654766661,
+            "otoc_c_sat": 0.055103279565757717,
+            "otoc_t_star": Infinity,
+            "xi": 0.972145347967107
+          },
+          "protocols": {
+            "quench": {
+              "site": 1,
+              "max_delta_phi_pert": 0.18655433054263124,
+              "log_rho": -0.05192275522219929,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.1454500944174886,
+              "log_rho": 1.7629076658435407,
+              "retention_R": 0.0510465331123684,
+              "fails_stationarity": true,
+              "trace_drift": 5.1514348342607263e-14
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.2708818882715363,
+              "log_rho": 0.3210376207748053,
+              "retention_R": 0.9256147392583206,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.20640789030616372,
+            "max_delta_phi_post": 0.17718735243735675,
+            "stationary": true,
+            "drift_slope": -0.00016490328021802968,
+            "drift_slope_ci": [
+              -0.0002548733560435367,
+              -1.983270226879678e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.20640789030616372,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 6.661338147750939e-16
+          },
+          "witnesses": {
+            "pr_A": 2459.198260177873,
+            "w2_min": -2.6645352591003757e-15,
+            "w2_mean": 0.9863764253099299,
+            "otoc_c_sat": 0.07982802996666657,
+            "otoc_t_star": 49.0,
+            "xi": 0.9888486129700009
+          },
+          "protocols": {
+            "quench": {
+              "site": 1,
+              "max_delta_phi_pert": 0.18313493729483155,
+              "log_rho": 0.033015582273582145,
+              "retention_R": 0.9940524151425252,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.102751254013222,
+              "log_rho": 1.8283558150368167,
+              "retention_R": 0.07443609842413468,
+              "fails_stationarity": true,
+              "trace_drift": 2.4202861936828413e-14
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.21916396007604863,
+              "log_rho": 0.21261246472797546,
+              "retention_R": 0.9580233923613082,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.25855495157011077,
+            "max_delta_phi_post": 0.2335189918840761,
+            "stationary": false,
+            "drift_slope": -0.00015934635159348744,
+            "drift_slope_ci": [
+              -0.00024305838648186392,
+              0.00010987231557331726
+            ],
+            "cap_max_delta_phi_subgraph": 0.2585549515701108,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 720.7054889989153,
+            "w2_min": -1.7763568394002505e-15,
+            "w2_mean": 0.9753163812953375,
+            "otoc_c_sat": 0.06857640511786686,
+            "otoc_t_star": 66.0,
+            "xi": 0.9782313096334604
+          },
+          "protocols": {
+            "quench": {
+              "site": 1,
+              "max_delta_phi_pert": 0.22748058195090395,
+              "log_rho": -0.026198528807179506,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.1820403951825968,
+              "log_rho": 1.6217339631701082,
+              "retention_R": 0.05147859670147925,
+              "fails_stationarity": true,
+              "trace_drift": 1.028066520802895e-13
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.30214714533928017,
+              "log_rho": 0.2576507254432669,
+              "retention_R": 0.931371846544796,
+              "fails_stationarity": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 2090900344,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.3011262997744841,
+            "max_delta_phi_post": 0.25426692924564664,
+            "stationary": false,
+            "drift_slope": -0.00011623849783533476,
+            "drift_slope_ci": [
+              -0.00032276158002424475,
+              -7.533449739732411e-06
+            ],
+            "cap_max_delta_phi_subgraph": 0.30112629977448413,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 8.519198553910488,
+            "w2_min": 0.0,
+            "w2_mean": 0.7490603813869389,
+            "otoc_c_sat": 0.11156615000543031,
+            "otoc_t_star": 2.5,
+            "xi": 0.7543316570818692
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.23033134374975456,
+              "log_rho": -0.09886572053145898,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.4320493661354816,
+              "log_rho": 0.5301552374282162,
+              "retention_R": 0.822217563110165,
+              "fails_stationarity": true,
+              "trace_drift": 6.17284001691587e-14
+            },
+            "loss": {
+              "lost": [
+                4,
+                6
+              ],
+              "max_delta_phi_pert": 0.3451301089305221,
+              "log_rho": 0.30553685552262455,
+              "retention_R": 0.9091368203151245,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.18345010901891234,
+            "max_delta_phi_post": 0.17812326277580148,
+            "stationary": true,
+            "drift_slope": -9.811081638751586e-06,
+            "drift_slope_ci": [
+              -6.430824025656755e-05,
+              6.395945748256938e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.18345010901891234,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 382.66679124775635,
+            "w2_min": 1.5543122344752192e-15,
+            "w2_mean": 0.9669127846103405,
+            "otoc_c_sat": 0.09761074652604718,
+            "otoc_t_star": 1.0,
+            "xi": 0.9694508975530574
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.19407245141967006,
+              "log_rho": 0.08575575213253854,
+              "retention_R": 0.9840508113561315,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.2494905265188385,
+              "log_rho": 1.9480153702908587,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 8.43769498715119e-15
+            },
+            "loss": {
+              "lost": [
+                4,
+                6
+              ],
+              "max_delta_phi_pert": 0.2316042852739269,
+              "log_rho": 0.26255445029978774,
+              "retention_R": 0.9465189775018745,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.1946141795766638,
+            "max_delta_phi_post": 0.1946141795766638,
+            "stationary": true,
+            "drift_slope": -4.3865671288028915e-05,
+            "drift_slope_ci": [
+              -0.00011439401287358107,
+              5.33870530169981e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.19461417957666377,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 950.2544064619283,
+            "w2_min": -1.3322676295501878e-15,
+            "w2_mean": 0.9789243918881888,
+            "otoc_c_sat": 0.06780657165659973,
+            "otoc_t_star": 18.0,
+            "xi": 0.9814861656938646
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.19272802373420703,
+              "log_rho": -0.009739040748105474,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.1819430364608705,
+              "log_rho": 1.80389597195896,
+              "retention_R": 0.012671143115793315,
+              "fails_stationarity": true,
+              "trace_drift": 2.3092638912203256e-14
+            },
+            "loss": {
+              "lost": [
+                4,
+                6
+              ],
+              "max_delta_phi_pert": 0.24893833162318513,
+              "log_rho": 0.24618616928466489,
+              "retention_R": 0.9456758479534787,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.2100102411386366,
+            "max_delta_phi_post": 0.2100102411386366,
+            "stationary": true,
+            "drift_slope": -3.273997758697546e-05,
+            "drift_slope_ci": [
+              -0.0001232275353369922,
+              3.0249929420724086e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.21001024113863664,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 335.7809355572572,
+            "w2_min": -1.7763568394002505e-15,
+            "w2_mean": 0.9637424646075337,
+            "otoc_c_sat": 0.20905500443182048,
+            "otoc_t_star": 1.0,
+            "xi": 0.9669676541168436
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.19303843158948278,
+              "log_rho": -0.08426700036692066,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.024838758890637,
+              "log_rho": 1.5851342739436436,
+              "retention_R": 0.18517148224799973,
+              "fails_stationarity": true,
+              "trace_drift": 8.43769498715119e-15
+            },
+            "loss": {
+              "lost": [
+                4,
+                6
+              ],
+              "max_delta_phi_pert": 0.26746545935051663,
+              "log_rho": 0.24183413722032526,
+              "retention_R": 0.94254478178812,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.19757944855395493,
+            "max_delta_phi_post": 0.19757944855395493,
+            "stationary": true,
+            "drift_slope": -7.556031012044906e-05,
+            "drift_slope_ci": [
+              -9.366227316762379e-05,
+              3.351585025363143e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.19757944855395493,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 3540.408686362562,
+            "w2_min": 0.0,
+            "w2_mean": 0.9882764473519396,
+            "otoc_c_sat": 0.06966580982700117,
+            "otoc_t_star": 125.0,
+            "xi": 0.9908651849903138
+          },
+          "protocols": {
+            "quench": {
+              "site": 5,
+              "max_delta_phi_pert": 0.18646780774680205,
+              "log_rho": -0.057882163044177024,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.466088478519963,
+              "log_rho": 2.004212459711404,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 3.963496197911809e-14
+            },
+            "loss": {
+              "lost": [
+                4,
+                6
+              ],
+              "max_delta_phi_pert": 0.22133678303914017,
+              "log_rho": 0.11354467209598348,
+              "retention_R": 0.9762426655148148,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 254103179,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.3114801792550805,
+            "max_delta_phi_post": 0.30004275756250004,
+            "stationary": false,
+            "drift_slope": -1.044018601267537e-06,
+            "drift_slope_ci": [
+              -9.431828823042499e-05,
+              7.491474580695822e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.3114801792550805,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 7.771561172376096e-16
+          },
+          "witnesses": {
+            "pr_A": 3.5427763886612476,
+            "w2_min": 3.552713678800501e-15,
+            "w2_mean": 0.5344811091145876,
+            "otoc_c_sat": 0.00579112383893921,
+            "otoc_t_star": Infinity,
+            "xi": 0.5339988734189531
+          },
+          "protocols": {
+            "quench": {
+              "site": 3,
+              "max_delta_phi_pert": 0.3104824080606423,
+              "log_rho": 0.034202253250168346,
+              "retention_R": 0.9895603495018577,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.38216270979998473,
+              "log_rho": 0.24192147009507614,
+              "retention_R": 0.9178800477625153,
+              "fails_stationarity": true,
+              "trace_drift": 1.4421797089880783e-13
+            },
+            "loss": {
+              "lost": [
+                5,
+                7
+              ],
+              "max_delta_phi_pert": 0.4170574060049161,
+              "log_rho": 0.3292988868955362,
+              "retention_R": 0.882985351557584,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.26768333146052364,
+            "max_delta_phi_post": 0.17848948881843243,
+            "stationary": false,
+            "drift_slope": -0.00021286805195790964,
+            "drift_slope_ci": [
+              -0.00037518080783030766,
+              1.3148059028704529e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.26768333146052364,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 1772.5044944057395,
+            "w2_min": 1.3322676295501878e-15,
+            "w2_mean": 0.9838289669604475,
+            "otoc_c_sat": 0.007144440473659102,
+            "otoc_t_star": Infinity,
+            "xi": 0.9864733732260266
+          },
+          "protocols": {
+            "quench": {
+              "site": 3,
+              "max_delta_phi_pert": 0.19009315648187577,
+              "log_rho": 0.06298453596249365,
+              "retention_R": 0.9883963323365567,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.247487477749495,
+              "log_rho": 1.9443570763845495,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 4.574118861455645e-14
+            },
+            "loss": {
+              "lost": [
+                5,
+                7
+              ],
+              "max_delta_phi_pert": 0.22729016829521734,
+              "log_rho": 0.24169776229788814,
+              "retention_R": 0.9511993205232151,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.2197239812177318,
+            "max_delta_phi_post": 0.1892141265323872,
+            "stationary": true,
+            "drift_slope": -8.756797513481122e-05,
+            "drift_slope_ci": [
+              -0.00013273511830835596,
+              1.717753366652828e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.21972398121773182,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 1089.5458543865425,
+            "w2_min": 8.881784197001252e-16,
+            "w2_mean": 0.9818782867768483,
+            "otoc_c_sat": 0.003708912888199018,
+            "otoc_t_star": Infinity,
+            "xi": 0.983166849584351
+          },
+          "protocols": {
+            "quench": {
+              "site": 3,
+              "max_delta_phi_pert": 0.21204845171894549,
+              "log_rho": 0.11393547602545177,
+              "retention_R": 0.9771656748134417,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.3135178366245372,
+              "log_rho": 1.9375848701182878,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 5.129230373768223e-14
+            },
+            "loss": {
+              "lost": [
+                5,
+                7
+              ],
+              "max_delta_phi_pert": 0.27822822836814953,
+              "log_rho": 0.38556242385794287,
+              "retention_R": 0.9109858981642377,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.28412038576292226,
+            "max_delta_phi_post": 0.2540210132257033,
+            "stationary": false,
+            "drift_slope": -0.0001266411152083765,
+            "drift_slope_ci": [
+              -0.00034153328851390194,
+              0.00018360833582728385
+            ],
+            "cap_max_delta_phi_subgraph": 0.28412038576292226,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 3.3306690738754696e-16
+          },
+          "witnesses": {
+            "pr_A": 694.1003942705405,
+            "w2_min": 8.881784197001252e-16,
+            "w2_mean": 0.9765070400116023,
+            "otoc_c_sat": 0.004621983023480812,
+            "otoc_t_star": Infinity,
+            "xi": 0.9788939992083232
+          },
+          "protocols": {
+            "quench": {
+              "site": 3,
+              "max_delta_phi_pert": 0.24296908552706992,
+              "log_rho": -0.04448277763753364,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.1871665301655014,
+              "log_rho": 1.5419076869379527,
+              "retention_R": 0.06685448306020181,
+              "fails_stationarity": true,
+              "trace_drift": 6.861178292183467e-14
+            },
+            "loss": {
+              "lost": [
+                5,
+                7
+              ],
+              "max_delta_phi_pert": 0.2986736278195081,
+              "log_rho": 0.16193443863488113,
+              "retention_R": 0.9553473854061951,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.20724607997124134,
+            "max_delta_phi_post": 0.18092849718589546,
+            "stationary": true,
+            "drift_slope": -6.911950125920316e-05,
+            "drift_slope_ci": [
+              -0.00016468724046596564,
+              0.00010409900847278426
+            ],
+            "cap_max_delta_phi_subgraph": 0.20724607997124136,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 857.8623365104152,
+            "w2_min": -4.440892098500626e-16,
+            "w2_mean": 0.9767265347880578,
+            "otoc_c_sat": 0.011640647966844568,
+            "otoc_t_star": Infinity,
+            "xi": 0.9799923804054894
+          },
+          "protocols": {
+            "quench": {
+              "site": 3,
+              "max_delta_phi_pert": 0.1839983520475271,
+              "log_rho": 0.01682489126157076,
+              "retention_R": 0.9969301451383683,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.1980461805922191,
+              "log_rho": 1.890345415962208,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 4.04121180963557e-14
+            },
+            "loss": {
+              "lost": [
+                5,
+                7
+              ],
+              "max_delta_phi_pert": 0.24148385445954226,
+              "log_rho": 0.2887007055738581,
+              "retention_R": 0.9394446427263532,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 1565235599,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.36567952713098517,
+            "max_delta_phi_post": 0.36567952713098517,
+            "stationary": false,
+            "drift_slope": -2.6448059433926606e-05,
+            "drift_slope_ci": [
+              -8.346801586565399e-05,
+              8.280149259039117e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.36567952713098517,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 2.665734251557113,
+            "w2_min": -4.440892098500626e-16,
+            "w2_mean": 0.557696809158658,
+            "otoc_c_sat": 0.009570536381471907,
+            "otoc_t_star": Infinity,
+            "xi": 0.5580260012155178
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.34077774230550817,
+              "log_rho": -0.07052685821426899,
+              "retention_R": 1.0,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.26510964090945444,
+              "log_rho": -0.3216138611995235,
+              "retention_R": 1.0,
+              "fails_stationarity": true,
+              "trace_drift": 6.195044477408373e-14
+            },
+            "loss": {
+              "lost": [
+                4,
+                6
+              ],
+              "max_delta_phi_pert": 0.4827047130061021,
+              "log_rho": 0.2776477655596775,
+              "retention_R": 0.882974814124883,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.3679033523031576,
+            "max_delta_phi_post": 0.24474752024248767,
+            "stationary": false,
+            "drift_slope": -0.00043534182499096964,
+            "drift_slope_ci": [
+              -0.0006408228212423484,
+              -2.2153505569647147e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.36790335230315774,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 638.151157431274,
+            "w2_min": -1.7763568394002505e-15,
+            "w2_mean": 0.9759301361016267,
+            "otoc_c_sat": 0.008988016949813746,
+            "otoc_t_star": Infinity,
+            "xi": 0.979168299611735
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.24485160553982901,
+              "log_rho": 0.0004251858037658151,
+              "retention_R": 0.9998959147026587,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.210793886626765,
+              "log_rho": 1.598804378536959,
+              "retention_R": 0.03395363361572279,
+              "fails_stationarity": true,
+              "trace_drift": 2.3092638912203256e-14
+            },
+            "loss": {
+              "lost": [
+                4,
+                6
+              ],
+              "max_delta_phi_pert": 0.3644353504241705,
+              "log_rho": 0.3981220210647365,
+              "retention_R": 0.8803121698183172,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.317972451836747,
+            "max_delta_phi_post": 0.20417611705982366,
+            "stationary": false,
+            "drift_slope": -0.0002956343279484596,
+            "drift_slope_ci": [
+              -0.0004503384418393428,
+              -8.186524451655657e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.317972451836747,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 727.9495077090653,
+            "w2_min": -2.220446049250313e-15,
+            "w2_mean": 0.9766608499797134,
+            "otoc_c_sat": 0.03325666453476855,
+            "otoc_t_star": Infinity,
+            "xi": 0.9780817537974126
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.20165755732412138,
+              "log_rho": -0.012411942270574877,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.1145353555449913,
+              "log_rho": 1.6972099352378935,
+              "retention_R": 0.08964076151483236,
+              "fails_stationarity": true,
+              "trace_drift": 1.7763568394002505e-14
+            },
+            "loss": {
+              "lost": [
+                4,
+                6
+              ],
+              "max_delta_phi_pert": 0.25892209858313053,
+              "log_rho": 0.23754429846606576,
+              "retention_R": 0.9452540184766931,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.31416005018179993,
+            "max_delta_phi_post": 0.19851371651754848,
+            "stationary": false,
+            "drift_slope": -0.000253246779656828,
+            "drift_slope_ci": [
+              -0.00048562439540835757,
+              0.000107468601663326
+            ],
+            "cap_max_delta_phi_subgraph": 0.31416005018179993,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 3.3306690738754696e-16
+          },
+          "witnesses": {
+            "pr_A": 453.61698951115363,
+            "w2_min": 1.1102230246251565e-15,
+            "w2_mean": 0.9706699883960642,
+            "otoc_c_sat": 0.007033029774321011,
+            "otoc_t_star": Infinity,
+            "xi": 0.9724822728986329
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.20444911298526794,
+              "log_rho": 0.029460909676154792,
+              "retention_R": 0.9940646035322805,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.1782080041554037,
+              "log_rho": 1.7808917240261273,
+              "retention_R": 0.020305712362144734,
+              "fails_stationarity": true,
+              "trace_drift": 1.7841284005726266e-13
+            },
+            "loss": {
+              "lost": [
+                4,
+                6
+              ],
+              "max_delta_phi_pert": 0.23793044850071934,
+              "log_rho": 0.1811201991888156,
+              "retention_R": 0.9605832680168291,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.38542883571893566,
+            "max_delta_phi_post": 0.2613467995380176,
+            "stationary": false,
+            "drift_slope": -0.0003146876183518381,
+            "drift_slope_ci": [
+              -0.0005837815731670468,
+              0.00022308596365496681
+            ],
+            "cap_max_delta_phi_subgraph": 0.38542883571893566,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 60.220890736422014,
+            "w2_min": -2.6645352591003757e-15,
+            "w2_mean": 0.899049917901875,
+            "otoc_c_sat": 0.026583420148730313,
+            "otoc_t_star": Infinity,
+            "xi": 0.9162117913290333
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.3168465002891723,
+              "log_rho": 0.19256917118559572,
+              "retention_R": 0.9445002992488454,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.1111894059425362,
+              "log_rho": 1.447337998306492,
+              "retention_R": 0.15015739359548141,
+              "fails_stationarity": true,
+              "trace_drift": 1.5343282200319663e-13
+            },
+            "loss": {
+              "lost": [
+                4,
+                6
+              ],
+              "max_delta_phi_pert": 0.3023061538825851,
+              "log_rho": 0.14559199925161986,
+              "retention_R": 0.9590406456554326,
+              "fails_stationarity": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 777907145,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.3598507535898794,
+            "max_delta_phi_post": 0.3598507535898794,
+            "stationary": false,
+            "drift_slope": -5.100285294993415e-05,
+            "drift_slope_ci": [
+              -0.00020120973206560675,
+              4.232312131190317e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.3598507535898794,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 8.881784197001252e-16
+          },
+          "witnesses": {
+            "pr_A": 4.7797287441677945,
+            "w2_min": -4.884981308350689e-15,
+            "w2_mean": 0.677588727173707,
+            "otoc_c_sat": 0.10357900967620098,
+            "otoc_t_star": 3.0,
+            "xi": 0.677402956121904
+          },
+          "protocols": {
+            "quench": {
+              "site": 1,
+              "max_delta_phi_pert": 0.3525672198522727,
+              "log_rho": -0.020448073440622477,
+              "retention_R": 1.0,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.4568869788599384,
+              "log_rho": 0.23874667714979297,
+              "retention_R": 0.902963774729941,
+              "fails_stationarity": true,
+              "trace_drift": 2.220446049250313e-13
+            },
+            "loss": {
+              "lost": [
+                2,
+                7
+              ],
+              "max_delta_phi_pert": 0.5116168521532832,
+              "log_rho": 0.3518866371290911,
+              "retention_R": 0.8482339014365962,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.18066295059579984,
+            "max_delta_phi_post": 0.17186699643505413,
+            "stationary": true,
+            "drift_slope": -8.325409882618007e-05,
+            "drift_slope_ci": [
+              -0.00017337767633186614,
+              7.957799182573917e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.18066295059579984,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 1215.2077129154193,
+            "w2_min": 4.440892098500626e-16,
+            "w2_mean": 0.9810159979745837,
+            "otoc_c_sat": 0.20802125334484328,
+            "otoc_t_star": 2.5,
+            "xi": 0.983497592110241
+          },
+          "protocols": {
+            "quench": {
+              "site": 1,
+              "max_delta_phi_pert": 0.17611491133832066,
+              "log_rho": 0.024415786179014562,
+              "retention_R": 0.9957520850967334,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.0743389874809848,
+              "log_rho": 1.832739954929001,
+              "retention_R": 0.09752800895406932,
+              "fails_stationarity": true,
+              "trace_drift": 5.839773109528323e-14
+            },
+            "loss": {
+              "lost": [
+                2,
+                7
+              ],
+              "max_delta_phi_pert": 0.18952689353627597,
+              "log_rho": 0.09781003170970465,
+              "retention_R": 0.9823401028987782,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.2063591983137556,
+            "max_delta_phi_post": 0.2063591983137556,
+            "stationary": true,
+            "drift_slope": -3.579293765247762e-05,
+            "drift_slope_ci": [
+              -9.740803030403174e-05,
+              0.00011292739839164331
+            ],
+            "cap_max_delta_phi_subgraph": 0.20635919831375557,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 615.7920627617301,
+            "w2_min": 2.220446049250313e-16,
+            "w2_mean": 0.9740031931886333,
+            "otoc_c_sat": 0.4343002332115322,
+            "otoc_t_star": 1.0,
+            "xi": 0.9765873835074061
+          },
+          "protocols": {
+            "quench": {
+              "site": 1,
+              "max_delta_phi_pert": 0.18749878630852546,
+              "log_rho": -0.09584595910891809,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.3007525042911663,
+              "log_rho": 1.8410798939584128,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 4.218847493575595e-15
+            },
+            "loss": {
+              "lost": [
+                2,
+                7
+              ],
+              "max_delta_phi_pert": 0.20350756097897266,
+              "log_rho": -0.01391517259697829,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.20164148210627444,
+            "max_delta_phi_post": 0.20164148210627444,
+            "stationary": true,
+            "drift_slope": -7.572388871568265e-05,
+            "drift_slope_ci": [
+              -0.0001497749843300099,
+              -3.654184649726114e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.20164148210627442,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 149.4904176243583,
+            "w2_min": 8.881784197001252e-16,
+            "w2_mean": 0.9477477057999859,
+            "otoc_c_sat": 0.24035726547279465,
+            "otoc_t_star": 1.5,
+            "xi": 0.949523891953526
+          },
+          "protocols": {
+            "quench": {
+              "site": 1,
+              "max_delta_phi_pert": 0.18150845864458104,
+              "log_rho": -0.1051890227253206,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.1340287646688907,
+              "log_rho": 1.7270405701885465,
+              "retention_R": 0.06761271743738373,
+              "fails_stationarity": true,
+              "trace_drift": 3.352873534367973e-14
+            },
+            "loss": {
+              "lost": [
+                2,
+                7
+              ],
+              "max_delta_phi_pert": 0.24474778977161776,
+              "log_rho": 0.19373697136799267,
+              "retention_R": 0.9568936923346567,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.18662592704981149,
+            "max_delta_phi_post": 0.18253632249496435,
+            "stationary": true,
+            "drift_slope": -4.58379310088779e-05,
+            "drift_slope_ci": [
+              -8.795251483851403e-05,
+              5.846548598750424e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.18662592704981149,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 3.3306690738754696e-16
+          },
+          "witnesses": {
+            "pr_A": 672.5855246240839,
+            "w2_min": 8.881784197001252e-16,
+            "w2_mean": 0.9749186375644432,
+            "otoc_c_sat": 0.19573648887786008,
+            "otoc_t_star": 1.5,
+            "xi": 0.9772292006361822
+          },
+          "protocols": {
+            "quench": {
+              "site": 1,
+              "max_delta_phi_pert": 0.20054891053511245,
+              "log_rho": 0.09410897922703393,
+              "retention_R": 0.981987411959852,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.0601794431800335,
+              "log_rho": 1.7592442782088569,
+              "retention_R": 0.12235687931493078,
+              "fails_stationarity": true,
+              "trace_drift": 3.3306690738754696e-15
+            },
+            "loss": {
+              "lost": [
+                2,
+                7
+              ],
+              "max_delta_phi_pert": 0.22410706162441088,
+              "log_rho": 0.20517471076307237,
+              "retention_R": 0.9584292608705535,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 3141794596,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.2942685952672924,
+            "max_delta_phi_post": 0.27121937601531254,
+            "stationary": false,
+            "drift_slope": -7.44175784079766e-05,
+            "drift_slope_ci": [
+              -0.00010986183527415046,
+              0.0001235164659446103
+            ],
+            "cap_max_delta_phi_subgraph": 0.2942685952672924,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 6.661338147750939e-16
+          },
+          "witnesses": {
+            "pr_A": 3.6402370190421016,
+            "w2_min": 3.1086244689504383e-15,
+            "w2_mean": 0.6259779447229874,
+            "otoc_c_sat": 0.3565706658106513,
+            "otoc_t_star": 2.0,
+            "xi": 0.6262205025702445
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.28291818880139985,
+              "log_rho": 0.042229771344222275,
+              "retention_R": 0.9883011872139127,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.4461176134334436,
+              "log_rho": 0.4976546255069682,
+              "retention_R": 0.825101762581869,
+              "fails_stationarity": true,
+              "trace_drift": 1.396660564978447e-13
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.4147285053359382,
+              "log_rho": 0.4246961031377681,
+              "retention_R": 0.8564908706793743,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.26830134770143566,
+            "max_delta_phi_post": 0.19455351240967048,
+            "stationary": false,
+            "drift_slope": -0.00019796507255340966,
+            "drift_slope_ci": [
+              -0.0004119862767740427,
+              0.0001309369263349699
+            ],
+            "cap_max_delta_phi_subgraph": 0.2683013477014357,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 3.3306690738754696e-16
+          },
+          "witnesses": {
+            "pr_A": 853.9983481914741,
+            "w2_min": 3.1086244689504383e-15,
+            "w2_mean": 0.9787820443865157,
+            "otoc_c_sat": 0.09326270306226474,
+            "otoc_t_star": 24.5,
+            "xi": 0.9805242580396124
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.2183139718825996,
+              "log_rho": 0.1152270113466741,
+              "retention_R": 0.9762395405270708,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.238853794857304,
+              "log_rho": 1.8512346188418183,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 4.9404924595819466e-14
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.2450327507285878,
+              "log_rho": 0.23068462476604373,
+              "retention_R": 0.9495207616810827,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.255898260606316,
+            "max_delta_phi_post": 0.19475851093350074,
+            "stationary": false,
+            "drift_slope": -0.00011866938015834489,
+            "drift_slope_ci": [
+              -0.00039878404295083967,
+              0.00016262112565863264
+            ],
+            "cap_max_delta_phi_subgraph": 0.255898260606316,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 600.3092776563932,
+            "w2_min": 4.440892098500626e-16,
+            "w2_mean": 0.9735507017482055,
+            "otoc_c_sat": 0.0930621603503289,
+            "otoc_t_star": 90.5,
+            "xi": 0.9761532181669267
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.19316873872965062,
+              "log_rho": -0.008196284768208318,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.1440021708858632,
+              "log_rho": 1.7705276839286601,
+              "retention_R": 0.050756340047637516,
+              "fails_stationarity": true,
+              "trace_drift": 6.661338147750939e-15
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.22413996260566038,
+              "log_rho": 0.1405103041523381,
+              "retention_R": 0.9706185483278403,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.24658480570617278,
+            "max_delta_phi_post": 0.22003433034783176,
+            "stationary": true,
+            "drift_slope": -0.00010014007628326956,
+            "drift_slope_ci": [
+              -0.0002535501484780444,
+              0.00021868604686468807
+            ],
+            "cap_max_delta_phi_subgraph": 0.2465848057061728,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 1.1102230246251565e-16
+          },
+          "witnesses": {
+            "pr_A": 465.04408818254984,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.9707931929059307,
+            "otoc_c_sat": 0.024642523811063036,
+            "otoc_t_star": Infinity,
+            "xi": 0.9726872790242628
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.20377561558956958,
+              "log_rho": -0.07676411631009515,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.1214504408652688,
+              "log_rho": 1.6285945817256224,
+              "retention_R": 0.09858388948256303,
+              "fails_stationarity": true,
+              "trace_drift": 3.930189507173054e-14
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.23932181640334826,
+              "log_rho": 0.08402557713100467,
+              "retention_R": 0.9807125139444834,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.2824737437285503,
+            "max_delta_phi_post": 0.2157116742389825,
+            "stationary": false,
+            "drift_slope": -0.00018126003264748921,
+            "drift_slope_ci": [
+              -0.00030998386639508247,
+              2.8185426782808044e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.2824737437285502,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 90.24868329614819,
+            "w2_min": -2.220446049250313e-15,
+            "w2_mean": 0.9241112572457706,
+            "otoc_c_sat": 0.027347675177955545,
+            "otoc_t_star": Infinity,
+            "xi": 0.9281218648355261
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.20877299468039157,
+              "log_rho": -0.03269516268146844,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.1600373400654593,
+              "log_rho": 1.6822647987904615,
+              "retention_R": 0.05567433417352319,
+              "fails_stationarity": true,
+              "trace_drift": 1.3078427230084344e-13
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.24894767344944652,
+              "log_rho": 0.1433000530879317,
+              "retention_R": 0.966764000789536,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 2995151860,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.33251696189268143,
+            "max_delta_phi_post": 0.33251696189268143,
+            "stationary": false,
+            "drift_slope": -9.856455746082567e-05,
+            "drift_slope_ci": [
+              -0.00034953329359236837,
+              0.00013164495073476957
+            ],
+            "cap_max_delta_phi_subgraph": 0.3325169618926814,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 3.6243890795573277,
+            "w2_min": 0.0,
+            "w2_mean": 0.511963897282862,
+            "otoc_c_sat": 0.013701562920067245,
+            "otoc_t_star": Infinity,
+            "xi": 0.5215464918608701
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.3317956459756262,
+              "log_rho": -0.0021716167719354044,
+              "retention_R": 1.0,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.4611134889534109,
+              "log_rho": 0.3269533206358107,
+              "retention_R": 0.8714034729392706,
+              "fails_stationarity": true,
+              "trace_drift": 9.43689570931383e-14
+            },
+            "loss": {
+              "lost": [
+                2,
+                7
+              ],
+              "max_delta_phi_pert": 0.47067863090054385,
+              "log_rho": 0.34748467681651213,
+              "retention_R": 0.8618383309921376,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.2628005948235458,
+            "max_delta_phi_post": 0.18869414514830748,
+            "stationary": false,
+            "drift_slope": -0.0001656484135375238,
+            "drift_slope_ci": [
+              -0.00023539114491808282,
+              -4.21350647287273e-06
+            ],
+            "cap_max_delta_phi_subgraph": 0.2628005948235458,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 5.551115123125783e-16
+          },
+          "witnesses": {
+            "pr_A": 533.7638310860481,
+            "w2_min": 2.220446049250313e-15,
+            "w2_mean": 0.971953411925884,
+            "otoc_c_sat": 0.004959281438630054,
+            "otoc_t_star": Infinity,
+            "xi": 0.9743079994700455
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.186513112095211,
+              "log_rho": -0.01162588183912983,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.3511731208890965,
+              "log_rho": 1.968601047933487,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 4.75175454539567e-14
+            },
+            "loss": {
+              "lost": [
+                2,
+                7
+              ],
+              "max_delta_phi_pert": 0.2170250839553049,
+              "log_rho": 0.13988551653185455,
+              "retention_R": 0.9716690611930026,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.2253201392304535,
+            "max_delta_phi_post": 0.2253201392304535,
+            "stationary": true,
+            "drift_slope": 6.081588052842476e-06,
+            "drift_slope_ci": [
+              -5.047761127618895e-05,
+              0.00012743174667589115
+            ],
+            "cap_max_delta_phi_subgraph": 0.2253201392304535,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 114.14906727165913,
+            "w2_min": -1.7763568394002505e-15,
+            "w2_mean": 0.9423469816202543,
+            "otoc_c_sat": 0.002644425484871871,
+            "otoc_t_star": Infinity,
+            "xi": 0.9422533822316708
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.18867374908018658,
+              "log_rho": -0.17750290382474704,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.200579511376414,
+              "log_rho": 1.6730374134022865,
+              "retention_R": 0.02474062785403952,
+              "fails_stationarity": true,
+              "trace_drift": 1.0036416142611415e-13
+            },
+            "loss": {
+              "lost": [
+                2,
+                7
+              ],
+              "max_delta_phi_pert": 0.2319676372329799,
+              "log_rho": 0.029075635301076208,
+              "retention_R": 0.9933525019974736,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.2851192217211161,
+            "max_delta_phi_post": 0.17874007619153198,
+            "stationary": false,
+            "drift_slope": -0.00026295097922957456,
+            "drift_slope_ci": [
+              -0.0004035373853857974,
+              -2.8336732185143686e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.2851192217211161,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 6.661338147750939e-16
+          },
+          "witnesses": {
+            "pr_A": 292.30202114416977,
+            "w2_min": 2.6645352591003757e-15,
+            "w2_mean": 0.96277294631757,
+            "otoc_c_sat": 0.012215908627543924,
+            "otoc_t_star": Infinity,
+            "xi": 0.9656390584864504
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.19335193524860075,
+              "log_rho": 0.07857936482358782,
+              "retention_R": 0.9853881409429313,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.2683122840258247,
+              "log_rho": 1.959509723229168,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 1.3167245072054357e-13
+            },
+            "loss": {
+              "lost": [
+                2,
+                7
+              ],
+              "max_delta_phi_pert": 0.21164066212460614,
+              "log_rho": 0.1689571843495945,
+              "retention_R": 0.9670994140669258,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.23297612788008606,
+            "max_delta_phi_post": 0.2033105772024567,
+            "stationary": true,
+            "drift_slope": -0.00015186212487769036,
+            "drift_slope_ci": [
+              -0.00022380492454420243,
+              6.249965304814333e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.23297612788008604,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 1381.3637792049817,
+            "w2_min": -1.3322676295501878e-15,
+            "w2_mean": 0.982506334905958,
+            "otoc_c_sat": 0.010448935042095018,
+            "otoc_t_star": Infinity,
+            "xi": 0.9844489693075423
+          },
+          "protocols": {
+            "quench": {
+              "site": 0,
+              "max_delta_phi_pert": 0.193467395426414,
+              "log_rho": -0.049625747654527416,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.4246272960124635,
+              "log_rho": 1.9469307649970404,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 3.674838211509268e-14
+            },
+            "loss": {
+              "lost": [
+                2,
+                7
+              ],
+              "max_delta_phi_pert": 0.23661555381590405,
+              "log_rho": 0.1517019414119649,
+              "retention_R": 0.9666950233865527,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 3140087825,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.31363865507678845,
+            "max_delta_phi_post": 0.30379686645335185,
+            "stationary": false,
+            "drift_slope": -0.00013745306071637992,
+            "drift_slope_ci": [
+              -0.00030637885002344275,
+              0.00010252344806876209
+            ],
+            "cap_max_delta_phi_subgraph": 0.3136386550767885,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 3.2824744316957495,
+            "w2_min": -1.3322676295501878e-15,
+            "w2_mean": 0.4995375185895527,
+            "otoc_c_sat": 0.14287254923034595,
+            "otoc_t_star": 0.5,
+            "xi": 0.500545714759677
+          },
+          "protocols": {
+            "quench": {
+              "site": 3,
+              "max_delta_phi_pert": 0.3049575984043101,
+              "log_rho": 0.0038134697144152517,
+              "retention_R": 0.9988392680490418,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.5089817526668333,
+              "log_rho": 0.5160528909269991,
+              "retention_R": 0.7948151137865185,
+              "fails_stationarity": true,
+              "trace_drift": 2.0028423364237824e-13
+            },
+            "loss": {
+              "lost": [
+                1,
+                3
+              ],
+              "max_delta_phi_pert": 0.3856227284144024,
+              "log_rho": 0.2385002283793483,
+              "retention_R": 0.9181741380389494,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.2891340943516555,
+            "max_delta_phi_post": 0.20458715247994352,
+            "stationary": false,
+            "drift_slope": -0.00027846937614980124,
+            "drift_slope_ci": [
+              -0.0005006276288920264,
+              7.75588663594052e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.28913409435165544,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 305.02927723202953,
+            "w2_min": 0.0,
+            "w2_mean": 0.9623727212858292,
+            "otoc_c_sat": 0.22162319052413781,
+            "otoc_t_star": 0.5,
+            "xi": 0.9654800724282757
+          },
+          "protocols": {
+            "quench": {
+              "site": 3,
+              "max_delta_phi_pert": 0.20526051681674906,
+              "log_rho": 0.0032859278855413097,
+              "retention_R": 0.9993266356631945,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.0730528128738748,
+              "log_rho": 1.6572689030531988,
+              "retention_R": 0.13153433960606875,
+              "fails_stationarity": true,
+              "trace_drift": 3.774758283725532e-14
+            },
+            "loss": {
+              "lost": [
+                1,
+                3
+              ],
+              "max_delta_phi_pert": 0.2450225994482553,
+              "log_rho": 0.1803563907437945,
+              "retention_R": 0.9595645530316882,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.2479034561674146,
+            "max_delta_phi_post": 0.21095381326173662,
+            "stationary": true,
+            "drift_slope": -0.0002349643211482128,
+            "drift_slope_ci": [
+              -0.00042919920784855023,
+              6.035968275922694e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.24790345616741458,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 96.62609344643788,
+            "w2_min": -1.7763568394002505e-15,
+            "w2_mean": 0.9292040100857947,
+            "otoc_c_sat": 0.09858488409168645,
+            "otoc_t_star": 1.0,
+            "xi": 0.9310479281137213
+          },
+          "protocols": {
+            "quench": {
+              "site": 3,
+              "max_delta_phi_pert": 0.21422611463091315,
+              "log_rho": 0.01539285260575124,
+              "retention_R": 0.9967276986308234,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.2957121744507103,
+              "log_rho": 1.81517654961089,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 1.5187850976872141e-13
+            },
+            "loss": {
+              "lost": [
+                1,
+                3
+              ],
+              "max_delta_phi_pert": 0.28276085106529214,
+              "log_rho": 0.2929622761275683,
+              "retention_R": 0.9281929621964444,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.39088567474753266,
+            "max_delta_phi_post": 0.2219153154188217,
+            "stationary": false,
+            "drift_slope": -0.00032255662418014143,
+            "drift_slope_ci": [
+              -0.0007416362266229953,
+              0.00016403599218011073
+            ],
+            "cap_max_delta_phi_subgraph": 0.3908856747475326,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 261.46400771262125,
+            "w2_min": 0.0,
+            "w2_mean": 0.9567087095048206,
+            "otoc_c_sat": 0.07075475450151889,
+            "otoc_t_star": 1.0,
+            "xi": 0.9624079924216934
+          },
+          "protocols": {
+            "quench": {
+              "site": 3,
+              "max_delta_phi_pert": 0.22151034340765025,
+              "log_rho": -0.0018265615248177333,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.228083379922147,
+              "log_rho": 1.710914158341727,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 1.4432899320127035e-14
+            },
+            "loss": {
+              "lost": [
+                1,
+                3
+              ],
+              "max_delta_phi_pert": 0.22908302280059248,
+              "log_rho": 0.031788635811707565,
+              "retention_R": 0.9928322926182293,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.31682925981159105,
+            "max_delta_phi_post": 0.18320263644385754,
+            "stationary": false,
+            "drift_slope": -0.00034188259979702396,
+            "drift_slope_ci": [
+              -0.0005811364062923637,
+              3.5958488930270514e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.31682925981159105,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 349.7032578083426,
+            "w2_min": -4.440892098500626e-16,
+            "w2_mean": 0.9666816701312743,
+            "otoc_c_sat": 0.09073667034120765,
+            "otoc_t_star": 1.0,
+            "xi": 0.9684743359044622
+          },
+          "protocols": {
+            "quench": {
+              "site": 3,
+              "max_delta_phi_pert": 0.18288394725912785,
+              "log_rho": -0.0017410595166277335,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.2958757721192204,
+              "log_rho": 1.9563491742659993,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 1.2745360322696797e-13
+            },
+            "loss": {
+              "lost": [
+                1,
+                3
+              ],
+              "max_delta_phi_pert": 0.23505098788097872,
+              "log_rho": 0.24920961711035797,
+              "retention_R": 0.9481516485628788,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 1516875490,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.4027101579073331,
+            "max_delta_phi_post": 0.3928606191593838,
+            "stationary": false,
+            "drift_slope": 3.1208878968977284e-05,
+            "drift_slope_ci": [
+              -8.329118739062739e-05,
+              0.00012882567806399685
+            ],
+            "cap_max_delta_phi_subgraph": 0.4027101579073331,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 1.1102230246251565e-16
+          },
+          "witnesses": {
+            "pr_A": 4.581716018633374,
+            "w2_min": 0.0,
+            "w2_mean": 0.6063291147304545,
+            "otoc_c_sat": 0.13330385700865138,
+            "otoc_t_star": 3.5,
+            "xi": 0.6068117684308283
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.40475436018222516,
+              "log_rho": 0.029825474695975438,
+              "retention_R": 0.9881062589771586,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.3652350533146396,
+              "log_rho": -0.07291376233628367,
+              "retention_R": 1.0,
+              "fails_stationarity": true,
+              "trace_drift": 6.328271240363392e-14
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.6155500052603065,
+              "log_rho": 0.44906129530383115,
+              "retention_R": 0.7773106138990773,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.28312990692516987,
+            "max_delta_phi_post": 0.19319242062134534,
+            "stationary": false,
+            "drift_slope": -0.00020373533544421895,
+            "drift_slope_ci": [
+              -0.0003114481620701137,
+              -3.759163083531997e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.2831299069251699,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 1131.4899531901335,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.9798819017411722,
+            "otoc_c_sat": 0.26701770107957046,
+            "otoc_t_star": 16.0,
+            "xi": 0.9828475722502743
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.21654906747510544,
+              "log_rho": 0.11413047110105176,
+              "retention_R": 0.97664335314624,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.2882764985119237,
+              "log_rho": 1.8973738661126105,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 5.062616992290714e-14
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.2509015443937032,
+              "log_rho": 0.2613739184982559,
+              "retention_R": 0.9422908762276421,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.20025566777794848,
+            "max_delta_phi_post": 0.20025566777794848,
+            "stationary": true,
+            "drift_slope": -5.594302084178504e-05,
+            "drift_slope_ci": [
+              -0.00011063207095520918,
+              -1.7901608442956188e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.20025566777794848,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 191.17538882387498,
+            "w2_min": 0.0,
+            "w2_mean": 0.9540414842395505,
+            "otoc_c_sat": 0.2082636488492747,
+            "otoc_t_star": 17.5,
+            "xi": 0.9557217559961793
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.1750645955749123,
+              "log_rho": -0.1344398656709762,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.2885117564208488,
+              "log_rho": 1.8616482651064779,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 1.554312234475219e-14
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.2535361588059798,
+              "log_rho": 0.2359115620889669,
+              "retention_R": 0.9467195089719687,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.260473158229299,
+            "max_delta_phi_post": 0.260473158229299,
+            "stationary": false,
+            "drift_slope": -0.00018472550346283035,
+            "drift_slope_ci": [
+              -0.0002423105553123678,
+              -9.801665497016361e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.260473158229299,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 1.1102230246251565e-16
+          },
+          "witnesses": {
+            "pr_A": 288.18887110771414,
+            "w2_min": 0.0,
+            "w2_mean": 0.9644630861276213,
+            "otoc_c_sat": 0.18664827079907229,
+            "otoc_t_star": 27.5,
+            "xi": 0.9673602055280083
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.27499502503698636,
+              "log_rho": 0.05425319027071618,
+              "retention_R": 0.9854781331923126,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.128426245602355,
+              "log_rho": 1.4660794215297879,
+              "retention_R": 0.1320469126269439,
+              "fails_stationarity": true,
+              "trace_drift": 5.1514348342607263e-14
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.3163335446073414,
+              "log_rho": 0.19429736136808928,
+              "retention_R": 0.9441396136219575,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.22950923785599497,
+            "max_delta_phi_post": 0.20269711161626036,
+            "stationary": true,
+            "drift_slope": -0.00013945015079106196,
+            "drift_slope_ci": [
+              -0.00031628286273850214,
+              5.466773154435867e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.229509237855995,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 835.000401444169,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.9764174520847866,
+            "otoc_c_sat": 0.23133204500015234,
+            "otoc_t_star": 6.5,
+            "xi": 0.9791160173112665
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.21197148225530682,
+              "log_rho": 0.04473894415340066,
+              "retention_R": 0.9907256293609535,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.483068119786936,
+              "log_rho": 1.9901554710504197,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 9.325873406851315e-15
+            },
+            "loss": {
+              "lost": [
+                1,
+                5
+              ],
+              "max_delta_phi_pert": 0.2681288281175145,
+              "log_rho": 0.279754763135068,
+              "retention_R": 0.9345682834987459,
+              "fails_stationarity": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 4163057804,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.3770442506663505,
+            "max_delta_phi_post": 0.3323345012482151,
+            "stationary": false,
+            "drift_slope": -6.424418113194308e-06,
+            "drift_slope_ci": [
+              -0.00018817086992082473,
+              0.00019800854908973213
+            ],
+            "cap_max_delta_phi_subgraph": 0.3770442506663505,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 1.1102230246251565e-16
+          },
+          "witnesses": {
+            "pr_A": 7.789597649627227,
+            "w2_min": 2.220446049250313e-16,
+            "w2_mean": 0.7030064119962097,
+            "otoc_c_sat": 0.2326647997911205,
+            "otoc_t_star": 0.5,
+            "xi": 0.7042400347960777
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.39523603654323425,
+              "log_rho": 0.17334115172660555,
+              "retention_R": 0.9370984647049809,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.5351771140366496,
+              "log_rho": 0.4764557508086815,
+              "retention_R": 0.7971573872115656,
+              "fails_stationarity": true,
+              "trace_drift": 7.072120666862247e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                5
+              ],
+              "max_delta_phi_pert": 0.3647665606852203,
+              "log_rho": 0.09311559363531992,
+              "retention_R": 0.9675679405629949,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.21869364034552669,
+            "max_delta_phi_post": 0.18735703782314173,
+            "stationary": true,
+            "drift_slope": -0.00013828993710002945,
+            "drift_slope_ci": [
+              -0.00023198764100683264,
+              -9.762530471048888e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.21869364034552666,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 3.3306690738754696e-16
+          },
+          "witnesses": {
+            "pr_A": 1068.4314843140085,
+            "w2_min": 8.881784197001252e-16,
+            "w2_mean": 0.9805723824594296,
+            "otoc_c_sat": 0.27577106168932347,
+            "otoc_t_star": 1.5,
+            "xi": 0.9822903935830389
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.20560295233407272,
+              "log_rho": 0.09293080343644465,
+              "retention_R": 0.981754085489069,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.315785175216443,
+              "log_rho": 1.9491727682000695,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 1.0658141036401503e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                5
+              ],
+              "max_delta_phi_pert": 0.2266346770393317,
+              "log_rho": 0.19032327919034817,
+              "retention_R": 0.96072236078381,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.25773864415076564,
+            "max_delta_phi_post": 0.21687103208505393,
+            "stationary": false,
+            "drift_slope": -0.00013909531003255366,
+            "drift_slope_ci": [
+              -0.00020750718503500384,
+              -1.0932627573032742e-07
+            ],
+            "cap_max_delta_phi_subgraph": 0.2577386441507656,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 1567.4560944410903,
+            "w2_min": 4.440892098500626e-16,
+            "w2_mean": 0.9836691573412123,
+            "otoc_c_sat": 0.3624709456731659,
+            "otoc_t_star": 1.0,
+            "xi": 0.9856131903630879
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.20289071544311568,
+              "log_rho": -0.06663536816248306,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.2665770660867905,
+              "log_rho": 1.764770462572135,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 4.263256414560601e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                5
+              ],
+              "max_delta_phi_pert": 0.2415971663625915,
+              "log_rho": 0.10796888268789172,
+              "retention_R": 0.9752738657224624,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.1939639918175398,
+            "max_delta_phi_post": 0.1939639918175398,
+            "stationary": true,
+            "drift_slope": -0.00013387865298136376,
+            "drift_slope_ci": [
+              -0.00020355361598144693,
+              3.919487812581895e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.1939639918175398,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 3.3306690738754696e-16
+          },
+          "witnesses": {
+            "pr_A": 4256.651936106869,
+            "w2_min": 1.9984014443252818e-15,
+            "w2_mean": 0.9895542636938266,
+            "otoc_c_sat": 0.24926747333113775,
+            "otoc_t_star": 1.0,
+            "xi": 0.9917831444705979
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.18544571834424353,
+              "log_rho": -0.044910316904153876,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.394182358853361,
+              "log_rho": 1.9723908670847818,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 8.72635297355373e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                5
+              ],
+              "max_delta_phi_pert": 0.261215815889673,
+              "log_rho": 0.29767441380057313,
+              "retention_R": 0.9327481759278667,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.28069285320632753,
+            "max_delta_phi_post": 0.2628980261192479,
+            "stationary": false,
+            "drift_slope": -0.00019269283594286956,
+            "drift_slope_ci": [
+              -0.0002456472105095087,
+              1.3168261546542042e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.28069285320632753,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 1.1102230246251565e-16
+          },
+          "witnesses": {
+            "pr_A": 1386.9817860828523,
+            "w2_min": 2.220446049250313e-16,
+            "w2_mean": 0.9829300872295262,
+            "otoc_c_sat": 0.15110530497340444,
+            "otoc_t_star": 2.5,
+            "xi": 0.9848000349106363
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.22970415778869416,
+              "log_rho": -0.1349740131195305,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.405348972518657,
+              "log_rho": 1.6762747063408736,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 3.241851231905457e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                5
+              ],
+              "max_delta_phi_pert": 0.2496387311052883,
+              "log_rho": -0.051751426448144774,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 2303913620,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.37543620325011273,
+            "max_delta_phi_post": 0.33409852673920554,
+            "stationary": false,
+            "drift_slope": 2.2026811958018323e-05,
+            "drift_slope_ci": [
+              -7.36921023509958e-05,
+              0.00017260330723612444
+            ],
+            "cap_max_delta_phi_subgraph": 0.37543620325011273,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 15.67950005164124,
+            "w2_min": -2.220446049250313e-15,
+            "w2_mean": 0.8314601861011766,
+            "otoc_c_sat": 0.7332591577302725,
+            "otoc_t_star": 1.0,
+            "xi": 0.8315213278108988
+          },
+          "protocols": {
+            "quench": {
+              "site": 1,
+              "max_delta_phi_pert": 0.4632348802623457,
+              "log_rho": 0.3267982865225208,
+              "retention_R": 0.8708636464768598,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.0036264196454907,
+              "log_rho": 1.0999391993089336,
+              "retention_R": 0.3304721070937149,
+              "fails_stationarity": true,
+              "trace_drift": 9.769962616701378e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                6
+              ],
+              "max_delta_phi_pert": 0.5139645245921569,
+              "log_rho": 0.43071830505731834,
+              "retention_R": 0.8201340021470487,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.18606555886671325,
+            "max_delta_phi_post": 0.17036445171806486,
+            "stationary": true,
+            "drift_slope": -0.00011136658054400368,
+            "drift_slope_ci": [
+              -0.00014576884965891268,
+              1.6052884736513142e-06
+            ],
+            "cap_max_delta_phi_subgraph": 0.1860655588667133,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 3.3306690738754696e-16
+          },
+          "witnesses": {
+            "pr_A": 2833.4696416930856,
+            "w2_min": 4.440892098500626e-16,
+            "w2_mean": 0.9878395895108366,
+            "otoc_c_sat": 0.16933165156985724,
+            "otoc_t_star": 11.5,
+            "xi": 0.9894919307647885
+          },
+          "protocols": {
+            "quench": {
+              "site": 1,
+              "max_delta_phi_pert": 0.20218437857136293,
+              "log_rho": 0.1712400703354198,
+              "retention_R": 0.968180073146702,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.4236675258015725,
+              "log_rho": 2.1230516096858034,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 1.9761969838327786e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                6
+              ],
+              "max_delta_phi_pert": 0.2280052587079672,
+              "log_rho": 0.291428717243381,
+              "retention_R": 0.9423591930100976,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.19326388766596989,
+            "max_delta_phi_post": 0.19326388766596989,
+            "stationary": true,
+            "drift_slope": -5.809427791529273e-05,
+            "drift_slope_ci": [
+              -8.006648138113296e-05,
+              3.0122206161709243e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.19326388766596989,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 409.04683926425696,
+            "w2_min": -8.881784197001252e-16,
+            "w2_mean": 0.9656692904062703,
+            "otoc_c_sat": 0.35349971771797595,
+            "otoc_t_star": 6.0,
+            "xi": 0.9678676050379477
+          },
+          "protocols": {
+            "quench": {
+              "site": 1,
+              "max_delta_phi_pert": 0.18775998342953837,
+              "log_rho": -0.028892085326872968,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.3234896065166322,
+              "log_rho": 1.923970619991489,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 2.7755575615628914e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                6
+              ],
+              "max_delta_phi_pert": 0.23580790297345824,
+              "log_rho": 0.1989609545041196,
+              "retention_R": 0.9574559846925117,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.1815952797149005,
+            "max_delta_phi_post": 0.17532131958649885,
+            "stationary": true,
+            "drift_slope": -6.567910726726662e-05,
+            "drift_slope_ci": [
+              -0.0001135487390998524,
+              2.611551608441946e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.18159527971490053,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 2.220446049250313e-16
+          },
+          "witnesses": {
+            "pr_A": 3554.462001922324,
+            "w2_min": 1.3322676295501878e-15,
+            "w2_mean": 0.9881720986205198,
+            "otoc_c_sat": 0.2492427948132225,
+            "otoc_t_star": 5.5,
+            "xi": 0.9907711565467516
+          },
+          "protocols": {
+            "quench": {
+              "site": 1,
+              "max_delta_phi_pert": 0.18406758282520794,
+              "log_rho": 0.04868258588129146,
+              "retention_R": 0.9912537367612909,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.5103563135799387,
+              "log_rho": 2.1534804689774445,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 3.9968028886505635e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                6
+              ],
+              "max_delta_phi_pert": 0.2090292954625646,
+              "log_rho": 0.17585400956590577,
+              "retention_R": 0.9662920241239342,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.1860436793925335,
+            "max_delta_phi_post": 0.17389835377832819,
+            "stationary": true,
+            "drift_slope": -6.676609120360479e-05,
+            "drift_slope_ci": [
+              -0.0001072296434346645,
+              3.485427268740686e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.1860436793925335,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 3.3306690738754696e-16
+          },
+          "witnesses": {
+            "pr_A": 2652.3582747568125,
+            "w2_min": 2.220446049250313e-15,
+            "w2_mean": 0.9867479131780221,
+            "otoc_c_sat": 0.2802250588251163,
+            "otoc_t_star": 6.0,
+            "xi": 0.9891094514988005
+          },
+          "protocols": {
+            "quench": {
+              "site": 1,
+              "max_delta_phi_pert": 0.18398501506605233,
+              "log_rho": 0.05638335960333851,
+              "retention_R": 0.9899133387122758,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.394146388617119,
+              "log_rho": 2.081566644331301,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 5.084821452783217e-14
+            },
+            "loss": {
+              "lost": [
+                0,
+                6
+              ],
+              "max_delta_phi_pert": 0.20490236013777247,
+              "log_rho": 0.16406261883364268,
+              "retention_R": 0.9689959936405557,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 25486869,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 0.32393109908400125,
+            "max_delta_phi_post": 0.32393109908400125,
+            "stationary": false,
+            "drift_slope": 4.8860399021488245e-05,
+            "drift_slope_ci": [
+              -6.217046954303668e-05,
+              0.00020391389682381588
+            ],
+            "cap_max_delta_phi_subgraph": 0.32393109908400125,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 4.502615518508249,
+            "w2_min": -1.7763568394002505e-15,
+            "w2_mean": 0.5692793272090776,
+            "otoc_c_sat": 0.03682967905054446,
+            "otoc_t_star": Infinity,
+            "xi": 0.5738099934738843
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.39384385701264035,
+              "log_rho": 0.1954236927217212,
+              "retention_R": 0.9300872420713608,
+              "fails_stationarity": true
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 0.43311641373260845,
+              "log_rho": 0.29047570972424447,
+              "retention_R": 0.8908146853513927,
+              "fails_stationarity": true,
+              "trace_drift": 1.2567724638756772e-13
+            },
+            "loss": {
+              "lost": [
+                4,
+                6
+              ],
+              "max_delta_phi_pert": 0.32059152774661565,
+              "log_rho": -0.010363022445795508,
+              "retention_R": 1.0,
+              "fails_stationarity": true
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.20097738938805093,
+            "max_delta_phi_post": 0.19780978039865124,
+            "stationary": true,
+            "drift_slope": -5.600059631171529e-05,
+            "drift_slope_ci": [
+              -9.655577946711255e-05,
+              3.134352465655205e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.20097738938805093,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 1.1102230246251565e-16
+          },
+          "witnesses": {
+            "pr_A": 374.36277614280795,
+            "w2_min": 4.440892098500626e-16,
+            "w2_mean": 0.9667348010482946,
+            "otoc_c_sat": 0.03473348290325161,
+            "otoc_t_star": Infinity,
+            "xi": 0.9689433965443898
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.2172418139482301,
+              "log_rho": 0.09370521924088446,
+              "retention_R": 0.9805679664504211,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.2857136054963503,
+              "log_rho": 1.8717633143401695,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 1.9984014443252818e-14
+            },
+            "loss": {
+              "lost": [
+                4,
+                6
+              ],
+              "max_delta_phi_pert": 0.24379353388060931,
+              "log_rho": 0.20901583060227344,
+              "retention_R": 0.954016246518042,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.26393791850111875,
+            "max_delta_phi_post": 0.19987677591927613,
+            "stationary": false,
+            "drift_slope": -8.085823492010409e-05,
+            "drift_slope_ci": [
+              -0.000267195633390019,
+              0.00022871935236333998
+            ],
+            "cap_max_delta_phi_subgraph": 0.26393791850111875,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 4.440892098500626e-16
+          },
+          "witnesses": {
+            "pr_A": 105.73464847802559,
+            "w2_min": -1.3322676295501878e-15,
+            "w2_mean": 0.9360578531522202,
+            "otoc_c_sat": 0.045118862043443855,
+            "otoc_t_star": Infinity,
+            "xi": 0.9389165859272923
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.21189300927586563,
+              "log_rho": 0.05838041779032361,
+              "retention_R": 0.9879837666434105,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.4108902059171973,
+              "log_rho": 1.9542750796036468,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 3.6193270602780103e-14
+            },
+            "loss": {
+              "lost": [
+                4,
+                6
+              ],
+              "max_delta_phi_pert": 0.20236808063723213,
+              "log_rho": 0.012387164350924096,
+              "retention_R": 0.997508695282044,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.18361211589545334,
+            "max_delta_phi_post": 0.18361211589545334,
+            "stationary": true,
+            "drift_slope": 3.0855564294650554e-06,
+            "drift_slope_ci": [
+              -3.9260993712228904e-05,
+              7.179819394419971e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.18361211589545337,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 0.0
+          },
+          "witnesses": {
+            "pr_A": 373.17706883518684,
+            "w2_min": 0.0,
+            "w2_mean": 0.9633319197566381,
+            "otoc_c_sat": 0.05126489540551531,
+            "otoc_t_star": Infinity,
+            "xi": 0.9685272002655186
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.1853936110753699,
+              "log_rho": 0.00965572559376401,
+              "retention_R": 0.9982185048200835,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.3206234140131297,
+              "log_rho": 1.9730337207079451,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 5.928590951498336e-14
+            },
+            "loss": {
+              "lost": [
+                4,
+                6
+              ],
+              "max_delta_phi_pert": 0.22299776282805214,
+              "log_rho": 0.1943362725235197,
+              "retention_R": 0.9606143530674012,
+              "fails_stationarity": false
+            }
+          }
+        },
+        {
+          "baseline": {
+            "max_delta_phi": 0.19943889272262008,
+            "max_delta_phi_post": 0.19943889272262008,
+            "stationary": true,
+            "drift_slope": -5.271975734494663e-05,
+            "drift_slope_ci": [
+              -6.659130132600407e-05,
+              2.3109506873519375e-05
+            ],
+            "cap_max_delta_phi_subgraph": 0.19943889272262014,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 1.1102230246251565e-16
+          },
+          "witnesses": {
+            "pr_A": 1681.4438469676807,
+            "w2_min": 0.0,
+            "w2_mean": 0.9827557443232263,
+            "otoc_c_sat": 0.10599044043622502,
+            "otoc_t_star": 2.5,
+            "xi": 0.986210382429592
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.18983085094262803,
+              "log_rho": -0.04937446981896857,
+              "retention_R": 1.0,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.4752096587713874,
+              "log_rho": 2.001047512945112,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 6.217248937900877e-14
+            },
+            "loss": {
+              "lost": [
+                4,
+                6
+              ],
+              "max_delta_phi_pert": 0.21920779297560314,
+              "log_rho": 0.09451221907032609,
+              "retention_R": 0.9802310997470169,
+              "fails_stationarity": false
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "_runtime_s": 282.8
+}

@@ -1,0 +1,111 @@
+{
+  "group": "TA_i_fixed_point",
+  "n_sites": 8,
+  "manifest": "confirmatory_manifest.json",
+  "runs": [
+    {
+      "seed": 2512176700,
+      "states": [
+        {
+          "baseline": {
+            "max_delta_phi": 2.162850504063763e-13,
+            "max_delta_phi_post": 2.162850504063763e-13,
+            "stationary": true,
+            "drift_slope": 3.9495396297006734e-17,
+            "drift_slope_ci": [
+              -1.116981055780837e-16,
+              8.204986292578888e-17
+            ],
+            "cap_max_delta_phi_subgraph": 2.162850504063763e-13,
+            "cap_above_fraction": 1.0,
+            "norm_drift": 1.1102230246251565e-15
+          },
+          "witnesses": {
+            "pr_A": 1.0,
+            "w2_min": -6.217248937900877e-15,
+            "w2_mean": -4.761964906730173e-15,
+            "otoc_c_sat": 1.1097542315378173,
+            "otoc_t_star": 1.5,
+            "xi": -3.552713678800501e-15
+          },
+          "protocols": {
+            "quench": {
+              "site": 7,
+              "max_delta_phi_pert": 0.011397879114828058,
+              "log_rho": 2.433427295533444,
+              "retention_R": 0.9886021208853882,
+              "fails_stationarity": false
+            },
+            "dephasing": {
+              "max_delta_phi_pert": 1.2749973216468102,
+              "log_rho": 7.150699356921152,
+              "retention_R": 0.0,
+              "fails_stationarity": true,
+              "trace_drift": 1.8540724511240114e-14
+            },
+            "loss": {
+              "lost": [
+                1,
+                3
+              ],
+              "max_delta_phi_pert": 2.7636988215245753e-13,
+              "log_rho": 0.0,
+              "retention_R": 0.9999999999999399,
+              "fails_stationarity": false
+            }
+          },
+          "otoc_profile": {
+            "r": [
+              1,
+              2,
+              3
+            ],
+            "c_sat": [
+              1.0701843434022158,
+              1.0688702632394402,
+              1.1097542315378173
+            ]
+          }
+        }
+      ],
+      "battery": {
+        "tol": 1e-10,
+        "global_phase": {
+          "w1_dev": 0.0,
+          "w2_dev": 1.7763568394002505e-15,
+          "w3_dev": 4.440892098500626e-16,
+          "w4_dev": 8.881784197001252e-16,
+          "mi_dev": 5.412337245047638e-15,
+          "phi_dev": 7.30260296677443e-12,
+          "pass": true
+        },
+        "consistent_local_basis": {
+          "w1_dev": 0.0,
+          "w2_dev": 2.6645352591003757e-15,
+          "w3_dev": 9.865441796819141e-13,
+          "w4_dev": 2.6645352591003757e-15,
+          "mi_dev": 6.716849298982197e-15,
+          "phi_dev": 7.744915819785092e-12,
+          "pass": true
+        },
+        "state_only_local_basis": {
+          "w3_max_dev": 0.5145729367520334,
+          "mi_max_dev": 6.716849298982197e-15,
+          "phi_max_dev": 7.744915819785092e-12,
+          "note": "expected-change item: magnitudes recorded, not thresholded"
+        },
+        "reflection": {
+          "w1_dev": 0.0,
+          "w2_dev": 4.440892098500626e-16,
+          "w3_dev": 0.0,
+          "w4_dev": 0.0,
+          "mi_dev": 4.829470157119431e-15,
+          "phi_dev": 5.091038701721118e-12,
+          "pass": true
+        },
+        "all_must_pass": true
+      }
+    }
+  ],
+  "_runtime_s": 1.5
+}

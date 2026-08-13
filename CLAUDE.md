@@ -76,25 +76,32 @@ results/     run outputs, figures, serialized data (gitignored where large)
 ## Current state (update this block when it changes)
 
 - Repo: https://github.com/olegroshka/ideg (private), created 2026-08-11.
-- Substrate versions: KB-001 v0.3, KB-002 v0.2, KB-003 v0.4, KB-004 v0.2,
-  KB-005 v0.6 (2026-08-12).
+- Substrate versions: KB-001 v0.3, KB-002 v0.2, KB-003 v0.4, KB-004 v0.3,
+  KB-005 v0.7 (2026-08-13).
 - **G0 PASSED / M0 met** (owner review 2026-08-11; see session log and
   KB-005 §4). Mechanical-fix rule for KB-001 recorded in KB-005 §12.
 - Track E3 G1 scope **cleared** (SRC-042..044, SRC-049 verified —
   `ar/AR-015_partial-2026-08-11_trackE3-G1.md`).
-- **AR-009 spec DONE, threshold-reviewed (Amendment 1), and AR-010 is
-  licensed** against it — first step is the §5.2.1 calibration pilot
-  (exploratory), then confirmatory runs.
-- **AR-019 DONE/RECONCILED (2026-08-12):** robustness-instrument survey by
-  analogy complete — recommendation **KEEP** the §5.2 log-ratio criterion-(b)
-  instrument; no spec threshold changed (dated no-change entry in spec §8);
-  SRC-052..058 added to KB-003 flagged `verify`. See
-  `ar/AR-019_note-2026-08-12_robustness-instruments.md`.
+- **AR-019 DONE/RECONCILED; window CLOSED** at first confirmatory
+  execution (2026-08-12).
 - AR-015 census: RUNNING (first partial done).
-- **AR-010 status:** implementation + tests done; §6.3 sanity ALL PASS
-  (spec Amendment 2); calibration pilot COMPLETE with owner rulings
-  ε_Φ = 0.25, λ = 0.1, γ = 0.01 (spec Amendment 3). See
-  `sessions/2026-08-11_AR-010.md`. **Confirmatory runs NOT started** —
-  they close the AR-019 window when they begin.
-- Next session target: **AR-010 confirmatory runs** (owner to confirm at
-  session start) — starting them closes the AR-019 window for good.
+- **AR-010 EXECUTED/RECONCILED (2026-08-12/13):** confirmatory campaign
+  run against the pre-committed manifest (+ Addendum 1: T-A(ii)
+  certificate exhaustively unsatisfiable at N = 8 → T-A sizing (10, 12)).
+  Verdicts: **criterion (a) FAILS** — W3 fires on the §4.4 null
+  (discarded), leaving scrambling|localized singly witnessed → witness
+  scheme to FORMALIZE (SC-005; → AR-020 PROPOSED); **criterion (b)
+  HOLDS** (dephasing, both tracks, two-size replication, class ordering
+  as piloted); **§5.3 sustained-by for all six dynamical classes** (the
+  stationary comparator is far more fragile than the dynamical state);
+  T-B: DTC ε = 0.03 stationary-with-witness 100/100, switch-off →
+  compatible-with (W5 collapses, Φ persists), rigidity ε_c > 0.20
+  (bound, grid never crosses 0.5), r2 comparator prethermal — not a
+  valid thermalizing control at 200 periods. See
+  `ar/AR-010_confirmatory-2026-08-12.md` and
+  `sessions/2026-08-12_AR-010-confirmatory.md`.
+- Next session target: **AR-011 adversarial companion** (owner to confirm
+  at session start). Owner decisions pending: AR-020 (witness
+  reformalization — null-compatible W3, w2_mean candidate) + the spec §8
+  amendment candidates, and the now-live AR-019 conditional follow-up
+  (strength-grid decay-rate-law AR; criterion (b) returned positive).
