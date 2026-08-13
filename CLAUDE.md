@@ -76,8 +76,8 @@ results/     run outputs, figures, serialized data (gitignored where large)
 ## Current state (update this block when it changes)
 
 - Repo: https://github.com/olegroshka/ideg (private), created 2026-08-11.
-- Substrate versions: KB-001 v0.3, KB-002 v0.2, KB-003 v0.4, KB-004 v0.3,
-  KB-005 v0.7 (2026-08-13).
+- Substrate versions: KB-001 v0.3, KB-002 v0.2, KB-003 v0.4, KB-004 v0.4,
+  KB-005 v0.8 (2026-08-13).
 - **G0 PASSED / M0 met** (owner review 2026-08-11; see session log and
   KB-005 §4). Mechanical-fix rule for KB-001 recorded in KB-005 §12.
 - Track E3 G1 scope **cleared** (SRC-042..044, SRC-049 verified —
@@ -100,8 +100,21 @@ results/     run outputs, figures, serialized data (gitignored where large)
   valid thermalizing control at 200 periods. See
   `ar/AR-010_confirmatory-2026-08-12.md` and
   `sessions/2026-08-12_AR-010-confirmatory.md`.
-- Next session target: **AR-011 adversarial companion** (owner to confirm
-  at session start). Owner decisions pending: AR-020 (witness
-  reformalization — null-compatible W3, w2_mean candidate) + the spec §8
-  amendment candidates, and the now-live AR-019 conditional follow-up
-  (strength-grid decay-rate-law AR; criterion (b) returned positive).
+- **AR-011 EXECUTED/RECONCILED (2026-08-13):** verdict-preserving,
+  interpretation-correcting. §5.3 verdicts + criterion (b) SURVIVE; the
+  "fragile comparator" direction was a floored-denominator artifact
+  (corrected, dated, in the AR-010 packet + KB-004 v0.4) — the
+  load-bearing sustained-by evidence is the switch-off geometry change
+  (43–90% of ‖D̄‖); spec §4.1's Φ-matching assumption refuted (MI
+  nonlinearity — no Φ-matched motionless comparator exists as designed);
+  metastable Ξ tolerance-robust; Φ partition-dependence 9–20% (standing
+  scope wall). Item-13 kill condition NOT met. See
+  `ar/AR-011_adversarial-2026-08-13.md`.
+- Next session: **owner decision block** (all unblocked — the §10
+  adversarial gate is met): (a) BH-004 epistemic status on the corrected
+  record; (b) AR-020 scope (two design requirements: null-silent
+  scrambling|localized witness; Φ-matched motionless comparator or
+  impossibility proof); (c) spec §8 amendment candidates (null-subtracted
+  W3; w2_mean); (d) live AR-019 decay-rate-law follow-up; (e) literature
+  check on the quasiperiodic negative-log ρ effect before any novelty
+  claim.

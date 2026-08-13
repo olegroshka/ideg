@@ -148,6 +148,21 @@ dynamical state holds its Φ against perturbations that scatter the
 motionless matched ensemble. This affirms BH-004's sustained-by clause
 in-model for all six dynamical classes.
 
+> **CORRECTION (2026-08-13, AR-011 Attack A —
+> `ar/AR-011_adversarial-2026-08-13.md`).** The fragility DIRECTION
+> claimed above is retracted: the comparator's perturbed-drift
+> numerators are SMALLER than the dynamical state's under every
+> protocol; its large log ρ is a floored-denominator effect (its
+> unperturbed drift is exactly 0). The §5.3 verdicts stand (the
+> criterion asks for a difference, which survives instrument choice),
+> but the load-bearing sustained-by evidence is the floor-free
+> switch-off arm — dephasing at t_off moves Φ by 43–90% of ‖D̄‖: the
+> geometry the dynamics maintains is not the geometry the motionless
+> state holds. Additionally, §4.1's "matched to the run's
+> long-time-averaged Φ" assumption is refuted (MI is nonlinear in the
+> time-averaged RDMs; Φ[ρ̄] sits 43–90% from D̄) — no Φ-matched
+> motionless comparator exists in the family as designed.
+
 ### 3.4 Stationarity table (ε_Φ = 0.25 verdicts, baseline)
 
 Stationary-with-witness (the BH-004 candidate regime): chaotic 20/20

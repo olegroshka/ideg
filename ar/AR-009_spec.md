@@ -513,3 +513,21 @@ scaling is reported descriptively (no extrapolation claims — scope wall §7).
      null-compatible W3 reformulation (e.g. null-subtracted OTOC);
      w2_mean in place of / alongside min d_phys (min is structurally
      uninformative for slow classes).
+- **2026-08-13 — AR-011 adversarial outcome (no preregistered content
+  changed).** Full record: `ar/AR-011_adversarial-2026-08-13.md`.
+  (i) §4.1's design language "ρ̄ … matched to the run's long-time-
+  averaged Φ by construction (its MI pattern is the time average's)" is
+  REFUTED as measured: the two-site RDMs match the time average, but MI
+  is nonlinear in the RDM — Φ[ρ̄] sits 43–90% from D̄ per class. The
+  §5.3 verdicts stand as preregistered rulings; the fragility-direction
+  interpretation in the AR-010 packet was corrected (dated) — the
+  comparator's numerators are SMALLER, its log ρ floored-denominator-
+  driven; the load-bearing sustained-by evidence is the switch-off
+  geometry change. A Φ-matched motionless comparator is an AR-020
+  design requirement (or an impossibility proof, which would sharpen
+  the claim). (ii) Metastable Ξ margins are degeneracy-tolerance-robust
+  at criterion sizes (identical under 1e-8/1e-10/1e-12). (iii) Φ's
+  partition-dependence quantified: nonlocal two-site frame changes move
+  Φ by 9–20% (chaotic/localized, N = 10) — same order as ε_Φ; standing
+  scope wall (TH-037 caveat now quantitative). (iv) Remaining KB-004 §7
+  items audited PASS or scope-noted in the packet.

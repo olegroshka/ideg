@@ -4,7 +4,7 @@ title: "IDEG Research Program — Agentic Protocol, Phases, Gates, and Backlog"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-13
-version: 0.7
+version: 0.8
 research_layer: R4
 epistemic_status: NOT_APPLICABLE
 sources:
@@ -19,6 +19,7 @@ changelog:
   - "0.5: G0 PASSED at owner review; §12 mechanical-fix rule for KB-001 recorded; AR-010 licensed (owner + Claude, 2026-08-11) — see §21"
   - "0.6: AR-019 executed and reconciled (Claude, 2026-08-12) — recommendation KEEP the §5.2 log-ratio instrument, no spec threshold changed; KB-003 → v0.4 (SRC-052..058, verify) — see §22"
   - "0.7: AR-010 confirmatory EXECUTED/RECONCILED (Claude, 2026-08-12/13) — (a) fails via preregistered W3 null-discard, (b) holds, §5.3 sustained-by across dynamical classes; AR-020 (witness reformalization) queued PROPOSED; AR-019 window closed; KB-004 → v0.3 — see §23"
+  - "0.8: AR-011 EXECUTED/RECONCILED (Claude, 2026-08-13) — verdicts survive, fragility-direction and §4.1 Φ-matching refuted with dated corrections (KB-004 → v0.4); partition-dependence scope wall; AR-020 requirements sharpened; §10 adversarial gate met — see §24"
 ---
 
 # Research Program and Agentic Protocol
@@ -154,6 +155,7 @@ Phase G  Iteration           G6: next-cycle decision recorded (ADR)
 
 ### AR-011 — Toy-model adversarial analysis
 `mode: ADVERSARIAL` · `parent: BH-004, BH-005` · `priority: P0` · Attack the results with KB-004 §7: representation-dependence checks, stationary-state indistinguishability (item 12), sustained-by vs compatible-with tests, hidden-clock audit.
+**(v0.8) Status: EXECUTED/RECONCILED 2026-08-13** (`ar/AR-011_adversarial-2026-08-13.md`). Attack A refuted the AR-010 fragility-direction interpretation (floored-denominator artifact; corrections issued dated in the AR-010 packet, KB-004 v0.4, spec §8) and the §4.1 Φ-matching assumption (MI nonlinearity — no Φ-matched motionless comparator exists in the family as designed); the §5.3 formal verdicts and criterion-(b) result SURVIVE, with the switch-off geometry change (43–90% of ‖D̄‖) promoted to the load-bearing sustained-by evidence. Attack B: metastable Ξ margins tolerance-robust. Attack C: Φ partition-dependence quantified at 9–20% (same order as ε_Φ) — standing scope wall. Items 1–4, 7–8, 10–11 audited PASS/scope-noted. Item-13 kill condition NOT met. AR-020 inherits two design requirements: null-silent scrambling|localized witness AND a Φ-matched motionless comparator (or impossibility proof).
 
 ### AR-012 — Seam-skeleton search
 `mode: SYNTHESIZE` · `parent: RQ-006` · `priority: P1` *(rescoped to P0/P1-cited clusters)* · Is there a common mathematical skeleton across the first-law/modular/QES/crossed-product seams?
@@ -375,3 +377,11 @@ Deltas are applied in dependency order (KB-002 definitions → KB-003 theory →
 3. AR-019 window closed for good (first confirmatory execution, 2026-08-12).
 4. KB-004 → v0.3 (BH-004 dated evidence note; no epistemic-status change — AR-011-gated).
 5. Next scheduled work: **AR-011 adversarial companion** (required before any promotion, §10) and owner review of AR-020 + the two amendment candidates.
+
+---
+
+## 24. Changelog v0.7 → v0.8
+
+1. §6 AR-011: EXECUTED/RECONCILED 2026-08-13 (`ar/AR-011_adversarial-2026-08-13.md`). Verdict-preserving, interpretation-correcting: §5.3 formal verdicts and criterion (b) survive; the AR-010 fragility-direction reading and the spec §4.1 Φ-matching assumption are refuted (corrections issued, dated, in the AR-010 packet, KB-004 → v0.4, spec §8); switch-off geometry change is the load-bearing sustained-by evidence; Φ partition-dependence quantified 9–20% (standing scope wall); item-13 kill condition not met.
+2. §6 AR-020: inherits two design requirements from AR-011 (null-silent scrambling|localized witness; Φ-matched motionless comparator or impossibility proof). Owner review still pending.
+3. Next scheduled work: owner decisions — AR-020 scope, the two spec §8 amendment candidates, the live AR-019 decay-rate-law follow-up, and whether BH-004's epistemic status moves on the corrected record (promotion decision now unblocked: the §10 adversarial-companion requirement is met).
