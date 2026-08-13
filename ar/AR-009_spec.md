@@ -572,3 +572,12 @@ scaling is reported descriptively (no extrapolation claims — scope wall §7).
   paths queued for owner (AR-020 packet §4): accept-and-report /
   criterion sizes (12, 14) via Krylov / ensemble n = 40. No change
   enacted.
+- **2026-08-13 — Amendment 5 (owner-ratified): criterion-(a) ensembles
+  n = 20 → 40 for the final re-adjudication.** Fresh seeds
+  (confirmatory_manifest_addendum3.json, committed pre-execution), both
+  criterion sizes, all groups, statistic set per Amendment 4. Purpose:
+  halve the AUC standard error so every near-threshold verdict is
+  STABLE — explicitly recorded: this stabilizes the verdict and cannot
+  rescue it; the outcome is accepted as final either way (owner ruling).
+  TC_localized scales to 40 realizations × 5 states (realization =
+  resampling unit).

@@ -26,9 +26,13 @@ from ideg.states import (all_up, ground_state,              # noqa: E402
 from ideg.witnesses import (bohr_measure_pr,                # noqa: E402
                             recurrence_distance, xi_offdiagonal_pure)
 
+import os                                                   # noqa: E402
 OUT = ROOT / "results" / "AR-010"
 CONF = OUT / "confirmatory"
-ADD2 = json.loads((OUT / "confirmatory_manifest_addendum2.json").read_text())
+ADD2 = json.loads(Path(os.environ.get(
+    "IDEG_ADDENDUM",
+    OUT / "confirmatory_manifest_addendum2.json")).read_text())
+PREFIX = ADD2.get("output_prefix", "rerun_")
 
 GROUP = sys.argv[1]
 N = int(sys.argv[2])

@@ -19,8 +19,13 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 from ideg.stats import auc  # noqa: E402
 
+import os                                                   # noqa: E402
 OUT = ROOT / "results" / "AR-010"
 CONF = OUT / "confirmatory"
+_ADD = json.loads(Path(os.environ.get(
+    "IDEG_ADDENDUM",
+    OUT / "confirmatory_manifest_addendum2.json")).read_text())
+PREFIX = _ADD.get("output_prefix", "rerun_")
 TA = ["TA_i_fixed_point", "TA_ii_quasiperiodic", "TA_iii_chaotic",
       "TA_iv_metastable"]
 TC = ["TC_scrambling", "TC_integrable", "TC_localized"]
@@ -29,7 +34,7 @@ SIZES = [10, 12]
 
 
 def vals(g, n, stat):
-    d = json.loads((CONF / f"rerun_{g}_N{n}.json").read_text())
+    d = json.loads((CONF / f"{PREFIX}{g}_N{n}.json").read_text())
     return np.array([float(np.mean([s[stat] for s in run["states"]]))
                      for run in d["runs"]])
 
@@ -44,8 +49,12 @@ def sep(a, b):
     return {"rule": "auc", "auc": x, "separates": bool(x >= 0.95)}
 
 
-summary = {"date": "2026-08-13", "amendment": "spec §8 Amendment 4",
-           "manifest": "confirmatory_manifest_addendum2.json",
+summary = {"date": "2026-08-13",
+           "amendment": "spec §8 Amendment 4"
+                        + (" + 5 (n = 40)" if PREFIX != "rerun_" else ""),
+           "manifest": Path(os.environ.get(
+               "IDEG_ADDENDUM",
+               "confirmatory_manifest_addendum2.json")).name,
            "statistics": STATS, "tracks": {}}
 for track, groups in [("TA", TA), ("TC", TC)]:
     tout = {}
@@ -65,7 +74,7 @@ for track, groups in [("TA", TA), ("TC", TC)]:
 summary["criterion_a_holds"] = bool(all(t["holds"]
                                         for t in summary["tracks"].values()))
 
-with open(OUT / "rerun_summary.json", "w") as f:
+with open(OUT / f"{PREFIX}summary.json", "w") as f:
     json.dump(summary, f, indent=2)
 
 print("Amendment-4 criterion (a) re-adjudication (fresh seeds)")
@@ -80,4 +89,4 @@ for track in ("TA", "TC"):
     print(f"{track}: {'HOLDS' if t['holds'] else 'FAILS'}")
 print(f"\ncriterion (a) under Amendment 4: "
       f"{'HOLDS' if summary['criterion_a_holds'] else 'FAILS'}")
-print(f"written: {OUT / 'rerun_summary.json'}")
+print(f"written: {OUT / (PREFIX + 'summary.json')}")
