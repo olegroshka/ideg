@@ -4,7 +4,7 @@ title: "IDEG Hypothesis Space — Nulls, Bridges, Strong Forms, and Falsifiers"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-13
-version: 0.6
+version: 0.7
 research_layer: R3
 epistemic_status: SPECULATIVE_TO_PLAUSIBLE
 sources:
@@ -18,6 +18,7 @@ changelog:
   - "0.4: BH-004 evidence note corrected per AR-011 (Claude, 2026-08-13) — fragility direction withdrawn (floored-denominator artifact); switch-off geometry change promoted to load-bearing sustained-by evidence; §4.1 Φ-matching assumption refuted; partition-dependence quantified 9–20%; see ar/AR-011_adversarial-2026-08-13.md"
   - "0.5: BH-004 epistemic status SPECULATIVE → PLAUSIBLE (owner ruling 2026-08-13, post-AR-011/AR-021); explicit Status line added; HYP-009 geometric part unchanged (SPECULATIVE)"
   - "0.6: final AR-020/Amendment-5 verdict recorded (Claude, 2026-08-13) — criterion (a) HOLDS under the reformalized battery (n = 40, fresh seeds); BH-004 supported in-model (spec §5.4 row 1); BH-005 LICENSED; HYP-009 geometric part gains its first model realization (status unchanged)"
+  - "0.7: hardened-probe correction (AR-020b, Claude, 2026-08-13) — comparator class-split corrected: metastable/integrable matchable, localized boundary; motion-borne survivor = quasiperiodic alone (0/40, both sizes), coinciding with the negative dephasing log ρ class"
 ---
 
 # Hypothesis Space
@@ -192,6 +193,18 @@ results/AR-010/rerun40_summary.json). Dual record: the original
 preregistered battery failed its own null test; the reformalized one
 passes. With (a) [amended] + (b) [original] both holding, spec §5.4
 row 1 stands: **BH-004 is supported in-model.**
+**(v0.7) Hardened-probe correction to the comparator class-split
+(AR-020b, full ensembles, both sizes, smooth-f(H) optimization):**
+metastable and integrable ARE matchable by stationary states within
+ε_Φ (20/20 each), localized is boundary (3–6/20). **The size-robust
+motion-borne survivor is the QUASIPERIODIC class alone (0/40, median
+miss 0.32–0.34)** — the same class singled out by the negative
+dephasing log ρ: two independent instruments identify incommensurate
+coherence-carried motion as the one regime whose time-averaged
+geometry no searched stationary state reproduces. Chaotic-class
+matchability strengthens (0.035–0.046). Motion-borne language is
+hereafter restricted accordingly (probe scope: smooth-f(H); not an
+impossibility proof).
 
 ### BH-005 — Recurrence as an emergent-stability mechanism
 Within a successful BH-004 model, test whether recurrence/limit-cycle/quasiperiodicity — including a driven/Floquet regime modeled on TH-033 — provides robustness unavailable to fixed-point/invariant-subspace alternatives. **Only proceed if BH-004 survives.** This is HYP-005's proving ground.

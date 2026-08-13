@@ -1,0 +1,919 @@
+{
+  "date": "2026-08-13",
+  "n_sites": 10,
+  "eps_phi": 0.25,
+  "k_chebyshev": 12,
+  "probe_scope": "full manifest ensembles; TC_localized = Neel primary per realization; families + smooth-f(H) Chebyshev-Powell (2 starts, maxfev 600)",
+  "groups": {
+    "TA_i_fixed_point": {
+      "runs": [
+        {
+          "thermal": 0.0088727851673336,
+          "depolarized_rho_bar": 2.103276981730474e-12,
+          "microcanonical": 2.103276981730474e-12,
+          "smooth_fH_chebyshev": 1.0455613728829686e-12,
+          "overall_min": 1.0455613728829686e-12
+        }
+      ],
+      "overall_min_min": 1.0455613728829686e-12,
+      "overall_min_median": 1.0455613728829686e-12,
+      "overall_min_max": 1.0455613728829686e-12,
+      "n_below_eps_phi": 1,
+      "n_runs": 1
+    },
+    "TA_ii_quasiperiodic": {
+      "runs": [
+        {
+          "thermal": 0.3614460495007582,
+          "depolarized_rho_bar": 0.46517004847549154,
+          "microcanonical": 0.6160239073318643,
+          "smooth_fH_chebyshev": 0.3166923527287086,
+          "overall_min": 0.3166923527287086
+        },
+        {
+          "thermal": 0.36260676269882347,
+          "depolarized_rho_bar": 0.46835006865656853,
+          "microcanonical": 0.6189440361000484,
+          "smooth_fH_chebyshev": 0.3175523799000196,
+          "overall_min": 0.3175523799000196
+        },
+        {
+          "thermal": 0.36236190735612384,
+          "depolarized_rho_bar": 0.44035686226352905,
+          "microcanonical": 0.697514744962391,
+          "smooth_fH_chebyshev": 0.3218383544596153,
+          "overall_min": 0.3218383544596153
+        },
+        {
+          "thermal": 0.3738243562380017,
+          "depolarized_rho_bar": 0.4738668761517234,
+          "microcanonical": 1.1316564694970996,
+          "smooth_fH_chebyshev": 0.33252492741923473,
+          "overall_min": 0.33252492741923473
+        },
+        {
+          "thermal": 0.35062962217381877,
+          "depolarized_rho_bar": 0.4159536358170938,
+          "microcanonical": 0.8096890917921354,
+          "smooth_fH_chebyshev": 0.3123161827516421,
+          "overall_min": 0.3123161827516421
+        },
+        {
+          "thermal": 0.39113730536231445,
+          "depolarized_rho_bar": 0.45007871971834906,
+          "microcanonical": 1.1262830518209872,
+          "smooth_fH_chebyshev": 0.3459973223167233,
+          "overall_min": 0.3459973223167233
+        },
+        {
+          "thermal": 0.3541218438285228,
+          "depolarized_rho_bar": 0.39299845895496366,
+          "microcanonical": 1.0114714750264235,
+          "smooth_fH_chebyshev": 0.3159292159794223,
+          "overall_min": 0.3159292159794223
+        },
+        {
+          "thermal": 0.38279548910732575,
+          "depolarized_rho_bar": 0.44043652531825334,
+          "microcanonical": 0.7151626258297811,
+          "smooth_fH_chebyshev": 0.33714198193243256,
+          "overall_min": 0.33714198193243256
+        },
+        {
+          "thermal": 0.36236954411938765,
+          "depolarized_rho_bar": 0.46857664189888565,
+          "microcanonical": 0.6190687757535885,
+          "smooth_fH_chebyshev": 0.3173431249692816,
+          "overall_min": 0.3173431249692816
+        },
+        {
+          "thermal": 0.39144719547461176,
+          "depolarized_rho_bar": 0.44979239884843947,
+          "microcanonical": 1.1259887963707969,
+          "smooth_fH_chebyshev": 0.3463129994433245,
+          "overall_min": 0.3463129994433245
+        },
+        {
+          "thermal": 0.384019982082171,
+          "depolarized_rho_bar": 0.39536583108794554,
+          "microcanonical": 1.0861527877068362,
+          "smooth_fH_chebyshev": 0.3404672022971939,
+          "overall_min": 0.3404672022971939
+        },
+        {
+          "thermal": 0.38701098925684,
+          "depolarized_rho_bar": 0.43277455379469143,
+          "microcanonical": 1.0629088893047915,
+          "smooth_fH_chebyshev": 0.3447486374794546,
+          "overall_min": 0.3447486374794546
+        },
+        {
+          "thermal": 0.3848879504092096,
+          "depolarized_rho_bar": 0.4267614633485604,
+          "microcanonical": 1.0531544747056167,
+          "smooth_fH_chebyshev": 0.34292568429303166,
+          "overall_min": 0.34292568429303166
+        },
+        {
+          "thermal": 0.39104500794242314,
+          "depolarized_rho_bar": 0.45178111779741215,
+          "microcanonical": 1.1286121363842099,
+          "smooth_fH_chebyshev": 0.3456621276255434,
+          "overall_min": 0.3456621276255434
+        },
+        {
+          "thermal": 0.3547793156134676,
+          "depolarized_rho_bar": 0.39411708945152873,
+          "microcanonical": 1.013737380551052,
+          "smooth_fH_chebyshev": 0.31639222892108554,
+          "overall_min": 0.31639222892108554
+        },
+        {
+          "thermal": 0.37757207335130205,
+          "depolarized_rho_bar": 0.419525329564118,
+          "microcanonical": 1.0271075280996917,
+          "smooth_fH_chebyshev": 0.33646102184832977,
+          "overall_min": 0.33646102184832977
+        },
+        {
+          "thermal": 0.3826877526760796,
+          "depolarized_rho_bar": 0.44080711441609155,
+          "microcanonical": 0.7159865073492977,
+          "smooth_fH_chebyshev": 0.33699877325160055,
+          "overall_min": 0.33699877325160055
+        },
+        {
+          "thermal": 0.3767399024037172,
+          "depolarized_rho_bar": 0.4200092913305335,
+          "microcanonical": 1.027223860682149,
+          "smooth_fH_chebyshev": 0.3356853541936418,
+          "overall_min": 0.3356853541936418
+        },
+        {
+          "thermal": 0.3518950848009751,
+          "depolarized_rho_bar": 0.4215594057708289,
+          "microcanonical": 0.8164306635801943,
+          "smooth_fH_chebyshev": 0.3136229441948895,
+          "overall_min": 0.3136229441948895
+        },
+        {
+          "thermal": 0.3855076201644785,
+          "depolarized_rho_bar": 0.39658084202100136,
+          "microcanonical": 1.0879747380204996,
+          "smooth_fH_chebyshev": 0.3418557625342429,
+          "overall_min": 0.3418557625342429
+        }
+      ],
+      "overall_min_min": 0.3123161827516421,
+      "overall_min_median": 0.3360731880209858,
+      "overall_min_max": 0.3463129994433245,
+      "n_below_eps_phi": 0,
+      "n_runs": 20
+    },
+    "TA_iii_chaotic": {
+      "runs": [
+        {
+          "thermal": 0.42639817956807136,
+          "depolarized_rho_bar": 0.6194439919948072,
+          "microcanonical": 0.07525189438834326,
+          "smooth_fH_chebyshev": 0.04066850100924913,
+          "overall_min": 0.04066850100924913
+        },
+        {
+          "thermal": 0.3999900693123426,
+          "depolarized_rho_bar": 0.45287248312164324,
+          "microcanonical": 0.08318946492840375,
+          "smooth_fH_chebyshev": 0.02943113871441194,
+          "overall_min": 0.02943113871441194
+        },
+        {
+          "thermal": 0.40441985005792525,
+          "depolarized_rho_bar": 0.40678379291582856,
+          "microcanonical": 0.07222388155142516,
+          "smooth_fH_chebyshev": 0.025004772680011684,
+          "overall_min": 0.025004772680011684
+        },
+        {
+          "thermal": 0.42295838086014076,
+          "depolarized_rho_bar": 0.6624273521781651,
+          "microcanonical": 0.07042926355947343,
+          "smooth_fH_chebyshev": 0.03259388957307495,
+          "overall_min": 0.03259388957307495
+        },
+        {
+          "thermal": 0.4089326738921146,
+          "depolarized_rho_bar": 0.5670056546247833,
+          "microcanonical": 0.06300847691714535,
+          "smooth_fH_chebyshev": 0.01923947926389135,
+          "overall_min": 0.01923947926389135
+        },
+        {
+          "thermal": 0.3849240605269475,
+          "depolarized_rho_bar": 0.6570499413915545,
+          "microcanonical": 0.08408434489990536,
+          "smooth_fH_chebyshev": 0.02008608751229122,
+          "overall_min": 0.02008608751229122
+        },
+        {
+          "thermal": 0.4166743006873355,
+          "depolarized_rho_bar": 0.36835867127477645,
+          "microcanonical": 0.08101411534483653,
+          "smooth_fH_chebyshev": 0.04486857733732623,
+          "overall_min": 0.04486857733732623
+        },
+        {
+          "thermal": 0.4032409675678413,
+          "depolarized_rho_bar": 0.3586417882032765,
+          "microcanonical": 0.1414261407323434,
+          "smooth_fH_chebyshev": 0.04206630392533781,
+          "overall_min": 0.04206630392533781
+        },
+        {
+          "thermal": 0.3845279523324759,
+          "depolarized_rho_bar": 0.6398305192725195,
+          "microcanonical": 0.08701339807737254,
+          "smooth_fH_chebyshev": 0.045982098426095304,
+          "overall_min": 0.045982098426095304
+        },
+        {
+          "thermal": 0.42732980727711656,
+          "depolarized_rho_bar": 0.5676641129939858,
+          "microcanonical": 0.07337991029639633,
+          "smooth_fH_chebyshev": 0.0402782504202106,
+          "overall_min": 0.0402782504202106
+        },
+        {
+          "thermal": 0.4254261157144707,
+          "depolarized_rho_bar": 0.5710182730623775,
+          "microcanonical": 0.07992835301491696,
+          "smooth_fH_chebyshev": 0.034437084867637156,
+          "overall_min": 0.034437084867637156
+        },
+        {
+          "thermal": 0.41273877543792153,
+          "depolarized_rho_bar": 0.5322804336865637,
+          "microcanonical": 0.07010276938928914,
+          "smooth_fH_chebyshev": 0.03758111625504694,
+          "overall_min": 0.03758111625504694
+        },
+        {
+          "thermal": 0.40488674896527005,
+          "depolarized_rho_bar": 0.46313570113912406,
+          "microcanonical": 0.08463752248945434,
+          "smooth_fH_chebyshev": 0.03016164007300997,
+          "overall_min": 0.03016164007300997
+        },
+        {
+          "thermal": 0.4325314714578364,
+          "depolarized_rho_bar": 0.5082176819644131,
+          "microcanonical": 0.07088999579118058,
+          "smooth_fH_chebyshev": 0.04331513262585454,
+          "overall_min": 0.04331513262585454
+        },
+        {
+          "thermal": 0.4201237180049702,
+          "depolarized_rho_bar": 0.4231088118093554,
+          "microcanonical": 0.06805318131677894,
+          "smooth_fH_chebyshev": 0.041503053463559224,
+          "overall_min": 0.041503053463559224
+        },
+        {
+          "thermal": 0.4181362186467116,
+          "depolarized_rho_bar": 0.5060841478887699,
+          "microcanonical": 0.08284487326070615,
+          "smooth_fH_chebyshev": 0.028845585067604457,
+          "overall_min": 0.028845585067604457
+        },
+        {
+          "thermal": 0.42696775872780174,
+          "depolarized_rho_bar": 0.6183337188387232,
+          "microcanonical": 0.07376791043165848,
+          "smooth_fH_chebyshev": 0.042103529003016525,
+          "overall_min": 0.042103529003016525
+        },
+        {
+          "thermal": 0.4238279772586724,
+          "depolarized_rho_bar": 0.6242691579533737,
+          "microcanonical": 0.06778195297589011,
+          "smooth_fH_chebyshev": 0.03611750357937153,
+          "overall_min": 0.03611750357937153
+        },
+        {
+          "thermal": 0.3926658157712939,
+          "depolarized_rho_bar": 0.6888673763852527,
+          "microcanonical": 0.07268536727615497,
+          "smooth_fH_chebyshev": 0.03330734316171465,
+          "overall_min": 0.03330734316171465
+        },
+        {
+          "thermal": 0.3861114789430085,
+          "depolarized_rho_bar": 0.5257085528431173,
+          "microcanonical": 0.08354777531831864,
+          "smooth_fH_chebyshev": 0.03141021485031788,
+          "overall_min": 0.03141021485031788
+        }
+      ],
+      "overall_min_min": 0.01923947926389135,
+      "overall_min_median": 0.03527729422350434,
+      "overall_min_max": 0.045982098426095304,
+      "n_below_eps_phi": 20,
+      "n_runs": 20
+    },
+    "TA_iv_metastable": {
+      "runs": [
+        {
+          "thermal": 0.27871392390058963,
+          "depolarized_rho_bar": 0.24963105371632296,
+          "microcanonical": 0.2717859464945059,
+          "smooth_fH_chebyshev": 0.12996039983102176,
+          "overall_min": 0.12996039983102176
+        },
+        {
+          "thermal": 0.2893551291274074,
+          "depolarized_rho_bar": 0.2413482614181054,
+          "microcanonical": 0.2756424987931586,
+          "smooth_fH_chebyshev": 0.17169472810135294,
+          "overall_min": 0.17169472810135294
+        },
+        {
+          "thermal": 0.2757053259929396,
+          "depolarized_rho_bar": 0.25557852615192833,
+          "microcanonical": 0.27457678020095216,
+          "smooth_fH_chebyshev": 0.1347701806205128,
+          "overall_min": 0.1347701806205128
+        },
+        {
+          "thermal": 0.2881124910768037,
+          "depolarized_rho_bar": 0.25882205819022114,
+          "microcanonical": 0.2656733497116762,
+          "smooth_fH_chebyshev": 0.13184339153792554,
+          "overall_min": 0.13184339153792554
+        },
+        {
+          "thermal": 0.27211281651353836,
+          "depolarized_rho_bar": 0.2418701445408856,
+          "microcanonical": 0.2826719601423982,
+          "smooth_fH_chebyshev": 0.13707139152742534,
+          "overall_min": 0.13707139152742534
+        },
+        {
+          "thermal": 0.28256087143045827,
+          "depolarized_rho_bar": 0.25921120013565735,
+          "microcanonical": 0.27681953989100355,
+          "smooth_fH_chebyshev": 0.14862856403218971,
+          "overall_min": 0.14862856403218971
+        },
+        {
+          "thermal": 0.27578664204860265,
+          "depolarized_rho_bar": 0.2533630647433439,
+          "microcanonical": 0.2713997052650217,
+          "smooth_fH_chebyshev": 0.12206326503404906,
+          "overall_min": 0.12206326503404906
+        },
+        {
+          "thermal": 0.29379493314812866,
+          "depolarized_rho_bar": 0.2598286738240098,
+          "microcanonical": 0.263647529428465,
+          "smooth_fH_chebyshev": 0.09625559854075096,
+          "overall_min": 0.09625559854075096
+        },
+        {
+          "thermal": 0.2719296250767513,
+          "depolarized_rho_bar": 0.23953721190528324,
+          "microcanonical": 0.2835978592307734,
+          "smooth_fH_chebyshev": 0.12027122488038064,
+          "overall_min": 0.12027122488038064
+        },
+        {
+          "thermal": 0.2698268122997284,
+          "depolarized_rho_bar": 0.24588714194232308,
+          "microcanonical": 0.27130070666645484,
+          "smooth_fH_chebyshev": 0.12655037861051577,
+          "overall_min": 0.12655037861051577
+        },
+        {
+          "thermal": 0.28048118393307775,
+          "depolarized_rho_bar": 0.2529267502629077,
+          "microcanonical": 0.2784530324493923,
+          "smooth_fH_chebyshev": 0.14004543730764785,
+          "overall_min": 0.14004543730764785
+        },
+        {
+          "thermal": 0.28117207081661644,
+          "depolarized_rho_bar": 0.2715542732626209,
+          "microcanonical": 0.2626496919034833,
+          "smooth_fH_chebyshev": 0.1237853353247064,
+          "overall_min": 0.1237853353247064
+        },
+        {
+          "thermal": 0.2815279950666546,
+          "depolarized_rho_bar": 0.2597660700008202,
+          "microcanonical": 0.26210183617560356,
+          "smooth_fH_chebyshev": 0.14447423608599735,
+          "overall_min": 0.14447423608599735
+        },
+        {
+          "thermal": 0.2837438717287462,
+          "depolarized_rho_bar": 0.24148882453187784,
+          "microcanonical": 0.27824756122414174,
+          "smooth_fH_chebyshev": 0.1670497166611576,
+          "overall_min": 0.1670497166611576
+        },
+        {
+          "thermal": 0.2784838432185541,
+          "depolarized_rho_bar": 0.25468535267386366,
+          "microcanonical": 0.27157909319116597,
+          "smooth_fH_chebyshev": 0.12767987081461218,
+          "overall_min": 0.12767987081461218
+        },
+        {
+          "thermal": 0.2750976698993565,
+          "depolarized_rho_bar": 0.22717341445250866,
+          "microcanonical": 0.2747709025335413,
+          "smooth_fH_chebyshev": 0.0842589107627874,
+          "overall_min": 0.0842589107627874
+        },
+        {
+          "thermal": 0.28024747488699003,
+          "depolarized_rho_bar": 0.27004483369406135,
+          "microcanonical": 0.26213953175777,
+          "smooth_fH_chebyshev": 0.11634899145189004,
+          "overall_min": 0.11634899145189004
+        },
+        {
+          "thermal": 0.27059618023382126,
+          "depolarized_rho_bar": 0.24611706543182302,
+          "microcanonical": 0.2898078055152173,
+          "smooth_fH_chebyshev": 0.13595479300403054,
+          "overall_min": 0.13595479300403054
+        },
+        {
+          "thermal": 0.28123851153856816,
+          "depolarized_rho_bar": 0.26585877709824784,
+          "microcanonical": 0.26236410261404414,
+          "smooth_fH_chebyshev": 0.1320277253411231,
+          "overall_min": 0.1320277253411231
+        },
+        {
+          "thermal": 0.28162526151559286,
+          "depolarized_rho_bar": 0.2504616445727956,
+          "microcanonical": 0.28253179241277143,
+          "smooth_fH_chebyshev": 0.15240765253596056,
+          "overall_min": 0.15240765253596056
+        }
+      ],
+      "overall_min_min": 0.0842589107627874,
+      "overall_min_median": 0.13193555843952431,
+      "overall_min_max": 0.17169472810135294,
+      "n_below_eps_phi": 20,
+      "n_runs": 20
+    },
+    "TC_scrambling": {
+      "runs": [
+        {
+          "thermal": 0.22678253292228684,
+          "depolarized_rho_bar": 0.3624319010279629,
+          "microcanonical": 0.21505034802690454,
+          "smooth_fH_chebyshev": 0.13126493636649572,
+          "overall_min": 0.13126493636649572
+        },
+        {
+          "thermal": 0.420467660194233,
+          "depolarized_rho_bar": 0.4614109213422445,
+          "microcanonical": 0.07284188880881716,
+          "smooth_fH_chebyshev": 0.04287774099183943,
+          "overall_min": 0.04287774099183943
+        },
+        {
+          "thermal": 0.42342078745899325,
+          "depolarized_rho_bar": 0.5247004871965566,
+          "microcanonical": 0.06620800748593839,
+          "smooth_fH_chebyshev": 0.036571946801805255,
+          "overall_min": 0.036571946801805255
+        },
+        {
+          "thermal": 0.43225824363541626,
+          "depolarized_rho_bar": 0.5777999278562403,
+          "microcanonical": 0.06209798262726966,
+          "smooth_fH_chebyshev": 0.044617253683880025,
+          "overall_min": 0.044617253683880025
+        },
+        {
+          "thermal": 0.39926066240485136,
+          "depolarized_rho_bar": 0.611773654582029,
+          "microcanonical": 0.07861085466202981,
+          "smooth_fH_chebyshev": 0.027452356201527528,
+          "overall_min": 0.027452356201527528
+        },
+        {
+          "thermal": 0.3968839449280232,
+          "depolarized_rho_bar": 0.5137740023862859,
+          "microcanonical": 0.08742562317574465,
+          "smooth_fH_chebyshev": 0.04889488301710794,
+          "overall_min": 0.04889488301710794
+        },
+        {
+          "thermal": 0.42728746907105863,
+          "depolarized_rho_bar": 0.7344351157971594,
+          "microcanonical": 0.06183043106489422,
+          "smooth_fH_chebyshev": 0.03623774742200703,
+          "overall_min": 0.03623774742200703
+        },
+        {
+          "thermal": 0.3863903491398133,
+          "depolarized_rho_bar": 0.48275715507389977,
+          "microcanonical": 0.08173651180623859,
+          "smooth_fH_chebyshev": 0.028935579431588962,
+          "overall_min": 0.028935579431588962
+        },
+        {
+          "thermal": 0.382365839419817,
+          "depolarized_rho_bar": 0.4307341794183083,
+          "microcanonical": 0.10769020333534633,
+          "smooth_fH_chebyshev": 0.04286577505600598,
+          "overall_min": 0.04286577505600598
+        },
+        {
+          "thermal": 0.3643549791315447,
+          "depolarized_rho_bar": 0.38627020834779535,
+          "microcanonical": 0.12988498081384384,
+          "smooth_fH_chebyshev": 0.057295792499633715,
+          "overall_min": 0.057295792499633715
+        },
+        {
+          "thermal": 0.38984625537097506,
+          "depolarized_rho_bar": 0.581518879187889,
+          "microcanonical": 0.08609575146982884,
+          "smooth_fH_chebyshev": 0.036503284680664806,
+          "overall_min": 0.036503284680664806
+        },
+        {
+          "thermal": 0.40428552376647425,
+          "depolarized_rho_bar": 0.41152669928056806,
+          "microcanonical": 0.08429161750986473,
+          "smooth_fH_chebyshev": 0.029052335530214714,
+          "overall_min": 0.029052335530214714
+        },
+        {
+          "thermal": 0.41473899961762234,
+          "depolarized_rho_bar": 0.3948501552007043,
+          "microcanonical": 0.07851257844915636,
+          "smooth_fH_chebyshev": 0.048609689057974324,
+          "overall_min": 0.048609689057974324
+        },
+        {
+          "thermal": 0.4078084508474086,
+          "depolarized_rho_bar": 0.6277483395900392,
+          "microcanonical": 0.06023012251118723,
+          "smooth_fH_chebyshev": 0.01945844376091116,
+          "overall_min": 0.01945844376091116
+        },
+        {
+          "thermal": 0.3752212199837062,
+          "depolarized_rho_bar": 0.48163096012788514,
+          "microcanonical": 0.07641537628256373,
+          "smooth_fH_chebyshev": 0.03933211805249755,
+          "overall_min": 0.03933211805249755
+        },
+        {
+          "thermal": 0.3972420258290188,
+          "depolarized_rho_bar": 0.5976988853017541,
+          "microcanonical": 0.055624732360733786,
+          "smooth_fH_chebyshev": 0.018487582971708015,
+          "overall_min": 0.018487582971708015
+        },
+        {
+          "thermal": 0.3940015957854508,
+          "depolarized_rho_bar": 0.5873609705837932,
+          "microcanonical": 0.08454241301551967,
+          "smooth_fH_chebyshev": 0.023006147988459267,
+          "overall_min": 0.023006147988459267
+        },
+        {
+          "thermal": 0.40532741872313877,
+          "depolarized_rho_bar": 0.6196079441091394,
+          "microcanonical": 0.05480480502475537,
+          "smooth_fH_chebyshev": 0.018140618881806826,
+          "overall_min": 0.018140618881806826
+        },
+        {
+          "thermal": 0.42078954920477996,
+          "depolarized_rho_bar": 0.49277761636775624,
+          "microcanonical": 0.06891906012220499,
+          "smooth_fH_chebyshev": 0.03578366337256139,
+          "overall_min": 0.03578366337256139
+        },
+        {
+          "thermal": 0.3631649495251081,
+          "depolarized_rho_bar": 0.49309746809367266,
+          "microcanonical": 0.1520264589022529,
+          "smooth_fH_chebyshev": 0.0680789330213936,
+          "overall_min": 0.0680789330213936
+        }
+      ],
+      "overall_min_min": 0.018140618881806826,
+      "overall_min_median": 0.03653761574123503,
+      "overall_min_max": 0.13126493636649572,
+      "n_below_eps_phi": 20,
+      "n_runs": 20
+    },
+    "TC_integrable": {
+      "runs": [
+        {
+          "thermal": 0.3878046491417147,
+          "depolarized_rho_bar": 0.3688584282621456,
+          "microcanonical": 0.38621709715712654,
+          "smooth_fH_chebyshev": 0.21638819955235647,
+          "overall_min": 0.21638819955235647
+        },
+        {
+          "thermal": 0.3064964248861848,
+          "depolarized_rho_bar": 0.904019708231876,
+          "microcanonical": 0.3557787311234092,
+          "smooth_fH_chebyshev": 0.16639207342288634,
+          "overall_min": 0.16639207342288634
+        },
+        {
+          "thermal": 0.29853759000723107,
+          "depolarized_rho_bar": 0.6955985033689743,
+          "microcanonical": 0.2712049872911301,
+          "smooth_fH_chebyshev": 0.17166621942511293,
+          "overall_min": 0.17166621942511293
+        },
+        {
+          "thermal": 0.28980983415943895,
+          "depolarized_rho_bar": 0.9411570833361508,
+          "microcanonical": 0.2727183169974639,
+          "smooth_fH_chebyshev": 0.10221079709278866,
+          "overall_min": 0.10221079709278866
+        },
+        {
+          "thermal": 0.2979407483330381,
+          "depolarized_rho_bar": 0.9227073156151306,
+          "microcanonical": 0.3427229290412914,
+          "smooth_fH_chebyshev": 0.10001009719464658,
+          "overall_min": 0.10001009719464658
+        },
+        {
+          "thermal": 0.30067183901509903,
+          "depolarized_rho_bar": 1.0030533190919406,
+          "microcanonical": 0.3476906480452878,
+          "smooth_fH_chebyshev": 0.15958747695945608,
+          "overall_min": 0.15958747695945608
+        },
+        {
+          "thermal": 0.302888068199759,
+          "depolarized_rho_bar": 0.8441052096348055,
+          "microcanonical": 0.3006178014428516,
+          "smooth_fH_chebyshev": 0.17104369275269013,
+          "overall_min": 0.17104369275269013
+        },
+        {
+          "thermal": 0.30507504412588515,
+          "depolarized_rho_bar": 0.8185457149712584,
+          "microcanonical": 0.22438796064288022,
+          "smooth_fH_chebyshev": 0.15957579762063825,
+          "overall_min": 0.15957579762063825
+        },
+        {
+          "thermal": 0.309410878318365,
+          "depolarized_rho_bar": 0.8982203378856193,
+          "microcanonical": 0.2088254402481664,
+          "smooth_fH_chebyshev": 0.16149969122180985,
+          "overall_min": 0.16149969122180985
+        },
+        {
+          "thermal": 0.3121736909587195,
+          "depolarized_rho_bar": 0.9602695226175672,
+          "microcanonical": 0.3329311351046205,
+          "smooth_fH_chebyshev": 0.16869896906887305,
+          "overall_min": 0.16869896906887305
+        },
+        {
+          "thermal": 0.31609238932313116,
+          "depolarized_rho_bar": 0.833739781247456,
+          "microcanonical": 0.320075501360642,
+          "smooth_fH_chebyshev": 0.16821558335505407,
+          "overall_min": 0.16821558335505407
+        },
+        {
+          "thermal": 0.26708960276461713,
+          "depolarized_rho_bar": 0.58945461649041,
+          "microcanonical": 0.21726764988401281,
+          "smooth_fH_chebyshev": 0.08051897025537358,
+          "overall_min": 0.08051897025537358
+        },
+        {
+          "thermal": 0.31445665852371046,
+          "depolarized_rho_bar": 0.7990259230329274,
+          "microcanonical": 0.3409873592618139,
+          "smooth_fH_chebyshev": 0.17240553873044992,
+          "overall_min": 0.17240553873044992
+        },
+        {
+          "thermal": 0.28903393402807165,
+          "depolarized_rho_bar": 1.0013634001559903,
+          "microcanonical": 0.3595305851472356,
+          "smooth_fH_chebyshev": 0.09436662439863897,
+          "overall_min": 0.09436662439863897
+        },
+        {
+          "thermal": 0.30735126078069064,
+          "depolarized_rho_bar": 0.8694918512668837,
+          "microcanonical": 0.34057531376275774,
+          "smooth_fH_chebyshev": 0.13878029287253707,
+          "overall_min": 0.13878029287253707
+        },
+        {
+          "thermal": 0.29520607823163564,
+          "depolarized_rho_bar": 0.7899639426008997,
+          "microcanonical": 0.21759294870608453,
+          "smooth_fH_chebyshev": 0.1576449797364079,
+          "overall_min": 0.1576449797364079
+        },
+        {
+          "thermal": 0.29277423652903717,
+          "depolarized_rho_bar": 0.7565929476401728,
+          "microcanonical": 0.2221344625544925,
+          "smooth_fH_chebyshev": 0.15952743870643302,
+          "overall_min": 0.15952743870643302
+        },
+        {
+          "thermal": 0.30398276632953175,
+          "depolarized_rho_bar": 0.9695775385499142,
+          "microcanonical": 0.39660709074327877,
+          "smooth_fH_chebyshev": 0.12498360523119366,
+          "overall_min": 0.12498360523119366
+        },
+        {
+          "thermal": 0.2951285484907278,
+          "depolarized_rho_bar": 0.7623765312857413,
+          "microcanonical": 0.2420367978367432,
+          "smooth_fH_chebyshev": 0.17117514990475272,
+          "overall_min": 0.17117514990475272
+        },
+        {
+          "thermal": 0.32709222558405354,
+          "depolarized_rho_bar": 0.9109924467600419,
+          "microcanonical": 0.29242004927602144,
+          "smooth_fH_chebyshev": 0.1853629964265431,
+          "overall_min": 0.1853629964265431
+        }
+      ],
+      "overall_min_min": 0.08051897025537358,
+      "overall_min_median": 0.16054358409063296,
+      "overall_min_max": 0.21638819955235647,
+      "n_below_eps_phi": 20,
+      "n_runs": 20
+    },
+    "TC_localized": {
+      "runs": [
+        {
+          "thermal": 0.43432074358593425,
+          "depolarized_rho_bar": 0.3922582035660379,
+          "microcanonical": 0.3646875637615509,
+          "smooth_fH_chebyshev": 0.35061562633601523,
+          "overall_min": 0.35061562633601523
+        },
+        {
+          "thermal": 0.8995529490759517,
+          "depolarized_rho_bar": 0.27621785641757257,
+          "microcanonical": 0.3531284217954021,
+          "smooth_fH_chebyshev": 0.2896487431573361,
+          "overall_min": 0.27621785641757257
+        },
+        {
+          "thermal": 0.3494610181126957,
+          "depolarized_rho_bar": 0.2791642699330192,
+          "microcanonical": 0.32781462826168356,
+          "smooth_fH_chebyshev": 0.3454946772777545,
+          "overall_min": 0.2791642699330192
+        },
+        {
+          "thermal": 0.8891944488014681,
+          "depolarized_rho_bar": 0.3661503191864586,
+          "microcanonical": 0.3715955271514717,
+          "smooth_fH_chebyshev": 0.3443593586510917,
+          "overall_min": 0.3443593586510917
+        },
+        {
+          "thermal": 0.9126587213926346,
+          "depolarized_rho_bar": 0.4293364406664404,
+          "microcanonical": 0.39413378144014544,
+          "smooth_fH_chebyshev": 0.25032833406861793,
+          "overall_min": 0.25032833406861793
+        },
+        {
+          "thermal": 0.723587854331703,
+          "depolarized_rho_bar": 0.3734917457465505,
+          "microcanonical": 0.35673975512313094,
+          "smooth_fH_chebyshev": 0.3646520478400748,
+          "overall_min": 0.35673975512313094
+        },
+        {
+          "thermal": 0.47948782354065683,
+          "depolarized_rho_bar": 0.26038772236635943,
+          "microcanonical": 0.38192870591022693,
+          "smooth_fH_chebyshev": 0.3179455983189854,
+          "overall_min": 0.26038772236635943
+        },
+        {
+          "thermal": 1.0824124071028045,
+          "depolarized_rho_bar": 0.5285594962216027,
+          "microcanonical": 0.36764765680640593,
+          "smooth_fH_chebyshev": 0.2707445660153667,
+          "overall_min": 0.2707445660153667
+        },
+        {
+          "thermal": 1.1800094757541533,
+          "depolarized_rho_bar": 0.2653850295899316,
+          "microcanonical": 0.36117847508435397,
+          "smooth_fH_chebyshev": 0.2723837142499159,
+          "overall_min": 0.2653850295899316
+        },
+        {
+          "thermal": 0.7134279628504501,
+          "depolarized_rho_bar": 0.4489208266603518,
+          "microcanonical": 0.40310517822831465,
+          "smooth_fH_chebyshev": 0.2596025603266721,
+          "overall_min": 0.2596025603266721
+        },
+        {
+          "thermal": 0.7292539848010395,
+          "depolarized_rho_bar": 0.2914631883155541,
+          "microcanonical": 0.32909071762455266,
+          "smooth_fH_chebyshev": 0.2973070798703813,
+          "overall_min": 0.2914631883155541
+        },
+        {
+          "thermal": 1.0888284349218036,
+          "depolarized_rho_bar": 0.2502495628366037,
+          "microcanonical": 0.4310965132841777,
+          "smooth_fH_chebyshev": 0.36648828055802224,
+          "overall_min": 0.2502495628366037
+        },
+        {
+          "thermal": 0.8101667290052935,
+          "depolarized_rho_bar": 0.2808352304561442,
+          "microcanonical": 0.38867998978459245,
+          "smooth_fH_chebyshev": 0.36525266212834046,
+          "overall_min": 0.2808352304561442
+        },
+        {
+          "thermal": 0.8221392866939448,
+          "depolarized_rho_bar": 0.3678444249495318,
+          "microcanonical": 0.3165548608486077,
+          "smooth_fH_chebyshev": 0.28819049678719966,
+          "overall_min": 0.28819049678719966
+        },
+        {
+          "thermal": 0.6125614025526074,
+          "depolarized_rho_bar": 0.30686529361351633,
+          "microcanonical": 0.3589919488521685,
+          "smooth_fH_chebyshev": 0.16843867812150476,
+          "overall_min": 0.16843867812150476
+        },
+        {
+          "thermal": 0.5382765664868283,
+          "depolarized_rho_bar": 0.26296331402037626,
+          "microcanonical": 0.31325085672277175,
+          "smooth_fH_chebyshev": 0.504519147132287,
+          "overall_min": 0.26296331402037626
+        },
+        {
+          "thermal": 0.5292880274302114,
+          "depolarized_rho_bar": 0.23248469925771217,
+          "microcanonical": 0.4216568738027394,
+          "smooth_fH_chebyshev": 0.27312911156311215,
+          "overall_min": 0.23248469925771217
+        },
+        {
+          "thermal": 0.7026806768910441,
+          "depolarized_rho_bar": 0.5042175820594206,
+          "microcanonical": 0.352876809939071,
+          "smooth_fH_chebyshev": 0.33195120394854666,
+          "overall_min": 0.33195120394854666
+        },
+        {
+          "thermal": 0.5901790297108512,
+          "depolarized_rho_bar": 0.20160949960229663,
+          "microcanonical": 0.43695188445636063,
+          "smooth_fH_chebyshev": 0.30858403645892574,
+          "overall_min": 0.20160949960229663
+        },
+        {
+          "thermal": 0.7188634104860396,
+          "depolarized_rho_bar": 0.35028835967321714,
+          "microcanonical": 0.3585379153854447,
+          "smooth_fH_chebyshev": 0.35378854947612265,
+          "overall_min": 0.35028835967321714
+        }
+      ],
+      "overall_min_min": 0.16843867812150476,
+      "overall_min_median": 0.2734812112164696,
+      "overall_min_max": 0.35673975512313094,
+      "n_below_eps_phi": 3,
+      "n_runs": 20
+    }
+  }
+}

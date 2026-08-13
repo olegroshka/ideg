@@ -4,7 +4,7 @@ title: "IDEG Research Program — Agentic Protocol, Phases, Gates, and Backlog"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-13
-version: 0.13
+version: 0.14
 research_layer: R4
 epistemic_status: NOT_APPLICABLE
 sources:
@@ -25,6 +25,7 @@ changelog:
   - "0.11: AR-020 EXECUTED/RECONCILED (Claude + owner ratification, 2026-08-13) — Amendment 4 applied; comparator class-split; fresh-seed (a) re-adjudication FAILS on scrambling|integrable at N = 10 (finite-size, seed-luck finding); forward-path ruling queued — see §27"
   - "0.12: AR-020 CLOSED with the FINAL verdict (owner Amendment 5, n = 40): criterion (a) HOLDS (18/18); §5.4 row 1 — BH-004 supported in-model, BH-005 LICENSED, HYP-009 geometric first realization; KB-004 → v0.6; next: first-paper drafting — see §28"
   - "0.13: paper-1 reflection rulings folded into the outline (test-first framing, boundary-case localized, no-firstness, fenced cross-discipline, hardened probe gate); AR-022 philosophical-context survey added PROPOSED (not paper content) — see §29"
+  - "0.14: AR-020b hardened probe — comparator class-split corrected (metastable/integrable matchable; quasiperiodic sole motion-borne survivor, 0/40 both sizes); KB-004 → v0.7; paper §6 gate cleared — see §30"
 ---
 
 # Research Program and Agentic Protocol
@@ -450,3 +451,10 @@ Next scheduled work: **AR-020**, then first-paper drafting.
 1. Paper-1 outline reflection (owner + Claude, 2026-08-13; `paper/OUTLINE.md`, session log): test-first reframing of the thesis; localized class demoted to boundary case; no-firstness rule; cross-disciplinary template fenced as proposed-not-demonstrated; hardened comparator probe (full ensembles, both sizes, smooth-f(H) general optimization) required before §6 is drafted.
 2. §6 AR-022 added (PROPOSED, P2): philosophical-context survey on instantiated-vs-maintained emergence — owner personal interest, explicitly NOT paper-1 content.
 3. Paper classification of record: instrument paper executed as a registered study; claim types = instrument + measured in-model facts + methodological demonstration; zero mechanism/universality/gravity/firstness claims.
+
+---
+
+## 30. Changelog v0.13 → v0.14
+
+1. **AR-020b hardened probe executed (both sizes, full ensembles, smooth-f(H) optimization) — comparator class-split CORRECTED:** metastable and integrable are matchable within ε_Φ (20/20 each), localized boundary (3–6/20); **the size-robust motion-borne survivor is the quasiperiodic class alone (0/40, median 0.32–0.34)** — the same class singled out by the negative dephasing log ρ. Dated corrections applied: AR-020 packet, spec §8, KB-004 → v0.7, paper outline §0/§6. Third internal self-correction of the cycle (family-probe overclaim caught before drafting).
+2. §6 gate for paper §6 CLEARED; drafting may begin (§2 first per the writing plan).

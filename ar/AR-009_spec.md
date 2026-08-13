@@ -581,6 +581,18 @@ scaling is reported descriptively (no extrapolation claims — scope wall §7).
   rescue it; the outcome is accepted as final either way (owner ruling).
   TC_localized scales to 40 realizations × 5 states (realization =
   resampling unit).
+- **2026-08-13 — Hardened-probe correction to the Amendment-4 item-2
+  comparator finding (AR-020b).** The family-relative statement
+  ("no Φ-matched motionless comparator for quasiperiodic/metastable/
+  localized") is corrected by the full-ensemble, both-size,
+  smooth-f(H)-optimized probe: metastable and integrable ARE matchable
+  within ε_Φ (20/20 each; medians 0.09–0.17), localized is boundary
+  (3–6/20, ≈ 0.27). **Size-robust survivor: the quasiperiodic class
+  alone (0/40, median 0.32–0.34).** Chaotic/scrambling matches
+  strengthen (0.035–0.046). Future sustained-by adjudications use the
+  smooth-f(H)-fitted comparator, and motion-borne language is
+  restricted to the quasiperiodic class at probe scope. No
+  preregistered threshold changed.
 - **2026-08-13 — Amendment 5 outcome (FINAL criterion-(a) verdict):
   HOLDS.** All 18 pair × size checks pass on the addendum-3 fresh seeds
   at n = 40 (results/AR-010/rerun40_summary.json). The formerly-marginal

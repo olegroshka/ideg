@@ -76,8 +76,16 @@ results/     run outputs, figures, serialized data (gitignored where large)
 ## Current state (update this block when it changes)
 
 - Repo: https://github.com/olegroshka/ideg (private), created 2026-08-11.
-- Substrate versions: KB-001 v0.3, KB-002 v0.2, KB-003 v0.5, KB-004 v0.6,
-  KB-005 v0.12 (2026-08-13).
+- Substrate versions: KB-001 v0.3, KB-002 v0.2, KB-003 v0.5, KB-004 v0.7,
+  KB-005 v0.14 (2026-08-13).
+- **AR-020b hardened probe (2026-08-13):** comparator class-split
+  CORRECTED — metastable/integrable matchable within ε_Φ (20/20 each),
+  localized boundary; **quasiperiodic = sole motion-borne survivor
+  (0/40, both sizes, median 0.32–0.34)**, coinciding with the
+  negative-dephasing class. Two instruments, one survivor = the paper's
+  corrected headline. Paper outline (paper/OUTLINE.md) reflects this;
+  §6 drafting gate cleared. AR-022 (philosophy survey, NOT paper
+  content) queued PROPOSED.
 - **AR-020 EXECUTED/RECONCILED (2026-08-13):** Amendment 4 ratified +
   applied ({PR_A, w2_mean, Ξ}; W3 descriptive); comparator probe
   class-split (chaotic matchable at 0.066 — ETH; quasiperiodic/

@@ -78,6 +78,24 @@ grid-optimized, one run per class) — not an impossibility proof; a
 general diagonal-state optimization is a bounded follow-up if AR-011-
 style adversarial pressure demands it.
 
+> **CORRECTION (2026-08-13, hardened probe AR-020b —
+> `results/AR-010/ar020b_hardened_probe_N{10,12}.json`).** The
+> family-relative miss claims above are PARTIALLY REFUTED by the
+> general smooth-f(H) optimization over full ensembles at both
+> criterion sizes: metastable (20/20 matched, median 0.091–0.132),
+> integrable (20/20, 0.161–0.170) and partially localized (3–6/20,
+> median ≈ 0.27, boundary) ARE matchable within ε_Φ. **The
+> size-robust survivor is the QUASIPERIODIC class alone: 0/40 matched
+> across both sizes, median miss 0.32–0.34.** The corrected finding:
+> only incommensurate coherence-carried motion produces a
+> time-averaged geometry that no searched stationary state (three
+> natural families + smooth-f(H), K = 12 Chebyshev, Powell) can
+> reproduce — the same class singled out by the negative dephasing
+> log ρ. Chaotic/scrambling matches strengthen (median 0.035–0.046).
+> Scope: smooth-f(H) parameterization; not an impossibility proof over
+> arbitrary diagonal states. Third self-correction of the cycle,
+> caught internally before publication.
+
 ## 3. Proposed spec §8 Amendment 4 (owner ratification required)
 
 1. §5.1 statistic set → {PR_A, w2_mean, Ξ}; min d_phys and the W3

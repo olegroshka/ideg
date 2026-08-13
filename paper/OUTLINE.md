@@ -13,13 +13,18 @@ structure is merely *instantiated* by its substrate or *actively
 maintained* by the substrate's dynamics — switch-off response,
 motionless-comparator matching, and own-baseline robustness — and
 report its first measurement, on the mutual-information-graph metric
-[SRC-049] of finite spin chains. The measured outcome is a class-split:
-chaotic-class structure is matchable by a motionless thermal-window
-state (compatible-with; ETH-consistent), while quasiperiodic- and
-metastable-class structure has no motionless counterpart within the
-stationary families searched (motion-borne; hardened probe scope in
-§6). The localized class is reported as a boundary case throughout
-(it straddles the stationarity threshold itself). A preregistered
+[SRC-049] of finite spin chains. The measured outcome (HARDENED
+probe, final: full ensembles, both sizes, smooth-f(H) optimization) is
+a single-survivor split: every class's time-averaged structure is
+matchable by some stationary state within ε_Φ — chaotic/scrambling
+strongly (miss ≈ 0.04), metastable (≈ 0.09–0.13), integrable
+(≈ 0.16–0.17), localized as a boundary case (3–6/20, ≈ 0.27) — EXCEPT
+the quasiperiodic class: 0/40 matched across both sizes (miss
+0.32–0.34). The same class is independently singled out by the
+negative dephasing response (noise pins its moving structure to its
+mean). Two instruments, one survivor: incommensurate coherence-carried
+motion is the one regime whose time-averaged information metric no
+searched stationary state reproduces. A preregistered
 witness discipline makes the claims falsifiable — its self-correction,
 when one witness failed its own null test, is reported as a result.
 
@@ -130,18 +135,23 @@ universality, gravity, or firstness claims.
   so the diagonal ensemble is NOT Φ-matched (43–90% away). The
   dichotomy is stated TEST-FIRST: the instrument is the matched-
   comparator search; its measured outcome is the class-split.
-- **HARDENED PROBE (reflection ruling — closes the weak-quantifier
-  flag):** full ensembles, both criterion sizes, and a general smooth-
-  f(H) optimization (Chebyshev-parameterized log-populations) on top of
-  the three natural families — results replace the one-run/one-size
-  table before §6 is drafted. Claim wording is bound to the probe's
-  actual scope ("no stationary state that is a smooth function of H,
-  within the searched families and parameterization").
-- Localized class: reported as a BOUNDARY CASE (straddles ε_Φ itself),
-  excluded from headline counts.
+- **HARDENED PROBE RESULTS (final; gate cleared 2026-08-13):**
+  matchable within ε_Φ — chaotic 20/20 (median 0.035–0.042),
+  scrambling 20/20 (0.037–0.046), metastable 20/20 (0.091–0.132),
+  integrable 20/20 (0.161–0.170); boundary — localized 3–6/20
+  (≈ 0.27); **UNMATCHED — quasiperiodic 0/40 across both sizes
+  (0.32–0.34)**. The family-only claims for metastable/integrable were
+  corrected by this probe (third internal self-correction — reported in
+  §4's discipline narrative). Claim wording bound to probe scope
+  ("no stationary state that is a smooth function of H, within the
+  searched families and parameterization").
+- The two-instrument convergence paragraph: the comparator survivor and
+  the negative-dephasing class are the SAME class — quasiperiodic.
+- Localized class: BOUNDARY CASE (straddles ε_Φ itself), excluded from
+  headline counts.
 - Fig. 5: (a) switch-off jump per class; (b) miss distributions over
-  the full ensembles (hardened probe) with the chaotic match
-  highlighted.
+  the full ensembles per class/size, ε_Φ line drawn, quasiperiodic
+  isolated above it.
 
 ### §7 Results V — Driven geometry: the DTC regime (~1.5 pp)
 - Stationary-with-witness 100/100 at ε = 0.03; rigidity h_sub(ε)

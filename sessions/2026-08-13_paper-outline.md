@@ -62,3 +62,16 @@ methodological demonstration; zero mechanism/universality/gravity/
 firstness claims. Epistemically: the first severe test inside the IDEG
 programme (preregistration + adversarial companion as manufactured
 severity).
+
+## Hardened-probe outcome (same session — gate cleared)
+
+AR-020b (full ensembles, both sizes, smooth-f(H) Chebyshev-Powell):
+the family-only class-split is CORRECTED — metastable 20/20 and
+integrable 20/20 matchable within ε_Φ (medians 0.09–0.17), localized
+boundary (3–6/20, ≈ 0.27); **quasiperiodic is the sole size-robust
+motion-borne survivor (0/40, median 0.32–0.34)** — the same class the
+negative dephasing log ρ singles out. Two instruments, one survivor:
+the paper's corrected headline. Third internal self-correction of the
+cycle. Dated corrections applied to the AR-020 packet, spec §8,
+KB-004 (v0.7), outline §0/§6; KB-005 → v0.14. §6 drafting gate CLEARED.
+Substrate versions at close: KB-003 v0.5, KB-004 v0.7, KB-005 v0.14.
