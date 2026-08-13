@@ -4,7 +4,7 @@ title: "IDEG Hypothesis Space — Nulls, Bridges, Strong Forms, and Falsifiers"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-13
-version: 0.5
+version: 0.6
 research_layer: R3
 epistemic_status: SPECULATIVE_TO_PLAUSIBLE
 sources:
@@ -17,6 +17,7 @@ changelog:
   - "0.3: BH-004 dated evidence note from AR-010 confirmatory (Claude, 2026-08-13) — sustained-by clause supported in-model, criterion (a) witness-scheme negative recorded; no epistemic-status change (AR-011-gated); see ar/AR-010_confirmatory-2026-08-12.md"
   - "0.4: BH-004 evidence note corrected per AR-011 (Claude, 2026-08-13) — fragility direction withdrawn (floored-denominator artifact); switch-off geometry change promoted to load-bearing sustained-by evidence; §4.1 Φ-matching assumption refuted; partition-dependence quantified 9–20%; see ar/AR-011_adversarial-2026-08-13.md"
   - "0.5: BH-004 epistemic status SPECULATIVE → PLAUSIBLE (owner ruling 2026-08-13, post-AR-011/AR-021); explicit Status line added; HYP-009 geometric part unchanged (SPECULATIVE)"
+  - "0.6: final AR-020/Amendment-5 verdict recorded (Claude, 2026-08-13) — criterion (a) HOLDS under the reformalized battery (n = 40, fresh seeds); BH-004 supported in-model (spec §5.4 row 1); BH-005 LICENSED; HYP-009 geometric part gains its first model realization (status unchanged)"
 ---
 
 # Hypothesis Space
@@ -99,7 +100,7 @@ where \(\mathcal R_I\) may include relative entropy, modular data, operator-alge
 
 ### HYP-009 — Cross-level dynamical persistence (CLDP) (added v0.2; logically between HYP-004 and HYP-005)
 **Statement.** For each adjacent pair of abstraction-ladder levels (OL-k−1, OL-k), persistent structures at OL-k are *sustained by* (CON-036) nontrivial dynamics at OL-k−1, witnessed by at least one invariant observable (CON-034) at OL-k−1 — and this pattern continues at the geometric rung: effective geometry (OL-4) is the persistence face of OL-0–OL-2 information dynamics in the same structural sense.
-**Decomposition.** (a) *Sub-geometric part:* pattern holds for the rungs below OL-4 — `epistemic_status: GROUNDED` via TH-033/TH-034/TH-035 (established instances with witnesses; census AR-015 to complete and classify sustained-by vs compatible-with). (b) *Geometric part:* pattern holds at OL-3→OL-4 — `epistemic_status: SPECULATIVE`; this is RQ-013 and the actual research content.
+**Decomposition.** (a) *Sub-geometric part:* pattern holds for the rungs below OL-4 — `epistemic_status: GROUNDED` via TH-033/TH-034/TH-035 (established instances with witnesses; census AR-015 to complete and classify sustained-by vs compatible-with). (b) *Geometric part:* pattern holds at OL-3→OL-4 — `epistemic_status: SPECULATIVE`; this is RQ-013 and the actual research content. **(v0.6 evidence line, 2026-08-13:** first model realization exists — BH-004 supported in-model at the toy-model OL (spec §5.4 row 1; `ar/AR-010_confirmatory-2026-08-12.md`, `ar/AR-020_reformalization-2026-08-13.md`); status unchanged — the OL-3→OL-4 claim is about geometry proper, and the toy Φ carries a measured 9–20% partition-dependence scope wall.**)**
 **Clock:** level-relative; the OL-4 claim requires an internal clock (as in HYP-003) or a declared external one with scope noted.
 **Provenance:** this is the faithful formalization of INT-001's "on every level of persistent reality" (ADR-001); it replaces v0.1's silent narrowing to "a subset of gravitational/Planck structures."
 **Promotion criteria (geometric part):** exhibit a model (Track E3) in which an emergent-geometry functional \(\Phi[X]\) is stationary *because of* — counterfactually dependent on — witnessed microdynamics, with the dependence surviving representation changes; then seek the pattern in a controlled gravitational framework.
@@ -184,9 +185,17 @@ standing scope wall).
 (4) T-B: switch-off resolves compatible-with for the DTC regime (W5
 collapses, Φ persists — MBL holds the pattern without the drive);
 rigidity ε_c > 0.20 (bound); r2 comparator prethermal at 200 periods.
+**(v0.6, final) Criterion (a) HOLDS under the owner-ratified
+reformalized battery** (spec §8 Amendments 4–5: {PR_A, w2_mean, Ξ},
+fresh seeds, n = 40 — all 18 pair × size checks;
+results/AR-010/rerun40_summary.json). Dual record: the original
+preregistered battery failed its own null test; the reformalized one
+passes. With (a) [amended] + (b) [original] both holding, spec §5.4
+row 1 stands: **BH-004 is supported in-model.**
 
 ### BH-005 — Recurrence as an emergent-stability mechanism
 Within a successful BH-004 model, test whether recurrence/limit-cycle/quasiperiodicity — including a driven/Floquet regime modeled on TH-033 — provides robustness unavailable to fixed-point/invariant-subspace alternatives. **Only proceed if BH-004 survives.** This is HYP-005's proving ground.
+**(v0.6) LICENSED** (spec §5.4 row 1, 2026-08-13): BH-004 survived its confirmatory + adversarial cycle. Not yet scheduled — owner sequencing decision; note the AR-010 quasiperiodic dephasing-stabilization finding and the AR-020 class-split comparator result are directly BH-005-shaped starting evidence.
 
 ### BH-006 — Complexity/entropy complementarity
 Two information variables: entropy-like (accessible correlations/coarse-graining) and complexity-like (continued microscopic evolution); phase portrait \((S(t),\mathcal C(t))\) where \(S\) saturates while \(\mathcal C\) evolves. Motivation: TH-019 and the interior/complexity literature.

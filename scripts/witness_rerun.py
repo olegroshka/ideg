@@ -65,7 +65,9 @@ def build(group, seed, run_idx, rng):
 
 
 results = {"group": GROUP, "n_sites": N,
-           "manifest": "confirmatory_manifest_addendum2.json", "runs": []}
+           "manifest": Path(os.environ.get(
+               "IDEG_ADDENDUM",
+               "confirmatory_manifest_addendum2.json")).name, "runs": []}
 t0 = time.time()
 for run_idx, seed in enumerate(SEEDS):
     rng = np.random.default_rng(seed)
@@ -85,7 +87,7 @@ for run_idx, seed in enumerate(SEEDS):
           flush=True)
 
 results["_runtime_s"] = round(time.time() - t0, 1)
-outpath = CONF / f"rerun_{GROUP}_N{N}.json"
+outpath = CONF / f"{PREFIX}{GROUP}_N{N}.json"
 with open(outpath, "w") as f:
     json.dump(results, f, indent=2)
 print(f"done: {outpath} ({results['_runtime_s']}s)")

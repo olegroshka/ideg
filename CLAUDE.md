@@ -76,8 +76,8 @@ results/     run outputs, figures, serialized data (gitignored where large)
 ## Current state (update this block when it changes)
 
 - Repo: https://github.com/olegroshka/ideg (private), created 2026-08-11.
-- Substrate versions: KB-001 v0.3, KB-002 v0.2, KB-003 v0.5, KB-004 v0.5,
-  KB-005 v0.11 (2026-08-13).
+- Substrate versions: KB-001 v0.3, KB-002 v0.2, KB-003 v0.5, KB-004 v0.6,
+  KB-005 v0.12 (2026-08-13).
 - **AR-020 EXECUTED/RECONCILED (2026-08-13):** Amendment 4 ratified +
   applied ({PR_A, w2_mean, Ξ}; W3 descriptive); comparator probe
   class-split (chaotic matchable at 0.066 — ETH; quasiperiodic/
@@ -126,8 +126,15 @@ results/     run outputs, figures, serialized data (gitignored where large)
   object NOT FOUND in survey scope (SRC-060..063 checked); paper novelty
   language restricted to conditional diagnostic/framing level. See
   `ar/AR-021_note-2026-08-13_dephasing-stabilization-lit.md`.
-- Next session: **owner ruling on the criterion-(a) forward path**
-  (accept-and-report / criterion sizes (12, 14) via Krylov / ensemble
-  n = 40 at current sizes), then **first-paper drafting** (AR-021
-  framing constraints; candidate leads: the class-split comparator
-  finding + the dephasing-stabilization sign structure).
+- **AR-020 CLOSED with the FINAL verdict (owner Amendment 5, n = 40):
+  criterion (a) HOLDS** — 18/18 pair × size checks on fresh addendum-3
+  seeds (`results/AR-010/rerun40_summary.json`). Dual record mandatory:
+  the original preregistered battery failed its own null test; the
+  reformalized battery passes. §5.4 row 1 standing: **BH-004 supported
+  in-model; BH-005 LICENSED; HYP-009 geometric part has its first model
+  realization.**
+- Next session target: **first-paper drafting** (dual-record framing;
+  AR-021 novelty constraints; candidate leads: dephasing-stabilization
+  sign structure + class-split comparator finding). Also available at
+  owner's choosing: BH-005 sequencing decision; AR-015 census
+  completion; SRC-052..063 verification.

@@ -131,3 +131,29 @@ Findings of record:
    (c) raise ensemble size (n = 40 halves the AUC SE) at the current
    sizes — cheapest fix, needs a dated amendment + fresh seeds.
 
+## 5. Amendment 5 and the FINAL verdict (owner ruling: n = 40 then
+accept)
+
+Amendment 5 ratified and executed same-day (addendum-3 fresh seeds,
+n = 40, both sizes; ~30 min compute). **Criterion (a): HOLDS — all 18
+pair × size checks pass** (rerun40_summary.json). The marginal pair
+stabilized above threshold (scrambling|integrable N = 10:
+0.9788/0.9519/0.9563); scrambling|localized passes both sizes
+(w2_mean + Ξ ≈ 0.987–0.992). Verdict accepted as final per the ruling.
+
+Honest dual-record framing (mandatory in all downstream use): the
+ORIGINAL preregistered battery failed its own null test; criterion (a)
+holds under the owner-ratified reformalized battery on fresh seeds at
+stabilized ensembles. Both facts are results.
+
+§5.4 row-1 effects now standing: BH-004 supported in-model (evidence
+note updated); **BH-005 licensed** (BH-004 survived); HYP-009's
+geometric part has its first model realization (dated evidence line;
+status unchanged — owner scope note of 2026-08-13 stands).
+
+Ops incident (recorded): the first Amendment-5 launch wrote n = 40 data
+over the Amendment-4 filenames (the runner's output prefix was defined
+but unused — my defect). Recovery: n = 40 data renamed to rerun40_*,
+n = 20 files restored byte-identical from commit 5efaa73, runner fixed.
+No data lost; the incident and fix are in the session log.
+

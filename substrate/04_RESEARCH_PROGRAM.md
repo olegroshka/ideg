@@ -4,7 +4,7 @@ title: "IDEG Research Program — Agentic Protocol, Phases, Gates, and Backlog"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-13
-version: 0.11
+version: 0.12
 research_layer: R4
 epistemic_status: NOT_APPLICABLE
 sources:
@@ -23,6 +23,7 @@ changelog:
   - "0.9: AR-021 added + executed (Claude, 2026-08-13) — dephasing-stabilization literature check: mechanism known, object not found in scope, conditional framing novelty only; KB-003 → v0.5 (SRC-059..063, verify) — see §25"
   - "0.10: owner rulings 2026-08-13 — BH-004 → PLAUSIBLE (KB-004 v0.5); AR-020 APPROVED as scoped (next work item); amendment candidates folded into AR-020; decay-rate-law deferred until paper draft — see §26"
   - "0.11: AR-020 EXECUTED/RECONCILED (Claude + owner ratification, 2026-08-13) — Amendment 4 applied; comparator class-split; fresh-seed (a) re-adjudication FAILS on scrambling|integrable at N = 10 (finite-size, seed-luck finding); forward-path ruling queued — see §27"
+  - "0.12: AR-020 CLOSED with the FINAL verdict (owner Amendment 5, n = 40): criterion (a) HOLDS (18/18); §5.4 row 1 — BH-004 supported in-model, BH-005 LICENSED, HYP-009 geometric first realization; KB-004 → v0.6; next: first-paper drafting — see §28"
 ---
 
 # Research Program and Agentic Protocol
@@ -207,6 +208,7 @@ Phase G  Iteration           G6: next-cycle decision recorded (ADR)
 **Promotion_effect:** criterion (a) becomes re-adjudicable; BH-004's witnessed-stationarity leg unblocks.
 **Kill_effect:** if no null-silent witness pair can separate scrambling|localized, that inseparability is recorded as a substantive negative about witnessing scrambling-class motion beneath stationary geometry.
 **(v0.11) Status: EXECUTED/RECONCILED 2026-08-13** (`ar/AR-020_reformalization-2026-08-13.md`). Amendment 4 owner-ratified and applied (statistic set {PR_A, w2_mean, Ξ}; W3 descriptive; §4.1 corrected). Requirement 1 met (null-silent set; scrambling|localized passes both sizes on fresh seeds). Requirement 2 answered class-split (Φ-matched motionless comparator EXISTS for chaotic — microcanonical, miss 0.066; natural families MISS for quasiperiodic/metastable/localized — sustained-by evidence sharpened along class lines). Fresh-seed re-adjudication: **criterion (a) still FAILS** — scrambling|integrable at N = 10 (threshold-straddling AUCs; passes at N = 12); obstruction is finite-size resolving power, not witness structure; the original-seed 18/18 validation was partly seed luck (fresh-seed discipline vindicated). Forward paths queued for owner: accept-and-report / sizes (12, 14) via Krylov / ensemble n = 40.
+**(v0.12, FINAL) Owner chose n = 40 (Amendment 5); verdict: criterion (a) HOLDS** — all 18 pair × size checks on addendum-3 fresh seeds (`results/AR-010/rerun40_summary.json`); the marginal pair stabilized above threshold (scrambling|integrable N = 10: 0.9788/0.9519/0.9563). Dual record mandatory downstream: the original preregistered battery failed its own null test; the reformalized battery passes. §5.4 row-1 effects recorded: BH-004 supported in-model; **BH-005 LICENSED**; HYP-009 geometric part gains its first model realization (KB-004 v0.6). AR-020 CLOSED.
 
 ### AR-021 — Dephasing-stabilization literature check *(new v0.9; executed in-session)*
 `mode: VERIFY + EXPLORE` · `parent: AR-010/AR-011 outcome; first-paper framing` · `priority: P1` ·
@@ -423,3 +425,12 @@ Next scheduled work: **AR-020**, then first-paper drafting.
 1. §6 AR-020: EXECUTED/RECONCILED 2026-08-13. Amendment 4 (owner-ratified) applied to the spec; comparator probe answered class-split; fresh-seed criterion-(a) re-adjudication FAILS on scrambling|integrable at N = 10 only (passes N = 12; two-size replication broken) — recorded negative with the seed-luck finding (original-seed validation 18/18 vs fresh-seed fail: AUC threshold-straddling at n = 20).
 2. BH-004 status unchanged (PLAUSIBLE — grounded on criterion (b) + switch-off, independent of (a)).
 3. Next scheduled work: owner ruling on the criterion-(a) forward path (accept-and-report / sizes (12, 14) Krylov / ensemble n = 40), then first-paper drafting.
+
+---
+
+## 28. Changelog v0.11 → v0.12
+
+1. §6 AR-020 CLOSED with the FINAL verdict: owner chose Amendment 5 (n = 40, fresh addendum-3 seeds); **criterion (a) HOLDS** — all 18 checks, marginal pair stabilized above threshold. Dual record (original battery failed its null test; reformalized battery passes) is mandatory in all downstream use.
+2. §5.4 row-1 effects: BH-004 supported in-model; **BH-005 LICENSED** (not scheduled — owner sequencing); HYP-009 geometric part first model realization. KB-004 → v0.6.
+3. Ops incident recorded (AR-020 session log): first Amendment-5 launch overwrote Amendment-4 outputs (runner prefix defect, mine); recovered byte-identical from 5efaa73; n = 40 data preserved as rerun40_*; runner fixed. No data lost.
+4. Next scheduled work: **first-paper drafting** (AR-021 framing constraints; dual-record framing; candidate leads: dephasing-stabilization sign structure, class-split comparator finding). BH-005 sequencing decision available whenever the owner wants it.

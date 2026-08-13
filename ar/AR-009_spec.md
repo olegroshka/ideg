@@ -581,3 +581,20 @@ scaling is reported descriptively (no extrapolation claims — scope wall §7).
   rescue it; the outcome is accepted as final either way (owner ruling).
   TC_localized scales to 40 realizations × 5 states (realization =
   resampling unit).
+- **2026-08-13 — Amendment 5 outcome (FINAL criterion-(a) verdict):
+  HOLDS.** All 18 pair × size checks pass on the addendum-3 fresh seeds
+  at n = 40 (results/AR-010/rerun40_summary.json). The formerly-marginal
+  scrambling|integrable pair at N = 10 stabilized ABOVE threshold
+  (pr_A 0.9788, w2_mean 0.9519, Ξ 0.9563); scrambling|localized passes
+  both sizes via w2_mean + Ξ (0.987–0.992). Honest framing of record:
+  the ORIGINAL preregistered battery failed (W3 null-fire, 2026-08-12);
+  criterion (a) holds under the owner-ratified Amendment-4 battery,
+  fresh-seeded and ensemble-stabilized — the paper must state both.
+  Combined §5.4 standing: (a) holds [amended battery] + (b) holds
+  [original preregistration] → row 1 effects: BH-004 supported in-model;
+  BH-005 licensed; HYP-009's geometric part gains its first model
+  realization (KB-004/KB-005 records updated; promotion rulings remain
+  the owner's). Ops note: the first Amendment-5 launch wrote to the
+  Amendment-4 filenames (script prefix defect, fixed); the n = 20 files
+  were restored from commit 5efaa73 and the n = 40 data preserved as
+  rerun40_* — no data lost, incident recorded in the session log.
