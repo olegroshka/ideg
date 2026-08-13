@@ -77,7 +77,14 @@ results/     run outputs, figures, serialized data (gitignored where large)
 
 - Repo: https://github.com/olegroshka/ideg (private), created 2026-08-11.
 - Substrate versions: KB-001 v0.3, KB-002 v0.2, KB-003 v0.5, KB-004 v0.5,
-  KB-005 v0.10 (2026-08-13).
+  KB-005 v0.11 (2026-08-13).
+- **AR-020 EXECUTED/RECONCILED (2026-08-13):** Amendment 4 ratified +
+  applied ({PR_A, w2_mean, Ξ}; W3 descriptive); comparator probe
+  class-split (chaotic matchable at 0.066 — ETH; quasiperiodic/
+  metastable/localized miss ≳ ε_Φ — motion-borne geometry); fresh-seed
+  (a) re-adjudication FAILS on scrambling|integrable at N = 10 only
+  (passes N = 12; original-seed 18/18 was partly seed luck — fresh-seed
+  discipline vindicated). See `ar/AR-020_reformalization-2026-08-13.md`.
 - **Owner rulings 2026-08-13:** BH-004 → PLAUSIBLE (BH-004 only; HYP-009
   geometric part stays SPECULATIVE); AR-020 APPROVED as scoped;
   amendment candidates folded into AR-020; decay-rate-law deferred until
@@ -119,8 +126,8 @@ results/     run outputs, figures, serialized data (gitignored where large)
   object NOT FOUND in survey scope (SRC-060..063 checked); paper novelty
   language restricted to conditional diagnostic/framing level. See
   `ar/AR-021_note-2026-08-13_dephasing-stabilization-lit.md`.
-- Next session target: **AR-020** (FORMALIZE — witness-battery
-  reformalization: null-silent W3 replacement; Φ-matched motionless
-  comparator or impossibility proof; then criterion-(a) re-adjudication
-  on existing data where valid; absorbs the two amendment candidates).
-  Then first-paper drafting under the AR-021 framing constraints.
+- Next session: **owner ruling on the criterion-(a) forward path**
+  (accept-and-report / criterion sizes (12, 14) via Krylov / ensemble
+  n = 40 at current sizes), then **first-paper drafting** (AR-021
+  framing constraints; candidate leads: the class-split comparator
+  finding + the dephasing-stabilization sign structure).

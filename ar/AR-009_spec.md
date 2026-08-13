@@ -560,3 +560,15 @@ scaling is reported descriptively (no extrapolation claims — scope wall §7).
      validation table (18/18 pairs ≥ 2 statistics) is exploratory.
   4. No numeric thresholds change (AUC ≥ 0.95, ≥ 2 statistics, two
      sizes, class-(i) exact-value rule).
+- **2026-08-13 — Amendment 4 re-adjudication outcome (fresh seeds,
+  addendum 2).** Criterion (a) **FAILS on two-size replication**:
+  T-A holds (all pairs, both sizes); scrambling|localized now passes
+  both sizes (the reformalization's design target); but
+  scrambling|integrable fails at N = 10 (pr_A 0.925, w2_mean 0.85,
+  Ξ 0.855) while passing at N = 12 (0.955/0.9475/0.95). The original-
+  seed 18/18 validation pass was partly seed luck (AUC SE ≈ 0.05–0.08
+  at n = 20) — the fresh-seed discipline caught it. Obstruction is
+  finite-size resolving power at N = 10, not witness structure. Forward
+  paths queued for owner (AR-020 packet §4): accept-and-report /
+  criterion sizes (12, 14) via Krylov / ensemble n = 40. No change
+  enacted.

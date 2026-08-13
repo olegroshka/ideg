@@ -1,0 +1,19 @@
+{
+  "group": "TA_i_fixed_point",
+  "n_sites": 10,
+  "manifest": "confirmatory_manifest_addendum2.json",
+  "runs": [
+    {
+      "seed": 1639347833,
+      "states": [
+        {
+          "pr_A": 1.0,
+          "w2_mean": 3.483824493893012e-15,
+          "w2_min": 6.661338147750939e-16,
+          "xi": 3.552713678800501e-15
+        }
+      ]
+    }
+  ],
+  "_runtime_s": 0.3
+}

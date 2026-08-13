@@ -1,0 +1,417 @@
+{
+  "date": "2026-08-13",
+  "amendment": "spec \u00a78 Amendment 4",
+  "manifest": "confirmatory_manifest_addendum2.json",
+  "statistics": [
+    "pr_A",
+    "w2_mean",
+    "xi"
+  ],
+  "tracks": {
+    "TA": {
+      "10": {
+        "pairs": {
+          "TA_i_fixed_point|TA_ii_quasiperiodic": {
+            "stats": {
+              "pr_A": {
+                "rule": "exact-value",
+                "exact": 1.0,
+                "separates": true
+              },
+              "w2_mean": {
+                "rule": "exact-value",
+                "exact": 3.483824493893012e-15,
+                "separates": true
+              },
+              "xi": {
+                "rule": "exact-value",
+                "exact": 3.552713678800501e-15,
+                "separates": true
+              }
+            },
+            "n_separating": 3,
+            "pass": true
+          },
+          "TA_i_fixed_point|TA_iii_chaotic": {
+            "stats": {
+              "pr_A": {
+                "rule": "exact-value",
+                "exact": 1.0,
+                "separates": true
+              },
+              "w2_mean": {
+                "rule": "exact-value",
+                "exact": 3.483824493893012e-15,
+                "separates": true
+              },
+              "xi": {
+                "rule": "exact-value",
+                "exact": 3.552713678800501e-15,
+                "separates": true
+              }
+            },
+            "n_separating": 3,
+            "pass": true
+          },
+          "TA_i_fixed_point|TA_iv_metastable": {
+            "stats": {
+              "pr_A": {
+                "rule": "exact-value",
+                "exact": 1.0,
+                "separates": true
+              },
+              "w2_mean": {
+                "rule": "exact-value",
+                "exact": 3.483824493893012e-15,
+                "separates": true
+              },
+              "xi": {
+                "rule": "exact-value",
+                "exact": 3.552713678800501e-15,
+                "separates": true
+              }
+            },
+            "n_separating": 3,
+            "pass": true
+          },
+          "TA_ii_quasiperiodic|TA_iii_chaotic": {
+            "stats": {
+              "pr_A": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              },
+              "w2_mean": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              },
+              "xi": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              }
+            },
+            "n_separating": 3,
+            "pass": true
+          },
+          "TA_ii_quasiperiodic|TA_iv_metastable": {
+            "stats": {
+              "pr_A": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              },
+              "w2_mean": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              },
+              "xi": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              }
+            },
+            "n_separating": 3,
+            "pass": true
+          },
+          "TA_iii_chaotic|TA_iv_metastable": {
+            "stats": {
+              "pr_A": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              },
+              "w2_mean": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              },
+              "xi": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              }
+            },
+            "n_separating": 3,
+            "pass": true
+          }
+        },
+        "all_pairs_pass": true
+      },
+      "12": {
+        "pairs": {
+          "TA_i_fixed_point|TA_ii_quasiperiodic": {
+            "stats": {
+              "pr_A": {
+                "rule": "exact-value",
+                "exact": 1.0,
+                "separates": true
+              },
+              "w2_mean": {
+                "rule": "exact-value",
+                "exact": -1.372863042084958e-15,
+                "separates": true
+              },
+              "xi": {
+                "rule": "exact-value",
+                "exact": -1.7763568394002505e-15,
+                "separates": true
+              }
+            },
+            "n_separating": 3,
+            "pass": true
+          },
+          "TA_i_fixed_point|TA_iii_chaotic": {
+            "stats": {
+              "pr_A": {
+                "rule": "exact-value",
+                "exact": 1.0,
+                "separates": true
+              },
+              "w2_mean": {
+                "rule": "exact-value",
+                "exact": -1.372863042084958e-15,
+                "separates": true
+              },
+              "xi": {
+                "rule": "exact-value",
+                "exact": -1.7763568394002505e-15,
+                "separates": true
+              }
+            },
+            "n_separating": 3,
+            "pass": true
+          },
+          "TA_i_fixed_point|TA_iv_metastable": {
+            "stats": {
+              "pr_A": {
+                "rule": "exact-value",
+                "exact": 1.0,
+                "separates": true
+              },
+              "w2_mean": {
+                "rule": "exact-value",
+                "exact": -1.372863042084958e-15,
+                "separates": true
+              },
+              "xi": {
+                "rule": "exact-value",
+                "exact": -1.7763568394002505e-15,
+                "separates": true
+              }
+            },
+            "n_separating": 3,
+            "pass": true
+          },
+          "TA_ii_quasiperiodic|TA_iii_chaotic": {
+            "stats": {
+              "pr_A": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              },
+              "w2_mean": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              },
+              "xi": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              }
+            },
+            "n_separating": 3,
+            "pass": true
+          },
+          "TA_ii_quasiperiodic|TA_iv_metastable": {
+            "stats": {
+              "pr_A": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              },
+              "w2_mean": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              },
+              "xi": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              }
+            },
+            "n_separating": 3,
+            "pass": true
+          },
+          "TA_iii_chaotic|TA_iv_metastable": {
+            "stats": {
+              "pr_A": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              },
+              "w2_mean": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              },
+              "xi": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              }
+            },
+            "n_separating": 3,
+            "pass": true
+          }
+        },
+        "all_pairs_pass": true
+      },
+      "holds": true
+    },
+    "TC": {
+      "10": {
+        "pairs": {
+          "TC_scrambling|TC_integrable": {
+            "stats": {
+              "pr_A": {
+                "rule": "auc",
+                "auc": 0.925,
+                "separates": false
+              },
+              "w2_mean": {
+                "rule": "auc",
+                "auc": 0.85,
+                "separates": false
+              },
+              "xi": {
+                "rule": "auc",
+                "auc": 0.855,
+                "separates": false
+              }
+            },
+            "n_separating": 0,
+            "pass": false
+          },
+          "TC_scrambling|TC_localized": {
+            "stats": {
+              "pr_A": {
+                "rule": "auc",
+                "auc": 0.85,
+                "separates": false
+              },
+              "w2_mean": {
+                "rule": "auc",
+                "auc": 0.97,
+                "separates": true
+              },
+              "xi": {
+                "rule": "auc",
+                "auc": 0.9775,
+                "separates": true
+              }
+            },
+            "n_separating": 2,
+            "pass": true
+          },
+          "TC_integrable|TC_localized": {
+            "stats": {
+              "pr_A": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              },
+              "w2_mean": {
+                "rule": "auc",
+                "auc": 0.9975,
+                "separates": true
+              },
+              "xi": {
+                "rule": "auc",
+                "auc": 0.9925,
+                "separates": true
+              }
+            },
+            "n_separating": 3,
+            "pass": true
+          }
+        },
+        "all_pairs_pass": false
+      },
+      "12": {
+        "pairs": {
+          "TC_scrambling|TC_integrable": {
+            "stats": {
+              "pr_A": {
+                "rule": "auc",
+                "auc": 0.955,
+                "separates": true
+              },
+              "w2_mean": {
+                "rule": "auc",
+                "auc": 0.9475,
+                "separates": false
+              },
+              "xi": {
+                "rule": "auc",
+                "auc": 0.95,
+                "separates": true
+              }
+            },
+            "n_separating": 2,
+            "pass": true
+          },
+          "TC_scrambling|TC_localized": {
+            "stats": {
+              "pr_A": {
+                "rule": "auc",
+                "auc": 0.5975,
+                "separates": false
+              },
+              "w2_mean": {
+                "rule": "auc",
+                "auc": 0.985,
+                "separates": true
+              },
+              "xi": {
+                "rule": "auc",
+                "auc": 0.9925,
+                "separates": true
+              }
+            },
+            "n_separating": 2,
+            "pass": true
+          },
+          "TC_integrable|TC_localized": {
+            "stats": {
+              "pr_A": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              },
+              "w2_mean": {
+                "rule": "auc",
+                "auc": 1.0,
+                "separates": true
+              },
+              "xi": {
+                "rule": "auc",
+                "auc": 0.995,
+                "separates": true
+              }
+            },
+            "n_separating": 3,
+            "pass": true
+          }
+        },
+        "all_pairs_pass": true
+      },
+      "holds": false
+    }
+  },
+  "criterion_a_holds": false
+}

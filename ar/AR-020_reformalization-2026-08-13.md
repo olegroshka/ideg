@@ -20,8 +20,9 @@ deliverable: this packet; spec §8 Amendment 4 (owner-ratified);
 promotion_effect: criterion (a) becomes re-adjudicable; BH-004's
   witnessed-stationarity leg unblocks
 kill_effect: none reached (the requirement had a constructive answer)
-status: DONE pending owner ratification of Amendment 4 + the fresh-seed
-  confirmation run (2026-08-13)
+status: DONE (2026-08-13; Amendment 4 ratified + executed; fresh-seed
+  re-adjudication FAILS on scrambling|integrable at N = 10 — recorded
+  negative, three forward paths queued for owner)
 ```
 
 ## 1. Requirement 1 — the null-silent statistic set
@@ -98,4 +99,35 @@ style adversarial pressure demands it.
 
 ## 4. Outcome
 
-(pending owner ratification and the fresh-seed run)
+**Amendment 4 ratified and executed; fresh-seed re-adjudication:
+criterion (a) FAILS — honestly, on a different pair.** Fresh seeds
+(addendum 2, committed pre-execution; results in rerun_summary.json):
+
+- T-A: HOLDS — all six pairs, both sizes, every statistic separating.
+- The AR-020 target pair scrambling|localized now PASSES at both sizes
+  (w2_mean 0.97/0.985; Ξ 0.9775/0.9925) — the reformalization achieved
+  its design requirement.
+- **scrambling|integrable FAILS at N = 10** (pr_A 0.925, w2_mean 0.85,
+  Ξ 0.855 — no statistic reaches 0.95) while passing at N = 12
+  (0.955/0.9475/0.95). Two-size replication therefore fails.
+
+Findings of record:
+
+1. **The fresh-seed discipline earned its keep:** the same battery
+   passed 18/18 on the original (redesign-informing) seeds — the
+   scrambling|integrable margin at N = 10 is genuinely threshold-
+   straddling (AUC SE ≈ 0.05–0.08 at n = 20), and the original pass
+   (0.9525/0.95) was partly seed luck. A validation-only adoption would
+   have over-claimed.
+2. The remaining obstruction is FINITE-SIZE, not structural: the
+   scrambling|integrable distinction sharpens with N (all three
+   statistics rise from N = 10 to 12). The battery has no null-silence
+   defect and no under-witnessed pair left; what it lacks is resolving
+   power at the smaller criterion size.
+3. Paths forward (owner decision; none enacted): (a) accept and report
+   — the paper states witnessed class separation holds at N = 12 and is
+   threshold-marginal at N = 10; (b) extend to criterion sizes (12, 14)
+   — N = 14 needs Krylov (the spec's own noted amendment path);
+   (c) raise ensemble size (n = 40 halves the AUC SE) at the current
+   sizes — cheapest fix, needs a dated amendment + fresh seeds.
+

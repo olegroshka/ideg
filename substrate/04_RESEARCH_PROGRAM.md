@@ -4,7 +4,7 @@ title: "IDEG Research Program — Agentic Protocol, Phases, Gates, and Backlog"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-13
-version: 0.10
+version: 0.11
 research_layer: R4
 epistemic_status: NOT_APPLICABLE
 sources:
@@ -22,6 +22,7 @@ changelog:
   - "0.8: AR-011 EXECUTED/RECONCILED (Claude, 2026-08-13) — verdicts survive, fragility-direction and §4.1 Φ-matching refuted with dated corrections (KB-004 → v0.4); partition-dependence scope wall; AR-020 requirements sharpened; §10 adversarial gate met — see §24"
   - "0.9: AR-021 added + executed (Claude, 2026-08-13) — dephasing-stabilization literature check: mechanism known, object not found in scope, conditional framing novelty only; KB-003 → v0.5 (SRC-059..063, verify) — see §25"
   - "0.10: owner rulings 2026-08-13 — BH-004 → PLAUSIBLE (KB-004 v0.5); AR-020 APPROVED as scoped (next work item); amendment candidates folded into AR-020; decay-rate-law deferred until paper draft — see §26"
+  - "0.11: AR-020 EXECUTED/RECONCILED (Claude + owner ratification, 2026-08-13) — Amendment 4 applied; comparator class-split; fresh-seed (a) re-adjudication FAILS on scrambling|integrable at N = 10 (finite-size, seed-luck finding); forward-path ruling queued — see §27"
 ---
 
 # Research Program and Agentic Protocol
@@ -205,6 +206,7 @@ Phase G  Iteration           G6: next-cycle decision recorded (ADR)
 **Deliverable:** amended witness section as an AR-009 §8 amendment (owner-reviewed) + rerun of the criterion-(a) analysis on the existing confirmatory data where valid, new runs where the witness definition demands them.
 **Promotion_effect:** criterion (a) becomes re-adjudicable; BH-004's witnessed-stationarity leg unblocks.
 **Kill_effect:** if no null-silent witness pair can separate scrambling|localized, that inseparability is recorded as a substantive negative about witnessing scrambling-class motion beneath stationary geometry.
+**(v0.11) Status: EXECUTED/RECONCILED 2026-08-13** (`ar/AR-020_reformalization-2026-08-13.md`). Amendment 4 owner-ratified and applied (statistic set {PR_A, w2_mean, Ξ}; W3 descriptive; §4.1 corrected). Requirement 1 met (null-silent set; scrambling|localized passes both sizes on fresh seeds). Requirement 2 answered class-split (Φ-matched motionless comparator EXISTS for chaotic — microcanonical, miss 0.066; natural families MISS for quasiperiodic/metastable/localized — sustained-by evidence sharpened along class lines). Fresh-seed re-adjudication: **criterion (a) still FAILS** — scrambling|integrable at N = 10 (threshold-straddling AUCs; passes at N = 12); obstruction is finite-size resolving power, not witness structure; the original-seed 18/18 validation was partly seed luck (fresh-seed discipline vindicated). Forward paths queued for owner: accept-and-report / sizes (12, 14) via Krylov / ensemble n = 40.
 
 ### AR-021 — Dephasing-stabilization literature check *(new v0.9; executed in-session)*
 `mode: VERIFY + EXPLORE` · `parent: AR-010/AR-011 outcome; first-paper framing` · `priority: P1` ·
@@ -413,3 +415,11 @@ Owner ruled on the full decision block (recorded in
 4. **AR-019 decay-rate-law follow-up DEFERRED until paper draft** (funded only if the mechanism section needs it).
 
 Next scheduled work: **AR-020**, then first-paper drafting.
+
+---
+
+## 27. Changelog v0.10 → v0.11
+
+1. §6 AR-020: EXECUTED/RECONCILED 2026-08-13. Amendment 4 (owner-ratified) applied to the spec; comparator probe answered class-split; fresh-seed criterion-(a) re-adjudication FAILS on scrambling|integrable at N = 10 only (passes N = 12; two-size replication broken) — recorded negative with the seed-luck finding (original-seed validation 18/18 vs fresh-seed fail: AUC threshold-straddling at n = 20).
+2. BH-004 status unchanged (PLAUSIBLE — grounded on criterion (b) + switch-off, independent of (a)).
+3. Next scheduled work: owner ruling on the criterion-(a) forward path (accept-and-report / sizes (12, 14) Krylov / ensemble n = 40), then first-paper drafting.
