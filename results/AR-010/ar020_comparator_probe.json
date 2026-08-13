@@ -1,0 +1,83 @@
+{
+  "date": "2026-08-13",
+  "n_sites": 10,
+  "eps_phi": 0.25,
+  "groups": {
+    "TA_ii_quasiperiodic": {
+      "rho_bar_miss": 0.46517004847547977,
+      "families": {
+        "thermal": {
+          "min_miss": 0.3614460495007595,
+          "beta": -5.0
+        },
+        "depolarized_rho_bar": {
+          "min_miss": 0.46517004847549137,
+          "lambda": 0.0
+        },
+        "microcanonical": {
+          "min_miss": 0.6160239073318604,
+          "E0": 5.093445522964405,
+          "sigma_E": 0.12053348366664544
+        }
+      },
+      "overall_min_miss": 0.3614460495007595
+    },
+    "TA_iii_chaotic": {
+      "rho_bar_miss": 0.6194439919944172,
+      "families": {
+        "thermal": {
+          "min_miss": 0.42633111660211553,
+          "beta": 0.9180942678743857
+        },
+        "depolarized_rho_bar": {
+          "min_miss": 0.6194439919944172,
+          "lambda": 0.0
+        },
+        "microcanonical": {
+          "min_miss": 0.06633833724635617,
+          "E0": 3.058609255989051,
+          "sigma_E": 0.9522481920474684
+        }
+      },
+      "overall_min_miss": 0.06633833724635617
+    },
+    "TA_iv_metastable": {
+      "rho_bar_miss": 0.8957346478950045,
+      "families": {
+        "thermal": {
+          "min_miss": 0.3097986183955662,
+          "beta": -0.5218267838351592
+        },
+        "depolarized_rho_bar": {
+          "min_miss": 0.234258413271099,
+          "lambda": 0.9500000000000001
+        },
+        "microcanonical": {
+          "min_miss": 0.2745514642696047,
+          "E0": -4.946748103260877,
+          "sigma_E": 1.684461460286523
+        }
+      },
+      "overall_min_miss": 0.234258413271099
+    },
+    "TC_localized": {
+      "rho_bar_miss": 0.39225820356143165,
+      "families": {
+        "thermal": {
+          "min_miss": 0.43342356999942977,
+          "beta": -2.8419019816086903
+        },
+        "depolarized_rho_bar": {
+          "min_miss": 0.392258203563472,
+          "lambda": 0.0
+        },
+        "microcanonical": {
+          "min_miss": 0.3155679849109964,
+          "E0": 38.347319095305416,
+          "sigma_E": 2.895317174310891
+        }
+      },
+      "overall_min_miss": 0.3155679849109964
+    }
+  }
+}

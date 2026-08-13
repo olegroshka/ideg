@@ -536,3 +536,27 @@ scaling is reported descriptively (no extrapolation claims — scope wall §7).
   are FOLDED INTO AR-020 (KB-005 §6): any adoption arrives as a single
   coherent AR-020 output via a future dated amendment here, not as
   piecemeal edits. No preregistered content changed by this entry.
+- **2026-08-13 — Amendment 4 (owner-ratified; AR-020 output —
+  `ar/AR-020_reformalization-2026-08-13.md`).**
+  1. §5.1 criterion-(a) statistic set → **{PR_A, w2_mean (mean d_phys),
+     Ξ}**. w2_mean is null-silent by construction (d_phys ≡ 0 for any
+     frozen state; measured machine-zero on the null). min d_phys and
+     the W3 statistics (c_sat, t*) are demoted to DESCRIPTIVE outputs;
+     §3 W3 loses its CON-034 witness designation (it fires on the §4.4
+     null — AR-010 finding of record) and is retained as an
+     operator-spreading diagnostic.
+  2. §4.1 matching language corrected per AR-011: the diagonal ensemble
+     matches the time-averaged two-site RDMs, NOT the MI graph.
+     Comparator finding of record (AR-020 probe): a Φ-matched motionless
+     comparator EXISTS for the chaotic class (Gaussian-microcanonical
+     diagonal state, miss 0.066 ≪ ε_Φ) and does NOT exist within the
+     natural stationary families for quasiperiodic/metastable/localized
+     (best misses 0.361/0.234/0.316 ≳ ε_Φ) — the sustained-by evidence
+     is class-split accordingly. Future sustained-by adjudications for
+     chaotic classes use the fitted microcanonical comparator.
+  3. Criterion (a) is re-adjudicated on FRESH manifest-committed seeds
+     (witness-only runs, both criterion sizes, ensembles as before —
+     confirmatory_manifest_addendum2.json). The existing-data
+     validation table (18/18 pairs ≥ 2 statistics) is exploratory.
+  4. No numeric thresholds change (AUC ≥ 0.95, ≥ 2 statistics, two
+     sizes, class-(i) exact-value rule).
