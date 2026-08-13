@@ -37,3 +37,28 @@ None.
 1. Title (A/B/C), 2. venue (rec: SciPost Physics), 3. author line,
 4. repo public at submission?, 5. fund decay-rate-law AR before
 submission? Then: draft §2 first per the writing plan.
+
+## Reflection addendum (same session — owner-directed objectivity audit)
+
+Joint reflection on novelty/overclaim; rulings folded into the outline:
+
+1. **Test-first reframing** — the operational instantiated-vs-maintained
+   test is the contribution; the class-split is its first measurement
+   (not "motion-borne geometry" as established fact).
+2. **Hardened probe gate** before §6 drafting: full ensembles, both
+   sizes, smooth-f(H) Chebyshev optimization
+   (scripts/ar020b_hardened_probe.py, running). Claim wording bound to
+   probe scope.
+3. Localized class → boundary case, out of headline counts.
+4. No firstness claims anywhere.
+5. Cross-discipline template fenced (proposed, not demonstrated);
+   **philosophy OUT of the paper** — AR-022 queued (KB-005 v0.13) for
+   the owner's own interest.
+
+Classification of record (for venue/tone): an INSTRUMENT paper
+(r-statistic/imbalance/OTOC-diagnostic genre) executed as a REGISTERED
+STUDY; claim types = instrument + measured in-model facts +
+methodological demonstration; zero mechanism/universality/gravity/
+firstness claims. Epistemically: the first severe test inside the IDEG
+programme (preregistration + adversarial companion as manufactured
+severity).

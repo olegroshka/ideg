@@ -5,18 +5,29 @@ item 1 (the preregistered first-deliverable paper); every claim below
 resolves to the AR-009 spec + AR-010/011/020/021 packets. Non-claims
 NC-001/006/008/009/010 are binding on the framing throughout.
 
-## 0. Thesis (one paragraph)
+## 0. Thesis (one paragraph) — TEST-FIRST FRAMING (reflection ruling
+2026-08-13)
 
-In finite spin chains, an information-geometric functional — the
-mutual-information-graph metric of [SRC-049] — can be exactly stationary
-while the underlying state demonstrably moves, and whether the
-stationarity *needs* the motion is class-resolved and measurable:
-chaotic-class geometry is matchable by a motionless thermal-window state
-(compatible-with), while quasiperiodic-, metastable-, and
-localized-class geometry has no natural motionless counterpart
-(motion-borne, sustained-by). A preregistered witness discipline makes
-these claims falsifiable — and its self-correction, when one witness
-failed its own null test, is reported as a result, not an embarrassment.
+We introduce an **operational test** of whether a stable emergent
+structure is merely *instantiated* by its substrate or *actively
+maintained* by the substrate's dynamics — switch-off response,
+motionless-comparator matching, and own-baseline robustness — and
+report its first measurement, on the mutual-information-graph metric
+[SRC-049] of finite spin chains. The measured outcome is a class-split:
+chaotic-class structure is matchable by a motionless thermal-window
+state (compatible-with; ETH-consistent), while quasiperiodic- and
+metastable-class structure has no motionless counterpart within the
+stationary families searched (motion-borne; hardened probe scope in
+§6). The localized class is reported as a boundary case throughout
+(it straddles the stationarity threshold itself). A preregistered
+witness discipline makes the claims falsifiable — its self-correction,
+when one witness failed its own null test, is reported as a result.
+
+**Classification (for tone/venue):** an INSTRUMENT paper (genre of the
+r-statistic/imbalance/OTOC-diagnostic papers) executed as a
+REGISTERED STUDY. Claim types: instrument claims + measured in-model
+facts + methodological demonstration; explicitly zero mechanism,
+universality, gravity, or firstness claims.
 
 ## 1. Candidate titles (owner picks)
 
@@ -86,7 +97,9 @@ failed its own null test, is reported as a result, not an embarrassment.
 - The methodological claims: (i) null-silence is a nontrivial filter —
   the field's default scrambling diagnostic fails it; (ii) sharp AUC
   thresholds at small ensembles are seed-sensitive by construction —
-  fresh-seed confirmation is not optional.
+  fresh-seed confirmation is not optional. NO FIRSTNESS CLAIMS anywhere
+  (no "first preregistered many-body study" language — we show the
+  artifact and let it speak; we have not surveyed for precedents).
 - Fig. 3: witness values per class (null row highlighted; discarded-W3
   panel shown struck through — the dual record as a figure).
 
@@ -113,14 +126,22 @@ failed its own null test, is reported as a result, not an embarrassment.
   our own adversarial pass; what survives is stronger:
 - Switch-off geometry jump: dephasing the state at t_off moves Φ by
   43–90% of ‖D̄‖ — killing the motion CHANGES the geometry.
-- The comparator theorem-shaped finding: MI is nonlinear in the
-  time-averaged RDMs, so the diagonal ensemble is NOT Φ-matched
-  (43–90% away); searching three natural stationary families:
-  chaotic geometry matched at 0.066 (microcanonical; ETH-consistent) —
-  compatible-with; quasiperiodic/metastable/localized miss at ≥ 0.23 —
-  MOTION-BORNE. The paper's headline dichotomy.
-- Fig. 5: (a) switch-off jump per class; (b) family-miss table with
-  the chaotic match highlighted.
+- The comparator finding: MI is nonlinear in the time-averaged RDMs,
+  so the diagonal ensemble is NOT Φ-matched (43–90% away). The
+  dichotomy is stated TEST-FIRST: the instrument is the matched-
+  comparator search; its measured outcome is the class-split.
+- **HARDENED PROBE (reflection ruling — closes the weak-quantifier
+  flag):** full ensembles, both criterion sizes, and a general smooth-
+  f(H) optimization (Chebyshev-parameterized log-populations) on top of
+  the three natural families — results replace the one-run/one-size
+  table before §6 is drafted. Claim wording is bound to the probe's
+  actual scope ("no stationary state that is a smooth function of H,
+  within the searched families and parameterization").
+- Localized class: reported as a BOUNDARY CASE (straddles ε_Φ itself),
+  excluded from headline counts.
+- Fig. 5: (a) switch-off jump per class; (b) miss distributions over
+  the full ensembles (hardened probe) with the chaotic match
+  highlighted.
 
 ### §7 Results V — Driven geometry: the DTC regime (~1.5 pp)
 - Stationary-with-witness 100/100 at ε = 0.03; rigidity h_sub(ε)
@@ -147,6 +168,17 @@ failed its own null test, is reported as a result, not an embarrassment.
 - The licensed next question (BH-005): does recurrence/quasiperiodic
   structure provide robustness unavailable to fixed points? — the
   negative-log ρ and motion-borne findings point directly at it.
+- **Cross-disciplinary template paragraph (fenced):** the sustained-by
+  test battery as a PROPOSED template for other fields where stable
+  emergent structure rides on flux — resting-state functional
+  connectivity, metabolic steady states, dynamically-maintained
+  ecological/market stability. Explicitly "proposed, not demonstrated;
+  we have results only in spin chains."
+- **Philosophy: OUT OF SCOPE for this paper** (owner ruling
+  2026-08-13). The operationalization of instantiated-vs-maintained
+  emergence is queued as a separate survey (AR-022, KB-005) for the
+  owner's own interest; at most one citation-free sentence here, or
+  nothing.
 - Decay-rate-law analysis (pre-approved conditional follow-up).
 - The census companion paper (KB-004 §9 item 2).
 - What an OL-4 version would require (posed, not claimed).
