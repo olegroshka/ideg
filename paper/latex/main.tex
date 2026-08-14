@@ -1,30 +1,31 @@
 % ============================================================
-% Motion-borne geometry — working LaTeX build.
-% SUBMISSION SWAP: replace the preamble block below with the official
-% SciPost class preamble (fetch current SciPost.cls at submission);
-% content is class-agnostic. Source of truth was paper/draft.md v0.3;
-% from this file on, main.tex is canonical.
+% Motion-borne geometry — Quantum (quantum-journal.org) build,
+% quantumarticle class (venue retargeted from SciPost 2026-08-14:
+% institutional-email registration gate). quantumarticle loads
+% hyperref and sets geometry itself. Canonical paper source.
 % ============================================================
-\documentclass[11pt,a4paper]{article}
-\usepackage[margin=25mm]{geometry}
+\RequirePackage[2023-06-01]{latexrelease} % quantumarticle v6.1 era
+\documentclass[a4paper,11pt,noarxiv]{quantumarticle}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{xcolor}
 \definecolor{linkink}{HTML}{1c3f77}
-\usepackage[colorlinks=true,linkcolor=linkink,citecolor=linkink,urlcolor=linkink]{hyperref}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=linkink,citecolor=linkink,
+urlcolor=linkink}
 \graphicspath{{../figures/}}
 \newcommand{\ephi}{\varepsilon_\Phi}
 \newcommand{\logr}{\log\rho}
 
-\title{\textbf{Motion-borne geometry: when an information metric needs
-the dynamics beneath it}}
-\author{Oleg Roshka\\[2pt]
-\normalsize Independent Researcher\\
-\normalsize \href{https://orcid.org/0009-0009-3075-9417}{ORCID:
+\title{Motion-borne geometry: when an information metric needs
+the dynamics beneath it}
+\author{Oleg Roshka}
+\affiliation{Independent Researcher \textnormal{--}
+\href{https://orcid.org/0009-0009-3075-9417}{ORCID
 0009-0009-3075-9417}}
-\date{Draft compiled \today}
+\date{\today}
 
 \begin{document}
 \maketitle
@@ -176,7 +177,7 @@ We use three tracks. Track~A collects four closed-system classes chosen
 to span the qualitative types of quantum motion
 (Table~\ref{tab:classes}).
 
-\begin{table}[t]
+\begin{table*}[t]
 \centering\small
 \begin{tabular}{@{}p{2.1cm}p{4.6cm}p{4.2cm}p{3.2cm}@{}}
 \toprule
@@ -200,7 +201,7 @@ Haar-random product states & $\langle r\rangle =
 \caption{Track-A classes. Certificates are preregistered sanity checks,
 run at every system size used before any confirmatory analysis.}
 \label{tab:classes}
-\end{table}
+\end{table*}
 
 Track~C reuses the chaotic and quasiperiodic Hamiltonians as
 ``scrambling'' and ``integrable'' regimes with N\'eel-anchored
@@ -242,7 +243,7 @@ graph on a \emph{posited} site factorization. It is not a claim about
 spacetime, and its dependence on the factorization is measured, not
 assumed away (Sec.~\ref{sec:scope}).
 
-\begin{figure}[t]
+\begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{fig1_pipeline.pdf}
 \caption{The pipeline, on real data (representative $N=10$ runs).
@@ -254,7 +255,7 @@ distances of the window mean $\bar D$). Bottom: a quasiperiodic
 state --- the graph visibly rearranges as the incommensurate magnon
 beats evolve.}
 \label{fig:pipeline}
-\end{figure}
+\end{figure*}
 
 Stationarity is judged on the window $\mathcal{W} = [20, 200]$ (units
 of inverse coupling; stroboscopic periods for Track~B), sampled every
@@ -366,7 +367,7 @@ interrogates: metrics that do not move over states that demonstrably do
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.78\textwidth]{fig2_drift.pdf}
+\includegraphics[width=\linewidth]{fig2_drift.pdf}
 \caption{Metric drift $\delta\Phi(t)$ for representative runs
 ($N=10$). The chaotic metric is stationary under the preregistered
 threshold while the quasiperiodic metric oscillates far above it; the
@@ -411,7 +412,7 @@ present it as a dual record --- the original registration failed; the
 ratified repair passed on fresh seeds --- because both halves are
 results (Fig.~\ref{fig:witnesses}).
 
-\begin{figure}[t]
+\begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{fig3_witnesses.pdf}
 \caption{The final witness battery (fresh seeds, $n=40$, $N=12$; per-run
@@ -423,7 +424,7 @@ and saturates near $1.1$--$1.5$, firing on a state that does not move;
 under the preregistered null-silence clause it was discarded from the
 criterion.}
 \label{fig:witnesses}
-\end{figure}
+\end{figure*}
 
 \textbf{The OTOC is not a witness of motion.} The null-silence
 requirement (Sec.~\ref{sec:witnessdef}) demands that a witness vanish
@@ -488,7 +489,7 @@ structure that is the study's most striking single measurement
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.62\textwidth]{fig4_gamma.pdf}
+\includegraphics[width=\linewidth]{fig4_gamma.pdf}
 \caption{Dephasing response by class: mean $\logr$ versus rate
 $\gamma$ (descriptive sweep, curves; first 10 manifest runs per class,
 N\'eel-primary for the localized regime). Squares with intervals: the
@@ -549,7 +550,7 @@ yes, the dynamics is optional for the structure; if no, the structure
 is motion-borne. This section reports the search, including the two
 corrections our own audits forced (Fig.~\ref{fig:comparator}).
 
-\begin{figure}[t]
+\begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{fig5_comparator.pdf}
 \caption{(a) The switch-off measurement: dephasing the state mid-window
@@ -563,7 +564,7 @@ a general smooth-$f(H)$ optimization, every run, paired dots per class
 except the quasiperiodic class (0/80 including the stress test);
 localized is the boundary case.}
 \label{fig:comparator}
-\end{figure}
+\end{figure*}
 
 \textbf{The canonical comparator is not matched.} The diagonal ensemble
 $\bar\rho$ --- the motionless state with the run's exact time-averaged
@@ -632,7 +633,7 @@ The discrete-time-crystal track supplies the study's cleanest
 stationary-with-witness regime and its most instructive
 compatible-with verdict (Fig.~\ref{fig:driven}).
 
-\begin{figure}[t]
+\begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{fig6_driven.pdf}
 \caption{(a) The full rigidity curve of the driven track: subharmonic
@@ -645,7 +646,7 @@ localization, not the drive, holds this metric. Inset: the clean
 interacting comparator (r2) does not thermalize on any probed horizon;
 its subharmonic weight is undiminished at 2000 periods.}
 \label{fig:driven}
-\end{figure}
+\end{figure*}
 
 At $\varepsilon = 0.03$, deep in the rigid phase, all 100 runs are
 metric-stationary while the subharmonic witness reads $0.939$: a
@@ -838,7 +839,7 @@ states.
 The complete dated record of every post-registration change, each with
 its reason and repository commit; no entry alters data already taken.
 
-\begin{table}[h]
+\begin{table*}[t]
 \centering\footnotesize
 \begin{tabular}{@{}p{1.25cm}p{9.55cm}p{2.55cm}@{}}
 \toprule
@@ -883,7 +884,7 @@ comparator, $\gamma$-grid, partition distribution, $N=14$ &
 \caption{The amendment log (12-character commit identifiers in the
 public repository).}
 \label{tab:log}
-\end{table}
+\end{table*}
 
 \section{Invariance battery}\label{app:battery}
 
