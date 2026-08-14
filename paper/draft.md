@@ -2,9 +2,12 @@
 
 **Oleg Roshka**
 
-*Draft v0.1 — 2026-08-13. Target: SciPost Physics. Markdown working
-draft; LaTeX conversion at submission prep. Author line and
-acknowledgements pending owner confirmation.*
+*Draft v0.3 — 2026-08-14. Target: SciPost Physics. All sections and
+appendices drafted; Markdown working draft, LaTeX conversion at
+submission prep. Pending: figures (6, inventory in paper/OUTLINE.md),
+owner pass on the full text, author line / acknowledgements / data
+statement, SRC-059..063 metadata verification before the reference
+list is finalized.*
 
 ---
 
@@ -44,12 +47,93 @@ partition-dependence of the metric).
 
 ## 1. Introduction
 
-*(to be drafted last, per writing plan — contributions list, positioning
-against [SRC-049, SRC-060, SRC-061] (MI-network geometry, static),
-[SRC-043, SRC-044] (DTC), [SRC-062, SRC-063] (noise-stabilized
-dynamics), [SRC-059] (Zeno/damping mechanism family); non-claims box:
-no gravity, no primitive-information assumption, external lab clock,
-no firstness claims.)*
+A stable emergent structure can stand in two different relations to the
+substrate that carries it. It can be *merely instantiated*: some
+motionless configuration of the substrate would carry the same
+structure, and the observed dynamics is incidental to it. Or it can be
+*actively maintained*: the structure exists only because the substrate
+moves, and no frozen configuration reproduces it. The distinction is
+easy to state and surprisingly hard to test — most diagnostics of
+"underlying dynamics" do not actually certify that anything is moving,
+and most claims of "the dynamics sustains the structure" are never
+confronted with a serious search for a motionless impostor.
+
+This paper builds that test and runs it, in the most controlled setting
+we could construct: finite spin chains, where the emergent structure is
+the mutual-information-graph metric of Refs. [SRC-049, SRC-060,
+SRC-061] — pairwise mutual information converted to link weights and
+shortest-path distances on a posited site factorization — and the
+substrate dynamics ranges over fixed-point, quasiperiodic, chaotic,
+metastable, localized, and driven (discrete-time-crystal [SRC-043,
+SRC-044]) classes. Prior work on such information-metric structures has
+been static: ground-state network robustness under projective attacks
+[SRC-060], metricity as a phase diagnostic [SRC-061]. Our object is the
+*time dependence* of the structure over a moving state, and its need —
+or lack of need — for that motion.
+
+The test has three probes. A *witness battery* certifies that the state
+moves while the metric does not, under a requirement we treat as
+non-negotiable: a witness of motion must vanish identically on a frozen
+state. A *switch-off response* measures what happens to the metric when
+the motion is killed in place. And a *motionless-comparator search*
+optimizes explicitly over stationary states for one that carries the
+same time-averaged metric. The three probes are preregistered — every
+metric, threshold, and analysis rule fixed before code was written,
+every run seeded from committed manifests, every post-hoc change a
+dated amendment (Appendix C) — because a study of this shape has one
+dominant failure mode, self-deception through flexible metric choice,
+and we preferred to make our mistakes in public.
+
+The mistakes were made, caught, and are reported as results. Four
+times, the discipline fired: a registered class certificate was
+mis-specified (Poisson statistics for a free chain); the
+out-of-time-order correlator — the field's default dynamics diagnostic
+— failed the null test, firing on a frozen ground state, and was
+discarded by its own preregistered clause; an early robustness
+comparison was exposed by our adversarial re-analysis as a
+floored-denominator artifact; and a narrow first version of the
+comparator search over-claimed unmatchability for two classes that a
+hardened search then matched. What survives this gauntlet is
+correspondingly compact:
+
+1. **An operational test** of instantiated-vs-maintained emergent
+   structure (witnesses with null-silence, switch-off, comparator
+   search), portable to any system with a computable structural
+   functional.
+2. **A single-survivor measurement.** Every class's time-averaged
+   metric is carried by some stationary state — chaotic classes almost
+   exactly, consistent with eigenstate thermalization — except the
+   quasiperiodic class: 0 of 80 runs matchable at two system sizes,
+   robustly across mode numbers and optimizer strength.
+3. **A sign structure.** Weak dephasing *stabilizes* the moving metrics
+   of coherence-carried classes (negative log drift ratio, flat over
+   two decades of noise strength) while destabilizing chaotic-class
+   metrics — the same class singled out by the comparator search is
+   singled out by noise. The mechanism is standard decoherence damping
+   [SRC-059]; the class-resolved geometric reading appears, within the
+   scope of our survey [SRC-060–SRC-063], to be unreported.
+4. **A methods record.** The null-silence filter and the fresh-seed,
+   power-stabilized adjudication of sharp statistical criteria — with
+   the OTOC's failure and the seed-lottery episode as measured
+   exhibits, and the complete dated amendment log as Appendix C.
+5. **A driven-phase case study** in which the sustained-by question
+   resolves *negatively* despite maximal appearances: the
+   discrete-time-crystal metric survives removal of its drive
+   unchanged — localization, not the subharmonic motion, holds it.
+
+**What this paper does not claim.** The metric is an
+information-theoretic construct on a posited factorization; its
+factorization dependence is measured (§8) and it is not spacetime
+geometry — no claim here touches gravity or holography. No mechanism
+is claimed as new physics. No assumption is made that information is
+ontologically primitive. All dynamics is stated against an external
+laboratory clock. We make no priority claims about preregistration in
+computational physics; the artifact is offered, not its firstness. The
+model family is small ($N \leq 14$) and the conclusions are in-model.
+
+Section 2 defines the family, functional, witnesses, and protocol;
+Sections 3–7 report results; Section 8 states the scope walls;
+Section 9 discusses what the test opens up.
 
 ## 2. Models, functional, witnesses, and protocol
 
@@ -451,14 +535,192 @@ comparator-scope finding we report rather than bury.
 
 ## 8. Scope walls and limitations
 
-*(next drafting block)*
+**The metric belongs to the factorization.** Everything here is
+computed on the natural site partition, and the dependence on that
+choice is not small and not uniform: under fixed nonlocal two-site
+frame changes, the metric moves by a class-dependent amount — mean
+relative change $0.11$ (chaotic), $0.15$ (scrambling), $0.20$
+(localized), $0.22$ (integrable), $0.42$ (quasiperiodic), $0.53$
+(metastable, maximum observed $0.82$). The coherence-carried classes —
+including the survivor class of §6 — have the most frame-dependent
+metrics. This does not undermine the within-frame comparisons (every
+matchability and robustness statement compares objects in the same
+partition, which transforms both sides together), but it bounds the
+interpretation: these are properties of the metric-on-a-factorization,
+not of the state alone. Notably, strictly local (single-site) frame
+changes leave the metric invariant to machine precision — the
+dependence lives entirely at the partition level, which is where the
+construction's own authors located their caveat [SRC-049].
+
+**Finite size, finite family, finite search.** Criterion verdicts are
+established at $N \in \{10, 12\}$ with a descriptive $N=14$ point; the
+quasiperiodic construction is exhaustively unsatisfiable at $N=8$
+(0/56 candidate mode triples), which is a warning about small-size
+instantiations of incommensurability generally. The stationarity
+threshold $\varepsilon_\Phi = 0.25$ is calibrated to this
+construction's finite-size noise floor and has no significance beyond
+it. The comparator search spans stationary states that are smooth
+functions of $H$; fine-tuned non-smooth populations are outside it,
+and the unmatchability result is bounded accordingly. The localized
+regime straddles the stationarity threshold (80/100) and we have kept
+it out of every headline count. Robustness statements hold at the
+calibrated strengths and within the swept regime
+($\gamma \in [10^{-3}, 10^{-1}]$). All clocks are external laboratory
+clocks; nothing here addresses systems that must supply their own.
 
 ## 9. Discussion and outlook
 
-*(next drafting block)*
+What the study delivers is not a mechanism but an instrument: the
+instantiated-vs-maintained distinction, usually a rhetorical flourish,
+is here an executable measurement with three independent probes — and
+its first execution returned a sharp, doubly-corroborated answer. In
+this family, thermalizing motion builds structures a motionless
+thermal state could carry; incommensurate coherent motion builds one
+that nothing motionless we searched can carry, and that noise defends
+rather than destroys.
 
-## Appendices
+The result points directly at a next question: is there a form of
+robustness that *recurrent* or quasiperiodic dynamics provides and
+fixed points cannot? The two signatures reported here — unmatchability
+and noise-stabilization, coinciding in one class — are exactly the
+evidence such a mechanism would leave, and the driven track supplies a
+controlled arena in which to look for it (with the caution of §7: the
+most spectacular witnessed motion in this study turned out *not* to
+sustain its metric).
 
-*(A: numerics; B: statistics + size trend; C: the amendment log with
-commit hashes; D: invariance battery; E: Track-B implementation notes —
-assembled from the evidence packets)*
+The test template itself is not specific to spin chains. Any system
+with a computable structural functional over a dynamical substrate
+admits the same three probes: certify the motion with null-silent
+witnesses, switch the dynamics off, and search honestly for a
+motionless impostor. Candidate applications suggest themselves wherever
+stable emergent structure rides on flux — resting-state functional
+connectivity over neural dynamics, metabolic network structure over
+flux-carrying steady states, stability of ecological or market
+structure over turnover — and we offer the template for these settings
+as a proposal only: nothing beyond spin chains has been demonstrated
+here. The distinction the test operationalizes — structure that merely
+exists versus structure that is actively kept in existence — is, of
+course, much older than physics; we make no attempt to engage that
+literature here.
+
+On the methods side, we draw two conclusions we believe generalize.
+Null tests for witnesses are cheap and merciless — the OTOC episode
+suggests that diagnostics certifying "dynamics" deserve routine
+auditing against frozen states. And preregistration with committed
+seeds changed the outcome of this study at least four times; the
+amendment log (Appendix C) is our answer to the question of what such
+discipline buys in a purely computational setting.
+
+The obvious open front is scale and covariance: whether any version of
+this question can be asked of structures that deserve the word
+"geometry" with fewer scare quotes — partition-covariant functionals,
+larger systems, internally clocked dynamics — remains exactly as open
+as it was, and none of the present results shortens that road. What
+they do establish is that the road's first step is measurable: there
+exist, already in twelve qubits, emergent structures that demonstrably
+need their dynamics.
+
+## Appendix A: Numerics
+
+Exact diagonalization throughout (dense to $N=14$, dimension 16384);
+pure-state evolution via eigendecomposition, density-matrix evolution
+for the dephasing protocol via Trotter splitting of the unitary and the
+exact per-step damping mask (step $0.5$), $N \leq 10$. State-norm drift
+across all unitary runs $< 4\times10^{-15}$; trace drift of dephased
+runs recorded per run at the same scale. Python 3.11 / NumPy 2.3 /
+SciPy 1.15; every random draw seeded from committed manifests; total
+compute across pilot, confirmatory, adversarial, and hardening
+campaigns of order a machine-day on a 24-core workstation. The $N=14$
+witness point uses the identity
+$|\langle\psi(t_0)|\psi(t)\rangle|^2 = |\sum_n p_n e^{-iE_n(t-t_0)}|^2$,
+so recurrence statistics require only eigenbasis coefficients. The
+comparator search precomputes per-eigenstate two-site reduced density
+matrices, making each candidate stationary state's metric a
+population-weighted sum evaluable in milliseconds at any dimension.
+
+## Appendix B: Statistics
+
+Class separation: exact Mann–Whitney AUC, symmetrized
+$\max(A, 1-A)$ since direction is not registered; threshold $0.95$;
+$\geq 2$ statistics per pair; two sizes; singleton classes (the fixed
+point) by exact-value exclusion (the ensemble range must exclude the
+deterministic value). Robustness: mean log drift ratio per class, BCa
+bootstrap (1000 resamples, 95%), disjoint intervals plus
+$|\Delta| > \ln 1.5$, replicated with consistent direction; disordered
+ensembles resampled at the realization level. Seed sensitivity: at
+$n=20$-vs-20 the AUC standard error near $A \approx 0.9$ is
+$0.05$–$0.08$, so verdicts within one standard error of threshold are
+lotteries — measured directly here when fresh seeds flipped a
+marginal pair (§4); $n = 40$ halves the standard error and stabilized
+every margin. Size trend for the marginal pair (AUC at
+$N = 10 \to 12 \to 14$): Bohr ratio $0.979 \to 0.979 \to 1.000$;
+recurrence mean $0.952 \to 0.975 \to 0.976$; energy coherence
+$0.956 \to 0.975 \to 0.976$. Instrument notes: the log-ratio floor
+($10^{-3}$) makes exactly-stationary objects read
+$\log\rho \approx \log(\delta\Phi_{\rm pert}/10^{-3})$ — class-(i)
+quench values are floor-referenced and excluded from class inference;
+the metric's $-\ln x$ weight cap amplifies machine-epsilon mutual-
+information jitter by up to $x_{\min}^{-1}=10^6$, setting an
+irreducible $\sim 10^{-9}$ numerical floor on metric-space identity
+checks for near-product states.
+
+## Appendix C: The amendment log
+
+The complete dated record of every post-registration change, each with
+its reason and repository commit; no entry alters data already taken.
+
+| date | entry | commit |
+|---|---|---|
+| 08-11 | Spec registered; threshold review (Amendment 1): criterion-(b) instrument → log drift ratio + calibration pilot | 24aa\*/7e40\* |
+| 08-11 | Amendment 2 (pre-run): integrable certificate Poisson → free-spectrum reconstruction (mis-specification measured: free chain) | 8393\* |
+| 08-11 | Amendment 3 (pilot, owner-ruled): $\varepsilon_\Phi\ 0.05 \to 0.25$ (below measured noise floor); confirmatory strengths $\lambda=0.1$, $\gamma=0.01$ | 5db69ba |
+| 08-12 | Instrument survey: KEEP log-ratio (no change; dated entry) | 27ada59 |
+| 08-12 | Confirmatory manifest committed pre-execution; survey window closed at first run | b91ad54 |
+| 08-12 | Addendum 1: quasiperiodic construction unsatisfiable at $N=8$ (0/56, exhaustive) → criterion sizes (10, 12) | a76db0e |
+| 08-12/13 | Confirmatory executed: W3 fires on null → discarded; (a) fails as registered; (b) holds; verdicts of record | fbe324f |
+| 08-13 | Adversarial companion: fragility-direction retraction (floored denominator); comparator matching assumption refuted | 33fdd62 |
+| 08-13 | Amendment 4 (owner-ratified): battery → {PR$_A$, $\overline{d}$, $\Xi$}; W3 descriptive; fresh-seed re-adjudication required | 9030c0e |
+| 08-13 | Fresh seeds $n=20$: FAIL on a different, threshold-marginal pair (seed lottery measured) | 40144d5* |
+| 08-13 | Amendment 5 (owner-ratified): $n = 40$, final verdict accepted either way → (a) HOLDS 18/18 | 3e7c0a7 |
+| 08-13 | Hardened comparator search corrects family-only over-claim: single-survivor result | 67dda68 |
+| 08-13 | Descriptive hardening sweep: $\varepsilon_c$, 2000-period comparator, $\gamma$-grid, partition distribution, $N=14$ | 9ce17de |
+
+(\*abbreviated hashes to be expanded at submission; repository public
+from submission date.)
+
+## Appendix D: Invariance battery
+
+Every witness statistic and the metric were checked under: global
+phase; consistent local basis change (state, Hamiltonian, and operators
+together); local basis change of the state alone; and site reflection.
+Witness statistics and mutual-information matrices are identical within
+$10^{-10}$ in all mandatory items across every class and size (the
+participation ratio judged relative to its own magnitude, which reaches
+$10^5$–$10^6$ at $N=12$). Metric-space deviations carry the
+cap-amplified numerical floor described in Appendix B and are reported,
+not thresholded. The state-only local change leaves the metric
+invariant to machine precision — single-site entropies are local-frame
+invariant — which localizes all factorization dependence at the
+partition level; the partition probe of §8 (fixed random entangling
+two-site frames on three disjoint pairs, 24–72 samples per class) is
+the quantitative version.
+
+## Appendix E: Driven-track implementation notes
+
+Disorder realizations and initial states are seed-paired across drive
+strengths and comparator regimes (identical couplings and fields at
+equal seed), so rigidity curves and regime contrasts are paired
+comparisons. The subharmonic weight is computed on an even number of
+stroboscopic periods so the period-doubled line is the exact Nyquist
+bin. Switch-off evolves under the interaction Hamiltonian alone in lab
+time, sampled at the same period boundaries (drive removed, clock
+kept). The dephasing protocol applies the exact per-period damping mask
+with the rate stated in lab-time units ($T_{\rm period} = 2$).
+
+## Acknowledgements and record
+
+*(Author line, acknowledgements — including the role of AI-assisted
+research infrastructure in this study — and data/code availability
+statement pending owner confirmation. The repository, including the
+specification, manifests, amendment log, evidence packets, session
+logs, and all run outputs, becomes public at submission.)*
