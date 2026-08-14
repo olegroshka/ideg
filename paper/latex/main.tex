@@ -281,8 +281,12 @@ preregistered rule is that any witness which fires on the null is
 discarded as a witness, whatever its other virtues.
 
 The battery: (W1) the participation ratio $\mathrm{PR}_A$ of the binned
-Bohr spectral measure $\sum_{m,n}|c_m|^2|c_n|^2\,\delta(\omega -
-|E_m-E_n|)$, equal to 1 exactly on the null; (W2) the recurrence
+Bohr spectral measure
+\begin{equation}
+A(\omega) \;=\; \sum_{m,n}|c_m|^2\,|c_n|^2\;
+\delta\!\big(\omega - |E_m-E_n|\big),
+\end{equation}
+equal to 1 exactly on the null; (W2) the recurrence
 distance $d(t) = 1-|\langle\psi(t_0)|\psi(t)\rangle|^2$, identically
 zero on the null, summarized by its window mean; (W4) the off-diagonal
 energy coherence $\Xi = \sum_{E_m\neq E_n}|\rho_{mn}|^2$, computed over
@@ -835,47 +839,48 @@ its reason and repository commit; no entry alters data already taken.
 
 \begin{table}[h]
 \centering\footnotesize
-\begin{tabular}{@{}p{1.3cm}p{10.6cm}p{1.9cm}@{}}
+\begin{tabular}{@{}p{1.25cm}p{9.55cm}p{2.55cm}@{}}
 \toprule
 date & entry & commit \\
 \midrule
 08-11 & Spec registered; threshold review (Am.~1): criterion-(b)
 instrument $\to$ log drift ratio + calibration pilot &
-\texttt{24aae85}/\texttt{7e40011} \\
+\texttt{24eaa858ec60}\newline\texttt{7e40011d56c8} \\
 08-11 & Am.~2 (pre-run): integrable certificate Poisson $\to$
 free-spectrum reconstruction (mis-specification measured: free chain) &
-\texttt{8393c86} \\
+\texttt{602658b1b96c} \\
 08-11 & Am.~3 (pilot, owner-ruled): $\ephi\ 0.05 \to 0.25$ (below
 measured noise floor); confirmatory $\lambda=0.1$, $\gamma=0.01$ &
-\texttt{5db69ba} \\
+\texttt{5db69bade460} \\
 08-12 & Instrument survey: KEEP log-ratio (no change; dated entry) &
-\texttt{27ada59} \\
+\texttt{27ada59e697c} \\
 08-12 & Confirmatory manifest committed pre-execution; survey window
-closed at first run & \texttt{b91ad54} \\
+closed at first run & \texttt{b91ad54da91f} \\
 08-12 & Addendum~1: quasiperiodic construction unsatisfiable at $N=8$
-(0/56, exhaustive) $\to$ criterion sizes (10, 12) & \texttt{a76db0e} \\
+(0/56, exhaustive) $\to$ criterion sizes (10, 12) &
+\texttt{a76db0e67e09} \\
 08-12/13 & Confirmatory executed: W3 fires on null $\to$ discarded;
 (a) fails as registered; (b) holds; verdicts of record &
-\texttt{fbe324f} \\
+\texttt{fbe324f38f34} \\
 08-13 & Adversarial companion: fragility-direction retraction (floored
 denominator); comparator matching assumption refuted &
-\texttt{33fdd62} \\
+\texttt{33fdd6287776} \\
 08-13 & Am.~4 (ratified): battery $\to$ $\{\mathrm{PR}_A, \overline{d},
 \Xi\}$; W3 descriptive; fresh-seed re-adjudication required &
-\texttt{9030c0e} \\
+\texttt{9030c0ebdab6} \\
 08-13 & Fresh seeds $n=20$: FAIL on a different, threshold-marginal
-pair (seed lottery measured) & \texttt{40144d5} \\
+pair (seed lottery measured) & \texttt{5efaa7309c56} \\
 08-13 & Am.~5 (ratified): $n = 40$, final verdict accepted either way
-$\to$ (a) HOLDS 18/18 & \texttt{3e7c0a7} \\
+$\to$ (a) HOLDS 18/18 & \texttt{3e7c0a787a09} \\
 08-13 & Hardened comparator search corrects family-only over-claim:
-single-survivor result & \texttt{67dda68} \\
+single-survivor result & \texttt{67dda68970b1} \\
 08-13 & Descriptive hardening sweep: $\varepsilon_c$, 2000-period
 comparator, $\gamma$-grid, partition distribution, $N=14$ &
-\texttt{9ce17de} \\
+\texttt{9ce17dec803c} \\
 \bottomrule
 \end{tabular}
-\caption{The amendment log. Abbreviated hashes; the repository is
-public from submission.}
+\caption{The amendment log (12-character commit identifiers in the
+public repository).}
 \label{tab:log}
 \end{table}
 
