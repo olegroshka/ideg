@@ -206,23 +206,248 @@ checked descriptively (N = 14, Appendix B).
 
 ## 3. Results I: stationary metrics over witnessed motion
 
-*(next drafting block)*
+The baseline campaign establishes the phenomenon the rest of the paper
+interrogates: metrics that do not move over states that demonstrably do.
+
+At the calibrated threshold $\varepsilon_\Phi = 0.25$, the chaotic and
+scrambling ensembles are metric-stationary in every run (20/20 at each
+size; max window drift $0.09$–$0.21$) while their motion witnesses read
+near maximum: $\Xi \geq 0.96$, recurrence mean $\approx 1 - 1/D$, and
+Bohr participation ratios in the hundreds to thousands. The driven
+track is the sharpest instance: at drive imperfection
+$\varepsilon = 0.03$, all 100 runs are metric-stationary while the
+subharmonic witness reads $0.939$ — a locked period-doubled
+magnetization response over a frozen mutual-information metric. At the
+other extreme, the quasiperiodic and metastable classes have genuinely
+moving metrics (max drift $0.53$–$1.61$; no run stationary), the
+integrable regime likewise ($0.35$–$0.64$), and the fixed point is
+stationary to machine precision ($2\times10^{-13}$) with every witness
+silent — the null behaving as a null. The localized regime straddles
+the threshold (80/100 stationary at $N=12$, drift $0.14$–$0.34$) and is
+treated as a boundary case throughout.
+
+Two honesty notes frame everything that follows. First, for the chaotic
+classes, metric stationarity over motion is *expected*: the metric is
+built from two-site observables, and the equilibration of local
+observables in quenched chaotic systems is standard physics. The
+existence table is the setup, not the result. Second, none of these
+verdicts is an artifact of the weight floor in the metric construction:
+the above-floor drift diagnostic tracks the full-graph drift in every
+class, and the mean graphs have no floor-dominated links.
 
 ## 4. Results II: the witness discipline at work
 
-*(next drafting block)*
+This section reports the study's methodological core: what the
+preregistered witness requirements did when the data pushed back. We
+present it as a dual record — the original registration failed; the
+owner-ratified repair passed on fresh seeds — because both halves are
+results.
+
+**The OTOC is not a witness of motion.** The null-silence requirement
+(§2.3) demands that a witness vanish on the frozen class-(i) state. The
+out-of-time-order correlator fails: on the gapped ground state it
+reaches the arrival threshold at $t^*=1.5$ and saturates at
+$C \approx 1.11$. Nothing is wrong with the OTOC as physics — it
+certifies operator spreading, which a frozen state supports — but that
+is precisely why it cannot certify that a *state* is moving. The
+preregistered discard clause executed, removing both OTOC statistics
+from the class-separation criterion.
+
+**The discard had teeth.** With the OTOC gone, the original battery
+left exactly one class pair under-witnessed: scrambling vs. localized
+separated on $\Xi$ alone (AUC $0.985$/$0.990$ at the two sizes), with
+the Bohr participation ratio degrading with size ($0.89 \to 0.56$) and
+the registered recurrence statistic — the window *minimum* — landing at
+$0.71$/$0.945$. Criterion (a), as originally registered, therefore
+**fails**. The counterfactual is recorded: had the OTOC been retained,
+its arrival time separates that pair at AUC $1.0$ (localized fronts
+never arrive; scrambling fronts arrive at $t \approx 2$). The failure
+is single-cause, and it is a finding about witness design: the natural
+scrambling/localization discriminator is not null-silent, and the
+null-silent battery we registered was one statistic short.
+
+**The repair, and what fresh seeds taught us.** The reformalized
+battery replaces the recurrence minimum — structurally uninformative
+for slow classes, since a slowly rotating state revisits its reference
+— with the recurrence *mean*, which is null-silent by construction and
+class-resolving in practice. On the data that motivated the redesign,
+all 18 pair-size checks passed; we labeled that table validation, not
+confirmation, and re-adjudicated on fresh committed seeds. At the
+registered ensemble size ($n=20$) the fresh seeds **failed** a
+different pair — scrambling vs. integrable at $N=10$, all three
+statistics between $0.85$ and $0.93$ — while passing at $N=12$. The
+diagnosis is statistical, not physical: a sharp AUC threshold of
+$0.95$ estimated from 20-vs-20 samples carries a standard error of
+$0.05$–$0.08$, so near-threshold verdicts are seed-lotteries. Doubling
+the ensembles ($n=40$, fresh seeds again) stabilized every margin:
+**all 18 pair-size checks pass**, the previously marginal pair at
+$0.952$–$0.979$, and the repaired pair at $0.987$–$0.992$ (the Bohr
+ratio for scrambling vs. localized remains honestly weak, $0.59$ at
+$N=12$ — two statistics carry the pair, as the criterion requires). A
+descriptive third size ($N=14$, computed from eigenbasis coefficients
+alone) confirms the monotone trend: all three statistics
+$\geq 0.976$.
+
+The two methodological claims we take from this: null-silence is a
+nontrivial filter that the field's default dynamics diagnostic fails;
+and sharp-threshold criteria on small ensembles must be fresh-seeded
+and, near the threshold, power-stabilized — our original-seed
+validation table would have over-claimed.
 
 ## 5. Results III: class-resolved robustness and the dephasing sign structure
 
-*(next drafting block)*
+The robustness criterion asks whether metric stationarity responds to
+perturbation differently in different dynamical classes. Under local
+dephasing at the calibrated rate $\gamma = 0.01$, it does, with a sign
+structure that is the study's most striking single measurement.
+
+The mean log drift ratios, replicated at two sizes with disjoint
+confidence intervals and consistent direction: chaotic and scrambling
+$+2.1$ to $+2.2$ (noise strongly destabilizes their stationary
+metrics), localized $+1.5$, integrable $+0.75$ — and the
+coherence-carried classes *negative*: metastable $-0.09$/$-0.11$,
+quasiperiodic $-0.27$. Weak dephasing makes the quasiperiodic metric
+*more* stationary than its own unperturbed dynamics: the noise damps
+the coherences whose beating carries the metric's oscillation, pinning
+$D(t)$ to its time average. Every pairwise contrast required by the
+registered criterion clears the $\ln 1.5$ threshold in both tracks at
+both sizes; the class ordering
+(chaotic $\approx$ scrambling $>$ localized $>$ integrable $>$
+metastable $\gtrsim$ quasiperiodic, the last two negative) is the
+pilot's ordering, confirmed at scale.
+
+A descriptive strength sweep shows the sign structure is a regime, not
+a point: across two decades $\gamma \in [10^{-3}, 10^{-1}]$ the
+quasiperiodic response is flat at $\approx -0.25$, the metastable
+response strengthens monotonically ($-0.02 \to -0.22$), the
+chaotic-class response rises and saturates ($+0.9 \to +2.5$), and the
+ordering never reorders. The mechanism is standard open-system physics
+— decoherence damping of coherence-carried oscillations, the weak-rate
+side of the Zeno family [SRC-059] — and we claim none of it as new. The
+class-resolved *geometric* reading — noise as a stabilizer of moving
+information metrics and a destabilizer of chaotic ones, with the sign
+tracking the dynamical class — is, to the extent of our survey
+[SRC-060–SRC-063], unreported; we state this conditionally and note
+the survey was not systematic.
+
+The other two protocols are clean nulls at the registered strengths:
+the local quench leaves every dynamical class's drift ratio at
+$|\overline{\log\rho}| \leq 0.07$, and two-site loss reads
+$0.07$–$0.25$ everywhere. (The fixed point's large quench ratio,
+$+4.4$, is floor-referenced — its unperturbed drift is exactly zero —
+and carries no class information; instrument note in Appendix B.)
+All robustness statements are statements at the calibrated strengths
+and, per the sweep, within the probed regime — not strength-independent
+class properties.
 
 ## 6. Results IV: the motionless-comparator search — one class survives
 
-*(next drafting block)*
+The sharpest form of the sustained-by question is: *does there exist a
+motionless state carrying the same time-averaged metric?* If yes, the
+dynamics is optional for the structure; if no, the structure is
+motion-borne. This section reports the search, including the two
+corrections our own audits forced.
+
+**The canonical comparator is not matched.** The diagonal ensemble
+$\bar\rho$ — the motionless state with the run's exact time-averaged
+two-site reduced density matrices — was registered as metric-matched by
+construction. It is not: mutual information is nonlinear in the reduced
+density matrices, and $\Phi[\bar\rho]$ sits $43$–$90\%$ of
+$\lVert\bar D\rVert$ away from the run mean, depending on class.
+Relatedly, our first robustness comparison against $\bar\rho$ produced
+a large "the comparator is more fragile" differential that an
+adversarial re-analysis exposed as a floored-denominator artifact (the
+comparator has no baseline drift to compare against; its absolute
+perturbed response is in fact *smaller*). Both corrections are dated in
+the study record; what survives them is stronger than what they
+replaced.
+
+**The switch-off measurement.** Dephasing the state mid-window — which
+projects exactly onto $\bar\rho$ — moves the metric by $43$–$90\%$ of
+$\lVert\bar D\rVert$ (chaotic $0.54$, scrambling $0.52$, integrable
+$0.85$, metastable $0.90$, localized $0.90$, quasiperiodic $0.43$).
+Killing the motion does not freeze the metric in place; it changes the
+metric. For the metric-stationary classes this registers as a drift
+increase with disjoint confidence intervals.
+
+**The optimization search, hardened.** We then searched explicitly for
+*any* motionless match: stationarity means $[\sigma, H]=0$, so we
+optimized over populations on the energy eigenbasis — three natural
+families (thermal at both temperature signs, depolarized diagonal
+ensemble, Gaussian microcanonical) and a general smooth-$f(H)$ family
+(log-populations parameterized by up to 24 Chebyshev coefficients,
+multi-start optimization), over full ensembles at both criterion sizes.
+A first, narrower version of this search (families only, one run per
+class) wrongly suggested the metastable and integrable classes were
+unmatchable; the hardened search corrected this before drafting, and
+the correction is part of the record.
+
+The final result is a single-survivor split. Matchable within
+$\varepsilon_\Phi$: chaotic and scrambling in every run, almost exactly
+(median miss $0.035$–$0.046$ — a Gaussian microcanonical window
+reproduces the time-averaged metric of a chaotic state, as eigenstate
+thermalization would suggest); metastable in every run
+($0.09$–$0.13$); integrable in every run ($0.16$–$0.17$); localized as
+a boundary case (3–6 of 20 runs, median $\approx 0.27$). Unmatched:
+**the quasiperiodic class, in 0 of 80 runs across both sizes** (median
+miss $0.31$; the single closest run reaches $0.264$, still above
+threshold), robustly across mode numbers $m = 3, 4, 5$ (medians
+$0.31$–$0.33$) and insensitive to enriching the optimizer. The claim is
+bounded by its search space — stationary states that are smooth
+functions of $H$ — and is not an impossibility theorem; within that
+space, it is unambiguous.
+
+Two independent instruments therefore single out the same class. The
+quasiperiodic metric is the only one that no searched motionless state
+can carry, and the only one that weak noise *stabilizes*. Incommensurate
+coherence-carried motion is, in this family, the regime whose emergent
+structure needs its dynamics: motion-borne in the operational sense
+this paper defines. Conversely, the chaotic classes' stationary metrics
+are compatible-with their motion — a thermal-window state carries the
+same structure — while their *robustness signature* still
+distinguishes them (§5): the two probes answer different questions, and
+both answers are class-resolved.
 
 ## 7. Results V: the driven regime
 
-*(next drafting block)*
+The discrete-time-crystal track supplies the study's cleanest
+stationary-with-witness regime and its most instructive
+compatible-with verdict.
+
+At $\varepsilon = 0.03$, deep in the rigid phase, all 100 runs are
+metric-stationary while the subharmonic witness reads $0.939$: a
+period-doubled magnetization response, locked across 20 disorder
+realizations, above a mutual-information metric that does not move.
+Stationarity degrades with drive imperfection (88/100 at
+$\varepsilon = 0.06$, 52/100 at $0.10$), tracking the witness. The
+rigidity curve is measured over its full range: the subharmonic weight
+holds above $0.65$ through $\varepsilon = 0.20$, crosses $1/2$ at
+$\varepsilon_c \approx 0.23$ at our drive parameters, and collapses by
+$\varepsilon \approx 0.45$ — a complete critical-strength measurement
+for this realization of the [SRC-043, SRC-044] protocol.
+
+The switch-off test resolves the sustained-by question for this regime,
+and resolves it *against* the drive: removing the kicks at mid-window
+collapses the witness ($0.95 \to 0.00$) while the metric's
+stationarity persists and slightly improves (mean post-window drift
+$0.110 \to 0.086$). The frozen-in disorder, not the drive, holds this
+metric — the witnessed subharmonic motion is compatible with the
+stationary structure, not required by it. We registered this as an
+open question with exactly this outcome listed as reportable, and
+report it accordingly. Consistently, the perturbation protocols at the
+calibrated strengths barely move the DTC metric
+($\overline{\log\rho} = 0.01$–$0.19$).
+
+The comparator regimes behave asymmetrically, and honestly. Without
+interactions (r1), the subharmonic peak is destroyed at
+$\varepsilon = 0.03$ ($0.13$) — the fine-tuned control fails as
+expected, certifying that interactions produce the rigidity. Without
+disorder (r2), however, the clean interacting drive does *not*
+thermalize on any horizon we probed: its subharmonic response persists
+undiminished ($0.89$–$0.90$) to 2000 periods. At small $\varepsilon$
+the r2 regime is not a usable thermalizing control, and the
+discriminating comparator burden falls entirely on r1 — a
+comparator-scope finding we report rather than bury.
 
 ## 8. Scope walls and limitations
 
