@@ -3,12 +3,12 @@ id: KB-003
 title: "IDEG Theory Landscape and Canonical Bibliography"
 status: DRAFT
 owner: shared
-last_reviewed: 2026-08-13
-version: 0.5
+last_reviewed: 2026-08-14
+version: 0.6
 research_layer: R2
 epistemic_status: MIXED
 sources:
-  - "Primary literature registry SRC-001..SRC-063 below; SRC-001..035 metadata checked 2026-08-11; SRC-042..044 + SRC-049 verified 2026-08-11 (AR-015 partial, Track E3 G1); SRC-036..041, 045..048, 050..051 metadata VERIFICATION PENDING (AR-017/AR-016/AR-015/AR-002d); SRC-052..058 added 2026-08-12 (AR-019 survey) — VERIFICATION PENDING; SRC-059..063 added 2026-08-13 (AR-021 survey) — VERIFICATION PENDING"
+  - "Primary literature registry SRC-001..SRC-063 below; SRC-001..035 metadata checked 2026-08-11; SRC-042..044 + SRC-049 verified 2026-08-11 (AR-015 partial, Track E3 G1); SRC-059..063 verified 2026-08-14 (paper-1 bibliography gate); SRC-036..041, 045..048, 050..051 metadata VERIFICATION PENDING (AR-017/AR-016/AR-015/AR-002d); SRC-052..058 added 2026-08-12 (AR-019 survey) — VERIFICATION PENDING"
 depends_on: [KB-001, KB-002]
 referenced_by: [KB-004, KB-005]
 changelog:
@@ -17,6 +17,7 @@ changelog:
   - "0.3: Track E3 G1 verification reconciled (Claude, 2026-08-11) — SRC-042..044, SRC-049 verified; TH-033 no-go scope condition added; TH-037 equation locations added; see ar/AR-015_partial-2026-08-11_trackE3-G1.md"
   - "0.4: AR-019 robustness-instrument survey sources added (Claude, 2026-08-12) — SRC-052..058, all flagged verify; see §S and ar/AR-019_note-2026-08-12_robustness-instruments.md"
   - "0.5: AR-021 dephasing-stabilization literature-check sources added (Claude, 2026-08-13) — SRC-059..063, all flagged verify; mechanism known (Zeno/damping family), object not found in survey scope; see ar/AR-021_note-2026-08-13_dephasing-stabilization-lit.md"
+  - "0.6: SRC-059..063 metadata VERIFIED against primary listings (Claude, 2026-08-14, paper-1 bibliography gate) — SRC-060 upgraded to its published ref (J. Phys. Complex. 2, 035008 (2021)); SRC-061 author and SRC-063 full author list confirmed; DOIs recorded"
 ---
 
 # Theory Landscape and Canonical Bibliography
@@ -500,20 +501,20 @@ OECD. **Current Approaches in the Statistical Analysis of Ecotoxicity Data: A Gu
 ### SRC-058 — Dissent in the NOEC/ECx debate (v0.4, AR-019; verify)
 Green, J. W. (author initials unconfirmed — check). **The Drive to Ban the NOEC/LOEC in Favor of ECx Is Misguided and Misinformed.** *Integr. Environ. Assess. Manag.* 9, 12–16 (2013). DOI: 10.1002/ieam.1367 . (Recorded so the AR-019 methodology analogy carries its own adversarial counterpart.)
 
-### SRC-059 — Canonical quantum Zeno review (v0.5, AR-021; verify)
-Facchi, P.; Pascazio, S. **Quantum Zeno dynamics: mathematical and physical aspects.** *J. Phys. A: Math. Theor.* 41, 493001 (2008). arXiv:0903.3297. (Canonical home of the strong-coupling limit of dephasing-suppressed dynamics; the AR-010 quasiperiodic effect sits in the WEAK-coupling damping regime — cited for the mechanism family, not the regime.)
+### SRC-059 — Canonical quantum Zeno review (v0.5, AR-021; **verified 2026-08-14**, arXiv listing)
+Facchi, P.; Pascazio, S. **Quantum Zeno dynamics: mathematical and physical aspects.** *J. Phys. A: Math. Theor.* 41, 493001 (2008), Topical Review. arXiv:0903.3297. DOI: 10.1088/1751-8113/41/49/493001. (Canonical home of the strong-coupling limit of dephasing-suppressed dynamics; the AR-010 quasiperiodic effect sits in the WEAK-coupling damping regime — cited for the mechanism family, not the regime.)
 
-### SRC-060 — MI-network response to decoherence attacks (v0.5, AR-021; verify)
-Sundar, B.; Walschaers, M.; Parigi, V.; Carr, L. D. **Response of quantum spin networks to attacks.** arXiv:2012.10474. (Closest prior object: emergent mutual-information networks under decoherence — but STATIC ground states under projective attacks; no dynamics, no dephasing channel, no dynamical classes. Scope checked at abstract/summary level 2026-08-13.)
+### SRC-060 — MI-network response to decoherence attacks (v0.5, AR-021; **verified 2026-08-14**, arXiv listing — PUBLISHED)
+Sundar, B.; Walschaers, M.; Parigi, V.; Carr, L. D. **Response of quantum spin networks to attacks.** *J. Phys. Complex.* 2, 035008 (2021). arXiv:2012.10474. DOI: 10.1088/2632-072X/abf5c2. (Closest prior object: emergent mutual-information networks under decoherence — but STATIC ground states under projective attacks; no dynamics, no dephasing channel, no dynamical classes. Scope checked at abstract/summary level 2026-08-13.)
 
-### SRC-061 — MI emergent-distance metricity (v0.5, AR-021; verify)
-Leighton-Trudel, B. (author unconfirmed — check). **Emergent Distance and Metricity of Mutual Information in 1D Quantum Chains.** arXiv:2507.09749 (2025). (SRC-049 lineage; stationary phase diagnostic — no temporal dynamics or noise response. Scope checked at abstract/summary level 2026-08-13.)
+### SRC-061 — MI emergent-distance metricity (v0.5, AR-021; **verified 2026-08-14**, arXiv listing)
+Leighton-Trudel, Beau. **Emergent Distance and Metricity of Mutual Information in 1D Quantum Chains.** arXiv:2507.09749 [cond-mat.stat-mech] (2025), preprint. DOI: 10.48550/arXiv.2507.09749. (SRC-049 lineage; stationary phase diagnostic — no temporal dynamics or noise response. Scope checked at abstract/summary level 2026-08-13.)
 
-### SRC-062 — Noise-stabilized discrete time crystals (v0.5, AR-021; verify)
-Shinjo, K.; Seki, K.; Yunoki, S. **Noise-stabilized discrete time crystals on digital quantum processors.** arXiv:2510.13577 (2025). (Nearest live work in spirit: structured noise SUSTAINS subharmonic oscillations — noise stabilizing MOTION; the AR-010 effect is noise stabilizing geometric STATIONARITY over motion — same family, different object and direction.)
+### SRC-062 — Noise-stabilized discrete time crystals (v0.5, AR-021; **verified 2026-08-14**, arXiv listing)
+Shinjo, K.; Seki, K.; Yunoki, S. **Noise-stabilized discrete time crystals on digital quantum processors.** arXiv:2510.13577 (2025; v2 2026-03-31), preprint. DOI: 10.48550/arXiv.2510.13577. (Nearest live work in spirit: structured noise SUSTAINS subharmonic oscillations — noise stabilizing MOTION; the AR-010 effect is noise stabilizing geometric STATIONARITY over motion — same family, different object and direction.)
 
-### SRC-063 — Noise-induced quantum synchronization (v0.5, AR-021; verify)
-(Authors unconfirmed — check.) **Noise-induced quantum synchronization with entangled oscillations.** *Nat. Commun.* (2025). https://www.nature.com/articles/s41467-025-63196-6 . (Adjacent noise-stabilized-dynamics literature; recorded for the AR-021 framing verdict.)
+### SRC-063 — Noise-induced quantum synchronization (v0.5, AR-021; **verified 2026-08-14** via publisher listing + PMC/INSPIRE mirrors)
+Tao, Z.; Schmolke, F.; Hu, C.-K.; Huang, W.; Zhou, Y.; Zhang, J.; Chu, J.; Zhang, L.; Sun, X.; Guo, Z.; Niu, J.; Weng, W.; Liu, S.; Zhong, Y.; Tan, D.; Yu, D.; Lutz, E. **Noise-induced quantum synchronization with entangled oscillations.** *Nat. Commun.* 16, 8457 (2025). DOI: 10.1038/s41467-025-63196-6. (Adjacent noise-stabilized-dynamics literature; recorded for the AR-021 framing verdict.)
 
 ---
 

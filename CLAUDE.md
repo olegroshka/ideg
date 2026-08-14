@@ -141,8 +141,16 @@ results/     run outputs, figures, serialized data (gitignored where large)
   reformalized battery passes. §5.4 row 1 standing: **BH-004 supported
   in-model; BH-005 LICENSED; HYP-009 geometric part has its first model
   realization.**
-- Next session target: **first-paper drafting** (dual-record framing;
-  AR-021 novelty constraints; candidate leads: dephasing-stabilization
-  sign structure + class-split comparator finding). Also available at
-  owner's choosing: BH-005 sequencing decision; AR-015 census
-  completion; SRC-052..063 verification.
+- **Paper 1 BUILT (2026-08-14):** draft complete (paper/draft.md v0.3,
+  frozen — canonical source is now paper/latex/main.tex) → figures 1–6
+  (paper/figures/, validated palette, fixed class-color identity) →
+  SRC-059..063 verified (KB-003 v0.6) → **LaTeX compiled clean**
+  (paper/latex/main.pdf, 14 pp, 0 errors, all figures + amendment-log
+  appendix embedded).
+- Next: **owner gates to submission** — proof pass on main.pdf;
+  acknowledgements/affiliation/funding TODO markers in main.tex; repo
+  public + submission tag (expand App.-C hashes); SciPost class swap
+  (one-line, fetch current template at submission). Then arXiv +
+  SciPost. Parked: AR-022 (philosophy survey); BH-005 sequencing;
+  AR-015 census; SRC-036..058 verification backlog (not
+  paper-blocking).
