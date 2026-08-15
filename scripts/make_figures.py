@@ -316,7 +316,7 @@ def fig4():
     savefig(fig, "fig4_gamma")
 
 
-# ---------------- Fig 5: coherence removal + naturalness gap --------
+# ------------- Fig 5: coherence removal + representation gap --------
 def fig5():
     fig, (ax1, ax2, ax3) = plt.subplots(
         1, 3, figsize=(7.0, 2.9),
@@ -335,7 +335,7 @@ def fig5():
                  textcoords="offset points", fontsize=7, color=INK2)
     ax1.set_ylabel(r"$\|\Phi[\bar\rho]-\bar D\|/\|\bar D\|$")
     ax1.set_title("(a)  coherence removal", pad=3)
-    # (b) naturalness gap: smooth (filled) vs unrestricted (rings)
+    # (b) representation gap: smooth (filled) vs unrestricted (rings)
     for k, g in enumerate(order):
         sm, un = [], []
         for n in (10, 12):
@@ -360,7 +360,7 @@ def fig5():
     ax2.legend(loc="upper right", frameon=False, fontsize=6.5,
                handletextpad=0.15, borderaxespad=0.1)
     ax2.set_ylabel("best stationary-state miss")
-    ax2.set_title("(b)  the naturalness gap (both sizes pooled)", pad=3)
+    ax2.set_title("(b)  smooth-in-energy representation gap (both sizes)", pad=3)
     ax2.set_ylim(-0.02, 0.45)
     # (c) threshold sensitivity, quasiperiodic
     eps_grid = np.linspace(0.0, 0.45, 200)

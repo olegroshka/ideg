@@ -4,7 +4,7 @@ title: "IDEG Research Program — Agentic Protocol, Phases, Gates, and Backlog"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-15
-version: 0.15
+version: 0.16
 research_layer: R4
 epistemic_status: NOT_APPLICABLE
 sources:
@@ -27,6 +27,7 @@ changelog:
   - "0.13: paper-1 reflection rulings folded into the outline (test-first framing, boundary-case localized, no-firstness, fenced cross-discipline, hardened probe gate); AR-022 philosophical-context survey added PROPOSED (not paper content) — see §29"
   - "0.14: AR-020b hardened probe — comparator class-split corrected (metastable/integrable matchable; quasiperiodic sole motion-borne survivor, 0/40 both sizes); KB-004 → v0.7; paper §6 gate cleared — see §30"
   - "0.15: external review + AR-020c (Claude, 2026-08-15) — survivor claim refuted at unrestricted scope; naturalness gap = the surviving discriminator; paper-1 major revision executed; KB-003 → v0.7, KB-004 → v0.8 — see §31"
+  - "0.16: second review round + AR-020d (Claude, 2026-08-15) — block-coherent commutant matches quasiperiodic (sixth correction, second externally triggered); GGE/price-curve/window-gap battery; discriminator = smooth-in-energy representation gap; paper-1 second major revision; KB-003 → v0.8, KB-004 → v0.9 — see §32"
 ---
 
 # Research Program and Agentic Protocol
@@ -468,3 +469,11 @@ Next scheduled work: **AR-020**, then first-paper drafting.
 2. **AR-020c executed (review response): unrestricted diagonal-population search, analytic gradient, both sizes.** Result: EVERY class matchable (quasiperiodic 12/20 at N = 10 median 0.241; **20/20 at N = 12 median 0.025**). The single-survivor claim is refuted (fifth major self-correction; first externally triggered). Surviving class-resolved object: the smooth-ensemble NATURALNESS GAP (chaotic ~0.04 vs quasiperiodic ~0.32, both sizes). KB-004 → v0.8 (dated correction); KB-003 → v0.7 (SRC-054 verified, SRC-064 added for the tempered OTOC discussion).
 3. Paper-1 major revision executed per the accepted review: non-commutation thesis; naturalness-gap results; renamed coherence-removal/drive-removal tests; tempered OTOC framing; "DTC-like" wording; registered/amended/pre-committed stages table; self-contained numerics; threshold-sensitivity panel; page-13 fix; question-form title.
 4. Next: owner proof pass of the revised build; then endorsement/submission path as parked.
+
+## 32. Changelog v0.15 → v0.16 — second review round + AR-020d
+
+1. **Second external review round received 2026-08-15** (owner-relayed; verdict: major revision). Central criticisms accepted: (i) the "unrestricted" search was not — degenerate spectra (XX: 243/1024 distinct at N = 10, 729/4096 at N = 12) leave the commutant much larger than the diagonal family; (ii) "description complexity" overclaimed — misses are best-found upper bounds; (iii) finite-window vs infinite-time averaging needed measurement, not assertion. Alleged page-10/12 gutter collisions again NOT reproduced by independent rasterization (extraction artifact; second occurrence).
+2. **AR-020d executed (review response), five stages** (`scripts/ar020d_stationary_suite.py`, `results/AR-010/ar020d_*.json`): (a) block-coherent commutant search (σ = ⊕ A_B A_B†/Z, analytic gradient, containment-checked run-by-run against AR-020c) — quasiperiodic matched essentially exactly at N = 10 (20/20, median 0.0052, best 1e-9; integrable 0.0077); a designed monotone-descent validity check caught a sign error in the objective pre-results (bug fixed, relaunched) and flags one integrable run where the diagonal five-start optimum (1e-8) beat the warm-started block search (0.02) — honesty row in paper App. A; (b) GGE over exact free-fermion charges — matches integrable (20/20, 0.14/0.17 at N = 10/12), fails quasiperiodic (0/20 both sizes, 0.63/0.47); (c) Chebyshev price curve K = 2..96 — smooth plateau ~0.32 (not parameter starvation); (d) sparse top-k supports — ~0.23–0.25 scraping the threshold, optimizer regression above k = 32 recorded; (e) window-vs-infinite-time gap measured per class (relaxing classes 0.003–0.23; metastable N = 10 slow-doublet exception 0.84, 0.02 at N = 12). Reviewer's qp window spot-check (0.012) reproduced exactly.
+3. **Corrected claim of record (sixth major self-correction, second externally triggered): resource split.** Every class has a near-exact stationary impostor; classes differ in the stationary resource required — thermal window (chaotic, ETH), GGE charges (generic integrable), degenerate-block coherence (quasiperiodic). Class discriminator renamed: SMOOTH-IN-ENERGY REPRESENTATION GAP (qp 0.32 vs 0.005; chaotic 0.04 vs 0.01 at N = 10). KB-004 → v0.9; KB-003 → v0.8 (SRC-065..068: Rigol 2008, D'Alessio 2016, Vidmar–Rigol 2016, Abanin 2019 — all verified).
+4. Paper-1 second major revision executed: physics-first abstract; resource-split §6 with the price table (tab:price); five-stage search narrative; window-gap paragraph; §2.3 infinite-time/degeneracy qualifications; App. A GGE/block/sparse specs incl. the optimizer-shortfall honesty note; representation-gap vocabulary throughout; reversal typo fixed ("matched in 0 of 80"); title retained.
+5. Next: N = 12 block-coherent confirmation lands in tab:price; rebuild; owner proof pass; then endorsement/submission path as parked.

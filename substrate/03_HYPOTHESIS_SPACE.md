@@ -3,8 +3,8 @@ id: KB-004
 title: "IDEG Hypothesis Space — Nulls, Bridges, Strong Forms, and Falsifiers"
 status: DRAFT
 owner: shared
-last_reviewed: 2026-08-13
-version: 0.8
+last_reviewed: 2026-08-15
+version: 0.9
 research_layer: R3
 epistemic_status: SPECULATIVE_TO_PLAUSIBLE
 sources:
@@ -20,6 +20,7 @@ changelog:
   - "0.6: final AR-020/Amendment-5 verdict recorded (Claude, 2026-08-13) — criterion (a) HOLDS under the reformalized battery (n = 40, fresh seeds); BH-004 supported in-model (spec §5.4 row 1); BH-005 LICENSED; HYP-009 geometric part gains its first model realization (status unchanged)"
   - "0.7: hardened-probe correction (AR-020b, Claude, 2026-08-13) — comparator class-split corrected: metastable/integrable matchable, localized boundary; motion-borne survivor = quasiperiodic alone (0/40, both sizes), coinciding with the negative dephasing log ρ class"
   - "0.8: AR-020c correction (external-review-triggered, Claude, 2026-08-15) — survivor claim REFUTED at unrestricted scope (all classes matchable; qp 20/20 at N=12); class discriminator = the smooth-ensemble NATURALNESS GAP; BH-004 status unchanged (grounded on (b) + coherence-removal legs)"
+  - "0.9: AR-020d correction (second-review-triggered, Claude, 2026-08-15) — degenerate-block commutant matches quasiperiodic essentially exactly (20/20, 0.005); GGE matches integrable, fails qp; discriminator renamed SMOOTH-IN-ENERGY REPRESENTATION GAP; corrected reading: resource split, not existence or complexity split; BH-004 status unchanged"
 ---
 
 # Hypothesis Space
@@ -223,6 +224,35 @@ dephasing sign structure stand. BH-004 status (PLAUSIBLE, owner ruling
 grounded on criterion (b) + coherence-removal jump) is NOT changed by
 this correction; the "supported in-model" §5.4 standing now rests on
 those legs plus the naturalness gap, not on existence claims.
+**(v0.9) SECOND CORRECTION — the resource split completes the picture
+(AR-020d, second-review-triggered, 2026-08-15,
+`results/AR-010/ar020d_*.json`).** The review correctly observed that
+diagonal populations are not all stationary states when the spectrum
+is degenerate: the XX-based spectra are massively so (N = 10: 243
+distinct energies in dim 1024, largest block 32, Σ|B|² = 7776;
+N = 12: 729/4096/64/46656), and [σ,H] = 0 permits arbitrary coherence
+inside degenerate blocks — the very coherence the infinite-time
+average retains. Searching the full commutant (block-Cholesky
+σ = ⊕ A_B A_B†/Z, analytic gradient, warm-started, containment-checked
+against AR-020c run-by-run) matches the quasiperiodic class
+essentially exactly (N = 10: 20/20, median 0.0052, best 1e-9;
+integrable 20/20, 0.0077). A GGE over the exact free-fermion charges
+(N λ_k) matches the generic integrable quench (20/20 at 0.14/0.17,
+N = 10/12) but fails quasiperiodic outright (0/20 both sizes, 0.63 /
+0.47). Price curves: smooth-f(H) plateaus at ~0.32 from K = 2 to 96
+(not parameter starvation); sparse top-k supports scrape ~0.23–0.25;
+NATURALNESS GAP language is superseded by the SMOOTH-IN-ENERGY
+REPRESENTATION GAP (0.32 vs 0.005 for qp at N = 10; 0.04 vs 0.01 for
+chaotic). Window-vs-infinite-time averaging measured: window-averaged
+state ≈ diagonal ensemble in metric miss for relaxing classes (gap
+0.003–0.23; metastable N = 10 slow-doublet exception 0.84→0.02 at
+N = 12) — non-commutation is about nonlinearity, not window length.
+**Corrected reading of record: every class has a near-exact stationary
+impostor; classes differ in the stationary RESOURCE required (thermal
+window / GGE charges / degenerate-block coherence). BH-004's
+sustained-by evidence continues to rest on criterion (b) +
+coherence-removal + the dephasing sign structure; the representation
+gap is the class-resolved discriminator. Status unchanged.**
 
 ### BH-005 — Recurrence as an emergent-stability mechanism
 Within a successful BH-004 model, test whether recurrence/limit-cycle/quasiperiodicity — including a driven/Floquet regime modeled on TH-033 — provides robustness unavailable to fixed-point/invariant-subspace alternatives. **Only proceed if BH-004 survives.** This is HYP-005's proving ground.

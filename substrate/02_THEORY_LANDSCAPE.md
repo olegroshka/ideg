@@ -4,11 +4,11 @@ title: "IDEG Theory Landscape and Canonical Bibliography"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-15
-version: 0.7
+version: 0.8
 research_layer: R2
 epistemic_status: MIXED
 sources:
-  - "Primary literature registry SRC-001..SRC-063 below; SRC-001..035 metadata checked 2026-08-11; SRC-042..044 + SRC-049 verified 2026-08-11 (AR-015 partial, Track E3 G1); SRC-059..063 verified 2026-08-14 (paper-1 bibliography gate); SRC-036..041, 045..048, 050..051 metadata VERIFICATION PENDING (AR-017/AR-016/AR-015/AR-002d); SRC-052..058 added 2026-08-12 (AR-019 survey) — VERIFICATION PENDING"
+  - "Primary literature registry SRC-001..SRC-063 below; SRC-001..035 metadata checked 2026-08-11; SRC-042..044 + SRC-049 verified 2026-08-11 (AR-015 partial, Track E3 G1); SRC-059..063 verified 2026-08-14, SRC-064..068 added+verified 2026-08-15 (paper-1 bibliography gates); SRC-036..041, 045..048, 050..051 metadata VERIFICATION PENDING (AR-017/AR-016/AR-015/AR-002d); SRC-052..058 added 2026-08-12 (AR-019 survey) — VERIFICATION PENDING"
 depends_on: [KB-001, KB-002]
 referenced_by: [KB-004, KB-005]
 changelog:
@@ -18,6 +18,7 @@ changelog:
   - "0.4: AR-019 robustness-instrument survey sources added (Claude, 2026-08-12) — SRC-052..058, all flagged verify; see §S and ar/AR-019_note-2026-08-12_robustness-instruments.md"
   - "0.5: AR-021 dephasing-stabilization literature-check sources added (Claude, 2026-08-13) — SRC-059..063, all flagged verify; mechanism known (Zeno/damping family), object not found in survey scope; see ar/AR-021_note-2026-08-13_dephasing-stabilization-lit.md"
   - "0.6: SRC-059..063 metadata VERIFIED against primary listings (Claude, 2026-08-14, paper-1 bibliography gate) — SRC-060 upgraded to its published ref (J. Phys. Complex. 2, 035008 (2021)); SRC-061 author and SRC-063 full author list confirmed; DOIs recorded"
+  - "0.8: round-2 canon added+verified (Claude, 2026-08-15) — SRC-065 (Rigol/Dunjko/Olshanii diagonal ensemble), SRC-066 (ETH review), SRC-067 (GGE review), SRC-068 (MBL RMP)"
   - "0.7: review-revision citations (Claude, 2026-08-15) — SRC-054 verified (PRL 118, 030401 (2017); Comment/Reply caution retained, rigidity-concept citation only); SRC-064 added + verified (Hahn/Luitz/Chalker, PRX 14, 031029 (2024), OTOC operator-spreading anchor)"
 ---
 
@@ -519,6 +520,18 @@ Tao, Z.; Schmolke, F.; Hu, C.-K.; Huang, W.; Zhou, Y.; Zhang, J.; Chu, J.; Zhang
 
 ### SRC-064 — Eigenstate correlations and OTOC operator spreading (v0.7; verified 2026-08-15, arXiv listing)
 Hahn, D.; Luitz, D. J.; Chalker, J. T. **Eigenstate correlations, the eigenstate thermalization hypothesis, and quantum information dynamics in chaotic many-body quantum systems.** *Phys. Rev. X* 14, 031029 (2024). arXiv:2309.12982. DOI: 10.1103/PhysRevX.14.031029. (Primary-literature anchor for the OTOC-as-operator-spreading reading; cited in paper-1's tempered W3 discussion — the null test *classifies* the OTOC as an operator-spreading diagnostic rather than "catching a failure".)
+
+### SRC-065 — Thermalization and the diagonal ensemble (v0.8; verified 2026-08-15, arXiv listing)
+Rigol, M.; Dunjko, V.; Olshanii, M. **Thermalization and its mechanism for generic isolated quantum systems.** *Nature* 452, 854–858 (2008). arXiv:0708.1324. DOI: 10.1038/nature06838.
+
+### SRC-066 — ETH review (v0.8; verified 2026-08-15, arXiv listing)
+D'Alessio, L.; Kafri, Y.; Polkovnikov, A.; Rigol, M. **From Quantum Chaos and Eigenstate Thermalization to Statistical Mechanics and Thermodynamics.** *Adv. Phys.* 65, 239 (2016). arXiv:1509.06411. DOI: 10.1080/00018732.2016.1198134.
+
+### SRC-067 — GGE review (v0.8; verified 2026-08-15, arXiv listing)
+Vidmar, L.; Rigol, M. **Generalized Gibbs ensemble in integrable lattice models.** *J. Stat. Mech.* (2016) 064007. arXiv:1604.03990. DOI: 10.1088/1742-5468/2016/06/064007.
+
+### SRC-068 — MBL review (v0.8; verified 2026-08-15, arXiv listing)
+Abanin, D. A.; Altman, E.; Bloch, I.; Serbyn, M. **Many-body localization, thermalization, and entanglement.** *Rev. Mod. Phys.* 91, 021001 (2019). arXiv:1804.11065. DOI: 10.1103/RevModPhys.91.021001.
 
 ---
 

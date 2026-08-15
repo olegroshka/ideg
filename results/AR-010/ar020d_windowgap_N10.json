@@ -1,0 +1,41 @@
+{
+  "n_sites": 10,
+  "groups": {
+    "TA_ii_quasiperiodic": {
+      "agg_rdm_discrepancy": 0.024072548496120505,
+      "metric_gap_win_vs_diag": 0.011965925910011856,
+      "diag_miss_vs_Dbar": 0.4651700484754802,
+      "win_miss_vs_Dbar": 0.4656011996390253
+    },
+    "TA_iii_chaotic": {
+      "agg_rdm_discrepancy": 0.2269662889826299,
+      "metric_gap_win_vs_diag": 0.2272105435182941,
+      "diag_miss_vs_Dbar": 0.6194439919955197,
+      "win_miss_vs_Dbar": 0.49272565197680807
+    },
+    "TA_iv_metastable": {
+      "agg_rdm_discrepancy": 4.717270002197249,
+      "metric_gap_win_vs_diag": 0.8370313737157071,
+      "diag_miss_vs_Dbar": 0.8957336405690927,
+      "win_miss_vs_Dbar": 0.08129584042574897
+    },
+    "TC_scrambling": {
+      "agg_rdm_discrepancy": 0.03622037257517859,
+      "metric_gap_win_vs_diag": 0.014440951922537424,
+      "diag_miss_vs_Dbar": 0.36243190102810835,
+      "win_miss_vs_Dbar": 0.35814617327922793
+    },
+    "TC_integrable": {
+      "agg_rdm_discrepancy": 0.019298005433807903,
+      "metric_gap_win_vs_diag": 0.0028467773747481487,
+      "diag_miss_vs_Dbar": 0.36885842826215304,
+      "win_miss_vs_Dbar": 0.36891195275843197
+    },
+    "TC_localized": {
+      "agg_rdm_discrepancy": 0.019839959753845643,
+      "metric_gap_win_vs_diag": 0.027266659306865292,
+      "diag_miss_vs_Dbar": 0.392258203571517,
+      "win_miss_vs_Dbar": 0.38385452795006275
+    }
+  }
+}

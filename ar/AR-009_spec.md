@@ -610,3 +610,24 @@ scaling is reported descriptively (no extrapolation claims — scope wall §7).
   Amendment-4 filenames (script prefix defect, fixed); the n = 20 files
   were restored from commit 5efaa73 and the n = 40 data preserved as
   rerun40_* — no data lost, incident recorded in the session log.
+- **2026-08-14/15 — Comparator-scope corrections (AR-020c/AR-020d,
+  externally triggered; no preregistered threshold changed).** Two
+  successive review rounds forced the §4.1-successor comparator search
+  open: (c) unrestricted diagonal populations (2^N, analytic gradient)
+  — every class matchable at N = 12 incl. quasiperiodic (20/20, median
+  0.025; N = 10 straddles, 12/20 at 0.241): the AR-020b "survivor"
+  statement is corrected to a smooth-vs-unrestricted gap; (d) the full
+  degenerate-block commutant (σ = ⊕ A_B A_B†/Z; XX spectra: 243 blocks
+  at N = 10, Σ|B|² = 7776) — quasiperiodic matched essentially exactly
+  (20/20, median 0.0052), integrable likewise (0.0077); GGE (exact
+  free-fermion charges) matches integrable (0.14–0.17, 20/20) and
+  fails quasiperiodic (0/20, 0.47–0.63); smooth-f(H) price curve flat
+  ~0.32 to K = 96; sparse top-k ~0.23–0.25. Window-vs-infinite-time
+  averaging measured (relaxing classes 0.003–0.23; metastable N = 10
+  slow-doublet exception). Comparator statement of record: resource
+  split — the class discriminator is the smooth-in-energy
+  representation gap, not impostor existence. Ops notes: an objective
+  sign error in the first block-search launch was caught by the
+  designed containment check (results discarded pre-record, relaunch
+  clean); the same check flags one integrable run (diagonal 1e-8 vs
+  block 0.02) as optimizer shortfall — reported in the paper.

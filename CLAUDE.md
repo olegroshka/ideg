@@ -76,8 +76,8 @@ results/     run outputs, figures, serialized data (gitignored where large)
 ## Current state (update this block when it changes)
 
 - Repo: https://github.com/olegroshka/ideg (private), created 2026-08-11.
-- Substrate versions: KB-001 v0.3, KB-002 v0.2, KB-003 v0.5, KB-004 v0.7,
-  KB-005 v0.14 (2026-08-13).
+- Substrate versions: KB-001 v0.3, KB-002 v0.2, KB-003 v0.8, KB-004 v0.9,
+  KB-005 v0.16 (2026-08-15).
 - **AR-020b hardened probe (2026-08-13):** comparator class-split
   CORRECTED — metastable/integrable matchable within ε_Φ (20/20 each),
   localized boundary; **quasiperiodic = sole motion-borne survivor
@@ -148,7 +148,21 @@ results/     run outputs, figures, serialized data (gitignored where large)
   (paper/latex/main.pdf, 14 pp, 0 errors, all figures + amendment-log
   appendix embedded).
 - **External review + MAJOR REVISION (2026-08-14/15):** review core accepted; AR-020c unrestricted search REFUTED the single-survivor claim (every class matchable; qp 20/20 at N=12) -> surviving discriminator = the smooth-ensemble NATURALNESS GAP; paper rewritten (question-form title, non-commutation + complexity-split thesis, renames, tempered OTOC, stages table, self-contained numerics; 15 pp clean build). KB-003 v0.7, KB-004 v0.8, KB-005 v0.15.
-- Next: **owner proof pass of the REVISED build** (title change flagged), then retag paper-v1 -> endorsement -> arXiv + Quantum.
+- **Second review round + SECOND MAJOR REVISION (2026-08-15):** degeneracy
+  criticism accepted and decisive — AR-020d block-coherent commutant search
+  matches quasiperiodic essentially exactly (N=10: 20/20, median 0.0052;
+  containment check caught an objective sign error pre-record); GGE matches
+  integrable (0.14–0.17), fails qp (0.47–0.63); smooth price curve flat ~0.32
+  to K=96; window-vs-infinite-time gaps measured. **Corrected claim of record:
+  RESOURCE SPLIT — every class has a stationary impostor; classes differ in the
+  stationary resource (thermal window / GGE charges / degenerate-block
+  coherence); discriminator = SMOOTH-IN-ENERGY REPRESENTATION GAP** (sixth
+  correction, second externally triggered). Paper rewritten (physics-first
+  abstract, five-stage search, price table tab:price, App-A optimizer specs,
+  SRC-065..068 cited). See `sessions/2026-08-15_review-round2.md`.
+- Next: **N=12 block search lands in tab:price (tripwire \BLOCKSNTWELVE in
+  main.tex) -> rebuild -> owner proof pass**, then retag paper-v1 ->
+  endorsement -> arXiv + Quantum.
 - Superseded gates note: original **owner gates to submission** — proof pass on main.pdf;
   acknowledgements/affiliation/funding TODO markers in main.tex; repo
   public + submission tag (expand App.-C hashes); SciPost class swap
