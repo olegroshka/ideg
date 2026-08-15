@@ -147,7 +147,9 @@ results/     run outputs, figures, serialized data (gitignored where large)
   SRC-059..063 verified (KB-003 v0.6) → **LaTeX compiled clean**
   (paper/latex/main.pdf, 14 pp, 0 errors, all figures + amendment-log
   appendix embedded).
-- Next: **owner gates to submission** — proof pass on main.pdf;
+- **External review + MAJOR REVISION (2026-08-14/15):** review core accepted; AR-020c unrestricted search REFUTED the single-survivor claim (every class matchable; qp 20/20 at N=12) -> surviving discriminator = the smooth-ensemble NATURALNESS GAP; paper rewritten (question-form title, non-commutation + complexity-split thesis, renames, tempered OTOC, stages table, self-contained numerics; 15 pp clean build). KB-003 v0.7, KB-004 v0.8, KB-005 v0.15.
+- Next: **owner proof pass of the REVISED build** (title change flagged), then retag paper-v1 -> endorsement -> arXiv + Quantum.
+- Superseded gates note: original **owner gates to submission** — proof pass on main.pdf;
   acknowledgements/affiliation/funding TODO markers in main.tex; repo
   public + submission tag (expand App.-C hashes); SciPost class swap
   (one-line, fetch current template at submission). Then arXiv +

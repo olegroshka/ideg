@@ -3,8 +3,8 @@ id: KB-003
 title: "IDEG Theory Landscape and Canonical Bibliography"
 status: DRAFT
 owner: shared
-last_reviewed: 2026-08-14
-version: 0.6
+last_reviewed: 2026-08-15
+version: 0.7
 research_layer: R2
 epistemic_status: MIXED
 sources:
@@ -18,6 +18,7 @@ changelog:
   - "0.4: AR-019 robustness-instrument survey sources added (Claude, 2026-08-12) — SRC-052..058, all flagged verify; see §S and ar/AR-019_note-2026-08-12_robustness-instruments.md"
   - "0.5: AR-021 dephasing-stabilization literature-check sources added (Claude, 2026-08-13) — SRC-059..063, all flagged verify; mechanism known (Zeno/damping family), object not found in survey scope; see ar/AR-021_note-2026-08-13_dephasing-stabilization-lit.md"
   - "0.6: SRC-059..063 metadata VERIFIED against primary listings (Claude, 2026-08-14, paper-1 bibliography gate) — SRC-060 upgraded to its published ref (J. Phys. Complex. 2, 035008 (2021)); SRC-061 author and SRC-063 full author list confirmed; DOIs recorded"
+  - "0.7: review-revision citations (Claude, 2026-08-15) — SRC-054 verified (PRL 118, 030401 (2017); Comment/Reply caution retained, rigidity-concept citation only); SRC-064 added + verified (Hahn/Luitz/Chalker, PRX 14, 031029 (2024), OTOC operator-spreading anchor)"
 ---
 
 # Theory Landscape and Canonical Bibliography
@@ -487,7 +488,7 @@ Gorin, T.; Prosen, T.; Seligman, T. H.; Žnidarič, M. **Dynamics of Loschmidt E
 Jalabert, R. A.; Pastawski, H. M. **Environment-Independent Decoherence Rate in Classically Chaotic Systems.** *Phys. Rev. Lett.* 86, 2490 (2001). (Origin of the Lyapunov/saturated fidelity-decay regime; methodology analogy only.)
 
 ### SRC-054 — DTC rigidity and criticality theory (v0.4, AR-019; verify)
-Yao, N. Y.; Potter, A. C.; Potirniche, I.-D.; Vishwanath, A. **Discrete Time Crystals: Rigidity, Criticality, and Realizations.** *Phys. Rev. Lett.* 118, 030401 (2017). https://arxiv.org/abs/1608.02589 . (Phase-diagram/melting companion to the verified SRC-044 protocol. Caution of record: a 2021 Comment, arXiv:2109.00551, disputed aspects of the phase diagram; Reply arXiv:2109.07485 — verify pass must record what was conceded.)
+Yao, N. Y.; Potter, A. C.; Potirniche, I.-D.; Vishwanath, A. **Discrete Time Crystals: Rigidity, Criticality, and Realizations.** *Phys. Rev. Lett.* 118, 030401 (2017). https://arxiv.org/abs/1608.02589 . DOI: 10.1103/PhysRevLett.118.030401. **(Metadata verified 2026-08-15, arXiv listing — paper-1 citation gate.)** (Phase-diagram/melting companion to the verified SRC-044 protocol. Caution of record RETAINED: a 2021 Comment, arXiv:2109.00551, disputed aspects of the phase diagram; Reply arXiv:2109.07485 — cite only for the rigidity-curve concept, not phase-diagram details.)
 
 ### SRC-055 — Finite-size drift of the MBL critical disorder (v0.4, AR-019; verify)
 Šuntajs, J.; Bonča, J.; Prosen, T.; Vidmar, L. **Quantum Chaos Challenges Many-Body Localization.** *Phys. Rev. E* 102, 062144 (2020). (arXiv ID unconfirmed recollection: 1905.06345 — check. Methodology analogy: threshold-location estimators drift with system size.)
@@ -515,6 +516,9 @@ Shinjo, K.; Seki, K.; Yunoki, S. **Noise-stabilized discrete time crystals on di
 
 ### SRC-063 — Noise-induced quantum synchronization (v0.5, AR-021; **verified 2026-08-14** via publisher listing + PMC/INSPIRE mirrors)
 Tao, Z.; Schmolke, F.; Hu, C.-K.; Huang, W.; Zhou, Y.; Zhang, J.; Chu, J.; Zhang, L.; Sun, X.; Guo, Z.; Niu, J.; Weng, W.; Liu, S.; Zhong, Y.; Tan, D.; Yu, D.; Lutz, E. **Noise-induced quantum synchronization with entangled oscillations.** *Nat. Commun.* 16, 8457 (2025). DOI: 10.1038/s41467-025-63196-6. (Adjacent noise-stabilized-dynamics literature; recorded for the AR-021 framing verdict.)
+
+### SRC-064 — Eigenstate correlations and OTOC operator spreading (v0.7; verified 2026-08-15, arXiv listing)
+Hahn, D.; Luitz, D. J.; Chalker, J. T. **Eigenstate correlations, the eigenstate thermalization hypothesis, and quantum information dynamics in chaotic many-body quantum systems.** *Phys. Rev. X* 14, 031029 (2024). arXiv:2309.12982. DOI: 10.1103/PhysRevX.14.031029. (Primary-literature anchor for the OTOC-as-operator-spreading reading; cited in paper-1's tempered W3 discussion — the null test *classifies* the OTOC as an operator-spreading diagnostic rather than "catching a failure".)
 
 ---
 

@@ -316,13 +316,14 @@ def fig4():
     savefig(fig, "fig4_gamma")
 
 
-# ---------------- Fig 5: switch-off + comparator search -------------
+# ---------------- Fig 5: coherence removal + naturalness gap --------
 def fig5():
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7.0, 2.9),
-                                   gridspec_kw={"width_ratios": [1, 1.5]})
+    fig, (ax1, ax2, ax3) = plt.subplots(
+        1, 3, figsize=(7.0, 2.9),
+        gridspec_kw={"width_ratios": [0.9, 1.5, 0.9]})
     order = ["TA_ii_quasiperiodic", "TA_iii_chaotic", "TA_iv_metastable",
              "TC_scrambling", "TC_integrable", "TC_localized"]
-    # (a) switch-off jump
+    # (a) coherence-removal jump
     for k, g in enumerate(order):
         d = json.loads((RES / "confirmatory" / f"{g}_N10.json").read_text())
         so = [st["comparator"]["switchoff_delta_vs_run"]
@@ -332,39 +333,68 @@ def fig5():
     ax1.axhline(0.25, color=INK2, lw=0.8, ls=(0, (4, 3)))
     ax1.annotate(r"$\varepsilon_\Phi$", (-0.42, 0.25), xytext=(0, 3),
                  textcoords="offset points", fontsize=7, color=INK2)
-    ax1.set_xticks(range(len(order)))
-    ax1.set_xticklabels([LABEL[g][:6] for g in order], rotation=60,
-                        ha="right", fontsize=6.5)
-    for tick, g in zip(ax1.get_xticklabels(), order):
-        tick.set_color(C[LABEL[g]])
-    ax1.set_ylabel(r"switch-off metric jump  $\|\Phi[\bar\rho]-\bar D\|/\|\bar D\|$")
-    ax1.set_title("(a)  kill the motion → the metric moves", pad=3)
-    ax1.grid(True, axis="y")
-    # (b) hardened-probe misses
+    ax1.set_ylabel(r"$\|\Phi[\bar\rho]-\bar D\|/\|\bar D\|$")
+    ax1.set_title("(a)  coherence removal", pad=3)
+    # (b) naturalness gap: smooth (filled) vs unrestricted (rings)
     for k, g in enumerate(order):
-        for n, mk in ((10, 0.0), (12, 0.36)):
-            p = json.loads((RES / f"ar020b_hardened_probe_N{n}.json"
-                            ).read_text())
-            ov = [r["overall_min"] for r in p["groups"][g]["runs"]]
-            strip(ax2, k - 0.18 + mk, ov, C[LABEL[g]], w=0.13, ms=6)
+        sm, un = [], []
+        for n in (10, 12):
+            pb = json.loads((RES / f"ar020b_hardened_probe_N{n}.json"
+                             ).read_text())
+            sm += [r["overall_min"] for r in pb["groups"][g]["runs"]]
+            pc = json.loads((RES / f"ar020c_unrestricted_N{n}.json"
+                             ).read_text())
+            un += pc["groups"][g]["runs"]
+        strip(ax2, k - 0.19, sm, C[LABEL[g]], w=0.12, ms=6)
+        rng = np.random.default_rng(1)
+        x = k + 0.19 + rng.uniform(-0.12, 0.12, size=len(un))
+        ax2.scatter(x, un, s=8, facecolors="none",
+                    edgecolors=C[LABEL[g]], linewidths=0.6, zorder=3)
     ax2.axhline(0.25, color=INK2, lw=0.8, ls=(0, (4, 3)))
-    ax2.annotate(r"$\varepsilon_\Phi = 0.25$", (3.35, 0.25), xytext=(0, 3),
+    ax2.annotate(r"$\varepsilon_\Phi = 0.25$", (4.7, 0.25), xytext=(0, 3),
                  textcoords="offset points", fontsize=7, color=INK2,
                  ha="center")
-    ax2.set_xticks(range(len(order)))
-    ax2.set_xticklabels([LABEL[g][:6] for g in order], rotation=60,
-                        ha="right", fontsize=6.5)
-    for tick, g in zip(ax2.get_xticklabels(), order):
-        tick.set_color(C[LABEL[g]])
+    ax2.scatter([], [], s=10, c=INK2, label="smooth $f(H)$")
+    ax2.scatter([], [], s=10, facecolors="none", edgecolors=INK2,
+                linewidths=0.7, label="unrestricted")
+    ax2.legend(loc="upper right", frameon=False, fontsize=6.5,
+               handletextpad=0.15, borderaxespad=0.1)
     ax2.set_ylabel("best stationary-state miss")
-    ax2.set_title("(b)  motionless-comparator search "
-                  "(paired dots: $N=10$, $12$)", pad=3)
-    ax2.annotate("0 / 80 matched", (0.0, 0.375), fontsize=7.5,
-                 color=C["quasiperiodic"], ha="center", xytext=(0, 8),
-                 textcoords="offset points", fontweight="bold")
+    ax2.set_title("(b)  the naturalness gap (both sizes pooled)", pad=3)
     ax2.set_ylim(-0.02, 0.45)
-    ax2.grid(True, axis="y")
-    for ax in (ax1, ax2):
+    # (c) threshold sensitivity, quasiperiodic
+    eps_grid = np.linspace(0.0, 0.45, 200)
+    styles = [(10, "-"), (12, (0, (4, 2)))]
+    for n, ls in styles:
+        pb = json.loads((RES / f"ar020b_hardened_probe_N{n}.json"
+                         ).read_text())
+        sm = np.array([r["overall_min"] for r in
+                       pb["groups"]["TA_ii_quasiperiodic"]["runs"]])
+        pc = json.loads((RES / f"ar020c_unrestricted_N{n}.json"
+                         ).read_text())
+        un = np.array(pc["groups"]["TA_ii_quasiperiodic"]["runs"])
+        ax3.plot(eps_grid, [np.mean(sm < e) for e in eps_grid], color=INK2,
+                 lw=1.1, ls=ls)
+        ax3.plot(eps_grid, [np.mean(un < e) for e in eps_grid],
+                 color=C["quasiperiodic"], lw=1.1, ls=ls)
+    ax3.axvline(0.25, color=INK2, lw=0.8, ls=(0, (4, 3)))
+    ax3.annotate("smooth", (0.36, 0.06), fontsize=6.5, color=INK2)
+    ax3.annotate("unrestricted", (0.02, 0.86), fontsize=6.5,
+                 color=C["quasiperiodic"])
+    ax3.annotate(r"solid $N{=}10$, dashed $N{=}12$", (0.02, 0.6),
+                 fontsize=6, color=MUT)
+    ax3.set_xlabel(r"threshold  $\varepsilon$")
+    ax3.set_ylabel("fraction matched")
+    ax3.set_title("(c)  quasiperiodic sensitivity", pad=3)
+    ax3.set_ylim(-0.03, 1.05)
+    for ax, has_ticks in ((ax1, True), (ax2, True), (ax3, False)):
+        if has_ticks:
+            ax.set_xticks(range(len(order)))
+            ax.set_xticklabels([LABEL[g][:6] for g in order], rotation=60,
+                               ha="right", fontsize=6.5)
+            for tick, g in zip(ax.get_xticklabels(), order):
+                tick.set_color(C[LABEL[g]])
+        ax.grid(True, axis="y")
         for sp in ("top", "right"):
             ax.spines[sp].set_visible(False)
     fig.tight_layout()
@@ -461,7 +491,7 @@ def fig6():
     ax2.set_yticks([])
     ax2.set_xticks([0, 0.25, 0.5, 0.75, 1.0])
     ax2.set_xlabel("value after period 100")
-    ax2.set_title("(b)  switch-off: witness collapses, metric persists",
+    ax2.set_title("(b)  drive removal: witness collapses, metric persists",
                   pad=3)
     ax2.legend(loc="upper center", ncol=2, frameon=False, fontsize=7,
                handletextpad=0.2, borderaxespad=0.1, columnspacing=0.9)

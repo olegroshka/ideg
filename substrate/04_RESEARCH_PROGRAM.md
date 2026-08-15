@@ -3,8 +3,8 @@ id: KB-005
 title: "IDEG Research Program — Agentic Protocol, Phases, Gates, and Backlog"
 status: DRAFT
 owner: shared
-last_reviewed: 2026-08-13
-version: 0.14
+last_reviewed: 2026-08-15
+version: 0.15
 research_layer: R4
 epistemic_status: NOT_APPLICABLE
 sources:
@@ -26,6 +26,7 @@ changelog:
   - "0.12: AR-020 CLOSED with the FINAL verdict (owner Amendment 5, n = 40): criterion (a) HOLDS (18/18); §5.4 row 1 — BH-004 supported in-model, BH-005 LICENSED, HYP-009 geometric first realization; KB-004 → v0.6; next: first-paper drafting — see §28"
   - "0.13: paper-1 reflection rulings folded into the outline (test-first framing, boundary-case localized, no-firstness, fenced cross-discipline, hardened probe gate); AR-022 philosophical-context survey added PROPOSED (not paper content) — see §29"
   - "0.14: AR-020b hardened probe — comparator class-split corrected (metastable/integrable matchable; quasiperiodic sole motion-borne survivor, 0/40 both sizes); KB-004 → v0.7; paper §6 gate cleared — see §30"
+  - "0.15: external review + AR-020c (Claude, 2026-08-15) — survivor claim refuted at unrestricted scope; naturalness gap = the surviving discriminator; paper-1 major revision executed; KB-003 → v0.7, KB-004 → v0.8 — see §31"
 ---
 
 # Research Program and Agentic Protocol
@@ -458,3 +459,12 @@ Next scheduled work: **AR-020**, then first-paper drafting.
 
 1. **AR-020b hardened probe executed (both sizes, full ensembles, smooth-f(H) optimization) — comparator class-split CORRECTED:** metastable and integrable are matchable within ε_Φ (20/20 each), localized boundary (3–6/20); **the size-robust motion-borne survivor is the quasiperiodic class alone (0/40, median 0.32–0.34)** — the same class singled out by the negative dephasing log ρ. Dated corrections applied: AR-020 packet, spec §8, KB-004 → v0.7, paper outline §0/§6. Third internal self-correction of the cycle (family-probe overclaim caught before drafting).
 2. §6 gate for paper §6 CLEARED; drafting may begin (§2 first per the writing plan).
+
+---
+
+## 31. Changelog v0.14 → v0.15 — external review + AR-020c
+
+1. **External pre-submission review received 2026-08-14** (owner-relayed). Core criticisms accepted: (i) narrative mismatch — the "survivor" class is not metric-stationary; the unmatched object was the time average; (ii) smooth-f(H) is not all stationary states. Production claim (column-gutter overlap) NOT reproduced (independent rasterization clean; text-extraction artifact of the review tooling); page-13 float isolation confirmed real.
+2. **AR-020c executed (review response): unrestricted diagonal-population search, analytic gradient, both sizes.** Result: EVERY class matchable (quasiperiodic 12/20 at N = 10 median 0.241; **20/20 at N = 12 median 0.025**). The single-survivor claim is refuted (fifth major self-correction; first externally triggered). Surviving class-resolved object: the smooth-ensemble NATURALNESS GAP (chaotic ~0.04 vs quasiperiodic ~0.32, both sizes). KB-004 → v0.8 (dated correction); KB-003 → v0.7 (SRC-054 verified, SRC-064 added for the tempered OTOC discussion).
+3. Paper-1 major revision executed per the accepted review: non-commutation thesis; naturalness-gap results; renamed coherence-removal/drive-removal tests; tempered OTOC framing; "DTC-like" wording; registered/amended/pre-committed stages table; self-contained numerics; threshold-sensitivity panel; page-13 fix; question-form title.
+4. Next: owner proof pass of the revised build; then endorsement/submission path as parked.

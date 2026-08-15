@@ -19,8 +19,8 @@ urlcolor=linkink}
 \newcommand{\ephi}{\varepsilon_\Phi}
 \newcommand{\logr}{\log\rho}
 
-\title{Motion-borne geometry: when an information metric needs
-the dynamics beneath it}
+\title{Does an emergent information metric need its dynamics? A
+preregistered test in finite spin chains}
 \author{Oleg Roshka}
 \affiliation{Independent Researcher \textnormal{--}
 \href{https://orcid.org/0009-0009-3075-9417}{ORCID
@@ -31,36 +31,37 @@ the dynamics beneath it}
 \maketitle
 
 \begin{abstract}
-A stable emergent structure can relate to its substrate in two ways: it
-can be merely \emph{instantiated} --- some motionless configuration of
-the substrate would carry the same structure --- or it can be
-\emph{actively maintained}, existing only because the substrate moves.
-We introduce an operational test that separates the two, and apply it
-in a preregistered numerical study of the mutual-information-graph
-metric of finite spin chains, across fixed-point, quasiperiodic,
-chaotic, metastable, localized, and driven (discrete-time-crystal)
-dynamics. The test has three probes: witnessed motion beneath a
-stationary metric, response to switching the dynamics off, and an
-explicit search for a motionless state carrying the same time-averaged
-structure. The outcome is a single-survivor split. Every class's
-time-averaged metric can be reproduced by some stationary state ---
-chaotic classes almost exactly, consistent with eigenstate
-thermalization --- except the quasiperiodic class: across 80 runs at
-two system sizes, no stationary state within a broad smooth-of-$H$
-family comes within the stationarity threshold. The same class is
-independently singled out by its response to weak dephasing, which
-\emph{pins} its moving metric to the time average --- a negative drift
-ratio stable over two decades of noise strength --- while destabilizing
-chaotic-class metrics. Incommensurate coherence-carried motion is thus
-the one regime, in this family, whose emergent structure demonstrably
-needs its dynamics. The study was preregistered with committed seed
-manifests and a dated amendment log; its discipline caught four failure
-modes before publication, including the discovery that the
-out-of-time-order correlator --- the field's default dynamics
-diagnostic --- fails a basic witness requirement: it fires on frozen
-states. We report the corrected instruments, the corrections
-themselves, and class-resolved scope walls (including a measured,
-class-dependent partition-dependence of the metric).
+Is a stable emergent structure merely \emph{instantiated} by its
+substrate --- some motionless configuration would carry the same
+structure --- or \emph{actively maintained} by the substrate's
+dynamics? We turn this question into an operational test and apply it,
+in a registered-study design, to the mutual-information-graph metric of
+finite spin chains across fixed-point, quasiperiodic, chaotic,
+metastable, localized, and driven (kicked-Ising, DTC-like) dynamics.
+The test has three probes: null-silent witnesses of state motion
+beneath the metric, a coherence-removal response, and an explicit
+search for a stationary state carrying the same time-averaged metric.
+Three results survive our own audits and an external pre-submission
+review. First, time averaging and metric construction do not commute:
+the diagonal ensemble, whose two-site reduced density matrices are
+exactly the time averages, misses the time-averaged metric by
+43--90\%, because mutual information is nonlinear in the state.
+Second, the cost of repairing this mismatch is class-resolved and
+size-robust: simple thermal-window ensembles reproduce chaotic-class
+metrics almost exactly (miss $\sim 0.04$, consistent with eigenstate
+thermalization), while the quasiperiodic time-averaged metric admits
+no smooth-of-$H$ stationary reproduction (miss $\sim 0.32$, 0/80 runs)
+and is reached only by fine-tuned population vectors whose parameter
+count scales with Hilbert-space dimension --- an unrestricted
+optimization matches it, so the discriminator is the \emph{description
+complexity} of the cheapest motionless impostor, not its existence.
+Third, weak dephasing \emph{pins} the moving quasiperiodic metric to
+its time average (negative log drift ratio, stable over two decades of
+noise rate) while destabilizing chaotic-class metrics --- the same
+class is extremal on both instruments. The study record --- committed
+seed manifests, a dated amendment log, five caught-and-corrected
+failure modes (one prompted by external review), and all code and data
+--- is public, and the corrections are reported as results.
 \end{abstract}
 
 \section{Introduction}\label{sec:intro}
@@ -84,7 +85,7 @@ Refs.~\cite{SRC049,SRC060,SRC061} --- pairwise mutual information
 converted to link weights and shortest-path distances on a posited site
 factorization --- and the substrate dynamics ranges over fixed-point,
 quasiperiodic, chaotic, metastable, localized, and driven
-(discrete-time-crystal \cite{SRC043,SRC044}) classes. Prior work on
+(kicked-Ising, DTC-like \cite{SRC043,SRC044,SRC054}) classes. Prior work on
 such information-metric structures has been static: ground-state
 network robustness under projective attacks \cite{SRC060}, metricity as
 a phase diagnostic \cite{SRC061}. Our object is the \emph{time
@@ -94,56 +95,64 @@ lack of need --- for that motion.
 The test has three probes. A \emph{witness battery} certifies that the
 state moves while the metric does not, under a requirement we treat as
 non-negotiable: a witness of motion must vanish identically on a frozen
-state. A \emph{switch-off response} measures what happens to the metric
-when the motion is killed in place. And a \emph{motionless-comparator
-search} optimizes explicitly over stationary states for one that
-carries the same time-averaged metric. The three probes are
-preregistered --- every metric, threshold, and analysis rule fixed
-before code was written, every run seeded from committed manifests,
-every post-hoc change a dated amendment
-(Appendix~\ref{app:log}) --- because a study of this shape has one
-dominant failure mode, self-deception through flexible metric choice,
-and we preferred to make our mistakes in public.
+state. A \emph{coherence-removal response} measures what happens to the
+metric when the state is projected onto its motionless diagonal
+ensemble. And a \emph{motionless-comparator search} optimizes
+explicitly over stationary states for one that carries the same
+time-averaged metric. The study is a registered design --- every
+metric, threshold, and analysis rule fixed before code was written,
+every run seeded from committed manifests, every post-hoc change a
+dated amendment (Appendix~\ref{app:log}) --- because a study of this
+shape has one dominant failure mode, self-deception through flexible
+metric choice, and we preferred to make our mistakes in public.
 
-The mistakes were made, caught, and are reported as results. Four
-times, the discipline fired: a registered class certificate was
-mis-specified (Poisson statistics for a free chain); the
-out-of-time-order correlator --- the field's default dynamics
-diagnostic --- failed the null test, firing on a frozen ground state,
-and was discarded by its own preregistered clause; an early robustness
+The mistakes were made, caught, and are reported as results. Five
+times, a correction mechanism fired: a registered class certificate
+was mis-specified (Poisson statistics for a free chain); the
+out-of-time-order correlator, which we had registered as a witness of
+state motion, fired on a frozen ground state --- the null test
+correctly classifying it as an operator-spreading diagnostic
+\cite{SRC064} rather than a state-motion witness; an early robustness
 comparison was exposed by our adversarial re-analysis as a
-floored-denominator artifact; and a narrow first version of the
-comparator search over-claimed unmatchability for two classes that a
-hardened search then matched. What survives this gauntlet is
-correspondingly compact:
+floored-denominator artifact; a narrow first version of the comparator
+search over-claimed unmatchability for two classes that a hardened
+search then matched; and an external pre-submission review prompted an
+unrestricted comparator optimization that overturned our remaining
+existential claim. What survives this gauntlet is correspondingly
+compact:
 \begin{enumerate}
 \item \textbf{An operational test} of instantiated-vs-maintained
-  emergent structure (witnesses with null-silence, switch-off,
-  comparator search), portable to any system with a computable
-  structural functional.
-\item \textbf{A single-survivor measurement.} Every class's
-  time-averaged metric is carried by some stationary state --- chaotic
-  classes almost exactly, consistent with eigenstate thermalization ---
-  except the quasiperiodic class: 0 of 80 runs matchable at two system
-  sizes, robustly across mode numbers and optimizer strength.
+  emergent structure (null-silent witnesses, coherence removal,
+  motionless-comparator search), portable to any system with a
+  computable structural functional.
+\item \textbf{A non-commutation result.} Time averaging and metric
+  construction do not commute: the diagonal ensemble --- the
+  motionless state whose two-site reduced density matrices are exactly
+  the time averages --- misses the time-averaged metric by 43--90\%.
+\item \textbf{A complexity-resolved matching spectrum.} Repairing the
+  mismatch is possible for every class, but at class-resolved cost:
+  chaotic-class metrics are matched by simple thermal windows
+  ($\sim$3 parameters, miss $\sim 0.04$); the quasiperiodic metric
+  admits no smooth-of-$H$ reproduction (0/80 runs at $\sim 0.32$) and
+  yields only to unrestricted, dimension-scaling population
+  optimization. The class discriminator is the description complexity
+  of the cheapest motionless impostor.
 \item \textbf{A sign structure.} Weak dephasing \emph{stabilizes} the
   moving metrics of coherence-carried classes (negative log drift
-  ratio, flat over two decades of noise strength) while destabilizing
-  chaotic-class metrics --- the same class singled out by the
-  comparator search is singled out by noise. The mechanism is standard
-  decoherence damping \cite{SRC059}; the class-resolved geometric
-  reading appears, within the scope of our survey
-  \cite{SRC060,SRC061,SRC062,SRC063}, to be unreported.
-\item \textbf{A methods record.} The null-silence filter and the
-  fresh-seed, power-stabilized adjudication of sharp statistical
-  criteria --- with the OTOC's failure and the seed-lottery episode as
-  measured exhibits, and the complete dated amendment log as
-  Appendix~\ref{app:log}.
-\item \textbf{A driven-phase case study} in which the sustained-by
-  question resolves \emph{negatively} despite maximal appearances: the
-  discrete-time-crystal metric survives removal of its drive
-  unchanged --- localization, not the subharmonic motion, holds it.
+  ratio, flat over two decades of noise rate) while destabilizing
+  chaotic-class metrics --- the class that is hardest to match is the
+  one noise defends. The mechanism is standard decoherence damping
+  \cite{SRC059}; the class-resolved geometric reading appears, within
+  the scope of our survey \cite{SRC060,SRC061,SRC062,SRC063}, to be
+  unreported.
+\item \textbf{A methods record.} The null-silence filter, the
+  registered/amended/pre-committed staging of sharp statistical
+  criteria with a measured seed-lottery episode, and the complete
+  dated amendment log as Appendix~\ref{app:log}.
 \end{enumerate}
+The driven track adds an instructive case study: the DTC-like regime's
+metric survives removal of its drive unchanged --- localization, not
+the subharmonic motion, holds it (Sec.~\ref{sec:driven}).
 
 \paragraph{What this paper does not claim.} The metric is an
 information-theoretic construct on a posited factorization; its
@@ -300,14 +309,19 @@ relabelings in the senses catalogued in Appendix~\ref{app:battery}.
 
 We also registered (W3) an out-of-time-order correlator,
 $C(r,t)=\tfrac12\langle|[\sigma^z_{i_0+r}(t),\sigma^z_{i_0}]|^2\rangle$,
-with saturation value and arrival time as statistics. It failed the
-null test --- measured, not argued: on the frozen fixed point it rises
-to $C\approx 1.11$ by $t=1.5$. The OTOC certifies
-Heisenberg-\emph{operator} spreading, which a gapped ground state
-supports; it does not certify state motion. Under the preregistered
-rule its statistics were discarded from the class-separation criterion,
-with consequences reported in Sec.~\ref{sec:witness}. We keep it in the
-outputs as the operator-spreading diagnostic it actually is.
+with saturation value and arrival time as statistics. The null test
+disqualified it for \emph{our specific purpose} --- measured, not
+argued: on the frozen fixed point it rises to $C\approx 1.11$ by
+$t=1.5$. This is not a defect of the OTOC. OTOCs are understood in the
+primary literature as diagnostics of Heisenberg-operator spreading
+\cite{SRC064}, which a gapped ground state supports, and firing on an
+eigenstate is expected behaviour for such an object. The point the
+null test makes is narrower and, we think, worth making: an
+operator-spreading diagnostic is not a witness of \emph{state} motion,
+and the two roles are easy to blur when ``dynamics'' is used
+informally. Under the registered rule its statistics were removed from
+the class-separation criterion, with consequences reported in
+Sec.~\ref{sec:witness}; it remains in our outputs in its proper role.
 
 \subsection{Comparators and perturbation protocols}\label{sec:protocols}
 
@@ -321,10 +335,16 @@ information is nonlinear in the (correctly time-averaged) reduced
 density matrices, and $\Phi[\bar\rho]$ sits 43--90\% away from $\bar D$
 depending on class. The corrected comparator methodology --- an
 explicit optimization over stationary states --- is described with its
-results in Sec.~\ref{sec:comparator}. The \emph{switch-off test}
-dephases the state in the energy eigenbasis mid-window (equivalently:
-projects onto $\bar\rho$, since populations are conserved) and asks
-whether the metric's behaviour changes. And three \emph{perturbation
+results in Sec.~\ref{sec:comparator}. The \emph{coherence-removal test}
+projects the state onto its diagonal ensemble mid-window (energy-basis
+dephasing; populations are conserved, so the result is exactly
+$\bar\rho$) and asks whether the metric's behaviour changes. We
+emphasize what this operation is not: it is not switching the
+Hamiltonian off --- setting $H=0$ would freeze the current state and
+its metric in place --- it removes energy-basis coherence, i.e.\ the
+motion, while keeping the time-averaged local structure. The driven
+track uses a genuinely different operation, \emph{drive removal}
+(Sec.~\ref{sec:driven}). And three \emph{perturbation
 protocols} --- a local Hamiltonian quench $\lambda\sigma^z$, a local
 dephasing channel of rate $\gamma$, and the loss of two non-adjacent
 sites --- probe robustness through the scale-free log drift ratio
@@ -472,11 +492,38 @@ the criterion requires). A descriptive third size ($N=14$, computed
 from eigenbasis coefficients alone) confirms the monotone trend: all
 three statistics $\geq 0.976$.
 
+To keep the epistemic status of each stage unambiguous, Table~\ref
+{tab:stages} separates them explicitly; only the first row carries the
+original registration's status, and the final verdict is
+\emph{pre-committed} (fresh seeds, outcome accepted in advance either
+way, under ratified amendments) rather than preregistered.
+
+\begin{table}[t]
+\centering\footnotesize
+\begin{tabular}{@{}p{3.15cm}p{1.9cm}p{2.15cm}@{}}
+\toprule
+stage & status & outcome \\
+\midrule
+original battery, registered seeds & registered & (a) FAILS \\
+reformalized battery, original seeds & exploratory & 18/18 (validation
+only) \\
+reformalized, fresh seeds, $n{=}20$ & pre-committed & FAILS (marginal
+pair) \\
+reformalized, fresh seeds, $n{=}40$ & pre-committed & \textbf{PASSES
+18/18 (final)} \\
+\bottomrule
+\end{tabular}
+\caption{Stages of the class-separation criterion. Amendments between
+stages are dated in Appendix~\ref{app:log}.}
+\label{tab:stages}
+\end{table}
+
 The two methodological claims we take from this: null-silence is a
-nontrivial filter that the field's default dynamics diagnostic fails;
-and sharp-threshold criteria on small ensembles must be fresh-seeded
-and, near the threshold, power-stabilized --- our original-seed
-validation table would have over-claimed.
+nontrivial filter that separates state-motion witnesses from
+operator-spreading diagnostics; and sharp-threshold criteria on small
+ensembles must be fresh-seeded and, near the threshold,
+power-stabilized --- our original-seed validation table would have
+over-claimed.
 
 \section{Results III: class-resolved robustness and the dephasing sign
 structure}\label{sec:robust}
@@ -541,28 +588,38 @@ Appendix~\ref{app:stats}.) All robustness statements are statements at
 the calibrated strengths and, per the sweep, within the probed regime
 --- not strength-independent class properties.
 
-\section{Results IV: the motionless-comparator search --- one class
-survives}\label{sec:comparator}
+\section{Results IV: the motionless-comparator search --- existence
+versus naturalness}\label{sec:comparator}
 
-The sharpest form of the sustained-by question is: \emph{does there
-exist a motionless state carrying the same time-averaged metric?} If
-yes, the dynamics is optional for the structure; if no, the structure
-is motion-borne. This section reports the search, including the two
-corrections our own audits forced (Fig.~\ref{fig:comparator}).
+The sharpest form of the maintained-vs-instantiated question is:
+\emph{does there exist a motionless state carrying the same
+time-averaged metric --- and if so, how complicated must it be?} An
+important caveat frames this whole section: for the classes whose
+metric is genuinely moving (quasiperiodic, metastable, integrable),
+the object under discussion is the \emph{time-averaged} metric
+$\bar D$, which is a stationary summary by construction; only for the
+metric-stationary classes is $\bar D$ also the metric one would
+observe. This section reports the search, including the three
+corrections that shaped it --- two forced by our own audits, one by an
+external pre-submission review (Fig.~\ref{fig:comparator}).
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{fig5_comparator.pdf}
-\caption{(a) The switch-off measurement: dephasing the state mid-window
-(equivalently, projecting onto the diagonal ensemble) moves the metric
-by 43--90\% of $\lVert\bar D\rVert$ in every class --- killing the
-motion changes the metric. (b) The hardened motionless-comparator
-search: best achievable miss $\lVert\Phi[\sigma]-\bar
-D\rVert/\lVert\bar D\rVert$ over three natural stationary families plus
-a general smooth-$f(H)$ optimization, every run, paired dots per class
-($N=10$ left, $N=12$ right). Every class is matchable within $\ephi$
-except the quasiperiodic class (0/80 including the stress test);
-localized is the boundary case.}
+\caption{(a) The coherence-removal measurement: projecting the state
+onto its diagonal ensemble mid-window moves the metric by 43--90\% of
+$\lVert\bar D\rVert$ in every class --- removing the motion changes
+the metric. (b) The naturalness gap: best achievable miss
+$\lVert\Phi[\sigma]-\bar D\rVert/\lVert\bar D\rVert$ per run, both
+sizes pooled, for smooth-$f(H)$ stationary ensembles (filled; $\leq
+24$ parameters) versus unrestricted diagonal-population optimization
+(rings; $2^N$ parameters). Every class is matchable by the
+unrestricted search; only the quasiperiodic class requires it. (c)
+Threshold sensitivity for the quasiperiodic class: fraction of runs
+matched versus threshold, per search family and size; the registered
+$\ephi = 0.25$ (vertical line) sits in the steep region of the
+unrestricted $N=10$ curve, so counts at that threshold are
+sensitive --- the smooth/unrestricted gap is not.}
 \label{fig:comparator}
 \end{figure*}
 
@@ -580,58 +637,80 @@ perturbed response is in fact \emph{smaller}). Both corrections are
 dated in the study record; what survives them is stronger than what
 they replaced.
 
-\textbf{The switch-off measurement.} Dephasing the state mid-window
---- which projects exactly onto $\bar\rho$ --- moves the metric by
-$43$--$90\%$ of $\lVert\bar D\rVert$ (chaotic $0.54$, scrambling
-$0.52$, integrable $0.85$, metastable $0.90$, localized $0.90$,
-quasiperiodic $0.43$). Killing the motion does not freeze the metric in
-place; it changes the metric. For the metric-stationary classes this
-registers as a drift increase with disjoint confidence intervals.
+\textbf{The coherence-removal measurement.} Projecting onto $\bar\rho$
+mid-window moves the metric by $43$--$90\%$ of $\lVert\bar D\rVert$
+(chaotic $0.54$, scrambling $0.52$, integrable $0.85$, metastable
+$0.90$, localized $0.90$, quasiperiodic $0.43$). Removing the motion
+does not freeze the metric in place; it changes the metric. For the
+metric-stationary classes this registers as a drift increase with
+disjoint confidence intervals.
 
-\textbf{The optimization search, hardened.} We then searched explicitly
-for \emph{any} motionless match: stationarity means $[\sigma, H]=0$, so
-we optimized over populations on the energy eigenbasis --- three
-natural families (thermal at both temperature signs, depolarized
-diagonal ensemble, Gaussian microcanonical) and a general
-smooth-$f(H)$ family (log-populations parameterized by up to 24
-Chebyshev coefficients, multi-start optimization), over full ensembles
-at both criterion sizes. A first, narrower version of this search
-(families only, one run per class) wrongly suggested the metastable and
-integrable classes were unmatchable; the hardened search corrected this
-before drafting, and the correction is part of the record.
+\textbf{The three-stage search.} Stationarity means $[\sigma, H]=0$,
+so we optimized over populations on the energy eigenbasis, in three
+stages of increasing freedom, over full ensembles at both criterion
+sizes: (i) three natural families (thermal at both temperature signs,
+depolarized diagonal ensemble, Gaussian microcanonical; $\leq 2$
+parameters each); (ii) a smooth-$f(H)$ family (log-populations
+parameterized by up to 24 Chebyshev coefficients in the scaled energy,
+multi-start); (iii) --- prompted by an external pre-submission review
+that correctly observed stage (ii) is not all stationary states ---
+an \emph{unrestricted} optimization over all $2^N$ populations
+(softmax parameterization, analytic gradient through the entropies and
+shortest paths, gradient verified against finite differences,
+multi-start). Two earlier over-claims are part of the record: the
+family-only stage wrongly suggested metastable and integrable were
+unmatchable (corrected at stage ii), and stage (ii) wrongly suggested
+the quasiperiodic class was categorically unmatched (corrected at
+stage iii).
 
-The final result is a single-survivor split. Matchable within $\ephi$:
-chaotic and scrambling in every run, almost exactly (median miss
-$0.035$--$0.046$ --- a Gaussian microcanonical window reproduces the
-time-averaged metric of a chaotic state, as eigenstate thermalization
-would suggest); metastable in every run ($0.09$--$0.13$); integrable in
-every run ($0.16$--$0.17$); localized as a boundary case (3--6 of 20
-runs, median $\approx 0.27$). Unmatched: \textbf{the quasiperiodic
-class, in 0 of 80 runs across both sizes} (median miss $0.31$; the
-single closest run reaches $0.264$, still above threshold), robustly
-across mode numbers $m = 3, 4, 5$ (medians $0.31$--$0.33$) and
-insensitive to enriching the optimizer. The claim is bounded by its
-search space --- stationary states that are smooth functions of $H$ ---
-and is not an impossibility theorem; within that space, it is
-unambiguous.
+The final result is a \textbf{complexity split, not an existence
+split}. Under the unrestricted search, \emph{every} class is matchable
+within $\ephi$ at $N=12$ --- quasiperiodic included (20/20, median
+miss $0.025$); at $N=10$ the quasiperiodic class straddles the
+threshold (12/20, median $0.241$) while every other class matches in
+every run (medians $0.008$--$0.066$). This is partly a
+parameter-counting effect: the number of free populations grows as
+$2^N$ while the target has only $N(N-1)/2$ entries, so unrestricted
+matchability becomes generic with size. The size-robust,
+class-resolved quantity is the cost of the match. Within
+smooth-$f(H)$ ensembles --- whose parameter count does not grow with
+dimension --- chaotic and scrambling metrics are matched almost
+exactly in every run (median $0.035$--$0.046$; a Gaussian
+microcanonical window suffices, as eigenstate thermalization would
+suggest), metastable ($0.09$--$0.13$) and integrable ($0.16$--$0.17$)
+follow, localized is marginal (median $\approx 0.27$), and \textbf{the
+quasiperiodic time-averaged metric is unmatched in 0 of 80 runs
+(median $0.31$--$0.34$)}, robustly across mode numbers $m = 3, 4, 5$.
+The quasiperiodic $\bar D$ is reproducible only by fine-tuned
+population vectors with dimension-scaling parameter counts: the
+class discriminator is the \emph{description complexity of the
+cheapest motionless impostor}, and Fig.~\ref{fig:comparator}(c) shows
+the gap between the smooth and unrestricted searches is insensitive to
+the threshold choice even where the counts at $\ephi$ are not.
 
-Two independent instruments therefore single out the same class. The
-quasiperiodic metric is the only one that no searched motionless state
-can carry, and the only one that weak noise \emph{stabilizes}.
-Incommensurate coherence-carried motion is, in this family, the regime
-whose emergent structure needs its dynamics: motion-borne in the
-operational sense this paper defines. Conversely, the chaotic classes'
-stationary metrics are compatible-with their motion --- a
-thermal-window state carries the same structure --- while their
-\emph{robustness signature} still distinguishes them
-(Sec.~\ref{sec:robust}): the two probes answer different questions, and
-both answers are class-resolved.
+Two independent instruments still single out the same class, in this
+corrected sense: the quasiperiodic metric is the only one with no
+\emph{natural} (smooth, low-parameter) motionless double, and the only
+one that weak noise \emph{stabilizes} (Sec.~\ref{sec:robust}). Whether
+some principled measure of stationary-state complexity makes the
+naturalness gap precise --- and whether it survives larger systems,
+where parameter counting increasingly favours fine-tuned matches ---
+we pose as the open question this study leaves sharpest. Conversely,
+the chaotic classes' stationary metrics are straightforwardly
+compatible-with their motion: the simplest thermal impostor carries
+the same structure, while the robustness signature of
+Sec.~\ref{sec:robust} still distinguishes the classes dynamically.
 
 \section{Results V: the driven regime}\label{sec:driven}
 
-The discrete-time-crystal track supplies the study's cleanest
-stationary-with-witness regime and its most instructive
-compatible-with verdict (Fig.~\ref{fig:driven}).
+The driven track --- a kicked-Ising protocol in its rigid subharmonic
+(DTC-like) regime \cite{SRC043,SRC044,SRC054} --- supplies the study's
+cleanest stationary-with-witness regime and its most instructive
+compatible-with verdict (Fig.~\ref{fig:driven}). We say ``DTC-like''
+deliberately: at $N \leq 14$ with 20 disorder realizations we observe
+locked subharmonic response and a rigidity curve consistent with the
+discrete-time-crystal phase, but we perform no size or lifetime
+scaling and make no phase claim \cite{SRC054}.
 
 \begin{figure*}[t]
 \centering
@@ -639,8 +718,8 @@ compatible-with verdict (Fig.~\ref{fig:driven}).
 \caption{(a) The full rigidity curve of the driven track: subharmonic
 weight $h_{\rm sub}$ versus drive imperfection (realization mean and
 range, seed-paired across $\varepsilon$), crossing $1/2$ at
-$\varepsilon_c \approx 0.23$ (interpolated). (b) The switch-off test
-at $\varepsilon=0.03$: removing the drive collapses the subharmonic
+$\varepsilon_c \approx 0.23$ (interpolated). (b) The drive-removal test
+at $\varepsilon=0.03$: removing the kicks collapses the subharmonic
 witness while the metric drift persists essentially unchanged ---
 localization, not the drive, holds this metric. Inset: the clean
 interacting comparator (r2) does not thermalize on any probed horizon;
@@ -648,7 +727,7 @@ its subharmonic weight is undiminished at 2000 periods.}
 \label{fig:driven}
 \end{figure*}
 
-At $\varepsilon = 0.03$, deep in the rigid phase, all 100 runs are
+At $\varepsilon = 0.03$, deep in the rigid regime, all 100 runs are
 metric-stationary while the subharmonic witness reads $0.939$: a
 period-doubled magnetization response, locked across 20 disorder
 realizations, above a mutual-information metric that does not move.
@@ -660,16 +739,16 @@ $0.65$ through $\varepsilon = 0.20$, crosses $1/2$ at $\varepsilon_c
 \approx 0.45$ --- a complete critical-strength measurement for this
 realization of the protocol of Refs.~\cite{SRC043,SRC044}.
 
-The switch-off test resolves the sustained-by question for this regime,
-and resolves it \emph{against} the drive: removing the kicks at
-mid-window collapses the witness ($0.95 \to 0.00$) while the metric's
-stationarity persists and slightly improves (mean post-window drift
-$0.110 \to 0.086$). The frozen-in disorder, not the drive, holds this
+The drive-removal test resolves the maintained-vs-instantiated
+question for this regime, and resolves it \emph{against} the drive:
+removing the kicks at mid-window collapses the witness
+($0.95 \to 0.00$) while the metric's stationarity persists and
+slightly improves (mean post-window drift $0.110 \to 0.086$). The frozen-in disorder, not the drive, holds this
 metric --- the witnessed subharmonic motion is compatible with the
 stationary structure, not required by it. We registered this as an open
 question with exactly this outcome listed as reportable, and report it
 accordingly. Consistently, the perturbation protocols at the calibrated
-strengths barely move the DTC metric ($\overline{\logr} =
+strengths barely move the DTC-like regime's metric ($\overline{\logr} =
 0.01$--$0.19$).
 
 The comparator regimes behave asymmetrically, and honestly. Without
@@ -721,29 +800,43 @@ addresses systems that must supply their own.
 
 \section{Discussion and outlook}\label{sec:discussion}
 
-What the study delivers is not a mechanism but an instrument: the
-instantiated-vs-maintained distinction, usually a rhetorical flourish,
-is here an executable measurement with three independent probes --- and
-its first execution returned a sharp, doubly-corroborated answer. In
-this family, thermalizing motion builds structures a motionless thermal
-state could carry; incommensurate coherent motion builds one that
-nothing motionless we searched can carry, and that noise defends rather
-than destroys.
+What the study delivers is not a mechanism but an instrument, and a
+measured answer narrower than the question in our title. Is the
+emergent metric motion-borne? Not in the existential sense we
+initially hoped to establish: every class's time-averaged metric,
+including the quasiperiodic one, is carried by \emph{some} stationary
+state once fine-tuned, dimension-scaling population vectors are
+allowed. What the measurements do establish is threefold: time
+averaging and metric construction do not commute (the canonical
+motionless partner misses by 43--90\%); the cost of a motionless
+reproduction is sharply class-resolved, with thermalizing classes
+matched by three-parameter thermal windows and the quasiperiodic class
+by nothing smooth at all; and weak noise stabilizes exactly the class
+that resists natural stationary description. ``Motion-borne'' survives
+as a motivating question and as an open conjecture about
+\emph{natural} stationary descriptions --- not as a demonstrated
+existential conclusion.
 
-The result points directly at a next question: is there a form of
-robustness that \emph{recurrent} or quasiperiodic dynamics provides and
-fixed points cannot? The two signatures reported here ---
-unmatchability and noise-stabilization, coinciding in one class --- are
-exactly the evidence such a mechanism would leave, and the driven track
-supplies a controlled arena in which to look for it (with the caution
-of Sec.~\ref{sec:driven}: the most spectacular witnessed motion in this
-study turned out \emph{not} to sustain its metric).
+The sharpest open question the data leaves is the naturalness gap
+itself: is there a principled complexity measure on stationary states
+(parameter count is a crude proxy) under which the quasiperiodic
+time-averaged metric is provably expensive --- and does the gap
+survive larger systems, where parameter counting increasingly favours
+fine-tuned matches? A second question follows the sign structure: is
+there a form of robustness that \emph{recurrent} or quasiperiodic
+dynamics provides and fixed points cannot? The coincidence reported
+here --- the hardest-to-match class is the one noise defends --- is
+the evidence such a mechanism would leave, and the driven track
+supplies a controlled arena in which to look (with the caution of
+Sec.~\ref{sec:driven}: the most spectacular witnessed motion in this
+study turned out \emph{not} to hold its metric).
 
 The test template itself is not specific to spin chains. Any system
 with a computable structural functional over a dynamical substrate
 admits the same three probes: certify the motion with null-silent
-witnesses, switch the dynamics off, and search honestly for a
-motionless impostor. Candidate applications suggest themselves wherever
+witnesses, remove the coherence that carries it, and search honestly
+for a motionless impostor --- reporting the impostor's complexity, not
+just its existence. Candidate applications suggest themselves wherever
 stable emergent structure rides on flux --- resting-state functional
 connectivity over neural dynamics, metabolic network structure over
 flux-carrying steady states, stability of ecological or market
@@ -755,12 +848,15 @@ existence --- is, of course, much older than physics; we make no
 attempt to engage that literature here.
 
 On the methods side, we draw two conclusions we believe generalize.
-Null tests for witnesses are cheap and merciless --- the OTOC episode
-suggests that diagnostics certifying ``dynamics'' deserve routine
-auditing against frozen states. And preregistration with committed
-seeds changed the outcome of this study at least four times; the
-amendment log (Appendix~\ref{app:log}) is our answer to the question of
-what such discipline buys in a purely computational setting.
+Null tests for witnesses are cheap and clarifying --- the OTOC episode
+suggests that diagnostics informally credited with certifying
+``dynamics'' deserve routine auditing against frozen states, if only
+to fix which kind of dynamics they certify. And a registered design
+with committed seeds changed the outcome of this study five times ---
+four corrections from our own audit mechanisms and one from external
+review; the amendment log (Appendix~\ref{app:log}) is our answer to
+the question of what such discipline buys in a purely computational
+setting.
 
 The obvious open front is scale and covariance: whether any version of
 this question can be asked of structures that deserve the word
@@ -768,15 +864,17 @@ this question can be asked of structures that deserve the word
 functionals, larger systems, internally clocked dynamics --- remains
 exactly as open as it was, and none of the present results shortens
 that road. What they do establish is that the road's first step is
-measurable: there exist, already in twelve qubits, emergent structures
-that demonstrably need their dynamics.
+measurable: already in twelve qubits, one can ask what a structure's
+cheapest motionless impostor costs, and get a class-resolved answer.
 
 \paragraph{Acknowledgements.} The numerical study --- implementation,
 execution, analysis, and the adversarial companion --- was carried out
 with Claude (Anthropic) as AI research assistant, operating under the
 preregistration and shared-substrate protocol whose record forms
 Appendix~\ref{app:log}. The programme's initiating knowledge base was
-drafted in collaboration with OpenAI's ChatGPT. All rulings, decisions,
+drafted in collaboration with OpenAI's ChatGPT. An external
+pre-submission review prompted the unrestricted comparator analysis
+and several framing corrections reported here. All rulings, decisions,
 and the final text are the author's responsibility.
 
 \paragraph{Funding.} This work received no external funding; it was
@@ -792,6 +890,46 @@ submission tag (\texttt{paper-v1}).
 
 \section{Numerics}\label{app:numerics}
 
+\paragraph{Models and distributions.} Track-A/C Hamiltonians and
+parameters are fully specified in Table~\ref{tab:classes} and
+Sec.~\ref{sec:family}; disorder draws are $h_i \sim U[-W, W]$ with
+$W=8$ for the localized regime and $\delta g_i \sim U[-0.01, 0.01]$
+for the metastable dressings. The driven track evolves by the Floquet
+unitary $U_F = e^{-iH_2 t_2}\, e^{-iH_1 t_1}$ with $t_1 = t_2 = 1$,
+$H_1 = \tfrac{\pi}{2}(1-\varepsilon)\sum_i \sigma^y_i$ and
+$H_2 = \sum_i J_i\,\sigma^z_i\sigma^z_{i+1} + \sum_i h_i\sigma^z_i$,
+$J_i \sim U[0.05, 0.15]\pi$, $h_i \sim U[0, \pi]$ (r1 sets $J_i = 0$;
+r2 sets $h_i = 0$); disorder and initial states are seed-paired across
+$\varepsilon$ and regimes.
+
+\paragraph{Dephasing channel.} The perturbation protocol applies local
+$\sigma^z$ dephasing at rate $\gamma$: Lindblad generator
+$\mathcal{D}[\rho] = \gamma\sum_i (\sigma^z_i \rho\, \sigma^z_i -
+\rho)$, implemented by Trotter splitting (step $0.5$) of the exact
+unitary and the exact damping mask $e^{-2\gamma\,\Delta t\, d_H(a,b)}$
+on the computational-basis coherences, $d_H$ the Hamming distance ---
+exact for the commuting pure-dephasing part, splitting error
+$O(\Delta t^2)$.
+
+\paragraph{Comparator optimization.} The stationary search minimizes
+$\lVert\Phi[\sigma(p)] - \bar D\rVert_F / \lVert\bar D\rVert_F$ over
+eigenbasis populations $p$. Stages: fixed families (grids over
+$\beta$, depolarization $\lambda$, and Gaussian window $(E_0,
+\sigma_E)$); smooth $f(H)$ ($\log p = \sum_{k<K}
+c_k T_k(\tilde E)$, $K \leq 24$, Powell, multi-start, $\leq 800$
+evaluations per start); unrestricted ($p = \mathrm{softmax}(\theta)$,
+$\theta \in \mathbb{R}^{2^N}$, L-BFGS-B with the analytic gradient
+assembled from $\partial S/\partial p_n = -\mathrm{tr}[R_n(\ln\rho +
+1)]$ per reduced density matrix, $\partial w/\partial x = -1/x$ off
+the weight floor, and shortest-path edge subgradients from
+predecessor-tracked Floyd--Warshall; five starts including the best
+smooth solution; gradient verified against finite differences,
+relative deviation $1.7\times10^{-3}$, dominated by path-tie
+subgradients). Convergence: L-BFGS-B to $\lVert g\rVert < 10^{-8}$ or
+400 iterations; multi-start scatter across the five starts is small
+compared to the class gaps reported.
+
+\paragraph{Diagonalization and evolution.}
 Exact diagonalization throughout (dense to $N=14$, dimension 16384);
 pure-state evolution via eigendecomposition, density-matrix evolution
 for the dephasing protocol via Trotter splitting of the unitary and the
@@ -879,6 +1017,16 @@ single-survivor result & \texttt{67dda68970b1} \\
 08-13 & Descriptive hardening sweep: $\varepsilon_c$, 2000-period
 comparator, $\gamma$-grid, partition distribution, $N=14$ &
 \texttt{9ce17dec803c} \\
+08-14 & External pre-submission review received; core criticisms
+accepted (time-average framing; search-space bound) &
+--- \\
+08-14/15 & Unrestricted comparator optimization (review-prompted):
+every class matchable; smooth-vs-unrestricted naturalness gap replaces
+the single-survivor claim & \texttt{075eb96},
+\texttt{2978713} \\
+08-15 & Major revision: non-commutation thesis; coherence-removal /
+drive-removal renaming; tempered OTOC framing; DTC-like wording;
+stages table; self-contained numerics & (this build) \\
 \bottomrule
 \end{tabular}
 \caption{The amendment log (12-character commit identifiers in the
@@ -910,7 +1058,7 @@ strengths and comparator regimes (identical couplings and fields at
 equal seed), so rigidity curves and regime contrasts are paired
 comparisons. The subharmonic weight is computed on an even number of
 stroboscopic periods so the period-doubled line is the exact Nyquist
-bin. Switch-off evolves under the interaction Hamiltonian alone in lab
+bin. Drive removal evolves under the interaction Hamiltonian alone in lab
 time, sampled at the same period boundaries (drive removed, clock
 kept). The dephasing protocol applies the exact per-period damping mask
 with the rate stated in lab-time units ($T_{\rm period} = 2$).

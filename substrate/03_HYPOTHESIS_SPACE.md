@@ -4,7 +4,7 @@ title: "IDEG Hypothesis Space — Nulls, Bridges, Strong Forms, and Falsifiers"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-13
-version: 0.7
+version: 0.8
 research_layer: R3
 epistemic_status: SPECULATIVE_TO_PLAUSIBLE
 sources:
@@ -19,6 +19,7 @@ changelog:
   - "0.5: BH-004 epistemic status SPECULATIVE → PLAUSIBLE (owner ruling 2026-08-13, post-AR-011/AR-021); explicit Status line added; HYP-009 geometric part unchanged (SPECULATIVE)"
   - "0.6: final AR-020/Amendment-5 verdict recorded (Claude, 2026-08-13) — criterion (a) HOLDS under the reformalized battery (n = 40, fresh seeds); BH-004 supported in-model (spec §5.4 row 1); BH-005 LICENSED; HYP-009 geometric part gains its first model realization (status unchanged)"
   - "0.7: hardened-probe correction (AR-020b, Claude, 2026-08-13) — comparator class-split corrected: metastable/integrable matchable, localized boundary; motion-borne survivor = quasiperiodic alone (0/40, both sizes), coinciding with the negative dephasing log ρ class"
+  - "0.8: AR-020c correction (external-review-triggered, Claude, 2026-08-15) — survivor claim REFUTED at unrestricted scope (all classes matchable; qp 20/20 at N=12); class discriminator = the smooth-ensemble NATURALNESS GAP; BH-004 status unchanged (grounded on (b) + coherence-removal legs)"
 ---
 
 # Hypothesis Space
@@ -205,6 +206,23 @@ geometry no searched stationary state reproduces. Chaotic-class
 matchability strengthens (0.035–0.046). Motion-borne language is
 hereafter restricted accordingly (probe scope: smooth-f(H); not an
 impossibility proof).
+**(v0.8) CORRECTION — the survivor claim is REFUTED at unrestricted
+scope (AR-020c, external-review-triggered, 2026-08-14/15).** An
+unrestricted diagonal-population optimization (all $2^N$ parameters,
+analytic gradient, multi-start) matches EVERY class at both sizes —
+quasiperiodic included (N = 12: 20/20, median 0.025; N = 10: 12/20,
+median 0.241, threshold-straddling). Parameter counting makes
+unrestricted matchability generic as dimension grows. **No existential
+motion-borne claim survives.** The size-robust class-resolved object is
+the NATURALNESS GAP: within smooth-f(H) stationary ensembles
+(10–24 parameters, dimension-independent), chaotic classes match at
+~0.04 while quasiperiodic stays unmatched at ~0.32 at both sizes — the
+description complexity of the cheapest motionless impostor is the
+real class discriminator. Non-commutation (Φ[ρ̄] vs D̄, 43–90%) and the
+dephasing sign structure stand. BH-004 status (PLAUSIBLE, owner ruling
+grounded on criterion (b) + coherence-removal jump) is NOT changed by
+this correction; the "supported in-model" §5.4 standing now rests on
+those legs plus the naturalness gap, not on existence claims.
 
 ### BH-005 — Recurrence as an emergent-stability mechanism
 Within a successful BH-004 model, test whether recurrence/limit-cycle/quasiperiodicity — including a driven/Floquet regime modeled on TH-033 — provides robustness unavailable to fixed-point/invariant-subspace alternatives. **Only proceed if BH-004 survives.** This is HYP-005's proving ground.
