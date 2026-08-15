@@ -1068,11 +1068,19 @@ reduced density matrices, and each run is validity-checked against
 the unrestricted diagonal stage: the block family strictly contains
 the diagonal family, so a block result above a diagonal one signals
 optimizer shortfall, not family structure. The check caught a sign
-error in the objective during development, and flags one integrable
-run in the final data where the diagonal search's five starts found a
-$10^{-8}$ optimum the singly-warm-started block search did not
-($0.02$) --- a concrete reminder that all reported misses are found
-optima, not certified minima. Sparse supports re-run the
+error in the objective during development, and in the two-start
+production data it flagged exactly one integrable run, where the
+diagonal search's five starts found a $10^{-8}$ optimum the block
+search did not ($0.02$). A start-parity rerun of the full block
+stage (five starts --- warm, two jitters, two random --- matching
+the diagonal stage's count) resolved the flag as pure optimizer
+shortfall: the flagged run dropped to $3\times10^{-10}$, below the
+diagonal value, while every quasiperiodic optimum was reproduced
+unchanged at both sizes (medians $0.0052$/$0.0035$; largest
+single-run change $0.0012$) --- the warm start dominates, and
+Table~\ref{tab:price} is start-count-insensitive. All reported
+misses remain found optima, not certified minima. Sparse supports
+re-run the
 unrestricted optimizer restricted to the $k$ largest diagonal-ensemble
 populations, $k \in \{1, \dots, 128\}$; entries above $k = 32$ show
 optimizer regression (a harder landscape, not a better bound) and are

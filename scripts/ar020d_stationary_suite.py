@@ -22,6 +22,7 @@ Outputs: results/AR-010/ar020d_<stage>_N<n>.json
 """
 
 import json
+import os
 import sys
 import time
 from itertools import combinations
@@ -330,7 +331,9 @@ elif STAGE == "blocks":
                     np.imag(gA).ravel()
             return loss * 1.0, gx
 
-        # start from warm diagonal (sqrt p) + one random
+        # starts: warm diagonal (sqrt p) + jitters (+ full randoms in
+        # 5-start parity mode, IDEG_BLOCK_STARTS=5, matching the ar020c
+        # diagonal stage's multi-start count)
         best = np.inf
         rng = np.random.default_rng(11)
         starts = []
@@ -343,6 +346,11 @@ elif STAGE == "blocks":
             x0[offs[kb]:offs[kb + 1]] = blk.ravel()
         starts.append(x0)
         starts.append(x0 + rng.normal(scale=1e-2, size=2 * ntot))
+        n_starts = int(os.environ.get("IDEG_BLOCK_STARTS", "2"))
+        if n_starts >= 3:
+            starts.append(x0 + rng.normal(scale=1e-1, size=2 * ntot))
+        for _ in range(max(0, n_starts - 3)):
+            starts.append(rng.normal(scale=1.0, size=2 * ntot))
         for xs in starts:
             r = minimize(loss_grad, xs, jac=True, method="L-BFGS-B",
                          options={"maxiter": 300, "ftol": 1e-10})
@@ -358,20 +366,33 @@ elif STAGE == "blocks":
            "diagonal values (monotone-descent empirical check, visible "
            "in the run log)", "groups": {}}
 
+    # optional worker slicing over the independent runs:
+    # IDEG_RUN_SLICE="lo:hi" limits each group to run indices [lo, hi)
+    slice_env = os.environ.get("IDEG_RUN_SLICE", "")
+    lo, hi = ((int(x) for x in slice_env.split(":")) if slice_env
+              else (0, 10 ** 9))
+
     for label, runs in (("TA_ii_quasiperiodic", qp_runs()),
                         ("TC_integrable", integrable_runs())):
-        vals = []
-        for psi0 in runs:
+        vals = {}
+        for ridx, psi0 in enumerate(runs):
+            if not (lo <= ridx < hi):
+                continue
             p_warm = np.abs(ev.coeffs(psi0)) ** 2
-            vals.append(probe(psi0, p_warm))
+            vals[ridx] = probe(psi0, p_warm)
             print(f"[{time.time() - t0:8.1f}s] blocks {label} run "
-                  f"{len(vals) - 1} miss={vals[-1]:.4f}", flush=True)
+                  f"{ridx} miss={vals[ridx]:.4f}", flush=True)
+        arr = [vals[k] for k in sorted(vals)]
         out["groups"][label] = {
-            "runs": vals, "median": float(np.median(vals)),
-            "min": float(np.min(vals)),
-            "n_below_eps_phi": int(np.sum(np.array(vals) < EPS_PHI)),
-            "n_runs": len(vals)}
-    with open(OUT / f"ar020d_blocks_N{N}.json", "w") as f:
+            "run_indices": sorted(vals), "runs": arr,
+            "median": float(np.median(arr)), "min": float(np.min(arr)),
+            "n_below_eps_phi": int(np.sum(np.array(arr) < EPS_PHI)),
+            "n_runs": len(arr)}
+    suffix = "" if int(os.environ.get("IDEG_BLOCK_STARTS", "2")) <= 2 \
+        else os.environ.get("IDEG_BLOCK_STARTS", "2")
+    slice_tag = f"_slice{lo}-{hi}" if slice_env else ""
+    with open(OUT / f"ar020d_blocks{suffix}{slice_tag}_N{N}.json",
+              "w") as f:
         json.dump(out, f, indent=2)
     print("blocks done", {g: (v["median"], v["n_below_eps_phi"])
                           for g, v in out["groups"].items()})

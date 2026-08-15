@@ -1,0 +1,48 @@
+{
+  "n_sites": 12,
+  "n_blocks": 729,
+  "sum_B2": 46656,
+  "validity_note": "block search strictly generalizes the diagonal search; per-run results must be <= the ar020c diagonal values (monotone-descent empirical check, visible in the run log)",
+  "groups": {
+    "TA_ii_quasiperiodic": {
+      "run_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "runs": [
+        2.0940334423001714e-09,
+        0.004070490758550281,
+        1.6940063312185822e-09,
+        0.0020854579847535675,
+        1.5035602055994478e-09
+      ],
+      "median": 2.0940334423001714e-09,
+      "min": 1.5035602055994478e-09,
+      "n_below_eps_phi": 5,
+      "n_runs": 5
+    },
+    "TC_integrable": {
+      "run_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "runs": [
+        1.1711741119824698e-09,
+        0.010745432467643916,
+        0.008177611201876912,
+        0.007938991058470103,
+        0.008597647399109782
+      ],
+      "median": 0.008177611201876912,
+      "min": 1.1711741119824698e-09,
+      "n_below_eps_phi": 5,
+      "n_runs": 5
+    }
+  }
+}

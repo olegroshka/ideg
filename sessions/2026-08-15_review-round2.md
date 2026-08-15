@@ -71,6 +71,10 @@ instrument-level corrections logged in spec §8.)
   outreach (parked in `paper/ENDORSEMENT_*.md`), arXiv/Quantum submission.
 - AR-022 philosophy survey (parked, not for the paper); BH-005 sequencing;
   AR-015 census; SRC-036..058 verification backlog.
-- Possible referee follow-up: block-coherent search at N = 12 uses one warm
-  start; if a referee asks for multi-start parity with the diagonal stage,
-  rerun with 5 starts (cheap at N = 10, expensive at N = 12).
+- ~~Multi-start parity~~ RESOLVED same session (owner-directed): five-start
+  block rerun at both sizes (run-sliced across 4 detached workers after two
+  external kill events traced to a concurrent session's python cleanup) —
+  quasiperiodic optima reproduced unchanged (medians 0.0052/0.0035, largest
+  delta 0.0012); the one flagged integrable run closed to 3e-10 (< diagonal);
+  containment clean everywhere; App-A note updated; tab:price unchanged.
+  `results/AR-010/ar020d_blocks5_N{10,12}.json`.
