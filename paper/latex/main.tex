@@ -358,12 +358,16 @@ calibration pilot before any confirmatory run.
 
 \subsection{Preregistration protocol and statistics}\label{sec:prereg}
 
-Every metric, threshold, witness, comparator, and analysis rule above
-was fixed in a specification document before implementation code was
-written; every run consumed seeds from manifests committed to the
-repository before execution; and every post-hoc change is a dated entry
-in an amendment log, reproduced in full as Appendix~\ref{app:log} with
-commit hashes. The study ran as: specification $\to$ threshold review
+The study's workflow follows the Shared Substrate protocol for
+sustained human--AI research collaboration \cite{SRC001}, whose central
+rule --- no result exists until it is recorded in a versioned,
+canonical substrate --- generates the audit trail this paper reports.
+Concretely: every metric, threshold, witness, comparator, and analysis
+rule above was fixed in a specification document before implementation
+code was written; every run consumed seeds from manifests committed to
+the repository before execution; and every post-hoc change is a dated
+entry in an amendment log, reproduced in full as Appendix~\ref{app:log}
+with commit hashes. The study ran as: specification $\to$ threshold review
 $\to$ calibration pilot (exploratory, excluded from confirmatory
 statistics) $\to$ confirmatory campaign $\to$ an adversarial companion
 analysis tasked with attacking our own conclusions $\to$ a
@@ -855,8 +859,8 @@ to fix which kind of dynamics they certify. And a registered design
 with committed seeds changed the outcome of this study five times ---
 four corrections from our own audit mechanisms and one from external
 review; the amendment log (Appendix~\ref{app:log}) is our answer to
-the question of what such discipline buys in a purely computational
-setting.
+the question of what the substrate discipline \cite{SRC001} buys in a
+purely computational setting.
 
 The obvious open front is scale and covariance: whether any version of
 this question can be asked of structures that deserve the word
@@ -870,7 +874,7 @@ cheapest motionless impostor costs, and get a class-resolved answer.
 \paragraph{Acknowledgements.} The numerical study --- implementation,
 execution, analysis, and the adversarial companion --- was carried out
 with Claude (Anthropic) as AI research assistant, operating under the
-preregistration and shared-substrate protocol whose record forms
+Shared Substrate protocol \cite{SRC001} whose record forms
 Appendix~\ref{app:log}. The programme's initiating knowledge base was
 drafted in collaboration with OpenAI's ChatGPT. An external
 pre-submission review prompted the unrestricted comparator analysis
