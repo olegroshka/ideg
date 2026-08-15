@@ -235,8 +235,9 @@ inside degenerate blocks — the very coherence the infinite-time
 average retains. Searching the full commutant (block-Cholesky
 σ = ⊕ A_B A_B†/Z, analytic gradient, warm-started, containment-checked
 against AR-020c run-by-run) matches the quasiperiodic class
-essentially exactly (N = 10: 20/20, median 0.0052, best 1e-9;
-integrable 20/20, 0.0077). A GGE over the exact free-fermion charges
+essentially exactly at both sizes (N = 10: 20/20, median 0.0052;
+N = 12: 20/20, median 0.0035, best 2e-9; integrable 20/20 at
+0.0077/0.0080; N = 12 containment check clean). A GGE over the exact free-fermion charges
 (N λ_k) matches the generic integrable quench (20/20 at 0.14/0.17,
 N = 10/12) but fails quasiperiodic outright (0/20 both sizes, 0.63 /
 0.47). Price curves: smooth-f(H) plateaus at ~0.32 from K = 2 to 96

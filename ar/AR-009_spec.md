@@ -619,7 +619,8 @@ scaling is reported descriptively (no extrapolation claims — scope wall §7).
   statement is corrected to a smooth-vs-unrestricted gap; (d) the full
   degenerate-block commutant (σ = ⊕ A_B A_B†/Z; XX spectra: 243 blocks
   at N = 10, Σ|B|² = 7776) — quasiperiodic matched essentially exactly
-  (20/20, median 0.0052), integrable likewise (0.0077); GGE (exact
+  at both sizes (20/20 each; medians 0.0052 / 0.0035 at N = 10/12),
+  integrable likewise (0.0077/0.0080); GGE (exact
   free-fermion charges) matches integrable (0.14–0.17, 20/20) and
   fails quasiperiodic (0/20, 0.47–0.63); smooth-f(H) price curve flat
   ~0.32 to K = 96; sparse top-k ~0.23–0.25. Window-vs-infinite-time

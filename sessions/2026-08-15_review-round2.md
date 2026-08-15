@@ -64,8 +64,9 @@ instrument-level corrections logged in spec §8.)
 
 ## Open items
 
-- **N = 12 block search (task biy1670b4)**: slot median/count into `tab:price`
-  (replaces the `\BLOCKSNTWELVE` tripwire), rebuild, commit, send PDF.
+- ~~N = 12 block search~~ RESOLVED same session: 20/20, median 0.0035 (best
+  2e-9), integrable 20/20 at 0.0080, containment clean — slotted into
+  `tab:price`, tripwire removed, final build below.
 - Owner proof pass of revision 2; then repo tag `paper-v1`, endorsement
   outreach (parked in `paper/ENDORSEMENT_*.md`), arXiv/Quantum submission.
 - AR-022 philosophy survey (parked, not for the paper); BH-005 sequencing;

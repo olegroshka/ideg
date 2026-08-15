@@ -160,9 +160,9 @@ results/     run outputs, figures, serialized data (gitignored where large)
   correction, second externally triggered). Paper rewritten (physics-first
   abstract, five-stage search, price table tab:price, App-A optimizer specs,
   SRC-065..068 cited). See `sessions/2026-08-15_review-round2.md`.
-- Next: **N=12 block search lands in tab:price (tripwire \BLOCKSNTWELVE in
-  main.tex) -> rebuild -> owner proof pass**, then retag paper-v1 ->
-  endorsement -> arXiv + Quantum.
+- N=12 block search LANDED (qp 20/20 median 0.0035, containment clean) ->
+  in tab:price; clean rebuild. Next: **owner proof pass of revision 2**, then
+  retag paper-v1 -> endorsement -> arXiv + Quantum.
 - Superseded gates note: original **owner gates to submission** — proof pass on main.pdf;
   acknowledgements/affiliation/funding TODO markers in main.tex; repo
   public + submission tag (expand App.-C hashes); SciPost class swap
