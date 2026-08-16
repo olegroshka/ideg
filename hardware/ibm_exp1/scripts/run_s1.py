@@ -342,13 +342,36 @@ def run_battery(cache_path: Path, out_dir: Path, n_experiments: int,
     base = int(manifest["seeds"]["ideal_sampler_seed"])
     eps_ref = float(ref[EPS_REF_KEY])
 
-    tasks = [(r, n_boot, shots) for r in range(n_experiments)]
-    results = [None] * n_experiments
-    with ProcessPoolExecutor(
-            max_workers=workers, initializer=_init_worker,
-            initargs=(str(cache_path),)) as pool:
-        for record in pool.map(_worker, tasks, chunksize=1):
-            results[record["experiment"]] = record
+    exp_dir = out_dir / "experiments"
+    exp_dir.mkdir(parents=True, exist_ok=True)
+    results: list = [None] * n_experiments
+    pending = []
+    for r in range(n_experiments):
+        record_path = exp_dir / f"exp_{r:03d}.json"
+        if record_path.exists():
+            results[r] = json.loads(record_path.read_text(encoding="utf-8"))
+        else:
+            pending.append(r)
+    print(f"resuming: {n_experiments - len(pending)} cached, "
+          f"{len(pending)} to run", flush=True)
+    if pending:
+        from concurrent.futures import as_completed
+        with ProcessPoolExecutor(
+                max_workers=workers, initializer=_init_worker,
+                initargs=(str(cache_path),),
+                max_tasks_per_child=1) as pool:
+            futures = {pool.submit(_worker, (r, n_boot, shots)): r
+                       for r in pending}
+            done = 0
+            for future in as_completed(futures):
+                record = future.result()
+                r = record["experiment"]
+                results[r] = record
+                (exp_dir / f"exp_{r:03d}.json").write_text(
+                    canonical_report_json(record) + "\n", encoding="utf-8")
+                done += 1
+                print(f"experiment {r} done "
+                      f"({done}/{len(pending)} this run)", flush=True)
 
     eps_mains = np.array([x["eps_main"] for x in results])
     floors = np.array([x["eps_floor_experiment"] for x in results])
@@ -473,7 +496,7 @@ def main() -> int:
     parser.add_argument("--run", action="store_true")
     parser.add_argument("--experiments", type=int, default=100)
     parser.add_argument("--bootstrap", type=int, default=1000)
-    parser.add_argument("--workers", type=int, default=8)
+    parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--shots", type=int, default=SHOTS)
     parser.add_argument(
         "--cache", type=Path,
