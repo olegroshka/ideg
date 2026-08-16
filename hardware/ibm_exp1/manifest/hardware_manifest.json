@@ -235,5 +235,15 @@
     },
     "computed_by": "compute_s1_reference.py"
   },
-  "manifest_sha256": "d1e1ac2922c1dca37133687a3b6a083c18af15350bb7322ae28762430b1c7c3e"
+  "s1_execution": {
+    "base_seed": 23002,
+    "base_seed_designation": "BASE := seeds.ideal_sampler_seed (23002), committed in the prep session before any sampling existed",
+    "experiments": 100,
+    "bootstrap_replicates": 1000,
+    "seed_policy_main": "SeedSequence([BASE, canonical_index, r]); two independent Multinomial(shots/2, p_exact) halves per circuit; sum == Multinomial(shots, p_exact), halves are a uniform random split given the sum",
+    "seed_policy_bootstrap": "SeedSequence([BASE, 10**6 + r]).spawn(n_circuits)[c]; Multinomial(shots/2, p_hat) of size (B, 2) per circuit",
+    "smoke_disclosure": "pre-battery smoke runs used r in {0, 1} at reduced bootstrap depth for runtime/memory validation; no definitional choice, threshold, or seed was changed after inspecting them; the official battery includes r=0,1 unchanged",
+    "escalation_available": "A1.1: 896 shots as a separate run directory"
+  },
+  "manifest_sha256": "08d6dfa4248870f5bebd6582b2d4b4dacf7ad540b549568a149c990d4bbd9aeb"
 }
