@@ -4,7 +4,7 @@ title: "IDEG Research Program — Agentic Protocol, Phases, Gates, and Backlog"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-15
-version: 0.17
+version: 0.18
 research_layer: R4
 epistemic_status: NOT_APPLICABLE
 sources:
@@ -29,6 +29,7 @@ changelog:
   - "0.15: external review + AR-020c (Claude, 2026-08-15) — survivor claim refuted at unrestricted scope; naturalness gap = the surviving discriminator; paper-1 major revision executed; KB-003 → v0.7, KB-004 → v0.8 — see §31"
   - "0.16: second review round + AR-020d (Claude, 2026-08-15) — block-coherent commutant matches quasiperiodic (sixth correction, second externally triggered); GGE/price-curve/window-gap battery; discriminator = smooth-in-energy representation gap; paper-1 second major revision; KB-003 → v0.8, KB-004 → v0.9 — see §32"
   - "0.17: provenance correction (owner-directed, Claude, 2026-08-16) — 'external review' in §31–§32 and changelog 0.15–0.16 denotes owner-run multi-model adversarial audit passes (internal), not third-party review; paper purged of review-history framing; KB-004 → v0.10 — see §33"
+  - "0.18: third audit round + AR-020e (Claude, 2026-08-16) — admissibility split (sector control; channel correction); paper round-3 revision; AR-023 hardware-pilot design registered (other session, owner-requested); KB-004 → v0.11 — see §34"
 ---
 
 # Research Program and Agentic Protocol
@@ -499,3 +500,37 @@ clean; tab:price start-count-insensitive (`ar020d_blocks5_N{10,12}.json`).
 3. Standing vocabulary rule going forward: audit passes run by the owner with
    independent models are "adversarial audits (multi-model, internal)" —
    never "external review" — in both paper and substrate.
+
+## 34. Changelog v0.17 → v0.18 — third audit round + AR-020e (2026-08-16)
+
+1. **Third adversarial audit accepted** (multi-model, internal; each criticism
+   independently verified before acceptance): (i) "block coherence" is
+   basis-relative — not an invariant resource; (ii) the commutant impostor may
+   leave the dynamically accessible magnetization sector (confirmed: XX
+   many-body degeneracies are all cross-sector; eigh returns sector-mixed
+   bases); (iii) rho_bar is not the infinite-time average for degenerate
+   spectra (spot checks reproduced exactly before acceptance).
+2. **AR-020e executed** (`scripts/ar020e_sector_suite.py`; packet
+   `ar/AR-020e_sector-2026-08-16.md`): channels stage (corrected
+   motion-removal rho_inf vs ablation rho_bar vs trapezoidal window average,
+   all classes, all runs) and sector stage (nested tiers T1/T2/T3 with
+   FD-verified per-sector gradient and a machine-exact validation battery).
+   N = 10 verdicts: T2 = T1; ~70% impostor weight outside the run's sectors;
+   accessible-sector collapse to 0.244; metastable "coherence-removal jump"
+   0.90 → 0.078 under the true channel. N = 12 wave running at entry time;
+   results slotted via compile-tripwires before rebuild.
+3. **Seventh claim-level correction of record:** the class discriminator is
+   ADMISSIBILITY (which stationary algebra the impostor may live in); within
+   the dynamics-licensed algebra no faithful quasiperiodic impostor was found
+   — the motion-borne conclusion returns in conditional, sector-relative form.
+   KB-004 → v0.11.
+4. Paper round-3 revision executed (abstract, §1, §2.3, §6 incl. T2/T3 price
+   rows, §8, §9, App-A sector/validation specs, App-C rows; two-channel
+   fig 5(a); typography: microtype, fig5b/fig6 fixes). Typesetting claims of
+   column collisions NOT reproduced (third extraction-artifact occurrence);
+   fig5 panel-title and fig6 inset crowding real and fixed.
+5. **AR-023 (IBM hardware pilot) registered** — design document authored in a
+   concurrent owner session (`ar/AR-023_hardware-pilot-2026-08-16.md`),
+   DESIGN COMPLETE / EXECUTION BLOCKED; open dependency on AR-020e: serialize
+   the T3 comparator populations (p*) for the selected run before its Gate L0
+   can close.

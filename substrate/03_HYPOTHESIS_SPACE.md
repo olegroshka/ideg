@@ -4,7 +4,7 @@ title: "IDEG Hypothesis Space — Nulls, Bridges, Strong Forms, and Falsifiers"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-15
-version: 0.10
+version: 0.11
 research_layer: R3
 epistemic_status: SPECULATIVE_TO_PLAUSIBLE
 sources:
@@ -22,6 +22,7 @@ changelog:
   - "0.8: AR-020c correction (external-review-triggered, Claude, 2026-08-15) — survivor claim REFUTED at unrestricted scope (all classes matchable; qp 20/20 at N=12); class discriminator = the smooth-ensemble NATURALNESS GAP; BH-004 status unchanged (grounded on (b) + coherence-removal legs)"
   - "0.9: AR-020d correction (second-review-triggered, Claude, 2026-08-15) — degenerate-block commutant matches quasiperiodic essentially exactly (20/20, 0.005); GGE matches integrable, fails qp; discriminator renamed SMOOTH-IN-ENERGY REPRESENTATION GAP; corrected reading: resource split, not existence or complexity split; BH-004 status unchanged"
   - "0.10: provenance correction (owner-directed, Claude, 2026-08-16) — the 'external-review-triggered' / 'second-review-triggered' wording in entries 0.8–0.9 and the BH-004 v0.8/v0.9 notes denotes owner-run multi-model adversarial audit passes (internal to the programme), NOT third-party review; no scientific content changed; paper text purged of review-history framing"
+  - "0.11: AR-020e correction (third adversarial audit, Claude, 2026-08-16) — 'block coherence as resource' RETIRED (basis-relative); sector-admissibility control: T2=T1, commutant impostor ~70% weight outside the run's magnetization sectors, accessible-sector tier collapses to the population-only plateau; motion-removal channel corrected to P_E rho P_E (metastable 0.90->0.08, integrable 0.86->0.47); corrected discriminators: smooth-in-energy representation gap + SECTOR ADMISSIBILITY; seventh claim-level correction; see ar/AR-020e_sector-2026-08-16.md"
 ---
 
 # Hypothesis Space
@@ -259,6 +260,28 @@ gap is the class-resolved discriminator. Status unchanged.**
 audits in the v0.8/v0.9 notes above were owner-run multi-model
 adversarial passes (internal); the substrate retains the dated wording
 as-written, corrected here rather than rewritten.
+**(v0.11) THIRD CORRECTION — admissibility, not coherence (AR-020e,
+2026-08-16, third adversarial audit accepted after independent
+verification).** "Block coherence" is basis-relative: within a
+degenerate block the eigenbasis is arbitrary, so any stationary sigma
+is diagonal in some valid eigenbasis; the invariant hierarchy is
+f(H) c chosen abelian subalgebra c full commutant. The sector control
+(T1 = commutant of H; T2 = commutant of {H, N_mag}; T3 = T2 with
+sector weights pinned to the run) shows at N = 10: T2 = T1 run-by-run
+(cross-sector coherence never used), but the impostor carries a median
+69% of its weight in magnetization sectors the dynamics never
+populates; pinned to the accessible sector the quasiperiodic match
+collapses to the population-only plateau (median 0.244), while the
+integrable impostor is sector-honest (0.000 outside weight; T3 0.030).
+Motion-removal channel corrected (rho_inf = sum P_E rho P_E): the
+non-commutation span is 38-55% (8% metastable); the registered
+full-diagonalization figures are reclassified as a stronger ablation.
+**Corrected reading of record: within the stationary algebra the
+dynamics itself licenses, no faithful impostor of the quasiperiodic
+metric was found — the "motion-borne" conclusion returns in
+conditional, sector-relative form. BH-004 status unchanged
+(PLAUSIBLE); its sustained-by evidence is now three-legged: criterion
+(b), corrected coherence-removal, and sector admissibility.**
 
 ### BH-005 — Recurrence as an emergent-stability mechanism
 Within a successful BH-004 model, test whether recurrence/limit-cycle/quasiperiodicity — including a driven/Floquet regime modeled on TH-033 — provides robustness unavailable to fixed-point/invariant-subspace alternatives. **Only proceed if BH-004 survives.** This is HYP-005's proving ground.
