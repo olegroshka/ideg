@@ -520,8 +520,9 @@ clean; tab:price start-count-insensitive (`ar020d_blocks5_N{10,12}.json`).
    0.90 → 0.078 under the true channel. N = 12 wave running at entry time;
    results slotted via compile-tripwires before rebuild.
 3. **Seventh claim-level correction of record:** the class discriminator is
-   ADMISSIBILITY (which stationary algebra the impostor may live in); within
-   the dynamics-licensed algebra no faithful quasiperiodic impostor was found
+   ADMISSIBILITY (which stationary algebra the impostor may live in); the
+   sector restriction destroys the near-exact match, returning it to the
+   threshold-marginal plateau (no NEAR-EXACT sector-admissible impostor found)
    — the motion-borne conclusion returns in conditional, sector-relative form.
    KB-004 → v0.11.
 4. Paper round-3 revision executed (abstract, §1, §2.3, §6 incl. T2/T3 price

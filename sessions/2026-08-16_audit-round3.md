@@ -71,6 +71,13 @@ None.
   (28% of parameters); T3 0.256 (9/20); outside-weight median 83%,
   max 100%; channels replicate. Slotted, packet/spec/CLAUDE.md
   updated, rebuilt below.
+- Wording-precision pass (fourth-audit check, same day): a corrupted
+  	o (heredoc tab artifact) fixed at the N=12 channels clause; "no
+  faithful impostor" softened to "no NEAR-EXACT sector-admissible
+  impostor" everywhere (T3 threshold counts straddle eps_Phi:
+  15/20 and 9/20) and "dynamically accessible" corrected to
+  "magnetization-sector-admissible" (T3 is broader than literally
+  reachable states); paper + packet + KB-004/005 aligned.
 - **AR-023 dependency:** add a T3 comparator-population export
   (p*, hashes, recheck) to ar020e for the hardware pilot's Gate L0.
 - Owner proof pass of round-3 build; then paper-v1 retag; endorsement

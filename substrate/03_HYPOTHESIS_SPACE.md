@@ -276,10 +276,12 @@ integrable impostor is sector-honest (0.000 outside weight; T3 0.030).
 Motion-removal channel corrected (rho_inf = sum P_E rho P_E): the
 non-commutation span is 38-55% (8% metastable); the registered
 full-diagonalization figures are reclassified as a stronger ablation.
-**Corrected reading of record: within the stationary algebra the
-dynamics itself licenses, no faithful impostor of the quasiperiodic
-metric was found — the "motion-borne" conclusion returns in
-conditional, sector-relative form. BH-004 status unchanged
+**Corrected reading of record: restricting the comparator to the
+conserved magnetization sector destroys the near-exact commutant
+match (median 0.244/0.256, threshold counts straddling 15/20 and
+9/20) — no NEAR-EXACT sector-admissible impostor found; the
+"motion-borne" conclusion returns in conditional, sector-relative
+form. BH-004 status unchanged
 (PLAUSIBLE); its sustained-by evidence is now three-legged: criterion
 (b), corrected coherence-removal, and sector admissibility.**
 

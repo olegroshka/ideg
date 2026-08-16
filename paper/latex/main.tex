@@ -52,10 +52,11 @@ every population-only family in a fixed eigenbasis fails
 ($0.23$--$0.32$) while the full commutant of $H$ succeeds almost
 exactly ($\sim 0.005$) --- yet the commutant impostor places
 $\sim\!70\%$ of its weight in magnetization sectors the dynamics never
-populates, and restricting to the dynamically accessible sector
-collapses the match ($\sim 0.24$). Within the stationary algebra its
-own dynamics licenses, no faithful impostor of the quasiperiodic
-metric was found. Third, weak dephasing \emph{pins} the moving
+populates, and restricting to the conserved magnetization sector
+destroys the near-exact match, returning it to the threshold-marginal
+population-only plateau ($\sim 0.24$--$0.26$). No near-exact
+sector-admissible impostor of the quasiperiodic metric was found.
+Third, weak dephasing \emph{pins} the moving
 quasiperiodic metric to its time average while destabilizing
 chaotic-class metrics, singling out the same class dynamically. The
 study is a registered design with a public, commit-hashed record;
@@ -139,7 +140,7 @@ correspondingly compact:
   amounts on every run --- nor an artifact of deleting stationary
   degenerate structure (Sec.~\ref{sec:comparator}).
 \item \textbf{An admissibility-resolved matching spectrum.} Whether a
-  time-averaged metric has a faithful stationary impostor depends on
+  time-averaged metric has a near-exact stationary impostor depends on
   the stationary algebra the impostor is drawn from, and the required
   algebra is class-resolved: thermal windows suffice for the chaotic
   classes ($\sim$3 parameters, miss $\sim 0.04$, as eigenstate
@@ -152,12 +153,12 @@ correspondingly compact:
   of $H$ succeeds almost exactly (miss $\sim 0.005$) --- and a sector
   control shows the commutant impostor places $\sim\!70\%$ of its
   weight in magnetization sectors the dynamics never populates;
-  restricted to the dynamically accessible sector, the match
-  collapses to the population-only plateau ($\sim 0.24$). Two
-  invariant class discriminators survive: the
-  \emph{smooth-in-energy representation gap}, and \emph{sector
-  admissibility} --- no faithful impostor of the quasiperiodic metric
-  was found inside the stationary algebra its own dynamics licenses.
+  restricted to the conserved magnetization sector, the near-exact
+  match is destroyed, returning to the threshold-marginal
+  population-only plateau ($\sim 0.24$--$0.26$). Two invariant class
+  discriminators survive: the \emph{smooth-in-energy representation
+  gap}, and \emph{sector admissibility} --- no near-exact
+  sector-admissible impostor of the quasiperiodic metric was found.
 \item \textbf{A sign structure.} Weak dephasing \emph{stabilizes} the
   moving metrics of coherence-carried classes (negative log drift
   ratio, flat over two decades of noise rate) while destabilizing
@@ -708,7 +709,7 @@ removing exactly the motion moves the metric by $36$--$55\%$ (class
 medians, both sizes) in five of six classes, and by $8\%$ in the
 metastable class, whose time-averaged metric is nearly carried by its
 own infinite-time average (the split replicates at $N{=}12$:
-integrable $0.85 	o 0.46$; the metastable channels nearly coincide
+integrable $0.85 \to 0.46$; the metastable channels nearly coincide
 there, its doublet structure being size-dependent).
 
 \textbf{Finite windows versus infinite time.} $\rho_\infty$ is an
@@ -826,8 +827,10 @@ therefore ran a nested admissibility control on every run at both
 sizes: T1 $=$ the commutant of $H$ (stage v); T2 $=$ the commutant of
 $\{H, N_{\rm mag}\}$ (no coherence between magnetization sectors;
 sector weights free); T3 $=$ T2 with the sector weights pinned to the
-run's own $\mathrm{Tr}(\rho\,\Pi_q)$ --- the dynamically accessible
-stationary states, since XX evolution conserves $N_{\rm mag}$. Every
+run's own $\mathrm{Tr}(\rho\,\Pi_q)$ --- the
+magnetization-sector-admissible stationary states (broader than the
+states literally reachable from $\psi_0$, whose energy populations
+are also fixed; T3 allows arbitrary in-sector populations). Every
 optimized state passes an independent validation battery (unit trace,
 positivity, commutant membership, and the objective recomputed from
 the assembled density matrix; Appendix~\ref{app:numerics}). The
@@ -847,14 +850,18 @@ split replicates and deepens: T2 matches T1 with $28\%$ of its
 parameters ($0.0031$ versus $0.0035$, 20/20), while T3 collapses to a
 median $0.256$ (9/20 below threshold) and the impostor's
 outside-sector weight rises to a median $83\%$ (maximum $100\%$ ---
-runs whose faithful impostor lives \emph{entirely} outside the
+runs whose near-exact impostor lives \emph{entirely} outside the
 one-magnon sector); integrable T3 stays matched ($0.012$, 20/20).
-\textbf{The
-near-exact quasiperiodic impostor exists only outside the dynamically
-accessible sector: within the stationary algebra the dynamics itself
-licenses, no faithful impostor of the quasiperiodic metric was found.}
+\textbf{Restricting the comparator to the conserved magnetization
+sector destroys the near-exact commutant match and returns it to the
+threshold-marginal population-only plateau: no near-exact
+sector-admissible impostor of the quasiperiodic metric was found.}
 The class-resolved resource is not coherence but \emph{admissibility}
---- which stationary algebra the impostor is allowed to live in.
+--- which stationary algebra the impostor is allowed to live in. (At
+the registered threshold itself the T3 counts straddle: 15/20 at
+$N{=}10$ and 9/20 at $N{=}12$ fall below $\ephi = 0.25$ --- matches
+at the tolerance calibrated for finite-size noise, two orders of
+magnitude short of the commutant's fidelity.)
 
 \begin{table*}[t]
 \centering\footnotesize
@@ -891,9 +898,9 @@ unrestricted row's five-start result) reflect optimizer variance, the
 two-order-of-magnitude drop of the T1/T2 rows does not. The $N{=}12$
 smooth entry uses $K \leq 24$. T2 restricts T1 to states commuting
 with $N_{\rm mag}$; T3 additionally pins the magnetization-sector
-weights to the run's own --- the dynamically accessible stationary
-states --- and for a one-magnon state this reduces to diagonal
-populations on the $N$ nondegenerate magnon levels.}
+weights to the run's own (sector-admissible stationary states), and
+for a one-magnon state this reduces to diagonal populations on the
+$N$ nondegenerate magnon levels.}
 \label{tab:price}
 \end{table*}
 
@@ -910,12 +917,14 @@ are not. The sector control sharpens the open question this study
 leaves: the reproducibility of a time-averaged emergent metric
 depends on the \emph{admissible stationary algebra} --- smooth
 functions of $H$ fail for few-mode quasiperiodic dynamics, the full
-commutant succeeds, and the dynamically accessible subalgebra fails
-again --- so which admissibility criterion is the physically honest
+commutant succeeds, and the sector-admissible subalgebra returns
+only threshold-marginal matches --- so which admissibility criterion
+is the physically honest
 one, and is there a principled measure of stationary-description cost
 that orders these algebras? Parameter count is a crude proxy: T2
-matches T1 with a third of its parameters, and T3 fails with the
-most physical constraint of all. Conversely, the chaotic classes'
+matches T1 with a third of its parameters, and T3 loses the
+near-exact match under the most physical constraint of all.
+Conversely, the chaotic classes'
 stationary metrics are straightforwardly compatible with their
 motion: the simplest thermal impostor carries the same structure, and
 --- the mixed-field Ising model having no conserved charge beyond $H$
@@ -1034,30 +1043,33 @@ existential sense, no: searched over the full commutant of $H$, every
 class's time-averaged metric --- the quasiperiodic one included ---
 has a near-exact stationary impostor. But the sector control
 reverses the verdict in a sharper, conditional form: that impostor
-lives on magnetization sectors the dynamics never populates, and
-within the stationary algebra the dynamics itself licenses, no
-faithful impostor of the quasiperiodic metric was found. What the
+lives on magnetization sectors the dynamics never populates, and no
+near-exact sector-admissible impostor of the quasiperiodic metric
+was found --- the sector restriction returns the match to the
+threshold-marginal population-only plateau. What the
 measurements establish is threefold: time averaging and metric
 construction do not commute (the exact infinite-time average misses
 by 36--55\% in five of six classes, window-length effects excluded);
-whether a faithful impostor exists is governed by the
+whether a near-exact impostor exists is governed by the
 \emph{admissible stationary algebra}, sharply class-resolved --- a
 temperature window suffices for the thermalizing classes, conserved
 charges for the generic integrable quench, while the quasiperiodic
-metric is reproduced only from outside the dynamically accessible
-sector; and weak noise stabilizes exactly the class whose metric no
-admissible stationary state represents. ``Motion-borne'' thus
-survives --- not as an unconditional existence claim, but as a
-measured statement relative to the physically honest algebra.
+metric is nearly reproduced only from outside its conserved
+magnetization sector; and weak noise stabilizes exactly the class
+whose metric no sector-admissible stationary state nearly
+represents. ``Motion-borne'' thus survives --- not as an
+unconditional existence claim, but as a measured statement relative
+to the admissible algebra.
 
 The sharpest open question the data leaves is admissibility itself:
 which stationary algebra is the physically right comparator class ---
 the full commutant, the symmetry-respecting subalgebra, or the
-dynamically accessible sector --- and is there a principled measure
+sector-admissible states --- and is there a principled measure
 of stationary-description cost that orders them? Parameter count is
 a crude proxy (the sector-respecting tier matches the full commutant
-with a third of its parameters; the accessible tier fails with the
-fewest and most physical constraints), and how these gaps scale with
+with a third of its parameters; the sector-pinned tier loses the
+near-exact match under the most physical constraint of all), and how
+these gaps scale with
 system size, where parameter counting increasingly favours
 fine-tuned matches, is measured here only to $N = 12$. A second question follows the sign structure: is
 there a form of robustness that \emph{recurrent} or quasiperiodic
