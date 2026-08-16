@@ -49,12 +49,58 @@ description**.
 - The programme's **triggering X post** (Markov/Hawking remnant claim) and
   its provenance are canonical in KB-001 §J — the origin story is already
   substrate-recorded and needs no duplication here.
-- **[SLOT — owner's X-posts-on-information discussion.]** Owner recalls a
-  session discussing X posts on information (2026-08-16 request to fold
-  those ideas in). Searched all local Claude Code transcripts across all
-  projects (2026-08-16): not found locally — likely a claude.ai or
-  ChatGPT conversation. To be added when the owner points at or pastes
-  the material.
+- **The information-veil discussion (2026-08-16, recovered):** owner
+  supplied the extract — now archived at
+  `articles/2026-08-16_information-veil-log.md` (sparked by an X post on
+  definitions of information: Bateson's "difference that makes a
+  difference" + an LQG spin-network gloss + a coupling/synchronization
+  comment). Its appendix indexes nine ideas; the load-bearing ones for
+  AR-022:
+  1. *Informational void vs. nothingness* — no differences ⇒ no
+     observables and no observer frame; but absence of distinctions ≠
+     absence of entities.
+  2. *Frame-bound terminology / the imposter thesis (owner's core
+     contribution)* — every predicate ("symmetry", "state", "nothing")
+     is minted inside the observer frame; any intrinsic description of
+     the far side is a **frame-side imposter**. Lineage flagged: Kant's
+     noumenon, apophatic theology, late Wheeler (all UNVERIFIED).
+  3. *Self-reference limit* — the imposter thesis cannot exempt itself;
+     forces the operational turn.
+  4. *Operational/boundary characterization* — characterize the far side
+     by constraint at the interface (what is inhibited, what leaks), not
+     by intrinsic predicates. Flagged neighbors: Deacon's absential
+     account, Montévil–Mossio closure of constraints, category-theoretic
+     definition-by-morphisms (all UNVERIFIED).
+  5. *Agency as inhibition* — agency is a type of constraint; the
+     inhibitor is the higher-order difference making the bubble of
+     differences possible.
+  6. *Unobservables earn their keep by constraining the observable* —
+     quark confinement as paradigm; the risk is idleness, not paradox.
+  7. *The shape of the fog as datum* — the systematic way descriptions
+     fail near the limit is itself structure, hence evidence.
+
+## 2a. The convergence worth writing about (2026-08-16)
+
+The veil discussion and the paper's comparator programme arrived at the
+same word — **imposter/impostor** — independently, and AR-020e closes the
+loop between them:
+
+- Veil version: any intrinsic description of the undescribable side is a
+  frame-side imposter; the honest characterization is by interface
+  constraints, and the *structure of imposter failures* is the only
+  legitimate fingerprint of what casts them.
+- Paper version (now measured): any stationary description of a moving
+  state is an impostor whose fidelity depends on the **admissible
+  algebra**; widening the algebra beyond what the dynamics licenses buys
+  agreement on fictions (the T3 sector collapse); and the price table —
+  the pattern of what impostors *cannot* do at each admissibility tier —
+  is precisely "the shape of the fog as datum," made quantitative.
+- The contract framing (§1) is the two-party version of the same thought:
+  descriptions are agreements, and the agreement is only as honest as the
+  description-class both parties are allowed to quantify over.
+- If AR-022 executes, this triangle (veil/frame-boundedness ↔
+  contract/admissibility ↔ measured impostor structure) is its natural
+  spine: the paper supplies the one corner that is actually measured.
 - The **Three Substrates** essay (articles/2026-08-14_three-substrates.md)
   is the other standing reflection document; the contract framing above is
   complementary to it (that essay: substrate/pattern levels; this note:
