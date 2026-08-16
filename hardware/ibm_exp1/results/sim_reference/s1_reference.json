@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "eps_sector_37": 0.227910117170944,
+  "eps_sector_361_replay": 0.22410775407471903,
+  "registered_replay_objective": 0.22410775407580497,
+  "replay_abs_difference": 1.0859368959614812e-12,
+  "quadrature_error_replay": 0.01464893538337086,
+  "quadrature_error_recorded": 0.014648935383372655,
+  "quadrature_abs_difference": 1.7954387976359953e-15,
+  "d_star_rdm_vs_fullrho_fro": 1.7285284720028716e-14,
+  "dbar_37_fro_norm": 26.640553584429526,
+  "dbar_361_fro_norm": 26.80381332330904,
+  "comparator_npz_sha256": "73b66f94e564cf6b71a4735ffb0aaa395176367f12eb341d3587834a9fd02934",
+  "metric_constants": {
+    "I0": 1.3862943611198906,
+    "x_min": 1e-06
+  },
+  "arrays_file": "s1_reference_arrays.npz",
+  "arrays_sha256": "ed58fc4d3d3250c53db52a4888ba9b6f616d1590776987848b19b7fbccdf987b",
+  "environment": {
+    "python": "3.11.14",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1"
+  },
+  "computed_by": "compute_s1_reference.py"
+}
