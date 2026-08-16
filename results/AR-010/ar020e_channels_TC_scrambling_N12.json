@@ -1,0 +1,208 @@
+{
+  "n_sites": 12,
+  "group": "TC_scrambling",
+  "runs": [
+    {
+      "miss_inf": 0.43054432680262633,
+      "miss_diag": 0.43054432680259613,
+      "miss_win": 0.4072430276792162,
+      "gap_win_vs_inf": 0.06240147799263318,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.022406949280219295,
+      "purity_diag": 0.02240694928021927
+    },
+    {
+      "miss_inf": 0.31720915332784605,
+      "miss_diag": 0.3172091533279066,
+      "miss_win": 0.2770871019354607,
+      "gap_win_vs_inf": 0.22723720375229559,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.0010721469896520545,
+      "purity_diag": 0.0010721469896520545
+    },
+    {
+      "miss_inf": 0.3490837111435761,
+      "miss_diag": 0.3490837111434235,
+      "miss_win": 0.3736992498780002,
+      "gap_win_vs_inf": 0.10820946347770907,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.0005358053583657933,
+      "purity_diag": 0.0005358053583657931
+    },
+    {
+      "miss_inf": 0.27606332309150355,
+      "miss_diag": 0.2760633230913926,
+      "miss_win": 0.2957651218699454,
+      "gap_win_vs_inf": 0.11246612750724053,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.0005436862483066717,
+      "purity_diag": 0.0005436862483066715
+    },
+    {
+      "miss_inf": 0.525125970268277,
+      "miss_diag": 0.5251259702693041,
+      "miss_win": 0.5012109861674751,
+      "gap_win_vs_inf": 0.12458418020416923,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.0006686065741555153,
+      "purity_diag": 0.0006686065741555153
+    },
+    {
+      "miss_inf": 0.6469721941959955,
+      "miss_diag": 0.6469721941954762,
+      "miss_win": 0.5971988451375562,
+      "gap_win_vs_inf": 0.09919188968932284,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.0009397763380969719,
+      "purity_diag": 0.0009397763380969712
+    },
+    {
+      "miss_inf": 0.46290985038850235,
+      "miss_diag": 0.462909850388023,
+      "miss_win": 0.4432942196151807,
+      "gap_win_vs_inf": 0.08919754425812748,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.0006363968792643895,
+      "purity_diag": 0.0006363968792643894
+    },
+    {
+      "miss_inf": 0.5732157609825022,
+      "miss_diag": 0.5732157609825603,
+      "miss_win": 0.4859585104347686,
+      "gap_win_vs_inf": 0.16617458612048383,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.0005482357645921645,
+      "purity_diag": 0.0005482357645921645
+    },
+    {
+      "miss_inf": 0.4038116179784531,
+      "miss_diag": 0.40381161797824827,
+      "miss_win": 0.3393067581115735,
+      "gap_win_vs_inf": 0.19647057752766714,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.000538528738586475,
+      "purity_diag": 0.0005385287385864749
+    },
+    {
+      "miss_inf": 0.46993904573300344,
+      "miss_diag": 0.4699390457327101,
+      "miss_win": 0.46090235372054517,
+      "gap_win_vs_inf": 0.0894511998070222,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.000660779812888314,
+      "purity_diag": 0.0006607798128883139
+    },
+    {
+      "miss_inf": 0.4488391989391875,
+      "miss_diag": 0.44883919893943686,
+      "miss_win": 0.4317056190841443,
+      "gap_win_vs_inf": 0.15069253772631885,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.0005789053203669407,
+      "purity_diag": 0.0005789053203669404
+    },
+    {
+      "miss_inf": 0.39428980060078356,
+      "miss_diag": 0.3942898006004691,
+      "miss_win": 0.3948690632837121,
+      "gap_win_vs_inf": 0.10624341264099821,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.0005235625042672234,
+      "purity_diag": 0.0005235625042672232
+    },
+    {
+      "miss_inf": 0.3591488763603993,
+      "miss_diag": 0.3591488763606199,
+      "miss_win": 0.4013797942216414,
+      "gap_win_vs_inf": 0.1958748082732604,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.0007143915373262594,
+      "purity_diag": 0.0007143915373262592
+    },
+    {
+      "miss_inf": 0.3590992142586021,
+      "miss_diag": 0.35909921425846175,
+      "miss_win": 0.34775949671298484,
+      "gap_win_vs_inf": 0.24470212071479375,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.0011431200574310038,
+      "purity_diag": 0.0011431200574310036
+    },
+    {
+      "miss_inf": 0.3701392906286199,
+      "miss_diag": 0.3701392906286331,
+      "miss_win": 0.3755070601524964,
+      "gap_win_vs_inf": 0.07928089456725432,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.0005400835982510065,
+      "purity_diag": 0.0005400835982510063
+    },
+    {
+      "miss_inf": 0.5088347777334419,
+      "miss_diag": 0.5088347777325273,
+      "miss_win": 0.5200080074555059,
+      "gap_win_vs_inf": 0.14813456169894754,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.0005473627520989662,
+      "purity_diag": 0.0005473627520989661
+    },
+    {
+      "miss_inf": 0.5588314369188702,
+      "miss_diag": 0.5588314369192088,
+      "miss_win": 0.43882648402311264,
+      "gap_win_vs_inf": 0.22326327388850295,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.0005060461608660744,
+      "purity_diag": 0.0005060461608660742
+    },
+    {
+      "miss_inf": 0.17577912626651063,
+      "miss_diag": 0.17577912626654624,
+      "miss_win": 0.1822913555847502,
+      "gap_win_vs_inf": 0.0269230300333512,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.000659171600669986,
+      "purity_diag": 0.000659171600669986
+    },
+    {
+      "miss_inf": 0.46077132111385444,
+      "miss_diag": 0.4607713211139166,
+      "miss_win": 0.448347297587325,
+      "gap_win_vs_inf": 0.18539393318035866,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.0009498278660003071,
+      "purity_diag": 0.0009498278660003071
+    },
+    {
+      "miss_inf": 0.22935613602668226,
+      "miss_diag": 0.22935613602671825,
+      "miss_win": 0.24294434281903568,
+      "gap_win_vs_inf": 0.05302376382311218,
+      "within_block_coherence_weight": 0.0,
+      "purity_inf": 0.000600175796836071,
+      "purity_diag": 0.0006001757968360708
+    }
+  ],
+  "summary": {
+    "miss_inf": {
+      "median": 0.4171779723905397,
+      "min": 0.17577912626651063,
+      "max": 0.6469721941959955
+    },
+    "miss_diag": {
+      "median": 0.4171779723904222,
+      "min": 0.17577912626654624,
+      "max": 0.6469721941954762
+    },
+    "miss_win": {
+      "median": 0.4043114109504288,
+      "min": 0.1822913555847502,
+      "max": 0.5971988451375562
+    },
+    "gap_win_vs_inf": {
+      "median": 0.11852515385570488,
+      "min": 0.0269230300333512,
+      "max": 0.24470212071479375
+    }
+  }
+}

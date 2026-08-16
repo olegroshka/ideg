@@ -39,8 +39,8 @@ the impostor be allowed to be? We answer this across fixed-point,
 quasiperiodic, chaotic, metastable, localized, and driven
 (kicked-Ising, DTC-like) spin-chain dynamics. First, time averaging
 and metric construction do not commute: the state's exact
-infinite-time average misses the time-averaged metric by 38--55\%
-(class medians; 8\% metastable), because mutual information is
+infinite-time average misses the time-averaged metric by 36--55\%
+(class medians, both sizes; 8\% metastable), because mutual information is
 nonlinear in the state --- a mismatch that is neither a finite-window
 effect nor an artifact of deleting stationary degenerate structure.
 Second, reproducibility is governed by the \emph{admissible stationary
@@ -133,8 +133,8 @@ correspondingly compact:
 \item \textbf{A non-commutation result.} Time averaging and metric
   construction do not commute: the state's exact infinite-time
   average $\rho_\infty = \sum_E P_E\,\rho\,P_E$ \cite{SRC065} misses
-  the time-averaged metric by 38--55\% (class medians; 8\% for the
-  metastable class), and the mismatch is neither a finite-window
+  the time-averaged metric by 36--55\% (class medians, both sizes;
+  8\% for the metastable class), and the mismatch is neither a finite-window
   effect --- the trapezoidal window average misses by the same
   amounts on every run --- nor an artifact of deleting stationary
   degenerate structure (Sec.~\ref{sec:comparator}).
@@ -704,10 +704,12 @@ they differ decisively: integrable $0.86 \to 0.47$ and metastable
 $0.90 \to 0.078$. Most of the metastable ``coherence-removal jump''
 was deletion of \emph{stationary} degenerate structure, not of motion.
 The corrected non-commutation statement is therefore class-resolved:
-removing exactly the motion moves the metric by $38$--$55\%$ (class
-medians) in five of six classes, and by $8\%$ in the metastable class,
-whose time-averaged metric is nearly carried by its own infinite-time
-average.
+removing exactly the motion moves the metric by $36$--$55\%$ (class
+medians, both sizes) in five of six classes, and by $8\%$ in the
+metastable class, whose time-averaged metric is nearly carried by its
+own infinite-time average (the split replicates at $N{=}12$:
+integrable $0.85 	o 0.46$; the metastable channels nearly coincide
+there, its doublet structure being size-dependent).
 
 \textbf{Finite windows versus infinite time.} $\rho_\infty$ is an
 \emph{infinite}-time average; our windows are finite. The distinction
@@ -840,7 +842,14 @@ searches --- as it must be, since within the one-magnon sector
 stationarity forces diagonality on $N$ nondegenerate levels. The
 integrable class provides the control's control: its impostors are
 sector-honest (median weight outside the run's sectors $0.000$), and
-pinning barely costs ($0.0086 \to 0.030$, 20/20). \textbf{The
+pinning barely costs ($0.0086 \to 0.030$, 20/20). At $N{=}12$ the
+split replicates and deepens: T2 matches T1 with $28\%$ of its
+parameters ($0.0031$ versus $0.0035$, 20/20), while T3 collapses to a
+median $0.256$ (9/20 below threshold) and the impostor's
+outside-sector weight rises to a median $83\%$ (maximum $100\%$ ---
+runs whose faithful impostor lives \emph{entirely} outside the
+one-magnon sector); integrable T3 stays matched ($0.012$, 20/20).
+\textbf{The
 near-exact quasiperiodic impostor exists only outside the dynamically
 accessible sector: within the stationary algebra the dynamics itself
 licenses, no faithful impostor of the quasiperiodic metric was found.}
@@ -868,9 +877,9 @@ $0.24$ (12/20) & $0.025$ (20/20) \\
 full commutant of $H$ (T1) & $\textstyle\sum_B |B|^2$ ($7776$) &
 $0.0052$ (20/20) & $0.0035$ (20/20) \\
 \;\;+ no cross-sector coherence (T2) & $2424$ &
-$0.0052$ (20/20) & \SECTORTWO \\
+$0.0052$ (20/20) & $0.0031$ (20/20) \\
 \;\;+ sector weights pinned to the run (T3) & $\leq N$ (eff.) &
-$0.244$ (15/20) & \SECTORTHREE \\
+$0.244$ (15/20) & $0.256$ (9/20) \\
 \bottomrule
 \end{tabular}
 \caption{The price of standing still, for the class where it is
@@ -1030,7 +1039,7 @@ within the stationary algebra the dynamics itself licenses, no
 faithful impostor of the quasiperiodic metric was found. What the
 measurements establish is threefold: time averaging and metric
 construction do not commute (the exact infinite-time average misses
-by 38--55\% in five of six classes, window-length effects excluded);
+by 36--55\% in five of six classes, window-length effects excluded);
 whether a faithful impostor exists is governed by the
 \emph{admissible stationary algebra}, sharply class-resolved --- a
 temperature window suffices for the thermalizing classes, conserved

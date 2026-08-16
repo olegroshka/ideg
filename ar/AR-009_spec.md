@@ -638,3 +638,21 @@ scaling is reported descriptively (no extrapolation claims — scope wall §7).
   third-party review. Dated entries stand as written; this note
   corrects their provenance. Paper text purged of review-history
   framing the same day.
+- **2026-08-16 — Comparator-scope and channel corrections (AR-020e,
+  third audit; no preregistered threshold changed).** (i) Coherence-
+  removal instrument corrected: motion removal = P_E rho P_E (the
+  exact infinite-time dephasing); the registered full-diagonalization
+  figures reclassified as a stronger ablation (metastable 0.90 vs
+  0.08, integrable 0.86 vs 0.47 at N = 10; corrected both-size
+  non-commutation span 36–55%, 8% metastable). (ii) "Block coherence"
+  retired as basis-relative; sector-admissibility tiers added: T2
+  (commutant of {H, N_mag}) = T1 run-by-run at both sizes; T3
+  (accessible sector) collapses the quasiperiodic match to the
+  population-only plateau (0.244/0.256 medians; outside-sector weight
+  of the T1 impostor 69%/83% median at N = 10/12). Comparator
+  statement of record: ADMISSIBILITY split — within the
+  dynamics-licensed stationary algebra, no faithful quasiperiodic
+  impostor found. All-runs trapezoidal window study supersedes the
+  one-representative window-gap instrument (its metastable anomaly
+  was a wrong-channel artifact). Validation battery (machine-exact
+  full-rho recheck) on every optimized state.

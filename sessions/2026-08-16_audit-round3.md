@@ -67,9 +67,10 @@ None.
 
 ## Open items
 
-- **Wave 2 (N = 12)**: sector T2/T3 + channels → slot tab:price
-  tripwires (\SECTORTWO, \SECTORTHREE), extend packet, rebuild, final
-  commit, send PDF.
+- ~~Wave 2 (N = 12)~~ LANDED same session: T2 0.0031 = T1 0.0035
+  (28% of parameters); T3 0.256 (9/20); outside-weight median 83%,
+  max 100%; channels replicate. Slotted, packet/spec/CLAUDE.md
+  updated, rebuilt below.
 - **AR-023 dependency:** add a T3 comparator-population export
   (p*, hashes, recheck) to ar020e for the hardware pilot's Gate L0.
 - Owner proof pass of round-3 build; then paper-v1 retag; endorsement

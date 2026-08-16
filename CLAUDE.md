@@ -160,8 +160,17 @@ results/     run outputs, figures, serialized data (gitignored where large)
   correction, audit-triggered). Paper rewritten (physics-first
   abstract, five-stage search, price table tab:price, App-A optimizer specs,
   SRC-065..068 cited). See `sessions/2026-08-15_review-round2.md`. **Provenance rule (2026-08-16):** these audits were owner-run multi-model adversarial passes (internal) — never call them 'external review'; the paper carries no review-history framing (KB-004 v0.10, KB-005 v0.17).
-- N=12 block search LANDED (qp 20/20 median 0.0035, containment clean) ->
-  in tab:price; clean rebuild. Next: **owner proof pass of revision 2**, then
+- **Third audit round + AR-020e (2026-08-16): ADMISSIBILITY is the claim of
+  record** (seventh correction). "Block coherence" retired (basis-relative);
+  sector control: T2 (commutant of {H,N_mag}) = T1 at both sizes, but the
+  impostor carries 69%/83% (N=10/12) median weight outside the run's
+  magnetization sectors; accessible-sector tier T3 collapses qp to the
+  population-only plateau (0.244/0.256); integrable sector-honest. Channel
+  correction: motion removal = P_E rho P_E; both-size non-commutation span
+  36-55% (8% metastable); ablation reclassified. All-runs trapezoidal window
+  study. KB-004 v0.11, KB-005 v0.18, ar/AR-020e_sector-2026-08-16.md.
+  AR-023 (IBM hardware pilot, other session) registered — depends on a T3
+  p* export from ar020e. Next: **owner proof pass of revision 3**, then
   retag paper-v1 -> endorsement -> arXiv + Quantum.
 - Superseded gates note: original **owner gates to submission** — proof pass on main.pdf;
   acknowledgements/affiliation/funding TODO markers in main.tex; repo
