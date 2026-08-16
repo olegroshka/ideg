@@ -76,8 +76,8 @@ results/     run outputs, figures, serialized data (gitignored where large)
 ## Current state (update this block when it changes)
 
 - Repo: https://github.com/olegroshka/ideg (private), created 2026-08-11.
-- Substrate versions: KB-001 v0.3, KB-002 v0.2, KB-003 v0.8, KB-004 v0.9,
-  KB-005 v0.16 (2026-08-15).
+- Substrate versions: KB-001 v0.3, KB-002 v0.2, KB-003 v0.8, KB-004 v0.10,
+  KB-005 v0.17 (2026-08-16).
 - **AR-020b hardened probe (2026-08-13):** comparator class-split
   CORRECTED — metastable/integrable matchable within ε_Φ (20/20 each),
   localized boundary; **quasiperiodic = sole motion-borne survivor
@@ -147,8 +147,8 @@ results/     run outputs, figures, serialized data (gitignored where large)
   SRC-059..063 verified (KB-003 v0.6) → **LaTeX compiled clean**
   (paper/latex/main.pdf, 14 pp, 0 errors, all figures + amendment-log
   appendix embedded).
-- **External review + MAJOR REVISION (2026-08-14/15):** review core accepted; AR-020c unrestricted search REFUTED the single-survivor claim (every class matchable; qp 20/20 at N=12) -> surviving discriminator = the smooth-ensemble NATURALNESS GAP; paper rewritten (question-form title, non-commutation + complexity-split thesis, renames, tempered OTOC, stages table, self-contained numerics; 15 pp clean build). KB-003 v0.7, KB-004 v0.8, KB-005 v0.15.
-- **Second review round + SECOND MAJOR REVISION (2026-08-15):** degeneracy
+- **Adversarial audit round 1 (owner-run multi-model) + major draft revision (2026-08-14/15):** audit core accepted; AR-020c unrestricted search REFUTED the single-survivor claim (every class matchable; qp 20/20 at N=12) -> surviving discriminator = the smooth-ensemble NATURALNESS GAP; paper rewritten (question-form title, non-commutation + complexity-split thesis, renames, tempered OTOC, stages table, self-contained numerics; 15 pp clean build). KB-003 v0.7, KB-004 v0.8, KB-005 v0.15.
+- **Adversarial audit round 2 + second major draft revision (2026-08-15):** degeneracy
   criticism accepted and decisive — AR-020d block-coherent commutant search
   matches quasiperiodic essentially exactly (N=10: 20/20, median 0.0052;
   containment check caught an objective sign error pre-record); GGE matches
@@ -157,9 +157,9 @@ results/     run outputs, figures, serialized data (gitignored where large)
   RESOURCE SPLIT — every class has a stationary impostor; classes differ in the
   stationary resource (thermal window / GGE charges / degenerate-block
   coherence); discriminator = SMOOTH-IN-ENERGY REPRESENTATION GAP** (sixth
-  correction, second externally triggered). Paper rewritten (physics-first
+  correction, audit-triggered). Paper rewritten (physics-first
   abstract, five-stage search, price table tab:price, App-A optimizer specs,
-  SRC-065..068 cited). See `sessions/2026-08-15_review-round2.md`.
+  SRC-065..068 cited). See `sessions/2026-08-15_review-round2.md`. **Provenance rule (2026-08-16):** these audits were owner-run multi-model adversarial passes (internal) — never call them 'external review'; the paper carries no review-history framing (KB-004 v0.10, KB-005 v0.17).
 - N=12 block search LANDED (qp 20/20 median 0.0035, containment clean) ->
   in tab:price; clean rebuild. Next: **owner proof pass of revision 2**, then
   retag paper-v1 -> endorsement -> arXiv + Quantum.

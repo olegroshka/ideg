@@ -4,7 +4,7 @@ title: "IDEG Research Program — Agentic Protocol, Phases, Gates, and Backlog"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-15
-version: 0.16
+version: 0.17
 research_layer: R4
 epistemic_status: NOT_APPLICABLE
 sources:
@@ -28,6 +28,7 @@ changelog:
   - "0.14: AR-020b hardened probe — comparator class-split corrected (metastable/integrable matchable; quasiperiodic sole motion-borne survivor, 0/40 both sizes); KB-004 → v0.7; paper §6 gate cleared — see §30"
   - "0.15: external review + AR-020c (Claude, 2026-08-15) — survivor claim refuted at unrestricted scope; naturalness gap = the surviving discriminator; paper-1 major revision executed; KB-003 → v0.7, KB-004 → v0.8 — see §31"
   - "0.16: second review round + AR-020d (Claude, 2026-08-15) — block-coherent commutant matches quasiperiodic (sixth correction, second externally triggered); GGE/price-curve/window-gap battery; discriminator = smooth-in-energy representation gap; paper-1 second major revision; KB-003 → v0.8, KB-004 → v0.9 — see §32"
+  - "0.17: provenance correction (owner-directed, Claude, 2026-08-16) — 'external review' in §31–§32 and changelog 0.15–0.16 denotes owner-run multi-model adversarial audit passes (internal), not third-party review; paper purged of review-history framing; KB-004 → v0.10 — see §33"
 ---
 
 # Research Program and Agentic Protocol
@@ -481,3 +482,20 @@ five starts at both sizes — all quasiperiodic optima unchanged (medians
 0.0052/0.0035); the single flagged integrable run closed to 3e-10; containment
 clean; tab:price start-count-insensitive (`ar020d_blocks5_N{10,12}.json`).
 5. N = 12 block-coherent confirmation LANDED (20/20, median 0.0035, containment clean; `results/AR-010/ar020d_blocks_N12.json`) and is in tab:price. Next: owner proof pass of revision 2; then endorsement/submission path as parked.
+
+## 33. Changelog v0.16 → v0.17 — provenance correction (2026-08-16)
+
+1. **Owner correction:** the "external pre-submission review" / "review rounds"
+   of §31–§32 were the owner running the draft through independent AI models —
+   adversarial audit passes internal to the programme, not third-party review.
+   The audits' *content* (time-average framing, search-space bound, degeneracy)
+   and all resulting science are unchanged; only the provenance was wrong.
+2. Paper purged of the review-history framing everywhere (abstract, §1, §6,
+   §9, acknowledgements, App. C rows): corrections are attributed to
+   "adversarial audits"; App-C rows reworded ("Adversarial audit of the
+   draft", "Draft revision", "Second adversarial audit"); the acknowledgements
+   sentence claiming an external review deleted. First-time readers see the
+   study record, not a fictional submission history.
+3. Standing vocabulary rule going forward: audit passes run by the owner with
+   independent models are "adversarial audits (multi-model, internal)" —
+   never "external review" — in both paper and substrate.

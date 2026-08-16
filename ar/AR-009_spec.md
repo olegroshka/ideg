@@ -632,3 +632,9 @@ scaling is reported descriptively (no extrapolation claims — scope wall §7).
   designed containment check (results discarded pre-record, relaunch
   clean); the same check flags one integrable run (diagonal 1e-8 vs
   block 0.02) as optimizer shortfall — reported in the paper.
+- **2026-08-16 — Provenance note (owner-directed).** The "externally
+  triggered" audits in the 2026-08-14/15 entry were owner-run
+  multi-model adversarial passes, internal to the programme — not
+  third-party review. Dated entries stand as written; this note
+  corrects their provenance. Paper text purged of review-history
+  framing the same day.

@@ -4,7 +4,7 @@ title: "IDEG Hypothesis Space — Nulls, Bridges, Strong Forms, and Falsifiers"
 status: DRAFT
 owner: shared
 last_reviewed: 2026-08-15
-version: 0.9
+version: 0.10
 research_layer: R3
 epistemic_status: SPECULATIVE_TO_PLAUSIBLE
 sources:
@@ -21,6 +21,7 @@ changelog:
   - "0.7: hardened-probe correction (AR-020b, Claude, 2026-08-13) — comparator class-split corrected: metastable/integrable matchable, localized boundary; motion-borne survivor = quasiperiodic alone (0/40, both sizes), coinciding with the negative dephasing log ρ class"
   - "0.8: AR-020c correction (external-review-triggered, Claude, 2026-08-15) — survivor claim REFUTED at unrestricted scope (all classes matchable; qp 20/20 at N=12); class discriminator = the smooth-ensemble NATURALNESS GAP; BH-004 status unchanged (grounded on (b) + coherence-removal legs)"
   - "0.9: AR-020d correction (second-review-triggered, Claude, 2026-08-15) — degenerate-block commutant matches quasiperiodic essentially exactly (20/20, 0.005); GGE matches integrable, fails qp; discriminator renamed SMOOTH-IN-ENERGY REPRESENTATION GAP; corrected reading: resource split, not existence or complexity split; BH-004 status unchanged"
+  - "0.10: provenance correction (owner-directed, Claude, 2026-08-16) — the 'external-review-triggered' / 'second-review-triggered' wording in entries 0.8–0.9 and the BH-004 v0.8/v0.9 notes denotes owner-run multi-model adversarial audit passes (internal to the programme), NOT third-party review; no scientific content changed; paper text purged of review-history framing"
 ---
 
 # Hypothesis Space
@@ -254,6 +255,10 @@ window / GGE charges / degenerate-block coherence). BH-004's
 sustained-by evidence continues to rest on criterion (b) +
 coherence-removal + the dephasing sign structure; the representation
 gap is the class-resolved discriminator. Status unchanged.**
+**(v0.10, provenance note 2026-08-16):** the "externally triggered"
+audits in the v0.8/v0.9 notes above were owner-run multi-model
+adversarial passes (internal); the substrate retains the dated wording
+as-written, corrected here rather than rewritten.
 
 ### BH-005 — Recurrence as an emergent-stability mechanism
 Within a successful BH-004 model, test whether recurrence/limit-cycle/quasiperiodicity — including a driven/Floquet regime modeled on TH-033 — provides robustness unavailable to fixed-point/invariant-subspace alternatives. **Only proceed if BH-004 survives.** This is HYP-005's proving ground.

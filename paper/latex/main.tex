@@ -55,8 +55,8 @@ fine-tuning, or degenerate-block coherence. Third, weak dephasing
 \emph{pins} the moving quasiperiodic metric to its time average while
 destabilizing chaotic-class metrics, singling out the same class
 dynamically. The study is a registered design with a public,
-commit-hashed record; six claim-level corrections --- four internal,
-two prompted by external review --- are reported as results.
+commit-hashed record; six claim-level corrections, each caught by the
+study's own audit mechanisms, are reported as results.
 \end{abstract}
 
 \section{Introduction}\label{sec:intro}
@@ -111,12 +111,13 @@ correctly classifying it as an operator-spreading diagnostic
 comparison was exposed by our adversarial re-analysis as a
 floored-denominator artifact; a narrow first version of the comparator
 search over-claimed unmatchability for two classes that a hardened
-search then matched; and two successive rounds of external review each
-forced the comparator search open further --- first to unrestricted
-diagonal populations, which overturned our remaining existential
-claim, then to stationary states with coherences inside degenerate
-energy blocks, which matched the last resisting class almost exactly.
-What survives this gauntlet is correspondingly compact:
+search then matched; and two successive adversarial audits of the
+comparator search each forced it open further --- first to
+unrestricted diagonal populations, which overturned our remaining
+existential claim, then to stationary states with coherences inside
+degenerate energy blocks, which matched the last resisting class
+almost exactly. What survives this gauntlet is correspondingly
+compact:
 \begin{enumerate}
 \item \textbf{An operational test} of instantiated-vs-maintained
   emergent structure (null-silent witnesses, coherence removal,
@@ -617,8 +618,8 @@ the object under discussion is the \emph{time-averaged} metric
 $\bar D$, which is a stationary summary by construction; only for the
 metric-stationary classes is $\bar D$ also the metric one would
 observe. This section reports the search, including the four
-corrections that shaped it --- two forced by our own audits, two by
-successive rounds of external review (Fig.~\ref{fig:comparator},
+corrections that shaped it, each forced by an adversarial audit of
+the previous stage's claim (Fig.~\ref{fig:comparator},
 Table~\ref{tab:price}).
 
 \begin{figure*}[t]
@@ -686,22 +687,23 @@ doublet physics differs, both misses are small ($\approx 0.09$).
 
 \textbf{The staged search.} Stationarity means $[\sigma, H]=0$. The
 search opened in five stages of increasing freedom, over full
-ensembles at both criterion sizes, each widening forced by an audit or
-a review round: (i) three natural families (thermal at both
+ensembles at both criterion sizes, each widening forced by an
+adversarial audit of the previous stage's scope: (i) three natural
+families (thermal at both
 temperature signs, depolarized diagonal ensemble, Gaussian
 microcanonical; $\leq 2$ parameters each); (ii) a smooth-$f(H)$ family
 (log-populations parameterized by Chebyshev polynomials in the scaled
 energy, orders to $K = 96$, multi-start); (iii) --- prompted by the
-first review round, which correctly observed that stage (ii) is not
-all diagonal states --- an \emph{unrestricted} optimization over all
+observation that stage (ii) is not all diagonal states --- an
+\emph{unrestricted} optimization over all
 $2^N$ populations (softmax parameterization, analytic gradient through
 the entropies and shortest paths, verified against finite differences,
 multi-start), together with sparse population vectors on $k \leq 32$
 eigenstates; (iv) a generalized Gibbs ensemble over the XX chain's
 free-fermion mode occupations \cite{SRC065,SRC067} ($N$ Lagrange
 multipliers), the canonical stationary description of an integrable
-quench; and (v) --- prompted by the second review round, which
-correctly observed that even stage (iii) is not all stationary states
+quench; and (v) --- prompted by the observation that even stage
+(iii) is not all stationary states
 --- optimization over \emph{block-coherent} stationary states. The
 point behind stage (v) is a spectral fact worth stating plainly: the
 XX-based spectra are massively degenerate ($N{=}10$: $243$ distinct
@@ -973,8 +975,8 @@ suggests that diagnostics informally credited with certifying
 ``dynamics'' deserve routine auditing against frozen states, if only
 to fix which kind of dynamics they certify. And a registered design
 with committed seeds changed the outcome of this study six times ---
-four corrections from our own audit mechanisms and two from
-successive rounds of external review; the amendment log
+every correction caught by an audit mechanism the design itself
+mandated; the amendment log
 (Appendix~\ref{app:log}) is our answer to
 the question of what the substrate discipline \cite{SRC001} buys in a
 purely computational setting.
@@ -993,10 +995,8 @@ execution, analysis, and the adversarial companion --- was carried out
 with Claude (Anthropic) as AI research assistant, operating under the
 Shared Substrate protocol \cite{SRC001} whose record forms
 Appendix~\ref{app:log}. The programme's initiating knowledge base was
-drafted in collaboration with OpenAI's ChatGPT. An external
-pre-submission review prompted the unrestricted comparator analysis
-and several framing corrections reported here. All rulings, decisions,
-and the final text are the author's responsibility.
+drafted in collaboration with OpenAI's ChatGPT. All rulings,
+decisions, and the final text are the author's responsibility.
 
 \paragraph{Funding.} This work received no external funding; it was
 carried out in the author's free time, for the joy of it.
@@ -1177,17 +1177,17 @@ single-survivor result & \texttt{67dda68970b1} \\
 08-13 & Descriptive hardening sweep: $\varepsilon_c$, 2000-period
 comparator, $\gamma$-grid, partition distribution, $N=14$ &
 \texttt{9ce17dec803c} \\
-08-14 & External pre-submission review received; core criticisms
-accepted (time-average framing; search-space bound) &
+08-14 & Adversarial audit of the draft: time-average framing and
+smooth-search-space bound accepted as defects &
 --- \\
-08-14/15 & Unrestricted comparator optimization (review-prompted):
+08-14/15 & Unrestricted comparator optimization (audit-prompted):
 every class matchable; smooth-vs-unrestricted naturalness gap replaces
 the single-survivor claim & \texttt{075eb96},
 \texttt{2978713} \\
-08-15 & Major revision: non-commutation thesis; coherence-removal /
+08-15 & Draft revision: non-commutation thesis; coherence-removal /
 drive-removal renaming; tempered OTOC framing; DTC-like wording;
 stages table; self-contained numerics & \texttt{9c05a1f} \\
-08-15 & Second review round received; degeneracy criticism accepted:
+08-15 & Second adversarial audit: degeneracy defect accepted ---
 diagonal populations are not all stationary states when the spectrum
 is degenerate & --- \\
 08-15 & Block-coherent commutant, GGE, price-curve, and window-gap
