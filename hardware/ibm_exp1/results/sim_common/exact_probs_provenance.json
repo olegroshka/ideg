@@ -1,0 +1,9 @@
+{
+  "cache_sha256": "1ed6b32f24084ecd441d395ab3266632ae47aaed04796c4deadc2683270440ad",
+  "circuit_hashes_verified": 1323,
+  "infinite_shot_dbar_fro_diff": 3.557368015613539e-13,
+  "infinite_shot_dstar_fro_diff": 3.6180190765663484e-13,
+  "infinite_shot_eps": 0.22791011717093881,
+  "infinite_shot_eps_ref": 0.227910117170944,
+  "infinite_shot_gate": "PASS"
+}
