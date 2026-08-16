@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "fidelity_threshold": 1e-10,
+  "unique_target_count": 47,
+  "selected_draft_method": "xxplusyy",
+  "selection_status": "DRAFT_PENDING_BACKEND_COMPARISON",
+  "max_xxplusyy_infidelity": 6.661338147750939e-16,
+  "max_generic_infidelity": 0.0,
+  "one_magnon_eigensystem_residual": 4.7315268900533045e-15,
+  "states": [
+    {
+      "state_id": "dynamic_t000",
+      "xxplusyy_infidelity": 4.440892098500626e-16,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t001",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t002",
+      "xxplusyy_infidelity": 4.440892098500626e-16,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t003",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t004",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t005",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t006",
+      "xxplusyy_infidelity": 2.220446049250313e-16,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t007",
+      "xxplusyy_infidelity": 2.220446049250313e-16,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t008",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t009",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t010",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t011",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t012",
+      "xxplusyy_infidelity": 4.440892098500626e-16,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t013",
+      "xxplusyy_infidelity": 4.440892098500626e-16,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t014",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t015",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t016",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t017",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t018",
+      "xxplusyy_infidelity": 4.440892098500626e-16,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t019",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t020",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t021",
+      "xxplusyy_infidelity": 2.220446049250313e-16,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t022",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t023",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t024",
+      "xxplusyy_infidelity": 4.440892098500626e-16,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t025",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t026",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t027",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t028",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t029",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t030",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t031",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t032",
+      "xxplusyy_infidelity": 6.661338147750939e-16,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t033",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t034",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t035",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "dynamic_t036",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "sector_e00",
+      "xxplusyy_infidelity": 2.220446049250313e-16,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "sector_e01",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "sector_e02",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "sector_e03",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "sector_e04",
+      "xxplusyy_infidelity": 2.220446049250313e-16,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "sector_e05",
+      "xxplusyy_infidelity": 4.440892098500626e-16,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "sector_e06",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "sector_e07",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "sector_e08",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    },
+    {
+      "state_id": "sector_e09",
+      "xxplusyy_infidelity": 0.0,
+      "generic_infidelity": 0.0,
+      "xxplusyy_two_qubit_gates_logical": 9
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "status": "DRAFT_LOGICAL",
+  "experiment_id": "ibm-exp1-qp-sector",
+  "manifest_path": "C:\\Users\\olegr\\PycharmProjects\\ideg\\hardware\\ibm_exp1\\manifest\\hardware_manifest.json",
+  "manifest_sha256": "a723e035292447bd4f40b71c6bc89f8c4313c5f511959a7b5968e950e674f30a",
+  "preparation_method": "xxplusyy",
+  "unique_target_count": 47,
+  "circuit_count": 1323,
+  "shots": 768,
+  "control_mode": 9,
+  "qpy_sha256": "4c0aab78f72365c97cad0b2d227fa19531a9c007cdf8468b18ad05d385a2d9c8",
+  "circuit_registry_sha256": "0455cdef68535723ae3c87c02334fc36a252d800fdcf0285cd8db04785ad09c2",
+  "target_states_sha256": "77bce6c40bc9d3acdc2a50d9fc55b0ab62f530d298ceff95d3d628de6ba5ecb3",
+  "files": {
+    "qpy": "logical_circuits.qpy",
+    "registry": "circuit_registry.json",
+    "targets": "target_states.npz",
+    "report": "state_prep_report.json"
+  },
+  "environment": {
+    "python": "3.11.14",
+    "numpy": "2.4.6",
+    "qiskit": "2.5.2"
+  },
+  "submission_ready": false,
+  "submission_blockers": [
+    "manifest is not frozen",
+    "backend and physical path are not selected",
+    "finite-shot/noisy simulator gates are incomplete",
+    "circuits are not hardware-transpiled",
+    "usage including M3 calibration is not estimated",
+    "explicit QPU-GO has not been supplied"
+  ],
+  "bundle_sha256": "bbd9b445beb611eaa38b104d0c9ca3865a431d7d43425156e3f1001900782f5d"
+}
