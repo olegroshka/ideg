@@ -13,6 +13,8 @@
 \usepackage{xcolor}
 \definecolor{linkink}{HTML}{1c3f77}
 \usepackage{hyperref}
+\usepackage{microtype}
+\emergencystretch=1.5em
 \hypersetup{colorlinks=true,linkcolor=linkink,citecolor=linkink,
 urlcolor=linkink}
 \graphicspath{{../figures/}}
@@ -32,31 +34,33 @@ information metrics}
 
 \begin{abstract}
 How well can a stationary state impersonate the time-averaged
-mutual-information metric of a moving quantum state --- and what
-stationary resources does the impersonation require? We answer this
-across fixed-point, quasiperiodic, chaotic, metastable, localized, and
-driven (kicked-Ising, DTC-like) spin-chain dynamics. First, time
-averaging and metric construction do not commute: the diagonal
-ensemble, whose reduced density matrices reproduce the infinite-time
-averages, misses the time-averaged metric by 43--90\%, because mutual
-information is nonlinear in the state. Second, the repair is family-resolved: thermal-window ensembles
-suffice for chaotic classes (miss $\sim 0.04$, consistent with
-eigenstate thermalization); a generalized Gibbs ensemble suffices for
-generic integrable quenches ($\sim 0.15$) but fails few-mode
-quasiperiodic states ($\sim 0.5$); population-only descriptions of
-the quasiperiodic metric fail smoothly-in-energy ($\sim 0.32$,
-0/80 runs) or at best scrape the stationarity threshold
-(sparse and fully unrestricted, $\sim 0.23$--$0.24$ at $N{=}10$);
-stationary states with coherences inside degenerate energy blocks
-match it almost exactly (miss $\sim 0.005$). Every class thus has a
-near-exact stationary impostor; the classes differ in the
-\emph{stationary resource} the impostor needs --- temperature, charges,
-fine-tuning, or degenerate-block coherence. Third, weak dephasing
-\emph{pins} the moving quasiperiodic metric to its time average while
-destabilizing chaotic-class metrics, singling out the same class
-dynamically. The study is a registered design with a public,
-commit-hashed record; six claim-level corrections, each caught by the
-study's own audit mechanisms, are reported as results.
+mutual-information metric of a moving quantum state --- and what must
+the impostor be allowed to be? We answer this across fixed-point,
+quasiperiodic, chaotic, metastable, localized, and driven
+(kicked-Ising, DTC-like) spin-chain dynamics. First, time averaging
+and metric construction do not commute: the state's exact
+infinite-time average misses the time-averaged metric by 38--55\%
+(class medians; 8\% metastable), because mutual information is
+nonlinear in the state --- a mismatch that is neither a finite-window
+effect nor an artifact of deleting stationary degenerate structure.
+Second, reproducibility is governed by the \emph{admissible stationary
+algebra}: thermal windows suffice for chaotic classes (miss
+$\sim 0.04$, consistent with eigenstate thermalization); a generalized
+Gibbs ensemble suffices for generic integrable quenches ($\sim 0.15$)
+but fails few-mode quasiperiodic states; for the quasiperiodic metric,
+every population-only family in a fixed eigenbasis fails
+($0.23$--$0.32$) while the full commutant of $H$ succeeds almost
+exactly ($\sim 0.005$) --- yet the commutant impostor places
+$\sim\!70\%$ of its weight in magnetization sectors the dynamics never
+populates, and restricting to the dynamically accessible sector
+collapses the match ($\sim 0.24$). Within the stationary algebra its
+own dynamics licenses, no faithful impostor of the quasiperiodic
+metric was found. Third, weak dephasing \emph{pins} the moving
+quasiperiodic metric to its time average while destabilizing
+chaotic-class metrics, singling out the same class dynamically. The
+study is a registered design with a public, commit-hashed record;
+seven claim-level corrections, each caught by the study's own audit
+mechanisms, are reported as results.
 \end{abstract}
 
 \section{Introduction}\label{sec:intro}
@@ -101,7 +105,7 @@ dated amendment (Appendix~\ref{app:log}) --- because a study of this
 shape has one dominant failure mode, self-deception through flexible
 metric choice, and we preferred to make our mistakes in public.
 
-The mistakes were made, caught, and are reported as results. Six
+The mistakes were made, caught, and are reported as results. Seven
 times, a correction mechanism fired: a registered class certificate
 was mis-specified (Poisson statistics for a free chain); the
 out-of-time-order correlator, which we had registered as a witness of
@@ -111,39 +115,49 @@ correctly classifying it as an operator-spreading diagnostic
 comparison was exposed by our adversarial re-analysis as a
 floored-denominator artifact; a narrow first version of the comparator
 search over-claimed unmatchability for two classes that a hardened
-search then matched; and two successive adversarial audits of the
+search then matched; two successive adversarial audits of the
 comparator search each forced it open further --- first to
 unrestricted diagonal populations, which overturned our remaining
-existential claim, then to stationary states with coherences inside
-degenerate energy blocks, which matched the last resisting class
-almost exactly. What survives this gauntlet is correspondingly
-compact:
+existential claim, then to the full commutant of $H$, which matched
+the last resisting class almost exactly; and a final audit of that
+very success showed the commutant impostor achieves it by placing
+most of its weight in magnetization sectors the dynamics cannot
+reach --- restoring, in corrected and sharper form, the conclusion
+the previous audit had overturned. What survives this gauntlet is
+correspondingly compact:
 \begin{enumerate}
 \item \textbf{An operational test} of instantiated-vs-maintained
   emergent structure (null-silent witnesses, coherence removal,
   motionless-comparator search), portable to any system with a
   computable structural functional.
 \item \textbf{A non-commutation result.} Time averaging and metric
-  construction do not commute: the diagonal ensemble --- the
-  motionless state whose two-site reduced density matrices are the
-  infinite-time averages \cite{SRC065} --- misses the time-averaged
-  metric by 43--90\%, and the mismatch is not a finite-window
-  artifact: the exact window-averaged state misses by nearly the same
-  amount (Sec.~\ref{sec:comparator}).
-\item \textbf{A resource-resolved matching spectrum.} Every class's
-  time-averaged metric has a near-exact stationary impostor, but the
-  stationary \emph{resource} the impostor requires is class-resolved:
-  thermal windows suffice for the chaotic classes ($\sim$3 parameters,
-  miss $\sim 0.04$, as eigenstate thermalization suggests
-  \cite{SRC066}); a generalized Gibbs ensemble \cite{SRC065,SRC067}
-  matches the generic integrable quench but not the few-mode
-  quasiperiodic states; every population-only family --- smooth in
-  energy (0/80 runs at $\sim 0.32$), sparse, or fully unrestricted ---
-  leaves the quasiperiodic class straddling the threshold at $N{=}10$;
-  stationary states with coherences inside degenerate energy blocks
-  match it almost exactly (miss $\sim 0.005$). The class discriminator
-  is the \emph{smooth-in-energy representation gap} of the metric, not
-  the existence of an impostor.
+  construction do not commute: the state's exact infinite-time
+  average $\rho_\infty = \sum_E P_E\,\rho\,P_E$ \cite{SRC065} misses
+  the time-averaged metric by 38--55\% (class medians; 8\% for the
+  metastable class), and the mismatch is neither a finite-window
+  effect --- the trapezoidal window average misses by the same
+  amounts on every run --- nor an artifact of deleting stationary
+  degenerate structure (Sec.~\ref{sec:comparator}).
+\item \textbf{An admissibility-resolved matching spectrum.} Whether a
+  time-averaged metric has a faithful stationary impostor depends on
+  the stationary algebra the impostor is drawn from, and the required
+  algebra is class-resolved: thermal windows suffice for the chaotic
+  classes ($\sim$3 parameters, miss $\sim 0.04$, as eigenstate
+  thermalization suggests \cite{SRC066}); a generalized Gibbs
+  ensemble \cite{SRC065,SRC067} matches the generic integrable quench
+  but not the few-mode quasiperiodic states; for the quasiperiodic
+  metric every population-only family in a fixed eigenbasis fails or
+  scrapes the threshold (smooth-in-energy: 0/80 runs at $\sim 0.32$;
+  top-$k$ and unrestricted: $\sim 0.23$--$0.24$), the full commutant
+  of $H$ succeeds almost exactly (miss $\sim 0.005$) --- and a sector
+  control shows the commutant impostor places $\sim\!70\%$ of its
+  weight in magnetization sectors the dynamics never populates;
+  restricted to the dynamically accessible sector, the match
+  collapses to the population-only plateau ($\sim 0.24$). Two
+  invariant class discriminators survive: the
+  \emph{smooth-in-energy representation gap}, and \emph{sector
+  admissibility} --- no faithful impostor of the quasiperiodic metric
+  was found inside the stationary algebra its own dynamics licenses.
 \item \textbf{A sign structure.} Weak dephasing \emph{stabilizes} the
   moving metrics of coherence-carried classes (negative log drift
   ratio, flat over two decades of noise rate) while destabilizing
@@ -158,8 +172,9 @@ compact:
   dated amendment log as Appendix~\ref{app:log}.
 \end{enumerate}
 The driven track adds an instructive case study: the DTC-like regime's
-metric survives removal of its drive unchanged --- localization, not
-the subharmonic motion, holds it (Sec.~\ref{sec:driven}).
+metric survives removal of its drive unchanged --- the residual static
+disordered evolution, not the subharmonic motion, holds it
+(Sec.~\ref{sec:driven}).
 
 \paragraph{What this paper does not claim.} The metric is an
 information-theoretic construct on a posited factorization; its
@@ -350,13 +365,21 @@ in the (correctly time-averaged) reduced density matrices, and
 $\Phi[\bar\rho]$ sits 43--90\% away from $\bar D$ depending on class. The corrected comparator methodology --- an
 explicit optimization over stationary states --- is described with its
 results in Sec.~\ref{sec:comparator}. The \emph{coherence-removal test}
-projects the state onto its diagonal ensemble mid-window (energy-basis
-dephasing; populations are conserved, so the result is exactly
-$\bar\rho$) and asks whether the metric's behaviour changes. We
-emphasize what this operation is not: it is not switching the
+replaces the state mid-window by a stationary projection and asks
+whether the metric's behaviour changes. For a degenerate spectrum two
+inequivalent projections exist, and the distinction matters: the
+\emph{motion-removal channel} $\rho_\infty = \sum_E P_E\,\rho\,P_E$
+removes coherence between distinct energies only --- it is the exact
+infinite-time dephasing map, deleting all motion and nothing else ---
+while full eigenbasis diagonalization to $\bar\rho$ additionally
+deletes \emph{stationary} structure inside degenerate blocks, and is
+therefore a stronger ablation, not a motion removal. We registered the
+ablation; Sec.~\ref{sec:comparator} reports both channels, and the
+distinction turns out to be numerically decisive for two classes. We
+emphasize what neither operation is: it is not switching the
 Hamiltonian off --- setting $H=0$ would freeze the current state and
 its metric in place --- it removes energy-basis coherence, i.e.\ the
-motion, while keeping the time-averaged local structure. The driven
+motion, while keeping time-averaged local structure. The driven
 track uses a genuinely different operation, \emph{drive removal}
 (Sec.~\ref{sec:driven}). And three \emph{perturbation
 protocols} --- a local Hamiltonian quench $\lambda\sigma^z$, a local
@@ -607,7 +630,7 @@ the calibrated strengths and, per the sweep, within the probed regime
 --- not strength-independent class properties.
 
 \section{Results IV: the motionless-comparator search --- existence
-versus resources}\label{sec:comparator}
+versus admissibility}\label{sec:comparator}
 
 The sharpest form of the maintained-vs-instantiated question is:
 \emph{does there exist a motionless state carrying the same
@@ -617,7 +640,7 @@ metric is genuinely moving (quasiperiodic, metastable, integrable),
 the object under discussion is the \emph{time-averaged} metric
 $\bar D$, which is a stationary summary by construction; only for the
 metric-stationary classes is $\bar D$ also the metric one would
-observe. This section reports the search, including the four
+observe. This section reports the search, including the five
 corrections that shaped it, each forced by an adversarial audit of
 the previous stage's claim (Fig.~\ref{fig:comparator},
 Table~\ref{tab:price}).
@@ -625,18 +648,23 @@ Table~\ref{tab:price}).
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{fig5_comparator.pdf}
-\caption{(a) The coherence-removal measurement: projecting the state
-onto its diagonal ensemble mid-window moves the metric by 43--90\% of
-$\lVert\bar D\rVert$ in every class --- removing the motion changes
-the metric. (b) The smooth-in-energy representation gap: best miss
+\caption{(a) Coherence removal on both channels, all $N{=}10$ runs:
+the motion-removal channel $\rho_\infty = \sum_E P_E\rho P_E$
+(filled) versus the stronger full-diagonalization ablation
+$\bar\rho$ (rings). For the metastable and integrable classes the two
+differ decisively --- most of their registered ``jump'' was deletion
+of stationary degenerate structure --- while the
+nondegenerately-supported classes coincide. Removing exactly the
+motion still changes the metric in every class. (b) The
+smooth-in-energy representation gap: best miss
 found, $\lVert\Phi[\sigma]-\bar D\rVert/\lVert\bar D\rVert$ per run,
 both sizes pooled, for smooth-$f(H)$ stationary ensembles (filled;
 $\leq 24$ parameters) versus unrestricted diagonal-population
 optimization (rings; $2^N$ parameters). Only the quasiperiodic class
 shows a robust, all-run gap between the two; Table~\ref{tab:price}
-completes the family spectrum --- with coherences inside degenerate
-energy blocks, the quasiperiodic metric too is matched almost
-exactly. (c)
+completes the family spectrum: the full commutant matches the
+quasiperiodic metric almost exactly, and the sector control shows at
+what cost. (c)
 Threshold sensitivity for the quasiperiodic class: fraction of runs
 matched versus threshold, per search family and size; the registered
 $\ephi = 0.25$ (vertical line) sits in the steep region of the
@@ -660,30 +688,44 @@ perturbed response is in fact \emph{smaller}). Both corrections are
 dated in the study record; what survives them is stronger than what
 they replaced.
 
-\textbf{The coherence-removal measurement.} Projecting onto $\bar\rho$
-mid-window moves the metric by $43$--$90\%$ of $\lVert\bar D\rVert$
-(chaotic $0.54$, scrambling $0.52$, integrable $0.85$, metastable
-$0.90$, localized $0.90$, quasiperiodic $0.43$). Removing the motion
-does not freeze the metric in place; it changes the metric. For the
-metric-stationary classes this registers as a drift increase with
-disjoint confidence intervals.
+\textbf{The coherence-removal measurement, on both channels.} The
+registered instrument projected onto $\bar\rho$ and moves the metric
+by $43$--$90\%$ of $\lVert\bar D\rVert$ across classes; per-class
+medians of the direct miss
+$\lVert\Phi[\bar\rho]-\bar D\rVert/\lVert\bar D\rVert$ over full
+ensembles at $N{=}10$: chaotic $0.55$, scrambling $0.50$, integrable
+$0.86$, metastable $0.90$, quasiperiodic $0.44$, localized $0.38$
+(N\'eel-primary scope). The corrected \emph{motion-removal} channel
+$\rho_\infty$ tells a sharper story: for the nondegenerately-supported
+classes the two channels coincide exactly (chaotic, scrambling,
+localized, and quasiperiodic --- whose one-magnon support is
+nondegenerate), but for the classes with weight in degenerate blocks
+they differ decisively: integrable $0.86 \to 0.47$ and metastable
+$0.90 \to 0.078$. Most of the metastable ``coherence-removal jump''
+was deletion of \emph{stationary} degenerate structure, not of motion.
+The corrected non-commutation statement is therefore class-resolved:
+removing exactly the motion moves the metric by $38$--$55\%$ (class
+medians) in five of six classes, and by $8\%$ in the metastable class,
+whose time-averaged metric is nearly carried by its own infinite-time
+average.
 
-\textbf{Finite windows versus infinite time.} $\bar\rho$'s reduced
-density matrices are \emph{infinite}-time averages; our windows are
-finite. The distinction is measured rather than assumed small: on one
-representative run per class and size we computed the exact
-window-averaged state $\rho_{\mathcal W} =
-|\mathcal{W}|^{-1}\int_{\mathcal W}\rho(t)\,dt$ and compared its
-metric with $\Phi[\bar\rho]$. In the relaxing classes the two nearly
-coincide (metric gap $0.003$--$0.23$ across classes and sizes) and
-miss $\bar D$ by nearly the same amount (quasiperiodic: $0.466$
-versus $0.465$ at $N{=}10$) --- the non-commutation result is about
-averaging versus nonlinearity, not about window length. The one
-exception is instructive: the $N{=}10$ metastable run's slow doublet
-does not dephase within the window, so $\rho_{\mathcal W}$ retains
-near-degenerate coherence that $\bar\rho$ discards and lands far
-closer to $\bar D$ ($0.08$ versus $0.90$); at $N{=}12$, where the
-doublet physics differs, both misses are small ($\approx 0.09$).
+\textbf{Finite windows versus infinite time.} $\rho_\infty$ is an
+\emph{infinite}-time average; our windows are finite. The distinction
+is measured on every run: we computed the trapezoidal window average
+$\rho_{\mathcal W} =
+|\mathcal{W}|^{-1}\int_{\mathcal W}\rho(t)\,dt$ for all twenty runs of
+each class and compared its metric with $\Phi[\rho_\infty]$. The two
+agree closely everywhere: per-class median gaps
+$0.006$--$0.13$ at $N{=}10$ (worst single runs $0.28$, in the
+thermalizing classes), and the window average misses $\bar D$ by the
+same amounts as $\rho_\infty$ does. The non-commutation result is
+about averaging versus nonlinearity, not about window length. (An
+earlier one-representative version of this comparison, run against the
+ablation channel, made the metastable class look anomalous ---
+window-average $0.08$ versus $0.90$; the corrected channel resolves
+the anomaly completely: both are $\approx 0.08$, because what the
+window average retained and $\bar\rho$ deleted was stationary
+degenerate-block structure.)
 
 \textbf{The staged search.} Stationarity means $[\sigma, H]=0$. The
 search opened in five stages of increasing freedom, over full
@@ -698,8 +740,8 @@ observation that stage (ii) is not all diagonal states --- an
 \emph{unrestricted} optimization over all
 $2^N$ populations (softmax parameterization, analytic gradient through
 the entropies and shortest paths, verified against finite differences,
-multi-start), together with sparse population vectors on $k \leq 32$
-eigenstates; (iv) a generalized Gibbs ensemble over the XX chain's
+multi-start), together with top-$k$ diagonal-ensemble-support
+populations ($k \leq 32$); (iv) a generalized Gibbs ensemble over the XX chain's
 free-fermion mode occupations \cite{SRC065,SRC067} ($N$ Lagrange
 multipliers), the canonical stationary description of an integrable
 quench; and (v) --- prompted by the observation that even stage
@@ -723,7 +765,7 @@ was categorically unmatched (corrected at stages iii--v). All misses
 reported below are the best found by non-convex optimization ---
 upper bounds, not certified minima.
 
-The final result is a \textbf{resource split, not an existence
+The final result is an \textbf{admissibility split, not an existence
 split}. Table~\ref{tab:price} gives the full price list for the
 quasiperiodic class, the one whose metric resists longest; the other
 classes are cheaper at every stage. Within smooth-$f(H)$ ensembles
@@ -745,21 +787,65 @@ smooth-$f(H)$ search leaves it matched in 0 of 80 runs} (medians
 $0.34$/$0.32$ at $N{=}10$/$12$, robust across mode numbers
 $m = 3, 4, 5$), and raising the Chebyshev order from $K{=}2$ to $96$
 moves the miss only from $0.36$ to $0.32$ --- a plateau, so the
-failure is not parameter starvation within smoothness. Sparse
+failure is not parameter starvation within smoothness. Top-$k$
 supports and the fully unrestricted diagonal search do better but at
 best scrape the calibrated threshold at $N{=}10$ (medians
 $0.23$--$0.24$), an order of magnitude above the match quality every
 other class enjoys; at $N{=}12$ the unrestricted search matches
 (20/20, median $0.025$), partly a parameter-counting effect ---
 $2^N$ free populations chasing $N(N-1)/2$ target entries.
-\textbf{Block coherence changes the picture qualitatively}: the
-commutant search matches every quasiperiodic run at both sizes
-essentially exactly (20/20 each; medians $0.0052$ at $N{=}10$ and
-$0.0035$ at $N{=}12$, best $10^{-9}$), at the match quality of the
-cheap impostors of other classes, and the integrable class likewise
-($0.0077$--$0.0080$). Degenerate-block coherence ---
-not population fine-tuning --- is the stationary resource the
-quasiperiodic metric actually requires.
+\textbf{The commutant search changes the picture qualitatively}: it
+matches every quasiperiodic run at both sizes essentially exactly
+(20/20 each; medians $0.0052$ at $N{=}10$ and $0.0035$ at $N{=}12$,
+best $10^{-9}$), at the match quality of the cheap impostors of other
+classes, and the integrable class likewise ($0.0077$--$0.0080$).
+Among the tested families, the full commutant is the first to provide
+uniform near-exact matching at both sizes --- a sufficiency
+statement; the misses of the narrower families are found upper
+bounds, not necessity proofs.
+
+\textbf{Is ``block coherence'' the resource? Basis-relativity and the
+sector control.} It is tempting to conclude that degenerate-block
+\emph{coherence} is what the quasiperiodic metric requires. That
+statement is not invariant: within a degenerate block the energy
+eigenbasis is arbitrary, so any stationary $\sigma$ is diagonal in
+\emph{some} valid eigenbasis --- ``block-coherent'' versus
+``population-only'' is a statement about a chosen basis, not about
+$\sigma$. The invariant hierarchy is: smooth functions of $H$
+$\subset$ the abelian algebra of one chosen eigenbasis $\subset$ the
+full commutant of $H$, and what stage (v) shows invariantly is that
+the full commutant suffices where every tested subfamily fails ---
+i.e.\ that \emph{nontrivial structure within degenerate eigenspaces}
+is being used. Which structure? The quasiperiodic states live
+entirely in the one-magnon magnetization sector, where the XX
+single-particle energies are nondegenerate; the large degeneracies the
+commutant exploits connect \emph{different} magnetization sectors. We
+therefore ran a nested admissibility control on every run at both
+sizes: T1 $=$ the commutant of $H$ (stage v); T2 $=$ the commutant of
+$\{H, N_{\rm mag}\}$ (no coherence between magnetization sectors;
+sector weights free); T3 $=$ T2 with the sector weights pinned to the
+run's own $\mathrm{Tr}(\rho\,\Pi_q)$ --- the dynamically accessible
+stationary states, since XX evolution conserves $N_{\rm mag}$. Every
+optimized state passes an independent validation battery (unit trace,
+positivity, commutant membership, and the objective recomputed from
+the assembled density matrix; Appendix~\ref{app:numerics}). The
+result at $N{=}10$ is unambiguous: T2 matches T1 essentially
+identically (medians $0.0052$ both, run by run) --- cross-sector
+\emph{coherence} is never used --- but the T1/T2 impostors place a
+median $69\%$ (maximum $76\%$) of their weight in magnetization
+sectors the dynamics never populates, and pinning the weights (T3)
+collapses the match to a median $0.244$ (range $0.224$--$0.348$;
+15/20 runs threshold-marginal), the same plateau as the population-only
+searches --- as it must be, since within the one-magnon sector
+stationarity forces diagonality on $N$ nondegenerate levels. The
+integrable class provides the control's control: its impostors are
+sector-honest (median weight outside the run's sectors $0.000$), and
+pinning barely costs ($0.0086 \to 0.030$, 20/20). \textbf{The
+near-exact quasiperiodic impostor exists only outside the dynamically
+accessible sector: within the stationary algebra the dynamics itself
+licenses, no faithful impostor of the quasiperiodic metric was found.}
+The class-resolved resource is not coherence but \emph{admissibility}
+--- which stationary algebra the impostor is allowed to live in.
 
 \begin{table*}[t]
 \centering\footnotesize
@@ -775,22 +861,30 @@ generalized Gibbs (free-fermion charges) & $N$ &
 $0.63$ (0/20) & $0.47$ (0/20) \\
 smooth $f(H)$ (Chebyshev, best over $K \leq 96$) & $\leq 96$ &
 $0.32$ (0/20) & $0.32$ (0/20) \\
-sparse support (best over $k \leq 32$ eigenstates) & $\leq 32$ &
+top-$k$ diagonal-ensemble support (best over $k \leq 32$) & $\leq 32$ &
 $0.23$ (19/20) & --- \\
 unrestricted diagonal & $2^N$ &
 $0.24$ (12/20) & $0.025$ (20/20) \\
-block-coherent commutant & $\textstyle\sum_B |B|^2$ ($7776$) &
+full commutant of $H$ (T1) & $\textstyle\sum_B |B|^2$ ($7776$) &
 $0.0052$ (20/20) & $0.0035$ (20/20) \\
+\;\;+ no cross-sector coherence (T2) & $2424$ &
+$0.0052$ (20/20) & \SECTORTWO \\
+\;\;+ sector weights pinned to the run (T3) & $\leq N$ (eff.) &
+$0.244$ (15/20) & \SECTORTHREE \\
 \bottomrule
 \end{tabular}
 \caption{The price of standing still, for the class where it is
 highest: best stationary reproduction found for the quasiperiodic
 time-averaged metric, by family. Every entry is an upper bound
 attained by non-convex search; entries differing at the $0.01$ level
-(the sparse row's best-over-support lands slightly below the
+(the top-$k$ row's best-over-support lands slightly below the
 unrestricted row's five-start result) reflect optimizer variance, the
-two-order-of-magnitude drop of the last row does not. The $N{=}12$
-smooth entry uses $K \leq 24$.}
+two-order-of-magnitude drop of the T1/T2 rows does not. The $N{=}12$
+smooth entry uses $K \leq 24$. T2 restricts T1 to states commuting
+with $N_{\rm mag}$; T3 additionally pins the magnetization-sector
+weights to the run's own --- the dynamically accessible stationary
+states --- and for a one-magnon state this reduces to diagonal
+populations on the $N$ nondegenerate magnon levels.}
 \label{tab:price}
 \end{table*}
 
@@ -803,15 +897,21 @@ for chaotic --- and it is the only metric that weak noise
 \emph{stabilizes} (Sec.~\ref{sec:robust}).
 Fig.~\ref{fig:comparator}(c) shows the smooth-versus-unrestricted gap
 is insensitive to the threshold choice even where counts at $\ephi$
-are not. Whether some principled complexity measure on stationary
-states makes the representation gap precise --- parameter count is a
-crude proxy, and the block-coherent result shows the relevant
-resource can be a \emph{kind} of coherence rather than a number of
-parameters --- we pose as the open question this study leaves
-sharpest. Conversely, the chaotic classes' stationary metrics are
-straightforwardly compatible with their motion: the simplest thermal
-impostor carries the same structure, while the robustness signature
-of Sec.~\ref{sec:robust} still distinguishes the classes
+are not. The sector control sharpens the open question this study
+leaves: the reproducibility of a time-averaged emergent metric
+depends on the \emph{admissible stationary algebra} --- smooth
+functions of $H$ fail for few-mode quasiperiodic dynamics, the full
+commutant succeeds, and the dynamically accessible subalgebra fails
+again --- so which admissibility criterion is the physically honest
+one, and is there a principled measure of stationary-description cost
+that orders these algebras? Parameter count is a crude proxy: T2
+matches T1 with a third of its parameters, and T3 fails with the
+most physical constraint of all. Conversely, the chaotic classes'
+stationary metrics are straightforwardly compatible with their
+motion: the simplest thermal impostor carries the same structure, and
+--- the mixed-field Ising model having no conserved charge beyond $H$
+--- there is no sector structure for it to violate; the robustness
+signature of Sec.~\ref{sec:robust} still distinguishes the classes
 dynamically.
 
 \section{Results V: the driven regime}\label{sec:driven}
@@ -903,12 +1003,13 @@ instantiations of incommensurability generally. The stationarity
 threshold $\ephi = 0.25$ is calibrated to this construction's
 finite-size noise floor and has no significance beyond it. The
 comparator search spans parametric families, smooth functions of $H$,
-a generalized Gibbs ensemble, sparse and unrestricted diagonal
-populations, and the full block-coherent commutant; every reported
+a generalized Gibbs ensemble, top-$k$-support and unrestricted
+diagonal populations, the full commutant of $H$, and its
+symmetry-restricted and sector-pinned subalgebras; every reported
 miss is the best found by non-convex optimization, so ``not matched''
-statements are bounded by the search, not proofs of nonexistence ---
-though the block-coherent stage leaves no class unmatched for such a
-proof to concern. The localized regime
+statements --- including the accessible-sector plateau of
+Sec.~\ref{sec:comparator} --- are bounded by the search, not proofs
+of nonexistence. The localized regime
 straddles the stationarity threshold (80/100) and we have kept it out
 of every headline count. Robustness statements hold at the calibrated
 strengths and within the swept regime ($\gamma \in [10^{-3},
@@ -918,33 +1019,38 @@ addresses systems that must supply their own.
 \section{Discussion and outlook}\label{sec:discussion}
 
 What the study delivers is not a mechanism but an instrument, and a
-measured answer narrower than the question in our title. Is the
-emergent metric motion-borne? Not in the existential sense we
-initially hoped to establish: every class's time-averaged metric,
-including the quasiperiodic one, has a near-exact stationary impostor
-once the full commutant --- coherences inside degenerate energy
-blocks included --- is searched. What the measurements do establish
-is threefold: time averaging and metric construction do not commute
-(the canonical motionless partner misses by 43--90\%, and the exact
-window-averaged state misses by the same amount); the
-\emph{stationary resource} a faithful impostor requires is sharply
-class-resolved --- a temperature window for the thermalizing classes,
-conserved charges for the generic integrable quench, degenerate-block
-coherence and nothing less for the quasiperiodic class; and weak
-noise stabilizes exactly the class whose metric no smooth-in-energy
-ensemble represents. ``Motion-borne'' survives as a motivating
-question and as an open conjecture about \emph{smooth, low-resource}
-stationary descriptions --- not as a demonstrated existential
-conclusion.
+measured answer whose shape changed every time the comparator class
+widened. Is the emergent metric motion-borne? In the unrestricted
+existential sense, no: searched over the full commutant of $H$, every
+class's time-averaged metric --- the quasiperiodic one included ---
+has a near-exact stationary impostor. But the sector control
+reverses the verdict in a sharper, conditional form: that impostor
+lives on magnetization sectors the dynamics never populates, and
+within the stationary algebra the dynamics itself licenses, no
+faithful impostor of the quasiperiodic metric was found. What the
+measurements establish is threefold: time averaging and metric
+construction do not commute (the exact infinite-time average misses
+by 38--55\% in five of six classes, window-length effects excluded);
+whether a faithful impostor exists is governed by the
+\emph{admissible stationary algebra}, sharply class-resolved --- a
+temperature window suffices for the thermalizing classes, conserved
+charges for the generic integrable quench, while the quasiperiodic
+metric is reproduced only from outside the dynamically accessible
+sector; and weak noise stabilizes exactly the class whose metric no
+admissible stationary state represents. ``Motion-borne'' thus
+survives --- not as an unconditional existence claim, but as a
+measured statement relative to the physically honest algebra.
 
-The sharpest open question the data leaves is the representation gap
-itself: is there a principled complexity measure on stationary states
---- one that prices block coherence as well as parameter count, since
-the block-coherent impostor shows the decisive resource can be a kind
-of coherence rather than a number of parameters --- under which the
-quasiperiodic time-averaged metric is provably expensive, and does
-the gap survive larger systems, where parameter counting increasingly
-favours fine-tuned matches? A second question follows the sign structure: is
+The sharpest open question the data leaves is admissibility itself:
+which stationary algebra is the physically right comparator class ---
+the full commutant, the symmetry-respecting subalgebra, or the
+dynamically accessible sector --- and is there a principled measure
+of stationary-description cost that orders them? Parameter count is
+a crude proxy (the sector-respecting tier matches the full commutant
+with a third of its parameters; the accessible tier fails with the
+fewest and most physical constraints), and how these gaps scale with
+system size, where parameter counting increasingly favours
+fine-tuned matches, is measured here only to $N = 12$. A second question follows the sign structure: is
 there a form of robustness that \emph{recurrent} or quasiperiodic
 dynamics provides and fixed points cannot? The coincidence reported
 here --- the hardest-to-match class is the one noise defends --- is
@@ -974,7 +1080,7 @@ Null tests for witnesses are cheap and clarifying --- the OTOC episode
 suggests that diagnostics informally credited with certifying
 ``dynamics'' deserve routine auditing against frozen states, if only
 to fix which kind of dynamics they certify. And a registered design
-with committed seeds changed the outcome of this study six times ---
+with committed seeds changed the outcome of this study seven times ---
 every correction caught by an audit mechanism the design itself
 mandated; the amendment log
 (Appendix~\ref{app:log}) is our answer to
@@ -988,7 +1094,8 @@ functionals, larger systems, internally clocked dynamics --- remains
 exactly as open as it was, and none of the present results shortens
 that road. What they do establish is that the road's first step is
 measurable: already in twelve qubits, one can ask what a structure's
-cheapest motionless impostor costs, and get a class-resolved answer.
+cheapest motionless impostor costs --- and in which algebra it is
+willing to live --- and get a class-resolved answer.
 
 \paragraph{Acknowledgements.} The numerical study --- implementation,
 execution, analysis, and the adversarial companion --- was carried out
@@ -1062,7 +1169,8 @@ block-coherent stage parameterizes the commutant as $\sigma =
 \bigoplus_B A_B^{\vphantom\dagger} A_B^\dagger / Z$ with one complex
 factor $A_B$ per degenerate energy block $B$ (positivity and
 stationarity by construction), warm-started from the square root of
-the best diagonal solution; the objective's analytic gradient is
+the diagonal-ensemble populations $|c_n|^2$; the objective's analytic
+gradient is
 assembled from per-pair, per-block cross tensors of eigenstate
 reduced density matrices, and each run is validity-checked against
 the unrestricted diagonal stage: the block family strictly contains
@@ -1079,15 +1187,37 @@ diagonal value, while every quasiperiodic optimum was reproduced
 unchanged at both sizes (medians $0.0052$/$0.0035$; largest
 single-run change $0.0012$) --- the warm start dominates, and
 Table~\ref{tab:price} is start-count-insensitive. All reported
-misses remain found optima, not certified minima. Sparse supports
-re-run the
+misses remain found optima, not certified minima. The top-$k$ stage
+re-runs the
 unrestricted optimizer restricted to the $k$ largest diagonal-ensemble
 populations, $k \in \{1, \dots, 128\}$; entries above $k = 32$ show
 optimizer regression (a harder landscape, not a better bound) and are
-excluded from Table~\ref{tab:price}. The finite-window comparison
-integrates $\rho(t)$ over $\mathcal{W}$ by trapezoidal quadrature at
-the sampling grid and evaluates the same metric functional on the
-result.
+excluded from Table~\ref{tab:price}.
+
+\paragraph{Sector-admissibility tiers and validation.} The joint
+eigenbasis for the T2/T3 tiers rotates each degenerate energy block
+to diagonalize the restriction of $N_{\rm mag}$ (eigenvalues
+integer to $10^{-8}$; the rotated basis is checked orthonormal and
+simultaneously $H$- and $N_{\rm mag}$-diagonal to $10^{-7}$),
+splitting the $243$ energy blocks at $N{=}10$ into $648$ sector-pure
+sub-blocks ($729 \to 2187$ at $N{=}12$). T2 runs the identical
+block-Cholesky search over the sub-blocks with global normalization;
+T3 normalizes per magnetization sector to the run's own weights
+$\mathrm{Tr}(\rho\,\Pi_q)$ (sectors below $10^{-10}$ weight excluded),
+with the per-sector gradient verified against finite differences
+(relative error $1.4\times10^{-4}$); its warm start is the
+sector-projected initial state $P_{E,q}\,\rho_0\,P_{E,q}$. Every
+optimized state passes an independent validation battery: unit trace
+and block positivity (exact block eigenvalues), $\lVert[\sigma,
+N_{\rm mag}]\rVert_F$ per block, sector weights, mean energy, and the
+objective recomputed from the fully assembled density matrix through
+the mixed-state metric path (agreement to $2\times10^{-15}$,
+independent of the per-eigenstate precompute). The coherence-removal
+channels evaluate $\rho_\infty = \sum_E P_E\rho P_E$ and $\bar\rho$
+directly, and the finite-window comparison integrates $\rho(t)$ over
+$\mathcal{W}$ by trapezoidal quadrature on the sampling grid for
+every run (a superseded one-representative version used a plain grid
+mean; the correction changed no conclusion).
 
 \paragraph{Diagonalization and evolution.}
 Exact diagonalization throughout (dense to $N=14$, dimension 16384);
@@ -1194,7 +1324,17 @@ is degenerate & --- \\
 battery (AR-020d): quasiperiodic matched almost exactly by
 degenerate-block coherence; resource split replaces complexity split;
 an objective sign error caught by the containment check
-(Appendix~\ref{app:numerics}) & (this build) \\
+(Appendix~\ref{app:numerics}) & \texttt{61c0387},
+\texttt{b8fe4cc} \\
+08-16 & Third adversarial audit accepted: ``block coherence'' is
+basis-relative (invariant statement: commutant versus chosen abelian
+subalgebra); motion-removal channel corrected to $\sum_E P_E\rho P_E$,
+full diagonalization reclassified as a stronger ablation & --- \\
+08-16 & Sector-admissibility control (AR-020e): T2 $=$ T1 run by run;
+commutant impostors carry $\sim\!70\%$ weight outside the run's
+magnetization sectors; accessible-sector tier collapses to the
+population-only plateau; all-runs trapezoidal window study; validation
+battery for every optimized state & (this build) \\
 \bottomrule
 \end{tabular}
 \caption{The amendment log (12-character commit identifiers in the

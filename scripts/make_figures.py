@@ -323,18 +323,27 @@ def fig5():
         gridspec_kw={"width_ratios": [0.9, 1.5, 0.9]})
     order = ["TA_ii_quasiperiodic", "TA_iii_chaotic", "TA_iv_metastable",
              "TC_scrambling", "TC_integrable", "TC_localized"]
-    # (a) coherence-removal jump
+    # (a) coherence removal: motion-removal channel (filled) vs the
+    # stronger full-diagonalization ablation (rings), ar020e all runs
     for k, g in enumerate(order):
-        d = json.loads((RES / "confirmatory" / f"{g}_N10.json").read_text())
-        so = [st["comparator"]["switchoff_delta_vs_run"]
-              for run in d["runs"] for st in run["states"]
-              if "comparator" in st]
-        strip(ax1, k, so, C[LABEL[g]])
+        d = json.loads((RES / f"ar020e_channels_{g}_N10.json").read_text())
+        inf_ = [r["miss_inf"] for r in d["runs"]]
+        diag = [r["miss_diag"] for r in d["runs"]]
+        rng = np.random.default_rng(2)
+        x = k + 0.17 + rng.uniform(-0.10, 0.10, size=len(diag))
+        ax1.scatter(x, diag, s=7, facecolors="none",
+                    edgecolors=C[LABEL[g]], linewidths=0.5, zorder=2)
+        strip(ax1, k - 0.15, inf_, C[LABEL[g]], w=0.12, ms=6)
     ax1.axhline(0.25, color=INK2, lw=0.8, ls=(0, (4, 3)))
     ax1.annotate(r"$\varepsilon_\Phi$", (-0.42, 0.25), xytext=(0, 3),
                  textcoords="offset points", fontsize=7, color=INK2)
-    ax1.set_ylabel(r"$\|\Phi[\bar\rho]-\bar D\|/\|\bar D\|$")
-    ax1.set_title("(a)  coherence removal", pad=3)
+    ax1.scatter([], [], s=10, c=INK2, label=r"$\rho_\infty$")
+    ax1.scatter([], [], s=10, facecolors="none", edgecolors=INK2,
+                linewidths=0.6, label=r"$\bar\rho$ (ablation)")
+    ax1.legend(loc="upper left", frameon=False, fontsize=6,
+               handletextpad=0.15, borderaxespad=0.1)
+    ax1.set_ylabel(r"$\|\Phi[\sigma]-\bar D\|/\|\bar D\|$")
+    ax1.set_title("(a)  motion removal vs ablation", pad=3)
     # (b) representation gap: smooth (filled) vs unrestricted (rings)
     for k, g in enumerate(order):
         sm, un = [], []
@@ -360,7 +369,7 @@ def fig5():
     ax2.legend(loc="upper right", frameon=False, fontsize=6.5,
                handletextpad=0.15, borderaxespad=0.1)
     ax2.set_ylabel("best stationary-state miss")
-    ax2.set_title("(b)  smooth-in-energy representation gap (both sizes)", pad=3)
+    ax2.set_title("(b)  representation gap (both sizes)", pad=3)
     ax2.set_ylim(-0.02, 0.45)
     # (c) threshold sensitivity, quasiperiodic
     eps_grid = np.linspace(0.0, 0.45, 200)
@@ -477,7 +486,7 @@ def fig6():
     xs = [float(k) for k in lw]
     ys = [lw[k]["w5_mean"] for k in lw]
     o = np.argsort(xs)
-    ax2i = ax2.inset_axes([0.30, 0.06, 0.65, 0.42])
+    ax2i = ax2.inset_axes([0.32, 0.16, 0.63, 0.38])
     ax2i.plot(np.array(xs)[o], np.array(ys)[o], lw=1.2, color=C["r2"],
               marker="o", ms=2.5, markeredgewidth=0)
     ax2i.set_ylim(0, 1.08)
