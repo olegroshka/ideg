@@ -1,4 +1,10 @@
 {
+  "determinism_replay": {
+    "identical": true,
+    "primary_sha256": "f503dfbe4ec6bb0a98aa1d9b606924321323ff561420a4139ccdd28107942241",
+    "replay_dir": "sim_s1_768_replay",
+    "replay_sha256": "f503dfbe4ec6bb0a98aa1d9b606924321323ff561420a4139ccdd28107942241"
+  },
   "environment": {
     "numpy": "2.4.6",
     "python": "3.11.14",
