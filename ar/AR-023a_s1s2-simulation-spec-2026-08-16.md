@@ -127,28 +127,93 @@ handed to backend selection as a frozen pre-commitment.
 
 ## 4. Kickoff prompt for the implementing session
 
-Copy-paste to start the new session:
+[Superseded 2026-08-16 by Amendment A1.6: the canonical kickoff prompt
+is the standalone `ar/AR-023a_KICKOFF_PROMPT.md` (v2). The blockquote
+formerly embedded here had already diverged from the committed
+standalone file; keeping two copies invited drift.]
 
-> Read CLAUDE.md first. Then read, in order:
-> `ar/AR-023_hardware-pilot-2026-08-16.md` (design of record),
-> `ar/AR-023a_s1s2-simulation-spec-2026-08-16.md` (this session's
-> spec — its gates are frozen), `hardware/ibm_exp1/README.md`, and
-> the anchors in `ar/AR-020e_sector-2026-08-16.md`.
->
-> **Single target: implement and close S1 and S2 per AR-023a** (ideal
-> finite-shot and noisy end-to-end simulations with their numeric
-> gates), in `hardware/ibm_exp1/`. Definition of done: S1-G1..G4 and
-> S2-G1..G4 evaluated and reported in committed `s1_report.json` /
-> `s2_report.json` with the operating envelope; README status updated;
-> a dated session log in `sessions/`; every gate result stated
-> pass/fail with its measured number — no rounding a fail into a pass.
->
-> Constraints: do not modify `paper/`, `substrate/`, or
-> `ar/AR-023*.md` (deviations from AR-023a = dated amendments proposed
-> in the session log, applied only to AR-023a); no IBM credentials or
-> network calls; no QPU submission — `QPU-GO` does not exist in this
-> session's vocabulary. The comparator artifact and QPY bundle are
-> frozen inputs — verify their hashes, never regenerate them. If a
-> gate fails, follow the escalation ladder in AR-023a §1 and record
-> it; a failed gate honestly reported is a valid session outcome
-> (negative results are results).
+## 5. Amendment 1 — 2026-08-16 (authoring side, pre-implementation)
+
+Raised while iterating the kickoff prompt against the committed
+scaffold state (07ab256). No S1/S2 gate value is changed; A1.1–A1.8
+correct one factual error, fill voids the implementing session would
+hit immediately, and freeze evaluation details before any sample is
+drawn.
+
+**A1.1 — §1 escalation step (ii) struck (factually dead).** The
+25-point grid already failed the registered quadrature gate:
+`0.13276 > 0.025`, recorded in
+`hardware/ibm_exp1/manifest/sector_comparator_N10_run0.json`
+(`checks.time_quadrature_error`) and the 2026-08-16 session log. The
+quadrature error is a deterministic property of the grid; a re-run
+cannot pass, so "reduce 37 → 25" is not an escalation path.
+Replacement step (ii): raise shots 768 → 896 on the 37-point grid —
+1,323 × 896 = 1,185,408 executions ≈ 416.9 s by the rough formula,
+inside the 450 s cap with ≈ 33 s margin. (1,024 shots ≈ 476 s stays
+over-cap; 960 shots ≈ 446.5 s leaves no margin and is not permitted.)
+Step (iii) unchanged: if S1 gates still fail at 896 shots, return to
+the AR-023 §8 ladder.
+
+**A1.2 — QPY-bundle freeze bootstrap (fills a void).** As of commit
+07ab256, no bundle bytes and no bundle hashes are committed anywhere:
+the 2026-08-16 double build wrote them only to draft directories
+outside the repository, so "verify their hashes" had no committed
+referent. Frozen procedure: (1) rebuild the logical bundle with
+`build_circuits.py` into two fresh directories; (2) require the QPY,
+registry, target-state, and bundle hashes byte-identical across the
+two builds (reproducing the recorded double-build result); (3) commit
+`logical_circuits.qpy`, the circuit registry, and a hash record under
+`hardware/ibm_exp1/bundle/`, and write the four hashes into the DRAFT
+`hardware_manifest.json`; (4) from that commit on, the bundle is a
+frozen input — verified by hash, never regenerated. The comparator
+artifact is unaffected (its hash is already committed twice).
+
+**A1.3 — mechanical evaluation of AR-023 §6 clauses 4 and 5 in
+S1/S2.** Clause 4 (raw/mitigated direction agreement) in S1: run the
+M3 branch calibrated on the ideal backend at the same shot budget; the
+clause reads as written and doubles as an M3-plumbing check; report
+median |ε_raw − ε_M3|. Clause 5 (no dominance) is operationalized for
+S1/S2 evaluation only: the clause passes iff (a) leave-one-time-out
+and leave-one-pair-out excursions of Δ each stay within 25% of the
+experiment's median Δ and never flip its sign, and (b) the
+projection-attributable endpoint shift is < 0.02 (the S2-G3
+quantity). These numbers bind S1/S2 only; the hardware-run
+operationalization is frozen at L4, with these values as the default
+proposal.
+
+**A1.4 — deterministic fake-backend pair selection (§2a).** If more
+than two installed Heron-class fakes expose a connected 10-qubit line,
+select the two with lexicographically smallest backend names; record
+the full enumeration and the selection in `s2_report.json`.
+
+**A1.5 — comparator-artifact scope of record.** The frozen artifact is
+the minimal four-array NPZ (`p_star`, `eigenvalues`, `eigenvectors`,
+`mode_pair_rdms`) plus JSON sidecar at
+`hardware/ibm_exp1/manifest/sector_comparator_N10_run0.*` — not the
+full AR-023 §11.3 array list, and not at §11.3's
+`results/AR-023/preflight/` path. For this pilot the `manifest/` path
+is the path of record; the remaining §11.3 arrays (ideal D-series,
+D̄ grids, Φ[σ*], …) are S0/S1 derived outputs computed from committed
+inputs into `hardware/ibm_exp1/results/sim_<id>/`, never by
+regenerating the artifact.
+
+**A1.6 — §4 superseded.** The standalone
+`ar/AR-023a_KICKOFF_PROMPT.md` (v2) is the canonical kickoff prompt;
+the §4 blockquote is retired.
+
+**A1.7 — S1-G4 byte-determinism scope.** `s1_report.json` (and
+`s2_report.json`) must contain no wall-clock timestamps, hostnames, or
+absolute paths, and must be written as canonical JSON
+(`sort_keys=True`, `ensure_ascii`, full-precision floats). Timestamps
+and the environment freeze go in `s1_report.meta.json` /
+`s2_report.meta.json`, which are excluded from the S1-G4 byte
+comparison. This interprets the gate; it does not weaken it.
+
+**A1.8 — sanctioned efficient S2 implementation.** "Run with Aer under
+the fake backend's noise model" may be implemented as: density-matrix
+simulate each transpiled circuit once per noise condition, apply the
+readout confusion channel to the outcome distribution analytically,
+then multinomial-sample replicates from the exact noisy distribution.
+This is statistically identical to per-replicate shot execution and is
+the intended implementation; per-replicate Aer re-execution is
+permitted but not required.
