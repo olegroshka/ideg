@@ -78,6 +78,14 @@ None.
   15/20 and 9/20) and "dynamically accessible" corrected to
   "magnetization-sector-admissible" (T3 is broader than literally
   reachable states); paper + packet + KB-004/005 aligned.
+- Threshold-semantics addition (owner query, same day): the T3
+  straddle counts are now confronted head-on in s6 — eps_Phi is the
+  instrument noise floor; the qp metric's own typical instantaneous
+  drift (0.26-0.33, measured) EXCEEDS the best T3 miss, so
+  threshold-level "matches" are matches at the scale of the motion's
+  own excursions; fig 5(c) extended to the full algebra ladder
+  (smooth/T3/T1) making the tier gaps threshold-insensitive by
+  inspection.
 - **AR-023 dependency:** add a T3 comparator-population export
   (p*, hashes, recheck) to ar020e for the hardware pilot's Gate L0.
 - Owner proof pass of round-3 build; then paper-v1 retag; endorsement

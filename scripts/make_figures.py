@@ -371,7 +371,7 @@ def fig5():
     ax2.set_ylabel("best stationary-state miss")
     ax2.set_title("(b)  representation gap (both sizes)", pad=3)
     ax2.set_ylim(-0.02, 0.45)
-    # (c) threshold sensitivity, quasiperiodic
+    # (c) threshold sensitivity, quasiperiodic: full algebra ladder
     eps_grid = np.linspace(0.0, 0.45, 200)
     styles = [(10, "-"), (12, (0, (4, 2)))]
     for n, ls in styles:
@@ -379,18 +379,24 @@ def fig5():
                          ).read_text())
         sm = np.array([r["overall_min"] for r in
                        pb["groups"]["TA_ii_quasiperiodic"]["runs"]])
-        pc = json.loads((RES / f"ar020c_unrestricted_N{n}.json"
-                         ).read_text())
-        un = np.array(pc["groups"]["TA_ii_quasiperiodic"]["runs"])
+        se = json.loads((RES / f"ar020e_sector_N{n}.json").read_text())
+        t1 = np.array([r["T1"]["miss"] for r in
+                       se["groups"]["TA_ii_quasiperiodic"]["runs"]])
+        t3 = np.array([r["T3"]["miss"] for r in
+                       se["groups"]["TA_ii_quasiperiodic"]["runs"]])
         ax3.plot(eps_grid, [np.mean(sm < e) for e in eps_grid], color=INK2,
                  lw=1.1, ls=ls)
-        ax3.plot(eps_grid, [np.mean(un < e) for e in eps_grid],
+        ax3.plot(eps_grid, [np.mean(t3 < e) for e in eps_grid],
                  color=C["quasiperiodic"], lw=1.1, ls=ls)
+        ax3.plot(eps_grid, [np.mean(t1 < e) for e in eps_grid],
+                 color=C["quasiperiodic"], alpha=0.4, lw=1.1, ls=ls)
     ax3.axvline(0.25, color=INK2, lw=0.8, ls=(0, (4, 3)))
     ax3.annotate("smooth", (0.36, 0.06), fontsize=6.5, color=INK2)
-    ax3.annotate("unrestricted", (0.02, 0.86), fontsize=6.5,
+    ax3.annotate("T3 (sector-pinned)", (0.115, 0.62), fontsize=6.5,
                  color=C["quasiperiodic"])
-    ax3.annotate(r"solid $N{=}10$, dashed $N{=}12$", (0.02, 0.6),
+    ax3.annotate("T1 (commutant)", (0.05, 0.93), fontsize=6.5,
+                 color=C["quasiperiodic"], alpha=0.55)
+    ax3.annotate(r"solid $N{=}10$, dashed $N{=}12$", (0.15, 0.30),
                  fontsize=6, color=MUT)
     ax3.set_xlabel(r"threshold  $\varepsilon$")
     ax3.set_ylabel("fraction matched")
