@@ -10,3 +10,9 @@ results/**/*.pkl
 *.egg-info/
 dist/
 build/
+
+# AR-023a S1/S2 bulk local caches (reproducible from committed seeds/hashes)
+hardware/ibm_exp1/results/sim_common/exact_probs.npz
+hardware/ibm_exp1/results/sim_s2/conditions/*/cache.npz
+hardware/ibm_exp1/results/*_stdout.log
+hardware/ibm_exp1/results/s2_prepare_*.log
