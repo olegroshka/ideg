@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "experiment_id": "ibm-exp1-qp-sector",
+  "class": "TA_ii_quasiperiodic",
+  "n_sites": 10,
+  "run_index": 0,
+  "paper_state_seed": 2100294288,
+  "eigenvalue_order": "ascending one-magnon hopping energy",
+  "p_star": [
+    0.018324441550832682,
+    4.904496389216521e-15,
+    3.116549905239318e-13,
+    2.5849441117055463e-11,
+    4.162321591632578e-11,
+    2.4939503622932886e-11,
+    1.3232632528210774e-10,
+    0.03171702922721329,
+    6.871463456070155e-10,
+    0.9499585283097525
+  ],
+  "eigenvalues": [
+    -1.9189859472289958,
+    -1.6825070656623637,
+    -1.3097214678905715,
+    -0.8308300260037743,
+    -0.28462967654657056,
+    0.2846296765465696,
+    0.8308300260037725,
+    1.3097214678905689,
+    1.68250706566236,
+    1.918985947228994
+  ],
+  "optimizer": {
+    "method": "exact AR-020e T3 replay",
+    "seed": 11,
+    "starts": 2,
+    "objective": 0.22410775407580497,
+    "registered_objective": 0.22410775384545484,
+    "registered_fullrho_recheck": 0.2241077538443691,
+    "fullrho_recheck": 0.2241077540747191
+  },
+  "checks": {
+    "population_sum": 0.9999999999999999,
+    "minimum_population": 4.904496389216521e-15,
+    "stationarity_residual_one_magnon": 1.1936359837367587e-15,
+    "sector_weight_q1": 1.0,
+    "time_count_preflight": 25,
+    "time_quadrature_error": 0.13276066058861974
+  },
+  "source_hashes": {
+    "confirmatory_manifest_sha256": "e4fccc345d41dde58d624f342a787dc8d21fe3251a2da87dc5ba3c8dfb019125",
+    "ar020e_sector_sha256": "dd7e8cc403b8642ab882ebe69bbe1283cb754a0b15d0c847e57ea7a9ba302523",
+    "ar020e_script_sha256": "71b36b05ea73d063aa1a2acde5e359b748c70d5a48c2c6239e52da2502bff120",
+    "one_magnon_eigensystem_sha256": "3777ea91235cf206c0e8626669ce988b17890c595ff9c59e78104aced82a223f"
+  },
+  "environment": {
+    "python": "3.11.14",
+    "numpy": "2.3.2",
+    "scipy": "1.15.3"
+  },
+  "npz_sha256": "73b66f94e564cf6b71a4735ffb0aaa395176367f12eb341d3587834a9fd02934"
+}

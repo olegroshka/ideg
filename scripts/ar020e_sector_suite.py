@@ -168,6 +168,10 @@ if STAGE == "channels":
 
 # ================= sector ===========================================
 elif STAGE == "sector":
+    export_dir_env = os.environ.get("IDEG_EXPORT_COMPARATOR_DIR", "")
+    export_only = bool(export_dir_env)
+    if export_only and N != 10:
+        raise ValueError("AR-023 comparator export is frozen to N=10")
     h = xx_chain(N)
     ev = EigenEvolver(h)
     V, E = ev.evecs, ev.evals
@@ -216,7 +220,7 @@ elif STAGE == "sector":
                           for (a, b) in blocks])
         return CROSS
 
-    CROSS1 = cross_tensors(V, eblocks)
+    CROSS1 = None if export_only else cross_tensors(V, eblocks)
     CROSS2 = cross_tensors(U2, sub_blocks)
 
     def make_search(blocks, CROSS, sec_of_block=None, sec_weights=None):
@@ -439,8 +443,8 @@ elif STAGE == "sector":
             d["objective_recheck_fullrho"] = miss_of(full, dbar, nrm)
         return d
 
-    search_T1 = make_search(eblocks, CROSS1)
-    search_T2 = make_search(sub_blocks, CROSS2)
+    search_T1 = None if export_only else make_search(eblocks, CROSS1)
+    search_T2 = None if export_only else make_search(sub_blocks, CROSS2)
 
     slice_env = os.environ.get("IDEG_RUN_SLICE", "")
     lo, hi = ((int(x) for x in slice_env.split(":")) if slice_env
@@ -452,7 +456,9 @@ elif STAGE == "sector":
            "sum_B2_T1": int(sum((b - a) ** 2 for a, b in eblocks)),
            "sum_B2_T2": int(sum((b - a) ** 2 for a, b in sub_blocks)),
            "groups": {}}
-    for label in ("TA_ii_quasiperiodic", "TC_integrable"):
+    labels = (("TA_ii_quasiperiodic",) if export_only else
+              ("TA_ii_quasiperiodic", "TC_integrable"))
+    for label in labels:
         recs = {}
         for ridx, (hh, psi0) in enumerate(build_runs(label)):
             if not (lo <= ridx < hi):
@@ -468,16 +474,17 @@ elif STAGE == "sector":
                 wrun[q] = wrun.get(q, 0.0) + float(
                     np.sum(np.abs(c2[a:b]) ** 2))
             wrun = {q: w for q, w in wrun.items() if w > 1e-10}
-            # T1: warm = sqrt diagonal-ensemble populations
-            warm1 = []
-            for (a, b) in eblocks:
-                A = np.zeros((b - a, b - a), dtype=complex)
-                np.fill_diagonal(A, np.sqrt(np.clip(
-                    np.abs(c1[a:b]) ** 2, 1e-12, None)))
-                warm1.append(A)
-            m1, sig1 = search_T1(dbar, nrm, warm1)
-            d1 = diagnostics(sig1, eblocks, V, None, dbar, nrm,
-                             full_recheck)
+            if not export_only:
+                # T1: warm = sqrt diagonal-ensemble populations
+                warm1 = []
+                for (a, b) in eblocks:
+                    A = np.zeros((b - a, b - a), dtype=complex)
+                    np.fill_diagonal(A, np.sqrt(np.clip(
+                        np.abs(c1[a:b]) ** 2, 1e-12, None)))
+                    warm1.append(A)
+                m1, sig1 = search_T1(dbar, nrm, warm1)
+                d1 = diagnostics(sig1, eblocks, V, None, dbar, nrm,
+                                 full_recheck)
             # T2: warm = P_{E,q} rho0 P_{E,q} (rank-1 columns) + diag fill
             warm2 = []
             for (a, b) in sub_blocks:
@@ -486,9 +493,10 @@ elif STAGE == "sector":
                 A[:, 0] = c2[a:b]
                 np.fill_diagonal(A, np.diag(A) + 1e-6)
                 warm2.append(A)
-            m2, sig2 = search_T2(dbar, nrm, warm2)
-            d2 = diagnostics(sig2, sub_blocks, U2, sub_sector, dbar, nrm,
-                             full_recheck)
+            if not export_only:
+                m2, sig2 = search_T2(dbar, nrm, warm2)
+                d2 = diagnostics(sig2, sub_blocks, U2, sub_sector, dbar, nrm,
+                                 full_recheck)
             # T3: per-sector pinned to wrun
             search_T3 = make_search(sub_blocks, CROSS2,
                                     sec_of_block=sub_sector,
@@ -496,6 +504,61 @@ elif STAGE == "sector":
             m3, sig3 = search_T3(dbar, nrm, warm2)
             d3 = diagnostics(sig3, sub_blocks, U2, sub_sector, dbar, nrm,
                              full_recheck)
+            if export_only:
+                if label != "TA_ii_quasiperiodic" or ridx != 0:
+                    raise RuntimeError("unexpected AR-023 export selection")
+                records = []
+                magnon_indices = [1 << (N - 1 - site) for site in range(N)]
+                for (a, b), q, sigma_block in zip(
+                        sub_blocks, sub_sector, sig3):
+                    if q != 1:
+                        continue
+                    if b - a != 1 or sigma_block.shape != (1, 1):
+                        raise RuntimeError("q=1 energy block is not 1x1")
+                    records.append((
+                        float(E[a]),
+                        float(np.real(sigma_block[0, 0])),
+                        U2[magnon_indices, a].copy(),
+                    ))
+                records.sort(key=lambda item: item[0])
+                if len(records) != N:
+                    raise RuntimeError(f"expected {N} q=1 modes, got "
+                                       f"{len(records)}")
+                energies_export = np.array([item[0] for item in records])
+                populations_export = np.array([item[1] for item in records])
+                eigenvectors_export = np.column_stack(
+                    [item[2] for item in records])
+                for col in range(N):
+                    pivot = int(np.argmax(np.abs(eigenvectors_export[:, col])))
+                    phase = eigenvectors_export[pivot, col]
+                    if abs(phase) > 0:
+                        eigenvectors_export[:, col] /= phase / abs(phase)
+                export_dir = Path(export_dir_env)
+                export_dir.mkdir(parents=True, exist_ok=True)
+                np.savez(
+                    export_dir / "sector_comparator_raw_N10_run0.npz",
+                    p_star=np.asarray(populations_export, dtype="<f8"),
+                    eigenvalues=np.asarray(energies_export, dtype="<f8"),
+                    eigenvectors=np.asarray(eigenvectors_export,
+                                            dtype="<c16"),
+                )
+                raw_metadata = {
+                    "n_sites": N,
+                    "class": label,
+                    "run_index": ridx,
+                    "paper_state_seed": int(
+                        MAN["seeds"][label][str(N)][ridx]),
+                    "eigenvalue_order": "ascending one-magnon energy",
+                    "p_star": populations_export.tolist(),
+                    "eigenvalues": energies_export.tolist(),
+                    "T3": {"miss": m3, **d3},
+                }
+                with open(export_dir /
+                          "sector_comparator_raw_N10_run0.json", "w") as f:
+                    json.dump(raw_metadata, f, indent=2)
+                print(f"AR-023 comparator exported: T3={m3:.12g}",
+                      flush=True)
+                raise SystemExit(0)
             recs[ridx] = {
                 "run_sector_weights": {str(q): w
                                        for q, w in sorted(wrun.items())},

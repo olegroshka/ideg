@@ -63,7 +63,6 @@ One combined Sampler job should contain approximately 999 circuits at 1,024 shot
 2. Long-time coherent evolution to `t=200` on the processor; the primary arm directly prepares each exact evolved snapshot.
 3. A universal statement about all stationary states or all notions of geometry.
 4. A hardware realization of gravity, holography, or a new phase of matter.
-5. UBS sponsorship, endorsement, or use of UBS infrastructure. Use an independent/personal affiliation unless separately authorized.
 
 The precise paper wording after a positive result should be: **"a hardware pilot reproduced the qualitative sector-admissibility separation for one preregistered `N=10` instance."**
 
@@ -481,7 +480,236 @@ After freezing, write `manifest.sha256`. Any change creates a new run ID and a d
 
 ---
 
-## 11. Local implementation and validation gates
+## 11. AR-023 script-change and saved-data contract
+
+This section is binding for implementation. Its purpose is to ensure that the classical comparator, simulated controls, compiled circuits, and QPU result can be reconstructed without rerunning an optimizer or relying on a plot. A script is not ready merely because it produces the final scalar endpoint.
+
+### 11.1 Change boundary and timing
+
+Do not change `scripts/ar020e_sector_suite.py` while any current AR-020e process is running. The sequence is:
+
+1. let every current AR-020e process finish;
+2. retain its original result files unchanged;
+3. record the exact commands, manifest files, source commit or source snapshot, dependency versions, and SHA-256 hashes of the script and outputs;
+4. create a dated AR-023 implementation branch or otherwise record a clean source snapshot;
+5. only then add the comparator-export path and hardware package;
+6. rerun only `TA_ii_quasiperiodic`, `N=10`, run index `0` for the frozen hardware comparator.
+
+The default AR-020e output and calculation must remain unchanged. The preferred minimal modification is an explicit opt-in export path, for example `IDEG_AR023_EXPORT_DIR`, executed after `sig3` has been obtained. With the option absent, the script must behave exactly as before. Do not overwrite or silently augment the original AR-020e JSON files.
+
+If the nested optimizer code is later refactored into `src/ideg`, establish numerical parity against the unmodified AR-020e result before using the refactor. A refactor and a hardware result must not become one unreviewed change.
+
+### 11.2 Comparator rerun contract
+
+The export rerun must use:
+
+- the committed `TA_ii_quasiperiodic`, `N=10`, run-0 seed;
+- the existing `magnon_superposition` and `xx_chain` constructors;
+- the full registered window `20.0:0.5:200.0`;
+- T3 sector weights fixed to the run's one-magnon sector;
+- the current optimizer's deterministic search seed `11`;
+- L-BFGS-B, `maxiter=300`, `ftol=1e-10`, unless a dated amendment is written before the rerun;
+- no access to IBM or noisy-simulator outcomes when selecting or rerunning the comparator.
+
+The rerun is accepted only if:
+
+```text
+abs(exported_T3_miss - recorded_AR020e_T3_miss) <= 5e-6
+abs(full_density_recheck - exported_T3_miss)     <= 1e-8
+abs(sum(p_star) - 1)                             <= 1e-12
+min(p_star)                                      >= -1e-12
+||[sigma_star, H]||_F                            <= 1e-10
+weight outside q=1                               <= 1e-12
+```
+
+If the first comparison fails, stop and investigate numerical/library differences. Do not choose whichever optimum is more favourable for hardware.
+
+### 11.3 Canonical comparator artifact
+
+Write the comparator to:
+
+```text
+results/AR-023/preflight/comparator_N10_run0.npz
+results/AR-023/preflight/comparator_N10_run0.json
+results/AR-023/preflight/comparator_N10_run0.sha256
+```
+
+The NPZ must use named, non-object arrays and contain at least:
+
+| Array | Shape | Meaning |
+|---|---:|---|
+| `p_star` | `(10,)` | T3 stationary populations in increasing-energy order |
+| `one_magnon_energies` | `(10,)` | ordered hopping-matrix eigenvalues |
+| `one_magnon_modes_site` | `(10,10)` complex | eigenmodes in paper site order |
+| `psi0_site` | `(10,)` complex | selected initial one-magnon amplitudes |
+| `full_times` | `(361,)` | registered classical time grid |
+| `dynamic_site_amplitudes_full` | `(361,10)` complex | exact amplitudes at every registered time |
+| `D_series_full` | `(361,10,10)` | exact metric at every registered time |
+| `Dbar_full` | `(10,10)` | exact 361-time mean metric |
+| `hardware_time_indices` | `(T,)` integer | selected indices into `full_times` |
+| `hardware_times` | `(T,)` | frozen hardware time values |
+| `dynamic_site_amplitudes_hardware` | `(T,10)` complex | state-preparation targets |
+| `D_series_hardware_ideal` | `(T,10,10)` | ideal metrics for the selected grid |
+| `Dbar_hardware_ideal` | `(10,10)` | ideal selected-grid mean metric |
+| `sigma_star_one_magnon_site` | `(10,10)` complex | comparator density matrix in site basis |
+| `pair_rdms_star` | `(45,4,4)` complex | comparator RDMs in lexicographic pair order |
+| `mi_star` | `(10,10)` | comparator mutual-information matrix |
+| `D_star` | `(10,10)` | comparator metric |
+| `pairs` | `(45,2)` integer | exact pair ordering used by all arrays |
+
+Canonicalize each eigenvector's arbitrary phase before saving: locate its largest-magnitude component and rotate the vector so that component is positive real. Record this convention. The density matrices do not depend on this phase, but circuit targets and hashes do.
+
+The JSON sidecar must contain:
+
+- `schema_version` and creation timestamp in UTC;
+- AR ID, class, size, run index, manifest path and manifest seed;
+- source paths and SHA-256 hashes;
+- Git commit; if the tree is dirty, the saved source-snapshot/diff hash;
+- Python, NumPy, SciPy, Qiskit, Runtime, Aer, M3 and IDEG versions as applicable;
+- optimizer seed, method, tolerances, termination status, iteration/evaluation counts;
+- recorded miss, rerun miss, full-density recheck and all acceptance residuals;
+- eigenvalue ordering and eigenvector phase convention;
+- time-grid selection rule and quadrature error;
+- dtype, shape and semantic description of every NPZ array.
+
+JSON must be UTF-8, deterministic (`sort_keys=True`), and written with full floating-point precision. NPZ arrays must not use `dtype=object` or require pickle loading.
+
+### 11.4 Required simulator tiers
+
+All three tiers are mandatory and use the same frozen circuit registry and analysis code:
+
+| Tier | Run kind | Purpose | Required saved raw data |
+|---|---|---|---|
+| S0 | `statevector_reference` | verify state preparation, endianness, RDMs and metric without sampling | statevectors or target amplitudes, exact RDMs, MI and metrics |
+| S1 | `ideal_shot_sampler` | quantify finite-shot/nonlinear reconstruction floor | per-circuit counts and simulator seeds |
+| S2 | `noisy_shot_sampler` | rehearse hardware analysis under a frozen device-derived noise model | per-circuit counts, noise-model source and backend snapshot |
+
+S0 must compare the synthesized logical circuit with the analytic one-magnon target for every dynamic snapshot and eigenmode. S1 and S2 must use exactly the QPU-intended shot count, circuit ordering, tomography settings, bit mapping, raw/M3 analysis branches, positivity projection, leakage diagnostics, and bootstrap code.
+
+The S2 backend/noise snapshot must be acquired without looking at QPU experiment outcomes. Save the source backend name, calibration timestamp, properties hash, basis gates, coupling map, and the procedure used to construct the noise model. Never label a generic depolarizing model as a backend snapshot.
+
+Optional lower-shot alternatives such as 768 shots must be separate manifests and separate run directories. They may inform the pre-QPU budget decision but may not overwrite the 1,024-shot simulation.
+
+### 11.5 Circuit registry
+
+Every circuit, simulated or physical, must have one row in `circuit_registry.json`. Each row contains:
+
+```text
+circuit_id                 stable AR-023 identifier, not a display label
+pub_index                  position submitted to SamplerV2
+canonical_index            position before frozen shuffle
+arm                        dynamic | sector_basis | control | m3_calibration
+state_id                   stable state target identifier
+paper_time                 number or null
+hardware_time_index        integer or null
+eigenmode_index            integer or null
+control_occurrence         early | late | null
+tomography_row             integer 0..26 or null
+tomography_GF3_r           three integers or null
+logical_basis_string       ten symbols in paper-site order
+paper_site_to_qiskit       explicit ten-integer mapping
+logical_to_physical        explicit ten-integer mapping after compilation
+classical_bit_mapping      explicit result-bit decoding map
+shots                      requested shots
+shuffle_seed               frozen seed
+transpiler_seed            frozen seed
+simulator_seed             frozen seed or null
+logical_circuit_sha256     hash of canonical logical representation
+transpiled_circuit_sha256  hash of serialized transpiled circuit or null
+```
+
+The registry hash belongs in the run manifest. Analysis must join results by `circuit_id`, never by an assumed list position alone.
+
+### 11.6 Raw and derived saved data
+
+For a finite-shot run, `raw/` must contain enough information to repeat analysis without the simulator or IBM service:
+
+- canonical raw counts as a dense `uint32` array of shape `(n_circuits, 2**10)`, where column `x` means integer outcome `x` under the frozen bit convention;
+- requested and returned shots per circuit;
+- the circuit registry and its hash;
+- logical and transpiled circuits in QPY plus Qiskit version;
+- full Runtime job metadata or simulator configuration;
+- backend/calibration/noise snapshot;
+- raw M3 calibration circuits and counts;
+- warnings, failed circuits, timestamps, queue/execution times and actual QPU usage when applicable.
+
+Do not preserve only plotted values, expectation values, quasi-probabilities, or final metrics. Counts are the canonical measurement record.
+
+`derived/` must contain, separately for `raw` and `m3` pipelines:
+
+- Pauli expectations with standard errors;
+- unprojected and PSD-projected pair RDMs;
+- trace, minimum eigenvalue and projection correction for every RDM;
+- MI matrices, edge-weight matrices, shortest-path metrics and cap-hit masks;
+- `D(t)`, `Dbar`, mixed comparator RDMs and comparator metric;
+- split-shot and duplicate-control floors;
+- sector survival per circuit/state;
+- primary endpoint, `Delta`, influence diagnostics and success-gate booleans;
+- bootstrap summaries and either the replicate arrays or the exact seeds/indices needed to recreate them.
+
+Use NPZ/NPY for numeric arrays and JSON for scalar metadata. If an IBM SDK object is also archived, it is supplementary: a pickle or version-specific provider object must never be the sole raw record.
+
+### 11.7 Seed contract
+
+Keep independent random streams and save all of them in the manifest:
+
+```json
+{
+  "paper_state_seed": "FROM_AR010_MANIFEST",
+  "optimizer_seed": 11,
+  "transpiler_seed": 1701,
+  "circuit_shuffle_seed": 23001,
+  "ideal_sampler_seed": 23002,
+  "noisy_sampler_seed": 23003,
+  "bootstrap_seed": 23004,
+  "shot_split_seed": 23005
+}
+```
+
+Changing one seed creates a new manifest and run ID. Do not reuse the paper-state seed as a general-purpose simulator or bootstrap seed.
+
+### 11.8 Run immutability and completion protocol
+
+Use a run ID of the form:
+
+```text
+YYYYMMDDTHHMMSSZ_<manifest-sha256-first12>_<run-kind>
+```
+
+Write into a new directory only. Refuse to start if that directory already contains a `COMPLETE` marker or IBM job receipt. During execution, write temporary files and atomically rename them after validation. On success, write:
+
+```text
+checksums.sha256
+COMPLETE.json
+```
+
+`COMPLETE.json` records the manifest hash, registry hash, result hash, analysis hash, exit status and completion time. On failure, retain the partial directory and write `FAILED.json`; do not present it as an analysable completed run and do not delete it merely to reuse the run ID.
+
+Any corrected analysis of unchanged raw data goes into a new versioned `analysis_<version>/` directory with a dated amendment. Preserve the superseded analysis.
+
+### 11.9 Script-level acceptance tests
+
+The code-change phase is complete only when automated tests establish:
+
+- [ ] default AR-020e behaviour and existing JSON schema remain unchanged when export is disabled;
+- [ ] the selected comparator rerun satisfies every tolerance in section 11.2;
+- [ ] NPZ loads with `allow_pickle=False` and matches its declared schema;
+- [ ] eigenmode ordering and canonical phases are deterministic across two fresh processes;
+- [ ] S0 circuit statevectors reproduce all analytic target states below `1e-10` infidelity;
+- [ ] S0 reconstructed RDMs and metrics match `src/ideg/migraph.py` below declared tolerances;
+- [ ] S1 is exactly reproducible from its saved seed and manifest;
+- [ ] S1 can be fully reanalysed after deleting all in-memory Qiskit result objects;
+- [ ] S2 records the complete noise/calibration provenance and can be reanalysed from saved counts;
+- [ ] shuffled results decode correctly by `circuit_id` and explicit bit maps;
+- [ ] raw and M3 branches operate on the same canonical counts;
+- [ ] modifying any frozen manifest, registry, circuit or raw-count file breaks checksum validation;
+- [ ] submission refuses incomplete, over-budget, previously submitted or non-`QPU-GO` bundles.
+
+The QPU browser phase may begin only after these tests and gates L0-L4 pass on one immutable simulator bundle.
+
+---
+
+## 12. Local implementation and validation gates
 
 ### Gate L0 — paper calculation frozen
 
@@ -528,7 +756,7 @@ Only after L0-L4 are green may the project proceed to `QPU-GO`.
 
 ---
 
-## 12. Browser-assisted execution protocol
+## 13. Browser-assisted execution protocol
 
 This section is written so a browser-controlling assistant can carry out the run with the user while preserving account security and quota control.
 
@@ -590,7 +818,7 @@ No QPU call is authorized by preparation of this document. Only the user's expli
 
 ---
 
-## 13. Analysis outputs and paper figure
+## 14. Analysis outputs and paper figure
 
 The minimum analysis table should contain, for raw and M3 pipelines:
 
@@ -617,7 +845,7 @@ Add a paper section only after the analysis is frozen. Label it **Hardware pilot
 
 ---
 
-## 14. Roadmap and effort estimate
+## 15. Roadmap and effort estimate
 
 | Stage | Work | Exit condition | Expected hands-on time |
 |---|---|---|---:|
@@ -640,7 +868,7 @@ If the 10-minute pilot is positive, the next resource request should scale scien
 
 ---
 
-## 15. SparQ evidence pack produced by this pilot
+## 16. SparQ evidence pack produced by this pilot
 
 Package the following for an NQCC SparQ technical-scoping request:
 
@@ -656,7 +884,7 @@ Ask for technical collaboration and feasibility review, not just free compute. T
 
 ---
 
-## 16. Stop conditions
+## 17. Stop conditions
 
 Stop before QPU submission if any of these occurs:
 
@@ -680,7 +908,7 @@ A null or failed pilot is still useful: it gives a measured resource requirement
 
 ---
 
-## 17. Definition of done
+## 18. Definition of done
 
 The first experiment is complete when:
 
@@ -696,7 +924,7 @@ The first experiment is complete when:
 
 ---
 
-## 18. Official implementation references
+## 19. Official implementation references
 
 - [IBM Quantum plans overview](https://quantum.cloud.ibm.com/docs/en/guides/plans-overview) — Open Plan allocation and current additional-access programme.
 - [Estimate workload usage](https://quantum.cloud.ibm.com/docs/en/guides/estimate-job-run-time) — QPU-time accounting and rough execution estimate.
@@ -713,6 +941,6 @@ The first experiment is complete when:
 
 ---
 
-## 19. One-sentence operational summary
+## 20. One-sentence operational summary
 
 Freeze the paper's run-0 sector comparator, reconstruct 25 exact `N=10` quasiperiodic snapshots and that comparator through a 27-setting all-pairs tomography design on one carefully selected IBM qubit path, submit only after an explicit `QPU-GO`, and judge the fixed comparator miss against a predeclared hardware reconstruction floor rather than against a visually chosen curve.

@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ideg.invalid/schemas/ibm-exp1-hardware-manifest-v1.json",
+  "title": "IDEG AR-023 IBM experiment manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "experiment_id",
+    "status",
+    "source",
+    "selection",
+    "model",
+    "time_grid",
+    "tomography",
+    "bit_order",
+    "shots",
+    "arms",
+    "comparator",
+    "seeds",
+    "qpu_policy",
+    "manifest_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "experiment_id": {"const": "ibm-exp1-qp-sector"},
+    "status": {"enum": ["DRAFT", "FROZEN"]},
+    "source": {"type": "object"},
+    "selection": {
+      "type": "object",
+      "required": ["class", "n_sites", "run_index", "paper_state_seed"],
+      "properties": {
+        "class": {"const": "TA_ii_quasiperiodic"},
+        "n_sites": {"const": 10},
+        "run_index": {"const": 0},
+        "paper_state_seed": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "model": {"type": "object"},
+    "time_grid": {
+      "type": "object",
+      "required": ["count", "indices", "values", "ideal_relative_quadrature_error"],
+      "properties": {
+        "count": {"enum": [25, 37, 49]},
+        "indices": {"type": "array", "items": {"type": "integer"}},
+        "values": {"type": "array", "items": {"type": "number"}},
+        "ideal_relative_quadrature_error": {"type": "number", "maximum": 0.025},
+        "maximum_allowed_error": {"const": 0.025}
+      },
+      "additionalProperties": false
+    },
+    "tomography": {"type": "object"},
+    "bit_order": {"type": "object"},
+    "shots": {"enum": [768, 1024]},
+    "arms": {"type": "object"},
+    "comparator": {"type": "object"},
+    "seeds": {"type": "object"},
+    "qpu_policy": {
+      "type": "object",
+      "required": ["backend", "physical_path", "estimated_seconds", "rough_formula_seconds", "maximum_estimated_seconds", "minimum_remaining_seconds", "submission_confirmation"],
+      "properties": {
+        "backend": {"type": ["string", "null"]},
+        "physical_path": {
+          "type": ["array", "null"],
+          "items": {"type": "integer"},
+          "minItems": 10,
+          "maxItems": 10
+        },
+        "estimated_seconds": {"type": ["number", "null"], "maximum": 450},
+        "rough_formula_seconds": {"type": "number", "maximum": 450},
+        "maximum_estimated_seconds": {"const": 450},
+        "minimum_remaining_seconds": {"const": 500},
+        "submission_confirmation": {"const": "QPU-GO"}
+      },
+      "additionalProperties": false
+    },
+    "manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}
