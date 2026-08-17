@@ -339,3 +339,36 @@ spot-check that motivated A2.1 (10/10 on clause 2 at both conditions)
 does **not** establish the ≥ 95/100 gate: 10/10 bounds the true rate
 only at 0.741 (exact one-sided 95%). It is suggestive, not evidence.
 The confirmatory R = 100 batteries are the adjudication and may fail.
+
+**A2.10 — projection statistic corrected to the median (owner ruling,
+2026-08-17).** A2.3 as first written gated the **maximum** per-RDM
+‖ρ_proj − ρ_raw‖_F against 0.05. That threshold was calibrated in
+AR-023 against a **median**, so the amendment silently tightened the
+statistic while reusing a number justified for a different one — the
+exact error this session's adversarial review had already named and
+then committed anyway. Measured consequence on the confirmatory
+768 battery:
+
+| statistic | worst of 100 | margin to 0.05 |
+|---|---|---|
+| maximum (A2.3 as written) | 0.0491 | **1.9%** |
+| median (AR-023's own statistic) | 0.0099 | **5×** |
+
+One experiment sat within 2% of failing, and on hardware — where PSD
+corrections are larger — the criterion would likely have failed in a
+way that *reads* as a physics result ("projection dominates the
+metric") while being a units mismatch. **Ruling: clause 5 uses the
+MEDIAN per-RDM correction < 0.05**, restoring the threshold's
+provenance; the maximum remains a reported diagnostic and is not a
+gate.
+
+*No re-run was required.* Every per-experiment record stores each
+diagnostic separately, so the rule change is adjudicated over committed
+data by `scripts/readjudicate.py`. Both adjudications are written
+side by side (`adjudication_a2-max.json`,
+`adjudication_a2-median.json`) per the dual-record discipline.
+Verdicts are identical — 100/100 either way, since median ≤ max makes
+the ruled form strictly looser — so the ruling buys robustness, not a
+changed result. Batteries generated before this ruling remain valid
+under it for the same reason; the code is corrected for S2 and all
+later runs.
