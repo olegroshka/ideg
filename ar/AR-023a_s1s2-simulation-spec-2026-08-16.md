@@ -217,3 +217,125 @@ then multinomial-sample replicates from the exact noisy distribution.
 This is statistically identical to per-replicate shot execution and is
 the intended implementation; per-replicate Aer re-execution is
 permitted but not required.
+
+## 6. Amendment 2 — 2026-08-17 (post-battery, owner-directed)
+
+Raised by the S1/S2 batteries of 2026-08-17 (evidence:
+`ar/AR-023a_findings-2026-08-17.md`, gate tables and diagnosis) and by
+the adversarial review of the repair proposal recorded in the same
+session log. **Dual-record discipline (AR-020 precedent): the original
+rule and its failing batteries stay in the record unaltered; this
+amendment defines a second, separately adjudicated battery.** Nothing
+here is retroactively applied to the committed 2026-08-17 results.
+
+**A2.0 — status of the original adjudication.** S1 (768 and 896) and
+S2 (11 conditions) as executed under the original rule stand as
+recorded: S1-G1/G4 PASS, S1-G2/G3 FAIL, S2-G1/G4 PASS, S2-G2/G3 FAIL.
+This amendment does not convert any of those into passes.
+
+**A2.1 — ε_floor is measured on the endpoint, not on the metric
+matrix (supersedes the floor statistic only).** AR-023 §6's structure
+is preserved exactly — two diagnostics, conservative max — and only
+the quantity they are evaluated on changes:
+
+    split floor = |ε(h1) − ε(h2)|, the complete endpoint computed
+                  independently on each half-shot arm;
+    duplicate   = |ε(early control) − ε(late control)|, the endpoint
+                  recomputed with the early / late control RDMs
+                  substituted for their eigenmode in σ*;
+    ε_floor     = max(split, duplicate).
+
+Justification (findings §2): the frozen statistic is a full-matrix
+Frobenius norm over ~61 effective directions, while ε responds to one;
+the measured overstatement is 7.8×, matching √(effective directions),
+and both scale as 1/√N so no shot budget reconciles them. The 0.05
+threshold of S1-G3 is **retained unchanged** because its stated
+rationale ("~20% of the signal") is statistic-agnostic.
+
+**A2.2 — bootstrap applies to the split arm only.** The split floor is
+shot noise and is resampleable: report its bootstrap median. The
+duplicate floor estimates a **systematic** (drift between job
+positions) and must NOT be bootstrapped — resampling counts cannot
+regenerate a systematic and would launder the drift signal away. It is
+recorded as the single measured realisation, and its noisiness is
+accepted as the price of measuring drift at all.
+
+**A2.3 — projection criterion (replaces the A1.3(b) sub-criterion).**
+Clause 5's projection control becomes: per-experiment maximum per-RDM
+‖ρ_proj − ρ_raw‖_F < 0.05. The estimator-bias question is gated where
+it is meaningful — at battery level, by S1-G1. The retired form
+("projection-attributable endpoint shift < 0.02") penalised the
+projection for *removing* bias: projected estimator bias +0.0059 vs
+unprojected +0.1004 (findings §3). The identical criterion inside
+S2-G3 is retired with it; S2-G3 keeps its per-RDM half.
+
+*Provenance:* the 0.02 shift budget inside clause 5 originated in
+Amendment A1.3 (this assistant, prior session), not in AR-023 §6.
+
+**A2.4 — dominance tolerance measured as excess over structure
+(hardening, adopted).** Clause 5's excursion test compares the data's
+leave-one-out excursion against the **same variant's excursion on the
+exact noiseless metric**, requiring the excess to be within tolerance.
+On the exact metric, removing pair (0,9) — the chain's two ends —
+already shifts ε by 0.0261, above the tolerance A1.3 implies at the S2
+operating point (0.0206): the retired form penalised graph structure.
+Note this criterion is no longer load-bearing once A2.1 is in force
+(the tolerance scales with Δ, which the corrected floor restores), and
+is adopted as defence in depth. Per-variant excursions are recorded so
+the criterion is auditable.
+
+**A2.5 — leakage: an all-Z setting is added, and the traffic light is
+evaluated on readout-corrected counts.** AR-023 §5's diagnostic is not
+computable from the 27-row array (no all-Z row exists; maximum 6 of 10
+sites in Z; the GF(3) construction cannot produce one), and red leakage
+is a registered kill criterion. Therefore:
+
+- (a) one all-Z tomography setting is added → 49 states × 28 settings
+  = **1,372 circuits**;
+- (b) the all-Z row is a **leakage witness only and does NOT feed the
+  RDM reconstruction**. Rationale: the tomography estimator stays
+  byte-identical to the validated one, so the confirmatory battery
+  isolates the rule change instead of confounding it with an estimator
+  change. (Discarded option, available later: feeding it in would raise
+  ZZ multiplicity 3→4 and modestly reduce ZZ variance.)
+- (c) the traffic light is evaluated on **M3-corrected** counts, with
+  the raw value reported alongside. Raw ten-qubit survival is
+  multiplied by ≈(1−p_ro)^10, so at 1% readout a state with 97% true
+  sector fidelity reads 0.877 (**AMBER**) and at 3% readout the minimum
+  reaches ≈0.704, within a hair of the 0.70 **RED kill criterion** —
+  the diagnostic would otherwise kill a healthy pilot on a readout
+  artefact. Quasi-probabilities from M3 are mapped to the closest
+  probability distribution before the excitation count is formed.
+- (d) the 0.90 / 0.80 / 0.70 thresholds are retained, now applied to
+  the readout-corrected quantity they were conceived for.
+
+**A2.6 — S2 gains a drift arm.** Every S2 condition to date uses a
+static noise model, so the duplicate-control diagnostic — the entire
+reason A2.1 keeps a second floor term — has never been exercised
+against the systematic it exists to detect. A drift condition is added:
+gate-error level and readout rate vary monotonically with `pub_index`
+across the job, so the bracketing early/late controls straddle the
+drift. Reported: how the duplicate floor responds, and how much drift
+the gates tolerate before ε_floor breaches 0.05.
+
+**A2.7 — fresh-seed confirmatory discipline.** The amended rule was
+shaped while looking at the failing batteries. It is therefore
+adjudicated on **new sampling seeds** (S1 BASE 24002, S2 BASE 24003),
+never on the seeds that motivated it — the AR-020 precedent, where an
+original 18/18 proved partly seed luck. Disclosed limitation: fresh
+seeds defend against seed luck, not against post-hoc *form* selection;
+the defences for form are the mathematical arguments above and owner
+review.
+
+**A2.8 — shot count is not amended and is deferred.** Shots are a
+manifest parameter, not a circuit property, so the choice needs no
+bundle change. The confirmatory battery is run at both 768 and 896 and
+the operating point is chosen at L4 against measured power and the
+then-current quota. Budget with the all-Z setting and M3's 20 balanced
+calibration circuits: **376.2 s at 768**, **438.5 s at 896**, cap 450 s.
+
+**A2.9 — statistical honesty of the pre-validation.** The R = 10
+spot-check that motivated A2.1 (10/10 on clause 2 at both conditions)
+does **not** establish the ≥ 95/100 gate: 10/10 bounds the true rate
+only at 0.741 (exact one-sided 95%). It is suggestive, not evidence.
+The confirmatory R = 100 batteries are the adjudication and may fail.
