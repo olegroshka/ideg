@@ -26,11 +26,58 @@ all analytic targets, then emits a draft logical QPY bundle and the complete
 1,323-row circuit registry.  The `XXPlusYY` candidate is used for the draft;
 the final choice remains blocked on backend-specific compilation.
 
-Backend discovery, path scoring, backend-specific compilation,
-finite-shot/noisy simulation, immutable result storage, M3 analysis, and
-submission remain later gates.  The comparator exporter will not write an
-artifact unless its recomputed optimum agrees with the registered AR-020e
-run-0 T3 miss.
+The comparator exporter will not write an artifact unless its recomputed
+optimum agrees with the registered AR-020e run-0 T3 miss.
+
+## S1/S2 status (2026-08-17) — L3 NOT GREEN, owner ruling required
+
+The circuit bundle is **frozen** (`bundle/`, hashes in the manifest and
+verified byte-identical across four independent builds).  The exact
+37-grid reference endpoint is recorded: **ε_sector^(37) =
+0.227910117170944**.
+
+S1 (ideal finite-shot, R = 100, 1,000-replicate bootstrap) is closed at
+both shot settings:
+
+| Gate | Criterion | 768 | 896 | Verdict |
+|---|---|---|---|---|
+| S1-G1 | bias < 0.02 | 0.00590 | 0.00641 | **PASS** |
+| S1-G2 | success ≥ 95/100 | 0/100 | 0/100 | **FAIL** |
+| S1-G3 | median floor < 0.05 | 0.11375 | 0.11013 | **FAIL** |
+| S1-G4 | byte-identical rerun | identical | identical | **PASS** |
+
+S2 (11 noise conditions: 2 Heron fakes + 3×3 sweep) is closed with the
+operating envelope and the L4 path-quality pre-commitment in
+`results/sim_s2/s2_report.json`.
+
+**The failures are in the decision rule, not the measurement.** The
+separation Δ is resolved above the floor in 100/100 ideal and 99/100
+noisy experiments; leakage is GREEN through p2 = 6e-3; raw and M3 agree
+in direction 100/100.  The frozen floor statistic is a full-matrix
+norm compared against a scalar endpoint — measured overstatement 7.8×,
+matching √(effective metric directions) — and the projection criterion
+penalises a bias correction (projected bias +0.0059 vs unprojected
++0.1004).  Diagnosis, amendment candidates C1–C4, and the repaired-rule
+counterfactual (95/100 at 768, 99/100 at 896) are in
+`ar/AR-023a_findings-2026-08-17.md`.
+
+**Do not proceed to L4 or QPU-GO until the owner rules on C1–C4.**
+Under the rule as written the pilot cannot be declared positive even
+with a flawless QPU run.
+
+Reproduce (Python-3.11 hardware environment):
+
+```powershell
+python hardware/ibm_exp1/scripts/compute_s1_reference.py
+python hardware/ibm_exp1/scripts/run_s1.py --precompute
+python hardware/ibm_exp1/scripts/run_s1.py --run --shots 768 `
+  --out hardware/ibm_exp1/results/sim_s1_768
+python hardware/ibm_exp1/scripts/run_s2.py --prepare
+python hardware/ibm_exp1/scripts/run_ar023a_chain.py
+```
+
+Backend discovery against a live account, backend-specific compilation,
+immutable QPU result storage, and submission remain later gates.
 
 Build a local-only draft circuit bundle outside the repository:
 
