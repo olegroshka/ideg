@@ -1,0 +1,16 @@
+STAGE1 S1-G4(768): byte-identical=True sha=f503dfbe4ec6bb0a
+STAGE2 896 gates: {"S1-G1": true, "S1-G2": false, "S1-G3": false, "S1-G4": null}
+STAGE3 S1-G4(896): byte-identical=True sha=4fb7f89bfbeaa2a2
+STAGE4 fake_fake_aachen: success=0/100 light=GREEN delta=0.0872
+STAGE4 fake_fake_boston: success=0/100 light=GREEN delta=0.0921
+STAGE4 grid_p2-0.003_ro-0.01: success=0/100 light=GREEN delta=0.0823
+STAGE4 grid_p2-0.003_ro-0.02: success=0/100 light=GREEN delta=0.0710
+STAGE4 grid_p2-0.003_ro-0.03: success=0/100 light=GREEN delta=0.0659
+STAGE4 grid_p2-0.006_ro-0.01: success=0/100 light=GREEN delta=0.0722
+STAGE4 grid_p2-0.006_ro-0.02: success=0/100 light=GREEN delta=0.0664
+STAGE4 grid_p2-0.006_ro-0.03: success=0/100 light=GREEN delta=0.0575
+STAGE4 grid_p2-0.01_ro-0.01: success=0/100 light=AMBER delta=0.0633
+STAGE4 grid_p2-0.01_ro-0.02: success=0/100 light=AMBER delta=0.0556
+STAGE4 grid_p2-0.01_ro-0.03: success=0/100 light=AMBER delta=0.0513
+STAGE5 S2 gates: {"S2-G1": true, "S2-G2": false, "S2-G3": false, "S2-G4": true}
+CHAIN COMPLETE
