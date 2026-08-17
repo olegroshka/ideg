@@ -57,18 +57,19 @@ in direction 100/100.  The frozen floor statistic is a full-matrix
 norm compared against a scalar endpoint — measured overstatement 7.8×,
 matching √(effective metric directions) — and the projection criterion
 penalises a bias correction (projected bias +0.0059 vs unprojected
-+0.1004).  Diagnosis, amendment candidates C1–C4, and the repaired-rule
-counterfactual (95/100 at 768, 99/100 at 896) are in
-`ar/AR-023a_findings-2026-08-17.md` (candidates C1–C6).
++0.1004).  Diagnosis, amendment candidates **C1–C6**, and the
+repaired-rule counterfactual (95/100 at 768, 99/100 at 896) are in
+`ar/AR-023a_findings-2026-08-17.md`.
 
 **Do not proceed to L4 or QPU-GO until the owner rules on C1–C6.**
-C6 is a missing measurement setting, not a threshold: the 27-row array
-has no all-Z row (max 6 of 10 sites), so AR-023 §5's leakage traffic
-light — a registered kill criterion — cannot be evaluated on QPU data.
-Fix costs one setting (1,372 circuits, 432 s at 896 shots, inside cap)
-and requires rebuilding the frozen bundle.
 Under the rule as written the pilot cannot be declared positive even
-with a flawless QPU run.
+with a flawless QPU run.  **C6 is the hardest blocker** — a missing
+measurement setting, not a threshold: the 27-row array has no all-Z row
+(max 6 of 10 sites in Z), so AR-023 §5's leakage traffic light — a
+registered kill criterion — cannot be evaluated on QPU data at all.
+The fix costs one added setting (1,372 circuits; 370.8 s at 768 shots,
+432.3 s at 896, both inside the cap) but invalidates the frozen bundle,
+which must then be rebuilt and re-simulated.
 
 Reproduce (Python-3.11 hardware environment):
 
