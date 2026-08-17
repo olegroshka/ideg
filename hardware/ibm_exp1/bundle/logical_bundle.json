@@ -3,14 +3,14 @@
   "status": "DRAFT_LOGICAL",
   "experiment_id": "ibm-exp1-qp-sector",
   "manifest_path": "C:\\Users\\olegr\\PycharmProjects\\ideg\\hardware\\ibm_exp1\\manifest\\hardware_manifest.json",
-  "manifest_sha256": "a723e035292447bd4f40b71c6bc89f8c4313c5f511959a7b5968e950e674f30a",
+  "manifest_sha256": "8f9617a24544380a0534069b027ce55a060181afb5b7282c7df40482db2105bb",
   "preparation_method": "xxplusyy",
   "unique_target_count": 47,
-  "circuit_count": 1323,
+  "circuit_count": 1372,
   "shots": 768,
   "control_mode": 9,
-  "qpy_sha256": "4c0aab78f72365c97cad0b2d227fa19531a9c007cdf8468b18ad05d385a2d9c8",
-  "circuit_registry_sha256": "0455cdef68535723ae3c87c02334fc36a252d800fdcf0285cd8db04785ad09c2",
+  "qpy_sha256": "8655e85fa32d7bd9bcbfd5dbb754a4ba868865b51d551faf779495009671ce6e",
+  "circuit_registry_sha256": "b093aa0f0bd7fdf1d275c7e53110fabc87057f545cc2be54ad46799e78ed3e90",
   "target_states_sha256": "77bce6c40bc9d3acdc2a50d9fc55b0ab62f530d298ceff95d3d628de6ba5ecb3",
   "files": {
     "qpy": "logical_circuits.qpy",
@@ -32,5 +32,5 @@
     "usage including M3 calibration is not estimated",
     "explicit QPU-GO has not been supplied"
   ],
-  "bundle_sha256": "bbd9b445beb611eaa38b104d0c9ca3865a431d7d43425156e3f1001900782f5d"
+  "bundle_sha256": "00c940b143ed5f271a5b8bd91fda7d3f094fbaaefc70296822b56bf73308dafa"
 }

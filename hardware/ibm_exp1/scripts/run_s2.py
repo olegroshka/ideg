@@ -276,8 +276,9 @@ def _init_worker_s2(cond: str, cond_index: int):
     os.environ["OPENBLAS_NUM_THREADS"] = "1"
     manifest, registry, basis_rows = load_bundle(ROOT)
     index = StateIndex(registry["circuits"], basis_rows)
-    w1, w2 = aggregation_weights(basis_rows)
-    z_exc, _ = zrow_masks(basis_rows)
+    recon_rows = sampling.reconstruction_basis_rows(basis_rows)
+    w1, w2 = aggregation_weights(recon_rows)
+    z_exc, _ = zrow_masks(recon_rows)
     comparator = np.load(
         ROOT / manifest["comparator"]["npz_path"], allow_pickle=False)
     cache = np.load(COND_DIR / cond / "cache.npz", allow_pickle=False)

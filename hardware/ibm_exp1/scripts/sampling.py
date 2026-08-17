@@ -31,7 +31,8 @@ from pathlib import Path
 
 import numpy as np
 
-from experiment import I0, X_MIN, N_SITES  # noqa: F401
+from experiment import (ALL_Z_ROW, I0, X_MIN,  # noqa: F401
+                        N_SITES, RECONSTRUCTION_ROWS)
 
 SHOTS = 768
 HALF_SHOTS = SHOTS // 2
@@ -61,6 +62,11 @@ def site_signs() -> np.ndarray:
 SITE_SIGN = site_signs()
 PAIR_SIGN = np.stack(
     [SITE_SIGN[:, i] * SITE_SIGN[:, j] for (i, j) in PAIRS], axis=1)
+
+
+def reconstruction_basis_rows(basis_rows) -> list[str]:
+    """The 27 covering-array rows; the all-Z witness never reconstructs."""
+    return [row for row in basis_rows if row != ALL_Z_ROW]
 
 
 def aggregation_weights(basis_rows: list[str]):
@@ -205,6 +211,46 @@ def leakage_witness(counts: np.ndarray, z_exc: np.ndarray):
     return witness, e_z
 
 
+POPCOUNT = np.array([bin(x).count("1") for x in range(N_OUT)])
+
+
+def closest_probability_distribution(quasi: np.ndarray) -> np.ndarray:
+    """Project quasi-probabilities onto the simplex (Smolin et al.).
+
+    M3-corrected counts can carry negative entries; AR-023a A2.5(c)
+    requires mapping them to the closest probability distribution
+    before forming the excitation count.
+    """
+    q = np.asarray(quasi, dtype=float)
+    flat = q.reshape(-1, q.shape[-1])
+    out = np.empty_like(flat)
+    for row_index, row in enumerate(flat):
+        order = np.sort(row)[::-1]
+        cumulative = np.cumsum(order) - 1.0
+        rho = np.nonzero(order - cumulative / (np.arange(len(order)) + 1)
+                         > 0)[0][-1]
+        theta = cumulative[rho] / (rho + 1)
+        out[row_index] = np.maximum(row - theta, 0.0)
+    return out.reshape(q.shape)
+
+
+def survival_from_allz(counts_allz: np.ndarray,
+                       project: bool = False) -> np.ndarray:
+    """P(exactly one excitation) from the all-Z witness row (A2.5).
+
+    counts_allz: (..., N_OUT) raw or M3-corrected counts.  With
+    project=True the (possibly negative) quasi-counts are mapped to the
+    closest probability distribution first.
+    """
+    values = np.asarray(counts_allz, dtype=float)
+    total = values.sum(axis=-1, keepdims=True)
+    probs = values / np.where(np.abs(total) < 1e-12, 1.0, total)
+    if project:
+        probs = closest_probability_distribution(probs)
+        probs = probs / probs.sum(axis=-1, keepdims=True)
+    return probs[..., POPCOUNT == 1].sum(axis=-1)
+
+
 class StateIndex:
     """Frozen bundle layout: state ids -> ordered registry row indices."""
 
@@ -220,12 +266,27 @@ class StateIndex:
                 key = row["state_id"]
             by_state.setdefault(key, []).append(
                 (row["tomography_row"], file_index))
-        self.rows_for = {
-            state: np.array([fi for _, fi in sorted(entries)])
-            for state, entries in by_state.items()}
-        for state, rows in self.rows_for.items():
-            if len(rows) != 27:
-                raise ValueError(f"state {state} has {len(rows)} settings")
+        ordered = {state: [fi for _, fi in sorted(entries)]
+                   for state, entries in by_state.items()}
+        self.has_leakage_row = ALL_Z_ROW in basis_rows
+        leak_index = (basis_rows.index(ALL_Z_ROW)
+                      if self.has_leakage_row else None)
+        self.rows_for, self.leak_row_for = {}, {}
+        for state, files in ordered.items():
+            if len(files) != len(basis_rows):
+                raise ValueError(
+                    f"state {state} has {len(files)} of {len(basis_rows)}")
+            if leak_index is None:
+                self.rows_for[state] = np.array(files)
+            else:
+                # A2.5: witness row excluded from the reconstruction path
+                self.rows_for[state] = np.array(
+                    [f for i, f in enumerate(files) if i != leak_index])
+                self.leak_row_for[state] = files[leak_index]
+            if len(self.rows_for[state]) != RECONSTRUCTION_ROWS:
+                raise ValueError(
+                    f"state {state} has {len(self.rows_for[state])} "
+                    f"reconstruction settings")
         self.dynamic_ids = [f"dynamic_t{t:03d}" for t in range(37)]
         self.sector_ids = [f"sector_e{k:02d}" for k in range(N_SITES)]
         control_ids = sorted(s for s in self.rows_for
@@ -368,6 +429,35 @@ def floors_from_slots(result: dict) -> dict:
         "duplicate": dup,
         "floor": np.maximum(split, dup),
     }
+
+
+def endpoint_from_stacks(dyn_rdms: np.ndarray, sec_rdms: np.ndarray,
+                         p_star: np.ndarray):
+    """eps and its pieces from (T,45,4,4) dynamic and (10,45,4,4) sector."""
+    mi_t = mi_from_pair_rdms(dyn_rdms)
+    phi_t = phi_from_mi(mi_t)
+    dbar = phi_t.mean(axis=0)
+    mi_star = mi_from_pair_rdms(
+        np.tensordot(p_star, sec_rdms, axes=(0, 0)))
+    star = phi_from_mi(mi_star)
+    eps = float(np.linalg.norm(star - dbar) / np.linalg.norm(dbar))
+    return eps, phi_t, dbar, star, mi_t, mi_star
+
+
+def endpoint_floor(eps_h1: float, eps_h2: float,
+                   eps_ctrl_early: float, eps_ctrl_late: float) -> dict:
+    """AR-023a A2.1: floor = max(split, duplicate), both on the endpoint.
+
+    split      = |eps(h1) - eps(h2)|   (shot noise; resampleable, so a
+                 caller may report its bootstrap median per A2.2)
+    duplicate  = |eps(early ctrl) - eps(late ctrl)|  (a SYSTEMATIC:
+                 never bootstrap it — resampling counts cannot
+                 regenerate drift)
+    """
+    split = abs(float(eps_h1) - float(eps_h2))
+    duplicate = abs(float(eps_ctrl_early) - float(eps_ctrl_late))
+    return {"split": split, "duplicate": duplicate,
+            "floor": max(split, duplicate)}
 
 
 def draw_main_halves(probs: np.ndarray, base: int, experiment: int,

@@ -33,6 +33,9 @@ COVERING_VECTORS = (
     (1, 1, 1),
 )
 
+ALL_Z_ROW = "Z" * N_SITES
+RECONSTRUCTION_ROWS = 27
+
 PAULI = {
     "I": np.eye(2, dtype=complex),
     "X": np.array([[0, 1], [1, 0]], dtype=complex),
@@ -179,6 +182,29 @@ def covering_array_rows(n_sites: int = N_SITES) -> tuple[str, ...]:
             for v in COVERING_VECTORS
         ))
     return tuple(rows)
+
+
+def tomography_rows(include_leakage_row: bool = True) -> tuple[str, ...]:
+    """Registered settings: 27 covering-array rows + the all-Z witness.
+
+    AR-023a Amendment A2.5: the all-Z row exists because AR-023 §5's
+    one-excitation diagnostic needs all ten sites measured in Z
+    simultaneously, which no covering-array row provides (maximum 6 of
+    10, and the GF(3) construction cannot yield an all-Z row).  It is a
+    leakage witness ONLY and is excluded from the RDM reconstruction so
+    that the tomography estimator stays identical to the validated one.
+    """
+    rows = covering_array_rows()
+    return rows + (ALL_Z_ROW,) if include_leakage_row else rows
+
+
+def leakage_row_index(rows: tuple[str, ...] | None = None) -> int:
+    """Index of the all-Z witness row; raises when it is absent."""
+    rows = tomography_rows() if rows is None else rows
+    for index, row in enumerate(rows):
+        if row == ALL_Z_ROW:
+            return index
+    raise ValueError("no all-Z leakage witness row present")
 
 
 def validate_covering_array(rows: tuple[str, ...] | None = None) -> None:

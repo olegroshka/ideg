@@ -13,7 +13,8 @@ from typing import Any
 
 import numpy as np
 
-from experiment import (covering_array_rows, embed_one_magnon_amplitudes,
+from experiment import (ALL_Z_ROW, covering_array_rows,  # noqa: F401
+                        embed_one_magnon_amplitudes,
                         paper_site_to_qiskit)
 
 
@@ -141,7 +142,12 @@ def canonical_circuit_descriptors(
 ) -> list[dict[str, Any]]:
     """Create the complete pre-shuffle logical registry skeleton."""
     rows = tuple(manifest["tomography"]["basis_strings_paper_order"])
-    if rows != covering_array_rows():
+    base = covering_array_rows()
+    if rows == base:
+        leakage_index = None
+    elif rows == base + (ALL_Z_ROW,):
+        leakage_index = len(base)          # A2.5 witness row
+    else:
         raise ValueError("manifest tomography rows differ from AR-023")
     times = manifest["time_grid"]["values"]
     n_modes = int(manifest["selection"]["n_sites"])
@@ -165,8 +171,10 @@ def canonical_circuit_descriptors(
         control_occurrence: str | None,
     ) -> None:
         for row_index, basis in enumerate(rows):
+            is_leak = row_index == leakage_index
             descriptors.append({
                 "circuit_id": f"ar023_{id_prefix}_r{row_index:02d}",
+                "purpose": "leakage_witness" if is_leak else "tomography",
                 "pub_index": None,
                 "canonical_index": len(descriptors),
                 "arm": arm,
@@ -176,7 +184,8 @@ def canonical_circuit_descriptors(
                 "eigenmode_index": eigenmode_index,
                 "control_occurrence": control_occurrence,
                 "tomography_row": row_index,
-                "tomography_GF3_r": list(gf3_rows[row_index]),
+                "tomography_GF3_r": (None if is_leak
+                                     else list(gf3_rows[row_index])),
                 "logical_basis_string": basis,
                 "paper_site_to_qiskit": mapping,
                 "logical_to_physical": None,

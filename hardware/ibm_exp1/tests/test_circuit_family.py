@@ -17,23 +17,31 @@ def _manifest():
     return json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
 
 
-def test_registered_family_has_1323_unique_circuits_and_bracketed_controls():
+def test_registered_family_size_and_bracketed_controls():
+    """Counts derive from the manifest's settings count, never hardcoded."""
     manifest = _manifest()
+    settings = int(manifest["tomography"]["settings"])
+    expected = 49 * settings
     descriptors = canonical_circuit_descriptors(manifest, control_mode=9)
-    assert len(descriptors) == 1323
-    assert len({row["circuit_id"] for row in descriptors}) == 1323
-    assert sum(row["arm"] == "dynamic" for row in descriptors) == 999
-    assert sum(row["arm"] == "sector_basis" for row in descriptors) == 270
-    assert sum(row["arm"] == "control" for row in descriptors) == 54
+    assert len(descriptors) == expected
+    assert expected == int(manifest["arms"]["primary_circuit_count"])
+    assert len({row["circuit_id"] for row in descriptors}) == expected
+    assert sum(row["arm"] == "dynamic" for row in descriptors) == 37 * settings
+    assert sum(row["arm"] == "sector_basis"
+               for row in descriptors) == 10 * settings
+    assert sum(row["arm"] == "control" for row in descriptors) == 2 * settings
+    # A2.5: exactly one leakage-witness circuit per prepared state
+    assert sum(row["purpose"] == "leakage_witness"
+               for row in descriptors) == 49
 
     pub_to_canonical, canonical_to_pub = submission_permutation(
         descriptors, manifest["seeds"]["circuit_shuffle_seed"]
     )
     by_index = {row["canonical_index"]: row for row in descriptors}
     assert all(by_index[index]["control_occurrence"] == "early"
-               for index in pub_to_canonical[:27])
+               for index in pub_to_canonical[:settings])
     assert all(by_index[index]["control_occurrence"] == "late"
-               for index in pub_to_canonical[-27:])
+               for index in pub_to_canonical[-settings:])
     assert all(canonical_to_pub[canonical] == pub
                for pub, canonical in enumerate(pub_to_canonical))
 
