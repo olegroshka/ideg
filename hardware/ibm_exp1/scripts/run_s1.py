@@ -508,21 +508,23 @@ def run_battery(cache_path: Path, out_dir: Path, n_experiments: int,
                          "[c]; one Multinomial(384, p_hat) draw of size "
                          "(B, 2) per circuit",
         },
+        "amendment": "AR-023a Amendment 2 (A2.1-A2.8)",
         "clause_operationalization": {
-            "floor": "per pass max(split, duplicate); split = max over "
-                     "moving/comparator arms of ||A_h1 - A_h2||_F / "
-                     "||Dbar_full||_F; duplicate = ||Phi_early - "
-                     "Phi_late||_F / ||Dbar_full||_F",
-            "eps_floor_experiment": "max(median_boot split, median_boot "
-                                    "duplicate)",
-            "clause_3": "S1 ideal preparation: exact one-excitation "
-                        "survival is 1 by construction; sampled subset "
-                        "witness recorded as diagnostic",
+            "floor": "A2.1 endpoint-level: split = |eps(h1) - eps(h2)|; "
+                     "duplicate = |eps(early ctrl) - eps(late ctrl)| with "
+                     "the control RDMs substituted into sigma*; "
+                     "floor = max(split, duplicate)",
+            "eps_floor_experiment": "A2.2: max(bootstrap median of split, "
+                                    "duplicate as a single realisation - a "
+                                    "systematic is never bootstrapped)",
+            "clause_3": "A2.5: one-excitation survival from the all-Z "
+                        "witness row (min >= 0.70 not red)",
             "clause_4": "ideal-backend M3 calibration is exactly the "
                         "identity, raw == M3",
-            "clause_5": "A1.3: LOTO+LOPO |Delta_v - Delta_main| <= "
-                        "0.25*|median Delta_boot|, no sign flip, and "
-                        "projection shift < 0.02",
+            "clause_5": "A2.3+A2.4: per-RDM max ||rho_proj-rho_raw||_F "
+                        "< 0.05, no sign flip, and LOTO+LOPO EXCESS over "
+                        "the exact-metric excursion <= 0.25*|median "
+                        "Delta_boot|",
         },
         "inputs": {
             "bundle_qpy_sha256": manifest["bundle"]["qpy_sha256"],
@@ -541,10 +543,16 @@ def run_battery(cache_path: Path, out_dir: Path, n_experiments: int,
             "success_count": successes,
             "delta_boot_median_median": float(np.median(
                 [x["delta_boot_median"] for x in results])),
-            "projection_shift_max": float(max(
-                x["projection_shift"] for x in results)),
             "proj_fro_max": float(max(
                 x["proj_fro_max_main"] for x in results)),
+            "floor_split_median": float(np.median(
+                [x["floor_split_boot_median"] for x in results])),
+            "floor_duplicate_median": float(np.median(
+                [x["floor_duplicate_main"] for x in results])),
+            "leakage_survival_min": float(min(
+                x["leakage_survival_min"] for x in results)),
+            "dominance_excess_max": float(max(
+                x["loto_lopo_excess_max"] for x in results)),
         },
         "gates": gates,
         "experiments": results,

@@ -1,0 +1,40 @@
+{
+ "abs_eps_minus_ref": 0.013773557951644949,
+ "clause_5a_tolerance": 0.0506731324840277,
+ "clauses": {
+  "1_delta_ci_above_zero": true,
+  "2_eps_ge_2floor": true,
+  "3_leakage_not_red": true,
+  "4_raw_m3_direction": true,
+  "5_no_dominance": true
+ },
+ "delta_boot_median": 0.2026925299361108,
+ "delta_ci95": [
+  0.17388813253662955,
+  0.23494330406326924
+ ],
+ "delta_main": 0.20433530325804639,
+ "eps_boot_median": 0.241195595906864,
+ "eps_boot_q025": 0.21619930634698512,
+ "eps_boot_q975": 0.2732025346678126,
+ "eps_ctrl_early": 0.22519432747240845,
+ "eps_ctrl_late": 0.262542699336951,
+ "eps_floor_experiment": 0.03734837186454257,
+ "eps_half_1": 0.2390231754709571,
+ "eps_half_2": 0.24677326543780992,
+ "eps_main": 0.24168367512258895,
+ "experiment": 92,
+ "floor_duplicate_main": 0.03734837186454257,
+ "floor_main": 0.03734837186454257,
+ "floor_split_boot_median": 0.016709358062754948,
+ "floor_split_main": 0.007750089966852808,
+ "leakage_survival_median": 1.0,
+ "leakage_survival_min": 0.9999999999999999,
+ "loto_lopo_excess_max": 0.01002651734215318,
+ "loto_lopo_raw_excursion_max": 0.026182064824101764,
+ "loto_lopo_sign_flip": false,
+ "proj_fro_max_main": 0.03515891140821939,
+ "proj_fro_median_main": 0.0095881854676517,
+ "rule": "AR-023a Amendment 2",
+ "success_rule": true
+}

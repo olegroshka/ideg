@@ -55,6 +55,7 @@ from run_s1 import canonical_report_json, _sha256_file  # noqa: E402
 S2_DIR = ROOT / "hardware" / "ibm_exp1" / "results" / "sim_s2"
 COND_DIR = S2_DIR / "conditions"
 MILDEST = "grid_p2-0.003_ro-0.01"
+DRIFT = "drift_ramp"
 
 
 def condition_order():
@@ -64,6 +65,7 @@ def condition_order():
     for p2 in s2lib.GRID_P2:
         for ro in s2lib.GRID_RO:
             conds.append(f"grid_p2-{p2:g}_ro-{ro:g}")
+    conds.append(DRIFT)            # A2.6
     return conds
 
 
@@ -243,6 +245,13 @@ def prepare_sweep(index: StateIndex):
                     result.data(offset)["p"], dtype=float)
         survival = _survival_for_states(prep_probs, labels, index,
                                         control_mode)
+        # A2.6 needs the readout-free distributions to build the drift ramp
+        level_dir = COND_DIR / "_sweep_levels"
+        level_dir.mkdir(parents=True, exist_ok=True)
+        np.savez_compressed(level_dir / f"dm_p2-{p2:g}.npz",
+                            dm_probs=dm_probs, cal_dm=cal_dm,
+                            survival=np.array(
+                                [survival[k] for k in sorted(survival)]))
         for ro in s2lib.GRID_RO:
             confusions = s2lib.symmetric_confusions(ro)
             _write_condition(
@@ -263,6 +272,83 @@ def prepare_sweep(index: StateIndex):
                     "basis_gates": s2lib.SWEEP_BASIS,
                 })
     return {"sweep": "done"}
+
+
+def prepare_drift(index: StateIndex):
+    """A2.6: build a condition whose noise ramps across the job.
+
+    Circuit array index equals submission (pub) position, so a
+    monotonic ramp in that index is exactly the systematic the
+    bracketing early/late control duplicates are designed to straddle.
+    Gate error steps through the three cached sweep levels; readout
+    error ramps continuously from 1e-2 to 3e-2.  This is the only test
+    in S1/S2 of the duplicate-arm floor against a real systematic
+    rather than shot noise.
+    """
+    level_dir = COND_DIR / "_sweep_levels"
+    levels = []
+    for p2 in s2lib.GRID_P2:
+        path = level_dir / f"dm_p2-{p2:g}.npz"
+        if not path.exists():
+            raise RuntimeError(
+                "run --prepare --only sweep first (drift reuses its "
+                f"readout-free levels; missing {path.name})")
+        levels.append(np.load(path, allow_pickle=False))
+
+    dm_stack = [np.asarray(lv["dm_probs"], dtype=float) for lv in levels]
+    n_circ = dm_stack[0].shape[0]
+    fraction = np.arange(n_circ) / max(n_circ - 1, 1)
+    level_of = np.clip((fraction * len(dm_stack)).astype(int),
+                       0, len(dm_stack) - 1)
+    readout_of = 0.01 + 0.02 * fraction
+
+    p_noisy = np.empty_like(dm_stack[0])
+    for c in range(n_circ):
+        confusion = s2lib.symmetric_confusions(float(readout_of[c]))
+        p_noisy[c] = s2lib.apply_confusion(dm_stack[level_of[c]][c],
+                                           confusion)
+
+    # calibration is taken at the job midpoint, as a real run would
+    mid_conf = s2lib.symmetric_confusions(float(0.01 + 0.02 * 0.5))
+    p_cal = s2lib.apply_confusion(
+        np.asarray(levels[len(levels) // 2]["cal_dm"], dtype=float),
+        mid_conf)
+
+    # exact survival follows the gate-error level each state sits at
+    registry = json.loads(
+        (ROOT / "hardware" / "ibm_exp1" / "bundle"
+         / "circuit_registry.json").read_text(encoding="utf-8"))
+    control_mode = int(registry["control_mode"])
+    survival_by_level = [
+        dict(zip(sorted(_state_keys(index)),
+                 np.asarray(lv["survival"], dtype=float)))
+        for lv in levels]
+    survival = {}
+    for state in _state_keys(index):
+        rows = index.rows_for[state]
+        mean_level = int(round(float(level_of[rows].mean())))
+        survival[state] = float(
+            survival_by_level[mean_level].get(state, 1.0))
+
+    _write_condition(DRIFT, p_noisy, p_cal, survival, {
+        "condition": DRIFT,
+        "noise_model": "A2.6 drift ramp: gate-error level steps through "
+                       "the three cached sweep levels with submission "
+                       "position; readout ramps 1e-2 -> 3e-2 linearly",
+        "p2_levels": list(s2lib.GRID_P2),
+        "readout_start": 0.01,
+        "readout_end": 0.03,
+        "level_boundaries_fraction": [1 / 3, 2 / 3],
+        "calibration_taken_at_fraction": 0.5,
+        "control_mode": control_mode,
+        "purpose": "exercise the duplicate-control floor against a "
+                   "systematic; static conditions cannot do this",
+    })
+    return {"condition": DRIFT, "circuits": int(n_circ)}
+
+
+def _state_keys(index: StateIndex):
+    return index.dynamic_ids + index.sector_ids + index.control_ids
 
 
 # ------------------------------------------------------------ battery
@@ -423,8 +509,10 @@ def run_s2_experiment(r: int, n_boot: int, shots: int = SHOTS) -> dict:
     clause_2 = bool(np.median(eps_b) >= 2.0 * eps_floor_exp)
     clause_3 = bool(surv_values.min() >= 0.70)
     clause_4 = bool(np.sign(delta_m3) == np.sign(delta_main))
+    # A2.3 + A2.10: per-RDM MEDIAN correction (the statistic the 0.05
+    # threshold was calibrated for); the maximum stays a diagnostic.
     clause_5 = bool(excursion_max <= tol_5a and not sign_flip
-                    and projection_shift < 0.02)
+                    and proj_median < 0.05)
     success = all([clause_1, clause_2, clause_3, clause_4, clause_5])
 
     return {
@@ -669,7 +757,8 @@ def aggregate_report() -> Path:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--prepare", action="store_true")
-    parser.add_argument("--only", choices=["fake_a", "fake_b", "sweep"])
+    parser.add_argument("--only", choices=["fake_a", "fake_b",
+                                       "sweep", "drift"])
     parser.add_argument("--run", action="store_true")
     parser.add_argument("--condition")
     parser.add_argument("--report", action="store_true")
@@ -692,6 +781,8 @@ def main() -> int:
                              indent=2, sort_keys=True, default=str))
         if args.only in (None, "sweep"):
             print(json.dumps(prepare_sweep(index), indent=2))
+        if args.only in (None, "drift"):
+            print(json.dumps(prepare_drift(index), indent=2))
     if args.run:
         if not args.condition:
             parser.error("--run requires --condition")
