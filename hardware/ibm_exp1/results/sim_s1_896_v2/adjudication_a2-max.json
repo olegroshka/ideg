@@ -1,0 +1,1141 @@
+{
+ "battery": "sim_s1_896_v2",
+ "clause_pass_counts": {
+  "1_delta_ci_above_zero": 100,
+  "2_eps_ge_2floor": 100,
+  "3_leakage_not_red": 100,
+  "4_raw_m3_direction": 100,
+  "5_no_dominance": 100
+ },
+ "eps_median": 0.2333426297042681,
+ "eps_reference": 0.227910117170944,
+ "experiments": [
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 0,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 1,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 2,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 3,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 4,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 5,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 6,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 7,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 8,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 9,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 10,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 11,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 12,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 13,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 14,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 15,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 16,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 17,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 18,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 19,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 20,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 21,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 22,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 23,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 24,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 25,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 26,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 27,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 28,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 29,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 30,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 31,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 32,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 33,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 34,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 35,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 36,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 37,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 38,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 39,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 40,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 41,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 42,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 43,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 44,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 45,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 46,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 47,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 48,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 49,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 50,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 51,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 52,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 53,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 54,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 55,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 56,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 57,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 58,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 59,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 60,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 61,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 62,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 63,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 64,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 65,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 66,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 67,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 68,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 69,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 70,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 71,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 72,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 73,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 74,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 75,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 76,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 77,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 78,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 79,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 80,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 81,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 82,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 83,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 84,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 85,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 86,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 87,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 88,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 89,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 90,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 91,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 92,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 93,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 94,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 95,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 96,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 97,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 98,
+   "success_rule": true
+  },
+  {
+   "clauses": {
+    "1_delta_ci_above_zero": true,
+    "2_eps_ge_2floor": true,
+    "3_leakage_not_red": true,
+    "4_raw_m3_direction": true,
+    "5_no_dominance": true
+   },
+   "experiment": 99,
+   "success_rule": true
+  }
+ ],
+ "floor_median": 0.01657514545816359,
+ "gates": {
+  "S1-G1": {
+   "measured": 0.0054325125333241076,
+   "pass": true,
+   "threshold": 0.02
+  },
+  "S1-G2": {
+   "measured": 100,
+   "pass": true,
+   "threshold": 95
+  },
+  "S1-G3": {
+   "measured": 0.01657514545816359,
+   "pass": true,
+   "threshold": 0.05
+  }
+ },
+ "n_experiments": 100,
+ "projection_diagnostics": {
+  "max_statistic_margin_to_threshold": 0.004338919458783876,
+  "max_statistic_worst": 0.04566108054121613,
+  "median_statistic_headroom_factor": 5.460936079978863,
+  "median_statistic_worst": 0.009155939433774426
+ },
+ "schema_version": 1,
+ "variant": "a2-max"
+}
