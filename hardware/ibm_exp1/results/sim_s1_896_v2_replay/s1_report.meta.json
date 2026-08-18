@@ -1,0 +1,11 @@
+{
+  "environment": {
+    "numpy": "2.4.6",
+    "python": "3.11.14",
+    "qiskit": "2.5.2",
+    "scipy": "1.17.1"
+  },
+  "note": "timestamps and machine-specific data live here so the report itself is byte-deterministic (A1.7)",
+  "report_sha256": "fe01c729b52f177bc9d54befea3e180efb14cdb3969180c25e44d0503263d1d1",
+  "workers": 3
+}

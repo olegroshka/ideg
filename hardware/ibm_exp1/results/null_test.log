@@ -1,0 +1,45 @@
+null exp 0: eps=0.0185 floor=0.0185 CI_low=-0.0045 fires=False
+null exp 1: eps=0.0203 floor=0.0185 CI_low=-0.0039 fires=False
+null exp 2: eps=0.0186 floor=0.0186 CI_low=-0.0036 fires=False
+null exp 3: eps=0.0183 floor=0.0183 CI_low=-0.0033 fires=False
+null exp 4: eps=0.0150 floor=0.0182 CI_low=-0.0039 fires=False
+null exp 5: eps=0.0248 floor=0.0187 CI_low=-0.0039 fires=False
+null exp 6: eps=0.0222 floor=0.0187 CI_low=-0.0041 fires=False
+null exp 7: eps=0.0177 floor=0.0184 CI_low=-0.0036 fires=False
+null exp 8: eps=0.0237 floor=0.0185 CI_low=-0.0038 fires=False
+null exp 9: eps=0.0167 floor=0.0185 CI_low=-0.0035 fires=False
+null exp 10: eps=0.0185 floor=0.0185 CI_low=-0.0033 fires=False
+null exp 11: eps=0.0180 floor=0.0186 CI_low=-0.0042 fires=False
+null exp 12: eps=0.0190 floor=0.0184 CI_low=-0.0032 fires=False
+null exp 13: eps=0.0218 floor=0.0185 CI_low=-0.0038 fires=False
+null exp 14: eps=0.0170 floor=0.0186 CI_low=-0.0040 fires=False
+null exp 15: eps=0.0241 floor=0.0184 CI_low=-0.0036 fires=False
+null exp 16: eps=0.0259 floor=0.0186 CI_low=-0.0042 fires=False
+null exp 17: eps=0.0167 floor=0.0187 CI_low=-0.0042 fires=False
+null exp 18: eps=0.0193 floor=0.0184 CI_low=-0.0038 fires=False
+null exp 19: eps=0.0222 floor=0.0184 CI_low=-0.0038 fires=False
+null exp 20: eps=0.0189 floor=0.0184 CI_low=-0.0038 fires=False
+null exp 21: eps=0.0231 floor=0.0186 CI_low=-0.0031 fires=False
+null exp 22: eps=0.0232 floor=0.0183 CI_low=-0.0039 fires=False
+null exp 23: eps=0.0219 floor=0.0185 CI_low=-0.0038 fires=False
+null exp 24: eps=0.0202 floor=0.0185 CI_low=-0.0037 fires=False
+null exp 25: eps=0.0184 floor=0.0182 CI_low=-0.0030 fires=False
+null exp 26: eps=0.0207 floor=0.0184 CI_low=-0.0035 fires=False
+null exp 27: eps=0.0206 floor=0.0185 CI_low=-0.0034 fires=False
+null exp 28: eps=0.0217 floor=0.0185 CI_low=-0.0033 fires=False
+null exp 29: eps=0.0232 floor=0.0186 CI_low=-0.0036 fires=False
+null exp 30: eps=0.0213 floor=0.0184 CI_low=-0.0038 fires=False
+null exp 31: eps=0.0187 floor=0.0184 CI_low=-0.0032 fires=False
+null exp 32: eps=0.0193 floor=0.0188 CI_low=-0.0039 fires=False
+null exp 33: eps=0.0190 floor=0.0185 CI_low=-0.0034 fires=False
+null exp 34: eps=0.0192 floor=0.0190 CI_low=-0.0035 fires=False
+null exp 35: eps=0.0169 floor=0.0184 CI_low=-0.0043 fires=False
+null exp 36: eps=0.0199 floor=0.0186 CI_low=-0.0035 fires=False
+null exp 37: eps=0.0191 floor=0.0183 CI_low=-0.0035 fires=False
+null exp 38: eps=0.0234 floor=0.0183 CI_low=-0.0039 fires=False
+null exp 39: eps=0.0196 floor=0.0182 CI_low=-0.0037 fires=False
+{
+  "eps_null_median": 0.019457350127151534,
+  "separation_declared_count": 0,
+  "verdict": "PASS - rule does not declare separation on the null"
+}

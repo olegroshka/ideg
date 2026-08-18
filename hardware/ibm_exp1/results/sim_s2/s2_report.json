@@ -1,0 +1,293 @@
+{
+ "conditions_expected": [
+  "fake_fake_aachen",
+  "fake_fake_boston",
+  "grid_p2-0.003_ro-0.01",
+  "grid_p2-0.003_ro-0.02",
+  "grid_p2-0.003_ro-0.03",
+  "grid_p2-0.006_ro-0.01",
+  "grid_p2-0.006_ro-0.02",
+  "grid_p2-0.006_ro-0.03",
+  "grid_p2-0.01_ro-0.01",
+  "grid_p2-0.01_ro-0.02",
+  "grid_p2-0.01_ro-0.03",
+  "drift_ramp"
+ ],
+ "conditions_missing": [],
+ "envelope": [
+  {
+   "condition": "fake_fake_aachen",
+   "delta_median": 0.19983080573043482,
+   "eps_m3_median": 0.23187629048197345,
+   "eps_main_median": 0.22797625296765084,
+   "floor_median": 0.01871278160388605,
+   "leakage_corrected_median": 0.9617147317764079,
+   "leakage_raw_median": 0.87890625,
+   "success_count": 100,
+   "survival_exact_median": 0.9703571372521155,
+   "traffic_light": "GREEN",
+   "traffic_light_raw": "AMBER"
+  },
+  {
+   "condition": "fake_fake_boston",
+   "delta_median": 0.20245292427532993,
+   "eps_m3_median": 0.2333062019936299,
+   "eps_main_median": 0.23054732083263352,
+   "floor_median": 0.017872438363837742,
+   "leakage_corrected_median": 0.9682096075482565,
+   "leakage_raw_median": 0.9062500000000001,
+   "success_count": 100,
+   "survival_exact_median": 0.9742816776976864,
+   "traffic_light": "GREEN",
+   "traffic_light_raw": "GREEN"
+  },
+  {
+   "condition": "grid_p2-0.003_ro-0.01",
+   "delta_median": 0.1933357097602798,
+   "eps_m3_median": 0.22702632763637431,
+   "eps_main_median": 0.22257152882714043,
+   "floor_median": 0.01980081191752004,
+   "leakage_corrected_median": 0.9504029307351483,
+   "leakage_raw_median": 0.8684895833333333,
+   "success_count": 100,
+   "survival_exact_median": 0.9581735843660545,
+   "traffic_light": "GREEN",
+   "traffic_light_raw": "AMBER"
+  },
+  {
+   "condition": "grid_p2-0.003_ro-0.02",
+   "delta_median": 0.19056796073757254,
+   "eps_m3_median": 0.22521802414959918,
+   "eps_main_median": 0.21494836225111585,
+   "floor_median": 0.01869747362859929,
+   "leakage_corrected_median": 0.9451464606971178,
+   "leakage_raw_median": 0.7877604166666667,
+   "success_count": 100,
+   "survival_exact_median": 0.9581735843660545,
+   "traffic_light": "GREEN",
+   "traffic_light_raw": "RED"
+  },
+  {
+   "condition": "grid_p2-0.003_ro-0.03",
+   "delta_median": 0.18638926088345287,
+   "eps_m3_median": 0.22852782153715098,
+   "eps_main_median": 0.21357274749117194,
+   "floor_median": 0.018195638081132566,
+   "leakage_corrected_median": 0.9384667679328748,
+   "leakage_raw_median": 0.7161458333333334,
+   "success_count": 100,
+   "survival_exact_median": 0.9581735843660545,
+   "traffic_light": "GREEN",
+   "traffic_light_raw": "RED"
+  },
+  {
+   "condition": "grid_p2-0.006_ro-0.01",
+   "delta_median": 0.18772077297142684,
+   "eps_m3_median": 0.2196422241019318,
+   "eps_main_median": 0.21473240229154905,
+   "floor_median": 0.018535537292599324,
+   "leakage_corrected_median": 0.9117903668780882,
+   "leakage_raw_median": 0.8333333333333333,
+   "success_count": 100,
+   "survival_exact_median": 0.9186728142305889,
+   "traffic_light": "GREEN",
+   "traffic_light_raw": "AMBER"
+  },
+  {
+   "condition": "grid_p2-0.006_ro-0.02",
+   "delta_median": 0.18548612607916692,
+   "eps_m3_median": 0.22175293493161843,
+   "eps_main_median": 0.21070363521305702,
+   "floor_median": 0.01846958780782882,
+   "leakage_corrected_median": 0.9103760947525703,
+   "leakage_raw_median": 0.7578125,
+   "success_count": 100,
+   "survival_exact_median": 0.9186728142305889,
+   "traffic_light": "GREEN",
+   "traffic_light_raw": "RED"
+  },
+  {
+   "condition": "grid_p2-0.006_ro-0.03",
+   "delta_median": 0.18030956751578936,
+   "eps_m3_median": 0.22279955048759337,
+   "eps_main_median": 0.20715719217714873,
+   "floor_median": 0.01820169566161932,
+   "leakage_corrected_median": 0.9048813258865334,
+   "leakage_raw_median": 0.6888020833333334,
+   "success_count": 100,
+   "survival_exact_median": 0.9186728142305889,
+   "traffic_light": "GREEN",
+   "traffic_light_raw": "RED"
+  },
+  {
+   "condition": "grid_p2-0.01_ro-0.01",
+   "delta_median": 0.18149345869430805,
+   "eps_m3_median": 0.21228331780804818,
+   "eps_main_median": 0.20971580672037157,
+   "floor_median": 0.01853468092145545,
+   "leakage_corrected_median": 0.8647083455389266,
+   "leakage_raw_median": 0.7890625,
+   "success_count": 100,
+   "survival_exact_median": 0.8693373301211793,
+   "traffic_light": "AMBER",
+   "traffic_light_raw": "RED"
+  },
+  {
+   "condition": "grid_p2-0.01_ro-0.02",
+   "delta_median": 0.17838753674461452,
+   "eps_m3_median": 0.21409805831243617,
+   "eps_main_median": 0.2048813241540436,
+   "floor_median": 0.017878582535120785,
+   "leakage_corrected_median": 0.8618435890524845,
+   "leakage_raw_median": 0.71875,
+   "success_count": 100,
+   "survival_exact_median": 0.8693373301211793,
+   "traffic_light": "AMBER",
+   "traffic_light_raw": "RED"
+  },
+  {
+   "condition": "grid_p2-0.01_ro-0.03",
+   "delta_median": 0.17242828663419751,
+   "eps_m3_median": 0.21605777246005303,
+   "eps_main_median": 0.20168055556117348,
+   "floor_median": 0.017259303505829632,
+   "leakage_corrected_median": 0.8593762142738561,
+   "leakage_raw_median": 0.65625,
+   "success_count": 100,
+   "survival_exact_median": 0.8693373301211793,
+   "traffic_light": "AMBER",
+   "traffic_light_raw": "RED"
+  },
+  {
+   "condition": "drift_ramp",
+   "delta_median": 0.1855989414004307,
+   "eps_m3_median": 0.22492179118814332,
+   "eps_main_median": 0.21411837273030498,
+   "floor_median": 0.018405478840671806,
+   "leakage_corrected_median": 0.8915856671169182,
+   "leakage_raw_median": 0.7434895833333333,
+   "success_count": 99,
+   "survival_exact_median": 0.9175693843714067,
+   "traffic_light": "AMBER",
+   "traffic_light_raw": "RED"
+  }
+ ],
+ "fake_enumeration_a14": [
+  {
+   "name": "fake_aachen",
+   "num_qubits": 156,
+   "processor_type": {
+    "family": "Heron",
+    "revision": "3"
+   }
+  },
+  {
+   "name": "fake_boston",
+   "num_qubits": 156,
+   "processor_type": {
+    "family": "Heron",
+    "revision": "3"
+   }
+  },
+  {
+   "name": "fake_fez",
+   "num_qubits": 156,
+   "processor_type": {
+    "family": "Heron",
+    "revision": "2"
+   }
+  },
+  {
+   "name": "fake_kingston",
+   "num_qubits": 156,
+   "processor_type": {
+    "family": "Heron",
+    "revision": "2"
+   }
+  },
+  {
+   "name": "fake_marrakesh",
+   "num_qubits": 156,
+   "processor_type": {
+    "family": "Heron",
+    "revision": "2"
+   }
+  },
+  {
+   "name": "fake_pittsburgh",
+   "num_qubits": 156,
+   "processor_type": {
+    "family": "Heron",
+    "revision": "3"
+   }
+  },
+  {
+   "name": "fake_torino",
+   "num_qubits": 133,
+   "processor_type": {
+    "family": "Heron",
+    "revision": "1"
+   }
+  }
+ ],
+ "fake_selection_a14": [
+  "fake_aachen",
+  "fake_boston"
+ ],
+ "gates": {
+  "S2-G1": {
+   "basis": "A2.5(c) M3-corrected measured witness",
+   "description": "leakage GREEN on both fakes and mildest grid point (median >= 0.90, min >= 0.80)",
+   "pass": true,
+   "points": {
+    "fake_fake_aachen": "GREEN",
+    "fake_fake_boston": "GREEN",
+    "grid_p2-0.003_ro-0.01": "GREEN"
+   },
+   "points_raw_for_contrast": {
+    "fake_fake_aachen": "AMBER",
+    "fake_fake_boston": "GREEN",
+    "grid_p2-0.003_ro-0.01": "AMBER"
+   }
+  },
+  "S2-G2": {
+   "description": "success rule >= 90/100 at mildest grid point and on >= 1 fake backend",
+   "fakes": {
+    "fake_fake_aachen": 100,
+    "fake_fake_boston": 100
+   },
+   "mildest": 100,
+   "pass": true
+  },
+  "S2-G3": {
+   "description": "median per-RDM PSD correction < 0.05 at the operating point (A2.3: the endpoint-shift half is retired)",
+   "pass": true,
+   "proj_fro_median": 0.001124214553380075,
+   "retired_form": {
+    "description": "pre-A2.3: also required projection-attributable endpoint shift < 0.02",
+    "note": "retired because the shift is the projection REMOVING estimator bias (+0.0059 projected vs +0.1004 unprojected); recorded for the dual record, not a gate",
+    "pass": false,
+    "projection_shift_median": 0.03885682302921106
+   },
+   "threshold": 0.05
+  },
+  "S2-G4": {
+   "agree_count": 100,
+   "description": "raw and M3 endpoints agree in direction of Delta in >= 95% of experiments at the operating point",
+   "pass": true
+  }
+ },
+ "inputs": {
+  "bundle_qpy_sha256": "8655e85fa32d7bd9bcbfd5dbb754a4ba868865b51d551faf779495009671ce6e",
+  "comparator_npz_sha256": "73b66f94e564cf6b71a4735ffb0aaa395176367f12eb341d3587834a9fd02934",
+  "manifest_sha256": "be5bbd70b0062b0269f448d75105a10fad1cca47ad4df787303a638bbc36c580"
+ },
+ "l4_requirement": {
+  "median_readout_error_max": 0.03,
+  "median_two_qubit_error_max": 0.01,
+  "statement": "L4 path-quality requirement (frozen pre-commitment): median two-qubit error on the selected path <= 0.01 and median readout error <= 0.03"
+ },
+ "operating_point": "grid_p2-0.003_ro-0.01",
+ "schema_version": 1,
+ "stage": "S2"
+}

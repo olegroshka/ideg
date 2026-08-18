@@ -1,2 +1,5 @@
 STAGE S1-768-v2 gates: {"S1-G1": true, "S1-G2": true, "S1-G3": true, "S1-G4": null} | G1=0.00542 G2=100 G3=0.01732
 STAGE S1-G4(768-v2): byte-identical=True sha=0c0e6713e76d2811
+STAGE S1-896-v2 gates: {"S1-G1": true, "S1-G2": true, "S1-G3": true, "S1-G4": null} | G1=0.00543 G2=100 G3=0.01658
+STAGE S1-G4(896-v2): byte-identical=True sha=fe01c729b52f177b
+CHAIN V2 (S1) COMPLETE

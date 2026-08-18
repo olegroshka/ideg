@@ -1,0 +1,12 @@
+STAGE1 fake_a cache present, skipping prepare
+STAGE1 fake_b cache present, skipping prepare
+STAGE1 conditions: ['fake_fake_aachen', 'fake_fake_boston', 'grid_p2-0.003_ro-0.01', 'grid_p2-0.003_ro-0.02', 'grid_p2-0.003_ro-0.03', 'grid_p2-0.006_ro-0.01', 'grid_p2-0.006_ro-0.02', 'grid_p2-0.006_ro-0.03', 'grid_p2-0.01_ro-0.01', 'grid_p2-0.01_ro-0.02', 'grid_p2-0.01_ro-0.03', 'drift_ramp']
+STAGE2 fake_fake_aachen: success=100/100 light=GREEN delta=0.1998 floor=0.0187 c1=100 c5=100
+STAGE2 fake_fake_boston: success=100/100 light=GREEN delta=0.2025 floor=0.0179 c1=100 c5=100
+STAGE2 grid_p2-0.003_ro-0.01: success=100/100 light=GREEN delta=0.1933 floor=0.0198 c1=100 c5=100
+STAGE2 grid_p2-0.003_ro-0.02: success=100/100 light=GREEN delta=0.1906 floor=0.0187 c1=100 c5=100
+STAGE2 grid_p2-0.003_ro-0.03: success=100/100 light=GREEN delta=0.1864 floor=0.0182 c1=100 c5=100
+STAGE2 grid_p2-0.006_ro-0.01: success=100/100 light=GREEN delta=0.1877 floor=0.0185 c1=100 c5=100
+STAGE2 grid_p2-0.006_ro-0.02: success=100/100 light=GREEN delta=0.1855 floor=0.0185 c1=100 c5=100
+STAGE2 grid_p2-0.006_ro-0.03: success=100/100 light=GREEN delta=0.1803 floor=0.0182 c1=100 c5=100
+FAILED battery-grid_p2-0.01_ro-0.01: rc=1 out='2-0.01_ro-0.01 experiment 54 done (55/100 this run)\ngrid_p2-0.01_ro-0.01 experiment 55 done (56/100 this run)\ngrid_p2-0.01_ro-0.01 experiment 56 done (57/100 this run)\ngrid_p2-0.01_ro-0.01 experiment 57 done (58/100 this run)\ngrid_p2-0.01_ro-0.01 experiment 58 done (59/100 this run)\ngrid_p2-0.01_ro-0.01 experiment 59 done (60/100 this run)\ngrid_p2-0.01_ro-0.01 experiment 60 done (61/100 this run)\n' err='esult\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File "C:\\Users\\olegr\\Documents\\Codex\\2026-08-16\\hey\\work\\uv-python\\cpython-3.11.14-windows-x86_64-none\\Lib\\concurrent\\futures\\_base.py", line 401, in __get_result\n    raise self._exception\nconcurrent.futures.process.BrokenProcessPool: A process in the process pool was terminated abruptly while the future was running or pending.\n'

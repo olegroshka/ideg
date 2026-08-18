@@ -776,7 +776,12 @@ def aggregate_report() -> Path:
     op = batteries.get(MILDEST)
     g3_median = op["proj_fro_median_of_medians"] if op else None
     g3_shift = op["projection_shift_median"] if op else None
-    g3_pass = (op is not None and g3_median < 0.05 and g3_shift < 0.02)
+    # A2.3: the endpoint-shift half of S2-G3 is RETIRED (it penalised
+    # the projection for removing bias).  S2-G3 keeps its per-RDM half.
+    # The retired form is still computed and reported for the dual record.
+    g3_pass = (op is not None and g3_median < 0.05)
+    g3_pass_retired_form = (op is not None and g3_median < 0.05
+                            and g3_shift < 0.02)
     g4_agree = op["raw_m3_direction_agree"] if op else None
     g4_pass = (op is not None
                and g4_agree >= 0.95 * op["n_experiments"])
@@ -849,12 +854,23 @@ def aggregate_report() -> Path:
                 "pass": bool(g2_pass),
             },
             "S2-G3": {
-                "description": "median per-RDM PSD correction < 0.05 AND "
-                               "projection-attributable endpoint shift "
-                               "< 0.02 at the operating point",
+                "description": "median per-RDM PSD correction < 0.05 at "
+                               "the operating point (A2.3: the "
+                               "endpoint-shift half is retired)",
                 "proj_fro_median": g3_median,
-                "projection_shift_median": g3_shift,
+                "threshold": 0.05,
                 "pass": bool(g3_pass),
+                "retired_form": {
+                    "description": "pre-A2.3: also required "
+                                   "projection-attributable endpoint "
+                                   "shift < 0.02",
+                    "projection_shift_median": g3_shift,
+                    "pass": bool(g3_pass_retired_form),
+                    "note": "retired because the shift is the projection "
+                            "REMOVING estimator bias (+0.0059 projected "
+                            "vs +0.1004 unprojected); recorded for the "
+                            "dual record, not a gate",
+                },
             },
             "S2-G4": {
                 "description": "raw and M3 endpoints agree in direction "

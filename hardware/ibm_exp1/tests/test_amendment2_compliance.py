@@ -93,3 +93,16 @@ def test_leakage_witness_row_is_excluded_from_reconstruction():
         assert "reconstruction_basis_rows(" in source(runner), (
             f"{runner} builds aggregation weights without excluding the "
             "all-Z witness row (A2.5b)")
+
+
+def test_s2_g3_endpoint_shift_half_is_retired():
+    """A2.3: S2-G3 keeps only its per-RDM half; the shift is not a gate."""
+    text = source("run_s2.py")
+    assert "g3_pass = (op is not None and g3_median < 0.05)" in text, (
+        "S2-G3 must gate the per-RDM correction alone (A2.3)")
+    assert "retired_form" in text, (
+        "the retired endpoint-shift form must still be reported for the "
+        "dual record")
+    assert "g3_shift < 0.02)" not in text.replace(
+        "and g3_shift < 0.02)", ""), (
+        "the retired endpoint-shift criterion is still gating S2-G3")

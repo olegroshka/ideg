@@ -1,0 +1,43 @@
+{
+ "clause_5a_tolerance": 0.04357404347631728,
+ "clauses": {
+  "1_delta_ci_above_zero": true,
+  "2_eps_ge_2floor": true,
+  "3_leakage_not_red": true,
+  "4_raw_m3_direction": true,
+  "5_no_dominance": true
+ },
+ "delta_boot_median": 0.1742961739052691,
+ "delta_ci95": [
+  0.13406203492772992,
+  0.20797087910611395
+ ],
+ "delta_m3_main": 0.20072164292568165,
+ "delta_main": 0.17635995794442136,
+ "eps_boot_median": 0.1922810829066995,
+ "eps_ctrl_early": 0.1896338604960245,
+ "eps_ctrl_late": 0.19582109551997257,
+ "eps_floor_experiment": 0.015273276654719864,
+ "eps_half_1": 0.18655282827616373,
+ "eps_half_2": 0.2020207306283369,
+ "eps_m3_main": 0.21835411763023302,
+ "eps_m3_minus_raw": 0.026526257333638503,
+ "eps_main": 0.19182786029659452,
+ "experiment": 35,
+ "floor_duplicate_main": 0.006187235023948079,
+ "floor_m3_main": 0.01763247470455137,
+ "floor_main": 0.015467902352173157,
+ "floor_split_boot_median": 0.015273276654719864,
+ "floor_split_main": 0.015467902352173157,
+ "leakage_survival_corrected_median": 0.8584009753831008,
+ "leakage_survival_corrected_min": 0.7812008184242857,
+ "leakage_survival_raw_median": 0.6575520833333334,
+ "leakage_survival_raw_min": 0.6093749999999999,
+ "leakage_witness_min_main": 0.7981770833333334,
+ "loto_lopo_excursion_max": 0.016478749196400327,
+ "loto_lopo_sign_flip": false,
+ "proj_fro_max_main": 0.010069316923504776,
+ "proj_fro_median_main": 3.3758529053152347e-16,
+ "projection_shift": 0.008120746148370273,
+ "success_rule": true
+}
