@@ -370,7 +370,11 @@ def _init_worker_s2(cond: str, cond_index: int):
     cache = np.load(COND_DIR / cond / "cache.npz", allow_pickle=False)
     provenance = json.loads(
         (COND_DIR / cond / "provenance.json").read_text(encoding="utf-8"))
+    registry_json = json.loads(
+        (ROOT / "hardware" / "ibm_exp1" / "bundle"
+         / "circuit_registry.json").read_text(encoding="utf-8"))
     _G2.update(
+        control_mode=int(registry_json["control_mode"]),
         manifest=manifest, index=index, w1=w1, w2=w2, z_exc=z_exc,
         p_star=np.asarray(comparator["p_star"], dtype=float),
         probs=np.asarray(cache["p_noisy"], dtype=float),
@@ -407,8 +411,36 @@ def run_s2_experiment(r: int, n_boot: int, shots: int = SHOTS) -> dict:
 
     main = analyze_pass(main_counts, index, p_star, w1, w2, z_exc,
                         project=True, keep_per_time=True)
-    floors_main = floors_from_slots(main)
     eps_main = float(main["eps"][0])
+
+    # ---- A2.1 endpoint-level floor (identical construction to S1)
+    def rdm_stack(state_ids, source):
+        out = []
+        for state_id in state_ids:
+            counts = source[index.rows_for[state_id]].astype(float)
+            raw = pair_rdms_from_counts(counts, w1, w2)
+            used, _ = hermitize_project_batch(raw, True)
+            out.append(used)
+        return np.stack(out)
+
+    dyn_f = rdm_stack(index.dynamic_ids, main_full)
+    sec_f = rdm_stack(index.sector_ids, main_full)
+    ctl_f = rdm_stack(index.control_ids, main_full)
+    eps_halves = []
+    for h in range(2):
+        arm = main_halves[:, h]
+        eps_halves.append(sampling.endpoint_from_stacks(
+            rdm_stack(index.dynamic_ids, arm),
+            rdm_stack(index.sector_ids, arm), p_star)[0])
+    eps_ctrl = []
+    for c in range(2):
+        sec_alt = sec_f.copy()
+        sec_alt[int(_G2["control_mode"])] = ctl_f[c]
+        eps_ctrl.append(sampling.endpoint_from_stacks(
+            dyn_f, sec_alt, p_star)[0])
+    floors_main = sampling.endpoint_floor(
+        eps_halves[0], eps_halves[1], eps_ctrl[0], eps_ctrl[1])
+    duplicate = floors_main["duplicate"]   # systematic: never bootstrapped
 
     unproj = analyze_pass(main_counts, index, p_star, w1, w2, z_exc,
                           project=False, keep_per_time=False,
@@ -443,8 +475,25 @@ def run_s2_experiment(r: int, n_boot: int, shots: int = SHOTS) -> dict:
     m3 = analyze_pass(m3_counts, index, p_star, w1, w2, z_exc,
                       project=True, keep_per_time=False,
                       track_leakage=False)
-    floors_m3 = floors_from_slots(m3)
     eps_m3 = float(m3["eps"][0])
+    m3_full = s2lib.apply_confusion(main_full.astype(float), inverses)
+    m3_h = [s2lib.apply_confusion(main_halves[:, h].astype(float), inverses)
+            for h in range(2)]
+    eps_m3_halves = [sampling.endpoint_from_stacks(
+        rdm_stack(index.dynamic_ids, arm),
+        rdm_stack(index.sector_ids, arm), p_star)[0] for arm in m3_h]
+    sec_m3 = rdm_stack(index.sector_ids, m3_full)
+    dyn_m3 = rdm_stack(index.dynamic_ids, m3_full)
+    ctl_m3 = rdm_stack(index.control_ids, m3_full)
+    eps_m3_ctrl = []
+    for c in range(2):
+        alt = sec_m3.copy()
+        alt[int(_G2["control_mode"])] = ctl_m3[c]
+        eps_m3_ctrl.append(sampling.endpoint_from_stacks(
+            dyn_m3, alt, p_star)[0])
+    floors_m3 = sampling.endpoint_floor(
+        eps_m3_halves[0], eps_m3_halves[1],
+        eps_m3_ctrl[0], eps_m3_ctrl[1])
     delta_m3 = eps_m3 - float(floors_m3["floor"])
 
     # ---- bootstrap (raw branch)
@@ -466,13 +515,12 @@ def run_s2_experiment(r: int, n_boot: int, shots: int = SHOTS) -> dict:
     boot = analyze_pass(boot_counts, index, p_star, w1, w2, z_exc,
                         project=True, keep_per_time=False,
                         track_leakage=False)
-    floors_boot = floors_from_slots(boot)
     eps_b = boot["eps"][:, 0]
-    floor_b = floors_boot["floor"]
+    split_b = np.abs(boot["eps"][:, 1] - boot["eps"][:, 2])
+    floor_b = np.maximum(split_b, duplicate)
     delta_b = eps_b - floor_b
-
-    eps_floor_exp = float(max(np.median(floors_boot["split"]),
-                              np.median(floors_boot["duplicate"])))
+    # A2.2: bootstrap the split arm; the duplicate arm is a systematic
+    eps_floor_exp = float(max(np.median(split_b), duplicate))
     delta_main = eps_main - float(floors_main["floor"])
     delta_median = float(np.median(delta_b))
     ci_low = float(np.quantile(delta_b, 0.025))
@@ -504,7 +552,24 @@ def run_s2_experiment(r: int, n_boot: int, shots: int = SHOTS) -> dict:
     sign_flip = bool(np.any(np.sign(variants) != np.sign(delta_main)))
     tol_5a = 0.25 * abs(delta_median)
 
-    surv_values = np.array([survival[k] for k in sorted(survival)])
+    # A2.5(c): the traffic light uses READOUT-CORRECTED counts; raw
+    # ten-qubit survival is scaled by ~(1-p_ro)^10 and would read AMBER
+    # (or RED at 3% readout) for a perfectly good state.
+    surv_corrected, surv_raw_measured = [], []
+    for state_id in index.dynamic_ids + index.sector_ids:
+        row = index.leak_row_for.get(state_id)
+        if row is None:
+            continue
+        raw_counts = main_full[row].astype(float)
+        surv_raw_measured.append(float(
+            sampling.survival_from_allz(raw_counts)))
+        corrected = s2lib.apply_confusion(raw_counts, inverses)
+        surv_corrected.append(float(sampling.survival_from_allz(
+            corrected, project=True)))
+    surv_values = (np.array(surv_corrected) if surv_corrected
+                   else np.array([survival[k] for k in sorted(survival)]))
+    surv_raw_measured = (np.array(surv_raw_measured)
+                         if surv_raw_measured else surv_values)
     clause_1 = bool(ci_low > 0.0)
     clause_2 = bool(np.median(eps_b) >= 2.0 * eps_floor_exp)
     clause_3 = bool(surv_values.min() >= 0.70)
@@ -526,6 +591,17 @@ def run_s2_experiment(r: int, n_boot: int, shots: int = SHOTS) -> dict:
         "proj_fro_median_main": proj_median,
         "proj_fro_max_main": proj_max,
         "floor_main": floor_main_value,
+        "floor_split_main": floors_main["split"],
+        "floor_duplicate_main": duplicate,
+        "floor_split_boot_median": float(np.median(split_b)),
+        "eps_half_1": eps_halves[0],
+        "eps_half_2": eps_halves[1],
+        "eps_ctrl_early": eps_ctrl[0],
+        "eps_ctrl_late": eps_ctrl[1],
+        "leakage_survival_corrected_min": float(surv_values.min()),
+        "leakage_survival_corrected_median": float(np.median(surv_values)),
+        "leakage_survival_raw_min": float(surv_raw_measured.min()),
+        "leakage_survival_raw_median": float(np.median(surv_raw_measured)),
         "floor_m3_main": float(floors_m3["floor"]),
         "eps_floor_experiment": eps_floor_exp,
         "delta_main": delta_main,

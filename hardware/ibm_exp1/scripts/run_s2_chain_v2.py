@@ -46,7 +46,11 @@ def main() -> int:
     s2 = str(SCRIPTS / "run_s2.py")
 
     # ---- stage 1: missing preparations
-    for only, name in (("fake_a", None), ("fake_b", None)):
+    fakes = {"fake_a": "fake_fake_aachen", "fake_b": "fake_fake_boston"}
+    for only, cond_name in fakes.items():
+        if (COND / cond_name / "cache.npz").exists():
+            log(f"STAGE1 {only} cache present, skipping prepare")
+            continue
         run([s2, "--prepare", "--only", only], f"prepare-{only}")
         log(f"STAGE1 prepared {only}")
 
