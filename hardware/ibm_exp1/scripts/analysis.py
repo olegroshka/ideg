@@ -31,6 +31,8 @@ from sampling import (N_OUT, StateIndex, analyze_pass,  # noqa: F401
                       survival_from_allz)
 import s2lib
 
+BOOTSTRAP_CHUNK = 200      # replicates per pass; bounds peak memory
+
 
 def structural_excursions(exact_mi_t: np.ndarray,
                           comparator_rdms: np.ndarray,
@@ -149,27 +151,36 @@ def evaluate_experiment(*, probs, index: StateIndex, p_star, w1, w2,
         inverses = s2lib.confusion_inverses(
             s2lib.estimate_confusions(cal_counts))
 
-    def m3_counts(state_id):
-        return s2lib.apply_confusion(main_counts(state_id), inverses)
-
-    m3_full = s2lib.apply_confusion(main_full.astype(float), inverses)
-    m3_h = [s2lib.apply_confusion(main_halves[:, h].astype(float),
-                                  inverses) for h in range(2)]
-    dyn_m3 = rdm_stack(index.dynamic_ids, m3_full)[0]
-    sec_m3 = rdm_stack(index.sector_ids, m3_full)[0]
-    ctl_m3 = rdm_stack(index.control_ids, m3_full)[0]
-    eps_m3 = endpoint_from_stacks(dyn_m3, sec_m3, p_star)[0]
-    eps_m3_halves = [endpoint_from_stacks(
-        rdm_stack(index.dynamic_ids, arm)[0],
-        rdm_stack(index.sector_ids, arm)[0], p_star)[0] for arm in m3_h]
-    eps_m3_ctrl = []
-    for c in range(2):
-        alt = sec_m3.copy()
-        alt[int(control_mode)] = ctl_m3[c]
-        eps_m3_ctrl.append(endpoint_from_stacks(dyn_m3, alt, p_star)[0])
-    floors_m3 = endpoint_floor(eps_m3_halves[0], eps_m3_halves[1],
-                               eps_m3_ctrl[0], eps_m3_ctrl[1])
-    delta_m3 = eps_m3 - float(floors_m3["floor"])
+    if cal_probs is None:
+        # Exact short-circuit, not an approximation: with identity
+        # inverses the M3 branch reproduces the raw branch bit for bit
+        # (apply_confusion with I is the identity map), so recomputing
+        # it would allocate a second full RDM stack to obtain numbers
+        # already in hand.  Same rule, same numbers, half the memory.
+        eps_m3 = eps_main
+        floors_m3 = floors
+        delta_m3 = eps_main - float(floors["floor"])
+    else:
+        m3_full = s2lib.apply_confusion(main_full.astype(float), inverses)
+        m3_h = [s2lib.apply_confusion(main_halves[:, h].astype(float),
+                                      inverses) for h in range(2)]
+        dyn_m3 = rdm_stack(index.dynamic_ids, m3_full)[0]
+        sec_m3 = rdm_stack(index.sector_ids, m3_full)[0]
+        ctl_m3 = rdm_stack(index.control_ids, m3_full)[0]
+        eps_m3 = endpoint_from_stacks(dyn_m3, sec_m3, p_star)[0]
+        eps_m3_halves = [endpoint_from_stacks(
+            rdm_stack(index.dynamic_ids, arm)[0],
+            rdm_stack(index.sector_ids, arm)[0], p_star)[0]
+            for arm in m3_h]
+        eps_m3_ctrl = []
+        for c in range(2):
+            alt = sec_m3.copy()
+            alt[int(control_mode)] = ctl_m3[c]
+            eps_m3_ctrl.append(
+                endpoint_from_stacks(dyn_m3, alt, p_star)[0])
+        floors_m3 = endpoint_floor(eps_m3_halves[0], eps_m3_halves[1],
+                                   eps_m3_ctrl[0], eps_m3_ctrl[1])
+        delta_m3 = eps_m3 - float(floors_m3["floor"])
 
     # ---- A2.5 leakage witness, raw and corrected
     surv_raw, surv_corr = [], []
@@ -184,27 +195,45 @@ def evaluate_experiment(*, probs, index: StateIndex, p_star, w1, w2,
     surv_raw = np.asarray(surv_raw) if surv_raw else np.array([1.0])
     surv_corr = np.asarray(surv_corr) if surv_corr else np.array([1.0])
 
-    # ---- bootstrap: split arm only (A2.2)
+    # ---- bootstrap: split arm only (A2.2), chunked over replicates
+    #
+    # The replicate batch is promoted to float64 inside the pair-RDM
+    # reconstruction, so a full 1,000-replicate pass allocates ~633 MiB
+    # per battery.  Chunking bounds that without changing a single
+    # number: numpy draws multinomial variates sequentially, so repeated
+    # size=(chunk, 2) calls on one Generator reproduce the identical
+    # stream a single size=(n_boot, 2) call would have produced.
     emp = main_full.astype(float) / shots
     boot_root = np.random.SeedSequence([base, *prefix, 10 ** 6 + r])
-    children = boot_root.spawn(n_circ)
+    rngs = [np.random.default_rng(child)
+            for child in boot_root.spawn(n_circ)]
 
-    def boot_counts(state_id):
-        rows = index.rows_for[state_id]
-        out = np.empty((n_boot, 3, len(rows), N_OUT), dtype=np.uint16)
-        for slot_index, c in enumerate(rows):
-            rng = np.random.default_rng(children[c])
-            halves = rng.multinomial(half_shots, emp[c], size=(n_boot, 2))
-            out[:, 0, slot_index] = halves.sum(axis=1)
-            out[:, 1, slot_index] = halves[:, 0]
-            out[:, 2, slot_index] = halves[:, 1]
-        return out
+    eps_parts, split_parts = [], []
+    remaining = n_boot
+    while remaining > 0:
+        size = min(BOOTSTRAP_CHUNK, remaining)
 
-    boot = analyze_pass(boot_counts, index, p_star, w1, w2, z_exc,
-                        project=True, keep_per_time=False,
-                        track_leakage=False)
-    eps_b = boot["eps"][:, 0]
-    split_b = np.abs(boot["eps"][:, 1] - boot["eps"][:, 2])
+        def boot_counts(state_id, _size=size):
+            rows = index.rows_for[state_id]
+            out = np.empty((_size, 3, len(rows), N_OUT), dtype=np.uint16)
+            for slot_index, c in enumerate(rows):
+                halves = rngs[c].multinomial(half_shots, emp[c],
+                                             size=(_size, 2))
+                out[:, 0, slot_index] = halves.sum(axis=1)
+                out[:, 1, slot_index] = halves[:, 0]
+                out[:, 2, slot_index] = halves[:, 1]
+            return out
+
+        chunk = analyze_pass(boot_counts, index, p_star, w1, w2, z_exc,
+                             project=True, keep_per_time=False,
+                             track_leakage=False)
+        eps_parts.append(chunk["eps"][:, 0])
+        split_parts.append(np.abs(chunk["eps"][:, 1]
+                                  - chunk["eps"][:, 2]))
+        remaining -= size
+
+    eps_b = np.concatenate(eps_parts)
+    split_b = np.concatenate(split_parts)
     delta_b = eps_b - np.maximum(split_b, duplicate)
     eps_floor_exp = float(max(np.median(split_b), duplicate))
 

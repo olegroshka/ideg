@@ -27,7 +27,7 @@ SCRIPTS = Path(__file__).resolve().parent
 LEDGER = RESULTS / "revalidation_ledger.log"
 CACHE = RESULTS / "sim_common_v2" / "exact_probs.npz"
 BASE = "24002"
-CONCURRENT = 4        # batteries in flight
+CONCURRENT = 3        # batteries in flight (memory-bound)
 WORKERS = "2"         # pool workers per battery
 
 
