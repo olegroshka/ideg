@@ -29,7 +29,42 @@ the final choice remains blocked on backend-specific compilation.
 The comparator exporter will not write an artifact unless its recomputed
 optimum agrees with the registered AR-020e run-0 T3 miss.
 
-## S1/S2 status (2026-08-17) — L3 NOT GREEN, owner ruling required
+## Status (2026-08-18) — S1 CLOSED under Amendment 2; S2 running
+
+The owner ruled on candidates C1–C6; they are preregistered as AR-023a
+**Amendment 2** (A2.1–A2.10) and adjudicated on **fresh seed 24002**,
+never on the seeds that motivated them.  The original rule and its
+failing batteries below are preserved unaltered (dual record).
+
+Bundle rebuilt for A2.5: **28 settings / 1,372 circuits** (27
+reconstruction rows + one all-Z leakage witness, excluded from the RDM
+reconstruction so the tomography estimator is unchanged).  Byte-identical
+across two independent builds.
+
+**S1 — all four gates PASS at both shot settings:**
+
+| Gate | 768 | 896 |
+|---|---|---|
+| G1 bias | 0.00542 | 0.00543 |
+| G2 power | **100/100** | **100/100** |
+| G3 floor | 0.01732 | 0.01658 |
+| G4 determinism | byte-identical | byte-identical |
+
+**Null test PASS:** with the comparator replaced by an independent
+reconstruction of the same moving average (true separation zero), ε
+collapses to the floor (0.0185 vs 0.0184) and the rule declares no
+separation — the AR-010 failure mode tested for directly.
+
+**S2 (in progress):** both Heron fakes 100/100 with leakage GREEN
+(floor 0.018, Δ 0.20).  The readout correction is load-bearing: the
+same states read 0.932 corrected vs 0.852 raw, i.e. GREEN vs AMBER.
+
+Remaining before L4: the 3×3 noise grid, the drift-ramp arm (the only
+test of the duplicate floor against a systematic), and the aggregate
+envelope.  Then L4 must pull **IBM's own usage estimate** against
+compiled circuits rather than the rough formula used here.
+
+### Superseded first adjudication (2026-08-17), preserved
 
 The circuit bundle is **frozen** (`bundle/`, hashes in the manifest and
 verified byte-identical across four independent builds).  The exact
@@ -61,15 +96,12 @@ penalises a bias correction (projected bias +0.0059 vs unprojected
 repaired-rule counterfactual (95/100 at 768, 99/100 at 896) are in
 `ar/AR-023a_findings-2026-08-17.md`.
 
-**Do not proceed to L4 or QPU-GO until the owner rules on C1–C6.**
-Under the rule as written the pilot cannot be declared positive even
-with a flawless QPU run.  **C6 is the hardest blocker** — a missing
-measurement setting, not a threshold: the 27-row array has no all-Z row
-(max 6 of 10 sites in Z), so AR-023 §5's leakage traffic light — a
-registered kill criterion — cannot be evaluated on QPU data at all.
-The fix costs one added setting (1,372 circuits; 370.8 s at 768 shots,
-432.3 s at 896, both inside the cap) but invalidates the frozen bundle,
-which must then be rebuilt and re-simulated.
+These failures drove Amendment 2.  C6 was the hardest: the 27-row
+array had no all-Z row (max 6 of 10 sites in Z), so AR-023 §5's leakage
+traffic light — a registered kill criterion — was not computable from
+QPU data at all.  It is now fixed by the added setting above.
+
+**QPU-GO remains blocked** until S2 closes and L4 is green.
 
 Reproduce (Python-3.11 hardware environment):
 
