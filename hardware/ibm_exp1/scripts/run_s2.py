@@ -474,8 +474,12 @@ def run_condition(cond: str, n_experiments: int, n_boot: int,
             [x["eps_floor_experiment"] for x in results])),
         "proj_fro_median_of_medians": float(np.median(
             [x["proj_fro_median_main"] for x in results])),
-        "projection_shift_median": float(np.median(
-            [x["projection_shift"] for x in results])),
+        # A2.3 retired the endpoint-shift statistic; the unified
+        # implementation no longer computes it.  Its historical values
+        # live in the superseded adjudication (dual record).
+        "projection_shift_median": (
+            float(np.median([x["projection_shift"] for x in results]))
+            if "projection_shift" in results[0] else None),
         "raw_m3_direction_agree": int(sum(
             x["clauses"]["4_raw_m3_direction"] for x in results)),
         "clause_pass_counts": {
@@ -565,8 +569,9 @@ def aggregate_report() -> Path:
     # the projection for removing bias).  S2-G3 keeps its per-RDM half.
     # The retired form is still computed and reported for the dual record.
     g3_pass = (op is not None and g3_median < 0.05)
-    g3_pass_retired_form = (op is not None and g3_median < 0.05
-                            and g3_shift < 0.02)
+    g3_pass_retired_form = (
+        None if (op is None or g3_shift is None)
+        else bool(g3_median < 0.05 and g3_shift < 0.02))
     g4_agree = op["raw_m3_direction_agree"] if op else None
     g4_pass = (op is not None
                and g4_agree >= 0.95 * op["n_experiments"])
@@ -650,7 +655,7 @@ def aggregate_report() -> Path:
                                    "projection-attributable endpoint "
                                    "shift < 0.02",
                     "projection_shift_median": g3_shift,
-                    "pass": bool(g3_pass_retired_form),
+                    "pass": g3_pass_retired_form,
                     "note": "retired because the shift is the projection "
                             "REMOVING estimator bias (+0.0059 projected "
                             "vs +0.1004 unprojected); recorded for the "

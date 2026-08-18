@@ -72,7 +72,14 @@ def s2_battery(cond: str) -> str:
 
 
 def main() -> int:
-    # clear prior results so nothing pre-refactor survives in the record
+    # Clear prior results ONCE, so nothing pre-refactor survives in the
+    # record.  Guarded by a marker: re-running this driver to resume
+    # after a failure must NOT destroy batteries already completed
+    # under the unified implementation.
+    marker = RESULTS / ".unified_revalidation_cleared"
+    if marker.exists():
+        log("clear step already done; resuming without deleting")
+        return _run_jobs()
     stale = []
     for shots in ("768", "896"):
         for suffix in ("", "_replay"):
@@ -89,8 +96,12 @@ def main() -> int:
                 report.unlink()
             for old in (cond_dir / "experiments").glob("*.json"):
                 old.unlink()
+    marker.write_text("cleared pre-refactor batteries\n", encoding="utf-8")
     log("cleared pre-refactor batteries")
+    return _run_jobs()
 
+
+def _run_jobs() -> int:
     jobs = []
     for shots in ("768", "896"):
         jobs.append(("s1", shots, RESULTS / f"sim_s1_{shots}_v2"))
