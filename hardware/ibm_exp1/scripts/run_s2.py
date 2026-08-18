@@ -43,6 +43,7 @@ SCRIPTS = Path(__file__).resolve().parent
 if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
+import analysis  # noqa: E402
 import sampling  # noqa: E402
 from sampling import (N_OUT, SHOTS, StateIndex,  # noqa: E402
                       aggregation_weights, analyze_pass,
@@ -383,244 +384,28 @@ def _init_worker_s2(cond: str, cond_index: int):
         eps_ref=float(manifest["s1_reference"]["eps_sector_37"]),
         base=int(manifest["seeds"]["noisy_sampler_seed"]),
         cond=cond, cond_index=cond_index)
+    from run_s1 import _exact_mi_series
+    mi_t, mode_rdms = _exact_mi_series(manifest, _G2["p_star"])
+    _G2["structural"] = analysis.structural_excursions(
+        mi_t, mode_rdms, _G2["p_star"])
 
 
-def run_s2_experiment(r: int, n_boot: int, shots: int = SHOTS) -> dict:
-    index: StateIndex = _G2["index"]
-    probs = _G2["probs"]
-    base, cond_index = _G2["base"], _G2["cond_index"]
-    w1, w2, z_exc, p_star = (_G2["w1"], _G2["w2"], _G2["z_exc"],
-                             _G2["p_star"])
-    survival = _G2["survival"]
-    half_shots = shots // 2
-    n_circ = len(probs)
-    canonical = index.canonical_index
+def run_s2_experiment(r: int, n_boot: int,
+                      shots: int = SHOTS) -> dict:
+    """One S2 experiment via the single shared implementation.
 
-    main_halves = np.empty((n_circ, 2, N_OUT), dtype=np.uint16)
-    for c in range(n_circ):
-        rng = np.random.default_rng(np.random.SeedSequence(
-            [base, cond_index, int(canonical[c]), r]))
-        main_halves[c] = rng.multinomial(half_shots, probs[c], size=2)
-    main_full = main_halves.sum(axis=1)
-
-    def main_counts(state_id):
-        rows = index.rows_for[state_id]
-        h = main_halves[rows]
-        return np.stack([main_full[rows], h[:, 0], h[:, 1]],
-                        axis=0).astype(float)
-
-    main = analyze_pass(main_counts, index, p_star, w1, w2, z_exc,
-                        project=True, keep_per_time=True)
-    eps_main = float(main["eps"][0])
-
-    # ---- A2.1 endpoint-level floor (identical construction to S1)
-    def rdm_stack(state_ids, source):
-        out = []
-        for state_id in state_ids:
-            counts = source[index.rows_for[state_id]].astype(float)
-            raw = pair_rdms_from_counts(counts, w1, w2)
-            used, _ = hermitize_project_batch(raw, True)
-            out.append(used)
-        return np.stack(out)
-
-    dyn_f = rdm_stack(index.dynamic_ids, main_full)
-    sec_f = rdm_stack(index.sector_ids, main_full)
-    ctl_f = rdm_stack(index.control_ids, main_full)
-    eps_halves = []
-    for h in range(2):
-        arm = main_halves[:, h]
-        eps_halves.append(sampling.endpoint_from_stacks(
-            rdm_stack(index.dynamic_ids, arm),
-            rdm_stack(index.sector_ids, arm), p_star)[0])
-    eps_ctrl = []
-    for c in range(2):
-        sec_alt = sec_f.copy()
-        sec_alt[int(_G2["control_mode"])] = ctl_f[c]
-        eps_ctrl.append(sampling.endpoint_from_stacks(
-            dyn_f, sec_alt, p_star)[0])
-    floors_main = sampling.endpoint_floor(
-        eps_halves[0], eps_halves[1], eps_ctrl[0], eps_ctrl[1])
-    duplicate = floors_main["duplicate"]   # systematic: never bootstrapped
-
-    unproj = analyze_pass(main_counts, index, p_star, w1, w2, z_exc,
-                          project=False, keep_per_time=False,
-                          track_leakage=False)
-    projection_shift = abs(eps_main - float(unproj["eps"][0]))
-
-    # per-RDM projection medians for S2-G3 (full pass, slot 0)
-    proj_values = []
-    for state_id in (index.dynamic_ids + index.sector_ids
-                     + index.control_ids):
-        rho_raw = pair_rdms_from_counts(main_counts(state_id), w1, w2)
-        _, proj_fro = hermitize_project_batch(rho_raw, project=True)
-        proj_values.append(proj_fro[0])
-    proj_values = np.concatenate(proj_values)
-    proj_median = float(np.median(proj_values))
-    proj_max = float(np.max(proj_values))
-
-    # ---- M3 branch: per-experiment calibration -> inverse confusion
-    cal_root = np.random.SeedSequence([base, cond_index, 5 * 10 ** 6 + r])
-    cal_children = cal_root.spawn(2)
-    p_cal = _G2["p_cal"]
-    cal_counts = np.stack([
-        np.random.default_rng(cal_children[k]).multinomial(
-            shots, np.clip(p_cal[k], 0.0, None) / p_cal[k].clip(0).sum())
-        for k in range(2)])
-    confusion_hat = s2lib.estimate_confusions(cal_counts)
-    inverses = s2lib.confusion_inverses(confusion_hat)
-
-    def m3_counts(state_id):
-        return s2lib.apply_confusion(main_counts(state_id), inverses)
-
-    m3 = analyze_pass(m3_counts, index, p_star, w1, w2, z_exc,
-                      project=True, keep_per_time=False,
-                      track_leakage=False)
-    eps_m3 = float(m3["eps"][0])
-    m3_full = s2lib.apply_confusion(main_full.astype(float), inverses)
-    m3_h = [s2lib.apply_confusion(main_halves[:, h].astype(float), inverses)
-            for h in range(2)]
-    eps_m3_halves = [sampling.endpoint_from_stacks(
-        rdm_stack(index.dynamic_ids, arm),
-        rdm_stack(index.sector_ids, arm), p_star)[0] for arm in m3_h]
-    sec_m3 = rdm_stack(index.sector_ids, m3_full)
-    dyn_m3 = rdm_stack(index.dynamic_ids, m3_full)
-    ctl_m3 = rdm_stack(index.control_ids, m3_full)
-    eps_m3_ctrl = []
-    for c in range(2):
-        alt = sec_m3.copy()
-        alt[int(_G2["control_mode"])] = ctl_m3[c]
-        eps_m3_ctrl.append(sampling.endpoint_from_stacks(
-            dyn_m3, alt, p_star)[0])
-    floors_m3 = sampling.endpoint_floor(
-        eps_m3_halves[0], eps_m3_halves[1],
-        eps_m3_ctrl[0], eps_m3_ctrl[1])
-    delta_m3 = eps_m3 - float(floors_m3["floor"])
-
-    # ---- bootstrap (raw branch)
-    emp = main_full.astype(float) / shots
-    boot_root = np.random.SeedSequence([base, cond_index, 10 ** 6 + r])
-    children = boot_root.spawn(n_circ)
-
-    def boot_counts(state_id):
-        rows = index.rows_for[state_id]
-        out = np.empty((n_boot, 3, len(rows), N_OUT), dtype=np.uint16)
-        for slot_index, c in enumerate(rows):
-            rng = np.random.default_rng(children[c])
-            halves = rng.multinomial(half_shots, emp[c], size=(n_boot, 2))
-            out[:, 0, slot_index] = halves.sum(axis=1)
-            out[:, 1, slot_index] = halves[:, 0]
-            out[:, 2, slot_index] = halves[:, 1]
-        return out
-
-    boot = analyze_pass(boot_counts, index, p_star, w1, w2, z_exc,
-                        project=True, keep_per_time=False,
-                        track_leakage=False)
-    eps_b = boot["eps"][:, 0]
-    split_b = np.abs(boot["eps"][:, 1] - boot["eps"][:, 2])
-    floor_b = np.maximum(split_b, duplicate)
-    delta_b = eps_b - floor_b
-    # A2.2: bootstrap the split arm; the duplicate arm is a systematic
-    eps_floor_exp = float(max(np.median(split_b), duplicate))
-    delta_main = eps_main - float(floors_main["floor"])
-    delta_median = float(np.median(delta_b))
-    ci_low = float(np.quantile(delta_b, 0.025))
-    ci_high = float(np.quantile(delta_b, 0.975))
-
-    # ---- clause 5 (A1.3): LOTO / LOPO on the raw main pass
-    phi_star_main = main["phi_star"][0]
-    phi_t_main = np.stack([p[0] for p in main["phi_t"]], axis=0)
-    mi_t_main = np.stack([m_[0] for m_ in main["mi_t"]], axis=0)
-    mi_star_main = main["mi_star"][0]
-    floor_main_value = float(floors_main["floor"])
-    n_t = len(phi_t_main)
-    variants = []
-    dbar_sum = phi_t_main.sum(axis=0)
-    for t in range(n_t):
-        dbar_t = (dbar_sum - phi_t_main[t]) / (n_t - 1)
-        eps_t = float(np.linalg.norm(phi_star_main - dbar_t)
-                      / np.linalg.norm(dbar_t))
-        variants.append(eps_t - floor_main_value)
-    for k in range(sampling.N_PAIRS):
-        stack = np.concatenate([mi_t_main, mi_star_main[None]], axis=0)
-        phi_all = phi_from_mi(stack, removed_pair=k)
-        dbar_k = phi_all[:n_t].mean(axis=0)
-        eps_k = float(np.linalg.norm(phi_all[n_t] - dbar_k)
-                      / np.linalg.norm(dbar_k))
-        variants.append(eps_k - floor_main_value)
-    variants = np.asarray(variants)
-    excursion_max = float(np.max(np.abs(variants - delta_main)))
-    sign_flip = bool(np.any(np.sign(variants) != np.sign(delta_main)))
-    tol_5a = 0.25 * abs(delta_median)
-
-    # A2.5(c): the traffic light uses READOUT-CORRECTED counts; raw
-    # ten-qubit survival is scaled by ~(1-p_ro)^10 and would read AMBER
-    # (or RED at 3% readout) for a perfectly good state.
-    surv_corrected, surv_raw_measured = [], []
-    for state_id in index.dynamic_ids + index.sector_ids:
-        row = index.leak_row_for.get(state_id)
-        if row is None:
-            continue
-        raw_counts = main_full[row].astype(float)
-        surv_raw_measured.append(float(
-            sampling.survival_from_allz(raw_counts)))
-        corrected = s2lib.apply_confusion(raw_counts, inverses)
-        surv_corrected.append(float(sampling.survival_from_allz(
-            corrected, project=True)))
-    surv_values = (np.array(surv_corrected) if surv_corrected
-                   else np.array([survival[k] for k in sorted(survival)]))
-    surv_raw_measured = (np.array(surv_raw_measured)
-                         if surv_raw_measured else surv_values)
-    clause_1 = bool(ci_low > 0.0)
-    clause_2 = bool(np.median(eps_b) >= 2.0 * eps_floor_exp)
-    clause_3 = bool(surv_values.min() >= 0.70)
-    clause_4 = bool(np.sign(delta_m3) == np.sign(delta_main))
-    # A2.3 + A2.10: per-RDM MEDIAN correction (the statistic the 0.05
-    # threshold was calibrated for); the maximum stays a diagnostic.
-    clause_5 = bool(excursion_max <= tol_5a and not sign_flip
-                    and proj_median < 0.05)
-    success = all([clause_1, clause_2, clause_3, clause_4, clause_5])
-
-    return {
-        "experiment": r,
-        "eps_main": eps_main,
-        "eps_boot_median": float(np.median(eps_b)),
-        "eps_m3_main": eps_m3,
-        "delta_m3_main": delta_m3,
-        "eps_m3_minus_raw": eps_m3 - eps_main,
-        "projection_shift": projection_shift,
-        "proj_fro_median_main": proj_median,
-        "proj_fro_max_main": proj_max,
-        "floor_main": floor_main_value,
-        "floor_split_main": floors_main["split"],
-        "floor_duplicate_main": duplicate,
-        "floor_split_boot_median": float(np.median(split_b)),
-        "eps_half_1": eps_halves[0],
-        "eps_half_2": eps_halves[1],
-        "eps_ctrl_early": eps_ctrl[0],
-        "eps_ctrl_late": eps_ctrl[1],
-        "leakage_survival_corrected_min": float(surv_values.min()),
-        "leakage_survival_corrected_median": float(np.median(surv_values)),
-        "leakage_survival_raw_min": float(surv_raw_measured.min()),
-        "leakage_survival_raw_median": float(np.median(surv_raw_measured)),
-        "floor_m3_main": float(floors_m3["floor"]),
-        "eps_floor_experiment": eps_floor_exp,
-        "delta_main": delta_main,
-        "delta_boot_median": delta_median,
-        "delta_ci95": [ci_low, ci_high],
-        "loto_lopo_excursion_max": excursion_max,
-        "loto_lopo_sign_flip": sign_flip,
-        "clause_5a_tolerance": float(tol_5a),
-        "leakage_witness_min_main": float(
-            np.asarray(main["witness_min"])[0]),
-        "clauses": {
-            "1_delta_ci_above_zero": clause_1,
-            "2_eps_ge_2floor": clause_2,
-            "3_leakage_not_red": clause_3,
-            "4_raw_m3_direction": clause_4,
-            "5_no_dominance": clause_5,
-        },
-        "success_rule": success,
-    }
+    The only difference from S1 is that real calibration distributions
+    are supplied, so the M3 branch is a genuine correction rather than
+    the identity, and the seed stream carries the condition index.
+    """
+    return analysis.evaluate_experiment(
+        probs=_G2["probs"], index=_G2["index"], p_star=_G2["p_star"],
+        w1=_G2["w1"], w2=_G2["w2"], z_exc=_G2["z_exc"],
+        exact_excursions=_G2["structural"],
+        control_mode=_G2["control_mode"],
+        eps_ref=_G2.get("eps_ref"),
+        r=r, base=_G2["base"], shots=shots, n_boot=n_boot,
+        seed_prefix=(_G2["cond_index"],), cal_probs=_G2["p_cal"])
 
 
 def _worker_s2(args):

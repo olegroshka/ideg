@@ -40,6 +40,7 @@ SCRIPTS = Path(__file__).resolve().parent
 if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
+import analysis  # noqa: E402
 import sampling  # noqa: E402
 from sampling import (N_OUT, SHOTS, StateIndex,  # noqa: E402
                       aggregation_weights, analyze_pass,
@@ -199,205 +200,25 @@ def _init_worker(cache_path_str: str, base_override: int | None = None):
               p_star=p_star, ref=ref, probs=probs, base=base,
               exact_mi_t=mi_t, comparator_rdms=mode_rdms,
               control_mode=int(registry["control_mode"]))
-    _G["structural"] = structural_excursions(p_star)
-
-
-def structural_excursions(p_star) -> np.ndarray:
-    """Per-variant excursion of eps on the EXACT metric (A2.4).
-
-    Order: 37 leave-one-time-out variants, then 45 leave-one-pair-out.
-    Computed once per worker from the frozen comparator and the exact
-    evolved states, so the criterion measures MEASUREMENT dominance and
-    not the graph structure the exact metric already exhibits.
-    """
-    mi_t = _G["exact_mi_t"]
-    mi_s = sampling.mi_from_pair_rdms(
-        np.tensordot(p_star, _G["comparator_rdms"], axes=(0, 0)))
-    phi_t = phi_from_mi(mi_t)
-    star = phi_from_mi(mi_s)
-    dbar = phi_t.mean(axis=0)
-    e0 = float(np.linalg.norm(star - dbar) / np.linalg.norm(dbar))
-    out = []
-    total = phi_t.sum(axis=0)
-    n_t = len(phi_t)
-    for t_index in range(n_t):
-        d_t = (total - phi_t[t_index]) / (n_t - 1)
-        out.append(abs(float(np.linalg.norm(star - d_t)
-                             / np.linalg.norm(d_t)) - e0))
-    for k in range(sampling.N_PAIRS):
-        stack = np.concatenate([mi_t, mi_s[None]], axis=0)
-        phi_all = phi_from_mi(stack, removed_pair=k)
-        d_k = phi_all[:n_t].mean(axis=0)
-        out.append(abs(float(np.linalg.norm(phi_all[n_t] - d_k)
-                             / np.linalg.norm(d_k)) - e0))
-    return np.asarray(out)
+    _G["structural"] = analysis.structural_excursions(
+        mi_t, mode_rdms, p_star)
 
 
 def run_experiment(r: int, n_boot: int, shots: int = SHOTS) -> dict:
-    """One synthetic experiment under the AR-023a Amendment 2 rule."""
-    index: StateIndex = _G["index"]
-    probs = _G["probs"]
-    base = _G["base"]
-    w1, w2, z_exc, p_star = _G["w1"], _G["w2"], _G["z_exc"], _G["p_star"]
-    eps_ref = float(_G["ref"][EPS_REF_KEY])
-    exact_exc = _G["structural"]
-    ctrl_mode = int(_G["control_mode"])
+    """One S1 experiment via the single shared implementation.
 
-    half_shots = shots // 2
-    n_circ = len(probs)
-    canonical = index.canonical_index
-    main_halves = np.empty((n_circ, 2, N_OUT), dtype=np.uint16)
-    for c in range(n_circ):
-        rng = np.random.default_rng(np.random.SeedSequence(
-            [base, int(canonical[c]), r]))
-        main_halves[c] = rng.multinomial(half_shots, probs[c], size=2)
-    main_full = main_halves.sum(axis=1)
-
-    def rdm_stack(state_ids, source):
-        used_list, proj_list = [], []
-        for state_id in state_ids:
-            counts = source[index.rows_for[state_id]].astype(float)
-            raw = sampling.pair_rdms_from_counts(counts, w1, w2)
-            used, proj = sampling.hermitize_project_batch(raw, True)
-            used_list.append(used)
-            proj_list.append(proj)
-        return np.stack(used_list), np.concatenate(proj_list)
-
-    dyn_f, proj_dyn = rdm_stack(index.dynamic_ids, main_full)
-    sec_f, proj_sec = rdm_stack(index.sector_ids, main_full)
-    ctl_f, proj_ctl = rdm_stack(index.control_ids, main_full)
-    proj_all = np.concatenate([proj_dyn, proj_sec, proj_ctl])
-
-    eps_main, phi_t, dbar, star, mi_t, mi_star = (
-        sampling.endpoint_from_stacks(dyn_f, sec_f, p_star))
-
-    # ---- A2.1 split arm: the complete endpoint, independently per half
-    eps_halves = []
-    for h in range(2):
-        arm = main_halves[:, h]
-        eps_halves.append(sampling.endpoint_from_stacks(
-            rdm_stack(index.dynamic_ids, arm)[0],
-            rdm_stack(index.sector_ids, arm)[0], p_star)[0])
-
-    # ---- A2.1 duplicate arm: early vs late control substituted in sigma*
-    eps_ctrl = []
-    for c in range(2):
-        sec_alt = sec_f.copy()
-        sec_alt[ctrl_mode] = ctl_f[c]
-        eps_ctrl.append(sampling.endpoint_from_stacks(
-            dyn_f, sec_alt, p_star)[0])
-
-    floors = sampling.endpoint_floor(eps_halves[0], eps_halves[1],
-                                     eps_ctrl[0], eps_ctrl[1])
-    duplicate = floors["duplicate"]      # systematic: never bootstrapped
-
-    proj_max = float(proj_all.max())
-    proj_median = float(np.median(proj_all))
-
-    # ---- A2.5 leakage witness from the all-Z row
-    surv = []
-    for state_id in index.dynamic_ids + index.sector_ids:
-        row = index.leak_row_for.get(state_id)
-        if row is not None:
-            surv.append(float(sampling.survival_from_allz(
-                main_full[row].astype(float))))
-    surv = np.asarray(surv) if surv else np.array([1.0])
-
-    # ---- bootstrap: split arm only (A2.2)
-    emp = main_full.astype(float) / shots
-    boot_root = np.random.SeedSequence([base, 10 ** 6 + r])
-    children = boot_root.spawn(n_circ)
-
-    def boot_counts(state_id):
-        rows = index.rows_for[state_id]
-        out = np.empty((n_boot, 3, len(rows), N_OUT), dtype=np.uint16)
-        for slot_index, c in enumerate(rows):
-            rng = np.random.default_rng(children[c])
-            halves = rng.multinomial(half_shots, emp[c], size=(n_boot, 2))
-            out[:, 0, slot_index] = halves.sum(axis=1)
-            out[:, 1, slot_index] = halves[:, 0]
-            out[:, 2, slot_index] = halves[:, 1]
-        return out
-
-    boot = analyze_pass(boot_counts, index, p_star, w1, w2, z_exc,
-                        project=True, keep_per_time=False,
-                        track_leakage=False)
-    eps_b = boot["eps"][:, 0]
-    split_b = np.abs(boot["eps"][:, 1] - boot["eps"][:, 2])
-    floor_b = np.maximum(split_b, duplicate)
-    delta_b = eps_b - floor_b
-    eps_floor_exp = float(max(np.median(split_b), duplicate))
-
-    delta_main = eps_main - floors["floor"]
-    delta_median = float(np.median(delta_b))
-    ci_low = float(np.quantile(delta_b, 0.025))
-    ci_high = float(np.quantile(delta_b, 0.975))
-
-    # ---- A2.4 dominance: excess over the exact structural excursion
-    variants = []
-    total = phi_t.sum(axis=0)
-    n_t = len(phi_t)
-    for t_index in range(n_t):
-        d_t = (total - phi_t[t_index]) / (n_t - 1)
-        e = float(np.linalg.norm(star - d_t) / np.linalg.norm(d_t))
-        variants.append(e - floors["floor"])
-    for k in range(sampling.N_PAIRS):
-        stack = np.concatenate([mi_t, mi_star[None]], axis=0)
-        phi_all = phi_from_mi(stack, removed_pair=k)
-        d_k = phi_all[:n_t].mean(axis=0)
-        e = float(np.linalg.norm(phi_all[n_t] - d_k) / np.linalg.norm(d_k))
-        variants.append(e - floors["floor"])
-    variants = np.asarray(variants)
-    raw_exc = np.abs(variants - delta_main)
-    excess = np.abs(raw_exc - exact_exc)
-    tol = 0.25 * abs(delta_median)
-    sign_flip = bool(np.any(np.sign(variants) != np.sign(delta_main)))
-
-    clause_1 = bool(ci_low > 0.0)
-    clause_2 = bool(np.median(eps_b) >= 2.0 * eps_floor_exp)
-    clause_3 = bool(surv.min() >= 0.70)
-    clause_4 = True          # ideal backend: raw and M3 coincide exactly
-    clause_5 = bool(float(excess.max()) <= tol and not sign_flip
-                    and proj_max < 0.05)
-    success = all([clause_1, clause_2, clause_3, clause_4, clause_5])
-
-    return {
-        "experiment": r,
-        "rule": "AR-023a Amendment 2",
-        "eps_main": eps_main,
-        "eps_boot_median": float(np.median(eps_b)),
-        "eps_boot_q025": float(np.quantile(eps_b, 0.025)),
-        "eps_boot_q975": float(np.quantile(eps_b, 0.975)),
-        "eps_half_1": eps_halves[0],
-        "eps_half_2": eps_halves[1],
-        "eps_ctrl_early": eps_ctrl[0],
-        "eps_ctrl_late": eps_ctrl[1],
-        "floor_split_main": floors["split"],
-        "floor_duplicate_main": duplicate,
-        "floor_main": floors["floor"],
-        "floor_split_boot_median": float(np.median(split_b)),
-        "eps_floor_experiment": eps_floor_exp,
-        "delta_main": delta_main,
-        "delta_boot_median": delta_median,
-        "delta_ci95": [ci_low, ci_high],
-        "proj_fro_max_main": proj_max,
-        "proj_fro_median_main": proj_median,
-        "leakage_survival_min": float(surv.min()),
-        "leakage_survival_median": float(np.median(surv)),
-        "loto_lopo_raw_excursion_max": float(raw_exc.max()),
-        "loto_lopo_excess_max": float(excess.max()),
-        "loto_lopo_sign_flip": sign_flip,
-        "clause_5a_tolerance": float(tol),
-        "clauses": {
-            "1_delta_ci_above_zero": clause_1,
-            "2_eps_ge_2floor": clause_2,
-            "3_leakage_not_red": clause_3,
-            "4_raw_m3_direction": clause_4,
-            "5_no_dominance": clause_5,
-        },
-        "success_rule": success,
-        "abs_eps_minus_ref": abs(eps_main - eps_ref),
-    }
+    S1 is the ideal-backend case: cal_probs=None makes the M3 branch
+    exactly the identity, so raw and corrected coincide and clause 4 is
+    satisfied by construction rather than by a special case here.
+    """
+    return analysis.evaluate_experiment(
+        probs=_G["probs"], index=_G["index"], p_star=_G["p_star"],
+        w1=_G["w1"], w2=_G["w2"], z_exc=_G["z_exc"],
+        exact_excursions=_G["structural"],
+        control_mode=_G["control_mode"],
+        eps_ref=float(_G["ref"][EPS_REF_KEY]),
+        r=r, base=_G["base"], shots=shots, n_boot=n_boot,
+        seed_prefix=(), cal_probs=None)
 
 
 def _worker(args):
