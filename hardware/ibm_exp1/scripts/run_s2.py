@@ -705,6 +705,44 @@ def run_condition(cond: str, n_experiments: int, n_boot: int,
 
 # ------------------------------------------------------------- report
 
+def traffic_light_from_records(battery: dict) -> dict:
+    """A2.5(c): traffic light from M3-CORRECTED measured leakage.
+
+    The per-condition battery_report stores a traffic light computed
+    from the simulator's exact survival, which (i) is unavailable on
+    hardware and (ii) is blind to readout error.  A2.5(c) requires the
+    readout-corrected measured witness.  Both are recomputed here from
+    the per-experiment records so every condition is judged uniformly,
+    regardless of when its battery ran.
+    """
+    records = battery["experiments"]
+    key_corr = "leakage_survival_corrected_median"
+    key_raw = "leakage_survival_raw_median"
+    if key_corr not in records[0]:
+        return {"traffic_light": battery.get("traffic_light", "UNKNOWN"),
+                "basis": "legacy exact survival (pre-A2.5c record)"}
+    corr_med = float(np.median([r[key_corr] for r in records]))
+    corr_min = float(min(r["leakage_survival_corrected_min"]
+                         for r in records))
+    raw_med = float(np.median([r[key_raw] for r in records]))
+    raw_min = float(min(r["leakage_survival_raw_min"] for r in records))
+
+    def light(median_value, min_value):
+        if median_value >= 0.90 and min_value >= 0.80:
+            return "GREEN"
+        if median_value >= 0.80:
+            return "AMBER"
+        return "RED"
+
+    return {
+        "traffic_light": light(corr_med, corr_min),
+        "basis": "A2.5(c) M3-corrected measured all-Z witness",
+        "corrected_median": corr_med, "corrected_min": corr_min,
+        "raw_median": raw_med, "raw_min": raw_min,
+        "raw_traffic_light": light(raw_med, raw_min),
+    }
+
+
 def aggregate_report() -> Path:
     manifest, _, _ = load_bundle(ROOT)
     enumeration, fake_names = s2lib.select_fakes()
@@ -716,10 +754,13 @@ def aggregate_report() -> Path:
             batteries[cond] = json.loads(path.read_text(encoding="utf-8"))
     missing = [c for c in conds if c not in batteries]
 
+    lights = {c: traffic_light_from_records(b)
+              for c, b in batteries.items()}
+
     fake_conds = [f"fake_{n}" for n in fake_names]
     g1_points = fake_conds + [MILDEST]
     g1_pass = all(
-        batteries[c]["traffic_light"] == "GREEN"
+        lights[c]["traffic_light"] == "GREEN"
         for c in g1_points if c in batteries) and not any(
         c in missing for c in g1_points)
 
@@ -752,9 +793,11 @@ def aggregate_report() -> Path:
             "floor_median": b["floor_median"],
             "eps_main_median": b["eps_main_median"],
             "eps_m3_median": b["eps_m3_median"],
-            "traffic_light": b["traffic_light"],
-            "survival_median": b["survival_median"],
-            "survival_min": b["survival_min"],
+            "traffic_light": lights[cond]["traffic_light"],
+            "traffic_light_raw": lights[cond].get("raw_traffic_light"),
+            "leakage_corrected_median": lights[cond].get("corrected_median"),
+            "leakage_raw_median": lights[cond].get("raw_median"),
+            "survival_exact_median": b["survival_median"],
         })
 
     # L4 handoff: strictest grid point where the success rule held >= 90
@@ -790,8 +833,12 @@ def aggregate_report() -> Path:
             "S2-G1": {
                 "description": "leakage GREEN on both fakes and mildest "
                                "grid point (median >= 0.90, min >= 0.80)",
-                "points": {c: batteries[c]["traffic_light"]
+                "points": {c: lights[c]["traffic_light"]
                            for c in g1_points if c in batteries},
+                "basis": "A2.5(c) M3-corrected measured witness",
+                "points_raw_for_contrast": {
+                    c: lights[c].get("raw_traffic_light")
+                    for c in g1_points if c in batteries},
                 "pass": bool(g1_pass),
             },
             "S2-G2": {
