@@ -29,7 +29,7 @@ the final choice remains blocked on backend-specific compilation.
 The comparator exporter will not write an artifact unless its recomputed
 optimum agrees with the registered AR-020e run-0 T3 miss.
 
-## Status (2026-08-18) — S1 CLOSED under Amendment 2; S2 running
+## Status (2026-08-19) — S1 and S2 CLOSED; L4 done; awaiting QPU-GO
 
 The owner ruled on candidates C1–C6; they are preregistered as AR-023a
 **Amendment 2** (A2.1–A2.10) and adjudicated on **fresh seed 24002**,
@@ -55,14 +55,50 @@ reconstruction of the same moving average (true separation zero), ε
 collapses to the floor (0.0185 vs 0.0184) and the rule declares no
 separation — the AR-010 failure mode tested for directly.
 
-**S2 (in progress):** both Heron fakes 100/100 with leakage GREEN
-(floor 0.018, Δ 0.20).  The readout correction is load-bearing: the
-same states read 0.932 corrected vs 0.852 raw, i.e. GREEN vs AMBER.
+**S2 — all four gates PASS** across 12 conditions (2 Heron fakes, the
+3×3 noise grid, and the drift-ramp arm).  Every condition fired 100/100
+except drift at 99/100.  The readout correction is load-bearing: the
+same states read 0.932 corrected vs 0.852 raw — GREEN vs AMBER.
 
-Remaining before L4: the 3×3 noise grid, the drift-ramp arm (the only
-test of the duplicate floor against a systematic), and the aggregate
-envelope.  Then L4 must pull **IBM's own usage estimate** against
-compiled circuits rather than the rough formula used here.
+**Drift arm result (the one genuinely open question):** the endpoint
+floor absorbs an aggressive drift ramp with 2.7× margin (0.0184 vs the
+0.05 gate).  What degrades first is *leakage*, so the pilot's drift
+tolerance is a **sector-survival requirement**: the device must hold
+M3-corrected one-excitation survival at median ≥ 0.90, minimum ≥ 0.80
+across the ~6-minute job.
+
+**Null test:** with the comparator replaced by an independent
+reconstruction of the same moving average (true separation zero), the
+rule declares no separation in **0/40** experiments — false-positive
+rate bounded at 0.072.  ε collapses from 0.233 to 0.020.
+
+**Unified implementation:** S1 and S2 now share one analysis module
+(`scripts/analysis.py`); the ideal case is the degenerate noisy case
+(identity M3).  Every battery was re-run against it per AR-023 §12 B7,
+reproducing all gates exactly.
+
+## L4 — backend selected, compilation gate passed (2026-08-19)
+
+| item | value |
+|---|---|
+| backend | **ibm_kingston** (Heron r2) |
+| physical path | [89, 88, 87, 97, 107, 108, 109, 118, 129, 128] |
+| path quality | median RO 6.23e-3, max RO 1.09e-2, median 2q 4.55e-3 |
+| compilation | **PASS** — 0 SWAPs, 0 stray qubits, 0 unbound; 18 two-qubit gates, depth 92–94 |
+| usage estimate | 376.2 s rough / 269.3 s duration-based (cap 450 s, free 600 s) |
+
+The scan exposed a defect in the frozen envelope: it bounded *median*
+readout, but the leakage witness is a joint ten-qubit measurement scaled
+by ∏(1−pᵢ), so the top-scoring path carried a 0.31 readout qubit that
+would have presented a true 0.97 state as **0.59 — below the RED kill
+threshold**.  Amendment **L4-A1** adds a max-readout bound; **L4-A2**
+promotes readout above two-qubit error.  Both ruled by the owner; see
+`ar/AR-023c_L4-backend-selection-2026-08-19.md`.
+
+**Before QPU-GO:** set an instance cost limit (Pay-As-You-Go; IBM's
+limits are *not* preemptive), read IBM's own usage estimate on the
+submission page, and **re-run the selector** — calibration drifts, and
+kingston's 764 qualifying paths are the margin that choice bought.
 
 ### Superseded first adjudication (2026-08-17), preserved
 

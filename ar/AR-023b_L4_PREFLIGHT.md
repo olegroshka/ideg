@@ -4,19 +4,39 @@
 id: AR-023b
 parent: AR-023 (design of record), AR-023a (S1/S2 spec + Amendments 1-2)
 mode: PREFLIGHT (requires owner decisions and network access)
-status: BLOCKED on S2 closure; written 2026-08-18 so the next session
+status: L4 EXECUTED 2026-08-19 — see AR-023c for the scan, the envelope
+  defect it exposed, the owner rulings, and the compilation gate result.
+  Remaining items are marked below. Written 2026-08-18 so the next session
   starts from a checklist rather than from reconstruction
 scope: everything between "S1/S2 green" and the owner typing QPU-GO
 ```
 
 ## 0. Do not start until
 
-- [ ] S2 closed, **including the drift arm** (AR-023a A2.6).
+- [x] S2 closed, **including the drift arm** (AR-023a A2.6).
 - [ ] `s2_report.json` records the operating envelope and the frozen L4
       path-quality requirement.
 - [ ] The S1/S2 shared-implementation refactor has landed, or the owner
       has explicitly accepted the duplicated paths with the compliance
       guards as the mitigation (see §4).
+
+## 0b. Executed — outcome (2026-08-19)
+
+L4 ran. The scan exposed a defect in the envelope itself (it bounded
+median readout only, and the leakage witness is multiplicative over ten
+qubits), which produced amendments **L4-A1** and **L4-A2**, both ruled
+by the owner. Selection and compilation are frozen:
+
+| item | result |
+|---|---|
+| backend | **ibm_kingston** (Heron r2) |
+| path | [89, 88, 87, 97, 107, 108, 109, 118, 129, 128] |
+| envelope | + `max_readout_error ≤ 5e-2` (L4-A1) |
+| score formula | readout-first (L4-A2); prior ordering retained |
+| compilation gate | **PASS** — 0 SWAPs, 0 stray qubits, 0 unbound |
+| usage estimate | 376.2 s rough / 269.3 s duration-based (cap 450) |
+
+Full record: `ar/AR-023c_L4-backend-selection-2026-08-19.md`.
 
 ## 1. What is already frozen (do not re-derive)
 
@@ -31,18 +51,24 @@ scope: everything between "S1/S2 green" and the owner typing QPU-GO
 
 ## 2. Backend selection (no outcome data may influence it)
 
-- [ ] List operational QPUs on the account's instance.
-- [ ] Enumerate every connected 10-qubit simple path in the coupling map.
-- [ ] Score paths **before** any outcome data, by the AR-023 §7 formula
-      (max/median two-qubit error, max/median readout, compiled depth,
-      worst edge as tie-break).
-- [ ] Reject any path failing the **frozen envelope pre-commitment**
-      derived from S2: median two-qubit ≤ 6×10⁻³, median readout ≤
-      2×10⁻², max edge ≤ 1×10⁻². Confirm against the final
-      `s2_report.json` — the numbers above predate the drift arm.
-- [ ] Freeze backend, path, calibration timestamp, and properties
+- [x] List operational QPUs on the account's instance.
+- [x] Enumerate every connected 10-qubit simple path in the coupling map.
+- [x] Score paths **before** any outcome data. *Formula amended by
+      L4-A2 to rank readout first; the AR-023 §7 ordering is retained in
+      the code and scan output as superseded.*
+- [x] Reject any path failing the **frozen envelope pre-commitment**.
+      *Reconciled 2026-08-19:* this section originally quoted median 2q
+      ≤ 6×10⁻³ and readout ≤ 2×10⁻², written before the drift arm; the
+      final `s2_report.json` records ≤ 1×10⁻² and ≤ 3×10⁻². **The
+      looser `s2_report.json` values are the number of record**, and
+      L4-A1 adds max readout ≤ 5×10⁻². The selected kingston path
+      (median 2q 4.55e-3, median RO 6.23e-3, max 2q 5.97e-3, max RO
+      1.09e-2) satisfies *both* statements and L4-A1, so nothing turns
+      on the discrepancy here — but only one set may stand at
+      submission.
+- [x] Freeze backend, path, calibration timestamp, and properties
       snapshot into the manifest.
-- [ ] Transpile at optimization level 3, `seed_transpiler=1701`,
+- [x] Transpile at optimization level 3, `seed_transpiler=1701`,
       `initial_layout=<frozen path>`; verify **no SWAP** and that only
       the ten intended physical qubits are used.
 
@@ -77,15 +103,15 @@ circuits), against the 450 s cap and a 600 s free allocation:
 
 ## 4. Code state to resolve before submission
 
-- [ ] **Unify the S1/S2 analysis paths.** Two defects this programme
+- [x] **Unify the S1/S2 analysis paths.** Two defects this programme
       (A2.1 floor, A2.5c leakage) were amendment items ported into one
       path and not the other; both produced code that ran cleanly and
       returned plausible wrong numbers. `test_amendment2_compliance.py`
       pins them structurally but cannot check semantics.
-- [ ] The QPU analysis path must reuse the *same* implementation the
+- [x] The QPU analysis path must reuse the *same* implementation the
       simulations validated — this is the AR-023 §12 B7 immutability
       requirement in practice.
-- [ ] Re-run the full suite (currently 28/28) plus the infinite-shot
+- [x] Re-run the full suite (currently 28/28) plus the infinite-shot
       acceptance gate after any refactor.
 
 ## 5. Submission protocol (unchanged from AR-023 §13)

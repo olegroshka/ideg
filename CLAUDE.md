@@ -169,9 +169,34 @@ results/     run outputs, figures, serialized data (gitignored where large)
   correction: motion removal = P_E rho P_E; both-size non-commutation span
   36-55% (8% metastable); ablation reclassified. All-runs trapezoidal window
   study. KB-004 v0.11, KB-005 v0.18, ar/AR-020e_sector-2026-08-16.md.
-  AR-023 (IBM hardware pilot, other session) registered — depends on a T3
-  p* export from ar020e. Next: **owner proof pass of revision 3**, then
-  retag paper-v1 -> endorsement -> arXiv + Quantum.
+  AR-023 (IBM hardware pilot) — see the dedicated block below.
+- **Paper PUBLISHED to SSRN (2026-08-19):** `ideg.pdf` posted as a
+  Preprint under **CC-BY**, sole author, three classifications
+  (Condensed Matter / Quantum Information / Computational Physics),
+  DOI minted by SSRN. Repo is **public** with a rewritten public README
+  (root `README.md`) that leads with the admissibility result. Next
+  publication steps: arXiv, then Quantum/SciPost.
+- **AR-023 hardware pilot — S1, S2 and L4 CLOSED (2026-08-17..19).**
+  Amendment 2 (A2.1–A2.10) repaired three mismatched criteria in the
+  preregistered success rule; the measurement itself never changed
+  (0/100 under the original rule → 100/100 under the corrected one).
+  Bundle rebuilt to **28 settings / 1,372 circuits** (all-Z leakage
+  witness added; C6). **S1** all four gates PASS at 768 and 896 on fresh
+  seed 24002, replays byte-identical. **S2** all four gates PASS across
+  12 conditions incl. the drift arm (99/100). **Null test 0/40** —
+  the rule declines when there is no separation. S1/S2 unified onto one
+  implementation (`hardware/ibm_exp1/scripts/analysis.py`) and every
+  battery re-run against it (AR-023 §12 B7). **L4:** ibm_kingston,
+  path [89,88,87,97,107,108,109,118,129,128], compilation gate PASS
+  (0 SWAPs, 18 two-qubit gates, depth 92–94), usage 376.2 s rough /
+  269.3 s duration-based vs a 450 s cap. L4-A1 (max readout ≤ 5e-2) and
+  L4-A2 (readout-first ordering) ruled after the scan exposed a path
+  whose 0.31 readout qubit would have tripped the RED kill criterion.
+  **Remaining before QPU-GO:** instance cost limit (Pay-As-You-Go; IBM
+  limits are not preemptive), IBM's own usage estimate at submission
+  time, and a pre-submission re-scan. Packets: `ar/AR-023a_*`,
+  `ar/AR-023b_L4_PREFLIGHT.md`, `ar/AR-023c_*`; logs
+  `sessions/2026-08-1[789]_*`.
 - Superseded gates note: original **owner gates to submission** — proof pass on main.pdf;
   acknowledgements/affiliation/funding TODO markers in main.tex; repo
   public + submission tag (expand App.-C hashes); SciPost class swap

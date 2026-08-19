@@ -6,7 +6,9 @@ parent: AR-023 §7 (selection protocol), AR-023b (L4 preflight),
   AR-023a Amendment 2 (the rule the selection must serve)
 mode: PREFLIGHT (live, read-only) + ADVERSARIAL (the frozen envelope)
 date: 2026-08-19
-status: SCAN COMPLETE; selection BLOCKED on an owner ruling
+status: RESOLVED — L4-A1 applied, L4-A2 ruled, backend and path frozen,
+  compilation gate PASSED; remaining: instance cost limit, pre-submission
+  re-scan, and owner `QPU-GO` (see §6)
 scope: backend properties and calibration read only; no job was built,
   no run() was called, nothing was submitted; `QPU-GO` untouched
 ```
@@ -112,15 +114,100 @@ immediately before submission; if the selected backend recalibrates
 materially in between, that is a dated pre-run amendment, not a silent
 substitution.
 
-## 5. What is still not done
+## 5. RESOLUTION (owner ruling, 2026-08-19)
 
-- L4-A1/A2 ruling, then freeze backend + path into the manifest.
-- Transpile the frozen 1,372-circuit bundle onto the chosen path at
-  optimization level 3, `seed_transpiler=1701`; verify **no SWAP** and
-  that only the ten intended physical qubits are used.
-- Obtain **IBM's own usage estimate** against those compiled circuits —
-  the 376 s figure is the documented rough formula plus M3 calibration,
-  never checked against the platform.
-- Set an instance **cost limit** (Pay-As-You-Go; IBM's limits are not
-  preemptive).
-- Then, and only then, `QPU-GO` — owner-typed, once, for one bundle.
+**L4-A1 APPLIED.** `max_readout_error ≤ 5×10⁻²` is now part of the
+envelope pre-commitment, implemented in `select_backend_path.py`
+alongside the S2-derived bounds.
+
+**L4-A2 RULED.** Readout is promoted above two-qubit error; the score
+formula is now lexicographic on (median readout, max readout, max 2q,
+median 2q). The superseded AR-023 §7 ordering is retained in the code
+and in the scan output for the dual record.
+
+**A consequence the owner should see, recorded because the ruling
+changed the ranking it was reasoned from.** L4-A1 disqualifies bad
+*paths*, not bad *backends*. Re-scanning under the amended rule, every
+backend's best qualifying path improved, and `ibm_fez` — excluded before
+only because its top-scoring path carried the 0.31 qubit — came back
+with the best numbers overall:
+
+| backend | median RO | max RO | median 2q | qualifying paths |
+|---|---|---|---|---|
+| ibm_fez | **5.25e-3** | 1.12e-2 | **2.63e-3** | 185 |
+| ibm_marrakesh | 5.92e-3 | 2.91e-2 | 2.48e-3 | 177 |
+| **ibm_kingston (selected)** | 6.23e-3 | **1.09e-2** | 4.55e-3 | **764** |
+
+**Owner selected `ibm_kingston`** with the amended numbers in hand. The
+stated basis is drift robustness: 764 qualifying paths against fez's
+185 means far more margin if the chosen path degrades between now and
+submission, which AR-023 §13 B3 requires re-checking. All three
+candidates sit well inside the envelope, so the trade was margin-now
+versus margin-later, and the ruling took margin-later.
+
+**Frozen selection**
+
+```
+backend        ibm_kingston (Heron r2)
+physical path  [89, 88, 87, 97, 107, 108, 109, 118, 129, 128]
+median RO 6.226e-3 | max RO 1.086e-2
+median 2q 4.546e-3 | max 2q 5.968e-3
+```
+
+### Compilation gate — PASS
+
+All 1,372 circuits transpiled to the frozen path at optimization level
+3, `seed_transpiler = 1701`:
+
+| check | result |
+|---|---|
+| SWAPs introduced | **0** |
+| circuits touching qubits outside the path | **0** |
+| unbound parameters | **0** |
+| two-qubit gates per circuit | 18 (median = max) |
+| depth | 92–94 |
+
+The uniformity is expected and is itself a check: the family differs
+only in rotation angles, so identical structure across all 1,372
+circuits is what a correct compilation looks like.
+
+### Usage estimate
+
+| method | seconds | of 450 s cap | of 600 s free |
+|---|---|---|---|
+| AR-023 §8 rough formula | **376.2** | 84% | 63% |
+| duration-based (compiled durations + rep delay) | 269.3 | 60% | 45% |
+
+**Plan against 376 s**, the conservative figure. *Partially unmet
+requirement, disclosed:* AR-023b §3 asks for IBM's own usage estimate
+against the compiled circuits. No pre-submission estimate API was found
+in `qiskit-ibm-runtime` that works without constructing a job, so this
+remains outstanding; the platform surfaces its figure at submission
+time, and it must be read there before `QPU-GO` is typed.
+
+## 6. What is still not done
+
+- [x] ~~L4-A1/A2 ruling, freeze backend + path~~ — done, §5.
+- [x] ~~Transpile and verify no SWAP~~ — done, gate PASS, §5.
+- [ ] **Read IBM's own usage estimate** on the submission page before
+      confirming (no pre-submission API; the platform shows it at
+      submission time).
+- [ ] **Set an instance cost limit.** Pay-As-You-Go account; IBM's cost
+      limits are *not* preemptive — a running job can exceed one, be
+      cancelled as "Ran too long", and still be billed.
+- [ ] **Re-run `select_backend_path.py` immediately before submitting.**
+      Calibration is time-varying and this selection is a snapshot; if
+      the frozen path has degraded, the 764 qualifying alternatives are
+      the margin the ruling bought. A material change is a dated pre-run
+      amendment, never a silent substitution.
+- [ ] Then, and only then, `QPU-GO` — owner-typed, once, for one bundle.
+
+## 7. Reproducing this selection
+
+```powershell
+python hardware/ibm_exp1/scripts/select_backend_path.py
+python hardware/ibm_exp1/scripts/compile_and_estimate.py
+```
+
+Both are read-only with respect to the QPU: they query backend
+properties and transpile locally. Neither can construct or send a job.
