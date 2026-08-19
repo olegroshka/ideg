@@ -12,7 +12,7 @@
     "hardware/ibm_exp1/results/sim_reference/s1_reference_arrays.npz": "ed58fc4d3d3250c53db52a4888ba9b6f616d1590776987848b19b7fbccdf987b",
     "hardware/ibm_exp1/results/sim_s1_768/s1_report.json": "f503dfbe4ec6bb0a98aa1d9b606924321323ff561420a4139ccdd28107942241",
     "hardware/ibm_exp1/results/sim_s1_896/s1_report.json": "4fb7f89bfbeaa2a2b0f16c545e4865355a2262a7442901eb24f1aac8462ac400",
-    "hardware/ibm_exp1/results/sim_s2/s2_report.json": "eeacbf0d1d46f83c8178d8e888a32c7e5a6f3e4962abedc61d5106558879713b"
+    "hardware/ibm_exp1/results/sim_s2/s2_report.json": "86ea956af57ecb2f22e9de86c0cffbe8a8f793eaa91449b6cf7deb764ebf6278"
   },
   "conditions": [
     "_sweep_levels",
@@ -99,8 +99,8 @@
     "make_s1s2_figure.py": "18a162859ea483921dda1a6ca3c43370327a7e9a6e5bc6e433fbc852d8fe7c80",
     "prepare_manifest.py": "aa645e4827744642e0bd2028f4b323a2c2088a9c5e75b87030468de5ccdfed48",
     "run_ar023a_chain.py": "6a7ea34f95d976e992e051d6ff4fae34b9653d6f34574e6be85afa0bf3e10fcb",
-    "run_s1.py": "a5dbd328140bee6518e6858e574382e25dc89baf531cd439216a7e24dfe36c38",
-    "run_s2.py": "34eaf7abf861ce906d1b97f6b5e17023cb44c1d5532f14614879d8a1e1d58af2",
+    "run_s1.py": "b99cb48c573e81597056a611361c3689fa2ad866e37ff7c6fada81d12f4024dd",
+    "run_s2.py": "fd45785e4eaaea8b658245c72a4ee33197a28744f5574f27d9d84f9863a3bbbe",
     "s2lib.py": "3c3b52d170a6f57e2048d7c5657a78ebe6e116c16080d0a8b654f61196edb001",
     "sampling.py": "c9cbc2d543a848176aaf734854592d06217aa71f882b6a64377d394f53ca1e3a"
   },

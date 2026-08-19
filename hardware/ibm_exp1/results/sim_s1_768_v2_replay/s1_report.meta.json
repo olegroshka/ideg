@@ -6,6 +6,6 @@
     "scipy": "1.17.1"
   },
   "note": "timestamps and machine-specific data live here so the report itself is byte-deterministic (A1.7)",
-  "report_sha256": "0c0e6713e76d28113de13ba2177fd68156b0257ad42f3185e7ec9251785e538c",
-  "workers": 3
+  "report_sha256": "39a744768e8fd2b366f41825b78c8278b295b70578e798f959c43e0d4c99a752",
+  "workers": 2
 }

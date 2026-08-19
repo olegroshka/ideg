@@ -1,0 +1,35 @@
+cleared pre-refactor batteries
+S1 sim_s1_768_v2: {"S1-G1": true, "S1-G2": true, "S1-G3": true, "S1-G4": null} G1=0.00542 G2=100 G3=0.01732
+S1 sim_s1_768_v2_replay: {"S1-G1": true, "S1-G2": true, "S1-G3": true, "S1-G4": null} G1=0.00542 G2=100 G3=0.01732
+S1 sim_s1_896_v2: {"S1-G1": true, "S1-G2": true, "S1-G3": true, "S1-G4": null} G1=0.00543 G2=100 G3=0.01658
+S1 sim_s1_896_v2_replay: {"S1-G1": true, "S1-G2": true, "S1-G3": true, "S1-G4": null} G1=0.00543 G2=100 G3=0.01658
+FAILED s2-drift_ramp: ' [x["projection_shift"] for x in results])),\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "C:\\Users\\olegr\\PycharmProjects\\ideg\\hardware\\ibm_exp1\\scripts\\run_s2.py", line 478, in <listcomp>\n    [x["projection_shift"] for x in results])),\n     ~^^^^^^^^^^^^^^^^^^^^\nKeyError: \'projection_shift\'\n'
+FAILED s2-fake_fake_aachen: ' [x["projection_shift"] for x in results])),\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "C:\\Users\\olegr\\PycharmProjects\\ideg\\hardware\\ibm_exp1\\scripts\\run_s2.py", line 478, in <listcomp>\n    [x["projection_shift"] for x in results])),\n     ~^^^^^^^^^^^^^^^^^^^^\nKeyError: \'projection_shift\'\n'
+FAILED s2-fake_fake_boston: ' [x["projection_shift"] for x in results])),\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "C:\\Users\\olegr\\PycharmProjects\\ideg\\hardware\\ibm_exp1\\scripts\\run_s2.py", line 478, in <listcomp>\n    [x["projection_shift"] for x in results])),\n     ~^^^^^^^^^^^^^^^^^^^^\nKeyError: \'projection_shift\'\n'
+FAILED s2-grid_p2-0.003_ro-0.01: ' [x["projection_shift"] for x in results])),\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "C:\\Users\\olegr\\PycharmProjects\\ideg\\hardware\\ibm_exp1\\scripts\\run_s2.py", line 478, in <listcomp>\n    [x["projection_shift"] for x in results])),\n     ~^^^^^^^^^^^^^^^^^^^^\nKeyError: \'projection_shift\'\n'
+cleared pre-refactor batteries
+cleared pre-refactor batteries
+FAILED s1-sim_s1_768_v2: 'ents\\Codex\\2026-08-16\\hey\\work\\uv-python\\cpython-3.11.14-windows-x86_64-none\\Lib\\concurrent\\futures\\_base.py", line 401, in __get_result\n    raise self._exception\nnumpy._core._exceptions._ArrayMemoryError: Unable to allocate 633. MiB for an array with shape (1000, 3, 27, 1024) and data type float64\n'
+FAILED s2-grid_p2-0.003_ro-0.02: 'ents\\Codex\\2026-08-16\\hey\\work\\uv-python\\cpython-3.11.14-windows-x86_64-none\\Lib\\concurrent\\futures\\_base.py", line 401, in __get_result\n    raise self._exception\nnumpy._core._exceptions._ArrayMemoryError: Unable to allocate 633. MiB for an array with shape (1000, 3, 27, 1024) and data type float64\n'
+FAILED s2-grid_p2-0.003_ro-0.03: 'ents\\Codex\\2026-08-16\\hey\\work\\uv-python\\cpython-3.11.14-windows-x86_64-none\\Lib\\concurrent\\futures\\_base.py", line 401, in __get_result\n    raise self._exception\nnumpy._core._exceptions._ArrayMemoryError: Unable to allocate 633. MiB for an array with shape (1000, 3, 27, 1024) and data type float64\n'
+clear step already done; resuming without deleting
+S1 sim_s1_768_v2: {"S1-G1": true, "S1-G2": true, "S1-G3": true, "S1-G4": null} G1=0.00542 G2=100 G3=0.01732
+S1 sim_s1_768_v2_replay: {"S1-G1": true, "S1-G2": true, "S1-G3": true, "S1-G4": null} G1=0.00542 G2=100 G3=0.01732
+S1 sim_s1_896_v2: {"S1-G1": true, "S1-G2": true, "S1-G3": true, "S1-G4": null} G1=0.00543 G2=100 G3=0.01658
+S1 sim_s1_896_v2_replay: {"S1-G1": true, "S1-G2": true, "S1-G3": true, "S1-G4": null} G1=0.00543 G2=100 G3=0.01658
+S2 drift_ramp: success=99/100 floor=0.0184 delta=0.1856
+S2 fake_fake_aachen: success=100/100 floor=0.0187 delta=0.1998
+S2 fake_fake_boston: success=100/100 floor=0.0179 delta=0.2025
+S2 grid_p2-0.003_ro-0.01: success=100/100 floor=0.0198 delta=0.1933
+S2 grid_p2-0.003_ro-0.02: success=100/100 floor=0.0187 delta=0.1906
+S2 grid_p2-0.003_ro-0.03: success=100/100 floor=0.0182 delta=0.1864
+S2 grid_p2-0.006_ro-0.01: success=100/100 floor=0.0185 delta=0.1877
+S2 grid_p2-0.006_ro-0.02: success=100/100 floor=0.0185 delta=0.1855
+S2 grid_p2-0.006_ro-0.03: success=100/100 floor=0.0182 delta=0.1803
+S2 grid_p2-0.01_ro-0.01: success=100/100 floor=0.0185 delta=0.1815
+S2 grid_p2-0.01_ro-0.02: success=100/100 floor=0.0179 delta=0.1784
+S2 grid_p2-0.01_ro-0.03: success=100/100 floor=0.0173 delta=0.1724
+S1-G4(768): byte-identical=True 39a744768e8fd2b3
+S1-G4(896): byte-identical=True b1a31c75e4534229
+S2 gates: {"S2-G1": true, "S2-G2": true, "S2-G3": true, "S2-G4": true}
+REVALIDATION COMPLETE

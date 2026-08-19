@@ -1,9 +1,4 @@
 {
-  "determinism_replay": {
-    "identical": true,
-    "primary_sha256": "fe01c729b52f177bc9d54befea3e180efb14cdb3969180c25e44d0503263d1d1",
-    "replay_sha256": "fe01c729b52f177bc9d54befea3e180efb14cdb3969180c25e44d0503263d1d1"
-  },
   "environment": {
     "numpy": "2.4.6",
     "python": "3.11.14",
@@ -11,6 +6,6 @@
     "scipy": "1.17.1"
   },
   "note": "timestamps and machine-specific data live here so the report itself is byte-deterministic (A1.7)",
-  "report_sha256": "fe01c729b52f177bc9d54befea3e180efb14cdb3969180c25e44d0503263d1d1",
-  "workers": 3
+  "report_sha256": "b1a31c75e4534229bff619abec60f13f7e6f511c3c45535eaa86ba250d2487b7",
+  "workers": 2
 }
