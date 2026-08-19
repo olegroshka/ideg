@@ -36,12 +36,29 @@ CREDENTIAL_FILE = (Path.home() / "Documents" / "Codex" / ".credentials"
 PROFILE = "ideg-open"
 PATH_LENGTH = 10
 
-# Frozen envelope pre-commitment (AR-023b §2, from the S2 report).
+# Frozen envelope pre-commitment (AR-023b §2, from the S2 report),
+# plus AR-023c L4-A1 (owner ruling 2026-08-19): a MAXIMUM readout bound.
+# The A2.5 leakage witness is a joint ten-qubit measurement scaled by
+# prod(1 - p_i), so a bound on the median is provably blind to the single
+# outlier that dominates the product.  Without this, the scan's top pick
+# carried a 0.31 readout qubit and would have presented a true 0.97 state
+# as 0.59 -- below the registered RED kill threshold.
 ENVELOPE = {
     "median_two_qubit_error_max": 1.0e-2,
     "median_readout_error_max": 3.0e-2,
     "max_edge_two_qubit_error_max": 1.0e-2,
+    "max_readout_error_max": 5.0e-2,            # L4-A1
 }
+
+# AR-023c L4-A2 (owner ruling 2026-08-19): readout is promoted above
+# two-qubit error.  S2 established that the binding constraint under
+# drift is LEAKAGE, which is readout-driven, and both surviving
+# candidates sit far inside the envelope on two-qubit error.  The
+# superseded ordering is retained for the dual record.
+SCORE_KEYS = ("median_readout_error", "max_readout_error",
+              "max_2q_error", "median_2q_error")
+SCORE_KEYS_SUPERSEDED = ("max_2q_error", "median_2q_error",
+                         "max_readout_error", "median_readout_error")
 
 
 def service(profile: str = PROFILE):
@@ -136,9 +153,7 @@ def enumerate_paths(twoq, readout, length: int = PATH_LENGTH,
         if truncated:
             break
 
-    rows.sort(key=lambda r: (r["max_2q_error"], r["median_2q_error"],
-                             r["max_readout_error"],
-                             r["median_readout_error"]))
+    rows.sort(key=lambda r: tuple(r[k] for k in SCORE_KEYS))
     return rows, truncated
 
 
@@ -147,7 +162,9 @@ def meets_envelope(row) -> bool:
             and row["median_readout_error"]
             <= ENVELOPE["median_readout_error_max"]
             and row["max_2q_error"]
-            <= ENVELOPE["max_edge_two_qubit_error_max"])
+            <= ENVELOPE["max_edge_two_qubit_error_max"]
+            and row["max_readout_error"]
+            <= ENVELOPE["max_readout_error_max"])          # L4-A1
 
 
 def main() -> int:
@@ -171,8 +188,10 @@ def main() -> int:
         "stage": "L4 backend/path selection",
         "path_length": PATH_LENGTH,
         "envelope_precommitment": ENVELOPE,
-        "score_formula": "lexicographic (max 2q, median 2q, max readout, "
-                         "median readout); worst edge as tie-break",
+        "score_formula": "AR-023c L4-A2: lexicographic "
+                         + ", ".join(SCORE_KEYS),
+        "score_formula_superseded": "AR-023 §7: lexicographic "
+                                    + ", ".join(SCORE_KEYS_SUPERSEDED),
         "submission": "none - this script cannot submit",
         "backends": [],
     }
@@ -202,11 +221,8 @@ def main() -> int:
 
     ranked = [b for b in report["backends"]
               if b["best_qualifying_path"] is not None]
-    ranked.sort(key=lambda b: (
-        b["best_qualifying_path"]["max_2q_error"],
-        b["best_qualifying_path"]["median_2q_error"],
-        b["best_qualifying_path"]["max_readout_error"],
-        b["best_qualifying_path"]["median_readout_error"]))
+    ranked.sort(key=lambda b: tuple(
+        b["best_qualifying_path"][k] for k in SCORE_KEYS))
     report["recommended"] = (
         {"backend": ranked[0]["name"],
          **ranked[0]["best_qualifying_path"]} if ranked else None)

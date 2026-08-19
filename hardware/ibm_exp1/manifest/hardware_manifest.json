@@ -193,13 +193,55 @@
     "shot_split_seed": 23005
   },
   "qpu_policy": {
-    "backend": null,
-    "physical_path": null,
-    "estimated_seconds": null,
+    "backend": "ibm_kingston",
+    "physical_path": [
+      89,
+      88,
+      87,
+      97,
+      107,
+      108,
+      109,
+      118,
+      129,
+      128
+    ],
+    "estimated_seconds": 376.1696,
     "rough_formula_seconds": 357.62239999999997,
     "maximum_estimated_seconds": 450,
     "minimum_remaining_seconds": 500,
-    "submission_confirmation": "QPU-GO"
+    "submission_confirmation": "QPU-GO",
+    "selection": {
+      "ruling": "AR-023c L4-A1 applied (max readout <= 5e-2) and L4-A2 ruled (readout-first ordering); owner selected ibm_kingston 2026-08-19 for drift robustness (764 qualifying paths vs 185 on fez)",
+      "path_score": {
+        "median_readout_error": 0.0062255859375,
+        "max_readout_error": 0.0108642578125,
+        "median_2q_error": 0.0045464115970300645,
+        "max_2q_error": 0.005967797662577878
+      },
+      "qualifying_paths_on_backend": 764,
+      "outcome_blind": true,
+      "scan_file": "hardware/ibm_exp1/results/l4/backend_scan.json"
+    },
+    "status": "PATH SELECTED and COMPILATION GATE PASSED; cost limit and QPU-GO still required",
+    "estimated_seconds_duration_based": 269.264,
+    "compilation_gate": {
+      "all_parameters_bound": true,
+      "no_swap": true,
+      "only_frozen_qubits": true,
+      "optimization_level": 3,
+      "pass": true,
+      "seed_transpiler": 1701
+    },
+    "compiled_summary": {
+      "backend_dt": 4e-09,
+      "depth_max": 94,
+      "depth_median": 92.0,
+      "mean_circuit_duration_seconds": null,
+      "rep_delay_seconds": 0.00025,
+      "two_qubit_count_max": 18,
+      "two_qubit_count_median": 18.0
+    }
   },
   "bundle": {
     "frozen": true,
@@ -271,5 +313,5 @@
     },
     "original_adjudication_preserved": "results/sim_s1_768, sim_s1_896, sim_s2"
   },
-  "manifest_sha256": "be5bbd70b0062b0269f448d75105a10fad1cca47ad4df787303a638bbc36c580"
+  "manifest_sha256": "384326b25781806042603faf07600e1c5f6dc0493a9579816aa5863ed8891a89"
 }

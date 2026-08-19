@@ -3,143 +3,143 @@
     {
       "best_paths": [
         {
-          "max_2q_error": 0.0026840712291925084,
-          "max_readout_error": 0.309814453125,
-          "median_2q_error": 0.002125918762559964,
-          "median_readout_error": 0.01416015625,
+          "max_2q_error": 0.006903323121572075,
+          "max_readout_error": 0.0927734375,
+          "median_2q_error": 0.0024488390992863374,
+          "median_readout_error": 0.005126953125,
           "path": [
-            98,
-            91,
-            92,
-            93,
-            94,
-            95,
-            99,
-            115,
-            114,
-            113
+            23,
+            22,
+            21,
+            36,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46
           ],
           "worst_edge": [
-            95,
-            99
+            21,
+            36
           ]
         },
         {
-          "max_2q_error": 0.0026840712291925084,
-          "max_readout_error": 0.309814453125,
-          "median_2q_error": 0.00226341078016129,
-          "median_readout_error": 0.01416015625,
+          "max_2q_error": 0.0029201709110983354,
+          "max_readout_error": 0.01123046875,
+          "median_2q_error": 0.002626408114353246,
+          "median_readout_error": 0.0052490234375,
           "path": [
-            90,
-            91,
-            92,
-            93,
-            94,
-            95,
-            99,
-            115,
-            114,
-            113
+            124,
+            123,
+            136,
+            143,
+            144,
+            145,
+            146,
+            147,
+            137,
+            127
           ],
           "worst_edge": [
-            95,
-            99
+            123,
+            136
           ]
         },
         {
-          "max_2q_error": 0.002704194678164351,
-          "max_readout_error": 0.309814453125,
-          "median_2q_error": 0.00226341078016129,
-          "median_readout_error": 0.00927734375,
+          "max_2q_error": 0.006903323121572075,
+          "max_readout_error": 0.0234375,
+          "median_2q_error": 0.002631056864878356,
+          "median_readout_error": 0.0052490234375,
           "path": [
-            94,
-            95,
-            99,
-            115,
-            114,
-            113,
-            112,
-            111,
-            110,
-            109
+            7,
+            6,
+            5,
+            4,
+            3,
+            16,
+            23,
+            22,
+            21,
+            36
           ],
           "worst_edge": [
-            112,
-            113
+            21,
+            36
           ]
         },
         {
-          "max_2q_error": 0.002704194678164351,
-          "max_readout_error": 0.309814453125,
-          "median_2q_error": 0.00226341078016129,
-          "median_readout_error": 0.01416015625,
+          "max_2q_error": 0.0060050648681996,
+          "max_readout_error": 0.05859375,
+          "median_2q_error": 0.002204552686975003,
+          "median_readout_error": 0.0052490234375,
           "path": [
-            91,
-            92,
-            93,
-            94,
-            95,
-            99,
-            115,
-            114,
-            113,
-            112
+            137,
+            127,
+            126,
+            125,
+            124,
+            123,
+            136,
+            143,
+            142,
+            141
           ],
           "worst_edge": [
-            112,
-            113
+            126,
+            127
           ]
         },
         {
-          "max_2q_error": 0.002704194678164351,
-          "max_readout_error": 0.309814453125,
-          "median_2q_error": 0.0024117945177233036,
-          "median_readout_error": 0.013916015625,
+          "max_2q_error": 0.0060050648681996,
+          "max_readout_error": 0.05859375,
+          "median_2q_error": 0.00241916359197919,
+          "median_readout_error": 0.0052490234375,
           "path": [
-            92,
-            93,
-            94,
-            95,
-            99,
-            115,
-            114,
-            113,
-            112,
-            111
+            127,
+            126,
+            125,
+            124,
+            123,
+            136,
+            143,
+            142,
+            141,
+            140
           ],
           "worst_edge": [
-            112,
-            113
+            126,
+            127
           ]
         }
       ],
       "best_qualifying_path": {
-        "max_2q_error": 0.0026840712291925084,
-        "max_readout_error": 0.309814453125,
-        "median_2q_error": 0.002125918762559964,
-        "median_readout_error": 0.01416015625,
+        "max_2q_error": 0.0029201709110983354,
+        "max_readout_error": 0.01123046875,
+        "median_2q_error": 0.002626408114353246,
+        "median_readout_error": 0.0052490234375,
         "path": [
-          98,
-          91,
-          92,
-          93,
-          94,
-          95,
-          99,
-          115,
-          114,
-          113
+          124,
+          123,
+          136,
+          143,
+          144,
+          145,
+          146,
+          147,
+          137,
+          127
         ],
         "worst_edge": [
-          95,
-          99
+          123,
+          136
         ]
       },
       "enumeration_truncated": false,
       "name": "ibm_fez",
       "num_qubits": 156,
       "paths_found": 1674,
-      "paths_meeting_envelope": 760,
+      "paths_meeting_envelope": 185,
       "processor_type": {
         "family": "Heron",
         "revision": "2"
@@ -148,143 +148,143 @@
     {
       "best_paths": [
         {
-          "max_2q_error": 0.0027482133630478967,
-          "max_readout_error": 0.0404052734375,
-          "median_2q_error": 0.0015556591937208875,
-          "median_readout_error": 0.01239013671875,
+          "max_2q_error": 0.029086370514386756,
+          "max_readout_error": 0.039794921875,
+          "median_2q_error": 0.004054096444701005,
+          "median_readout_error": 0.00482177734375,
           "path": [
-            6,
-            7,
-            8,
-            9,
-            10,
-            11,
-            12,
-            13,
-            14,
-            15
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154
           ],
           "worst_edge": [
-            7,
-            8
+            151,
+            152
           ]
         },
         {
-          "max_2q_error": 0.0027482133630478967,
-          "max_readout_error": 0.0404052734375,
-          "median_2q_error": 0.0015556591937208875,
-          "median_readout_error": 0.01513671875,
+          "max_2q_error": 0.029086370514386756,
+          "max_readout_error": 0.039794921875,
+          "median_2q_error": 0.004054096444701005,
+          "median_readout_error": 0.00482177734375,
           "path": [
-            15,
-            14,
-            13,
-            12,
-            11,
-            10,
-            9,
-            8,
-            7,
-            17
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155
           ],
           "worst_edge": [
-            7,
-            8
+            151,
+            152
           ]
         },
         {
-          "max_2q_error": 0.0027482133630478967,
-          "max_readout_error": 0.0404052734375,
-          "median_2q_error": 0.0016653564880978744,
-          "median_readout_error": 0.0145263671875,
+          "max_2q_error": 0.029086370514386756,
+          "max_readout_error": 0.046875,
+          "median_2q_error": 0.003942340301352959,
+          "median_readout_error": 0.0048828125,
           "path": [
-            14,
-            13,
-            12,
-            11,
-            10,
-            9,
-            8,
-            7,
-            17,
-            27
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153
           ],
           "worst_edge": [
-            7,
-            8
+            151,
+            152
           ]
         },
         {
-          "max_2q_error": 0.002858065189132647,
-          "max_readout_error": 0.0404052734375,
-          "median_2q_error": 0.002399714485467469,
-          "median_readout_error": 0.01611328125,
+          "max_2q_error": 0.029086370514386756,
+          "max_readout_error": 0.039794921875,
+          "median_2q_error": 0.004054096444701005,
+          "median_readout_error": 0.00494384765625,
           "path": [
-            13,
-            12,
-            11,
-            10,
-            9,
-            8,
-            7,
-            17,
-            27,
-            28
+            139,
+            155,
+            154,
+            153,
+            152,
+            151,
+            150,
+            149,
+            148,
+            147
           ],
           "worst_edge": [
-            27,
-            28
+            151,
+            152
           ]
         },
         {
-          "max_2q_error": 0.0029064701682518512,
-          "max_readout_error": 0.0283203125,
-          "median_2q_error": 0.002098395338020892,
-          "median_readout_error": 0.0108642578125,
+          "max_2q_error": 0.018776776997798172,
+          "max_readout_error": 0.028564453125,
+          "median_2q_error": 0.0019342575275163587,
+          "median_readout_error": 0.00518798828125,
           "path": [
-            78,
-            89,
-            90,
-            91,
-            98,
-            111,
-            110,
-            109,
-            118,
-            129
+            131,
+            132,
+            133,
+            134,
+            135,
+            139,
+            155,
+            154,
+            153,
+            152
           ],
           "worst_edge": [
-            89,
-            90
+            133,
+            134
           ]
         }
       ],
       "best_qualifying_path": {
-        "max_2q_error": 0.0027482133630478967,
-        "max_readout_error": 0.0404052734375,
-        "median_2q_error": 0.0015556591937208875,
-        "median_readout_error": 0.01239013671875,
+        "max_2q_error": 0.005937735492380192,
+        "max_readout_error": 0.029052734375,
+        "median_2q_error": 0.0024787818559895147,
+        "median_readout_error": 0.00592041015625,
         "path": [
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15
+          110,
+          109,
+          118,
+          129,
+          128,
+          127,
+          137,
+          147,
+          148,
+          149
         ],
         "worst_edge": [
-          7,
-          8
+          128,
+          129
         ]
       },
       "enumeration_truncated": false,
       "name": "ibm_marrakesh",
       "num_qubits": 156,
       "paths_found": 1674,
-      "paths_meeting_envelope": 761,
+      "paths_meeting_envelope": 177,
       "processor_type": {
         "family": "Heron",
         "revision": "2"
@@ -293,77 +293,79 @@
     {
       "best_paths": [
         {
-          "max_2q_error": 0.0050589765297529565,
-          "max_readout_error": 0.031005859375,
-          "median_2q_error": 0.002955932004717693,
-          "median_readout_error": 0.00640869140625,
+          "max_2q_error": 0.012753275102063144,
+          "max_readout_error": 0.012939453125,
+          "median_2q_error": 0.005840255007135864,
+          "median_readout_error": 0.005859375,
           "path": [
-            69,
-            78,
+            21,
+            36,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48
+          ],
+          "worst_edge": [
+            21,
+            36
+          ]
+        },
+        {
+          "max_2q_error": 0.012753275102063144,
+          "max_readout_error": 0.0350341796875,
+          "median_2q_error": 0.004620214657286903,
+          "median_readout_error": 0.00592041015625,
+          "path": [
+            5,
+            4,
+            3,
+            16,
+            23,
+            22,
+            21,
+            36,
+            41,
+            42
+          ],
+          "worst_edge": [
+            21,
+            36
+          ]
+        },
+        {
+          "max_2q_error": 0.005967797662577878,
+          "max_readout_error": 0.0108642578125,
+          "median_2q_error": 0.0045464115970300645,
+          "median_readout_error": 0.0062255859375,
+          "path": [
             89,
             88,
             87,
             97,
             107,
-            106,
-            105,
-            117
+            108,
+            109,
+            118,
+            129,
+            128
           ],
           "worst_edge": [
-            87,
-            97
+            109,
+            118
           ]
         },
         {
-          "max_2q_error": 0.0050589765297529565,
+          "max_2q_error": 0.0068116148544658806,
           "max_readout_error": 0.031005859375,
-          "median_2q_error": 0.003348852606787439,
-          "median_readout_error": 0.0064697265625,
+          "median_2q_error": 0.004096311479214326,
+          "median_readout_error": 0.0062255859375,
           "path": [
-            69,
-            78,
-            89,
-            88,
-            87,
-            97,
-            107,
-            106,
-            105,
-            104
-          ],
-          "worst_edge": [
-            87,
-            97
-          ]
-        },
-        {
-          "max_2q_error": 0.0050589765297529565,
-          "max_readout_error": 0.031005859375,
-          "median_2q_error": 0.0037736720716356476,
-          "median_readout_error": 0.0078125,
-          "path": [
-            68,
-            69,
-            78,
-            89,
-            88,
-            87,
-            97,
-            107,
-            106,
-            105
-          ],
-          "worst_edge": [
-            87,
-            97
-          ]
-        },
-        {
-          "max_2q_error": 0.0050589765297529565,
-          "max_readout_error": 0.031005859375,
-          "median_2q_error": 0.0037736720716356476,
-          "median_readout_error": 0.0078125,
-          "path": [
+            58,
+            71,
             70,
             69,
             78,
@@ -371,65 +373,63 @@
             88,
             87,
             97,
-            107,
-            106,
-            105
+            107
           ],
           "worst_edge": [
-            87,
-            97
+            70,
+            71
           ]
         },
         {
-          "max_2q_error": 0.005114171713262172,
-          "max_readout_error": 0.072998046875,
-          "median_2q_error": 0.0036731508153103887,
-          "median_readout_error": 0.01080322265625,
+          "max_2q_error": 0.012753275102063144,
+          "max_readout_error": 0.0350341796875,
+          "median_2q_error": 0.004404321418003204,
+          "median_readout_error": 0.0062255859375,
           "path": [
-            49,
-            50,
-            51,
-            52,
-            53,
-            54,
-            55,
-            59,
-            75,
-            74
+            5,
+            4,
+            3,
+            16,
+            23,
+            22,
+            21,
+            36,
+            41,
+            40
           ],
           "worst_edge": [
-            55,
-            59
+            21,
+            36
           ]
         }
       ],
       "best_qualifying_path": {
-        "max_2q_error": 0.0050589765297529565,
-        "max_readout_error": 0.031005859375,
-        "median_2q_error": 0.002955932004717693,
-        "median_readout_error": 0.00640869140625,
+        "max_2q_error": 0.005967797662577878,
+        "max_readout_error": 0.0108642578125,
+        "median_2q_error": 0.0045464115970300645,
+        "median_readout_error": 0.0062255859375,
         "path": [
-          69,
-          78,
           89,
           88,
           87,
           97,
           107,
-          106,
-          105,
-          117
+          108,
+          109,
+          118,
+          129,
+          128
         ],
         "worst_edge": [
-          87,
-          97
+          109,
+          118
         ]
       },
       "enumeration_truncated": false,
       "name": "ibm_kingston",
       "num_qubits": 156,
       "paths_found": 1674,
-      "paths_meeting_envelope": 968,
+      "paths_meeting_envelope": 764,
       "processor_type": {
         "family": "Heron",
         "revision": "2"
@@ -438,35 +438,37 @@
   ],
   "envelope_precommitment": {
     "max_edge_two_qubit_error_max": 0.01,
+    "max_readout_error_max": 0.05,
     "median_readout_error_max": 0.03,
     "median_two_qubit_error_max": 0.01
   },
   "path_length": 10,
   "recommended": {
     "backend": "ibm_fez",
-    "max_2q_error": 0.0026840712291925084,
-    "max_readout_error": 0.309814453125,
-    "median_2q_error": 0.002125918762559964,
-    "median_readout_error": 0.01416015625,
+    "max_2q_error": 0.0029201709110983354,
+    "max_readout_error": 0.01123046875,
+    "median_2q_error": 0.002626408114353246,
+    "median_readout_error": 0.0052490234375,
     "path": [
-      98,
-      91,
-      92,
-      93,
-      94,
-      95,
-      99,
-      115,
-      114,
-      113
+      124,
+      123,
+      136,
+      143,
+      144,
+      145,
+      146,
+      147,
+      137,
+      127
     ],
     "worst_edge": [
-      95,
-      99
+      123,
+      136
     ]
   },
   "schema_version": 1,
-  "score_formula": "lexicographic (max 2q, median 2q, max readout, median readout); worst edge as tie-break",
+  "score_formula": "AR-023c L4-A2: lexicographic median_readout_error, max_readout_error, max_2q_error, median_2q_error",
+  "score_formula_superseded": "AR-023 \u00a77: lexicographic max_2q_error, median_2q_error, max_readout_error, median_readout_error",
   "stage": "L4 backend/path selection",
   "submission": "none - this script cannot submit"
 }

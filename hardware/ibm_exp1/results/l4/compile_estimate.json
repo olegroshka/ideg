@@ -1,0 +1,47 @@
+{
+  "backend": "ibm_kingston",
+  "circuits_primary": 1372,
+  "circuits_with_m3_calibration": 1392,
+  "compilation_gate": {
+    "all_parameters_bound": true,
+    "no_swap": true,
+    "only_frozen_qubits": true,
+    "optimization_level": 3,
+    "pass": true,
+    "seed_transpiler": 1701
+  },
+  "compiled": {
+    "backend_dt": 4e-09,
+    "depth_max": 94,
+    "depth_median": 92.0,
+    "mean_circuit_duration_seconds": null,
+    "rep_delay_seconds": 0.00025,
+    "two_qubit_count_max": 18,
+    "two_qubit_count_median": 18.0
+  },
+  "executions": 1069056,
+  "physical_path": [
+    89,
+    88,
+    87,
+    97,
+    107,
+    108,
+    109,
+    118,
+    129,
+    128
+  ],
+  "schema_version": 1,
+  "shots": 768,
+  "submission": "none - this script cannot submit",
+  "usage_estimate_seconds": {
+    "cap": 450.0,
+    "duration_based": 269.264,
+    "duration_based_within_cap": true,
+    "free_allocation": 600.0,
+    "per_execution_seconds": 0.00025,
+    "rough_formula_ar023_s8": 376.1696,
+    "rough_within_cap": true
+  }
+}
