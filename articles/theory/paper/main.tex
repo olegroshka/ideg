@@ -68,6 +68,8 @@ that explicit weights may be used throughout.
 \end{abstract}
 
 \maketitle
+% Running heads: the short title on every page; the author is named once, on the first page.
+\markboth{Beyond Brown's radial tests}{Beyond Brown's radial tests}
 
 \section{Introduction}\label{sec:intro}
 
@@ -793,9 +795,9 @@ inadmissible.
 \begin{proof}
 $\log v$ is Lipschitz, so we may work with $w=v(x_1)$. The sphere mean is
 $\fbar(r)\asymp\mu_1([-r,r])/r\asymp\log^2r/r$, and $\int\dd r/(r^2\fbar)$
-converges. Along a direction with $\cos\varphi\ne0$ the ray integral is
-$\abs{\cos\varphi}\int^\infty\dd r/(r\log r)=\infty$, and the equatorial
-directions form a null set, so the ray test is silent. The doubling ratio
+converges. Along a direction with $\cos\varphi\ne0$ the ray integral equals
+$\abs{\cos\varphi}$ times $\int^\infty\dd r/(r\log r)=\infty$, and the
+equatorial directions form a null set, so the ray test is silent. The doubling ratio
 $\mu_1([0,2r])/\mu_1([r/2,3r/2])\asymp\log r$ is unbounded. For transience, the
 weighted Brownian motion is the product of the one-dimensional diffusion $W$
 with generator $v^{-1}(vu')'$ and a standard Brownian motion on $\R^2$, and it
@@ -810,8 +812,10 @@ theorem \cite[Thm.~2(iii), case $\alpha=1$]{kasahara1975} (see also
 \cite{kotaniwatanabe1982,kasaharawatanabe2010}) states that $\widetilde M$ is slowly varying at
 infinity if and only if $h(\lambda)\sim c/(\lambda\widetilde M(1/\lambda))$ as
 $\lambda\to0$, with an absolute constant $c$. Karamata's theorem then gives
-$p^W_t(0,0)\sim c'/\widetilde M(t)\asymp1/\log^2t$. Hence
-$\int^\infty p^W_t(0,0)\,t^{-1}\dd t\asymp\int^\infty\dd t/(t\log^2t)<\infty$.
+$p^W_t(0,0)\sim c'/\widetilde M(t)\asymp1/\log^2t$, hence
+\[
+\int^\infty p^W_t(0,0)\,\frac{\dd t}{t}\ \asymp\ \int^\infty\frac{\dd t}{t\log^2t}\ <\ \infty .
+\]
 The asymptotic, with constant $c'/\tfrac18=4$ for the string reflected at
 the origin, is confirmed numerically in Section~\ref{sec:numerics}.
 \end{proof}
@@ -829,7 +833,7 @@ logarithm and silences both radial tests; each is decided by a different
 non-radial argument.}
 \label{tab:zone}
 \small
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.30\textwidth}ccl>{\raggedright\arraybackslash}p{0.27\textwidth}@{}}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.28\textwidth}cc>{\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}p{0.25\textwidth}@{}}
 \toprule
 weight & doubling & Poincar\'e & $W_F$; $\delta_F$ & decided by \\
 \midrule
@@ -1064,11 +1068,11 @@ curvature itself has no statistical counterpart:
 The prior-independent $O(N^{-2})$ term of the risk of the Jeffreys predictive
 density is not proportional to $R$, and $\mathcal F$ is not the integrated risk
 reduction: whenever the boundary term of one integration by parts vanishes,
-\begin{equation}\label{eq:k2}
+\begin{multline}\label{eq:k2}
 \int\bigl(\mathrm{Risk}_N(\pi_J)-\mathrm{Risk}_N(f)\bigr)e^{-\Phi}\dd V
-=\frac{1}{2N^2}\int\abs{\nabla\Phi}^2_ge^{-\Phi}\dd V+o(N^{-2})
+=\frac{1}{2N^2}\int\abs{\nabla\Phi}^2_ge^{-\Phi}\dd V+o(N^{-2})\\
 =\frac{1}{2N^2}\Bigl[\mathcal F(g,\Phi)-\int R\,e^{-\Phi}\dd V\Bigr]+o(N^{-2}).
-\end{equation}
+\end{multline}
 \end{proposition}
 
 \begin{proof}
@@ -1098,6 +1102,8 @@ Fisher manifold, where Komaki's criterion would then separate the existence of a
 shrinkage prior from the sphere-area growth of the model, is open.
 
 \bibliographystyle{amsplain}
+{\small
 \bibliography{references}
+}
 
 \end{document}
