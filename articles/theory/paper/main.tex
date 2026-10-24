@@ -55,8 +55,8 @@ neither test applies. Three results. (A)~If $f^*\dd x$ is doubling and supports 
 scale-invariant Poincar\'e inequality, the sphere test is already complete:
 recurrence, Brown's sphere test and the ball-volume test are equivalent, so
 geometric criteria can add decidable cases only on the inadmissible side.
-(B)~They do add one. An explicit prior on $\R^3$, supported near a lattice of
-circles at dyadic scales with spacing equal to the square root of the scale, is
+(B)~They do add one. An explicit prior on $\R^3$ whose marginal is small along a
+lattice of circles at dyadic scales with spacing equal to the square root of the scale, is
 doubling and Poincar\'e, silences both of Brown's tests, and is transient by the
 ball-volume test; its generalized Bayes estimator is inadmissible. (C)~Outside
 the doubling--Poincar\'e class the zone is two-sided: the same circles placed on
@@ -210,11 +210,12 @@ $\capa(B_1)>0$ in $(\R^m,f^*\dd x)$.
 \item \textup{(Thm.~5.1.1)} If $\{Z_t\}$ is transient, $\delta_F$ is
 inadmissible. If $\{Z_t\}$ is recurrent and $\sup\abs{\nabla\log f^*}<\infty$,
 $\delta_F$ is admissible.
-\item \textup{(Thm.~6.3.1)} If $F$ is spherically symmetric, $\delta_F$ is
-inadmissible if and only if
+\item \textup{(Thm.~6.3.1)} If $F$ is spherically symmetric and
+$\nabla\log f^*$ is bounded, $\delta_F$ is inadmissible if and only if
 \[
-\int_1^\infty\frac{\dd r}{r^{m-1}f^*(r)}<\infty .
+\int_1^\infty\frac{\dd r}{r^{m-1}f^*(r)}<\infty ;
 \]
+the boundedness is used only for the admissible direction, as in~(b).
 \item \textup{(Thm.~6.4.3, sphere test)} If
 \[
 \int_1^\infty\frac{\dd r}{r^{m-1}\fbar(r)}=\infty ,
@@ -267,10 +268,12 @@ MLE admissible iff $m\le2$ (Stein \cite{stein1956}) & Brownian motion recurrent 
 \begin{remark}[priority]\label{rem:priority}
 Grigor'yan \cite[p.~178]{grigoryan1999} attributes the sphere-area test for
 Riemannian manifolds to Lyons--Sullivan \cite{lyonssullivan1984} and to
-\cite{grigoryan1985}. Brown's Theorem~6.4.3 is the same test on $W_F$, with the
-same proof, thirteen years earlier, and his Theorem~4.3.1 is the capacity
-characterization of parabolicity. In the sources we have read, neither
-literature cites the other.
+\cite{grigoryan1985}; its classical ancestor for Riemann surfaces is the
+Ahlfors--Nevanlinna criterion of the 1930s. Brown's Theorem~6.4.3 is the same
+test on the weighted space $W_F$, with the same proof, carried out in 1971 in
+the statistical setting and so predating the general weighted-manifold
+statements; his Theorem~4.3.1 is the capacity characterization of parabolicity.
+In the sources we have read, neither literature cites the other.
 \end{remark}
 
 \subsection{Explicit weights are marginals}
@@ -546,9 +549,11 @@ $r_0\le2^{k+1}$. For $r\in[r_0-1,r_0+1]$ one has $d^2\le1+\pi^2/16<1.62$ and
 hence $w\le(2.62/r_0)^{\alpha/2}$, so
 \begin{equation}\label{eq:raybound}
 \int_{r_0-1}^{r_0+1}\frac{\dd r}{r^2w(r\varphi)}\ \ge\
-\frac{2\,(r_0/2.62)^{\alpha/2}}{(r_0+1)^2}\ \ge\ 0.28\,r_0^{\alpha/2-2},
+\frac{2\,(r_0/2.62)^{\alpha/2}}{(r_0+1)^2}\ \ge\ 2.62^{-\alpha/2}\,r_0^{\alpha/2-2},
 \end{equation}
-which is at least $0.28$ for $\alpha=4$ and grows like $2^{k(\alpha/2-2)}$ for
+using $2(r_0/(r_0+1))^2\ge1$ for $r_0\ge16$. The coefficient $2.62^{-\alpha/2}$
+depends on $\alpha$: the per-shell toll is a positive constant (at least $0.14$)
+for $\alpha=4$ and grows like $2^{k(\alpha/2-2)}$ for
 $\alpha>4$. Summing over $k$ the ray integral diverges, for every $\varphi$. For
 the sphere test, on each sphere $\{\abs x=r\}$ with $r$ in shell $k$ the set of
 points at distance $\ge s_k/4$ from $\Gamma$ has a surface-measure fraction
@@ -718,7 +723,7 @@ $\Gamma'=\bigcup\Gamma_{k,j}$, and let
 w'(x)=\Bigl(\frac{1+d'(x)^2}{1+\abs x^2}\Bigr)^{\alpha/2},\qquad
 d'=\dist(\cdot,\Gamma'),\quad\alpha\ge2 .
 \end{equation}
-Every ray meets a unit tube around $\Gamma'$ in every shell, so the ray test is
+Every ray meets a tube of bounded radius around $\Gamma'$ in every shell, so the ray test is
 silent, and $\fbar$ is bounded below, so the sphere test is silent; $\log w'$ is
 Lipschitz. One might expect transience from the volume growth
 $V(r)\asymp r^3$. The opposite is true.
@@ -757,7 +762,8 @@ not support the scale-invariant Poincar\'e inequality.
 The circles of shell $k$ lie on the surface of revolution
 $\Sigma_k:\ r=\rho_k(\theta)=2^k(1+\theta/\pi)-\tfrac12$, $\theta\in[0,\pi]$, a
 closed graph over the sphere running from $r=2^k-\frac12$ at the north pole to
-$r=2^{k+1}-\frac12$ at the south pole, where it touches $\Sigma_{k+1}$. Along
+$r=2^{k+1}-\frac12$ at the south pole; consecutive surfaces reach the common
+radius $2^{k+1}-\frac12$ at antipodal poles, not at a shared point. Along
 $\Sigma_k$ consecutive circles are at distance between $3.3$ and $6.4$ (radial
 step $1$, meridian step $r\pi/2^k\in[\pi,2\pi]$), so every point of $\Sigma_k$ is
 within $3.2$ of $\Gamma'$. On the layer $\{r=\rho_k(\theta)+s,\ \abs s\le1\}$
@@ -914,7 +920,7 @@ under mesh refinement to $2.6\cdot10^5$ cells.
 For the lattice weight with $\alpha=4$, the smallest of $802$ ray integrals
 per shell, over random directions, the directions exactly between consecutive
 $\theta_n$, the poles and the equator, is between $0.94$ and $1.92$ for
-$k=4,\dots,11$ (the bound \eqref{eq:raybound} gives $0.28$); for $\alpha=6$
+$k=4,\dots,11$ (the bound \eqref{eq:raybound} gives $\ge0.14$); for $\alpha=6$
 it doubles per shell. The sphere mean lies between $0.0039$ and $0.052$, and
 $V(r)/(\frac43\pi r^3)$ between $0.019$ and $0.029$, both alternating with the
 parity of $k$. Doubling ratios $\mu(B(x,2\rho))/\mu(B(x,\rho))$ at centres on a
@@ -970,16 +976,20 @@ the volume test coincide (Theorem~\ref{thm:A}). On the inadmissible side the
 volume test decides weights that no cone of rays decides, and
 Theorem~\ref{thm:B} shows that such weights exist in $\R^3$: valleys of
 co-dimension two, sweeping every direction at every scale while staying far
-apart, are exactly what is needed, and the arithmetic of the construction
-($N_k\asymp2^k$ circles, spacing $2^{k/2}$, exponent $\alpha\ge4$) is forced by
-the two requirements. Outside the D+P class the zone contains recurrent and
+apart, are exactly what is needed, and within this ansatz the arithmetic of the
+construction ($N_k\asymp2^k$ circles, spacing $2^{k/2}$, exponent $\alpha\ge4$)
+is forced by the two requirements. Outside the D+P class the zone contains recurrent and
 transient members, and the first example of Section~\ref{sec:zone} shows that
 the Poincar\'e hypothesis in the volume criterion is not decorative: coherent
 circles form a wall, and a wall is recurrent with volume growth $r^3$.
 
-Several questions remain. First, is there a characterization of the undecided
-zone without the D+P hypothesis, for instance through the flux test along an
-optimally chosen exhaustion, which decided Proposition~\ref{prop:wall}?
+Several questions remain. First, Grigor'yan's flux test
+\cite[Thm.~7.6]{grigoryan1999} already characterizes parabolicity, without the
+D+P hypothesis, through the existence of a suitable exhaustion (for the smooth
+positive weights here, via the conformal metric $w^{2/(m-2)}\delta$ when
+$m\ge3$); the open question is whether an \emph{explicit, computable} exhaustion,
+of the kind that decided Proposition~\ref{prop:wall}, can be given across the
+undecided zone.
 Second, the construction of Theorem~\ref{thm:B} is three-dimensional; in the
 plane the valleys would be points, transience requires volume growth faster
 than $r^2\log r$, and the arithmetic of exponents changes. Third, the relation
@@ -1047,9 +1057,12 @@ For a regular model and $f=e^{-\Phi}\pi_J$, with $u=\sqrt{f/\pi_J}=e^{-\Phi/2}$,
 =\frac{R^{\mathrm m}_\Phi-R}{2N^2}+o(N^{-2})
 =-\frac{2}{N^2}\,\frac{\Delta_gu}{u}+o(N^{-2}).
 \end{equation}
-Hence $f$ asymptotically dominates $\pi_J$ if and only if $u$ is a nonconstant
-positive superharmonic function on $(M,g)$, if and only if
-$R^{\mathrm m}_\Phi\ge R$ with strict inequality somewhere.
+Hence $f$ asymptotically dominates $\pi_J$ at this order if and only if $u$ is a
+positive superharmonic function on $(M,g)$ that is not harmonic (equivalently
+$R^{\mathrm m}_\Phi\ge R$, with strict inequality on a set of positive measure).
+A nonconstant positive \emph{harmonic} $u$ makes the $O(N^{-2})$ coefficient
+vanish, so nonconstancy alone is not enough; the existence of such a
+superharmonic $u$ is, however, equivalent to non-parabolicity of $(M,g)$.
 \end{proposition}
 
 \begin{proof}
@@ -1084,7 +1097,11 @@ For $d=1$ these are generically nonzero, Efron's statistical curvature of a
 curved exponential family being the simplest instance \cite{efron1975}, while
 every intrinsic curvature of a one-dimensional Riemannian manifold vanishes.
 Equation \eqref{eq:k2} follows from \eqref{eq:k1} and
-$\int\Delta_g\Phi\,e^{-\Phi}\dd V=\int\abs{\nabla\Phi}^2e^{-\Phi}\dd V$.
+$\int\Delta_g\Phi\,e^{-\Phi}\dd V=\int\abs{\nabla\Phi}^2e^{-\Phi}\dd V$. The
+integrated form is an identity of leading coefficients; integrating the
+pointwise $o(N^{-2})$ remainder against $e^{-\Phi}\dd V$ requires in addition a
+dominated or uniformly integrable remainder bound, which we do not establish for
+improper~$\Phi$.
 \end{proof}
 
 Two remarks complete the parallel. First, Komaki's treatment of vague priors
@@ -1092,14 +1109,17 @@ Two remarks complete the parallel. First, Komaki's treatment of vague priors
 superharmonicity with respect to the conformal metric
 $\tilde g=(h/\pi_J)^{2/(d-2)}g$: changing the reference prior is a conformal
 change of the Fisher metric, and for Stein's prior on $\R^d$ the conformal
-metric is the flat cylinder $S^{d-1}\times\R$ with the origin pushed to
-infinite distance (his Example~1). Second, in both theories the geometry of the
+metric is the round cylinder $S^{d-1}\times\R$, of scalar curvature
+$(d-1)(d-2)$, with the origin pushed to infinite distance (his Example~1); it is
+parabolic despite that positive curvature. Second, in both theories the geometry of the
 prior enters through recurrence or transience of a diffusion, Brown's on the
 sample space and Komaki's on the parameter space, and not through curvature in
-a risk formula. Whether the scattered valleys of Theorem~\ref{thm:B}, which
-separate the volume test from the sphere test on $\R^3$, have an analogue on a
-Fisher manifold, where Komaki's criterion would then separate the existence of a
-shrinkage prior from the sphere-area growth of the model, is open.
+a risk formula. On $\R^3$ the scattered valleys of Theorem~\ref{thm:B} are
+decided by the volume criterion under $D{+}P$ although neither of Brown's
+one-sided radial tests fires (both the sphere and the volume integrals converge
+there). Whether such weights have an analogue on a Fisher manifold, where
+Komaki's criterion would then separate the existence of a shrinkage prior from
+the sphere-area growth of the model, is open.
 
 \bibliographystyle{amsplain}
 {\small
