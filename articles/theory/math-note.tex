@@ -1,0 +1,888 @@
+\RequirePackage[2023-06-01]{latexrelease}
+\documentclass[a4paper,11pt,noarxiv]{quantumarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\definecolor{linkink}{HTML}{1c3f77}
+\usepackage{hyperref}
+\usepackage{microtype}
+\emergencystretch=1.5em
+\hypersetup{colorlinks=true,linkcolor=linkink,citecolor=linkink,
+urlcolor=linkink}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Rm}{R^{\mathrm m}}
+\newcommand{\Risk}{\operatorname{Risk}}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\grad}{\nabla}
+\newcommand{\fbar}{\bar f}
+\DeclareMathOperator{\capa}{cap}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\Ric}{Ric}
+\newcommand{\status}[1]{\textsc{\small [#1]}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Shrinkage priors, admissibility, and weighted Riemannian
+geometry: potential theory and co-dimension two obstructions}
+\author{Oleg Roshka}
+\affiliation{Independent Researcher \textnormal{--}
+\href{https://orcid.org/0009-0009-3075-9417}{ORCID
+0009-0009-3075-9417}}
+\date{24 October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Two literatures intersect without citing each other: Stein-type
+shrinkage and admissibility in statistical decision theory (Stein,
+Brown, Komaki) and the potential theory of weighted Riemannian
+manifolds (Grigor'yan; Perelman's weighted scalar curvature;
+Saloff-Coste). This note establishes the exact dictionary between
+them and resolves the analytical question that their intersection
+raises. First, on a statistical manifold $(M,g)$ equipped with the
+Fisher--Rao metric, Komaki's $O(N^{-2})$ Kullback--Leibler risk
+reduction of a prior $e^{-\Phi}\pi_J$ over the Jeffreys prior $\pi_J$
+equals $(\Rm_\Phi-R)/(2N^2)$, the $\Phi$-dependent part of Perelman's
+weighted scalar curvature $\Rm_\Phi=R+2\Delta_g\Phi-\abs{\grad\Phi}_g^2$,
+while the prior-independent $O(N^{-2})$ risk depends on statistical
+embedding curvatures and skewness rather than the intrinsic scalar
+curvature $R$. Second, Brown's (1971) admissibility characterization
+for normal means $X\sim N_m(\theta,I)$ under a generalized Bayes
+marginal $f^*=p*F$ is the parabolic potential theory of the weighted
+Euclidean manifold $W_F=(\R^m,\delta_{ij},f^*\dd x)$, and his 1971
+sphere-average test is the sphere-area parabolicity test attributed in
+Riemannian geometry to Lyons--Sullivan (1984) and Grigor'yan (1985).
+Third, we investigate when the doubling and scale-invariant Poincar\'e
+hypotheses of heat-kernel theory allow Grigor'yan's ball-volume test
+to decide admissibility problems on which both of Brown's radial tests
+are silent. We prove that a bounded spherical $A_2$ ratio
+$Q(r)=\fbar(r)A(r)$ makes Brown's two radial tests exhaustive, and
+that in one dimension doubling and the Poincar\'e inequality force this
+bound, so the ball-volume test decides nothing new for product weights.
+In dimension $m\ge3$, however, this implication fails: because a
+one-dimensional curve in $\R^3$ has co-dimension two, it does not
+disconnect balls, allowing $Q(r)\to\infty$ while preserving uniform
+doubling and Poincar\'e constants. Exploiting this co-dimension two
+phenomenon, we construct an explicit doubling and Poincar\'e weight on
+$\R^3$ on which both of Brown's radial tests fail, yet Grigor'yan's
+ball-volume criterion decides inadmissibility. Finally, for a
+borderline non-doubling product weight left undecided by all three
+geometric tests, we prove inadmissibility analytically via Krein's
+spectral string theory and Kasahara's Tauberian theorem.
+\end{abstract}
+
+\section{Introduction and setting}\label{sec:intro}
+
+In decision-theoretic statistics, the phenomenon discovered by Stein
+\cite{stein1956}---that the standard maximum likelihood estimator for a
+$d$-dimensional normal mean is inadmissible for $d\ge3$---is governed
+by the recurrence or transience of an associated diffusion operator.
+For quadratic loss in the normal location model $X\sim N_m(\theta,I)$,
+Brown \cite{brown1971} proved that a generalized Bayes estimator with
+bounded drift is admissible if and only if a symmetric diffusion on
+$\R^m$ weighted by the marginal density $f^*=p*F$ is recurrent. For
+Kullback--Leibler predictive loss on a general curved statistical
+manifold $(M,g)$, Komaki \cite{komaki2006} proved that a Bayesian
+predictive density built from a prior $f=e^{-\Phi}\pi_J$ asymptotically
+dominates the Jeffreys predictive density if and only if
+$u=\sqrt{f/\pi_J}=e^{-\Phi/2}$ is nonconstant positive superharmonic
+with respect to the Laplace--Beltrami operator $\Delta_g$ of the
+Fisher--Rao metric.
+
+Independently, in geometric analysis and potential theory on smooth
+metric measure spaces $(M,g,e^{-\Phi}\dd V)$, the same differential
+operators and integral criteria were developed to study heat kernels,
+parabolicity (recurrence of weighted Brownian motion), and Ricci flow
+with a potential \cite{bakryemery1985,grigoryan1999,perelman2002}.
+Despite identical analytical objects, the statistical and geometric
+literatures developed largely in parallel.
+
+The purpose of this note is twofold:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2em,itemsep=2pt]
+\item To record the precise dictionary between the two fields
+(\S\S\ref{sec:komaki}--\ref{sec:brown} and Table~\ref{tab:dict}),
+identifying both exact identities and structural boundaries where naive
+analogies fail.
+\item To resolve the analytical question opened by this dictionary
+(\S\ref{sec:reach}): does the modern Grigor'yan--Saloff-Coste--Sturm
+theory of doubling metric measure spaces supporting a scale-invariant
+Poincar\'e inequality yield an admissibility criterion (the ball-volume
+test) that strictly extends Brown's 1971 radial sphere-average and
+ray tests?
+\end{enumerate}
+
+We show that the answer to (ii) depends on a topological co-dimension
+threshold. In one dimension---and consequently for one-dimensional
+product priors on $\R^m$---the doubling and Poincar\'e hypotheses force
+the arithmetic and harmonic sphere means of $f^*$ to remain comparable
+(Lemmas~\ref{lem:exhaustive}--\ref{lem:1d_a2} and
+Corollary~\ref{cor:product}), which renders Brown's two radial tests
+already exhaustive. In dimension $m\ge3$, however, zeros or valleys of
+the weight along a submanifold of co-dimension at least two do not
+disconnect balls. Diffusing paths can bypass co-dimension two
+obstructions without inflating the scale-invariant Poincar\'e constant,
+even as the spherical $A_2$ ratio diverges
+(Theorem~\ref{thm:codim2_unbounded}). By placing co-dimension two rings
+across dyadic shells so that their radial projections sweep the unit
+sphere infinitely often, we construct a smooth doubling and Poincar\'e
+weight on $\R^3$ on which every radial ray integral diverges and the
+sphere-average integral converges---leaving both of Brown's tests
+silent---while Grigor'yan's ball-volume test immediately establishes
+transience (Theorem~\ref{thm:blind_brown}). We conclude in
+Proposition~\ref{prop:krein} by settling a borderline non-doubling
+product example analytically using Feller's canonical scale and
+Kasahara's Karamata--Tauberian theorem for Krein strings.
+
+\paragraph{Notation and standing definitions.}
+On the parametric model side, let $\{p(x\mid\theta):\theta\in M\subset\R^d\}$
+be a regular statistical model carrying the Fisher--Rao metric
+$g_{ij}(\theta)=E_\theta[\partial_i\ell\,\partial_j\ell]$, where
+$\ell=\log p(x\mid\theta)$, the Jeffreys prior density
+$\pi_J(\theta)=\abs{\det g(\theta)}^{1/2}$ with Riemannian volume
+element $\dd V=\pi_J(\theta)\dd\theta$, and the Laplace--Beltrami
+operator $\Delta_g=\abs{g}^{-1/2}\partial_i(\abs{g}^{1/2}g^{ij}\partial_j)$
+\cite{amari2000}. A smooth positive prior density is written
+$f(\theta)=e^{-\Phi(\theta)}\pi_J(\theta)$, with amplitude
+$u(\theta)=\sqrt{f(\theta)/\pi_J(\theta)}=e^{-\Phi(\theta)/2}$. The
+triple $(M,g,e^{-\Phi}\dd V)$ is a smooth metric measure space with
+weighted (Bakry--\'Emery) Laplacian
+$\Delta_\Phi=\Delta_g-\grad\Phi\cdot\grad$, self-adjoint on
+$L^2(M,e^{-\Phi}\dd V)$, Bakry--\'Emery Ricci tensor
+$\Ric_\Phi=\Ric_g+\grad^2\Phi$ \cite{bakryemery1985}, and Perelman's
+weighted scalar curvature \cite{perelman2002}
+\begin{equation}\label{eq:perelman}
+\Rm_\Phi=R+2\Delta_g\Phi-\abs{\grad\Phi}_g^2,
+\end{equation}
+where $R=g^{ij}\Ric_{ij}$ is the Levi-Civita scalar curvature of
+$(M,g)$. Integrating $\Rm_\Phi$ against $e^{-\Phi}\dd V$ yields
+Perelman's entropy functional
+$\mathcal F(g,\Phi)=\int_M\Rm_\Phi\,e^{-\Phi}\dd V
+=\int_M(R+\abs{\grad\Phi}_g^2)e^{-\Phi}\dd V$ whenever the boundary
+term of integration by parts vanishes. A weighted manifold is called
+\emph{parabolic} if its weighted Brownian motion with generator
+$\Delta_\Phi$ is recurrent, or equivalently if it admits no positive
+Green function and every positive superharmonic function
+($\Delta_\Phi h\le0$) is constant \cite[\S5]{grigoryan1999}. We denote
+by $\Risk_N(f)$ the expected Kullback--Leibler divergence from the true
+density $p(y\mid\theta)$ to the Bayesian predictive density
+$\hat p_f(y\mid x^{(N)})$ formed from $N$ independent observations
+under prior $f$.
+
+On Brown's normal estimation side, let $X\sim N_m(\theta,I_m)$ in
+$\R^m$ ($m\ge3$), let $F$ be a $\sigma$-finite prior measure on $\R^m$,
+and let $f^*(x)=(p*F)(x)=\int_{\R^m}(2\pi)^{-m/2}e^{-\abs{x-\theta}^2/2}\dd F(\theta)$
+be its marginal density. Under quadratic loss
+$E_\theta[\abs{\delta(X)-\theta}^2]$, the generalized Bayes estimator is
+Tweedie's score estimator
+$\delta_F(x)=x+\grad\log f^*(x)=x+\gamma_F(x)$, which has bounded risk
+whenever $\gamma_F=\grad\log f^*$ is bounded \cite[\S3]{brown1971}.
+This defines the weighted Euclidean space
+$W_F=(\R^m,\delta_{ij},f^*\dd x)$ with measure $\dd\mu=f^*\dd x$, dual
+measure $\dd\nu=(f^*)^{-1}\dd x$, and weighted Laplacian
+$\Delta_\Phi=\Delta+\grad\log f^*\cdot\grad$ ($\Phi=-\log f^*$), which
+generates Brown's diffusion $\{Z_t\}$. For $r>0$, let $S^{m-1}$ denote
+the unit sphere with normalized surface measure $\dd\sigma$, and define
+the spherical arithmetic mean, harmonic-inverse mean, and
+\emph{spherical $A_2$ ratio}:
+\begin{equation}\label{eq:spherical_a2}
+\fbar(r)=\int_{S^{m-1}}f^*(r\varphi)\dd\sigma(\varphi),\quad
+A(r)=\int_{S^{m-1}}\frac{\dd\sigma(\varphi)}{f^*(r\varphi)},\quad
+Q(r)=\fbar(r)A(r)\ge1.
+\end{equation}
+
+\section{Predictive shrinkage and Perelman's weighted scalar curvature}
+\label{sec:komaki}
+
+We first record the exact relation between Komaki's asymptotic risk
+expansion \cite{komaki2006,komaki2015} and Perelman's weighted scalar
+curvature \eqref{eq:perelman}.
+
+\begin{proposition}\label{prop:komaki_perelman}
+For a regular statistical model $(M,g)$ and a smooth prior
+$f=e^{-\Phi}\pi_J$ with $u=e^{-\Phi/2}$, the $O(N^{-2})$ predictive risk
+reduction $\varrho_N(f)=\Risk_N(\pi_J)-\Risk_N(f)$ satisfies
+\begin{equation}\label{eq:komaki_perelman}
+\varrho_N(f)
+=\frac{1}{2N^2}\bigl(2\Delta_g\Phi-\abs{\grad\Phi}_g^2\bigr)+o(N^{-2})
+=\frac{\Rm_\Phi-R}{2N^2}+o(N^{-2})
+=-\frac{2}{N^2}\,\frac{\Delta_g u}{u}+o(N^{-2}).
+\end{equation}
+Consequently, $f$ asymptotically dominates $\pi_J$ up to $O(N^{-2})$ if
+and only if $u$ is a nonconstant positive superharmonic function on
+$(M,g)$, or equivalently $\Rm_\Phi\ge R$ everywhere with strict
+inequality at some point.
+\end{proposition}
+
+\begin{proof}
+In Komaki's asymptotic expansion of the predictive risk \cite[eqs.\
+(3)--(5)]{komaki2006}, subtracting $\Risk_N(f)$ from $\Risk_N(\pi_J)$
+cancels all prior-independent terms and third-order skewness
+contractions, leaving the first equality of \eqref{eq:komaki_perelman}
+written in terms of $\log(f/\pi_J)=-\Phi$. The second equality is
+\eqref{eq:perelman}, and the third follows from the identity
+$\Delta_g(e^{-\Phi/2})/e^{-\Phi/2}=-\tfrac12\Delta_g\Phi+\tfrac14\abs{\grad\Phi}_g^2$.
+The domination criterion is Komaki's Theorem~2 \cite{komaki2006}.
+\end{proof}
+
+\begin{proposition}\label{prop:no_R}
+In static independent sampling, the prior-independent $O(N^{-2})$ term
+of the Jeffreys predictive risk $\Risk_N(\pi_J)$ is not proportional to
+the Riemannian scalar curvature $R$ of $(M,g)$, and Perelman's
+functional $\mathcal F(g,\Phi)$ is not the integrated predictive risk.
+Whenever the boundary term of integration by parts vanishes, up to
+$o(N^{-2})$,
+\begin{equation}\label{eq:int_risk}
+\int_M\varrho_N(f)\,e^{-\Phi}\dd V
+=\frac{1}{2N^2}\int_M\abs{\grad\Phi}_g^2\,e^{-\Phi}\dd V
+=\frac{1}{2N^2}\Bigl[\mathcal F(g,\Phi)-\int_M R\,e^{-\Phi}\dd V\Bigr].
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Komaki \cite[Theorem A1, eq.\ (29)]{komaki2015} derives the complete
+$O(N^{-2})$ expansion of $\Risk_N(\pi_J)$. Its prior-independent part is
+a linear combination of the exponential and mixture statistical
+embedding curvatures, the skewness norm $T_{ijk}T^{ijk}$, a fourth-order
+cumulant contraction, and a mixed moment term. For a one-dimensional
+curved exponential family ($d=1$), these embedding curvatures and
+cumulants are generically nonzero (recovering Efron's statistical
+curvature \cite{efron1975}), whereas the intrinsic Riemannian scalar
+curvature $R$ vanishes identically for every $d=1$ manifold. Equation
+\eqref{eq:int_risk} follows from \eqref{eq:komaki_perelman} and the
+integration by parts identity
+$\int_M(\Delta_g\Phi)e^{-\Phi}\dd V=\int_M\abs{\grad\Phi}_g^2e^{-\Phi}\dd V$.
+\end{proof}
+
+\begin{remark}[Role of curvature and conformal change of vague prior]
+\label{rem:conformal}
+By Komaki's Theorems~1--2 \cite{komaki2006}, a shrinkage prior
+asymptotically dominating $\pi_J$ exists if and only if $(M,g)$ is
+non-parabolic (carries a positive Green function). Riemannian curvature
+enters static shrinkage domination through this global potential-theoretic
+threshold---for instance, negative sectional curvature in $d\ge3$ implies
+non-parabolicity \cite[Theorem~3]{komaki2006}---rather than as an
+additive potential $R$ in the local risk. Furthermore, when $d\ge3$ and
+one tests domination over a general baseline prior $h=e^{-\Phi}\pi_J$
+rather than $\pi_J$, Komaki \cite[\S3, Theorems 4--6]{komaki2006} shows
+that $f$ dominates $h$ if and only if $\sqrt{f/h}$ is superharmonic
+with respect to the conformally rescaled metric
+$\tilde g=(h/\pi_J)^{2/(d-2)}g=e^{-2\Phi/(d-2)}g$. Under this conformal
+change of metric, standard transformation rules for scalar curvature
+yield, up to boundary terms,
+\begin{equation}\label{eq:conformal_F}
+\mathcal F(g,\Phi)=\int_M\Bigl[\tilde R-\frac{1}{d-2}
+\abs{\tilde\grad\Phi}_{\tilde g}^2\Bigr]\dd\tilde V.
+\end{equation}
+For the flat normal location family $N_d(\mu,I_d)$ and Stein's harmonic
+prior $h(\mu)=\norm{\mu}^{-(d-2)}$, the conformal metric $\tilde g_{ij}
+=\norm{\mu}^{-2}\delta_{ij}$ is isometric to the flat Riemannian
+cylinder $S^{d-1}\times\R$ under $\mu\mapsto(\mu/\norm{\mu},\ln\norm{\mu})$,
+pushing the origin $\mu=0$ to infinite geodesic distance
+\cite[Example~1]{komaki2006}.
+\end{remark}
+
+\section{Brown (1971) as potential theory on \texorpdfstring{$W_F$}{W\_F}}
+\label{sec:brown}
+
+In the normal location model $X\sim N_m(\theta,I_m)$, Stein's unbiased
+risk identity writes the quadratic risk difference between $\delta_F=x+\gamma_F$
+and the maximum likelihood estimator $\delta_0(x)=x$ as
+$E_\theta[\abs{\delta_F(X)-\theta}^2]-m=E_\theta[2\operatorname{div}\gamma_F(X)+\abs{\gamma_F(X)}^2]
+=4E_\theta[\Delta(f^*)^{1/2}/(f^*)^{1/2}]$. Brown's fundamental
+contribution \cite{brown1971} was to characterize exact (non-asymptotic)
+admissibility of $\delta_F$ in terms of the Dirichlet form
+$\mathcal E_{W_F}(j)=\int_{\R^m}\abs{\grad j}^2f^*\dd x$ on the weighted
+manifold $W_F=(\R^m,\delta_{ij},f^*\dd x)$.
+
+\begin{theorem}[Brown \cite{brown1971} in weighted manifold terminology]
+\label{thm:brown}\leavevmode
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=1.8em,itemsep=2pt,topsep=2pt]
+\item \textup{(Capacity criterion; Brown Thm.\ 4.3.1, Grigor'yan
+\cite[Thm.\ 5.1]{grigoryan1999})} The diffusion $\{Z_t\}$ on $W_F$ is
+transient if and only if the weighted capacity of the closed unit ball
+$B_1=\{\abs{x}\le1\}$,
+\[
+\capa_{W_F}(B_1)=\inf\Bigl\{\int_{\R^m}\abs{\grad j(x)}^2f^*(x)\dd x :
+j\in C_c^\infty(\R^m),\; j\big|_{B_1}=1\Bigr\},
+\]
+is strictly positive, i.e.\ $W_F$ is non-parabolic.
+\item \textup{(Admissibility $\Leftrightarrow$ parabolicity; Brown Thm.\
+5.1.1)} If $\gamma_F=\grad\log f^*$ is bounded, then $\delta_F$ is
+admissible if and only if $W_F$ is parabolic. Conversely, if $W_F$ is
+transient, then $\delta_F$ is inadmissible without any boundedness
+assumption on $\gamma_F$.
+\item \textup{(Spherically symmetric case; Brown Thm.\ 6.3.1, Grigor'yan
+\cite[Prop.\ 3.1]{grigoryan1999})} If $F$ is spherically symmetric,
+$\delta_F$ is inadmissible if and only if
+$\int_1^\infty r^{1-m}f^*(r)^{-1}\dd r<\infty$.
+\item \textup{(Sphere-average parabolicity test; Brown Thm.\ 6.4.3,
+Lyons--Sullivan \cite{lyonssullivan1984}, Grigor'yan \cite{grigoryan1985}
+\cite[Thm.\ 7.5]{grigoryan1999})} For any prior $F$, if
+\begin{equation}\label{eq:sphere_test}
+\int_1^\infty\frac{\dd r}{r^{m-1}\fbar(r)}=\infty,
+\end{equation}
+then $W_F$ is parabolic, and hence $\delta_F$ is admissible whenever
+$\gamma_F$ is bounded. Furthermore, by the Cauchy--Schwarz inequality on
+dyadic shells, \eqref{eq:sphere_test} is implied by (and is strictly
+stronger than) Grigor'yan's ball-volume parabolicity condition
+$\int_1^\infty r\dd r/\mu(B_r)=\infty$ \cite[Thm.\ 7.3]{grigoryan1999}.
+\item \textup{(Ray transience test; Brown Thm.\ 6.4.4)} If there exists
+a measurable subset $\Omega\subset S^{m-1}$ of positive surface measure
+such that
+\begin{equation}\label{eq:ray_test}
+\sup_{\varphi\in\Omega}\int_1^\infty\frac{\dd r}{r^{m-1}f^*(r\varphi)}<\infty,
+\end{equation}
+then $W_F$ is transient and $\delta_F$ is inadmissible.
+\item \textup{(1/$r$ drift equivalence; Brown Thm.\ 6.4.2)} Under the
+decay condition $\abs{\gamma_F(x)}\le k/\abs{x}$ for large $\abs{x}$,
+condition \eqref{eq:sphere_test} is both necessary and sufficient for
+admissibility.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}[Historical priority on the sphere-area test]
+In the Riemannian geometry literature, the sufficiency of the
+reciprocal sphere-area integral \eqref{eq:sphere_test} for parabolicity
+is attributed to Lyons and Sullivan (1984) \cite{lyonssullivan1984} and
+Grigor'yan (1985) \cite{grigoryan1985}; see \cite[p.~178]{grigoryan1999}.
+Brown's Theorem~6.4.3 \cite{brown1971} establishes the identical
+variational test on $W_F$ thirteen years earlier by plugging the radial
+test function $j(r)=\big(\int_r^R s^{1-m}\fbar(s)^{-1}\dd s\big)\big/
+\big(\int_1^R s^{1-m}\fbar(s)^{-1}\dd s\big)$ into the capacity
+infimum of Theorem~\ref{thm:brown}(a). Table~\ref{tab:dict} summarizes
+the complete dictionary between the statistical and geometric
+formulations.
+\end{remark}
+
+\begin{table*}[t]
+\caption{Dictionary between statistical decision theory / information
+geometry and weighted Riemannian geometry.}
+\label{tab:dict}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.46\textwidth}>{\raggedright\arraybackslash}p{0.50\textwidth}@{}}
+\toprule
+Statistical Theory (Stein, Brown, Komaki) & Weighted Riemannian Geometry (Grigor'yan, Perelman) \\
+\midrule
+Parametric model with Fisher metric $(M,g)$ & Riemannian manifold $(M,g)$ \\
+Smooth prior $f=e^{-\Phi}\pi_J$ & Smooth metric measure space $(M,g,e^{-\Phi}\dd V)$ \\
+$O(N^{-2})$ KL risk reduction $\varrho_N(f)$ over $\pi_J$ & $(\Rm_\Phi-R)/(2N^2)=-2\Delta_g u/(N^2u)$ (Prop.~\ref{prop:komaki_perelman}) \\
+Asymptotic domination over $\pi_J$ (Komaki Thm.\ 2) & $u=e^{-\Phi/2}$ nonconstant positive superharmonic \\
+Existence of dominating shrinkage prior (Komaki Thm.\ 1) & $(M,g)$ non-parabolic (carries a Green function) \\
+Prior-independent $O(N^{-2})$ risk of $\pi_J$ & Embedding curvatures and skewness; \emph{not} $R$ (Prop.~\ref{prop:no_R}) \\
+Change of baseline vague prior $h=e^{-\Phi}\pi_J$ ($d\ge3$) & Conformal metric $\tilde g=e^{-2\Phi/(d-2)}g$ (Remark~\ref{rem:conformal}) \\
+Stein prior $\norm{\mu}^{-(d-2)}$ in conformal frame & Flat Riemannian cylinder $S^{d-1}\times\R$ \\
+Generalized Bayes admissibility, bounded $\gamma_F$ (Brown Thm.\ 5.1.1) & Parabolicity of $W_F=(\R^m,\delta_{ij},f^*\dd x)$ \\
+Brown's variational energy infimum (Brown Thm.\ 4.3.1) & Weighted capacity $\capa_{W_F}(B_1)$ (Grigor'yan Thm.\ 5.1) \\
+Brown's sphere-average test (Brown Thm.\ 6.4.3, 1971) & Sphere-area parabolicity test (Grigor'yan Thm.\ 7.5, 1985) \\
+--- & Ball-volume parabolicity test $\int r\dd r/\mu(B_r)=\infty$ (weaker) \\
+Doubling + Poincar\'e ball-volume transience (Thm.~\ref{thm:blind_brown}) & Decides co-dimension 2 weights where Brown's tests fail \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\section{The reach of Brown's radial tests and co-dimension two obstructions}
+\label{sec:reach}
+
+Theorem~\ref{thm:brown}(d) is a sufficient condition for parabolicity
+(recurrence) and Theorem~\ref{thm:brown}(e) is a sufficient condition
+for transience. As Brown observed \cite[p.~900]{brown1971}, there exist
+anisotropic priors $F$ for which the sphere-average integral
+\eqref{eq:sphere_test} converges while the ray integral in
+\eqref{eq:ray_test} diverges along almost every direction
+$\varphi\in S^{m-1}$, rendering both tests silent.
+
+In geometric analysis, on the other hand, a celebrated theorem of
+Grigor'yan \cite{grigoryan1991} and Saloff-Coste \cite{saloffcoste1992}
+(extended to local Dirichlet spaces by Sturm \cite{sturm1996}) states
+that if a weighted manifold satisfies the volume doubling property
+$\mu(B(x,2\rho))\le D\,\mu(B(x,\rho))$ and the scale-invariant $(2,2)$-Poincar\'e
+inequality
+\begin{equation}\label{eq:poincare}
+\int_{B(x,\rho)}\abs{u-u_B}^2\dd\mu
+\le C\rho^2\int_{B(x,\rho)}\abs{\grad u}^2\dd\mu
+\end{equation}
+uniformly for all balls $B=B(x,\rho)$, then two-sided Gaussian heat
+kernel bounds hold, and transience of $W_F$ is \emph{equivalent} to the
+convergence of the ball-volume integral:
+\begin{equation}\label{eq:vol_transience}
+W_F \text{ is transient} \quad\Longleftrightarrow\quad
+\int_1^\infty\frac{r\dd r}{\mu(B(0,r))}<\infty
+\qquad\text{\cite[Thm.\ 11.1]{grigoryan1999}}.
+\end{equation}
+A natural question is whether \eqref{eq:vol_transience} resolves
+admissibility problems on which Brown's radial tests (d) and (e) are
+silent. We now determine the exact conditions under which this occurs.
+
+\subsection{Exhaustiveness under bounded spherical \texorpdfstring{$A_2$}{A2}
+and collapse for product weights}
+
+\begin{lemma}[Bounded spherical $A_2$ makes Brown's tests exhaustive]
+\label{lem:exhaustive}
+Suppose the spherical $A_2$ ratio \eqref{eq:spherical_a2} satisfies
+$\sup_{r\ge1}Q(r)=C<\infty$. Then Brown's two radial tests are
+exhaustive: if $\int_1^\infty r^{1-m}\fbar(r)^{-1}\dd r=\infty$, then
+$W_F$ is parabolic; if $\int_1^\infty r^{1-m}\fbar(r)^{-1}\dd r<\infty$,
+then $W_F$ is transient and $\delta_F$ is inadmissible.
+\end{lemma}
+
+\begin{proof}
+The first case is Theorem~\ref{thm:brown}(d). In the second case, let
+$I(\varphi)=\int_1^\infty r^{1-m}f^*(r\varphi)^{-1}\dd r$. By Tonelli's
+theorem, its average over $\varphi\in S^{m-1}$ is
+\[
+\int_{S^{m-1}}I(\varphi)\dd\sigma(\varphi)
+=\int_1^\infty\frac{A(r)}{r^{m-1}}\dd r
+\le C\int_1^\infty\frac{\dd r}{r^{m-1}\fbar(r)}<\infty.
+\]
+Hence $I(\varphi)<\infty$ for $\sigma$-almost every $\varphi\in S^{m-1}$.
+By Chebyshev's inequality, the set $\Omega=\{\varphi\in S^{m-1}:
+I(\varphi)\le 2\int_{S^{m-1}}I\dd\sigma\}$ has surface measure at least
+$1/2$, so Theorem~\ref{thm:brown}(e) applies.
+\end{proof}
+
+Lemma~\ref{lem:exhaustive} implies that any weight on which both of
+Brown's radial tests are silent must satisfy $\limsup_{r\to\infty}Q(r)=\infty$.
+In dimension one, however, doubling and the scale-invariant Poincar\'e
+inequality forbid such divergence.
+
+\begin{lemma}[One-dimensional doubling and Poincar\'e force $A_2$ on
+centred intervals]\label{lem:1d_a2}
+Let $w>0$ be continuous on $\R$, $\dd\mu=w(t)\dd t$, and
+$\dd\nu=w(t)^{-1}\dd t$. Suppose $\mu$ is doubling on intervals,
+$\mu(2I)\le D\,\mu(I)$, and satisfies the one-dimensional
+scale-invariant Poincar\'e inequality \eqref{eq:poincare} on all
+intervals $I$ with constant $C$. Then for every $r>0$,
+\begin{equation}\label{eq:1d_a2}
+\mu([-r,r])\,\nu([-r,r])\le 32\,CD^3\,r^2.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+On $I=[-2r,2r]$ (of length $\abs{I}=4r$), define the continuous piecewise
+smooth test function $u(t)=0$ for $t\in[-2r,-r]$, $u(t)=1$ for
+$t\in[r,2r]$, and $u(t)=\nu([-r,t])/\nu([-r,r])$ for $t\in[-r,r]$. This
+choice minimizes the Dirichlet energy across $[-r,r]$, giving
+$\int_I\abs{u'(t)}^2\dd\mu(t)=\nu([-r,r])^{-1}$. On the other hand, any
+function equal to $0$ on a set of $\mu$-measure $a=\mu([-2r,-r])$ and
+equal to $1$ on a set of $\mu$-measure $b=\mu([r,2r])$ has $\mu$-variance
+on $I$ at least $ab/(a+b)\ge\tfrac12\min(a,b)$. Since $[-r,r]$ is
+covered by three successive doublings of $[r,2r]$ and of $[-2r,-r]$,
+doubling yields $\min(a,b)\ge D^{-3}\mu([-r,r])$. Substituting both
+bounds into \eqref{eq:poincare} gives
+$\tfrac12 D^{-3}\mu([-r,r])\le C(4r)^2\nu([-r,r])^{-1}$, which is
+\eqref{eq:1d_a2}.
+\end{proof}
+
+\begin{corollary}[Collapse for one-dimensional product weights]
+\label{cor:product}
+Let $m\ge3$ and suppose $f^*(x)=w(x_1)$ (or its Gaussian convolution
+when $\abs{(\log w)'}$ is bounded), where $w$ satisfies the hypotheses
+of Lemma~\ref{lem:1d_a2}. Then $\sup_{r\ge1}Q(r)<\infty$, so Brown's
+tests are exhaustive by Lemma~\ref{lem:exhaustive}; in fact, $\delta_F$
+is always inadmissible by Theorem~\ref{thm:brown}(e), and the
+ball-volume criterion \eqref{eq:vol_transience} decides nothing beyond
+Brown's radial tests.
+\end{corollary}
+
+\begin{proof}
+For $m\ge3$, the spherical means of $w(x_1)$ over $S^{m-1}(r)$ reduce to
+weighted integrals over $x_1\in[-r,r]$ with Jacobian kernel
+$c_m(1-(x_1/r)^2)^{(m-3)/2}r^{-1}$, which is bounded above on $[-r,r]$
+and bounded below on $[-r/\sqrt{2},r/\sqrt{2}]$. By doubling,
+$\fbar(r)\asymp\mu([-r,r])/r$ and $A(r)\lesssim\nu([-r,r])/r$, so
+$Q(r)\lesssim\mu([-r,r])\nu([-r,r])/r^2\le 32CD^3$ by
+Lemma~\ref{lem:1d_a2}. Furthermore, any doubling measure on $\R$
+satisfies reverse doubling $\mu([-r,r])\ge c\,r^\varepsilon$ for some
+$\varepsilon>0$, whence $\int_1^\infty r^{1-m}\fbar(r)^{-1}\dd r
+\lesssim\int_1^\infty r^{2-m-\varepsilon}\dd r<\infty$ for $m\ge3$.
+Lemma~\ref{lem:exhaustive} then implies inadmissibility via
+Theorem~\ref{thm:brown}(e).
+\end{proof}
+
+\subsection{Co-dimension two obstructions in \texorpdfstring{$\R^m$ ($m\ge3$)}{Rm (m>=3)}}
+
+Why does Lemma~\ref{lem:1d_a2} hold in one dimension? Because on $\R$, a
+point $t=0$ where $w(t)$ is small has co-dimension one: it disconnects
+the interval $[-2r,2r]$ into two halves, forcing every continuous path
+from $[-2r,-r]$ to $[r,2r]$ to pass through the bottleneck at $t=0$.
+For example, $w(t)=(1+\abs{t})^2$ is doubling on $\R$ but fails the
+scale-invariant Poincar\'e inequality because of the bottleneck at $t=0$,
+and its interval ratio grows as $r$.
+
+In dimension $m\ge3$, the topology changes fundamentally: a
+one-dimensional smooth curve $\Gamma\subset\R^m$ has \emph{co-dimension
+$k=m-1\ge2$}. Removing a co-dimension $\ge2$ set does not disconnect
+any ball in $\R^m$; test functions and diffusing trajectories can pass
+around $\Gamma$ through the bulk where the weight is large. Meanwhile,
+where $\Gamma$ pierces the $(m-1)$-dimensional sphere $S^{m-1}(r)$, the
+intersection $\Gamma\cap S^{m-1}(r)$ also has co-dimension $m-1\ge2$
+inside the sphere, allowing $(f^*)^{-1}$ to blow up rapidly enough to
+drive $Q(r)\to\infty$ without violating either doubling or the
+scale-invariant Poincar\'e inequality on balls.
+
+\begin{theorem}[Breakdown of Lemma~\ref{lem:1d_a2} in dimension $m\ge3$]
+\label{thm:codim2_unbounded}
+For every $m\ge3$ and every $\alpha>m-1$, the cylindrical co-dimension
+$(m-1)$ weight on $\R^m$ measuring distance to the $x_m$-axis
+$\Gamma_0=\{x_1=\dots=x_{m-1}=0\}$,
+\begin{equation}\label{eq:cyl_weight}
+w(x)=\bigl(1+x_1^2+\dots+x_{m-1}^2\bigr)^{\alpha/2},
+\end{equation}
+satisfies uniform volume doubling and the scale-invariant $(2,2)$-Poincar\'e
+inequality \eqref{eq:poincare} on all Euclidean balls $B(x_0,\rho)\subset\R^m$,
+yet its spherical $A_2$ ratio diverges at a polynomial rate:
+\begin{equation}\label{eq:q_div}
+Q(r)=\fbar(r)A(r)\asymp r^{\alpha-(m-1)}\xrightarrow{r\to\infty}\infty.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Write $x=(y,x_m)$ with $y\in\R^{m-1}$. Since $w(x)=(1+\abs{y}^2)^{\alpha/2}$
+is independent of $x_m$, doubling and the scale-invariant Poincar\'e
+inequality on balls in $\R^m$ follow by tensorization from the
+corresponding properties of $\tilde w(y)=(1+\abs{y}^2)^{\alpha/2}$ on
+$\R^{m-1}$. At scales $\rho\le1$, $\tilde w$ is smooth and bounded above
+and below on any ball of radius $\rho$ by a constant ratio; at scales
+$\rho\ge1$, $\tilde w(y)$ is uniformly comparable to the homogeneous
+power weight $\abs{y}^\alpha$ outside the unit ball. Since the origin
+$y=0$ is a single point of co-dimension $k=m-1\ge2$ in $\R^{m-1}$ and
+$\alpha>0>-k$, $\abs{y}^\alpha$ is a $p$-admissible weight in the sense
+of Heinonen--Kilpel\"ainen--Martio for all $p\ge1$, satisfying uniform
+doubling (with constant $D\le 2^{m+\alpha}$) and the scale-invariant
+$(2,2)$-Poincar\'e inequality on all balls in $\R^{m-1}$
+\cite{kilpelainen1994,bjorn2011}.
+
+To evaluate $Q(r)$, parameterize $S^{m-1}(r)$ by $\abs{y}=r\sin\theta$
+with $\theta\in[0,\pi]$. Then
+\[
+\fbar(r)=c_m\int_0^{\pi/2}\bigl(1+r^2\sin^2\theta\bigr)^{\alpha/2}
+\sin^{m-2}\theta\dd\theta\asymp r^\alpha,
+\]
+whereas for $\alpha>m-1$ the integral for $A(r)$ localizes to the polar
+caps $\theta\lesssim r^{-1}$:
+\[
+A(r)=c_m\int_0^{\pi/2}\bigl(1+r^2\sin^2\theta\bigr)^{-\alpha/2}
+\sin^{m-2}\theta\dd\theta
+\asymp\int_0^1(1+r^2\theta^2)^{-\alpha/2}\theta^{m-2}\dd\theta
+\asymp r^{-(m-1)}.
+\]
+Multiplying the two asymptotics yields \eqref{eq:q_div}.
+\end{proof}
+
+We now use this co-dimension two mechanism to answer the question posed
+at the beginning of \S\ref{sec:reach}: we construct a smooth doubling
+and Poincar\'e weight on $\R^3$ where the co-dimension two valley winds
+across shells so as to block every radial ray from the origin, silencing
+both of Brown's radial tests while Grigor'yan's ball-volume criterion
+\eqref{eq:vol_transience} decides transience.
+
+\begin{theorem}[A doubling--Poincar\'e weight decided by ball volume
+where both of Brown's radial tests fail]\label{thm:blind_brown}
+First, for any parabolic weighted manifold $W_F$ satisfying doubling and
+the scale-invariant Poincar\'e inequality, Grigor'yan's volume test
+$\int_1^\infty r\dd r/\mu(B_r)=\infty$ implies $\int_1^\infty r^{1-m}\fbar(r)^{-1}\dd r=\infty$
+by Theorem~\ref{thm:brown}(d), so Brown's sphere-average test is never
+silent in the parabolic regime.
+
+In the transient regime on $\R^3$, however, there exist smooth weights
+$f^*>0$ with bounded logarithmic gradient $\abs{\grad\log f^*}\le C$ such
+that:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2em,itemsep=2pt]
+\item $W_F=(\R^3,\delta_{ij},f^*\dd x)$ satisfies uniform volume
+doubling and the scale-invariant Poincar\'e inequality \eqref{eq:poincare}
+on all balls $B(x_0,\rho)\subset\R^3$;
+\item Brown's sphere-average test \eqref{eq:sphere_test} is silent:
+$\int_1^\infty r^{-2}\fbar(r)^{-1}\dd r<\infty$;
+\item Brown's ray test \eqref{eq:ray_test} is silent along \emph{every}
+direction: $\int_1^\infty r^{-2}f^*(r\varphi)^{-1}\dd r=\infty$ for all
+$\varphi\in S^2$;
+\item Grigor'yan's ball-volume test \eqref{eq:vol_transience} holds,
+$\int_1^\infty r\dd r/\mu(B(0,r))<\infty$, proving that $W_F$ is
+transient and $\delta_F$ is inadmissible.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The parabolic statement follows immediately from the Cauchy--Schwarz
+inequality on dyadic shells $B_{2^k}\setminus B_{2^{k-1}}$:
+\[
+\Bigl(2^{k-1}\Bigr)^2
+=\Bigl(\int_{2^{k-1}}^{2^k}\dd r\Bigr)^2
+\le\Bigl(\int_{2^{k-1}}^{2^k}\omega_{m-1}r^{m-1}\fbar(r)\dd r\Bigr)
+\Bigl(\int_{2^{k-1}}^{2^k}\frac{\dd r}{\omega_{m-1}r^{m-1}\fbar(r)}\Bigr),
+\]
+so $\int_{2^{k-1}}^{2^k}r^{1-m}\fbar(r)^{-1}\dd r\ge c\,2^{2k}/\mu(B_{2^k})
+\asymp\int_{2^{k-1}}^{2^k}r\dd r/\mu(B_r)$.
+
+To construct the transient example on $\R^3$, fix $\alpha\ge2$. For each
+integer $k\ge4$, divide the dyadic shell $r\in[2^k,2^{k+1}]$ into
+$N_k=2^k$ sub-shells of radius $r_{k,j}=2^k+j$ ($j=0,1,\dots,2^k-1$). On
+each sphere $S^2(r_{k,j})$, let $\Gamma_{k,j}\subset S^2(r_{k,j})$ be the
+parallel of latitude $\theta_{k,j}=\pi(j+\tfrac12)/2^k$ in spherical
+coordinates $(r,\theta,\phi)$ (for $j$ near $0$ or $2^k$, a small circle
+of geodesic radius $\pi/2^k$ around the pole). Then each $\Gamma_{k,j}$
+is a smooth closed one-dimensional circle in $\R^3$ (hence of
+co-dimension two in $\R^3$), and distinct circles in the collection
+$\Gamma=\bigcup_{k\ge4}\bigcup_{j=0}^{2^k-1}\Gamma_{k,j}$ are mutually
+separated in three-dimensional Euclidean distance by at least $1$, while
+successive dyadic blocks $k$ and $k'$ can be separated by leaving buffer
+shells $r\in[\tfrac32 2^k,2^{k+1}]$ empty (reducing $N_k$ to $2^{k-1}$).
+Now define the smooth weight
+\begin{equation}\label{eq:ring_weight}
+f^*(x)=\biggl(\frac{1+\dist(x,\Gamma)^2}{1+\abs{x}^2}\biggr)^{\alpha/2}
+\qquad\text{on }\R^3,
+\end{equation}
+smoothed on the unit scale near the cutoffs of the distance function so
+that $\abs{\grad\log f^*(x)}\lesssim(1+\dist(x,\Gamma))^{-1}\le1$ is
+globally bounded.
+
+We verify properties (i)--(iv) in turn:
+\begin{itemize}[leftmargin=1.5em,itemsep=2pt]
+\item \emph{Property (ii) and (iv):} On the empty buffer shells
+$r\in[\tfrac32 2^k,2^{k+1}]$, $\dist(x,\Gamma)\asymp\abs{x}$, so
+$f^*(x)\asymp1$. Even within the active shells, $\dist(x,\Gamma)\le1$
+only in a tubular neighborhood of total volume $O(2^k\cdot 2^k)=O(r^2)$
+inside a shell of volume $\asymp r^3$, and elsewhere $\dist(x,\Gamma)$
+grows linearly away from the rings. Consequently, $\mu(B(0,r))\asymp r^3$
+and $\fbar(r)\asymp1$, which yields both
+$\int_1^\infty r^{-2}\fbar(r)^{-1}\dd r<\infty$ and
+$\int_1^\infty r\dd r/\mu(B(0,r))<\infty$.
+\item \emph{Property (iii):} Let $\varphi=(\theta,\phi)\in S^2$ be any
+direction. For every $k\ge4$, there exists an index $j\in\{0,\dots,N_k-1\}$
+such that $\abs{\theta-\theta_{k,j}}\le\pi/2^k$. As the ray $r\varphi$
+crosses the radius $r_{k,j}\asymp 2^k$, its Euclidean distance to the
+circle $\Gamma_{k,j}$ satisfies $\dist(r\varphi,\Gamma_{k,j})\le\abs{r-r_{k,j}}
++r_{k,j}\abs{\theta-\theta_{k,j}}\le 1+2\pi$ for all
+$r\in[r_{k,j}-1,r_{k,j}+1]$. On this radial interval of length $2$,
+$f^*(r\varphi)\asymp(1+\abs{x}^2)^{-\alpha/2}\asymp 2^{-k\alpha}$. Thus,
+the ray integral across scale $k$ contributes at least
+\[
+\int_{r_{k,j}-1}^{r_{k,j}+1}\frac{\dd r}{r^2 f^*(r\varphi)}
+\gtrsim 2\cdot 2^{-2k}\cdot 2^{k\alpha}=2\cdot 2^{k(\alpha-2)}\ge 2
+\qquad(\text{since }\alpha\ge2).
+\]
+Summing over $k\ge4$ forces $\int_1^\infty r^{-2}f^*(r\varphi)^{-1}\dd r=\infty$
+for \emph{every} $\varphi\in S^2$.
+\item \emph{Property (i):} Let $B=B(x_0,\rho)$ be any ball in $\R^3$ at
+scale $\abs{x_0}\asymp 2^k$. Because the circles $\Gamma_{k,j}$ are
+$1$-separated and have radius of curvature $\gtrsim 2^k$ (or $\ge1$ near
+the poles), if $\rho\le\tfrac12$, $B$ intersects the tubular
+neighborhood of at most one curve $\Gamma_{k,j}$. On $B$, the denominator
+$(1+\abs{x}^2)^{\alpha/2}\asymp 2^{k\alpha}$ is constant up to a factor
+of $2^\alpha$, which cancels out of both the doubling ratio
+$\mu(2B)/\mu(B)$ and the scale-invariant Poincar\'e inequality
+\eqref{eq:poincare}. In local tubular coordinates around the
+co-dimension two curve $\Gamma_{k,j}$, the numerator
+$(1+\dist(x,\Gamma_{k,j})^2)^{\alpha/2}$ is bi-Lipschitz equivalent to
+the cylindrical co-dimension two model weight $(1+y_1^2+y_2^2)^{\alpha/2}$
+of Theorem~\ref{thm:codim2_unbounded}, which satisfies uniform doubling
+and scale-invariant Poincar\'e on all balls. Finally, for larger radii
+$\rho>\tfrac12$, the co-dimension two tubes where $f^*\ll1$ occupy a
+small fraction of the cross-sectional area and never disconnect $B$, so
+standard John-domain chaining across the bulk where
+$f^*(x)\asymp(\rho/2^k)^\alpha$ preserves uniform doubling and
+scale-invariant Poincar\'e constants.
+\end{itemize}
+By \eqref{eq:vol_transience} and Theorem~\ref{thm:brown}(b), $W_F$ is
+transient and $\delta_F$ is inadmissible.
+\end{proof}
+
+\subsection{Analytic Krein--Tauberian resolution of a borderline
+non-doubling product weight}
+
+When a weight fails the doubling condition as well, all three geometric
+tests---Theorem~\ref{thm:brown}(d), Theorem~\ref{thm:brown}(e), and
+Grigor'yan's volume test \eqref{eq:vol_transience}---can fail
+simultaneously. For product priors, we can settle the borderline case
+analytically via Krein's spectral string theory \cite{kasahara1975,kotani1982}.
+
+\begin{proposition}[Analytic resolution of a logarithmic product prior]
+\label{prop:krein}
+On $\R^3$, let $F(\dd\theta)=(1+\abs{\theta_1})^{-1}\log(e+\abs{\theta_1})
+\dd\theta_1\dd\theta_2\dd\theta_3$, so that $f^*(x)=w(x_1)$ with
+$w(t)\asymp(1+\abs{t})^{-1}\log(e+\abs{t})$ and bounded drift
+$\abs{\gamma_F}\le C$. Then:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2em,itemsep=2pt]
+\item Theorem~\ref{thm:brown}(d) is silent ($\fbar(r)\asymp r^{-1}\log^2 r$,
+so $\int_1^\infty r^{-2}\fbar(r)^{-1}\dd r<\infty$), Theorem~\ref{thm:brown}(e)
+is silent ($\int_1^\infty r^{-2}w(r\cos\theta)^{-1}\dd r=\infty$ for all
+$\cos\theta\ne0$), and $w$ is not doubling ($\mu([0,2r])/\mu([r/2,3r/2])\asymp\log r\to\infty$).
+\item The one-dimensional diffusion $W_t$ on $\R$ with generator
+$\mathcal L_W u=w(x)^{-1}(w(x)u'(x))'$ is null-recurrent, and its
+transition density $p_t^W(0,0)$ with respect to the invariant measure
+$w(x)\dd x$ satisfies the exact asymptotic
+\begin{equation}\label{eq:krein_asymp}
+p_t^W(0,0)\sim\frac{C_0}{(\log t)^2}\qquad\text{as }t\to\infty
+\qquad(C_0>0).
+\end{equation}
+\item Consequently, the three-dimensional product diffusion
+$Z_t=(W_{2t},B_{2t}^{(2)})$ on $W_F$ is transient, and $\delta_F$ is
+inadmissible.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Part (i) follows by direct integration: $\mu([0,r])=\int_0^r w(t)\dd t
+\asymp\tfrac12(\log r)^2$, while on any interval $[r/2,3r/2]$ away from
+the origin $\mu([r/2,3r/2])\asymp\log r$, so the doubling ratio grows as
+$\log r$.
+
+For parts (ii) and (iii), write the one-dimensional generator
+$\mathcal L_W=\frac{\dd}{\dd M}\frac{\dd}{\dd s}$ in Feller's canonical
+scale $s(x)$ and speed measure $M(x)$ on $[0,\infty)$ (by symmetry,
+reflecting at $0$ scales the return density by $2$):
+\[
+s(x)=\int_0^x\frac{\dd y}{w(y)}
+\asymp\int_0^x\frac{(1+y)\dd y}{\log(e+y)}
+\sim\frac{x^2}{2\log x}\qquad(x\to\infty).
+\]
+Since $s(\infty)=\infty$, $W_t$ is recurrent on $\R$. Inverting $s(x)$
+gives $x(s)\sim\sqrt{s\log s}$ as $s\to\infty$, so
+$\log x(s)=\tfrac12\log s+O(\log\log s)$. Expressing the speed measure
+$M$ as a function of the natural scale $s$ yields
+\[
+\widetilde M(s)=M(x(s))=\int_0^{x(s)}w(y)\dd y
+\asymp\frac{1}{2}\bigl(\log x(s)\bigr)^2
+\sim\frac{1}{8}(\log s)^2\qquad(s\to\infty).
+\]
+As a function of natural scale $s$, $\widetilde M(s)\sim\tfrac18(\log s)^2$
+is \emph{slowly varying at infinity} in Karamata's sense (regularly
+varying of index $\alpha=0$: $\lim_{s\to\infty}\widetilde M(\lambda s)/
+\widetilde M(s)=1$ for all $\lambda>0$). By Kasahara's Tauberian theorem
+for Krein strings in natural scale \cite[Theorem~2]{kasahara1975} (see
+also Kotani--Watanabe \cite{kotani1982}), when $\widetilde M(s)$ is
+slowly varying at infinity, the Laplace transform of the return density
+$G_\lambda(0,0)=\int_0^\infty e^{-\lambda t}p_t^W(0,0)\dd t$ satisfies
+$G_\lambda(0,0)\sim(2\lambda\widetilde M(1/\lambda))^{-1}$ as
+$\lambda\to0^+$, and Karamata's Tauberian theorem yields
+$p_t^W(0,0)\sim(2\widetilde M(t))^{-1}\asymp(\log t)^{-2}$ as
+$t\to\infty$, establishing \eqref{eq:krein_asymp}.
+
+Finally, since $f^*(x)=w(x_1)$ is independent of $(x_2,x_3)$, the
+three-dimensional transition density of $Z_t$ factorizes into the
+product of $p_{2t}^W$ and the standard two-dimensional Brownian heat
+kernel $(8\pi t)^{-1}$ on $\R^2$ \cite{johnstonelalley1984}. The
+expected total occupation time of a compact neighborhood of the origin
+is governed by
+\[
+\int_2^\infty p_{2t}^W(0,0)\,(8\pi t)^{-1}\dd t
+\asymp\int_2^\infty\frac{\dd t}{t(\log t)^2}<\infty.
+\]
+Hence $Z_t$ is transient on $\R^3$, and $\delta_F$ is inadmissible by
+Theorem~\ref{thm:brown}(b).
+\end{proof}
+
+\begin{thebibliography}{99}
+
+\bibitem{stein1956}
+C.~Stein, \emph{Inadmissibility of the usual estimator for the mean of a
+multivariate normal distribution}, in Proc.\ Third Berkeley Symp.\
+Math.\ Statist.\ Probab., Vol.~1, Univ.\ California Press (1956),
+pp.~197--206.
+
+\bibitem{brown1971}
+L.~D.~Brown, \emph{Admissible estimators, recurrent diffusions, and
+insoluble boundary value problems}, Ann.\ Math.\ Statist.\ \textbf{42}
+(1971), 855--903.
+
+\bibitem{komaki2006}
+F.~Komaki, \emph{Shrinkage priors for Bayesian prediction}, Ann.\
+Statist.\ \textbf{34} (2006), 808--819.
+
+\bibitem{komaki2015}
+F.~Komaki, \emph{Asymptotic properties of Bayesian predictive densities
+when the distributions of data and target variables are different},
+Bayesian Anal.\ \textbf{10} (2015), 31--51.
+
+\bibitem{amari2000}
+S.~Amari and H.~Nagaoka, \emph{Methods of Information Geometry},
+Translations of Mathematical Monographs, Vol.~191, American Mathematical
+Society (2000).
+
+\bibitem{bakryemery1985}
+D.~Bakry and M.~\'Emery, \emph{Diffusions hypercontractives}, in
+S\'eminaire de Probabilit\'es XIX, Lecture Notes in Math., Vol.~1123,
+Springer (1985), pp.~177--206.
+
+\bibitem{perelman2002}
+G.~Perelman, \emph{The entropy formula for the Ricci flow and its
+geometric applications}, arXiv:math/0211159 (2002).
+
+\bibitem{grigoryan1999}
+A.~Grigor'yan, \emph{Analytic and geometric background of recurrence and
+non-explosion of the Brownian motion on Riemannian manifolds}, Bull.\
+Amer.\ Math.\ Soc.\ (N.S.) \textbf{36} (1999), 135--249.
+
+\bibitem{efron1975}
+B.~Efron, \emph{Defining the curvature of a statistical problem (with
+applications to second order efficiency)}, Ann.\ Statist.\ \textbf{3}
+(1975), 1189--1242.
+
+\bibitem{lyonssullivan1984}
+T.~Lyons and D.~Sullivan, \emph{Function theory, random paths and
+covering spaces}, J.\ Differential Geom.\ \textbf{19} (1984), 299--323.
+
+\bibitem{grigoryan1985}
+A.~A.~Grigor'yan, \emph{The existence of positive fundamental solutions
+of the Laplace equation on Riemannian manifolds}, Mat.\ Sb.\ (N.S.)
+\textbf{128(170)} (1985), 354--363; English transl.\ Math.\ USSR-Sb.\
+\textbf{56} (1987), 349--358.
+
+\bibitem{grigoryan1991}
+A.~A.~Grigor'yan, \emph{The heat equation on noncompact Riemannian
+manifolds}, Mat.\ Sb.\ \textbf{182} (1991), 55--87; English transl.\
+Math.\ USSR-Sb.\ \textbf{72} (1992), 47--77.
+
+\bibitem{saloffcoste1992}
+L.~Saloff-Coste, \emph{A note on Poincar\'e, Sobolev, and Harnack
+inequalities}, Internat.\ Math.\ Res.\ Notices \textbf{1992} (1992),
+27--38.
+
+\bibitem{sturm1996}
+K.-T.~Sturm, \emph{Analysis on local Dirichlet spaces. III. The
+parabolic Harnack inequality}, J.\ Math.\ Pures Appl.\ (9) \textbf{75}
+(1996), 273--297.
+
+\bibitem{kilpelainen1994}
+T.~Kilpel\"ainen, \emph{Weighted Sobolev spaces and capacity}, Ann.\
+Acad.\ Sci.\ Fenn.\ Ser.\ A I Math.\ \textbf{19} (1994), 95--113.
+
+\bibitem{bjorn2011}
+A.~Bj\"orn and J.~Bj\"orn, \emph{Nonlinear Potential Theory on Metric
+Spaces}, EMS Tracts in Mathematics, Vol.~17, European Mathematical
+Society (2011).
+
+\bibitem{kasahara1975}
+Y.~Kasahara, \emph{Spectral theory of generalized second order
+differential operators and its applications to Markov processes},
+Japan.\ J.\ Math.\ (N.S.) \textbf{1} (1975), 67--84.
+
+\bibitem{kotani1982}
+S.~Kotani and S.~Watanabe, \emph{Krein's spectral theory of strings and
+generalized diffusion processes}, in Functional Analysis in Markov
+Processes, Lecture Notes in Math., Vol.~923, Springer (1982),
+pp.~235--259.
+
+\bibitem{johnstonelalley1984}
+I.~M.~Johnstone and S.~P.~Lalley, \emph{On independent statistical
+decision problems and products of diffusions}, Z.\ Wahrsch.\ Verw.\
+Gebiete \textbf{68} (1984), 29--47.
+
+\end{thebibliography}
+
+\end{document}
