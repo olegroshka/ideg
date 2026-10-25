@@ -36,7 +36,7 @@ complete proof.
 | R1 | Thm 3.1 (sphere complete under D+P) is a corollary of Saloff-Coste/Grigor'yan + a dyadic Cauchy–Schwarz | CONFIRMED (paper already frames it so) | low | keep as corollary; wording already modest |
 | R2 | Lemma 3.3 (1-D D+P ⇒ A₂) is a special case of Björn–Buckley–Keith; cite directly | CONFIRMED | medium (priority) | **cite** (verify metadata); soften novelty |
 | R3 | Thm 3.4 cylinder weight = Björn 2001 Prop 6 + elementary calc | CONFIRMED (paper attributes it) | low | no change |
-| R4 | **Thm 4.1 D+P proof incomplete** (four gaps, below) | CONFIRMED | **blocking** | **proof repair needed** (not done) |
+| R4 | **Thm 4.1 D+P proof incomplete** (four gaps, below) | CONFIRMED | **blocking** | **repair drafted** (§9); residual referee items listed |
 | R5 | Prop 5.2 (coherent circles) mechanism standard; geometry/doubling need detail | CONFIRMED | medium | geometry errors fixed; all-ball doubling still a sketch |
 | R6 | Prop 5.3 (log product): add Shimizu–Nakano 2017; constant 4 vs 8 normalization | CONFIRMED (does not affect transience) | medium | **cite** (verify); normalization note queued |
 | R7 | Appendix A: strictness equivalence false; "flat cylinder" wrong; integrated-asymptotic caveat | CONFIRMED | medium (correctness) | **fixed this round** |
@@ -169,3 +169,35 @@ ansatz. No proof was altered; no mathematics was added beyond these corrections.
 - Correctness errors fixed without altering any proof's logic or adding unverified mathematics: met.
 - Bibliographic additions held at `verify` pending primary-source checks (no invented metadata): met.
 - The one blocking item (Thm 4.1 proof) is stated as outstanding, not papered over: met.
+
+## 9. Repair of Theorem 4.1 (drafted 2026-10-25; in `main.tex`)
+
+Rewrote the proof of Lemma 4.3 (one circle) and the proof of Theorem 4.1(a). Scratch build clean (16 pp, 0 overfull,
+no undefined refs); `main.pdf` not regenerated (viewer lock), source verified via a `-jobname` build.
+
+**Lemma 4.3 (chart fix, R4-Lemma).** Small-scale branch restricted to \(\rho\le R/6\), so every point of the ball is
+within \(3\rho\le R/2\) of the circle, strictly inside the focal distance \(R\) where the Fermi normal-exponential
+chart is a diffeomorphism; the ball meets a single arc of length \(\le2\rho\ll2\pi R\), so no periodic identification
+arises (answers the "cannot globally flatten the tube" point). Large-scale branch \(\rho\ge R/6\) via the centre-weight
+comparison \(p_c\) and Lemma 4.2, constants adjusted (cells \(R/12\), (G1) for \(R/12\le\rho'\le R\)).
+
+**Theorem 4.1(a).** Restructured into: (local comparison) the \emph{correct, bounded-factor} identity
+\(w\asymp\sigma_0^{-\alpha}(1+d_C^2)^{\alpha/2}\) on balls of radius \(\le\sigma_0/4\) (eq. (5)), replacing the false
+\(W(u)\) multiplicative approximation (R4-i) and the false \(1+O(1/s)\) tightness (R4-ii); the distance-to-union \(d\)
+is matched to the distance-to-nearest-circle \(d_C\) (equal where \(d_C\le0.2s_k\); elsewhere both \(\asymp s_k\)).
+(cell mass) a tube-volume estimate (eq. (6)) giving \(\mu(Q)\asymp|Q|\) for every cell, replacing the false
+meets-a-circle/uniformly-far dichotomy (R4-iv). (small balls) the single circle \(C\) may be polar
+(\(R_C\asymp1\)) or bulk (\(R_C\asymp2^k\)); both are handled by the \emph{uniform} Lemma 4.3, explicitly not by a
+\(\sqrt R\)-scale cylinder approximation (R4-iii). (large balls) gluing against Lebesgue with cells of side
+\(\sigma/32\), so each enlarged ball \(B_j\) has radius \(\le\sigma/4\) and is a small ball (removes any circularity),
+(G1) = the cell-mass estimate, then Hajłasz–Koskela self-improvement.
+
+**Confidence / residual referee items (honest).** The four gaps are addressed with arguments I believe are correct; I
+re-derived each. This is a drafted revision, not a refereed proof. A careful referee should still check: (a) the Fermi
+bi-Lipschitz constant and the focal-distance claim with explicit constants; (b) the "\(\le C_0\) circles within
+\(s_k\) of a cube" count from the meridian-plane mesh (uniform over shells, including shell boundaries where the
+spacing changes by \(\sqrt2\)); (c) that Lemma 4.2's hypotheses (bounded overlap of the \(Q_j\) and \(B_j\), the
+\(s_j\asymp s_{j'}\) condition across shell boundaries and near the axis) hold for the chosen cover; (d) the \(d\) vs
+\(d_C\) matching near the axis where several small circles cluster within \(\asymp s_k\). None of these is expected to
+obstruct the result, but they are the places a referee will press. Parts (b) and (c) of Theorem 4.1 (tests silent,
+volume \(\asymp r^3\)) were not in question and are unchanged.

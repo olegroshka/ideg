@@ -42,5 +42,10 @@ restricted to the ansatz. No proof logic altered; no unverified mathematics adde
 - eq. (4) "0.28" was contained to α=4 in the prose; now explicitly α-dependent.
 
 ## Repo state
-- Committed locally (not pushed): main.tex + main.pdf + AR-029c packet + this session file + README row. Mid-cycle;
-  the Theorem 4.1 repair is still open, so held the push for the owner to batch or approve.
+- Round-1 corrections pushed as 1bba954.
+- **Theorem 4.1 repair drafted** (owner: "please go ahead"): proof of Lemma 4.3 (Fermi-chart fix, ρ≤R/6 branch) and
+  proof of Theorem 4.1(a) rewritten (correct bounded-factor comparison eq. (5); tube-volume cell mass eq. (6); polar
+  circles via the uniform Lemma 4.3; large balls via gluing with σ/32 cells so enlargements are small balls). All four
+  R4 gaps addressed. Scratch build clean (16 pp, 0 overfull, no undefined refs). Confidence and residual referee items
+  recorded in AR-029c §9 (honest: drafted revision, not refereed). `main.pdf` NOT regenerated — file locked by an open
+  viewer; the committed PDF lags the source by one build until the viewer is closed and I rebuild it.
