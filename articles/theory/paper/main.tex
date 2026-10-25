@@ -5,6 +5,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{graphicx}
+\usepackage{tikz}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{enumitem}
@@ -525,6 +526,44 @@ $\abs{\nabla d}\le1$ almost everywhere, so $\abs{\nabla\log w}\le
 By Lemma~\ref{lem:lip}, $f^*=\varphi*w$ is a smooth Gaussian marginal comparable
 to $w$ with drift bounded by $\alpha/2+o(1)$.
 
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[scale=1]
+\begin{scope}
+  \begin{scope}
+    \clip (0,0) circle (1.5);
+    \fill[blue!10]   (-1.7,-1.7) rectangle (-0.1,1.7);
+    \fill[orange!16] ( 0.1,-1.7) rectangle ( 1.7,1.7);
+    \fill[black!45]  (-0.1,-1.7) rectangle ( 0.1,1.7);
+  \end{scope}
+  \draw[thick] (0,0) circle (1.5);
+  \node at (-0.72,0) {$u=+1$};
+  \node at ( 0.74,0) {$u=-1$};
+  \node[below,align=center] at (0,-1.7)
+       {(a) a wall, co-dimension one\\[-2pt]\small $\lambda_1\rho^2\to0$: Poincar\'e fails};
+\end{scope}
+\begin{scope}[xshift=6.4cm]
+  \begin{scope}
+    \clip (0,0) circle (1.5);
+    \fill[blue!8] (-1.7,-1.7) rectangle (1.7,1.7);
+    \foreach \p in {(-0.75,0.55),(0.2,0.85),(0.85,-0.15),(-0.25,-0.75),(-0.95,-0.1),
+                    (0.15,0.05),(0.6,0.55),(-0.45,0.2),(0.55,-0.75)}
+      \fill[black!55] \p circle (0.11);
+  \end{scope}
+  \draw[thick] (0,0) circle (1.5);
+  \node[below,align=center] at (0,-1.7)
+       {(b) scattered curves, co-dimension two\\[-2pt]\small $\lambda_1\rho^2\gtrsim1$: Poincar\'e holds};
+\end{scope}
+\end{tikzpicture}
+\caption{Why the circles must be scattered. On a ball, a thin low-weight surface
+of co-dimension one (a wall) splits it into two rooms joined only across the
+wall, and the Poincar\'e constant $1/(\lambda_1\rho^2)$ grows without bound as
+the ball grows (Proposition~\ref{prop:wall}). Thin low-weight tubes around
+curves (co-dimension two) do not disconnect the ball, and the Poincar\'e
+inequality survives with constants uniform in the scale (Theorem~\ref{thm:B}).}
+\label{fig:wallcircle}
+\end{figure}
+
 \begin{theorem}[the lattice prior]\label{thm:B}
 Let $w$ be the weight \eqref{eq:w} on $\R^3$, $\alpha\ge4$, and $F=w\dd\theta$.
 Then:
@@ -747,6 +786,31 @@ convenience for the numerics of Section~\ref{sec:numerics} and plays no role in
 the proofs.
 \end{remark}
 
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[scale=1]
+  \draw[thick] (0,0) circle (2);
+  \begin{scope}
+    \clip (0,0) circle (2);
+    \draw[gray!40,step=0.5] (-2,-2) grid (2,2);
+  \end{scope}
+  \foreach \p in {(-1.5,1.0),(-1.0,0.5),(-0.5,1.0),(0,0.5),(0.5,1.0),(1.0,0.5),(1.4,1.0),
+                  (-1.3,-0.3),(-0.8,-0.8),(-0.3,-0.3),(0.2,-0.8),(0.7,-0.3),(1.2,-0.8),
+                  (-0.3,-1.3),(0.7,-1.3),(-1.4,0.1)}
+    \fill[black!60] \p circle (0.06);
+  \draw[very thick,blue!60!black] (0,0.5) circle (0.33);
+  \node[below] at (0,-2.15) {\small cells of side $\asymp\sqrt{\abs x}$, one circle at most per cell};
+\end{tikzpicture}
+\caption{The covering behind Theorem~\ref{thm:B}(a). The Poincar\'e inequality on
+a large ball is assembled (Lemma~\ref{lem:glue}) from cells of side
+$\asymp\sqrt{\abs x}$, each meeting at most one circle because distinct circles
+are $\gtrsim\sqrt{\abs x}$ apart; on a small ball (highlighted) the single-circle
+estimate of Lemma~\ref{lem:circle} applies, uniformly in the circle's radius,
+including the small circles near the poles. The dots are circles of the lattice
+seen in a meridian plane.}
+\label{fig:covering}
+\end{figure}
+
 \section{The zone is two-sided}\label{sec:zone}
 
 Theorem~\ref{thm:B} exhibits the one kind of case that the volume test decides
@@ -889,6 +953,33 @@ scattered circles, spacing $2^{k/2}$ (Thm.~\ref{thm:B}) & yes & yes & transient;
 \bottomrule
 \end{tabular}
 \end{table}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[x=3.8cm,y=2.6cm]
+  \draw (0,0) rectangle (2,2);
+  \draw (1,0) -- (1,2);
+  \draw (0,1) -- (2,1);
+  \node[above] at (0.5,2) {Poincar\'e holds};
+  \node[above] at (1.5,2) {Poincar\'e fails};
+  \node[rotate=90] at (-0.09,1.5) {doubling};
+  \node[rotate=90] at (-0.09,0.5) {not doubling};
+  \node[align=center] at (0.5,1.5)
+       {scattered circles\\[1pt]\textbf{transient}\\[1pt]\small volume test (Thm~\ref{thm:A})};
+  \node[align=center] at (1.5,1.5)
+       {coherent wall\\[1pt]\textbf{recurrent}\\[1pt]\small flux bound (Prop~\ref{prop:wall})};
+  \node[align=center] at (0.5,0.5)
+       {log-product\\[1pt]\textbf{transient}\\[1pt]\small product kernels (Prop~\ref{prop:log})};
+  \node[align=center] at (1.5,0.5) {\emph{open}};
+  \draw[very thick] (0,1) rectangle (1,2);
+\end{tikzpicture}
+\caption{Brown's undecided zone, by the regularity of the marginal. Only the
+doubling--Poincar\'e cell (bold) is governed by Theorem~\ref{thm:A}, and there
+the verdict is always transient; each of the other occupied cells is settled by
+a different non-radial argument (Section~\ref{sec:zone}), and the fourth is
+open.}
+\label{fig:zonemap}
+\end{figure}
 
 \section{Numerical illustration}\label{sec:numerics}
 
@@ -1043,20 +1134,26 @@ this note have counterparts there is open.
 
 \section*{Acknowledgements}
 
-The question, the choice of what to look for, and the judgement of what
-survived are the author's; the labour of making them precise was shared with
-large language models used as research assistants, and without them this note
-would have taken far longer to write. Claude (Anthropic), run through Claude
-Code, read the sources, built and tested the constructions of
-Sections~\ref{sec:lattice} and~\ref{sec:zone}, wrote the numerical scripts, and
-drafted the text under the author's direction; a second language-model
-assistant proposed the cylinder weight of Theorem~\ref{thm:cyl} and the first,
-coherent candidate of Section~\ref{sec:wall}, whose failure led to the lattice.
-% TODO (owner): name the second assistant (model and provider) if you wish.
-Every statement was checked against the cited sources by the author, who is
-responsible for the errors that remain. The author thanks The Open University Library for access to the primary
-sources. The scripts that produce every number and figure in
-Section~\ref{sec:numerics} are available in the public repository
+This note was separated out from a broader investigation in information geometry,
+on the interplay between admissibility, Bayesian predictive density estimation,
+and the curvature of statistical models; the questions on Brown's side studied
+here turned out to stand on their own, and are collected separately in the hope
+that they are useful to others working on shrinkage priors and recurrence.
+
+The question, the choice of what to look for, and the judgement of what survived
+are the author's. The work was carried out in collaboration with large language
+models. Claude (Anthropic), run through Claude Code, read the sources, built and
+tested the constructions of Sections~\ref{sec:lattice} and~\ref{sec:zone}, wrote
+the numerical scripts, and drafted the text under the author's direction; Gemini
+(Google) and the author developed ideas together in the neighbouring study, from
+which came the cylinder weight of Theorem~\ref{thm:cyl} and the first, coherent
+candidate of Section~\ref{sec:wall}, whose failure led to the lattice. Their
+main help was speed: ideas could be built, tested, and discarded quickly, which
+is what made a study of this size feasible. Every statement was checked against
+the cited sources by the author, who is responsible for the errors that remain.
+The author thanks The Open University Library for access to the primary sources.
+The scripts that produce every number and figure in Section~\ref{sec:numerics}
+are available in the public repository
 \url{https://github.com/olegroshka/ideg} (directory \texttt{articles/theory}).
 
 \appendix
@@ -1161,9 +1258,130 @@ there). Whether such weights have an analogue on a Fisher manifold, where
 Komaki's criterion would then separate the existence of a shrinkage prior from
 the sphere-area growth of the model, is open.
 
-\bibliographystyle{amsplain}
+% Bibliography inlined (amsplain output with repeated-author dashes written out);
+% the source list is references.bib.
 {\small
-\bibliography{references}
+\begin{thebibliography}{10}
+
+\bibitem{amari2000}
+Shun-ichi Amari and Hiroshi Nagaoka, \emph{Methods of information geometry},
+  Translations of Mathematical Monographs, vol. 191, American Mathematical
+  Society and Oxford University Press, 2000.
+
+\bibitem{aomoto1966}
+Kazuhiko Aomoto, \emph{L'analyse harmonique sur les espaces riemanniens, \`a
+  courbure riemannienne n\'egative. {I}}, J. Fac. Sci. Univ. Tokyo Sect. I
+  \textbf{13} (1966), 85--105.
+
+\bibitem{bjorn2001}
+Jana Bj{\"o}rn, \emph{Poincar\'e inequalities for powers and products of
+  admissible weights}, Ann. Acad. Sci. Fenn. Math. \textbf{26} (2001), no.~1,
+  175--188.
+
+\bibitem{brown1971}
+Lawrence~D. Brown, \emph{Admissible estimators, recurrent diffusions, and
+  insoluble boundary value problems}, Ann. Math. Statist. \textbf{42} (1971),
+  no.~3, 855--903.
+
+\bibitem{brownhwang1982}
+Lawrence~D. Brown and Jiunn~T. Hwang, \emph{A unified admissibility proof},
+  Statistical Decision Theory and Related Topics III, vol.~1, Academic Press,
+  1982, pp.~205--230.
+
+\bibitem{eaton1992}
+Morris~L. Eaton, \emph{A statistical diptych: admissible
+  inferences---recurrence of symmetric {M}arkov chains}, Ann. Statist.
+  \textbf{20} (1992), no.~3, 1147--1179.
+
+\bibitem{efron1975}
+Bradley Efron, \emph{Defining the curvature of a statistical problem (with
+  applications to second order efficiency)}, Ann. Statist. \textbf{3} (1975),
+  no.~6, 1189--1242.
+
+\bibitem{grigoryan1999}
+Alexander Grigor'yan, \emph{Analytic and geometric background of recurrence and
+  non-explosion of the {B}rownian motion on {R}iemannian manifolds}, Bull.
+  Amer. Math. Soc. (N.S.) \textbf{36} (1999), no.~2, 135--249.
+
+\bibitem{grigoryan2009}
+Alexander Grigor'yan, \emph{Heat kernel and analysis on manifolds}, AMS/IP
+  Studies in Advanced Mathematics, vol.~47, American Mathematical Society, 2009.
+
+\bibitem{grigoryan1985}
+Alexander~A. Grigor'yan, \emph{The existence of positive fundamental solutions
+  of the {L}aplace equation on {R}iemannian manifolds}, Mat. Sb. (N.S.)
+  \textbf{128(170)} (1985), 354--363.
+
+\bibitem{grigoryan1991}
+Alexander~A. Grigor'yan, \emph{The heat equation on noncompact {R}iemannian
+  manifolds}, Mat. Sb. \textbf{182} (1991), no.~1, 55--87.
+
+\bibitem{hajlaszkoskela2000}
+Piotr Haj{\l}asz and Pekka Koskela, \emph{Sobolev met {P}oincar\'e}, Mem. Amer.
+  Math. Soc. \textbf{145} (2000), no.~688, x+101.
+
+\bibitem{johnstone1986}
+Iain~M. Johnstone, \emph{Admissible estimation, {D}irichlet principles and
+  recurrence of birth--death chains on {$\mathbb{Z}^p_+$}}, Probab. Theory
+  Related Fields \textbf{71} (1986), 231--269.
+
+\bibitem{johnstonelalley1984}
+Iain~M. Johnstone and Steven~P. Lalley, \emph{On independent statistical
+  decision problems and products of diffusions}, Z. Wahrsch. Verw. Gebiete
+  \textbf{68} (1984), 29--47.
+
+\bibitem{kasahara1975}
+Yuji Kasahara, \emph{Spectral theory of generalized second order differential
+  operators and its applications to {M}arkov processes}, Japan. J. Math. (N.S.)
+  \textbf{1} (1975), no.~1, 67--84.
+
+\bibitem{kasaharawatanabe2010}
+Yuji Kasahara and Shinzo Watanabe, \emph{Asymptotic behavior of spectral
+  measures of {K}rein's and {K}otani's strings}, Kyoto J. Math. \textbf{50}
+  (2010), no.~3, 623--644.
+
+\bibitem{komaki2006}
+Fumiyasu Komaki, \emph{Shrinkage priors for {B}ayesian prediction}, Ann.
+  Statist. \textbf{34} (2006), no.~2, 808--819.
+
+\bibitem{komaki2015}
+Fumiyasu Komaki, \emph{Asymptotic properties of {B}ayesian predictive densities
+  when the distributions of data and target variables are different}, Bayesian
+  Anal. \textbf{10} (2015), no.~1, 31--51, arXiv:1503.07643.
+
+\bibitem{kotaniwatanabe1982}
+Shinichi Kotani and Shinzo Watanabe, \emph{Kre{\u\i}n's spectral theory of
+  strings and generalized diffusion processes}, Functional Analysis in Markov
+  Processes, Lecture Notes in Math., vol. 923, Springer, 1982, pp.~235--259.
+
+\bibitem{lyonssullivan1984}
+Terry Lyons and Dennis Sullivan, \emph{Function theory, random paths and
+  covering spaces}, J. Differential Geom. \textbf{19} (1984), 299--323.
+
+\bibitem{perelman2002}
+Grisha Perelman, \emph{The entropy formula for the {R}icci flow and its
+  geometric applications}, 2002, arXiv:math/0211159.
+
+\bibitem{saloffcoste1992}
+Laurent Saloff-Coste, \emph{A note on {P}oincar\'e, {S}obolev, and {H}arnack
+  inequalities}, Internat. Math. Res. Notices \textbf{1992} (1992), no.~2,
+  27--38.
+
+\bibitem{stein1956}
+Charles Stein, \emph{Inadmissibility of the usual estimator for the mean of a
+  multivariate normal distribution}, Proc. Third Berkeley Symp. Math. Statist.
+  Prob., vol.~1, Univ. California Press, 1956, pp.~197--206.
+
+\bibitem{sturm1996}
+Karl-Theodor Sturm, \emph{Analysis on local {D}irichlet spaces. {III}. {T}he
+  parabolic {H}arnack inequality}, J. Math. Pures Appl. (9) \textbf{75} (1996),
+  no.~3, 273--297.
+
+\bibitem{takanashi2023}
+Kohei Takanashi and Kenichiro McAlinn, \emph{Inadmissibility and transience},
+  2023, arXiv:2310.17891.
+
+\end{thebibliography}
 }
 
 \end{document}

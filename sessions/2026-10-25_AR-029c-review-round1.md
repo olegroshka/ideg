@@ -36,6 +36,20 @@ restricted to the ansatz. No proof logic altered; no unverified mathematics adde
 - Brown–Hwang comparison still needs Volume 1 (document supply).
 - Consult Brown's 1973 correction when finalizing Brown citations.
 
+## Owner requests after the repair (same day)
+- Acknowledgements rewritten (owner wording): this note was separated out from a broader information-geometry study
+  (admissibility / predictive density / curvature), collected separately as possibly useful to others; the work was a
+  collaboration with large language models, Claude (Anthropic) via Claude Code and **Gemini (Google)** — named, the
+  owner's collaborator in the neighbouring study, from which the cylinder weight (Thm 3.4) and the coherent-circles
+  candidate (§5.1) came; their main help was speed (ideas built/tested/discarded quickly). TODO comment removed.
+- Bibliography: the amsplain repeated-author dashes removed by **inlining the bibliography** (`thebibliography`
+  pasted into main.tex, the three `\bysame` entries written out as "Alexander Grigor'yan" / "Alexander A. Grigor'yan"
+  / "Fumiyasu Komaki"); no more bibtex pass; the whole list now fits on one page. `references.bib` kept for provenance.
+- Three illustrations added (TikZ, `\usepackage{tikz}`): Fig. 1 walls vs scattered curves on a ball (co-dimension one
+  vs two; Poincaré fails vs holds); Fig. 2 the covering behind Thm 4.1(a) (cells of side ≍√|x|, ≤1 circle each, one
+  small ball highlighted); Fig. 3 the 2×2 zone map (doubling × Poincaré) with the three examples and the Theorem A
+  cell boxed. Rebuilt clean (17 pp, 0 overfull, no undefined refs); all pages checked visually.
+
 ## Pushback on the review (recorded)
 - Axisymmetric-modes criticism: for axis-centred balls the m≥1 modes are handled analytically (Poincaré constant 1);
   off-axis checks are full 3-D. The valid residual (finitely many balls ≠ uniform constants) is already conceded.
