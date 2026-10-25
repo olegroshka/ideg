@@ -201,3 +201,27 @@ spacing changes by \(\sqrt2\)); (c) that Lemma 4.2's hypotheses (bounded overlap
 \(d_C\) matching near the axis where several small circles cluster within \(\asymp s_k\). None of these is expected to
 obstruct the result, but they are the places a referee will press. Parts (b) and (c) of Theorem 4.1 (tests silent,
 volume \(\asymp r^3\)) were not in question and are unchanged.
+
+## 10. Citation verification and amendments (2026-10-25)
+
+All three queued references verified against primary sources (open access; no library login needed) and amended in
+`main.tex` (inlined bibliography; rebuilt clean, 17 pp, no undefined citations).
+
+- **Björn–Buckley–Keith** — verified at the Maynooth open-access record (MURAL eprint 1580, publisher DOI
+  10.1090/S0002-9939-05-07925-6): Jana Björn, Stephen M. Buckley, Stephen Keith, *Admissible measures in one
+  dimension*, Proc. Amer. Math. Soc. **134** (2006), no. 3, 703–705. Abstract confirms: one-dimensional p-admissible
+  measures are exactly the Muckenhoupt A_p weights. **Added as [4]; cited in Lemma 3.3** as the general predecessor,
+  with our proof kept for the p=2 case. Status: READ (abstract + record); theorem content matches the use. The
+  reviewer's "Thm 2" / e-pub 28 Sep 2005 not separately confirmed, not needed for the citation.
+- **Shimizu–Nakano** — verified on arXiv (abstract + full HTML of 1705.04408): Yuuki Shimizu, Fumihiko Nakano
+  (Gakushuin Univ.), *On the asymptotic behavior of Bessel-like diffusions*, 2017. **Theorem 1.3 read**: for ρ=0,
+  m(∞)=∞, p(t,x,y) ∼ 1/m(t); their Example 3(2) is the log-log borderline, Example 3 the log family — directly the
+  Prop 5.3 regime. **Added as [24]; cited in Prop 5.3**, and the kernel-constant sentence corrected: 4 for the
+  full-line kernel used here, 8 for the reflected half-line in their normalization m(dx)=2W dx; transience unaffected.
+  arXiv shows **no journal-ref**, so cited as the arXiv preprint (the reviewer's "Tsukuba J. Math. 41(1) 2017, 81–90"
+  not confirmed from arXiv; NOT asserted).
+- **Takanashi–McAlinn** — verified on arXiv (2310.17891): first author is **Kosaku** Takanashi (not Kohei).
+  Reference [27] corrected.
+
+R2, R6 (citation parts) and R14 of §1 are now closed. Still open from the review: Prop 5.2 all-ball doubling detail
+(R5), and the Brown–Hwang comparison (needs Volume 1).

@@ -411,7 +411,10 @@ $\int_I\abs{u-u_I}^2\dd\mu_1\le C\abs I^2\int_I\abs{u'}^2\dd\mu_1$ for all
 intervals. Then, with $\nu_1=v^{-1}\dd t$,
 $\mu_1([-r,r])\,\nu_1([-r,r])\le32\,CD^3r^2$ for every $r>0$. Consequently the
 product weight $w(x)=v(x_1)$ on $\R^m$, $m\ge3$, has bounded spherical $A_2$
-ratio, and $\delta_F$ is inadmissible for every such prior.
+ratio, and $\delta_F$ is inadmissible for every such prior. That one-dimensional
+$p$-admissible measures are exactly the Muckenhoupt $A_p$ weights is due to
+Bj\"orn, Buckley and Keith \cite{bbk2006}; we record the case $p=2$ with the
+explicit constant used below.
 \end{lemma}
 
 \begin{proof}
@@ -926,8 +929,13 @@ $p^W_t(0,0)\sim c'/\widetilde M(t)\asymp1/\log^2t$, hence
 \[
 \int^\infty p^W_t(0,0)\,\frac{\dd t}{t}\ \asymp\ \int^\infty\frac{\dd t}{t\log^2t}\ <\ \infty .
 \]
-The asymptotic, with constant $c'/\tfrac18=4$ for the string reflected at
-the origin, is confirmed numerically in Section~\ref{sec:numerics}.
+The same asymptotic is given by Shimizu and Nakano
+\cite[Thm.~1.3]{shimizunakano2017}, for a reflected Bessel-like diffusion on
+$[0,\infty)$ in the boundary case $\rho=0$ with speed measure of infinite mass.
+The constant is $4$ for the full-line kernel $p^W_t(0,0)$ used here (equivalently
+$8$ for the reflected half-line, in their normalization $m(\dd x)=2W\dd x$); it
+is confirmed numerically in Section~\ref{sec:numerics}, and the transience
+conclusion is the same for either normalization.
 \end{proof}
 
 This is an instance of the phenomenon of Johnstone and Lalley
@@ -1278,6 +1286,11 @@ Jana Bj{\"o}rn, \emph{Poincar\'e inequalities for powers and products of
   admissible weights}, Ann. Acad. Sci. Fenn. Math. \textbf{26} (2001), no.~1,
   175--188.
 
+\bibitem{bbk2006}
+Jana Bj{\"o}rn, Stephen~M. Buckley, and Stephen Keith, \emph{Admissible measures
+  in one dimension}, Proc. Amer. Math. Soc. \textbf{134} (2006), no.~3,
+  703--705.
+
 \bibitem{brown1971}
 Lawrence~D. Brown, \emph{Admissible estimators, recurrent diffusions, and
   insoluble boundary value problems}, Ann. Math. Statist. \textbf{42} (1971),
@@ -1367,6 +1380,10 @@ Laurent Saloff-Coste, \emph{A note on {P}oincar\'e, {S}obolev, and {H}arnack
   inequalities}, Internat. Math. Res. Notices \textbf{1992} (1992), no.~2,
   27--38.
 
+\bibitem{shimizunakano2017}
+Yuuki Shimizu and Fumihiko Nakano, \emph{On the asymptotic behavior of
+  {B}essel-like diffusions}, 2017, arXiv:1705.04408.
+
 \bibitem{stein1956}
 Charles Stein, \emph{Inadmissibility of the usual estimator for the mean of a
   multivariate normal distribution}, Proc. Third Berkeley Symp. Math. Statist.
@@ -1378,7 +1395,7 @@ Karl-Theodor Sturm, \emph{Analysis on local {D}irichlet spaces. {III}. {T}he
   no.~3, 273--297.
 
 \bibitem{takanashi2023}
-Kohei Takanashi and Kenichiro McAlinn, \emph{Inadmissibility and transience},
+Kosaku Takanashi and Kenichiro McAlinn, \emph{Inadmissibility and transience},
   2023, arXiv:2310.17891.
 
 \end{thebibliography}

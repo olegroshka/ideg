@@ -50,6 +50,18 @@ restricted to the ansatz. No proof logic altered; no unverified mathematics adde
   small ball highlighted); Fig. 3 the 2×2 zone map (doubling × Poincaré) with the three examples and the Theorem A
   cell boxed. Rebuilt clean (17 pp, 0 overfull, no undefined refs); all pages checked visually.
 
+## Citation verification (owner: "let get this papers and verify")
+- All three verified against primary sources, open access, no library login: Björn–Buckley–Keith (Maynooth MURAL
+  record + AMS DOI; abstract confirms 1-D p-admissible = Muckenhoupt A_p) added as [4] and cited in Lemma 3.3;
+  Shimizu–Nakano (arXiv 1705.04408 full text; Theorem 1.3 read) added as [24] and cited in Prop 5.3 with the
+  kernel-constant wording fixed (4 full-line / 8 reflected); Takanashi first name corrected Kohei → Kosaku [27].
+  Shimizu–Nakano cited as the arXiv preprint (no journal-ref on arXiv; the reviewer's Tsukuba J. Math. details not
+  confirmed, not asserted). Rebuilt clean (17 pp, no undefined citations). Detail in AR-029c §10.
+- Open question to owner (not acted on): whether to credit a partner library (e.g. Oxford) in the acknowledgements.
+  This round needed no library (all open access); the earlier library sources (Hajłasz–Koskela, Saloff-Coste,
+  Kasahara) were obtained via the OU library, already credited. Awaiting the exact institution name and confirmation
+  before amending, to avoid an inaccurate institutional credit.
+
 ## Pushback on the review (recorded)
 - Axisymmetric-modes criticism: for axis-centred balls the m≥1 modes are handled analytically (Poincaré constant 1);
   off-axis checks are full 3-D. The valid residual (finitely many balls ≠ uniform constants) is already conceded.
