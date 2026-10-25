@@ -88,13 +88,54 @@ $\Delta+\nabla\log f^*\cdot\nabla$, the weighted Laplacian of the measure
 $\mu=f^*\dd x$. Then $\delta_F$ is inadmissible if $\{Z_t\}$ is transient, and
 admissible if $\{Z_t\}$ is recurrent and the drift $\nabla\log f^*$ is bounded.
 Since the recurrence of $\{Z_t\}$ is the \emph{parabolicity} of the weighted
-Euclidean space $W_F=(\R^m,\delta_{ij},f^*\dd x)$, Brown's theorem places the
+Euclidean space $W_F=(\R^m,\delta_{ij},f^*\dd x)$ (Figure~\ref{fig:dictionary}),
+Brown's theorem places the
 admissibility problem inside the potential theory of weighted manifolds, a
 subject that has developed independently since
 \cite{lyonssullivan1984,grigoryan1985,grigoryan1999}. The statistical
 literature has long used the Dirichlet-form formulation of Brown's criterion
 \cite{johnstonelalley1984,johnstone1986,eaton1992,takanashi2023}; the geometric
 reading, and the tests it brings, are the subject of this note.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\small]
+\tikzset{db/.style={draw,rounded corners,minimum width=3.7cm,minimum height=3.5cm}}
+\node[db] at (0,0) {};
+\node at (0,1.35) {\footnotesize\scshape statistics};
+\draw[gray!55] (-1.15,0.35) -- (1.15,0.35);
+\fill (0,0.35) circle (1.5pt);
+\fill (0.75,0.35) circle (1.5pt);
+\node at (0.75,0.68) {\footnotesize$X$};
+\draw[->,thick] (0.70,0.35) -- (0.12,0.35);
+\node at (0,-0.55) {$\delta_F$ admissible};
+\node[align=center,text width=3.3cm] at (0,-1.15) {\footnotesize no rule beats it at every $\theta$};
+\node[db] at (5,0) {};
+\node at (5,1.35) {\footnotesize\scshape probability};
+\draw[gray!55] (5,0.4) circle (0.26);
+\draw[thick] (5,0.4) .. controls (6.0,1.1) and (6.3,-0.1) .. (5.7,-0.5)
+                   .. controls (5.1,-0.9) and (4.1,0.0) .. (4.45,0.6)
+                   .. controls (4.6,0.85) and (4.85,0.55) .. (4.98,0.42);
+\node at (5,-0.85) {$\{Z_t\}$ recurrent};
+\node[align=center,text width=3.3cm] at (5,-1.4) {\footnotesize the particle comes home};
+\node[db] at (10,0) {};
+\node at (10,1.35) {\footnotesize\scshape potential theory};
+\fill[black!12] (10,0.4) circle (0.26);
+\draw (10,0.4) circle (0.26);
+\draw[thick] (10.26,0.4) -- (10.5,0.4) -- (10.6,0.6) -- (10.8,0.2) -- (11.0,0.6) -- (11.2,0.2) -- (11.3,0.4) -- (11.5,0.4);
+\node at (11.7,0.4) {\footnotesize$\infty$};
+\node at (10,-0.85) {$\capa(B_1)=0$};
+\node[align=center,text width=3.5cm] at (10,-1.4) {\footnotesize infinite resistance to $\infty$};
+\node at (2.5,0) {\large$\Longleftrightarrow$};
+\node at (7.5,0) {\large$\Longleftrightarrow$};
+\end{tikzpicture}
+\caption{Brown's dictionary: one fact in three languages
+(Theorem~\ref{thm:brown}). A generalized Bayes estimator is admissible exactly
+when its weighted Brownian motion is recurrent, exactly when the unit ball has
+zero capacity, that is, infinite resistance to infinity. The negations are
+equivalent too: transient, inadmissible, positive capacity, current escapes.}
+\label{fig:dictionary}
+\end{figure}
 
 Brown gave two tests that depend only on radial information. Write
 $\fbar(r)$ for the mean of $f^*$ over the sphere $\{\abs x=r\}$. His sphere
@@ -369,7 +410,7 @@ with the Poincar\'e inequality is equivalent to the parabolic Harnack inequality
 \cite[Thm.~3.1]{saloffcoste1992} and implies two-sided Gaussian bounds for the
 heat kernel \cite[Thm.~4.2]{saloffcoste1992}; see also \cite{grigoryan1991}
 and, for local Dirichlet spaces, \cite{sturm1996}. In particular the upper bound
-$p(t,x,x)\le C/V(x,\sqrt t)$ holds, which together with doubling is equivalent to the
+$p(t,x,x)\le C/V(x,\sqrt t)$ holds (Figure~\ref{fig:heatkernel}), which together with doubling is equivalent to the
 relative Faber--Krahn inequality \cite[remark after Thm.~11.1]{grigoryan1999}.
 Under the relative Faber--Krahn inequality, non-parabolicity is equivalent to
 the convergence of the integral in \eqref{eq:volume}
@@ -391,6 +432,27 @@ $\int_R^{2R}r\dd r/V\le2R^2/V(R)$. Summing over $R=2^j$, divergence of the
 volume integral forces $\sum_j4^j/V(2^{j+1})=\infty$ and hence divergence of
 $\int\dd r/V'$.
 \end{proof}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\small]
+\foreach \r in {0.6,1.2,2.4} \draw[dashed,gray!60] (0,0) circle (\r);
+\fill (0,0) circle (1.6pt);
+\node[fill=white,inner sep=1pt] at (0.43,0.43) {\footnotesize$t{=}1$};
+\node[fill=white,inner sep=1pt] at (0.85,0.85) {\footnotesize$t{=}4$};
+\node[fill=white,inner sep=1pt] at (1.70,1.70) {\footnotesize$t{=}16$};
+\node[align=center] at (0,-2.75) {at time $t$ the particle fills $B(x,\sqrt t\,)$};
+\node[anchor=west] at (3.3,0.85) {return density\quad $p_t(x,x)\asymp 1/V(x,\sqrt t\,)$};
+\node[anchor=west] at (3.3,-0.05) {$\displaystyle\int_1^\infty p_t(x,x)\,\dd t\ \asymp\ \int_1^\infty\frac{r\,\dd r}{V(r)}$};
+\node[anchor=west] at (3.3,-0.95) {diverges $\ \Rightarrow\ $ recurrent\quad(under D$+$P)};
+\end{tikzpicture}
+\caption{The volume test (Theorem~\ref{thm:volume}) from the heat kernel. Under
+doubling and a Poincar\'e inequality the return density is
+$p_t(x,x)\asymp1/V(x,\sqrt t\,)$, so the expected time the particle spends near
+its start, $\int p_t(x,x)\,\dd t\asymp\int r\,\dd r/V(r)$, is infinite exactly
+when $(\R^m,w\dd x)$ is recurrent.}
+\label{fig:heatkernel}
+\end{figure}
 
 \section{The reach of the radial tests}\label{sec:reach}
 
