@@ -291,3 +291,15 @@ results/     run outputs, figures, serialized data (gitignored where large)
   Lean: not installed; scoped as AR-032 (elementary lemmas against
   axiomatised externals). Committed and pushed 2026-10-24 (owner: "lets
   park commit and push it").
+- **Review round 1 + paper spun out to its own repo (2026-10-25):** an external
+  review (AR-029c) was triaged and all items closed (correctness fixes, the
+  Theorem 4.1 D+P proof repaired, Björn–Buckley–Keith / Shimizu–Nakano citations
+  verified and added, Takanashi first name fixed, Brown 1973 correction read and
+  cited as not affecting the bounded-drift priors, Brown–Hwang reframed). Eight
+  figures now (three computed, five TikZ intuition figures). **The paper and its
+  reproducible artifacts were moved to a clean standalone repository,
+  https://github.com/olegroshka/brown-radial-tests (paper/ + figures/ + code/),
+  which is now the canonical public home and the URL the paper points to.** The
+  `articles/theory/` copy here is retained as the development history. See
+  `ar/AR-029c_review-round1-triage-2026-10-25.md` and
+  `sessions/2026-10-25_AR-029c-review-round1.md`.

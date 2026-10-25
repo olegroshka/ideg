@@ -7,6 +7,13 @@ substrate discipline (CLAUDE.md): nothing exists until recorded; literature
 claims are `verify`-flagged until checked against the primary source;
 every mathematical statement is machine-checked where that is possible.
 
+> **The external-facing paper now has its own repository:**
+> **https://github.com/olegroshka/brown-radial-tests** (canonical public home;
+> clean `paper/` + `figures/` + `code/` layout, the repo the paper itself points
+> to). The `paper/`, `latex/figures/`, and `checks/` files here are the
+> development history and stay with the stream's records; the new repo is the
+> version to cite, submit, and point readers to.
+
 ## Contents
 
 | File | Role | Status |
