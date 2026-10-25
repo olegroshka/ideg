@@ -237,11 +237,16 @@ Dirichlet principle for the capacity of $B_1$; (d) uses the radial test
 functions $j_i(x)=c_i\int_{\abs x}^{i}\dd r/(r^{m-1}\fbar(r))$, whose energy
 tends to zero, exactly as in the sphere-area test of
 \cite[Thm.~7.5]{grigoryan1999}; (e) integrates a one-dimensional capacity
-bound along rays. We say that the sphere test is \emph{silent} on $F$ when its
+bound along rays. (Brown's diffusion can explode in finite time if the drift
+grows faster than linearly; his correction \cite{brown1973} shows that when
+$\limsup_{\abs x\to\infty}\abs{\nabla\log f^*}/\abs x<\infty$ there is no
+explosion and every result of \cite{brown1971} holds as stated. Every weight in
+this note has bounded drift by Lemma~\ref{lem:lip}, so this case does not
+arise.) We say that the sphere test is \emph{silent} on $F$ when its
 integral converges, and that the ray test is silent when no set of directions
 of positive measure has uniformly bounded ray integrals. Brown's undecided zone
-is the set of $F$ on which both are silent. Table~\ref{tab:dict} collects the
-dictionary.
+is the set of $F$ on which both are silent (Figure~\ref{fig:tests}).
+Table~\ref{tab:dict} collects the dictionary.
 
 \begin{table}[t]
 \caption{Brown's admissibility theory read as potential theory of
@@ -276,6 +281,38 @@ the statistical setting and so predating the general weighted-manifold
 statements; his Theorem~4.3.1 is the capacity characterization of parabolicity.
 In the sources we have read, neither literature cites the other.
 \end{remark}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[scale=1]
+\begin{scope}
+  \foreach \r in {0.55,1.0,1.45,1.9} \draw[gray!55] (0,0) circle (\r);
+  \fill[black!8] (0,0) circle (0.3);
+  \node at (0,0) {\small$B_1$};
+  \foreach \a in {90,210,330} \draw[->,thick] (\a:0.35) -- (\a:2.05);
+  \node[align=center] at (0,-2.5)
+       {(a) sphere test: shells in series\\[-1pt]
+        \small$\sum\Delta r/(r^{m-1}\fbar)=\infty\Rightarrow$ recurrent};
+\end{scope}
+\begin{scope}[xshift=6cm]
+  \foreach \r in {0.55,1.0,1.45,1.9} \draw[gray!55] (0,0) circle (\r);
+  \fill[black!12] (0,0) -- (18:2.1) arc (18:-18:2.1) -- cycle;
+  \fill[black!8] (0,0) circle (0.3);
+  \node at (0,0) {\small$B_1$};
+  \foreach \a in {-11,0,11} \draw[->,thick] (0,0) -- (\a:2.0);
+  \node[align=center] at (0,-2.5)
+       {(b) ray test: a cheap cone of rays\\[-1pt]
+        \small$\int\dd r/(r^{m-1}f^*(r\varphi))<\infty\Rightarrow$ transient};
+\end{scope}
+\end{tikzpicture}
+\caption{Brown's two radial tests as estimates of the resistance from $B_1$ to
+infinity. The sphere test adds the resistances of spherical shells in series, a
+lower bound whose divergence forces recurrence; the ray test finds a cone of
+rays of small total resistance, an upper bound whose finiteness forces
+transience. A weight whose spheres conduct well on average while every ray is
+expensive leaves both silent: Brown's undecided zone, the subject of this note.}
+\label{fig:tests}
+\end{figure}
 
 \subsection{Explicit weights are marginals}
 Brown's theorems concern Gaussian marginals $f^*=\varphi*F$. The weights we
@@ -987,13 +1024,13 @@ scattered circles, spacing $2^{k/2}$ (Thm.~\ref{thm:B}) & yes & yes & transient;
   \node[above] at (1.5,2) {Poincar\'e fails};
   \node[rotate=90] at (-0.09,1.5) {doubling};
   \node[rotate=90] at (-0.09,0.5) {not doubling};
-  \node[align=center] at (0.5,1.5)
+  \node[align=center,text width=3.2cm] at (0.5,1.5)
        {scattered circles\\[1pt]\textbf{transient}\\[1pt]\small volume test (Thm~\ref{thm:A})};
-  \node[align=center] at (1.5,1.5)
+  \node[align=center,text width=3.2cm] at (1.5,1.5)
        {coherent wall\\[1pt]\textbf{recurrent}\\[1pt]\small flux bound (Prop~\ref{prop:wall})};
-  \node[align=center] at (0.5,0.5)
-       {log-product\\[1pt]\textbf{transient}\\[1pt]\small product kernels (Prop~\ref{prop:log})};
-  \node[align=center] at (1.5,0.5) {\emph{open}};
+  \node[align=center,text width=3.2cm] at (0.5,0.5)
+       {log-product\\[1pt]\textbf{transient}\\[1pt]\small product kernels\\(Prop~\ref{prop:log})};
+  \node[align=center,text width=3.2cm] at (1.5,0.5) {\emph{open}};
   \draw[very thick] (0,1) rectangle (1,2);
 \end{tikzpicture}
 \caption{Brown's undecided zone, by the regularity of the marginal. Only the
@@ -1309,6 +1346,11 @@ Jana Bj{\"o}rn, Stephen~M. Buckley, and Stephen Keith, \emph{Admissible measures
 Lawrence~D. Brown, \emph{Admissible estimators, recurrent diffusions, and
   insoluble boundary value problems}, Ann. Math. Statist. \textbf{42} (1971),
   no.~3, 855--903.
+
+\bibitem{brown1973}
+Lawrence~D. Brown, \emph{Correction to ``Admissible estimators, recurrent
+  diffusions, and insoluble boundary value problems''}, Ann. Statist.
+  \textbf{1} (1973), no.~3, 594--596.
 
 \bibitem{brownhwang1982}
 Lawrence~D. Brown and Jiunn~T. Hwang, \emph{A unified admissibility proof},

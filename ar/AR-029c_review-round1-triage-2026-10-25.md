@@ -260,3 +260,28 @@ Cannot be closed without a physical source (not defects; due diligence for submi
   via the OU library / Project Euclid.
 
 Review round 1 is otherwise fully closed.
+
+## 12. Source retrieval and the two residuals (2026-10-25)
+
+Both residuals from §11 turned out to be reachable; neither blocks anything.
+
+- **Brown 1973 correction — RETRIEVED, READ, CLOSED.** Open access on Project Euclid (IMS Annals; no OU login
+  needed): L. D. Brown, *Correction to "Admissible estimators, recurrent diffusions, and insoluble boundary value
+  problems,"* Ann. Statist. **1**(3) (1973), 594–596, DOI 10.1214/aos/1176342433. Content (prompted by C. Srinivasan):
+  the diffusion $\{Z_t\}$ can **explode** in finite time when the drift grows faster than linearly; the fix is to send
+  it to $\infty$ at the explosion time. Brown states that if
+  $\limsup_{|x|\to\infty}\abs{\nabla\log f^*}/\abs x<\infty$ then $\Pr[\text{explosion}]=0$ and **every theorem and
+  corollary of Brown (1971) holds exactly as stated** (only Thm 4.3.1 and Lemma 4.2.1 need a change in the explosive
+  case). Every prior in our paper has **bounded drift** (Lemma 2.3), so $\abs{\nabla\log f^*}/\abs x\to0$, no explosion,
+  and all of Brown's results we use (Thms 4.3.1, 5.1.1, 6.3.1, 6.4.3, 6.4.4) hold as stated. **Added to the
+  bibliography and cited**, with a one-line note in §2.2 (after Theorem 2.1) recording that the explosive case does not
+  arise here. Metadata verified at the source (no invented metadata).
+- **Brown–Hwang 1982, Vol. 1 — AVAILABLE via the OU library (not yet read).** The OU catalogue (user logged in) holds
+  the Academic Press ebook, ProQuest Ebook Central "Academic Complete UKI Edition", docid EBC1901593, Edition 1, 1982,
+  551 pp; the chapter list shows "Contents of Volume 1" and Volume-1 chapters spanning p.15–p.504, so it is Volume 1,
+  which contains Brown–Hwang, *A unified admissibility proof*, pp. 205–230. So the remaining explanatory task — which
+  of their hypotheses fails for the lattice prior — is unblocked; it is a genuine read of their chapter (ProQuest
+  reader) plus a short comparison, not done this turn. The paper's statement ("no sufficient admissibility condition
+  can certify an inadmissible prior; which hypothesis fails is explanatory") stands regardless.
+
+Net: review round 1 is fully closed except the optional explanatory Brown–Hwang read, which is now available on demand.

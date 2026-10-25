@@ -73,6 +73,15 @@ restricted to the ansatz. No proof logic altered; no unverified mathematics adde
 - Full item-by-item closure table in AR-029c §11. Only two items remain, both needing a physical source and neither a
   defect: the specific failing Brown–Hwang hypothesis (Vol. 1) and the Brown 1973 correction retrieval.
 
+## Source retrieval (owner: "none available through my academic ou student credential?")
+- Both residuals are reachable. Brown 1973 correction: open access on Project Euclid (no login needed), Ann. Statist.
+  1(3) 594–596, DOI 10.1214/aos/1176342433 — READ: it is about finite-time explosion of the diffusion; bounded drift
+  (every prior here) excludes it, so all of Brown (1971) holds as stated. Added to the bibliography and cited, with a
+  one-line note after Theorem 2.1. Brown–Hwang 1982 Vol. 1: available via the OU library as the Academic Press ebook
+  (ProQuest Ebook Central UKI, EBC1901593, Vol. 1, 551 pp) — not read this turn; the "which hypothesis fails" read is
+  unblocked and optional. Detail in AR-029c §12. Rebuilt clean (18 pp, no undefined citations); main.pdf locked by the
+  viewer at commit time, source verified via -jobname build, PDF lags one build.
+
 ## Pushback on the review (recorded)
 - Axisymmetric-modes criticism: for axis-centred balls the m≥1 modes are handled analytically (Poincaré constant 1);
   off-axis checks are full 3-D. The valid residual (finitely many balls ≠ uniform constants) is already conceded.
