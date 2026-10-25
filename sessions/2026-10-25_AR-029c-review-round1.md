@@ -62,6 +62,17 @@ restricted to the ansatz. No proof logic altered; no unverified mathematics adde
   Kasahara) were obtained via the OU library, already credited. Awaiting the exact institution name and confirmation
   before amending, to avoid an inaccurate institutional credit.
 
+## Remaining items closed (owner: "check outstanding review items and close them all")
+- R5 Prop 5.2 all-ball doubling: replaced "at the relevant scales" with a full case argument (far / straddle /
+  sub-mesh, slab-volume computation, uniform across shell boundaries and near Σ's boundary), doubling constant
+  ≤ 2^{α+3}. Rebuilt clean (18 pp).
+- Brown–Hwang open question reframed: the lattice prior is inadmissible, so no sufficient admissibility condition
+  (Brown–Hwang included) can certify it; only the explanatory "which hypothesis fails" remains.
+- Brown 1973 correction: confirmed it exists (sugaku.net catalogue listing) but no full text / exact citation found in
+  a quick search; NOT added (no verified metadata). Residual retrieval item for submission.
+- Full item-by-item closure table in AR-029c §11. Only two items remain, both needing a physical source and neither a
+  defect: the specific failing Brown–Hwang hypothesis (Vol. 1) and the Brown 1973 correction retrieval.
+
 ## Pushback on the review (recorded)
 - Axisymmetric-modes criticism: for axis-centred balls the m≥1 modes are handled analytically (Poincaré constant 1);
   off-axis checks are full 3-D. The valid residual (finitely many balls ≠ uniform constants) is already conceded.

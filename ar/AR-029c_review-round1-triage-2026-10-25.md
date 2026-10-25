@@ -225,3 +225,38 @@ All three queued references verified against primary sources (open access; no li
 
 R2, R6 (citation parts) and R14 of §1 are now closed. Still open from the review: Prop 5.2 all-ball doubling detail
 (R5), and the Brown–Hwang comparison (needs Volume 1).
+
+## 11. Closure of remaining items (2026-10-25)
+
+Final status of every review item (rebuilt clean, 18 pp, 0 overfull, no undefined refs/citations):
+
+| # | Status |
+|---|---|
+| R1 (Thm 3.1 corollary framing) | CLOSED — already framed as a corollary; abstract/intro modest, no change needed |
+| R2 (Lemma 3.3 predecessor) | CLOSED — Björn–Buckley–Keith verified and cited (§10) |
+| R3 (Thm 3.4 = Björn) | CLOSED — attribution already correct |
+| R4 (Thm 4.1 proof) | CLOSED to draft standard — repair in §9; residual referee items listed there (constants, cover) |
+| R5 (Prop 5.2 all-ball doubling) | CLOSED — the "at the relevant scales" sentence replaced by a full case argument (far/straddle/sub-mesh, slab volumes, uniform across shell boundaries and near Σ's boundary); doubling constant ≤ 2^{α+3} |
+| R6 (Prop 5.3 kernel + constant) | CLOSED — Shimizu–Nakano verified and cited; constant corrected (4 full-line / 8 reflected) (§10) |
+| R7 (Appendix A errors) | CLOSED — strictness, flat cylinder, integrability all fixed (round 1) |
+| R8 (Thm 2.1c hypotheses) | CLOSED — bounded-drift qualifier restored |
+| R9 (exhaustion question) | CLOSED — reworded (Grigor'yan Thm 7.6 answers existence; explicit exhaustion is the open part) |
+| R10 (priority remark) | CLOSED — Ahlfors–Nevanlinna noted, claim qualified |
+| R11 (eq. 4 constant) | CLOSED — α-dependent |
+| R12 (abstract wording) | CLOSED |
+| R13 ("forced" → ansatz) | CLOSED |
+| R14 (Takanashi name) | CLOSED — Kosaku, verified on arXiv |
+| R15 (numerics subspace) | CLOSED — m≥1 modes handled analytically for axis-centred balls; the finitely-many-balls limitation is already conceded; no overclaim |
+| Brown–Hwang comparison | REFRAMED/CLOSED as an open admissibility question — the lattice prior is inadmissible, so no sufficient admissibility condition can certify it; only the explanatory "which hypothesis fails" remains (needs Vol. 1 via document supply) |
+
+Cannot be closed without a physical source (not defects; due diligence for submission):
+- The specific Brown–Hwang hypothesis that fails for the lattice prior — needs Statistical Decision Theory and Related
+  Topics III, Vol. 1 (Brown–Hwang 1982), not reachable electronically (AR-029b §2).
+- **Brown 1973 correction**: a catalogue listing (sugaku.net) confirms a "Correction to Admissible Estimators,
+  Recurrent Diffusions, and Insoluble Boundary Value Problems" (L. D. Brown, 1973) exists, but a quick search returned
+  no full text, journal/volume/pages, or statement of what it corrects. Not added to the bibliography (no verified
+  metadata; it is not cited for anything). The results we use (Brown 1971 Thms 4.3.1, 5.1.1, 6.3.1, 6.4.3, 6.4.4) were
+  read from the primary 1971 paper; the reviewer did not infer the correction affects them. To retrieve at submission
+  via the OU library / Project Euclid.
+
+Review round 1 is otherwise fully closed.

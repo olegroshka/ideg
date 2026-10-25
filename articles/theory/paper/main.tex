@@ -888,8 +888,23 @@ $\Sigma_k$. On either side of the wall $w'\asymp(\abs s/2^k)^\alpha$, so
 $\Var_\mu(u;B)\asymp\rho^3(\rho/2^k)^\alpha$, whereas the energy is carried by
 the layer $\abs s\le1$ and is $\asymp\rho^2\,4^{-k\alpha/2}$. Hence
 $\Var_\mu(u;B)/(\rho^2\int_B\abs{\nabla u}^2\dd\mu)\asymp\rho^{\alpha-1}$ is
-unbounded. Doubling holds because $V(x,\rho)\asymp\rho^3\cdot
-(\max(\rho,\dist(x,\Sigma))/2^k)^\alpha$ at the relevant scales.
+unbounded. For doubling, the circles cover $\Sigma$ up to the mesh $\le3.2$, so
+$\dist(\cdot,\Gamma')\asymp\max(1,\dist(\cdot,\Sigma))$ and
+$w'\asymp(\max(1,\dist(\cdot,\Sigma))/2^k)^\alpha$ in shell $k$, with $\Sigma$ a
+Lipschitz surface of co-dimension one (with boundary on the axis). For a ball
+$B=B(x,\rho)$: if $\rho\le\dist(x,\Sigma)/2$ the weight varies on $B$ by a
+bounded factor, so $\mu$ is comparable to Lebesgue measure; if
+$\rho>\dist(x,\Sigma)/2$ the ball straddles $\Sigma$, and the slab bound
+$\abs{\{\dist(\cdot,\Sigma)\in[\sigma,2\sigma]\}\cap B}\asymp\rho^2\sigma$ summed
+over dyadic $\sigma\le\rho$ gives $\int_B\dist(\cdot,\Sigma)^\alpha\asymp
+\rho^{\alpha+3}$, uniformly including near the boundary of $\Sigma$; for
+$\rho\le1$ the weight is $\asymp2^{-k\alpha}$ near $\Sigma$. In every case
+\[
+V(x,\rho)\ \asymp\ \rho^3\Bigl(\tfrac{\max(1,\rho,\dist(x,\Sigma))}{2^k}\Bigr)^\alpha,
+\]
+so $V(x,2\rho)\le2^{\alpha+3}V(x,\rho)$, uniformly in $x$ and across shell
+boundaries (where $1+\abs x^2$ and $\dist(\cdot,\Sigma)$ change by bounded
+factors): $w'$ is doubling, but by the two-region quotient above not Poincar\'e.
 \end{proof}
 
 Above its mesh scale the set $\Gamma'$ is a surface of small weight: a valley of
@@ -1131,11 +1146,10 @@ of the kind that decided Proposition~\ref{prop:wall}, can be given across the
 undecided zone.
 Second, the construction of Theorem~\ref{thm:B} is three-dimensional; in the
 plane the valleys would be points, transience requires volume growth faster
-than $r^2\log r$, and the arithmetic of exponents changes. Third, the relation
-between the volume test and the unified sufficient condition of Brown and Hwang
-\cite{brownhwang1982} for admissibility should be settled; we expect the lattice
-prior not to be covered by a radial condition of any kind, but we have not
-checked their hypotheses. Finally, the same parabolic/non-parabolic dichotomy
+than $r^2\log r$, and the arithmetic of exponents changes. Third, Brown and Hwang's unified condition \cite{brownhwang1982} is sufficient
+for admissibility; the lattice prior of Theorem~\ref{thm:B} is inadmissible, so
+no such condition can certify it, and what remains is the explanatory question of
+which of their hypotheses fails there, not an open admissibility question. Finally, the same parabolic/non-parabolic dichotomy
 governs Komaki's shrinkage priors on the Fisher manifold of a model
 \cite{komaki2006} (Appendix~\ref{app:komaki}); whether the constructions of
 this note have counterparts there is open.
