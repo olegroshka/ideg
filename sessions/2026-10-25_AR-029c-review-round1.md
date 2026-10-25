@@ -95,3 +95,38 @@ restricted to the ansatz. No proof logic altered; no unverified mathematics adde
   R4 gaps addressed. Scratch build clean (16 pp, 0 overfull, no undefined refs). Confidence and residual referee items
   recorded in AR-029c §9 (honest: drafted revision, not refereed). `main.pdf` NOT regenerated — file locked by an open
   viewer; the committed PDF lags the source by one build until the viewer is closed and I rebuild it.
+
+## Addendum (late 2026-10-25): arXiv bundle, then the companion guide expanded
+
+Owner rulings (verbatim, in order): "ok the paper is not submittable on arxive as figeres ad tex are on the same
+levels.. ... remove all ot log etc so I can zip and uplad a celr structure"; "Ok let's track to the question of how to
+communicate this on simple level.. say to my colleagues who are not into estimate at admissibility tests that might
+help with understanding spacetime geometry.."; "... first go analyze think hard plan the improvements amendments and
+describe them first to me"; "pls go do it"; "no do all phases these really good adition you mark optional some of
+them but that waht speaks and clicks".
+
+- **arXiv:** brown-radial-tests gained a flat `arxiv/` bundle (tex + both figure PDFs, `\graphicspath{{./}...}`),
+  test-built flat (19 pp, both figures embed); build junk removed; `*.zip` ignored. Commit 2c73100.
+- **Companion guide** (`companion/explainer.html` in brown-radial-tests, and the claude.ai artifact, version 4):
+  one-page story, three reading routes, a plain-words box per Part; Section 9 rebuilt (the tests as restrictions of
+  the Dirichlet / Thomson principles, Rayleigh monotonicity, the resistance sandwich, where each bound fails);
+  three live demos (exact log-polar network solve with both bounds; drag-a-ball weighted Neumann eigenvalue; Langevin
+  sampler on a wall vs the same wall cut into rotated rings, identical radial profiles by construction); new Section 20
+  (decision map); new Part VI on practice with exact-link / lesson / analogy labels; a note for geometers and
+  physicists (Riemannian, not Lorentzian; no gravity claim); comparison tables. Stale items fixed: ray toll 0.28 ->
+  at least 0.14 (matches the corrected eq. (4)); paper figure numbers 1/2 -> 7/8. Commit 9facbdb.
+- **Verification:** JS cores agree with independent Python solves to 4 digits (sandwich) and with scipy eigsh
+  (probe); regime contrast over 8 seeds: 20.3 / 15.3 / 2.9 switches per 120 time units (none / pockets / wall);
+  page checked in a browser in light and dark themes and at 390 px width (no horizontal overflow, no MathJax errors,
+  no console errors).
+- **Self-corrections (SC-005):** in my chat summary to the owner I had said Brown's tests "estimate volume growth"
+  (they bound resistance), had the paper's wall decided by the sphere test (both tests are silent on it), and had
+  overstated the Komaki/Perelman identity (prior-dependent part of the predictive-risk expansion only). The guide
+  states the corrected versions. The finance direction note wrongly listed Jorion's Bayes–Stein as a rule δ_F; it is
+  empirical Bayes; corrected in place with a dated note.
+- **Sources:** Jorion 1986 (Cambridge Core record and abstract) and Black–Litterman 1992 (journal pages) checked;
+  Michaud 1989 and Kan–Zhou 2007 not cited, still `verify`.
+- **Held out by default (owner did not rule otherwise):** the factor-subspace corollary (finance note §3) is not in
+  the guide; only an open question without the suggested answer.
+
+Delta list: none to KB files (parallel-stream rule; the guide lives in the paper repository).

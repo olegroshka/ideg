@@ -20,11 +20,16 @@ sensitive to (Michaud 1989, "error maximisation").
   expected certainty-equivalent loss is (1/2γ)(μ̂ − μ)ᵀΣ^{-1}(μ̂ − μ) (Kan–Zhou 2007, `verify`). After whitening this
   is quadratic loss |δ − θ|². So, with Σ known, **"admissible under quadratic loss" = "no other estimate gives a
   better plug-in portfolio for every true vector of expected returns"**, and Brown's criterion applies verbatim.
-- **The estimators in use are generalized Bayes rules δ_F.** Jorion's Bayes–Stein shrinkage toward the
-  minimum-variance return (Jorion 1986), Black–Litterman (a Gaussian prior around model-implied returns,
-  Black–Litterman 1992), priors centred on a pricing model with dispersion σ_α (Pástor–Stambaugh 2000), and the flat
-  prior behind OLS alphas are all of the form δ_F(x) = x + ∇ log f*(x) for a prior F on (whitened) expected returns.
-  Each has an admissibility verdict given by the recurrence of the weighted Brownian motion of (R^m, f* dx).
+- **Most estimators in use are generalized Bayes rules δ_F.** Black–Litterman (a Gaussian prior around model-implied
+  returns, Black–Litterman 1992), priors centred on a pricing model with dispersion σ_α (Pástor–Stambaugh 2000), and
+  the flat prior behind OLS alphas are of the form δ_F(x) = x + ∇ log f*(x) for a prior F on (whitened) expected
+  returns. Each has an admissibility verdict given by the recurrence of the weighted Brownian motion of
+  (R^m, f* dx).
+- **Correction (2026-10-25).** An earlier version of this note listed Jorion's Bayes–Stein shrinkage (Jorion 1986)
+  among the rules δ_F. It is not one: Jorion presents it as an empirical Bayes rule (shrinkage intensity estimated
+  from the data; abstract checked at the publisher), a relative of James–Stein. James–Stein is not generalized Bayes
+  (a Gaussian marginal φ * F is finite and real-analytic, so it cannot equal |x|^{2−m}), and such rules are the kind
+  that beat a δ_F rather than being one.
 
 ## 2. What each result of the paper says in this setting
 
@@ -97,8 +102,9 @@ the improper limit σ_α → ∞ is the flat prior).
 
 ## 5. Candidate research items (proposals only; not AR-numbered, not preregistered)
 
-- **F1. Classify the standard shrinkage estimators of expected returns by Brown's tests.** Write Jorion 1986,
-  Black–Litterman 1992, Pástor–Stambaugh 2000, OLS, and factor-shrinkage rules as δ_F in whitened coordinates;
+- **F1. Classify the standard shrinkage estimators of expected returns by Brown's tests.** Write
+  Black–Litterman 1992, Pástor–Stambaugh 2000, OLS, and factor-shrinkage rules as δ_F in whitened coordinates (Jorion
+  1986 is empirical Bayes, not a δ_F; see §1);
   apply Brown's Thm 6.3.1 / sphere / ray tests. Expected outcome: all radial or Gaussian, hence decided; the paper's
   novelty bites only for factor-structured and mixture priors. Cheap; one session.
 - **F2. Prove or kill the factor-subspace corollary (§3).** Analytical steps as listed; numerical companion with the
@@ -116,10 +122,15 @@ the improper limit σ_α → ∞ is the flat prior).
 Read in the stream (theorem level): Brown 1971; Grigor'yan 1999; Saloff-Coste 1992; Hajłasz–Koskela 2000; Björn
 2001; Kasahara 1975; Johnstone–Lalley 1984; Komaki 2006, 2015 (see `paper/references.bib`).
 
+Checked 2026-10-25 (bibliographic details at the source; cited in the companion guide of the paper repository):
+
+- P. Jorion, "Bayes–Stein estimation for portfolio analysis", J. Financial and Quantitative Analysis 21(3) (1986),
+  279–292, DOI 10.2307/2331042 (Cambridge Core record and abstract).
+- F. Black and R. Litterman, "Global portfolio optimization", Financial Analysts Journal 48(5) (1992), 28–43
+  (journal pages; first page states equilibrium returns as the neutral starting point, combined with views).
+
 `verify` (finance; metadata from memory):
 
-- P. Jorion, "Bayes–Stein estimation for portfolio analysis", J. Financial and Quantitative Analysis 21 (1986).
-- F. Black and R. Litterman, "Global portfolio optimization", Financial Analysts Journal 48 (1992).
 - R. Kan and G. Zhou, "Optimal portfolio choice with parameter uncertainty", J. Financial and Quantitative Analysis
   42 (2007).
 - R. O. Michaud, "The Markowitz optimization enigma: is 'optimized' optimal?", Financial Analysts Journal 45 (1989).
