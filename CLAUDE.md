@@ -204,102 +204,15 @@ results/     run outputs, figures, serialized data (gitignored where large)
   SciPost. Parked: AR-022 (philosophy survey); BH-005 sequencing;
   AR-015 census; SRC-036..058 verification backlog (not
   paper-blocking).
-- **Parallel theory stream opened (2026-10-23):** `articles/theory/` —
-  lint + source verification of the LLM-drafted "admissible interior
-  geometry / statistical GR" blueprint (Stein / Brown / Komaki /
-  Perelman). **AR-024 DONE:** 20 machine checks (6 FAIL, 11 PASS), 24
-  references checked (22 verified), kernel confirmed with a sign
-  correction — Risk(π_J) − Risk(e^{−Φ}π_J) = (R^m_Φ − R)/(2N²), R^m =
-  Perelman's weighted scalar curvature; Komaki's §3 conformal frame =
-  the "Einstein frame". Formalism 3 killed as a derivation; d ≥ 3
-  coincidence killed as stated. Stream rule: **new files only**; KB
-  deltas queued in `sessions/2026-10-23_AR-024-article-lint.md`, not
-  applied; Lean deferred until a statement survives lint. Packet:
-  `ar/AR-024_article-lint-2026-10-23.md`. **AR-025 DONE (same day):**
-  v2 note of record written
-  (`articles/theory/v2_admissibility_and_weighted_geometry.md`, v1
-  SUPERSEDED); the scalar-curvature question resolved NEGATIVELY from
-  Komaki 2015 Thm A1 (prior-independent O(N⁻²) terms are embedding
-  curvatures, nonzero at d = 1) so the identity holds for the gradient
-  term only; new dictionary entry: Brown's admissibility integral =
-  recurrence test of the weighted manifold (R^d, flat, m dx) (lint C23,
-  21 checks). Owner frame: information-geometry connection, no literal
-  gravity. **AR-026 DONE (Q1, same day):** Brown 1971 read in full
-  (owner's browser; JSTOR scan read as page images): it *is*
-  weighted-manifold potential theory on (R^m, f* dx) — Thm 4.3.1 =
-  capacity/parabolicity, Thm 5.1.1 = admissible ⟺ recurrent (bounded
-  risk), Thm 6.4.3 (1971) = the Lyons–Sullivan/Grigor'yan sphere-area
-  parabolicity test (1984/85) → priority observation K7; the
-  ball-volume test is a corollary (lint C24; 22 checks). **Q1 CLOSED
-  NEGATIVE** for new criteria; Q1′ (Faber–Krahn in Brown's undecided
-  examples) opened, research-level. **AR-027 DONE (Q3, same day):**
-  targeted prior-art pass — K1 (Komaki–Perelman identity), K5, K7 not
-  found; K4 KNOWN in Dirichlet-form language (Brown 1971; Johnstone
-  1986 "Dirichlet principles"; Eaton 1992; Takanashi–McAlinn 2023,
-  arXiv:2310.17891) but its geometric translation not found; the two
-  literatures do not cite each other. Wording rule: "not found in the
-  literature we searched", never "new"/"first", until an owner-run
-  citation-index sweep. **AR-028 G0 DONE → NO-GO; STREAM CLOSED
-  (2026-10-23):** Lemma K8 (bounded spherical A₂ ratio ⇒ Brown's Thms
-  6.4.3/6.4.4 exhaustive) kills the doubling/A₂ iff route; the product
-  route is Johnstone–Lalley 1984; an explicit undecided log-example was
-  decided inadmissible (1-D kernel ≍ 4/log²t, numerically confirmed).
-  Owner's verdict: no novelty, nothing to contribute. v2 is the record;
-  no publication; nothing committed; the eleven other-session files
-  untouched. **Same-day correction (G0 §6):** the step "T1's doubling +
-  Poincaré class has bounded spherical A₂ ratio" had been asserted
-  without proof; Lemma K9 (two-region test function) proves it for
-  product weights, where Brown 6.4.4 then decides everything; the
-  non-product case is open with no candidate; verdict unchanged
-  (`checks/g0_doubling_poincare.py`). **Typeset note of record:**
-  `articles/theory/latex/note.tex` (quantumarticle, two columns, same
-  preamble as the paper; figures from `latex/figures/make_figures.py`
-  recomputed from the check scripts; builds clean).
-- **Seam programme (2026-10-24; owner ruling: A → B → C optional → park → COIG-2
-  handover; the stream stays in ideg as a parallel seam):** **AR-029 gate A1
-  DONE** — Argon's ring weight (math-note.tex Thm 6) is PARABOLIC, hence
-  admissible (Lemma K11, Thomson bound along a non-radial exhaustion; the
-  2^k circles of a block lie on one surface with mesh ≤ 3.2 = a co-dimension-one
-  wall; Poincaré fails ∝ ρ^{α−1}); Argon's Theorem 5 stands and closes AR-028
-  G0 §6; Johnstone–Lalley 1984 read in full; Brown–Hwang 1982 not obtained.
-  **AR-029a (A2) DONE the same day: GO for A as a theorem note (conditional on
-  citation checks)** — the scattered lattice weight (circles spaced 2^{k/2},
-  α ≥ 4) is doubling + Poincaré (Björn 2001 Prop 6 read; gluing Lemma K13;
-  Neumann-eigenvalue numerics λ₁ρ² ≥ 1.5 to 8 spacings, wall control
-  collapses), both Brown tests silent with explicit bounds, μ(B_r) ≍ r³ ⇒
-  transient (Grigor'yan 1999 Thm 11.1 read) ⇒ δ_F inadmissible. Lemma K12
-  (Lipschitz-log weights ≍ genuine Gaussian marginals) legitimises every
-  example as a prior; Theorem K15: under D+P Brown's sphere test is exhaustive
-  for parabolicity, the ray test is not exhaustive for transience. Packets
-  `ar/AR-029_seam-gate-A-2026-10-24.md`, `ar/AR-029a_A2-scattered-2026-10-24.md`;
-  **A3 DONE (same day): the external-facing document is now
-  `articles/theory/paper/main.tex`** — a first-principles draft for an outside
-  reader (amsart, 15 pp: Theorem A, Theorem B, two-sidedness, comparison
-  lemma, Appendix A with the Komaki/Perelman identity), written after the owner
-  stopped an attempt that extended the v2 note ("internal lingo leaked to the
-  reader"; v2 and math-note.tex are internal records only). Pre-submission
-  checklist in `ar/AR-029b_A3-paper-2026-10-24.md` §2 (citations to open,
-  Brown–Hwang comparison, LLM credit, venue). Next: owner proof pass, then
-  park + handover to coig (parabolicity invariant as AR-201/KB-202 material);
-  B = AR-030 optional. **Library pass + PARK (2026-10-24, late):**
-  Hajłasz–Koskela 2000 (Thms 5.1, 9.7), Saloff-Coste 1992 (Thms 3.1, 4.2)
-  and Kasahara 1975 (Thm 2(iii)) verified at theorem level through the OU
-  library and cited with theorem numbers; acknowledgements added (AI
-  assistants, OU library); stream PARKED (`articles/theory/CLOSING_NOTE_2026-10-24.md`);
-  handover written to coig (`coig2/sessions/2026-10-24_inbound-handover-from-ideg-theory-stream.md`:
-  CAND-205 parabolicity invariant, collision rule 213, AR-201 items).
-  Lean: not installed; scoped as AR-032 (elementary lemmas against
-  axiomatised externals). Committed and pushed 2026-10-24 (owner: "lets
-  park commit and push it").
-- **Review round 1 + paper spun out to its own repo (2026-10-25):** an external
-  review (AR-029c) was triaged and all items closed (correctness fixes, the
-  Theorem 4.1 D+P proof repaired, Björn–Buckley–Keith / Shimizu–Nakano citations
-  verified and added, Takanashi first name fixed, Brown 1973 correction read and
-  cited as not affecting the bounded-drift priors, Brown–Hwang reframed). Eight
-  figures now (three computed, five TikZ intuition figures). **The paper and its
-  reproducible artifacts were moved to a clean standalone repository,
-  https://github.com/olegroshka/brown-radial-tests (paper/ + figures/ + code/),
-  which is now the canonical public home and the URL the paper points to.** The
-  `articles/theory/` copy here is retained as the development history. See
-  `ar/AR-029c_review-round1-triage-2026-10-25.md` and
-  `sessions/2026-10-25_AR-029c-review-round1.md`.
+- **Theory stream MOVED OUT (2026-10-27, owner request):** the Brown
+  admissibility / weighted-geometry stream (2026-10-23..26: AR-024..AR-029c,
+  its six session logs, all of `articles/theory/`, the finance direction note)
+  is kept on the owner's machine only, in the working copy of
+  https://github.com/olegroshka/brown-radial-tests under `history/`
+  (development record, byte-identical copies) and `notes/` (finance
+  extension), both git-ignored and never published; the committed versions
+  remain in this repo's git history up to e110a85. The paper in that repo is
+  canonical. AR-024..AR-032 are used or reserved
+  by that stream, so new ideg AR ids start at AR-033. The KB deltas queued in
+  its 2026-10-23 log were never applied here. Owner rule: do not write this
+  stream's notes, logs or doc updates into ideg.
